@@ -27,7 +27,7 @@ pub enum CreateSignalingChannelErrorKind {
     /// <p>You have exceeded the limit of tags that you can associate with the resource.
     /// Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSignalingChannelError {
@@ -99,42 +99,42 @@ impl CreateSignalingChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSignalingChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateSignalingChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSignalingChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSignalingChannelErrorKind::AccountChannelLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSignalingChannelErrorKind::AccountChannelLimitExceededException`.
     pub fn is_account_channel_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSignalingChannelErrorKind::AccountChannelLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSignalingChannelErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSignalingChannelErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSignalingChannelErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSignalingChannelErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateSignalingChannelErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSignalingChannelErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSignalingChannelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateSignalingChannelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSignalingChannelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSignalingChannelErrorKind::TagsPerResourceExceededLimitException`.
+    /// Returns `true` if the error kind is `CreateSignalingChannelErrorKind::TagsPerResourceExceededLimitException`.
     pub fn is_tags_per_resource_exceeded_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -190,7 +190,7 @@ pub enum CreateStreamErrorKind {
     /// <p>You have exceeded the limit of tags that you can associate with the resource.
     /// Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamError {
@@ -259,43 +259,43 @@ impl CreateStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::AccountStreamLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::AccountStreamLimitExceededException`.
     pub fn is_account_stream_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamErrorKind::AccountStreamLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::DeviceStreamLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::DeviceStreamLimitExceededException`.
     pub fn is_device_stream_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamErrorKind::DeviceStreamLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::InvalidDeviceException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::InvalidDeviceException`.
     pub fn is_invalid_device_exception(&self) -> bool {
         matches!(&self.kind, CreateStreamErrorKind::InvalidDeviceException(_))
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateStreamErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `CreateStreamErrorKind::TagsPerResourceExceededLimitException`.
+    /// Returns `true` if the error kind is `CreateStreamErrorKind::TagsPerResourceExceededLimitException`.
     pub fn is_tags_per_resource_exceeded_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -346,7 +346,7 @@ pub enum DeleteSignalingChannelErrorKind {
     /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
     /// API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSignalingChannelError {
@@ -414,42 +414,42 @@ impl DeleteSignalingChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSignalingChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteSignalingChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSignalingChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSignalingChannelErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteSignalingChannelErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSignalingChannelErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSignalingChannelErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteSignalingChannelErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSignalingChannelErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSignalingChannelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteSignalingChannelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSignalingChannelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSignalingChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSignalingChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSignalingChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSignalingChannelErrorKind::VersionMismatchException`.
+    /// Returns `true` if the error kind is `DeleteSignalingChannelErrorKind::VersionMismatchException`.
     pub fn is_version_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -499,7 +499,7 @@ pub enum DeleteStreamErrorKind {
     /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
     /// API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStreamError {
@@ -567,36 +567,36 @@ impl DeleteStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteStreamErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteStreamErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamErrorKind::VersionMismatchException`.
+    /// Returns `true` if the error kind is `DeleteStreamErrorKind::VersionMismatchException`.
     pub fn is_version_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -640,7 +640,7 @@ pub enum DescribeSignalingChannelErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSignalingChannelError {
@@ -708,28 +708,28 @@ impl DescribeSignalingChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSignalingChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeSignalingChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSignalingChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSignalingChannelErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeSignalingChannelErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSignalingChannelErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSignalingChannelErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeSignalingChannelErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSignalingChannelErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSignalingChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSignalingChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -771,7 +771,7 @@ pub enum DescribeStreamErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStreamError {
@@ -837,28 +837,28 @@ impl DescribeStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStreamErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -900,7 +900,7 @@ pub enum GetDataEndpointErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDataEndpointError {
@@ -966,28 +966,28 @@ impl GetDataEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDataEndpointErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `GetDataEndpointErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataEndpointErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataEndpointErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetDataEndpointErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataEndpointErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataEndpointErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetDataEndpointErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataEndpointErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDataEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1031,7 +1031,7 @@ pub enum GetSignalingChannelEndpointErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSignalingChannelEndpointError {
@@ -1102,35 +1102,35 @@ impl GetSignalingChannelEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSignalingChannelEndpointErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSignalingChannelEndpointErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSignalingChannelEndpointErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSignalingChannelEndpointErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `GetSignalingChannelEndpointErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSignalingChannelEndpointErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetSignalingChannelEndpointErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetSignalingChannelEndpointErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSignalingChannelEndpointErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetSignalingChannelEndpointErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `GetSignalingChannelEndpointErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSignalingChannelEndpointErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `GetSignalingChannelEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSignalingChannelEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1173,7 +1173,7 @@ pub enum ListSignalingChannelsErrorKind {
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSignalingChannelsError {
@@ -1238,21 +1238,21 @@ impl ListSignalingChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSignalingChannelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSignalingChannelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSignalingChannelsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListSignalingChannelsErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `ListSignalingChannelsErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSignalingChannelsErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListSignalingChannelsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListSignalingChannelsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1289,7 +1289,7 @@ pub enum ListStreamsErrorKind {
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamsError {
@@ -1353,14 +1353,14 @@ impl ListStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamsErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamsErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1400,7 +1400,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1466,28 +1466,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1531,7 +1531,7 @@ pub enum ListTagsForStreamErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForStreamError {
@@ -1598,35 +1598,35 @@ impl ListTagsForStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForStreamErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForStreamErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForStreamErrorKind::InvalidResourceFormatException`.
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::InvalidResourceFormatException`.
     pub fn is_invalid_resource_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForStreamErrorKind::InvalidResourceFormatException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForStreamErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForStreamErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1672,7 +1672,7 @@ pub enum TagResourceErrorKind {
     /// <p>You have exceeded the limit of tags that you can associate with the resource.
     /// Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1739,32 +1739,32 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagsPerResourceExceededLimitException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagsPerResourceExceededLimitException`.
     pub fn is_tags_per_resource_exceeded_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1812,7 +1812,7 @@ pub enum TagStreamErrorKind {
     /// <p>You have exceeded the limit of tags that you can associate with the resource.
     /// Kinesis video streams support up to 50 tags. </p>
     TagsPerResourceExceededLimitException(crate::error::TagsPerResourceExceededLimitException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagStreamError {
@@ -1880,33 +1880,33 @@ impl TagStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagStreamErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `TagStreamErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagStreamErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `TagStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, TagStreamErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `TagStreamErrorKind::InvalidResourceFormatException`.
+    /// Returns `true` if the error kind is `TagStreamErrorKind::InvalidResourceFormatException`.
     pub fn is_invalid_resource_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagStreamErrorKind::InvalidResourceFormatException(_)
         )
     }
-    /// Returns true if the error kind is `TagStreamErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `TagStreamErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, TagStreamErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `TagStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagStreamErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `TagStreamErrorKind::TagsPerResourceExceededLimitException`.
+    /// Returns `true` if the error kind is `TagStreamErrorKind::TagsPerResourceExceededLimitException`.
     pub fn is_tags_per_resource_exceeded_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1950,7 +1950,7 @@ pub enum UntagResourceErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2016,25 +2016,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2078,7 +2078,7 @@ pub enum UntagStreamErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagStreamError {
@@ -2145,32 +2145,32 @@ impl UntagStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagStreamErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `UntagStreamErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagStreamErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UntagStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UntagStreamErrorKind::InvalidResourceFormatException`.
+    /// Returns `true` if the error kind is `UntagStreamErrorKind::InvalidResourceFormatException`.
     pub fn is_invalid_resource_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagStreamErrorKind::InvalidResourceFormatException(_)
         )
     }
-    /// Returns true if the error kind is `UntagStreamErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UntagStreamErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, UntagStreamErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `UntagStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2219,7 +2219,7 @@ pub enum UpdateDataRetentionErrorKind {
     /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
     /// API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataRetentionError {
@@ -2287,42 +2287,42 @@ impl UpdateDataRetentionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataRetentionErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDataRetentionErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataRetentionErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataRetentionErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateDataRetentionErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataRetentionErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataRetentionErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateDataRetentionErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataRetentionErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataRetentionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateDataRetentionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataRetentionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataRetentionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDataRetentionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataRetentionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataRetentionErrorKind::VersionMismatchException`.
+    /// Returns `true` if the error kind is `UpdateDataRetentionErrorKind::VersionMismatchException`.
     pub fn is_version_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2372,7 +2372,7 @@ pub enum UpdateSignalingChannelErrorKind {
     /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
     /// API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSignalingChannelError {
@@ -2440,42 +2440,42 @@ impl UpdateSignalingChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSignalingChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateSignalingChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSignalingChannelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSignalingChannelErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSignalingChannelErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSignalingChannelErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSignalingChannelErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateSignalingChannelErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSignalingChannelErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSignalingChannelErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateSignalingChannelErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSignalingChannelErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSignalingChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSignalingChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSignalingChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSignalingChannelErrorKind::VersionMismatchException`.
+    /// Returns `true` if the error kind is `UpdateSignalingChannelErrorKind::VersionMismatchException`.
     pub fn is_version_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2525,7 +2525,7 @@ pub enum UpdateStreamErrorKind {
     /// version, use the <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
     /// API.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStreamError {
@@ -2593,36 +2593,36 @@ impl UpdateStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStreamErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateStreamErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateStreamErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateStreamErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, UpdateStreamErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `UpdateStreamErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateStreamErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateStreamErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamErrorKind::VersionMismatchException`.
+    /// Returns `true` if the error kind is `UpdateStreamErrorKind::VersionMismatchException`.
     pub fn is_version_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -434,6 +434,87 @@ impl RedactChannelMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutChannelMembershipPreferencesOutput {
+    /// <p>The ARN of the channel.</p>
+    pub channel_arn: std::option::Option<std::string::String>,
+    /// <p>The details of a user.</p>
+    pub member: std::option::Option<crate::model::Identity>,
+    /// <p>The ARN and metadata of the member being added.</p>
+    pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+}
+impl std::fmt::Debug for PutChannelMembershipPreferencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutChannelMembershipPreferencesOutput");
+        formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("member", &self.member);
+        formatter.field("preferences", &self.preferences);
+        formatter.finish()
+    }
+}
+/// See [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput)
+pub mod put_channel_membership_preferences_output {
+    /// A builder for [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) member: std::option::Option<crate::model::Identity>,
+        pub(crate) preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+    }
+    impl Builder {
+        /// <p>The ARN of the channel.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the channel.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_arn = input;
+            self
+        }
+        /// <p>The details of a user.</p>
+        pub fn member(mut self, input: crate::model::Identity) -> Self {
+            self.member = Some(input);
+            self
+        }
+        /// <p>The details of a user.</p>
+        pub fn set_member(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
+            self.member = input;
+            self
+        }
+        /// <p>The ARN and metadata of the member being added.</p>
+        pub fn preferences(mut self, input: crate::model::ChannelMembershipPreferences) -> Self {
+            self.preferences = Some(input);
+            self
+        }
+        /// <p>The ARN and metadata of the member being added.</p>
+        pub fn set_preferences(
+            mut self,
+            input: std::option::Option<crate::model::ChannelMembershipPreferences>,
+        ) -> Self {
+            self.preferences = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput)
+        pub fn build(self) -> crate::output::PutChannelMembershipPreferencesOutput {
+            crate::output::PutChannelMembershipPreferencesOutput {
+                channel_arn: self.channel_arn,
+                member: self.member,
+                preferences: self.preferences,
+            }
+        }
+    }
+}
+impl PutChannelMembershipPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput)
+    pub fn builder() -> crate::output::put_channel_membership_preferences_output::Builder {
+        crate::output::put_channel_membership_preferences_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1398,6 +1479,87 @@ impl GetChannelMessageOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput)
     pub fn builder() -> crate::output::get_channel_message_output::Builder {
         crate::output::get_channel_message_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetChannelMembershipPreferencesOutput {
+    /// <p>The ARN of the channel.</p>
+    pub channel_arn: std::option::Option<std::string::String>,
+    /// <p>The details of a user.</p>
+    pub member: std::option::Option<crate::model::Identity>,
+    /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
+    pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+}
+impl std::fmt::Debug for GetChannelMembershipPreferencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetChannelMembershipPreferencesOutput");
+        formatter.field("channel_arn", &self.channel_arn);
+        formatter.field("member", &self.member);
+        formatter.field("preferences", &self.preferences);
+        formatter.finish()
+    }
+}
+/// See [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput)
+pub mod get_channel_membership_preferences_output {
+    /// A builder for [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_arn: std::option::Option<std::string::String>,
+        pub(crate) member: std::option::Option<crate::model::Identity>,
+        pub(crate) preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+    }
+    impl Builder {
+        /// <p>The ARN of the channel.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.channel_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the channel.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_arn = input;
+            self
+        }
+        /// <p>The details of a user.</p>
+        pub fn member(mut self, input: crate::model::Identity) -> Self {
+            self.member = Some(input);
+            self
+        }
+        /// <p>The details of a user.</p>
+        pub fn set_member(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
+            self.member = input;
+            self
+        }
+        /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
+        pub fn preferences(mut self, input: crate::model::ChannelMembershipPreferences) -> Self {
+            self.preferences = Some(input);
+            self
+        }
+        /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
+        pub fn set_preferences(
+            mut self,
+            input: std::option::Option<crate::model::ChannelMembershipPreferences>,
+        ) -> Self {
+            self.preferences = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput)
+        pub fn build(self) -> crate::output::GetChannelMembershipPreferencesOutput {
+            crate::output::GetChannelMembershipPreferencesOutput {
+                channel_arn: self.channel_arn,
+                member: self.member,
+                preferences: self.preferences,
+            }
+        }
+    }
+}
+impl GetChannelMembershipPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput)
+    pub fn builder() -> crate::output::get_channel_membership_preferences_output::Builder {
+        crate::output::get_channel_membership_preferences_output::Builder::default()
     }
 }
 

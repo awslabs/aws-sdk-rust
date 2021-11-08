@@ -60,7 +60,7 @@ pub enum DescribeReportCreationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReportCreationError {
@@ -126,28 +126,28 @@ impl DescribeReportCreationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReportCreationErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `DescribeReportCreationErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReportCreationErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReportCreationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeReportCreationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReportCreationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReportCreationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeReportCreationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReportCreationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReportCreationErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `DescribeReportCreationErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -228,7 +228,7 @@ pub enum GetComplianceSummaryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComplianceSummaryError {
@@ -294,28 +294,28 @@ impl GetComplianceSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetComplianceSummaryErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `GetComplianceSummaryErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComplianceSummaryErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `GetComplianceSummaryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetComplianceSummaryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComplianceSummaryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetComplianceSummaryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetComplianceSummaryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComplianceSummaryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetComplianceSummaryErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetComplianceSummaryErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -378,7 +378,7 @@ pub enum GetResourcesErrorKind {
     PaginationTokenExpiredException(crate::error::PaginationTokenExpiredException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcesError {
@@ -444,28 +444,28 @@ impl GetResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::PaginationTokenExpiredException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::PaginationTokenExpiredException`.
     pub fn is_pagination_token_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcesErrorKind::PaginationTokenExpiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetResourcesErrorKind::ThrottledException(_))
     }
@@ -525,7 +525,7 @@ pub enum GetTagKeysErrorKind {
     PaginationTokenExpiredException(crate::error::PaginationTokenExpiredException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTagKeysError {
@@ -591,25 +591,25 @@ impl GetTagKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTagKeysErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTagKeysErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetTagKeysErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetTagKeysErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetTagKeysErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTagKeysErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetTagKeysErrorKind::PaginationTokenExpiredException`.
+    /// Returns `true` if the error kind is `GetTagKeysErrorKind::PaginationTokenExpiredException`.
     pub fn is_pagination_token_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTagKeysErrorKind::PaginationTokenExpiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetTagKeysErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetTagKeysErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetTagKeysErrorKind::ThrottledException(_))
     }
@@ -669,7 +669,7 @@ pub enum GetTagValuesErrorKind {
     PaginationTokenExpiredException(crate::error::PaginationTokenExpiredException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTagValuesError {
@@ -735,28 +735,28 @@ impl GetTagValuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTagValuesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTagValuesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTagValuesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetTagValuesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetTagValuesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTagValuesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetTagValuesErrorKind::PaginationTokenExpiredException`.
+    /// Returns `true` if the error kind is `GetTagValuesErrorKind::PaginationTokenExpiredException`.
     pub fn is_pagination_token_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTagValuesErrorKind::PaginationTokenExpiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetTagValuesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetTagValuesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetTagValuesErrorKind::ThrottledException(_))
     }
@@ -837,7 +837,7 @@ pub enum StartReportCreationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartReportCreationError {
@@ -904,35 +904,35 @@ impl StartReportCreationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartReportCreationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `StartReportCreationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReportCreationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `StartReportCreationErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `StartReportCreationErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReportCreationErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `StartReportCreationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartReportCreationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReportCreationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartReportCreationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartReportCreationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReportCreationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartReportCreationErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `StartReportCreationErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -993,7 +993,7 @@ pub enum TagResourcesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourcesError {
@@ -1058,21 +1058,21 @@ impl TagResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourcesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `TagResourcesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourcesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourcesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourcesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourcesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourcesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `TagResourcesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, TagResourcesErrorKind::ThrottledException(_))
     }
@@ -1128,7 +1128,7 @@ pub enum UntagResourcesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request was denied to limit the frequency of submitted requests.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourcesError {
@@ -1193,21 +1193,21 @@ impl UntagResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourcesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UntagResourcesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourcesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourcesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourcesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourcesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourcesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `UntagResourcesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, UntagResourcesErrorKind::ThrottledException(_))
     }

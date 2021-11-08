@@ -22,7 +22,7 @@ pub enum CreateScalingPlanErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateScalingPlanError {
@@ -88,28 +88,28 @@ impl CreateScalingPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateScalingPlanErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `CreateScalingPlanErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateScalingPlanErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateScalingPlanErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateScalingPlanErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateScalingPlanErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateScalingPlanErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateScalingPlanErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateScalingPlanErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateScalingPlanErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateScalingPlanErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -151,7 +151,7 @@ pub enum DeleteScalingPlanErrorKind {
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScalingPlanError {
@@ -217,28 +217,28 @@ impl DeleteScalingPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScalingPlanErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DeleteScalingPlanErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPlanErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPlanErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteScalingPlanErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPlanErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPlanErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteScalingPlanErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPlanErrorKind::ObjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPlanErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteScalingPlanErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -280,7 +280,7 @@ pub enum DescribeScalingPlanResourcesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalingPlanResourcesError {
@@ -352,28 +352,28 @@ impl DescribeScalingPlanResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalingPlanResourcesErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DescribeScalingPlanResourcesErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPlanResourcesErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPlanResourcesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeScalingPlanResourcesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPlanResourcesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPlanResourcesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeScalingPlanResourcesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPlanResourcesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPlanResourcesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeScalingPlanResourcesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -419,7 +419,7 @@ pub enum DescribeScalingPlansErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalingPlansError {
@@ -485,28 +485,28 @@ impl DescribeScalingPlansError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalingPlansErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DescribeScalingPlansErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPlansErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPlansErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeScalingPlansErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPlansErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPlansErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeScalingPlansErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPlansErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPlansErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeScalingPlansErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -543,7 +543,7 @@ pub enum GetScalingPlanResourceForecastDataErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetScalingPlanResourceForecastDataError {
@@ -614,14 +614,14 @@ impl GetScalingPlanResourceForecastDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetScalingPlanResourceForecastDataErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetScalingPlanResourceForecastDataErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetScalingPlanResourceForecastDataErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetScalingPlanResourceForecastDataErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetScalingPlanResourceForecastDataErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -665,7 +665,7 @@ pub enum UpdateScalingPlanErrorKind {
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateScalingPlanError {
@@ -731,28 +731,28 @@ impl UpdateScalingPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateScalingPlanErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `UpdateScalingPlanErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScalingPlanErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScalingPlanErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateScalingPlanErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScalingPlanErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScalingPlanErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateScalingPlanErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScalingPlanErrorKind::ObjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScalingPlanErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateScalingPlanErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

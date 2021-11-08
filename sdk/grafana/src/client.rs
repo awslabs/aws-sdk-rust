@@ -214,9 +214,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to associate the license with.</p>
@@ -298,9 +301,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in
@@ -596,9 +602,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to delete.</p>
@@ -663,9 +672,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to display information about.</p>
@@ -730,9 +742,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to return authentication information about.</p>
@@ -797,9 +812,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
@@ -883,9 +901,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -1007,9 +1028,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of workspaces to include in the results.</p>
@@ -1086,9 +1110,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `updateInstructionBatch`.
@@ -1178,9 +1205,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in
@@ -1451,9 +1481,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to update the authentication for.</p>

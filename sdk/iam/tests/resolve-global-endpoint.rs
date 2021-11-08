@@ -7,13 +7,14 @@ use aws_endpoint::get_endpoint_resolver;
 use aws_sdk_iam::Region;
 use http::Uri;
 
-#[test]
-fn correct_endpoint_resolver() {
+#[tokio::test]
+async fn correct_endpoint_resolver() {
     let conf = aws_sdk_iam::Config::builder().build();
     let operation = aws_sdk_iam::operation::ListRoles::builder()
         .build()
         .unwrap()
         .make_operation(&conf)
+        .await
         .expect("valid operation");
     let props = operation.properties();
     let resolver = get_endpoint_resolver(&props).expect("operation should have endpoint resolver");

@@ -26,7 +26,7 @@ pub enum BatchCreatePartitionErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchCreatePartitionError {
@@ -97,49 +97,49 @@ impl BatchCreatePartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchCreatePartitionErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `BatchCreatePartitionErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreatePartitionErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreatePartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `BatchCreatePartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreatePartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreatePartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `BatchCreatePartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreatePartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreatePartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchCreatePartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreatePartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreatePartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchCreatePartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreatePartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreatePartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchCreatePartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreatePartitionErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreatePartitionErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchCreatePartitionErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -181,7 +181,7 @@ pub enum BatchDeleteConnectionErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteConnectionError {
@@ -245,14 +245,14 @@ impl BatchDeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteConnectionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchDeleteConnectionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteConnectionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteConnectionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchDeleteConnectionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -291,7 +291,7 @@ pub enum BatchDeletePartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeletePartitionError {
@@ -357,28 +357,28 @@ impl BatchDeletePartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeletePartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeletePartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchDeletePartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchDeletePartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchDeletePartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -419,7 +419,7 @@ pub enum BatchDeleteTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteTableError {
@@ -485,28 +485,28 @@ impl BatchDeleteTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteTableErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -547,7 +547,7 @@ pub enum BatchDeleteTableVersionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteTableVersionError {
@@ -613,28 +613,28 @@ impl BatchDeleteTableVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteTableVersionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableVersionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableVersionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableVersionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableVersionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableVersionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableVersionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableVersionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableVersionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -673,7 +673,7 @@ pub enum BatchGetBlueprintsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetBlueprintsError {
@@ -738,21 +738,21 @@ impl BatchGetBlueprintsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetBlueprintsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchGetBlueprintsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetBlueprintsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetBlueprintsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetBlueprintsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetBlueprintsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetBlueprintsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchGetBlueprintsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -788,7 +788,7 @@ pub enum BatchGetCrawlersErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetCrawlersError {
@@ -852,14 +852,14 @@ impl BatchGetCrawlersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetCrawlersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetCrawlersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCrawlersErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCrawlersErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchGetCrawlersErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -898,7 +898,7 @@ pub enum BatchGetDevEndpointsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetDevEndpointsError {
@@ -964,28 +964,28 @@ impl BatchGetDevEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetDevEndpointsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchGetDevEndpointsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDevEndpointsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDevEndpointsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchGetDevEndpointsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDevEndpointsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDevEndpointsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetDevEndpointsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDevEndpointsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDevEndpointsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchGetDevEndpointsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1024,7 +1024,7 @@ pub enum BatchGetJobsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetJobsError {
@@ -1089,18 +1089,18 @@ impl BatchGetJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetJobsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchGetJobsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetJobsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetJobsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetJobsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, BatchGetJobsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `BatchGetJobsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchGetJobsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1142,7 +1142,7 @@ pub enum BatchGetPartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetPartitionError {
@@ -1209,35 +1209,35 @@ impl BatchGetPartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetPartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `BatchGetPartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetPartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetPartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `BatchGetPartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetPartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetPartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchGetPartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetPartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetPartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetPartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetPartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetPartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchGetPartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1277,7 +1277,7 @@ pub enum BatchGetTriggersErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetTriggersError {
@@ -1342,21 +1342,21 @@ impl BatchGetTriggersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetTriggersErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchGetTriggersErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetTriggersErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetTriggersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetTriggersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetTriggersErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetTriggersErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchGetTriggersErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1394,7 +1394,7 @@ pub enum BatchGetWorkflowsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetWorkflowsError {
@@ -1459,21 +1459,21 @@ impl BatchGetWorkflowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetWorkflowsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchGetWorkflowsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetWorkflowsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetWorkflowsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetWorkflowsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetWorkflowsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetWorkflowsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchGetWorkflowsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1511,7 +1511,7 @@ pub enum BatchStopJobRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchStopJobRunError {
@@ -1576,21 +1576,21 @@ impl BatchStopJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchStopJobRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchStopJobRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchStopJobRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchStopJobRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchStopJobRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchStopJobRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchStopJobRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchStopJobRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1632,7 +1632,7 @@ pub enum BatchUpdatePartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdatePartitionError {
@@ -1699,35 +1699,35 @@ impl BatchUpdatePartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpdatePartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `BatchUpdatePartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `BatchUpdatePartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchUpdatePartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchUpdatePartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `BatchUpdatePartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1769,7 +1769,7 @@ pub enum CancelMLTaskRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelMLTaskRunError {
@@ -1835,28 +1835,28 @@ impl CancelMLTaskRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelMLTaskRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CancelMLTaskRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelMLTaskRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelMLTaskRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CancelMLTaskRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelMLTaskRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CancelMLTaskRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CancelMLTaskRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelMLTaskRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CancelMLTaskRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CancelMLTaskRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1895,7 +1895,7 @@ pub enum CheckSchemaVersionValidityErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckSchemaVersionValidityError {
@@ -1960,21 +1960,21 @@ impl CheckSchemaVersionValidityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CheckSchemaVersionValidityErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CheckSchemaVersionValidityErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckSchemaVersionValidityErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CheckSchemaVersionValidityErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CheckSchemaVersionValidityErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckSchemaVersionValidityErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CheckSchemaVersionValidityErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CheckSchemaVersionValidityErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2016,7 +2016,7 @@ pub enum CreateBlueprintErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBlueprintError {
@@ -2083,35 +2083,35 @@ impl CreateBlueprintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBlueprintErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateBlueprintErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBlueprintErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBlueprintErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateBlueprintErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBlueprintErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBlueprintErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateBlueprintErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBlueprintErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBlueprintErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateBlueprintErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBlueprintErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBlueprintErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBlueprintErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2151,7 +2151,7 @@ pub enum CreateClassifierErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClassifierError {
@@ -2216,21 +2216,21 @@ impl CreateClassifierError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClassifierErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateClassifierErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClassifierErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClassifierErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateClassifierErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClassifierErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClassifierErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateClassifierErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2272,7 +2272,7 @@ pub enum CreateConnectionErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectionError {
@@ -2341,35 +2341,35 @@ impl CreateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2411,7 +2411,7 @@ pub enum CreateCrawlerErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCrawlerError {
@@ -2477,25 +2477,25 @@ impl CreateCrawlerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCrawlerErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateCrawlerErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCrawlerErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCrawlerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateCrawlerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateCrawlerErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateCrawlerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateCrawlerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCrawlerErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCrawlerErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCrawlerErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2542,7 +2542,7 @@ pub enum CreateDatabaseErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDatabaseError {
@@ -2611,49 +2611,49 @@ impl CreateDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDatabaseErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDatabaseErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatabaseErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatabaseErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateDatabaseErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatabaseErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatabaseErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `CreateDatabaseErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatabaseErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatabaseErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateDatabaseErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatabaseErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatabaseErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateDatabaseErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatabaseErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatabaseErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDatabaseErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2705,7 +2705,7 @@ pub enum CreateDevEndpointErrorKind {
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
     /// <p>A value could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDevEndpointError {
@@ -2779,56 +2779,56 @@ impl CreateDevEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDevEndpointErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDevEndpointErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDevEndpointErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDevEndpointErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDevEndpointErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDevEndpointErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDevEndpointErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateDevEndpointErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDevEndpointErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDevEndpointErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateDevEndpointErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDevEndpointErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDevEndpointErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDevEndpointErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDevEndpointErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDevEndpointErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateDevEndpointErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDevEndpointErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDevEndpointErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDevEndpointErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDevEndpointErrorKind::ResourceNumberLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDevEndpointErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDevEndpointErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2883,7 +2883,7 @@ pub enum CreateJobErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJobError {
@@ -2952,37 +2952,37 @@ impl CreateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::AlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::OperationTimeoutException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3032,7 +3032,7 @@ pub enum CreateMLTransformErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMLTransformError {
@@ -3105,49 +3105,49 @@ impl CreateMLTransformError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMLTransformErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateMLTransformErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMLTransformErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMLTransformErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateMLTransformErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMLTransformErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMLTransformErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateMLTransformErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMLTransformErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMLTransformErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateMLTransformErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMLTransformErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMLTransformErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateMLTransformErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMLTransformErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMLTransformErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateMLTransformErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMLTransformErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMLTransformErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMLTransformErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3201,7 +3201,7 @@ pub enum CreatePartitionErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePartitionError {
@@ -3270,49 +3270,49 @@ impl CreatePartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePartitionErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreatePartitionErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `CreatePartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreatePartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreatePartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreatePartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePartitionErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3362,7 +3362,7 @@ pub enum CreatePartitionIndexErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePartitionIndexError {
@@ -3433,49 +3433,49 @@ impl CreatePartitionIndexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePartitionIndexErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreatePartitionIndexErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionIndexErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionIndexErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePartitionIndexErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionIndexErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionIndexErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `CreatePartitionIndexErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionIndexErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionIndexErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreatePartitionIndexErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionIndexErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionIndexErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreatePartitionIndexErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionIndexErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionIndexErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreatePartitionIndexErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartitionIndexErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartitionIndexErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePartitionIndexErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3523,7 +3523,7 @@ pub enum CreateRegistryErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRegistryError {
@@ -3590,35 +3590,35 @@ impl CreateRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegistryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegistryErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegistryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegistryErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegistryErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRegistryErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3664,7 +3664,7 @@ pub enum CreateSchemaErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSchemaError {
@@ -3732,33 +3732,33 @@ impl CreateSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::AlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSchemaErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3799,7 +3799,7 @@ pub enum CreateScriptErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateScriptError {
@@ -3864,18 +3864,18 @@ impl CreateScriptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateScriptErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateScriptErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateScriptErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateScriptErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateScriptErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateScriptErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateScriptErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateScriptErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3917,7 +3917,7 @@ pub enum CreateSecurityConfigurationErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSecurityConfigurationError {
@@ -3988,35 +3988,35 @@ impl CreateSecurityConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSecurityConfigurationErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateSecurityConfigurationErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecurityConfigurationErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecurityConfigurationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateSecurityConfigurationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecurityConfigurationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecurityConfigurationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateSecurityConfigurationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecurityConfigurationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecurityConfigurationErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateSecurityConfigurationErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecurityConfigurationErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecurityConfigurationErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSecurityConfigurationErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4068,7 +4068,7 @@ pub enum CreateTableErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTableError {
@@ -4138,44 +4138,44 @@ impl CreateTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::AlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTableErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::GlueEncryptionException(_))
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTableErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTableErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4228,7 +4228,7 @@ pub enum CreateTriggerErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTriggerError {
@@ -4298,53 +4298,53 @@ impl CreateTriggerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTriggerErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateTriggerErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTriggerErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTriggerErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateTriggerErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTriggerErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTriggerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTriggerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTriggerErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTriggerErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateTriggerErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTriggerErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTriggerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateTriggerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTriggerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTriggerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateTriggerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateTriggerErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateTriggerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateTriggerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTriggerErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTriggerErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTriggerErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4395,7 +4395,7 @@ pub enum CreateUserDefinedFunctionErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserDefinedFunctionError {
@@ -4466,49 +4466,49 @@ impl CreateUserDefinedFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserDefinedFunctionErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateUserDefinedFunctionErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserDefinedFunctionErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserDefinedFunctionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUserDefinedFunctionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserDefinedFunctionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserDefinedFunctionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `CreateUserDefinedFunctionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserDefinedFunctionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserDefinedFunctionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateUserDefinedFunctionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserDefinedFunctionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserDefinedFunctionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateUserDefinedFunctionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserDefinedFunctionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserDefinedFunctionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateUserDefinedFunctionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserDefinedFunctionErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserDefinedFunctionErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUserDefinedFunctionErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4558,7 +4558,7 @@ pub enum CreateWorkflowErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkflowError {
@@ -4626,42 +4626,42 @@ impl CreateWorkflowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4702,7 +4702,7 @@ pub enum DeleteBlueprintErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBlueprintError {
@@ -4767,21 +4767,21 @@ impl DeleteBlueprintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBlueprintErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteBlueprintErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBlueprintErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBlueprintErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteBlueprintErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBlueprintErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBlueprintErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteBlueprintErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4817,7 +4817,7 @@ pub enum DeleteClassifierErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClassifierError {
@@ -4881,14 +4881,14 @@ impl DeleteClassifierError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClassifierErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteClassifierErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClassifierErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClassifierErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteClassifierErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4929,7 +4929,7 @@ pub enum DeleteColumnStatisticsForPartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteColumnStatisticsForPartitionError {
@@ -5009,35 +5009,35 @@ impl DeleteColumnStatisticsForPartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteColumnStatisticsForPartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteColumnStatisticsForPartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteColumnStatisticsForPartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteColumnStatisticsForPartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForPartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5091,7 +5091,7 @@ pub enum DeleteColumnStatisticsForTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteColumnStatisticsForTableError {
@@ -5169,35 +5169,35 @@ impl DeleteColumnStatisticsForTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForTableErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForTableErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteColumnStatisticsForTableErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForTableErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForTableErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteColumnStatisticsForTableErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForTableErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteColumnStatisticsForTableErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForTableErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForTableErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteColumnStatisticsForTableErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteColumnStatisticsForTableErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteColumnStatisticsForTableErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5243,7 +5243,7 @@ pub enum DeleteConnectionErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionError {
@@ -5307,14 +5307,14 @@ impl DeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5353,7 +5353,7 @@ pub enum DeleteCrawlerErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>The specified scheduler is transitioning.</p>
     SchedulerTransitioningException(crate::error::SchedulerTransitioningException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCrawlerError {
@@ -5419,28 +5419,28 @@ impl DeleteCrawlerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCrawlerErrorKind::CrawlerRunningException`.
+    /// Returns `true` if the error kind is `DeleteCrawlerErrorKind::CrawlerRunningException`.
     pub fn is_crawler_running_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCrawlerErrorKind::CrawlerRunningException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCrawlerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCrawlerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCrawlerErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCrawlerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteCrawlerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCrawlerErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCrawlerErrorKind::SchedulerTransitioningException`.
+    /// Returns `true` if the error kind is `DeleteCrawlerErrorKind::SchedulerTransitioningException`.
     pub fn is_scheduler_transitioning_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5483,7 +5483,7 @@ pub enum DeleteDatabaseErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDatabaseError {
@@ -5550,35 +5550,35 @@ impl DeleteDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDatabaseErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteDatabaseErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatabaseErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatabaseErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDatabaseErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatabaseErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatabaseErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteDatabaseErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatabaseErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatabaseErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteDatabaseErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5620,7 +5620,7 @@ pub enum DeleteDevEndpointErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDevEndpointError {
@@ -5686,28 +5686,28 @@ impl DeleteDevEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDevEndpointErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDevEndpointErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDevEndpointErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDevEndpointErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteDevEndpointErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDevEndpointErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDevEndpointErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDevEndpointErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDevEndpointErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDevEndpointErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteDevEndpointErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5746,7 +5746,7 @@ pub enum DeleteJobErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteJobError {
@@ -5811,15 +5811,15 @@ impl DeleteJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobErrorKind::OperationTimeoutException(_))
     }
@@ -5856,7 +5856,7 @@ pub enum DeleteMLTransformErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMLTransformError {
@@ -5922,28 +5922,28 @@ impl DeleteMLTransformError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMLTransformErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMLTransformErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMLTransformErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMLTransformErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteMLTransformErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMLTransformErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMLTransformErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteMLTransformErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMLTransformErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMLTransformErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteMLTransformErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5984,7 +5984,7 @@ pub enum DeletePartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePartitionError {
@@ -6050,28 +6050,28 @@ impl DeletePartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeletePartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeletePartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeletePartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6116,7 +6116,7 @@ pub enum DeletePartitionIndexErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePartitionIndexError {
@@ -6184,42 +6184,42 @@ impl DeletePartitionIndexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePartitionIndexErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeletePartitionIndexErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartitionIndexErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartitionIndexErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePartitionIndexErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartitionIndexErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartitionIndexErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `DeletePartitionIndexErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartitionIndexErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartitionIndexErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeletePartitionIndexErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartitionIndexErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartitionIndexErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeletePartitionIndexErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartitionIndexErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartitionIndexErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeletePartitionIndexErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6262,7 +6262,7 @@ pub enum DeleteRegistryErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRegistryError {
@@ -6328,28 +6328,28 @@ impl DeleteRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegistryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegistryErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegistryErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegistryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteRegistryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6392,7 +6392,7 @@ pub enum DeleteResourcePolicyErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
@@ -6459,35 +6459,35 @@ impl DeleteResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ConditionCheckFailureException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ConditionCheckFailureException`.
     pub fn is_condition_check_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::ConditionCheckFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6529,7 +6529,7 @@ pub enum DeleteSchemaErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSchemaError {
@@ -6595,25 +6595,25 @@ impl DeleteSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::InvalidInputException(_))
     }
@@ -6651,7 +6651,7 @@ pub enum DeleteSchemaVersionsErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSchemaVersionsError {
@@ -6717,28 +6717,28 @@ impl DeleteSchemaVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaVersionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionsErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionsErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaVersionsErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaVersionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaVersionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteSchemaVersionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6779,7 +6779,7 @@ pub enum DeleteSecurityConfigurationErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSecurityConfigurationError {
@@ -6847,28 +6847,28 @@ impl DeleteSecurityConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSecurityConfigurationErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSecurityConfigurationErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSecurityConfigurationErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSecurityConfigurationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteSecurityConfigurationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSecurityConfigurationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSecurityConfigurationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteSecurityConfigurationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSecurityConfigurationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSecurityConfigurationErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteSecurityConfigurationErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6911,7 +6911,7 @@ pub enum DeleteTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTableError {
@@ -6978,29 +6978,29 @@ impl DeleteTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTableErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteTableErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTableErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteTableErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7042,7 +7042,7 @@ pub enum DeleteTableVersionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTableVersionError {
@@ -7108,28 +7108,28 @@ impl DeleteTableVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTableVersionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTableVersionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTableVersionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTableVersionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteTableVersionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTableVersionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTableVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteTableVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTableVersionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTableVersionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteTableVersionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7170,7 +7170,7 @@ pub enum DeleteTriggerErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTriggerError {
@@ -7236,25 +7236,25 @@ impl DeleteTriggerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTriggerErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteTriggerErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTriggerErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTriggerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteTriggerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTriggerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTriggerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteTriggerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteTriggerErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteTriggerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteTriggerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7295,7 +7295,7 @@ pub enum DeleteUserDefinedFunctionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserDefinedFunctionError {
@@ -7361,28 +7361,28 @@ impl DeleteUserDefinedFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserDefinedFunctionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserDefinedFunctionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserDefinedFunctionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserDefinedFunctionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteUserDefinedFunctionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserDefinedFunctionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserDefinedFunctionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteUserDefinedFunctionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserDefinedFunctionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserDefinedFunctionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteUserDefinedFunctionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7423,7 +7423,7 @@ pub enum DeleteWorkflowErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkflowError {
@@ -7489,28 +7489,28 @@ impl DeleteWorkflowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkflowErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkflowErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkflowErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7551,7 +7551,7 @@ pub enum GetBlueprintErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlueprintError {
@@ -7617,25 +7617,25 @@ impl GetBlueprintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBlueprintErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetBlueprintErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetBlueprintErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBlueprintErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetBlueprintErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetBlueprintErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetBlueprintErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7674,7 +7674,7 @@ pub enum GetBlueprintRunErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlueprintRunError {
@@ -7739,21 +7739,21 @@ impl GetBlueprintRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBlueprintRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetBlueprintRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetBlueprintRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetBlueprintRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7793,7 +7793,7 @@ pub enum GetBlueprintRunsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlueprintRunsError {
@@ -7859,28 +7859,28 @@ impl GetBlueprintRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBlueprintRunsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetBlueprintRunsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintRunsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintRunsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetBlueprintRunsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintRunsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintRunsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBlueprintRunsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintRunsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintRunsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetBlueprintRunsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7917,7 +7917,7 @@ pub enum GetCatalogImportStatusErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCatalogImportStatusError {
@@ -7981,14 +7981,14 @@ impl GetCatalogImportStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCatalogImportStatusErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetCatalogImportStatusErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCatalogImportStatusErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetCatalogImportStatusErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetCatalogImportStatusErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8023,7 +8023,7 @@ pub enum GetClassifierErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetClassifierError {
@@ -8087,14 +8087,14 @@ impl GetClassifierError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetClassifierErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetClassifierErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetClassifierErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetClassifierErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetClassifierErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8127,7 +8127,7 @@ pub struct GetClassifiersError {
 pub enum GetClassifiersErrorKind {
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetClassifiersError {
@@ -8190,7 +8190,7 @@ impl GetClassifiersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetClassifiersErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetClassifiersErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8230,7 +8230,7 @@ pub enum GetColumnStatisticsForPartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetColumnStatisticsForPartitionError {
@@ -8310,35 +8310,35 @@ impl GetColumnStatisticsForPartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForPartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForPartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetColumnStatisticsForPartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForPartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForPartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetColumnStatisticsForPartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForPartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForPartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetColumnStatisticsForPartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForPartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForPartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetColumnStatisticsForPartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForPartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForPartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8390,7 +8390,7 @@ pub enum GetColumnStatisticsForTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetColumnStatisticsForTableError {
@@ -8459,35 +8459,35 @@ impl GetColumnStatisticsForTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForTableErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForTableErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetColumnStatisticsForTableErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForTableErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForTableErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetColumnStatisticsForTableErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForTableErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetColumnStatisticsForTableErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForTableErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForTableErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetColumnStatisticsForTableErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetColumnStatisticsForTableErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetColumnStatisticsForTableErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8529,7 +8529,7 @@ pub enum GetConnectionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectionError {
@@ -8595,25 +8595,25 @@ impl GetConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetConnectionErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8654,7 +8654,7 @@ pub enum GetConnectionsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectionsError {
@@ -8720,28 +8720,28 @@ impl GetConnectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionsErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectionsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectionsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetConnectionsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8778,7 +8778,7 @@ pub enum GetCrawlerErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCrawlerError {
@@ -8842,11 +8842,11 @@ impl GetCrawlerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCrawlerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetCrawlerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetCrawlerErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetCrawlerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetCrawlerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8879,7 +8879,7 @@ pub struct GetCrawlerMetricsError {
 pub enum GetCrawlerMetricsErrorKind {
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCrawlerMetricsError {
@@ -8942,7 +8942,7 @@ impl GetCrawlerMetricsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCrawlerMetricsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetCrawlerMetricsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8974,7 +8974,7 @@ pub struct GetCrawlersError {
 pub enum GetCrawlersErrorKind {
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCrawlersError {
@@ -9037,7 +9037,7 @@ impl GetCrawlersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCrawlersErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetCrawlersErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9077,7 +9077,7 @@ pub enum GetDatabaseErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDatabaseError {
@@ -9144,26 +9144,26 @@ impl GetDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDatabaseErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetDatabaseErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDatabaseErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDatabaseErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetDatabaseErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(&self.kind, GetDatabaseErrorKind::GlueEncryptionException(_))
     }
-    /// Returns true if the error kind is `GetDatabaseErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDatabaseErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDatabaseErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetDatabaseErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetDatabaseErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetDatabaseErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9205,7 +9205,7 @@ pub enum GetDatabasesErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDatabasesError {
@@ -9271,25 +9271,25 @@ impl GetDatabasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDatabasesErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetDatabasesErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDatabasesErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetDatabasesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDatabasesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDatabasesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDatabasesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDatabasesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetDatabasesErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetDatabasesErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetDatabasesErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9328,7 +9328,7 @@ pub enum GetDataCatalogEncryptionSettingsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDataCatalogEncryptionSettingsError {
@@ -9402,21 +9402,21 @@ impl GetDataCatalogEncryptionSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDataCatalogEncryptionSettingsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDataCatalogEncryptionSettingsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataCatalogEncryptionSettingsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataCatalogEncryptionSettingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDataCatalogEncryptionSettingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataCatalogEncryptionSettingsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataCatalogEncryptionSettingsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetDataCatalogEncryptionSettingsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9460,7 +9460,7 @@ pub enum GetDataflowGraphErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDataflowGraphError {
@@ -9525,21 +9525,21 @@ impl GetDataflowGraphError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDataflowGraphErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDataflowGraphErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataflowGraphErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataflowGraphErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDataflowGraphErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataflowGraphErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataflowGraphErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetDataflowGraphErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9579,7 +9579,7 @@ pub enum GetDevEndpointErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDevEndpointError {
@@ -9645,28 +9645,28 @@ impl GetDevEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDevEndpointErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetDevEndpointErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevEndpointErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevEndpointErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDevEndpointErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevEndpointErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevEndpointErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDevEndpointErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevEndpointErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevEndpointErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetDevEndpointErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9707,7 +9707,7 @@ pub enum GetDevEndpointsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDevEndpointsError {
@@ -9773,28 +9773,28 @@ impl GetDevEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDevEndpointsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetDevEndpointsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevEndpointsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevEndpointsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDevEndpointsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevEndpointsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevEndpointsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDevEndpointsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevEndpointsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevEndpointsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetDevEndpointsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9835,7 +9835,7 @@ pub enum GetJobErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobError {
@@ -9901,19 +9901,19 @@ impl GetJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::OperationTimeoutException(_))
     }
@@ -9953,7 +9953,7 @@ pub enum GetJobBookmarkErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A value could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobBookmarkError {
@@ -10020,35 +10020,35 @@ impl GetJobBookmarkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobBookmarkErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetJobBookmarkErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJobBookmarkErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetJobBookmarkErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetJobBookmarkErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJobBookmarkErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetJobBookmarkErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetJobBookmarkErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJobBookmarkErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetJobBookmarkErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetJobBookmarkErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJobBookmarkErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetJobBookmarkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetJobBookmarkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetJobBookmarkErrorKind::ValidationException(_))
     }
@@ -10087,7 +10087,7 @@ pub enum GetJobRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobRunError {
@@ -10153,19 +10153,19 @@ impl GetJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetJobRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobRunErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetJobRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetJobRunErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetJobRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetJobRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetJobRunErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetJobRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetJobRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetJobRunErrorKind::OperationTimeoutException(_))
     }
@@ -10203,7 +10203,7 @@ pub enum GetJobRunsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobRunsError {
@@ -10269,19 +10269,19 @@ impl GetJobRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobRunsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetJobRunsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobRunsErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobRunsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetJobRunsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetJobRunsErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetJobRunsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetJobRunsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetJobRunsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetJobRunsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetJobRunsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10322,7 +10322,7 @@ pub enum GetJobsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobsError {
@@ -10388,19 +10388,19 @@ impl GetJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetJobsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobsErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetJobsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetJobsErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetJobsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetJobsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetJobsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetJobsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetJobsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetJobsErrorKind::OperationTimeoutException(_))
     }
@@ -10438,7 +10438,7 @@ pub enum GetMappingErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMappingError {
@@ -10504,19 +10504,19 @@ impl GetMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMappingErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetMappingErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetMappingErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetMappingErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetMappingErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetMappingErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetMappingErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetMappingErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetMappingErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetMappingErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetMappingErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10557,7 +10557,7 @@ pub enum GetMLTaskRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMLTaskRunError {
@@ -10623,25 +10623,25 @@ impl GetMLTaskRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMLTaskRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetMLTaskRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTaskRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTaskRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetMLTaskRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTaskRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTaskRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetMLTaskRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetMLTaskRunErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetMLTaskRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetMLTaskRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10682,7 +10682,7 @@ pub enum GetMLTaskRunsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMLTaskRunsError {
@@ -10748,25 +10748,25 @@ impl GetMLTaskRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMLTaskRunsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetMLTaskRunsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTaskRunsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTaskRunsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetMLTaskRunsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTaskRunsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTaskRunsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetMLTaskRunsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetMLTaskRunsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetMLTaskRunsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetMLTaskRunsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10807,7 +10807,7 @@ pub enum GetMLTransformErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMLTransformError {
@@ -10873,28 +10873,28 @@ impl GetMLTransformError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMLTransformErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetMLTransformErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTransformErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTransformErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetMLTransformErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTransformErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTransformErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetMLTransformErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTransformErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTransformErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetMLTransformErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10935,7 +10935,7 @@ pub enum GetMLTransformsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMLTransformsError {
@@ -11001,28 +11001,28 @@ impl GetMLTransformsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMLTransformsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetMLTransformsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTransformsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTransformsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetMLTransformsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTransformsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTransformsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetMLTransformsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMLTransformsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetMLTransformsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetMLTransformsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11065,7 +11065,7 @@ pub enum GetPartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPartitionError {
@@ -11132,32 +11132,32 @@ impl GetPartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetPartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetPartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetPartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetPartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetPartitionErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetPartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetPartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11201,7 +11201,7 @@ pub enum GetPartitionIndexesErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPartitionIndexesError {
@@ -11268,35 +11268,35 @@ impl GetPartitionIndexesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPartitionIndexesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetPartitionIndexesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionIndexesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionIndexesErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetPartitionIndexesErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionIndexesErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionIndexesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetPartitionIndexesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionIndexesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionIndexesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetPartitionIndexesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionIndexesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionIndexesErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetPartitionIndexesErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11340,7 +11340,7 @@ pub enum GetPartitionsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPartitionsError {
@@ -11407,32 +11407,32 @@ impl GetPartitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPartitionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetPartitionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionsErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetPartitionsErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionsErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetPartitionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartitionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartitionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetPartitionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetPartitionsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetPartitionsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetPartitionsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11472,7 +11472,7 @@ pub enum GetPlanErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPlanError {
@@ -11537,15 +11537,15 @@ impl GetPlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPlanErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetPlanErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetPlanErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetPlanErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetPlanErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetPlanErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetPlanErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetPlanErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetPlanErrorKind::OperationTimeoutException(_))
     }
@@ -11582,7 +11582,7 @@ pub enum GetRegistryErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRegistryError {
@@ -11648,22 +11648,22 @@ impl GetRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRegistryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRegistryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetRegistryErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetRegistryErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetRegistryErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRegistryErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRegistryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetRegistryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegistryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegistryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRegistryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetRegistryErrorKind::InvalidInputException(_))
     }
@@ -11701,7 +11701,7 @@ pub enum GetResourcePoliciesErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcePoliciesError {
@@ -11767,28 +11767,28 @@ impl GetResourcePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11829,7 +11829,7 @@ pub enum GetResourcePolicyErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcePolicyError {
@@ -11895,28 +11895,28 @@ impl GetResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11957,7 +11957,7 @@ pub enum GetSchemaErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSchemaError {
@@ -12023,19 +12023,19 @@ impl GetSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetSchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetSchemaErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetSchemaErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSchemaErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetSchemaErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetSchemaErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetSchemaErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetSchemaErrorKind::InvalidInputException(_))
     }
@@ -12073,7 +12073,7 @@ pub enum GetSchemaByDefinitionErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSchemaByDefinitionError {
@@ -12139,28 +12139,28 @@ impl GetSchemaByDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSchemaByDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSchemaByDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaByDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaByDefinitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetSchemaByDefinitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaByDefinitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaByDefinitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetSchemaByDefinitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaByDefinitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaByDefinitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetSchemaByDefinitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12201,7 +12201,7 @@ pub enum GetSchemaVersionErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSchemaVersionError {
@@ -12267,28 +12267,28 @@ impl GetSchemaVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSchemaVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSchemaVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaVersionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetSchemaVersionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaVersionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaVersionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetSchemaVersionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaVersionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetSchemaVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12329,7 +12329,7 @@ pub enum GetSchemaVersionsDiffErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSchemaVersionsDiffError {
@@ -12395,28 +12395,28 @@ impl GetSchemaVersionsDiffError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSchemaVersionsDiffErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSchemaVersionsDiffErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaVersionsDiffErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaVersionsDiffErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetSchemaVersionsDiffErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaVersionsDiffErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaVersionsDiffErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetSchemaVersionsDiffErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaVersionsDiffErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaVersionsDiffErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetSchemaVersionsDiffErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12457,7 +12457,7 @@ pub enum GetSecurityConfigurationErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSecurityConfigurationError {
@@ -12523,28 +12523,28 @@ impl GetSecurityConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSecurityConfigurationErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetSecurityConfigurationErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSecurityConfigurationErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSecurityConfigurationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetSecurityConfigurationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSecurityConfigurationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetSecurityConfigurationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetSecurityConfigurationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSecurityConfigurationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetSecurityConfigurationErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetSecurityConfigurationErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12585,7 +12585,7 @@ pub enum GetSecurityConfigurationsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSecurityConfigurationsError {
@@ -12651,28 +12651,28 @@ impl GetSecurityConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSecurityConfigurationsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetSecurityConfigurationsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSecurityConfigurationsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSecurityConfigurationsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetSecurityConfigurationsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSecurityConfigurationsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetSecurityConfigurationsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetSecurityConfigurationsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSecurityConfigurationsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetSecurityConfigurationsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetSecurityConfigurationsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12715,7 +12715,7 @@ pub enum GetTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTableError {
@@ -12782,23 +12782,23 @@ impl GetTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTableErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetTableErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTableErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTableErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetTableErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(&self.kind, GetTableErrorKind::GlueEncryptionException(_))
     }
-    /// Returns true if the error kind is `GetTableErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetTableErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetTableErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetTableErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetTableErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetTableErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetTableErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetTableErrorKind::OperationTimeoutException(_))
     }
@@ -12839,7 +12839,7 @@ pub enum GetTablesErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTablesError {
@@ -12906,23 +12906,23 @@ impl GetTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTablesErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetTablesErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTablesErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTablesErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetTablesErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(&self.kind, GetTablesErrorKind::GlueEncryptionException(_))
     }
-    /// Returns true if the error kind is `GetTablesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTablesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetTablesErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetTablesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetTablesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetTablesErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetTablesErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetTablesErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetTablesErrorKind::OperationTimeoutException(_))
     }
@@ -12963,7 +12963,7 @@ pub enum GetTableVersionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTableVersionError {
@@ -13030,35 +13030,35 @@ impl GetTableVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTableVersionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetTableVersionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableVersionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableVersionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetTableVersionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableVersionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableVersionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTableVersionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableVersionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetTableVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableVersionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableVersionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetTableVersionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13102,7 +13102,7 @@ pub enum GetTableVersionsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTableVersionsError {
@@ -13169,35 +13169,35 @@ impl GetTableVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTableVersionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetTableVersionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableVersionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableVersionsErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetTableVersionsErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableVersionsErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableVersionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTableVersionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableVersionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableVersionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetTableVersionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableVersionsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableVersionsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetTableVersionsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13239,7 +13239,7 @@ pub enum GetTagsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTagsError {
@@ -13305,19 +13305,19 @@ impl GetTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::OperationTimeoutException(_))
     }
@@ -13355,7 +13355,7 @@ pub enum GetTriggerErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTriggerError {
@@ -13421,19 +13421,19 @@ impl GetTriggerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTriggerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetTriggerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTriggerErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTriggerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTriggerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetTriggerErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetTriggerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetTriggerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetTriggerErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetTriggerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetTriggerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13474,7 +13474,7 @@ pub enum GetTriggersErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTriggersError {
@@ -13540,22 +13540,22 @@ impl GetTriggersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTriggersErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetTriggersErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTriggersErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTriggersErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTriggersErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTriggersErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetTriggersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetTriggersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetTriggersErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetTriggersErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetTriggersErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13598,7 +13598,7 @@ pub enum GetUserDefinedFunctionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserDefinedFunctionError {
@@ -13665,35 +13665,35 @@ impl GetUserDefinedFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserDefinedFunctionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserDefinedFunctionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserDefinedFunctionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserDefinedFunctionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13737,7 +13737,7 @@ pub enum GetUserDefinedFunctionsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserDefinedFunctionsError {
@@ -13804,35 +13804,35 @@ impl GetUserDefinedFunctionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserDefinedFunctionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionsErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionsErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserDefinedFunctionsErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserDefinedFunctionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserDefinedFunctionsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserDefinedFunctionsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetUserDefinedFunctionsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13874,7 +13874,7 @@ pub enum GetWorkflowErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWorkflowError {
@@ -13940,22 +13940,22 @@ impl GetWorkflowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWorkflowErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetWorkflowErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetWorkflowErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetWorkflowErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetWorkflowErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetWorkflowErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13996,7 +13996,7 @@ pub enum GetWorkflowRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWorkflowRunError {
@@ -14062,28 +14062,28 @@ impl GetWorkflowRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWorkflowRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14124,7 +14124,7 @@ pub enum GetWorkflowRunPropertiesErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWorkflowRunPropertiesError {
@@ -14190,28 +14190,28 @@ impl GetWorkflowRunPropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWorkflowRunPropertiesErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunPropertiesErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunPropertiesErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunPropertiesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunPropertiesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunPropertiesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunPropertiesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunPropertiesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunPropertiesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunPropertiesErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunPropertiesErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14252,7 +14252,7 @@ pub enum GetWorkflowRunsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWorkflowRunsError {
@@ -14318,28 +14318,28 @@ impl GetWorkflowRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWorkflowRunsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowRunsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowRunsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `GetWorkflowRunsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14376,7 +14376,7 @@ pub enum ImportCatalogToGlueErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportCatalogToGlueError {
@@ -14440,14 +14440,14 @@ impl ImportCatalogToGlueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportCatalogToGlueErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ImportCatalogToGlueErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportCatalogToGlueErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ImportCatalogToGlueErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ImportCatalogToGlueErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14484,7 +14484,7 @@ pub enum ListBlueprintsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBlueprintsError {
@@ -14549,21 +14549,21 @@ impl ListBlueprintsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBlueprintsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListBlueprintsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBlueprintsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListBlueprintsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListBlueprintsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBlueprintsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListBlueprintsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ListBlueprintsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14597,7 +14597,7 @@ pub struct ListCrawlersError {
 pub enum ListCrawlersErrorKind {
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCrawlersError {
@@ -14660,7 +14660,7 @@ impl ListCrawlersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCrawlersErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ListCrawlersErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14698,7 +14698,7 @@ pub enum ListDevEndpointsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDevEndpointsError {
@@ -14764,28 +14764,28 @@ impl ListDevEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDevEndpointsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListDevEndpointsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevEndpointsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevEndpointsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListDevEndpointsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevEndpointsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevEndpointsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListDevEndpointsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevEndpointsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevEndpointsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ListDevEndpointsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14826,7 +14826,7 @@ pub enum ListJobsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsError {
@@ -14892,19 +14892,19 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::OperationTimeoutException(_))
     }
@@ -14942,7 +14942,7 @@ pub enum ListMLTransformsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMLTransformsError {
@@ -15008,28 +15008,28 @@ impl ListMLTransformsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMLTransformsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListMLTransformsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMLTransformsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMLTransformsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListMLTransformsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMLTransformsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListMLTransformsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListMLTransformsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMLTransformsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListMLTransformsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ListMLTransformsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15068,7 +15068,7 @@ pub enum ListRegistriesErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRegistriesError {
@@ -15133,21 +15133,21 @@ impl ListRegistriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRegistriesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRegistriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRegistriesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRegistriesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListRegistriesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRegistriesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListRegistriesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListRegistriesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15187,7 +15187,7 @@ pub enum ListSchemasErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSchemasError {
@@ -15253,22 +15253,22 @@ impl ListSchemasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemasErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::InvalidInputException(_))
     }
@@ -15306,7 +15306,7 @@ pub enum ListSchemaVersionsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSchemaVersionsError {
@@ -15372,28 +15372,28 @@ impl ListSchemaVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaVersionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaVersionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSchemaVersionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListSchemaVersionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListSchemaVersionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15434,7 +15434,7 @@ pub enum ListTriggersErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTriggersError {
@@ -15500,25 +15500,25 @@ impl ListTriggersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTriggersErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListTriggersErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTriggersErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTriggersErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTriggersErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTriggersErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTriggersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListTriggersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListTriggersErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListTriggersErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ListTriggersErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15557,7 +15557,7 @@ pub enum ListWorkflowsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkflowsError {
@@ -15622,18 +15622,18 @@ impl ListWorkflowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkflowsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkflowsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkflowsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListWorkflowsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListWorkflowsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15671,7 +15671,7 @@ pub enum PutDataCatalogEncryptionSettingsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDataCatalogEncryptionSettingsError {
@@ -15745,21 +15745,21 @@ impl PutDataCatalogEncryptionSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDataCatalogEncryptionSettingsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PutDataCatalogEncryptionSettingsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDataCatalogEncryptionSettingsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutDataCatalogEncryptionSettingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutDataCatalogEncryptionSettingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDataCatalogEncryptionSettingsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutDataCatalogEncryptionSettingsErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `PutDataCatalogEncryptionSettingsErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15807,7 +15807,7 @@ pub enum PutResourcePolicyErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourcePolicyError {
@@ -15874,35 +15874,35 @@ impl PutResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ConditionCheckFailureException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ConditionCheckFailureException`.
     pub fn is_condition_check_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::ConditionCheckFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15946,7 +15946,7 @@ pub enum PutSchemaVersionMetadataErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSchemaVersionMetadataError {
@@ -16015,35 +16015,35 @@ impl PutSchemaVersionMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSchemaVersionMetadataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutSchemaVersionMetadataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaVersionMetadataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaVersionMetadataErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `PutSchemaVersionMetadataErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaVersionMetadataErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaVersionMetadataErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `PutSchemaVersionMetadataErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaVersionMetadataErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaVersionMetadataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutSchemaVersionMetadataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaVersionMetadataErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaVersionMetadataErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `PutSchemaVersionMetadataErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16093,7 +16093,7 @@ pub enum PutWorkflowRunPropertiesErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutWorkflowRunPropertiesError {
@@ -16166,49 +16166,49 @@ impl PutWorkflowRunPropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutWorkflowRunPropertiesErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `PutWorkflowRunPropertiesErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWorkflowRunPropertiesErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `PutWorkflowRunPropertiesErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutWorkflowRunPropertiesErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWorkflowRunPropertiesErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutWorkflowRunPropertiesErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `PutWorkflowRunPropertiesErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWorkflowRunPropertiesErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutWorkflowRunPropertiesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PutWorkflowRunPropertiesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWorkflowRunPropertiesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutWorkflowRunPropertiesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutWorkflowRunPropertiesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWorkflowRunPropertiesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutWorkflowRunPropertiesErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `PutWorkflowRunPropertiesErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWorkflowRunPropertiesErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `PutWorkflowRunPropertiesErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `PutWorkflowRunPropertiesErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16254,7 +16254,7 @@ pub enum QuerySchemaVersionMetadataErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for QuerySchemaVersionMetadataError {
@@ -16319,21 +16319,21 @@ impl QuerySchemaVersionMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `QuerySchemaVersionMetadataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `QuerySchemaVersionMetadataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             QuerySchemaVersionMetadataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `QuerySchemaVersionMetadataErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `QuerySchemaVersionMetadataErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             QuerySchemaVersionMetadataErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `QuerySchemaVersionMetadataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `QuerySchemaVersionMetadataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16377,7 +16377,7 @@ pub enum RegisterSchemaVersionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterSchemaVersionError {
@@ -16449,42 +16449,42 @@ impl RegisterSchemaVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterSchemaVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterSchemaVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterSchemaVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterSchemaVersionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RegisterSchemaVersionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterSchemaVersionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterSchemaVersionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterSchemaVersionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterSchemaVersionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterSchemaVersionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `RegisterSchemaVersionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterSchemaVersionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterSchemaVersionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RegisterSchemaVersionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterSchemaVersionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterSchemaVersionErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterSchemaVersionErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16527,7 +16527,7 @@ pub enum RemoveSchemaVersionMetadataErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveSchemaVersionMetadataError {
@@ -16592,21 +16592,21 @@ impl RemoveSchemaVersionMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveSchemaVersionMetadataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RemoveSchemaVersionMetadataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveSchemaVersionMetadataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveSchemaVersionMetadataErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveSchemaVersionMetadataErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveSchemaVersionMetadataErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveSchemaVersionMetadataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RemoveSchemaVersionMetadataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16646,7 +16646,7 @@ pub enum ResetJobBookmarkErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetJobBookmarkError {
@@ -16712,28 +16712,28 @@ impl ResetJobBookmarkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetJobBookmarkErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ResetJobBookmarkErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetJobBookmarkErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResetJobBookmarkErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ResetJobBookmarkErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetJobBookmarkErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ResetJobBookmarkErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ResetJobBookmarkErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetJobBookmarkErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ResetJobBookmarkErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ResetJobBookmarkErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16778,7 +16778,7 @@ pub enum ResumeWorkflowRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResumeWorkflowRunError {
@@ -16846,42 +16846,42 @@ impl ResumeWorkflowRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResumeWorkflowRunErrorKind::ConcurrentRunsExceededException`.
+    /// Returns `true` if the error kind is `ResumeWorkflowRunErrorKind::ConcurrentRunsExceededException`.
     pub fn is_concurrent_runs_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeWorkflowRunErrorKind::ConcurrentRunsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeWorkflowRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ResumeWorkflowRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeWorkflowRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeWorkflowRunErrorKind::IllegalWorkflowStateException`.
+    /// Returns `true` if the error kind is `ResumeWorkflowRunErrorKind::IllegalWorkflowStateException`.
     pub fn is_illegal_workflow_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeWorkflowRunErrorKind::IllegalWorkflowStateException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeWorkflowRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ResumeWorkflowRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeWorkflowRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeWorkflowRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ResumeWorkflowRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeWorkflowRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeWorkflowRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `ResumeWorkflowRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16922,7 +16922,7 @@ pub enum SearchTablesErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchTablesError {
@@ -16987,18 +16987,18 @@ impl SearchTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchTablesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `SearchTablesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchTablesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `SearchTablesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SearchTablesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, SearchTablesErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `SearchTablesErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `SearchTablesErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17042,7 +17042,7 @@ pub enum StartBlueprintRunErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartBlueprintRunError {
@@ -17112,42 +17112,42 @@ impl StartBlueprintRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartBlueprintRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartBlueprintRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBlueprintRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartBlueprintRunErrorKind::IllegalBlueprintStateException`.
+    /// Returns `true` if the error kind is `StartBlueprintRunErrorKind::IllegalBlueprintStateException`.
     pub fn is_illegal_blueprint_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBlueprintRunErrorKind::IllegalBlueprintStateException(_)
         )
     }
-    /// Returns true if the error kind is `StartBlueprintRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartBlueprintRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBlueprintRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartBlueprintRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartBlueprintRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBlueprintRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartBlueprintRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartBlueprintRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBlueprintRunErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StartBlueprintRunErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `StartBlueprintRunErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17190,7 +17190,7 @@ pub enum StartCrawlerErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartCrawlerError {
@@ -17255,21 +17255,21 @@ impl StartCrawlerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartCrawlerErrorKind::CrawlerRunningException`.
+    /// Returns `true` if the error kind is `StartCrawlerErrorKind::CrawlerRunningException`.
     pub fn is_crawler_running_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCrawlerErrorKind::CrawlerRunningException(_)
         )
     }
-    /// Returns true if the error kind is `StartCrawlerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartCrawlerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCrawlerErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartCrawlerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartCrawlerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17311,7 +17311,7 @@ pub enum StartCrawlerScheduleErrorKind {
     SchedulerRunningException(crate::error::SchedulerRunningException),
     /// <p>The specified scheduler is transitioning.</p>
     SchedulerTransitioningException(crate::error::SchedulerTransitioningException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartCrawlerScheduleError {
@@ -17378,35 +17378,35 @@ impl StartCrawlerScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartCrawlerScheduleErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartCrawlerScheduleErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCrawlerScheduleErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartCrawlerScheduleErrorKind::NoScheduleException`.
+    /// Returns `true` if the error kind is `StartCrawlerScheduleErrorKind::NoScheduleException`.
     pub fn is_no_schedule_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCrawlerScheduleErrorKind::NoScheduleException(_)
         )
     }
-    /// Returns true if the error kind is `StartCrawlerScheduleErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartCrawlerScheduleErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCrawlerScheduleErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StartCrawlerScheduleErrorKind::SchedulerRunningException`.
+    /// Returns `true` if the error kind is `StartCrawlerScheduleErrorKind::SchedulerRunningException`.
     pub fn is_scheduler_running_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCrawlerScheduleErrorKind::SchedulerRunningException(_)
         )
     }
-    /// Returns true if the error kind is `StartCrawlerScheduleErrorKind::SchedulerTransitioningException`.
+    /// Returns `true` if the error kind is `StartCrawlerScheduleErrorKind::SchedulerTransitioningException`.
     pub fn is_scheduler_transitioning_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17448,7 +17448,7 @@ pub enum StartExportLabelsTaskRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartExportLabelsTaskRunError {
@@ -17514,28 +17514,28 @@ impl StartExportLabelsTaskRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartExportLabelsTaskRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartExportLabelsTaskRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExportLabelsTaskRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartExportLabelsTaskRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartExportLabelsTaskRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExportLabelsTaskRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartExportLabelsTaskRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartExportLabelsTaskRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExportLabelsTaskRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartExportLabelsTaskRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartExportLabelsTaskRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17578,7 +17578,7 @@ pub enum StartImportLabelsTaskRunErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartImportLabelsTaskRunError {
@@ -17647,35 +17647,35 @@ impl StartImportLabelsTaskRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartImportLabelsTaskRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartImportLabelsTaskRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportLabelsTaskRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportLabelsTaskRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartImportLabelsTaskRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportLabelsTaskRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportLabelsTaskRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartImportLabelsTaskRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportLabelsTaskRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportLabelsTaskRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartImportLabelsTaskRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportLabelsTaskRunErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportLabelsTaskRunErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `StartImportLabelsTaskRunErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17723,7 +17723,7 @@ pub enum StartJobRunErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartJobRunError {
@@ -17791,36 +17791,36 @@ impl StartJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::ConcurrentRunsExceededException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::ConcurrentRunsExceededException`.
     pub fn is_concurrent_runs_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartJobRunErrorKind::ConcurrentRunsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartJobRunErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartJobRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, StartJobRunErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartJobRunErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17867,7 +17867,7 @@ pub enum StartMLEvaluationTaskRunErrorKind {
     MlTransformNotReadyException(crate::error::MlTransformNotReadyException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMLEvaluationTaskRunError {
@@ -17939,42 +17939,42 @@ impl StartMLEvaluationTaskRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMLEvaluationTaskRunErrorKind::ConcurrentRunsExceededException`.
+    /// Returns `true` if the error kind is `StartMLEvaluationTaskRunErrorKind::ConcurrentRunsExceededException`.
     pub fn is_concurrent_runs_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLEvaluationTaskRunErrorKind::ConcurrentRunsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLEvaluationTaskRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartMLEvaluationTaskRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLEvaluationTaskRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLEvaluationTaskRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartMLEvaluationTaskRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLEvaluationTaskRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLEvaluationTaskRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartMLEvaluationTaskRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLEvaluationTaskRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLEvaluationTaskRunErrorKind::MlTransformNotReadyException`.
+    /// Returns `true` if the error kind is `StartMLEvaluationTaskRunErrorKind::MlTransformNotReadyException`.
     pub fn is_ml_transform_not_ready_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLEvaluationTaskRunErrorKind::MlTransformNotReadyException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLEvaluationTaskRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartMLEvaluationTaskRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18021,7 +18021,7 @@ pub enum StartMLLabelingSetGenerationTaskRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMLLabelingSetGenerationTaskRunError {
@@ -18101,35 +18101,35 @@ impl StartMLLabelingSetGenerationTaskRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::ConcurrentRunsExceededException`.
+    /// Returns `true` if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::ConcurrentRunsExceededException`.
     pub fn is_concurrent_runs_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLLabelingSetGenerationTaskRunErrorKind::ConcurrentRunsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLLabelingSetGenerationTaskRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLLabelingSetGenerationTaskRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMLLabelingSetGenerationTaskRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartMLLabelingSetGenerationTaskRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18187,7 +18187,7 @@ pub enum StartTriggerErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTriggerError {
@@ -18255,39 +18255,39 @@ impl StartTriggerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartTriggerErrorKind::ConcurrentRunsExceededException`.
+    /// Returns `true` if the error kind is `StartTriggerErrorKind::ConcurrentRunsExceededException`.
     pub fn is_concurrent_runs_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTriggerErrorKind::ConcurrentRunsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartTriggerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartTriggerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTriggerErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartTriggerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartTriggerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTriggerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartTriggerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartTriggerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, StartTriggerErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `StartTriggerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartTriggerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTriggerErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StartTriggerErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `StartTriggerErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18334,7 +18334,7 @@ pub enum StartWorkflowRunErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartWorkflowRunError {
@@ -18404,42 +18404,42 @@ impl StartWorkflowRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartWorkflowRunErrorKind::ConcurrentRunsExceededException`.
+    /// Returns `true` if the error kind is `StartWorkflowRunErrorKind::ConcurrentRunsExceededException`.
     pub fn is_concurrent_runs_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowRunErrorKind::ConcurrentRunsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartWorkflowRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartWorkflowRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartWorkflowRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StartWorkflowRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowRunErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowRunErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `StartWorkflowRunErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18482,7 +18482,7 @@ pub enum StopCrawlerErrorKind {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopCrawlerError {
@@ -18548,25 +18548,25 @@ impl StopCrawlerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopCrawlerErrorKind::CrawlerNotRunningException`.
+    /// Returns `true` if the error kind is `StopCrawlerErrorKind::CrawlerNotRunningException`.
     pub fn is_crawler_not_running_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopCrawlerErrorKind::CrawlerNotRunningException(_)
         )
     }
-    /// Returns true if the error kind is `StopCrawlerErrorKind::CrawlerStoppingException`.
+    /// Returns `true` if the error kind is `StopCrawlerErrorKind::CrawlerStoppingException`.
     pub fn is_crawler_stopping_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopCrawlerErrorKind::CrawlerStoppingException(_)
         )
     }
-    /// Returns true if the error kind is `StopCrawlerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StopCrawlerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopCrawlerErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `StopCrawlerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StopCrawlerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18607,7 +18607,7 @@ pub enum StopCrawlerScheduleErrorKind {
     SchedulerNotRunningException(crate::error::SchedulerNotRunningException),
     /// <p>The specified scheduler is transitioning.</p>
     SchedulerTransitioningException(crate::error::SchedulerTransitioningException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopCrawlerScheduleError {
@@ -18673,28 +18673,28 @@ impl StopCrawlerScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopCrawlerScheduleErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StopCrawlerScheduleErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopCrawlerScheduleErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopCrawlerScheduleErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StopCrawlerScheduleErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopCrawlerScheduleErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StopCrawlerScheduleErrorKind::SchedulerNotRunningException`.
+    /// Returns `true` if the error kind is `StopCrawlerScheduleErrorKind::SchedulerNotRunningException`.
     pub fn is_scheduler_not_running_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopCrawlerScheduleErrorKind::SchedulerNotRunningException(_)
         )
     }
-    /// Returns true if the error kind is `StopCrawlerScheduleErrorKind::SchedulerTransitioningException`.
+    /// Returns `true` if the error kind is `StopCrawlerScheduleErrorKind::SchedulerTransitioningException`.
     pub fn is_scheduler_transitioning_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18737,7 +18737,7 @@ pub enum StopTriggerErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopTriggerError {
@@ -18804,29 +18804,29 @@ impl StopTriggerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopTriggerErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `StopTriggerErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopTriggerErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `StopTriggerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StopTriggerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopTriggerErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `StopTriggerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StopTriggerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopTriggerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StopTriggerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StopTriggerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, StopTriggerErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `StopTriggerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StopTriggerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18870,7 +18870,7 @@ pub enum StopWorkflowRunErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopWorkflowRunError {
@@ -18937,35 +18937,35 @@ impl StopWorkflowRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopWorkflowRunErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StopWorkflowRunErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopWorkflowRunErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopWorkflowRunErrorKind::IllegalWorkflowStateException`.
+    /// Returns `true` if the error kind is `StopWorkflowRunErrorKind::IllegalWorkflowStateException`.
     pub fn is_illegal_workflow_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopWorkflowRunErrorKind::IllegalWorkflowStateException(_)
         )
     }
-    /// Returns true if the error kind is `StopWorkflowRunErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StopWorkflowRunErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopWorkflowRunErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StopWorkflowRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StopWorkflowRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopWorkflowRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StopWorkflowRunErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `StopWorkflowRunErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19007,7 +19007,7 @@ pub enum TagResourceErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -19073,22 +19073,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19129,7 +19129,7 @@ pub enum UntagResourceErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -19195,25 +19195,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19258,7 +19258,7 @@ pub enum UpdateBlueprintErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBlueprintError {
@@ -19326,42 +19326,42 @@ impl UpdateBlueprintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBlueprintErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateBlueprintErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBlueprintErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBlueprintErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBlueprintErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBlueprintErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBlueprintErrorKind::IllegalBlueprintStateException`.
+    /// Returns `true` if the error kind is `UpdateBlueprintErrorKind::IllegalBlueprintStateException`.
     pub fn is_illegal_blueprint_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBlueprintErrorKind::IllegalBlueprintStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBlueprintErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateBlueprintErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBlueprintErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBlueprintErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateBlueprintErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBlueprintErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBlueprintErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateBlueprintErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19404,7 +19404,7 @@ pub enum UpdateClassifierErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>There was a version conflict.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClassifierError {
@@ -19470,28 +19470,28 @@ impl UpdateClassifierError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateClassifierErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateClassifierErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClassifierErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClassifierErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateClassifierErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClassifierErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClassifierErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateClassifierErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClassifierErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClassifierErrorKind::VersionMismatchException`.
+    /// Returns `true` if the error kind is `UpdateClassifierErrorKind::VersionMismatchException`.
     pub fn is_version_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19534,7 +19534,7 @@ pub enum UpdateColumnStatisticsForPartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateColumnStatisticsForPartitionError {
@@ -19614,35 +19614,35 @@ impl UpdateColumnStatisticsForPartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateColumnStatisticsForPartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateColumnStatisticsForPartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateColumnStatisticsForPartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateColumnStatisticsForPartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForPartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19696,7 +19696,7 @@ pub enum UpdateColumnStatisticsForTableErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateColumnStatisticsForTableError {
@@ -19774,35 +19774,35 @@ impl UpdateColumnStatisticsForTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForTableErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForTableErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateColumnStatisticsForTableErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForTableErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForTableErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateColumnStatisticsForTableErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForTableErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateColumnStatisticsForTableErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForTableErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForTableErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateColumnStatisticsForTableErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateColumnStatisticsForTableErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateColumnStatisticsForTableErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19852,7 +19852,7 @@ pub enum UpdateConnectionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectionError {
@@ -19918,28 +19918,28 @@ impl UpdateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19982,7 +19982,7 @@ pub enum UpdateCrawlerErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>There was a version conflict.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCrawlerError {
@@ -20049,32 +20049,32 @@ impl UpdateCrawlerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCrawlerErrorKind::CrawlerRunningException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerErrorKind::CrawlerRunningException`.
     pub fn is_crawler_running_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCrawlerErrorKind::CrawlerRunningException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCrawlerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCrawlerErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCrawlerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateCrawlerErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateCrawlerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCrawlerErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCrawlerErrorKind::VersionMismatchException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerErrorKind::VersionMismatchException`.
     pub fn is_version_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20118,7 +20118,7 @@ pub enum UpdateCrawlerScheduleErrorKind {
     SchedulerTransitioningException(crate::error::SchedulerTransitioningException),
     /// <p>There was a version conflict.</p>
     VersionMismatchException(crate::error::VersionMismatchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCrawlerScheduleError {
@@ -20187,35 +20187,35 @@ impl UpdateCrawlerScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCrawlerScheduleErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerScheduleErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCrawlerScheduleErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCrawlerScheduleErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerScheduleErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCrawlerScheduleErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCrawlerScheduleErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerScheduleErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCrawlerScheduleErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCrawlerScheduleErrorKind::SchedulerTransitioningException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerScheduleErrorKind::SchedulerTransitioningException`.
     pub fn is_scheduler_transitioning_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCrawlerScheduleErrorKind::SchedulerTransitioningException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCrawlerScheduleErrorKind::VersionMismatchException`.
+    /// Returns `true` if the error kind is `UpdateCrawlerScheduleErrorKind::VersionMismatchException`.
     pub fn is_version_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20261,7 +20261,7 @@ pub enum UpdateDatabaseErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDatabaseError {
@@ -20329,42 +20329,42 @@ impl UpdateDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDatabaseErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateDatabaseErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatabaseErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatabaseErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDatabaseErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatabaseErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatabaseErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `UpdateDatabaseErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatabaseErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatabaseErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateDatabaseErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatabaseErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatabaseErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateDatabaseErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20409,7 +20409,7 @@ pub enum UpdateDevEndpointErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A value could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDevEndpointError {
@@ -20476,35 +20476,35 @@ impl UpdateDevEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDevEndpointErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDevEndpointErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevEndpointErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevEndpointErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateDevEndpointErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevEndpointErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevEndpointErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateDevEndpointErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevEndpointErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevEndpointErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateDevEndpointErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDevEndpointErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDevEndpointErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateDevEndpointErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20548,7 +20548,7 @@ pub enum UpdateJobErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobError {
@@ -20615,26 +20615,26 @@ impl UpdateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateJobErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateJobErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobErrorKind::OperationTimeoutException(_))
     }
@@ -20675,7 +20675,7 @@ pub enum UpdateMLTransformErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMLTransformError {
@@ -20742,35 +20742,35 @@ impl UpdateMLTransformError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMLTransformErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateMLTransformErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMLTransformErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMLTransformErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMLTransformErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMLTransformErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMLTransformErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateMLTransformErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMLTransformErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMLTransformErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateMLTransformErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMLTransformErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMLTransformErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateMLTransformErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20814,7 +20814,7 @@ pub enum UpdatePartitionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePartitionError {
@@ -20881,35 +20881,35 @@ impl UpdatePartitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePartitionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePartitionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartitionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartitionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `UpdatePartitionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartitionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartitionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdatePartitionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartitionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartitionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdatePartitionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartitionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartitionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdatePartitionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20953,7 +20953,7 @@ pub enum UpdateRegistryErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRegistryError {
@@ -21020,35 +21020,35 @@ impl UpdateRegistryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegistryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegistryErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegistryErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegistryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegistryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateRegistryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21092,7 +21092,7 @@ pub enum UpdateSchemaErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSchemaError {
@@ -21159,32 +21159,32 @@ impl UpdateSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSchemaErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSchemaErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::InvalidInputException(_))
     }
@@ -21229,7 +21229,7 @@ pub enum UpdateTableErrorKind {
     OperationTimeoutException(crate::error::OperationTimeoutException),
     /// <p>A resource numerical limit was exceeded.</p>
     ResourceNumberLimitExceededException(crate::error::ResourceNumberLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTableError {
@@ -21298,40 +21298,40 @@ impl UpdateTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTableErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateTableErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(&self.kind, UpdateTableErrorKind::GlueEncryptionException(_))
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTableErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateTableErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTableErrorKind::OperationTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::ResourceNumberLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::ResourceNumberLimitExceededException`.
     pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21377,7 +21377,7 @@ pub enum UpdateTriggerErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTriggerError {
@@ -21444,32 +21444,32 @@ impl UpdateTriggerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTriggerErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateTriggerErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTriggerErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTriggerErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTriggerErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTriggerErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTriggerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateTriggerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTriggerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTriggerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateTriggerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateTriggerErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateTriggerErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateTriggerErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21513,7 +21513,7 @@ pub enum UpdateUserDefinedFunctionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserDefinedFunctionError {
@@ -21580,35 +21580,35 @@ impl UpdateUserDefinedFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserDefinedFunctionErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserDefinedFunctionErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserDefinedFunctionErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserDefinedFunctionErrorKind::GlueEncryptionException`.
+    /// Returns `true` if the error kind is `UpdateUserDefinedFunctionErrorKind::GlueEncryptionException`.
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserDefinedFunctionErrorKind::GlueEncryptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserDefinedFunctionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateUserDefinedFunctionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserDefinedFunctionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserDefinedFunctionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateUserDefinedFunctionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserDefinedFunctionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserDefinedFunctionErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateUserDefinedFunctionErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21652,7 +21652,7 @@ pub enum UpdateWorkflowErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkflowError {
@@ -21719,35 +21719,35 @@ impl UpdateWorkflowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorkflowErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateWorkflowErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkflowErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkflowErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWorkflowErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkflowErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkflowErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateWorkflowErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkflowErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkflowErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateWorkflowErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkflowErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkflowErrorKind::OperationTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateWorkflowErrorKind::OperationTimeoutException`.
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,

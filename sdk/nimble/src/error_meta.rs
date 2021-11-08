@@ -3,19 +3,22 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1396,6 +1399,45 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartStreamingSessionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StartStreamingSessionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StartStreamingSessionErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::StartStreamingSessionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::StartStreamingSessionErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::StartStreamingSessionErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::StartStreamingSessionErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
+                crate::error::StartStreamingSessionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::StartStreamingSessionErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::StartStreamingSessionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::StartStudioSSOConfigurationRepairError, R>>
     for Error
@@ -1419,6 +1461,45 @@ where
                 crate::error::StartStudioSSOConfigurationRepairErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::StartStudioSSOConfigurationRepairErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopStreamingSessionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StopStreamingSessionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StopStreamingSessionErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::StopStreamingSessionErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::StopStreamingSessionErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::StopStreamingSessionErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::StopStreamingSessionErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
+                crate::error::StopStreamingSessionErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::StopStreamingSessionErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::StopStreamingSessionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }

@@ -158,9 +158,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
@@ -264,9 +267,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the signaling channel by which Alexa and the master peer

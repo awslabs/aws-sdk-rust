@@ -182,8 +182,8 @@ pub enum Command {
     Unlock(crate::model::Unlock),
 }
 impl Command {
-    /// Tries to convert the enum instance into its [`Command`](crate::model::Command) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Reboot`](crate::model::Command::Reboot), extracting the inner [`Reboot`](crate::model::Reboot).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_reboot(&self) -> std::result::Result<&crate::model::Reboot, &Self> {
         if let Command::Reboot(val) = &self {
             Ok(&val)
@@ -191,12 +191,12 @@ impl Command {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Command` variant.
+    /// Returns true if this is a [`Reboot`](crate::model::Command::Reboot).
     pub fn is_reboot(&self) -> bool {
         self.as_reboot().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Command`](crate::model::Command) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Unlock`](crate::model::Command::Unlock), extracting the inner [`Unlock`](crate::model::Unlock).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unlock(&self) -> std::result::Result<&crate::model::Unlock, &Self> {
         if let Command::Unlock(val) = &self {
             Ok(&val)
@@ -204,7 +204,7 @@ impl Command {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Command` variant.
+    /// Returns true if this is a [`Unlock`](crate::model::Command::Unlock).
     pub fn is_unlock(&self) -> bool {
         self.as_unlock().is_ok()
     }

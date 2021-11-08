@@ -77,11 +77,16 @@ pub mod ecs;
 
 pub mod provider_config;
 
+#[cfg(any(feature = "meta", feature = "default-provider"))]
 mod cache;
+
 #[cfg(feature = "imds")]
 pub mod imds;
+
+#[cfg(any(feature = "http-provider", feature = "imds"))]
 mod json_credentials;
 
+#[cfg(feature = "http-provider")]
 mod http_provider;
 
 /// Create an environment loader for AWS Configuration
@@ -243,15 +248,7 @@ mod connector {
         connector.expect("A connector was not available. Either set a custom connector or enable the `rustls` and `native-tls` crate features.")
     }
 
-    #[cfg(feature = "rustls")]
-    pub(crate) fn default_connector(
-        settings: &HttpSettings,
-        sleep: Option<Arc<dyn AsyncSleep>>,
-    ) -> Option<DynConnector> {
-        let hyper = base(settings, sleep).build(aws_smithy_client::conns::https());
-        Some(DynConnector::new(hyper))
-    }
-
+    #[cfg(any(feature = "rustls", feature = "native-tls"))]
     fn base(
         settings: &HttpSettings,
         sleep: Option<Arc<dyn AsyncSleep>>,
@@ -264,14 +261,29 @@ mod connector {
         hyper
     }
 
+    #[cfg(feature = "rustls")]
+    pub(crate) fn default_connector(
+        settings: &HttpSettings,
+        sleep: Option<Arc<dyn AsyncSleep>>,
+    ) -> Option<DynConnector> {
+        let hyper = base(settings, sleep).build(aws_smithy_client::conns::https());
+        Some(DynConnector::new(hyper))
+    }
+
     #[cfg(all(not(feature = "rustls"), feature = "native-tls"))]
-    pub fn default_connector() -> Option<DynConnector> {
-        base(settings, sleep).build(aws_smithy_client::conns::native_tls());
+    pub(crate) fn default_connector(
+        settings: &HttpSettings,
+        sleep: Option<Arc<dyn AsyncSleep>>,
+    ) -> Option<DynConnector> {
+        let hyper = base(settings, sleep).build(aws_smithy_client::conns::native_tls());
         Some(DynConnector::new(hyper))
     }
 
     #[cfg(not(any(feature = "rustls", feature = "native-tls")))]
-    pub fn default_connector() -> Option<DynConnector> {
+    pub(crate) fn default_connector(
+        _settings: &HttpSettings,
+        _sleep: Option<Arc<dyn AsyncSleep>>,
+    ) -> Option<DynConnector> {
         None
     }
 }

@@ -466,9 +466,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
@@ -737,9 +740,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
@@ -919,9 +925,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task list.</p>
@@ -1023,9 +1032,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task list.</p>
@@ -1142,9 +1154,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
@@ -1253,9 +1268,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain to deprecate.</p>
@@ -1363,9 +1381,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the workflow type is registered.</p>
@@ -1481,9 +1502,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
@@ -1589,9 +1613,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain to describe.</p>
@@ -1684,9 +1711,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution.</p>
@@ -1802,9 +1832,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which this workflow type is registered.</p>
@@ -1911,9 +1944,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution.</p>
@@ -2071,9 +2107,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the activity types have been registered.</p>
@@ -2261,9 +2300,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
@@ -2574,9 +2616,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>If <code>NextPageToken</code> is returned there are more results
@@ -2744,9 +2789,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
@@ -2950,9 +2998,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
@@ -3041,9 +3092,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the workflow types have been registered.</p>
@@ -3219,9 +3273,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task lists being polled.</p>
@@ -3367,9 +3424,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the task lists to poll.</p>
@@ -3584,9 +3644,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
@@ -3719,9 +3782,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which this activity is to be registered.</p>
@@ -4023,9 +4089,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Name of the domain to register. The name must be unique in the region that the domain
@@ -4212,9 +4281,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which to register the workflow type.</p>
@@ -4561,9 +4633,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution to cancel.</p>
@@ -4689,9 +4764,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
@@ -4817,9 +4895,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
@@ -4940,9 +5021,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
@@ -5060,9 +5144,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
@@ -5211,9 +5298,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution to signal.</p>
@@ -5385,9 +5475,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the workflow execution is created.</p>
@@ -5754,9 +5847,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
@@ -5883,9 +5979,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The domain of the workflow execution to terminate.</p>
@@ -6096,9 +6195,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated activity type.</p>
@@ -6204,9 +6306,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
@@ -6312,9 +6417,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
@@ -6392,9 +6500,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>

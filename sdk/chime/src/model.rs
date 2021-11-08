@@ -143,6 +143,8 @@ pub struct VoiceConnectorGroup {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+    pub voice_connector_group_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VoiceConnectorGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -152,6 +154,7 @@ impl std::fmt::Debug for VoiceConnectorGroup {
         formatter.field("voice_connector_items", &self.voice_connector_items);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.field("voice_connector_group_arn", &self.voice_connector_group_arn);
         formatter.finish()
     }
 }
@@ -167,6 +170,7 @@ pub mod voice_connector_group {
             std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) voice_connector_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Chime Voice Connector group ID.</p>
@@ -240,6 +244,19 @@ pub mod voice_connector_group {
             self.updated_timestamp = input;
             self
         }
+        /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+        pub fn voice_connector_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.voice_connector_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+        pub fn set_voice_connector_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.voice_connector_group_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup)
         pub fn build(self) -> crate::model::VoiceConnectorGroup {
             crate::model::VoiceConnectorGroup {
@@ -248,6 +265,7 @@ pub mod voice_connector_group {
                 voice_connector_items: self.voice_connector_items,
                 created_timestamp: self.created_timestamp,
                 updated_timestamp: self.updated_timestamp,
+                voice_connector_group_arn: self.voice_connector_group_arn,
             }
         }
     }
@@ -349,6 +367,8 @@ pub struct VoiceConnector {
     pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.</p>
     pub updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+    pub voice_connector_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VoiceConnector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -360,6 +380,7 @@ impl std::fmt::Debug for VoiceConnector {
         formatter.field("require_encryption", &self.require_encryption);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.field("voice_connector_arn", &self.voice_connector_arn);
         formatter.finish()
     }
 }
@@ -376,6 +397,7 @@ pub mod voice_connector {
         pub(crate) require_encryption: std::option::Option<bool>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) voice_connector_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -469,6 +491,19 @@ pub mod voice_connector {
             self.updated_timestamp = input;
             self
         }
+        /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+        pub fn voice_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.voice_connector_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the specified Amazon Chime Voice Connector.</p>
+        pub fn set_voice_connector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.voice_connector_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VoiceConnector`](crate::model::VoiceConnector)
         pub fn build(self) -> crate::model::VoiceConnector {
             crate::model::VoiceConnector {
@@ -479,6 +514,7 @@ pub mod voice_connector {
                 require_encryption: self.require_encryption,
                 created_timestamp: self.created_timestamp,
                 updated_timestamp: self.updated_timestamp,
+                voice_connector_arn: self.voice_connector_arn,
             }
         }
     }

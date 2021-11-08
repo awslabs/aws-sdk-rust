@@ -19,7 +19,7 @@ pub enum CreateLifecyclePolicyErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLifecyclePolicyError {
@@ -84,21 +84,21 @@ impl CreateLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLifecyclePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateLifecyclePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLifecyclePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLifecyclePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateLifecyclePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLifecyclePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLifecyclePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLifecyclePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -136,7 +136,7 @@ pub enum DeleteLifecyclePolicyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLifecyclePolicyError {
@@ -201,21 +201,21 @@ impl DeleteLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLifecyclePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLifecyclePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLifecyclePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLifecyclePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -256,7 +256,7 @@ pub enum GetLifecyclePoliciesErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLifecyclePoliciesError {
@@ -322,28 +322,28 @@ impl GetLifecyclePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLifecyclePoliciesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetLifecyclePoliciesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePoliciesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePoliciesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetLifecyclePoliciesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePoliciesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePoliciesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetLifecyclePoliciesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePoliciesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePoliciesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLifecyclePoliciesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -382,7 +382,7 @@ pub enum GetLifecyclePolicyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLifecyclePolicyError {
@@ -447,21 +447,21 @@ impl GetLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLifecyclePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLifecyclePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLifecyclePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -500,7 +500,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -565,21 +565,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -618,7 +618,7 @@ pub enum TagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -683,15 +683,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -730,7 +730,7 @@ pub enum UntagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -795,21 +795,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -850,7 +850,7 @@ pub enum UpdateLifecyclePolicyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLifecyclePolicyError {
@@ -916,28 +916,28 @@ impl UpdateLifecyclePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLifecyclePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateLifecyclePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLifecyclePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLifecyclePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateLifecyclePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLifecyclePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLifecyclePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateLifecyclePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLifecyclePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLifecyclePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLifecyclePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

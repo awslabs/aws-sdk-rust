@@ -3,13 +3,13 @@
 **Please Note: The SDK is currently released as an alpha and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-AWS Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their AWS-hosted applications. An incident is any unplanned interruption or reduction in quality of services.
+Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services.
 
 Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation.
 
 ## Getting Started
 
-> Examples are availble for many services and operations, check out the
+> Examples are available for many services and operations, check out the
 > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples).
 
 The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.0.22-alpha"
-aws-sdk-ssmincidents = "0.0.22-alpha"
+aws-config = "0.0.23-alpha"
+aws-sdk-ssmincidents = "0.0.23-alpha"
 tokio = { version = "1", features = ["full"] }
 ```
 

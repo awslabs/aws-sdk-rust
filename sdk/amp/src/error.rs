@@ -26,7 +26,7 @@ pub enum CreateAlertManagerDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAlertManagerDefinitionError {
@@ -107,49 +107,49 @@ impl CreateAlertManagerDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAlertManagerDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAlertManagerDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertManagerDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertManagerDefinitionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAlertManagerDefinitionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertManagerDefinitionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertManagerDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateAlertManagerDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertManagerDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertManagerDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAlertManagerDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertManagerDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertManagerDefinitionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateAlertManagerDefinitionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertManagerDefinitionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertManagerDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateAlertManagerDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertManagerDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertManagerDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAlertManagerDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -203,7 +203,7 @@ pub enum CreateRuleGroupsNamespaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRuleGroupsNamespaceError {
@@ -282,49 +282,49 @@ impl CreateRuleGroupsNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRuleGroupsNamespaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupsNamespaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupsNamespaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupsNamespaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupsNamespaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupsNamespaceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupsNamespaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupsNamespaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupsNamespaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupsNamespaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupsNamespaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupsNamespaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupsNamespaceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupsNamespaceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupsNamespaceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupsNamespaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupsNamespaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupsNamespaceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupsNamespaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupsNamespaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -374,7 +374,7 @@ pub enum CreateWorkspaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkspaceError {
@@ -450,36 +450,36 @@ impl CreateWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateWorkspaceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateWorkspaceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateWorkspaceErrorKind::ValidationException(_))
     }
@@ -523,7 +523,7 @@ pub enum DeleteAlertManagerDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAlertManagerDefinitionError {
@@ -601,42 +601,42 @@ impl DeleteAlertManagerDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAlertManagerDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAlertManagerDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlertManagerDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlertManagerDefinitionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteAlertManagerDefinitionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlertManagerDefinitionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlertManagerDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteAlertManagerDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlertManagerDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlertManagerDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAlertManagerDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlertManagerDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlertManagerDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteAlertManagerDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlertManagerDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlertManagerDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAlertManagerDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -685,7 +685,7 @@ pub enum DeleteRuleGroupsNamespaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRuleGroupsNamespaceError {
@@ -761,42 +761,42 @@ impl DeleteRuleGroupsNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRuleGroupsNamespaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupsNamespaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupsNamespaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupsNamespaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupsNamespaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupsNamespaceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupsNamespaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupsNamespaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupsNamespaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupsNamespaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupsNamespaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupsNamespaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupsNamespaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupsNamespaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupsNamespaceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupsNamespaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupsNamespaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -843,7 +843,7 @@ pub enum DeleteWorkspaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkspaceError {
@@ -919,36 +919,36 @@ impl DeleteWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteWorkspaceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteWorkspaceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteWorkspaceErrorKind::ValidationException(_))
     }
@@ -990,7 +990,7 @@ pub enum DescribeAlertManagerDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAlertManagerDefinitionError {
@@ -1072,35 +1072,35 @@ impl DescribeAlertManagerDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAlertManagerDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAlertManagerDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlertManagerDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlertManagerDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeAlertManagerDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlertManagerDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlertManagerDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAlertManagerDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlertManagerDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlertManagerDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAlertManagerDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlertManagerDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlertManagerDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeAlertManagerDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1148,7 +1148,7 @@ pub enum DescribeRuleGroupsNamespaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRuleGroupsNamespaceError {
@@ -1225,35 +1225,35 @@ impl DescribeRuleGroupsNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRuleGroupsNamespaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeRuleGroupsNamespaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRuleGroupsNamespaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRuleGroupsNamespaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeRuleGroupsNamespaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRuleGroupsNamespaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRuleGroupsNamespaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRuleGroupsNamespaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRuleGroupsNamespaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRuleGroupsNamespaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeRuleGroupsNamespaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRuleGroupsNamespaceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRuleGroupsNamespaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeRuleGroupsNamespaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1297,7 +1297,7 @@ pub enum DescribeWorkspaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspaceError {
@@ -1372,35 +1372,35 @@ impl DescribeWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1444,7 +1444,7 @@ pub enum ListRuleGroupsNamespacesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRuleGroupsNamespacesError {
@@ -1519,35 +1519,35 @@ impl ListRuleGroupsNamespacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRuleGroupsNamespacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRuleGroupsNamespacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRuleGroupsNamespacesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRuleGroupsNamespacesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListRuleGroupsNamespacesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRuleGroupsNamespacesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListRuleGroupsNamespacesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRuleGroupsNamespacesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRuleGroupsNamespacesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRuleGroupsNamespacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListRuleGroupsNamespacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRuleGroupsNamespacesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListRuleGroupsNamespacesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListRuleGroupsNamespacesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1591,7 +1591,7 @@ pub enum ListTagsForResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1666,35 +1666,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1736,7 +1736,7 @@ pub enum ListWorkspacesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkspacesError {
@@ -1810,25 +1810,25 @@ impl ListWorkspacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkspacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListWorkspacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkspacesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkspacesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWorkspacesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkspacesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkspacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWorkspacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListWorkspacesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListWorkspacesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListWorkspacesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListWorkspacesErrorKind::ValidationException(_))
     }
@@ -1872,7 +1872,7 @@ pub enum PutAlertManagerDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAlertManagerDefinitionError {
@@ -1951,49 +1951,49 @@ impl PutAlertManagerDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAlertManagerDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutAlertManagerDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlertManagerDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlertManagerDefinitionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutAlertManagerDefinitionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlertManagerDefinitionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlertManagerDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutAlertManagerDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlertManagerDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlertManagerDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutAlertManagerDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlertManagerDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlertManagerDefinitionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `PutAlertManagerDefinitionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlertManagerDefinitionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlertManagerDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutAlertManagerDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlertManagerDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlertManagerDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutAlertManagerDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2045,7 +2045,7 @@ pub enum PutRuleGroupsNamespaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRuleGroupsNamespaceError {
@@ -2122,49 +2122,49 @@ impl PutRuleGroupsNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRuleGroupsNamespaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutRuleGroupsNamespaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRuleGroupsNamespaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutRuleGroupsNamespaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutRuleGroupsNamespaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRuleGroupsNamespaceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutRuleGroupsNamespaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutRuleGroupsNamespaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRuleGroupsNamespaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutRuleGroupsNamespaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutRuleGroupsNamespaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRuleGroupsNamespaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutRuleGroupsNamespaceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `PutRuleGroupsNamespaceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRuleGroupsNamespaceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutRuleGroupsNamespaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutRuleGroupsNamespaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRuleGroupsNamespaceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutRuleGroupsNamespaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutRuleGroupsNamespaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2210,7 +2210,7 @@ pub enum TagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2283,26 +2283,26 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -2343,7 +2343,7 @@ pub enum UntagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2418,29 +2418,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -2485,7 +2485,7 @@ pub enum UpdateWorkspaceAliasErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// The input fails to satisfy the constraints specified by an AWS service.
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkspaceAliasError {
@@ -2562,49 +2562,49 @@ impl UpdateWorkspaceAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAliasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAliasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAliasErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAliasErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAliasErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAliasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAliasErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAliasErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAliasErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAliasErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAliasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAliasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAliasErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAliasErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAliasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

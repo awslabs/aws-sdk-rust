@@ -413,8 +413,8 @@ pub enum SourceConfiguration {
 }
 impl SourceConfiguration {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`SourceConfiguration`](crate::model::SourceConfiguration) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AppIntegrations`](crate::model::SourceConfiguration::AppIntegrations), extracting the inner [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_app_integrations(
         &self,
     ) -> std::result::Result<&crate::model::AppIntegrationsConfiguration, &Self> {
@@ -424,7 +424,7 @@ impl SourceConfiguration {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `SourceConfiguration` variant.
+    /// Returns true if this is a [`AppIntegrations`](crate::model::SourceConfiguration::AppIntegrations).
     pub fn is_app_integrations(&self) -> bool {
         self.as_app_integrations().is_ok()
     }
@@ -3309,8 +3309,8 @@ pub enum AssistantAssociationOutputData {
 }
 impl AssistantAssociationOutputData {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`AssistantAssociationOutputData`](crate::model::AssistantAssociationOutputData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`KnowledgeBaseAssociation`](crate::model::AssistantAssociationOutputData::KnowledgeBaseAssociation), extracting the inner [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_association(
         &self,
     ) -> std::result::Result<&crate::model::KnowledgeBaseAssociationData, &Self> {
@@ -3320,7 +3320,7 @@ impl AssistantAssociationOutputData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AssistantAssociationOutputData` variant.
+    /// Returns true if this is a [`KnowledgeBaseAssociation`](crate::model::AssistantAssociationOutputData::KnowledgeBaseAssociation).
     pub fn is_knowledge_base_association(&self) -> bool {
         self.as_knowledge_base_association().is_ok()
     }
@@ -3630,8 +3630,8 @@ pub enum AssistantAssociationInputData {
 }
 impl AssistantAssociationInputData {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`AssistantAssociationInputData`](crate::model::AssistantAssociationInputData) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`KnowledgeBaseId`](crate::model::AssistantAssociationInputData::KnowledgeBaseId), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_id(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AssistantAssociationInputData::KnowledgeBaseId(val) = &self {
             Ok(&val)
@@ -3639,7 +3639,7 @@ impl AssistantAssociationInputData {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AssistantAssociationInputData` variant.
+    /// Returns true if this is a [`KnowledgeBaseId`](crate::model::AssistantAssociationInputData::KnowledgeBaseId).
     pub fn is_knowledge_base_id(&self) -> bool {
         self.as_knowledge_base_id().is_ok()
     }

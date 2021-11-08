@@ -24,7 +24,7 @@ pub enum ConfigureLogsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfigureLogsError {
@@ -92,36 +92,36 @@ impl ConfigureLogsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ConfigureLogsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfigureLogsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ConfigureLogsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfigureLogsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConfigureLogsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ConfigureLogsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ConfigureLogsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -168,7 +168,7 @@ pub enum CreateAssetErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssetError {
@@ -236,36 +236,36 @@ impl CreateAssetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateAssetErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAssetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -312,7 +312,7 @@ pub enum CreatePackagingConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePackagingConfigurationError {
@@ -388,42 +388,42 @@ impl CreatePackagingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePackagingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreatePackagingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreatePackagingConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreatePackagingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreatePackagingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreatePackagingConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingConfigurationErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreatePackagingConfigurationErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -476,7 +476,7 @@ pub enum CreatePackagingGroupErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePackagingGroupError {
@@ -544,42 +544,42 @@ impl CreatePackagingGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePackagingGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreatePackagingGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreatePackagingGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreatePackagingGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreatePackagingGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreatePackagingGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePackagingGroupErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePackagingGroupErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreatePackagingGroupErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -626,7 +626,7 @@ pub enum DeleteAssetErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssetError {
@@ -694,36 +694,36 @@ impl DeleteAssetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteAssetErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAssetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -770,7 +770,7 @@ pub enum DeletePackagingConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePackagingConfigurationError {
@@ -846,42 +846,42 @@ impl DeletePackagingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePackagingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeletePackagingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeletePackagingConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeletePackagingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeletePackagingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeletePackagingConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingConfigurationErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DeletePackagingConfigurationErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -934,7 +934,7 @@ pub enum DeletePackagingGroupErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePackagingGroupError {
@@ -1002,42 +1002,42 @@ impl DeletePackagingGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePackagingGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeletePackagingGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeletePackagingGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeletePackagingGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeletePackagingGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeletePackagingGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePackagingGroupErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePackagingGroupErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DeletePackagingGroupErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1084,7 +1084,7 @@ pub enum DescribeAssetErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssetError {
@@ -1152,36 +1152,36 @@ impl DescribeAssetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeAssetErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeAssetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1228,7 +1228,7 @@ pub enum DescribePackagingConfigurationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePackagingConfigurationError {
@@ -1307,42 +1307,42 @@ impl DescribePackagingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePackagingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribePackagingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribePackagingConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribePackagingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribePackagingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribePackagingConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingConfigurationErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DescribePackagingConfigurationErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1397,7 +1397,7 @@ pub enum DescribePackagingGroupErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePackagingGroupError {
@@ -1465,42 +1465,42 @@ impl DescribePackagingGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePackagingGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribePackagingGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribePackagingGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribePackagingGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribePackagingGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribePackagingGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePackagingGroupErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePackagingGroupErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DescribePackagingGroupErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1547,7 +1547,7 @@ pub enum ListAssetsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssetsError {
@@ -1615,33 +1615,33 @@ impl ListAssetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListAssetsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssetsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListAssetsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssetsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListAssetsErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1688,7 +1688,7 @@ pub enum ListPackagingConfigurationsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPackagingConfigurationsError {
@@ -1762,42 +1762,42 @@ impl ListPackagingConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPackagingConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListPackagingConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingConfigurationsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListPackagingConfigurationsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingConfigurationsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingConfigurationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListPackagingConfigurationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingConfigurationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingConfigurationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListPackagingConfigurationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingConfigurationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingConfigurationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListPackagingConfigurationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingConfigurationsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingConfigurationsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ListPackagingConfigurationsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1850,7 +1850,7 @@ pub enum ListPackagingGroupsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPackagingGroupsError {
@@ -1918,42 +1918,42 @@ impl ListPackagingGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPackagingGroupsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListPackagingGroupsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingGroupsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingGroupsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListPackagingGroupsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingGroupsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingGroupsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListPackagingGroupsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingGroupsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingGroupsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListPackagingGroupsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingGroupsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingGroupsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListPackagingGroupsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPackagingGroupsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListPackagingGroupsErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ListPackagingGroupsErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1988,7 +1988,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2072,7 +2072,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2156,7 +2156,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2252,7 +2252,7 @@ pub enum UpdatePackagingGroupErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePackagingGroupError {
@@ -2320,42 +2320,42 @@ impl UpdatePackagingGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePackagingGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdatePackagingGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePackagingGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePackagingGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdatePackagingGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePackagingGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePackagingGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePackagingGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePackagingGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePackagingGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdatePackagingGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePackagingGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePackagingGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdatePackagingGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePackagingGroupErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePackagingGroupErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `UpdatePackagingGroupErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,

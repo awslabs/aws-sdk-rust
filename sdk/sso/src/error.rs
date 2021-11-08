@@ -21,7 +21,7 @@ pub enum GetRoleCredentialsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRoleCredentialsError {
@@ -87,28 +87,28 @@ impl GetRoleCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRoleCredentialsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetRoleCredentialsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRoleCredentialsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetRoleCredentialsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRoleCredentialsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRoleCredentialsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRoleCredentialsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetRoleCredentialsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRoleCredentialsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `GetRoleCredentialsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetRoleCredentialsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -150,7 +150,7 @@ pub enum ListAccountRolesErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountRolesError {
@@ -216,28 +216,28 @@ impl ListAccountRolesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccountRolesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAccountRolesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountRolesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountRolesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAccountRolesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountRolesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountRolesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAccountRolesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountRolesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountRolesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListAccountRolesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -279,7 +279,7 @@ pub enum ListAccountsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountsError {
@@ -345,28 +345,28 @@ impl ListAccountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListAccountsErrorKind::UnauthorizedException(_))
     }
@@ -403,7 +403,7 @@ pub enum LogoutErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for LogoutError {
@@ -468,15 +468,15 @@ impl LogoutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `LogoutErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `LogoutErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, LogoutErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `LogoutErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `LogoutErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, LogoutErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `LogoutErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `LogoutErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, LogoutErrorKind::UnauthorizedException(_))
     }

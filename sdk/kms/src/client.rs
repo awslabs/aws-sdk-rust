@@ -488,9 +488,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the KMS key whose deletion is being canceled.</p>
@@ -644,9 +647,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Enter the key store ID of the custom key store that you want to connect.
@@ -773,9 +779,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Specifies the alias name. This value must begin with <code>alias/</code> followed by a
@@ -954,9 +963,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Specifies a friendly name for the custom key store. The name must be unique in your
@@ -1145,9 +1157,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this
@@ -1547,9 +1562,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The key policy to attach to the KMS key.</p>
@@ -2186,9 +2204,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
@@ -2446,9 +2467,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by
@@ -2569,9 +2593,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
@@ -2668,9 +2695,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the KMS key from which you are deleting imported key material. The
@@ -2818,9 +2848,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
@@ -3026,9 +3059,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Describes the specified KMS key. </p>
@@ -3179,9 +3215,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the KMS key to disable.</p>
@@ -3297,9 +3336,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies a symmetric KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
@@ -3446,9 +3488,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
@@ -3528,9 +3573,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the KMS key to enable.</p>
@@ -3646,9 +3694,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies a symmetric KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region keys</a>, set the property on the primary key.</p>
@@ -3863,9 +3914,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the KMS key to use in the encryption operation.</p>
@@ -4156,9 +4210,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the symmetric KMS key that encrypts the data key.</p>
@@ -4432,9 +4489,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Adds a key-value pair to `EncryptionContext`.
@@ -4684,9 +4744,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Adds a key-value pair to `EncryptionContext`.
@@ -4939,9 +5002,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the symmetric KMS key that encrypts the data key.</p>
@@ -5140,9 +5206,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The length of the byte string.</p>
@@ -5230,9 +5299,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Gets the key policy for the specified KMS key.</p>
@@ -5372,9 +5444,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Gets the rotation status for the specified KMS key.</p>
@@ -5503,9 +5578,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the symmetric KMS key into which you will import key material. The
@@ -5676,9 +5754,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
@@ -5871,9 +5952,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the symmetric KMS key that receives the imported key material. The KMS
@@ -6080,9 +6164,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your
@@ -6256,9 +6343,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -6434,9 +6524,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Gets the names of key policies for the specified KMS key.</p>
@@ -6591,9 +6684,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -6714,9 +6810,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Gets tags on the specified KMS key.</p>
@@ -6886,9 +6985,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -7013,9 +7115,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Sets the key policy on the specified KMS key.</p>
@@ -7293,9 +7398,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Ciphertext of the data to reencrypt.</p>
@@ -7711,9 +7819,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a
@@ -8055,9 +8166,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even
@@ -8211,9 +8325,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key
@@ -8376,9 +8493,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the KMS key to delete.</p>
@@ -8536,9 +8656,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key to
@@ -8767,9 +8890,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies a customer managed key in the account and Region.</p>
@@ -8932,9 +9058,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the KMS key from which you are removing tags.</p>
@@ -9106,9 +9235,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the alias that is changing its KMS key. This value must begin with
@@ -9300,9 +9432,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the custom key store that you want to update. Enter the ID of the custom key
@@ -9454,9 +9589,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Updates the description of the specified KMS key.</p>
@@ -9624,9 +9762,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a
@@ -9770,9 +9911,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be

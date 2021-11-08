@@ -2579,6 +2579,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartContactRecording {
     }
 }
 
+/// Operation shape for `StartContactStreaming`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_contact_streaming`](crate::client::Client::start_contact_streaming).
+///
+/// See [`crate::client::fluent_builders::StartContactStreaming`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartContactStreaming {
+    _private: (),
+}
+impl StartContactStreaming {
+    /// Creates a new builder-style object to manufacture [`StartContactStreamingInput`](crate::input::StartContactStreamingInput)
+    pub fn builder() -> crate::input::start_contact_streaming_input::Builder {
+        crate::input::start_contact_streaming_input::Builder::default()
+    }
+    /// Creates a new `StartContactStreaming` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartContactStreaming {
+    type Output = std::result::Result<
+        crate::output::StartContactStreamingOutput,
+        crate::error::StartContactStreamingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_contact_streaming_error(response)
+        } else {
+            crate::operation_deser::parse_start_contact_streaming_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartOutboundVoiceContact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -2709,6 +2743,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopContactRecording {
             crate::operation_deser::parse_stop_contact_recording_error(response)
         } else {
             crate::operation_deser::parse_stop_contact_recording_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopContactStreaming`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_contact_streaming`](crate::client::Client::stop_contact_streaming).
+///
+/// See [`crate::client::fluent_builders::StopContactStreaming`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopContactStreaming {
+    _private: (),
+}
+impl StopContactStreaming {
+    /// Creates a new builder-style object to manufacture [`StopContactStreamingInput`](crate::input::StopContactStreamingInput)
+    pub fn builder() -> crate::input::stop_contact_streaming_input::Builder {
+        crate::input::stop_contact_streaming_input::Builder::default()
+    }
+    /// Creates a new `StopContactStreaming` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopContactStreaming {
+    type Output = std::result::Result<
+        crate::output::StopContactStreamingOutput,
+        crate::error::StopContactStreamingError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_contact_streaming_error(response)
+        } else {
+            crate::operation_deser::parse_stop_contact_streaming_response(response)
         }
     }
 }

@@ -79,6 +79,7 @@ mod change_message_visibility_request_test {
             .build()
             .unwrap()
             .make_operation(&config)
+            .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "POST");

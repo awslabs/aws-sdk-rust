@@ -398,9 +398,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AlarmNames`.
@@ -472,9 +475,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
@@ -578,9 +584,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `DashboardNames`.
@@ -655,9 +664,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `RuleNames`.
@@ -729,9 +741,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric stream to delete.</p>
@@ -798,9 +813,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm.</p>
@@ -958,9 +976,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AlarmNames`.
@@ -1210,9 +1231,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric.</p>
@@ -1358,9 +1382,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -1491,9 +1518,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
@@ -1571,9 +1601,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AlarmNames`.
@@ -1646,9 +1679,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `RuleNames`.
@@ -1720,9 +1756,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AlarmNames`.
@@ -1794,9 +1833,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `RuleNames`.
@@ -1871,9 +1913,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the dashboard to be described.</p>
@@ -1977,9 +2022,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule that you want to see data from.</p>
@@ -2230,9 +2278,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `MetricDataQueries`.
@@ -2513,9 +2564,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The namespace of the metric, with or without spaces.</p>
@@ -2799,9 +2853,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric stream to retrieve information about.</p>
@@ -2883,9 +2940,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the
@@ -3070,9 +3130,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>If you specify this parameter, only
@@ -3171,9 +3234,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The metric namespace to filter against. Only the namespace that matches exactly
@@ -3308,9 +3374,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
@@ -3386,9 +3455,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
@@ -3477,9 +3549,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
@@ -3639,9 +3714,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is
@@ -3988,9 +4066,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing
@@ -4085,9 +4166,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the rule.</p>
@@ -4279,9 +4363,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name for the alarm. This name must be unique within the Region.</p>
@@ -4948,9 +5035,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The namespace for the metric data.</p>
@@ -5065,9 +5155,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>If you are creating a new metric stream, this is the name for the new stream. The name
@@ -5297,9 +5390,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm.</p>
@@ -5404,9 +5500,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `Names`.
@@ -5484,9 +5583,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `Names`.
@@ -5574,9 +5676,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
@@ -5680,9 +5785,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>

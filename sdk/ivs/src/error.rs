@@ -12,7 +12,7 @@ pub struct BatchGetChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetChannelErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetChannelError {
@@ -96,7 +96,7 @@ pub struct BatchGetStreamKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetStreamKeyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetStreamKeyError {
@@ -190,7 +190,7 @@ pub enum CreateChannelErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelError {
@@ -257,29 +257,29 @@ impl CreateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::PendingVerification`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::PendingVerification(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::ValidationException(_))
     }
@@ -322,7 +322,7 @@ pub enum CreateRecordingConfigurationErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRecordingConfigurationError {
@@ -392,42 +392,42 @@ impl CreateRecordingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRecordingConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRecordingConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecordingConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecordingConfigurationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRecordingConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecordingConfigurationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecordingConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateRecordingConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecordingConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecordingConfigurationErrorKind::PendingVerification`.
+    /// Returns `true` if the error kind is `CreateRecordingConfigurationErrorKind::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecordingConfigurationErrorKind::PendingVerification(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecordingConfigurationErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateRecordingConfigurationErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecordingConfigurationErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecordingConfigurationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateRecordingConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -474,7 +474,7 @@ pub enum CreateStreamKeyErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamKeyError {
@@ -541,32 +541,32 @@ impl CreateStreamKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamKeyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateStreamKeyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamKeyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamKeyErrorKind::PendingVerification`.
+    /// Returns `true` if the error kind is `CreateStreamKeyErrorKind::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
         matches!(&self.kind, CreateStreamKeyErrorKind::PendingVerification(_))
     }
-    /// Returns true if the error kind is `CreateStreamKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStreamKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamKeyErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamKeyErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamKeyErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamKeyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateStreamKeyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateStreamKeyErrorKind::ValidationException(_))
     }
@@ -607,7 +607,7 @@ pub enum DeleteChannelErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelError {
@@ -674,26 +674,26 @@ impl DeleteChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::PendingVerification`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::PendingVerification(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::ValidationException(_))
     }
@@ -732,7 +732,7 @@ pub enum DeletePlaybackKeyPairErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePlaybackKeyPairError {
@@ -798,28 +798,28 @@ impl DeletePlaybackKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePlaybackKeyPairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeletePlaybackKeyPairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlaybackKeyPairErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlaybackKeyPairErrorKind::PendingVerification`.
+    /// Returns `true` if the error kind is `DeletePlaybackKeyPairErrorKind::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlaybackKeyPairErrorKind::PendingVerification(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlaybackKeyPairErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePlaybackKeyPairErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlaybackKeyPairErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlaybackKeyPairErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeletePlaybackKeyPairErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -862,7 +862,7 @@ pub enum DeleteRecordingConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRecordingConfigurationError {
@@ -931,35 +931,35 @@ impl DeleteRecordingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRecordingConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteRecordingConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecordingConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecordingConfigurationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteRecordingConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecordingConfigurationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecordingConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteRecordingConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecordingConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecordingConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRecordingConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecordingConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecordingConfigurationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteRecordingConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1003,7 +1003,7 @@ pub enum DeleteStreamKeyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStreamKeyError {
@@ -1069,25 +1069,25 @@ impl DeleteStreamKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStreamKeyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteStreamKeyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamKeyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamKeyErrorKind::PendingVerification`.
+    /// Returns `true` if the error kind is `DeleteStreamKeyErrorKind::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
         matches!(&self.kind, DeleteStreamKeyErrorKind::PendingVerification(_))
     }
-    /// Returns true if the error kind is `DeleteStreamKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStreamKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamKeyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteStreamKeyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteStreamKeyErrorKind::ValidationException(_))
     }
@@ -1123,7 +1123,7 @@ pub enum GetChannelErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChannelError {
@@ -1188,18 +1188,18 @@ impl GetChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetChannelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetChannelErrorKind::ValidationException(_))
     }
@@ -1234,7 +1234,7 @@ pub enum GetPlaybackKeyPairErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPlaybackKeyPairError {
@@ -1299,21 +1299,21 @@ impl GetPlaybackKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPlaybackKeyPairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetPlaybackKeyPairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPlaybackKeyPairErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPlaybackKeyPairErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPlaybackKeyPairErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPlaybackKeyPairErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPlaybackKeyPairErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetPlaybackKeyPairErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1353,7 +1353,7 @@ pub enum GetRecordingConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecordingConfigurationError {
@@ -1419,28 +1419,28 @@ impl GetRecordingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecordingConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRecordingConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecordingConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecordingConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetRecordingConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecordingConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecordingConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRecordingConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecordingConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecordingConfigurationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetRecordingConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1481,7 +1481,7 @@ pub enum GetStreamErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStreamError {
@@ -1547,19 +1547,19 @@ impl GetStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStreamErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStreamErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetStreamErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetStreamErrorKind::ChannelNotBroadcasting`.
+    /// Returns `true` if the error kind is `GetStreamErrorKind::ChannelNotBroadcasting`.
     pub fn is_channel_not_broadcasting(&self) -> bool {
         matches!(&self.kind, GetStreamErrorKind::ChannelNotBroadcasting(_))
     }
-    /// Returns true if the error kind is `GetStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetStreamErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetStreamErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStreamErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetStreamErrorKind::ValidationException(_))
     }
@@ -1595,7 +1595,7 @@ pub enum GetStreamKeyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStreamKeyError {
@@ -1660,18 +1660,18 @@ impl GetStreamKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStreamKeyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStreamKeyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetStreamKeyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetStreamKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStreamKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamKeyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStreamKeyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetStreamKeyErrorKind::ValidationException(_))
     }
@@ -1710,7 +1710,7 @@ pub enum ImportPlaybackKeyPairErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportPlaybackKeyPairError {
@@ -1777,35 +1777,35 @@ impl ImportPlaybackKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportPlaybackKeyPairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ImportPlaybackKeyPairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportPlaybackKeyPairErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportPlaybackKeyPairErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ImportPlaybackKeyPairErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportPlaybackKeyPairErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ImportPlaybackKeyPairErrorKind::PendingVerification`.
+    /// Returns `true` if the error kind is `ImportPlaybackKeyPairErrorKind::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
         matches!(
             &self.kind,
             ImportPlaybackKeyPairErrorKind::PendingVerification(_)
         )
     }
-    /// Returns true if the error kind is `ImportPlaybackKeyPairErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ImportPlaybackKeyPairErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportPlaybackKeyPairErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ImportPlaybackKeyPairErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ImportPlaybackKeyPairErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1845,7 +1845,7 @@ pub enum ListChannelsErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelsError {
@@ -1910,15 +1910,15 @@ impl ListChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::ValidationException(_))
     }
@@ -1951,7 +1951,7 @@ pub enum ListPlaybackKeyPairsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPlaybackKeyPairsError {
@@ -2015,14 +2015,14 @@ impl ListPlaybackKeyPairsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPlaybackKeyPairsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPlaybackKeyPairsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPlaybackKeyPairsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPlaybackKeyPairsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPlaybackKeyPairsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2059,7 +2059,7 @@ pub enum ListRecordingConfigurationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRecordingConfigurationsError {
@@ -2124,21 +2124,21 @@ impl ListRecordingConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRecordingConfigurationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRecordingConfigurationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRecordingConfigurationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRecordingConfigurationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListRecordingConfigurationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRecordingConfigurationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListRecordingConfigurationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListRecordingConfigurationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2176,7 +2176,7 @@ pub enum ListStreamKeysErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamKeysError {
@@ -2241,21 +2241,21 @@ impl ListStreamKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamKeysErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListStreamKeysErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamKeysErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamKeysErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStreamKeysErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamKeysErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamKeysErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListStreamKeysErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListStreamKeysErrorKind::ValidationException(_))
     }
@@ -2286,7 +2286,7 @@ pub struct ListStreamsError {
 pub enum ListStreamsErrorKind {
     /// <p/>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamsError {
@@ -2349,7 +2349,7 @@ impl ListStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListStreamsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListStreamsErrorKind::AccessDeniedException(_))
     }
@@ -2382,7 +2382,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2447,21 +2447,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2503,7 +2503,7 @@ pub enum PutMetadataErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMetadataError {
@@ -2570,26 +2570,26 @@ impl PutMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutMetadataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutMetadataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutMetadataErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PutMetadataErrorKind::ChannelNotBroadcasting`.
+    /// Returns `true` if the error kind is `PutMetadataErrorKind::ChannelNotBroadcasting`.
     pub fn is_channel_not_broadcasting(&self) -> bool {
         matches!(&self.kind, PutMetadataErrorKind::ChannelNotBroadcasting(_))
     }
-    /// Returns true if the error kind is `PutMetadataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutMetadataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetadataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetadataErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutMetadataErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, PutMetadataErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `PutMetadataErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutMetadataErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutMetadataErrorKind::ValidationException(_))
     }
@@ -2630,7 +2630,7 @@ pub enum StopStreamErrorKind {
     StreamUnavailable(crate::error::StreamUnavailable),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopStreamError {
@@ -2697,26 +2697,26 @@ impl StopStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopStreamErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopStreamErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StopStreamErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `StopStreamErrorKind::ChannelNotBroadcasting`.
+    /// Returns `true` if the error kind is `StopStreamErrorKind::ChannelNotBroadcasting`.
     pub fn is_channel_not_broadcasting(&self) -> bool {
         matches!(&self.kind, StopStreamErrorKind::ChannelNotBroadcasting(_))
     }
-    /// Returns true if the error kind is `StopStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamErrorKind::StreamUnavailable`.
+    /// Returns `true` if the error kind is `StopStreamErrorKind::StreamUnavailable`.
     pub fn is_stream_unavailable(&self) -> bool {
         matches!(&self.kind, StopStreamErrorKind::StreamUnavailable(_))
     }
-    /// Returns true if the error kind is `StopStreamErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopStreamErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopStreamErrorKind::ValidationException(_))
     }
@@ -2753,7 +2753,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2818,18 +2818,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -2864,7 +2864,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2929,21 +2929,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -2982,7 +2982,7 @@ pub enum UpdateChannelErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p/>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelError {
@@ -3049,26 +3049,26 @@ impl UpdateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::PendingVerification`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::PendingVerification`.
     pub fn is_pending_verification(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::PendingVerification(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::ValidationException(_))
     }

@@ -23,7 +23,7 @@ pub enum QueryForecastErrorKind {
     /// <p>We can't find that resource. Check the information that you've provided and try
     /// again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for QueryForecastError {
@@ -90,32 +90,32 @@ impl QueryForecastError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `QueryForecastErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `QueryForecastErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, QueryForecastErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `QueryForecastErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `QueryForecastErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryForecastErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `QueryForecastErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `QueryForecastErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryForecastErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `QueryForecastErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `QueryForecastErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryForecastErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `QueryForecastErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `QueryForecastErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

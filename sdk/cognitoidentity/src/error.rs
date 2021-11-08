@@ -25,7 +25,7 @@ pub enum CreateIdentityPoolErrorKind {
     ResourceConflictException(crate::error::ResourceConflictException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIdentityPoolError {
@@ -93,42 +93,42 @@ impl CreateIdentityPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIdentityPoolErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateIdentityPoolErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityPoolErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityPoolErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateIdentityPoolErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityPoolErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityPoolErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateIdentityPoolErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityPoolErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityPoolErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `CreateIdentityPoolErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityPoolErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityPoolErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateIdentityPoolErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIdentityPoolErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIdentityPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateIdentityPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -169,7 +169,7 @@ pub enum DeleteIdentitiesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIdentitiesError {
@@ -234,21 +234,21 @@ impl DeleteIdentitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIdentitiesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteIdentitiesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentitiesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentitiesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteIdentitiesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentitiesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentitiesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteIdentitiesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -291,7 +291,7 @@ pub enum DeleteIdentityPoolErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIdentityPoolError {
@@ -358,35 +358,35 @@ impl DeleteIdentityPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIdentityPoolErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteIdentityPoolErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityPoolErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityPoolErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteIdentityPoolErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityPoolErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityPoolErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DeleteIdentityPoolErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityPoolErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityPoolErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIdentityPoolErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIdentityPoolErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIdentityPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteIdentityPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -431,7 +431,7 @@ pub enum DescribeIdentityErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIdentityError {
@@ -498,35 +498,35 @@ impl DescribeIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIdentityErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeIdentityErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeIdentityErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeIdentityErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIdentityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -571,7 +571,7 @@ pub enum DescribeIdentityPoolErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIdentityPoolError {
@@ -638,35 +638,35 @@ impl DescribeIdentityPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIdentityPoolErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeIdentityPoolErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityPoolErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityPoolErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeIdentityPoolErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityPoolErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityPoolErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeIdentityPoolErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityPoolErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityPoolErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIdentityPoolErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIdentityPoolErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIdentityPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeIdentityPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -722,7 +722,7 @@ pub enum GetCredentialsForIdentityErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCredentialsForIdentityError {
@@ -794,56 +794,56 @@ impl GetCredentialsForIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCredentialsForIdentityErrorKind::ExternalServiceException`.
+    /// Returns `true` if the error kind is `GetCredentialsForIdentityErrorKind::ExternalServiceException`.
     pub fn is_external_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialsForIdentityErrorKind::ExternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialsForIdentityErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetCredentialsForIdentityErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialsForIdentityErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialsForIdentityErrorKind::InvalidIdentityPoolConfigurationException`.
+    /// Returns `true` if the error kind is `GetCredentialsForIdentityErrorKind::InvalidIdentityPoolConfigurationException`.
     pub fn is_invalid_identity_pool_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialsForIdentityErrorKind::InvalidIdentityPoolConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialsForIdentityErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetCredentialsForIdentityErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialsForIdentityErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialsForIdentityErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetCredentialsForIdentityErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialsForIdentityErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialsForIdentityErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `GetCredentialsForIdentityErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialsForIdentityErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialsForIdentityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCredentialsForIdentityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCredentialsForIdentityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCredentialsForIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCredentialsForIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -901,7 +901,7 @@ pub enum GetIdErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIdError {
@@ -971,35 +971,35 @@ impl GetIdError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIdErrorKind::ExternalServiceException`.
+    /// Returns `true` if the error kind is `GetIdErrorKind::ExternalServiceException`.
     pub fn is_external_service_exception(&self) -> bool {
         matches!(&self.kind, GetIdErrorKind::ExternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetIdErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetIdErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetIdErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetIdErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetIdErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, GetIdErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `GetIdErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetIdErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetIdErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetIdErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetIdErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, GetIdErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `GetIdErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `GetIdErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetIdErrorKind::ResourceConflictException(_))
     }
-    /// Returns true if the error kind is `GetIdErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetIdErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetIdErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetIdErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetIdErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetIdErrorKind::TooManyRequestsException(_))
     }
@@ -1047,7 +1047,7 @@ pub enum GetIdentityPoolRolesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIdentityPoolRolesError {
@@ -1115,42 +1115,42 @@ impl GetIdentityPoolRolesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIdentityPoolRolesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetIdentityPoolRolesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityPoolRolesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityPoolRolesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetIdentityPoolRolesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityPoolRolesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityPoolRolesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetIdentityPoolRolesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityPoolRolesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityPoolRolesErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `GetIdentityPoolRolesErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityPoolRolesErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityPoolRolesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetIdentityPoolRolesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIdentityPoolRolesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetIdentityPoolRolesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetIdentityPoolRolesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1202,7 +1202,7 @@ pub enum GetOpenIdTokenErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOpenIdTokenError {
@@ -1271,49 +1271,49 @@ impl GetOpenIdTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOpenIdTokenErrorKind::ExternalServiceException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenErrorKind::ExternalServiceException`.
     pub fn is_external_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenErrorKind::ExternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1366,7 +1366,7 @@ pub enum GetOpenIdTokenForDeveloperIdentityErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOpenIdTokenForDeveloperIdentityError {
@@ -1454,49 +1454,49 @@ impl GetOpenIdTokenForDeveloperIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::DeveloperUserAlreadyRegisteredException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::DeveloperUserAlreadyRegisteredException`.
     pub fn is_developer_user_already_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenForDeveloperIdentityErrorKind::DeveloperUserAlreadyRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenForDeveloperIdentityErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenForDeveloperIdentityErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenForDeveloperIdentityErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpenIdTokenForDeveloperIdentityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetOpenIdTokenForDeveloperIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1559,7 +1559,7 @@ pub enum GetPrincipalTagAttributeMapErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPrincipalTagAttributeMapError {
@@ -1630,35 +1630,35 @@ impl GetPrincipalTagAttributeMapError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPrincipalTagAttributeMapErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetPrincipalTagAttributeMapErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPrincipalTagAttributeMapErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetPrincipalTagAttributeMapErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetPrincipalTagAttributeMapErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPrincipalTagAttributeMapErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetPrincipalTagAttributeMapErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetPrincipalTagAttributeMapErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPrincipalTagAttributeMapErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPrincipalTagAttributeMapErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPrincipalTagAttributeMapErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPrincipalTagAttributeMapErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPrincipalTagAttributeMapErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetPrincipalTagAttributeMapErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1703,7 +1703,7 @@ pub enum ListIdentitiesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIdentitiesError {
@@ -1770,35 +1770,35 @@ impl ListIdentitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIdentitiesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListIdentitiesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentitiesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentitiesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListIdentitiesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentitiesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentitiesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListIdentitiesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentitiesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentitiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIdentitiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentitiesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentitiesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListIdentitiesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1843,7 +1843,7 @@ pub enum ListIdentityPoolsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIdentityPoolsError {
@@ -1910,35 +1910,35 @@ impl ListIdentityPoolsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIdentityPoolsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListIdentityPoolsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityPoolsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityPoolsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListIdentityPoolsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityPoolsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityPoolsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListIdentityPoolsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityPoolsErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityPoolsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIdentityPoolsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIdentityPoolsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIdentityPoolsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListIdentityPoolsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1983,7 +1983,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2050,35 +2050,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2126,7 +2126,7 @@ pub enum LookupDeveloperIdentityErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for LookupDeveloperIdentityError {
@@ -2194,42 +2194,42 @@ impl LookupDeveloperIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `LookupDeveloperIdentityErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `LookupDeveloperIdentityErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupDeveloperIdentityErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `LookupDeveloperIdentityErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `LookupDeveloperIdentityErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupDeveloperIdentityErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `LookupDeveloperIdentityErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `LookupDeveloperIdentityErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupDeveloperIdentityErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `LookupDeveloperIdentityErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `LookupDeveloperIdentityErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupDeveloperIdentityErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `LookupDeveloperIdentityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `LookupDeveloperIdentityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupDeveloperIdentityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `LookupDeveloperIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `LookupDeveloperIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2278,7 +2278,7 @@ pub enum MergeDeveloperIdentitiesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergeDeveloperIdentitiesError {
@@ -2346,42 +2346,42 @@ impl MergeDeveloperIdentitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergeDeveloperIdentitiesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `MergeDeveloperIdentitiesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeDeveloperIdentitiesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `MergeDeveloperIdentitiesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `MergeDeveloperIdentitiesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeDeveloperIdentitiesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `MergeDeveloperIdentitiesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `MergeDeveloperIdentitiesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeDeveloperIdentitiesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `MergeDeveloperIdentitiesErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `MergeDeveloperIdentitiesErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeDeveloperIdentitiesErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `MergeDeveloperIdentitiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `MergeDeveloperIdentitiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeDeveloperIdentitiesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MergeDeveloperIdentitiesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `MergeDeveloperIdentitiesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2432,7 +2432,7 @@ pub enum SetIdentityPoolRolesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetIdentityPoolRolesError {
@@ -2501,49 +2501,49 @@ impl SetIdentityPoolRolesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetIdentityPoolRolesErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `SetIdentityPoolRolesErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIdentityPoolRolesErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `SetIdentityPoolRolesErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetIdentityPoolRolesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIdentityPoolRolesErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetIdentityPoolRolesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetIdentityPoolRolesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIdentityPoolRolesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetIdentityPoolRolesErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SetIdentityPoolRolesErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIdentityPoolRolesErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `SetIdentityPoolRolesErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `SetIdentityPoolRolesErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIdentityPoolRolesErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `SetIdentityPoolRolesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetIdentityPoolRolesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIdentityPoolRolesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetIdentityPoolRolesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SetIdentityPoolRolesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2590,7 +2590,7 @@ pub enum SetPrincipalTagAttributeMapErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetPrincipalTagAttributeMapError {
@@ -2661,35 +2661,35 @@ impl SetPrincipalTagAttributeMapError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetPrincipalTagAttributeMapErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `SetPrincipalTagAttributeMapErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetPrincipalTagAttributeMapErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SetPrincipalTagAttributeMapErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SetPrincipalTagAttributeMapErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetPrincipalTagAttributeMapErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SetPrincipalTagAttributeMapErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SetPrincipalTagAttributeMapErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetPrincipalTagAttributeMapErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `SetPrincipalTagAttributeMapErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetPrincipalTagAttributeMapErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetPrincipalTagAttributeMapErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetPrincipalTagAttributeMapErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SetPrincipalTagAttributeMapErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2734,7 +2734,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2801,29 +2801,29 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2871,7 +2871,7 @@ pub enum UnlinkDeveloperIdentityErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnlinkDeveloperIdentityError {
@@ -2939,42 +2939,42 @@ impl UnlinkDeveloperIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnlinkDeveloperIdentityErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UnlinkDeveloperIdentityErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkDeveloperIdentityErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkDeveloperIdentityErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UnlinkDeveloperIdentityErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkDeveloperIdentityErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkDeveloperIdentityErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UnlinkDeveloperIdentityErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkDeveloperIdentityErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkDeveloperIdentityErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UnlinkDeveloperIdentityErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkDeveloperIdentityErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkDeveloperIdentityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UnlinkDeveloperIdentityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkDeveloperIdentityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkDeveloperIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UnlinkDeveloperIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3026,7 +3026,7 @@ pub enum UnlinkIdentityErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnlinkIdentityError {
@@ -3095,49 +3095,49 @@ impl UnlinkIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnlinkIdentityErrorKind::ExternalServiceException`.
+    /// Returns `true` if the error kind is `UnlinkIdentityErrorKind::ExternalServiceException`.
     pub fn is_external_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkIdentityErrorKind::ExternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkIdentityErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UnlinkIdentityErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkIdentityErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkIdentityErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UnlinkIdentityErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkIdentityErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkIdentityErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UnlinkIdentityErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkIdentityErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkIdentityErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UnlinkIdentityErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkIdentityErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkIdentityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UnlinkIdentityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnlinkIdentityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UnlinkIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UnlinkIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3184,7 +3184,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3251,35 +3251,35 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3331,7 +3331,7 @@ pub enum UpdateIdentityPoolErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIdentityPoolError {
@@ -3401,56 +3401,56 @@ impl UpdateIdentityPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIdentityPoolErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateIdentityPoolErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityPoolErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityPoolErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateIdentityPoolErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityPoolErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityPoolErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateIdentityPoolErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityPoolErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityPoolErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateIdentityPoolErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityPoolErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityPoolErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `UpdateIdentityPoolErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityPoolErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityPoolErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UpdateIdentityPoolErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityPoolErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityPoolErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateIdentityPoolErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIdentityPoolErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIdentityPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateIdentityPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

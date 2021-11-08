@@ -2078,9 +2078,9 @@ impl AsRef<str> for InstanceAttributeType {
 pub struct HoursOfOperationConfig {
     /// <p>The day that the hours of operation applies to.</p>
     pub day: std::option::Option<crate::model::HoursOfOperationDays>,
-    /// <p>The start time that your contact center is open.</p>
+    /// <p>The start time that your contact center opens.</p>
     pub start_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
-    /// <p>The end time that your contact center is closes.</p>
+    /// <p>The end time that your contact center closes.</p>
     pub end_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
 }
 impl std::fmt::Debug for HoursOfOperationConfig {
@@ -2116,12 +2116,12 @@ pub mod hours_of_operation_config {
             self.day = input;
             self
         }
-        /// <p>The start time that your contact center is open.</p>
+        /// <p>The start time that your contact center opens.</p>
         pub fn start_time(mut self, input: crate::model::HoursOfOperationTimeSlice) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start time that your contact center is open.</p>
+        /// <p>The start time that your contact center opens.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
@@ -2129,12 +2129,12 @@ pub mod hours_of_operation_config {
             self.start_time = input;
             self
         }
-        /// <p>The end time that your contact center is closes.</p>
+        /// <p>The end time that your contact center closes.</p>
         pub fn end_time(mut self, input: crate::model::HoursOfOperationTimeSlice) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end time that your contact center is closes.</p>
+        /// <p>The end time that your contact center closes.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
@@ -2658,6 +2658,60 @@ impl AnswerMachineDetectionConfig {
     /// Creates a new builder-style object to manufacture [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
     pub fn builder() -> crate::model::answer_machine_detection_config::Builder {
         crate::model::answer_machine_detection_config::Builder::default()
+    }
+}
+
+/// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChatStreamingConfiguration {
+    /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used
+    /// to publish real-time message streaming for chat conversations.</p>
+    pub streaming_endpoint_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ChatStreamingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChatStreamingConfiguration");
+        formatter.field("streaming_endpoint_arn", &self.streaming_endpoint_arn);
+        formatter.finish()
+    }
+}
+/// See [`ChatStreamingConfiguration`](crate::model::ChatStreamingConfiguration)
+pub mod chat_streaming_configuration {
+    /// A builder for [`ChatStreamingConfiguration`](crate::model::ChatStreamingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) streaming_endpoint_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used
+        /// to publish real-time message streaming for chat conversations.</p>
+        pub fn streaming_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.streaming_endpoint_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used
+        /// to publish real-time message streaming for chat conversations.</p>
+        pub fn set_streaming_endpoint_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.streaming_endpoint_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChatStreamingConfiguration`](crate::model::ChatStreamingConfiguration)
+        pub fn build(self) -> crate::model::ChatStreamingConfiguration {
+            crate::model::ChatStreamingConfiguration {
+                streaming_endpoint_arn: self.streaming_endpoint_arn,
+            }
+        }
+    }
+}
+impl ChatStreamingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ChatStreamingConfiguration`](crate::model::ChatStreamingConfiguration)
+    pub fn builder() -> crate::model::chat_streaming_configuration::Builder {
+        crate::model::chat_streaming_configuration::Builder::default()
     }
 }
 

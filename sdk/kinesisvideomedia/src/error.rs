@@ -30,7 +30,7 @@ pub enum GetMediaErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>Status Code: 404, The stream with the given name does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMediaError {
@@ -98,33 +98,33 @@ impl GetMediaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMediaErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `GetMediaErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaErrorKind::ConnectionLimitExceededException`.
+    /// Returns `true` if the error kind is `GetMediaErrorKind::ConnectionLimitExceededException`.
     pub fn is_connection_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaErrorKind::ConnectionLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetMediaErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, GetMediaErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `GetMediaErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `GetMediaErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(&self.kind, GetMediaErrorKind::InvalidEndpointException(_))
     }
-    /// Returns true if the error kind is `GetMediaErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetMediaErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, GetMediaErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `GetMediaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMediaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetMediaErrorKind::ResourceNotFoundException(_))
     }

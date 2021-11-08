@@ -22,7 +22,7 @@ pub enum AssociateAliasErrorKind {
     NoSuchDistribution(crate::error::NoSuchDistribution),
     /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
     TooManyDistributionCnamEs(crate::error::TooManyDistributionCnamEs),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateAliasError {
@@ -89,23 +89,23 @@ impl AssociateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateAliasErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `AssociateAliasErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, AssociateAliasErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `AssociateAliasErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `AssociateAliasErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(&self.kind, AssociateAliasErrorKind::IllegalUpdate(_))
     }
-    /// Returns true if the error kind is `AssociateAliasErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `AssociateAliasErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, AssociateAliasErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `AssociateAliasErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `AssociateAliasErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(&self.kind, AssociateAliasErrorKind::NoSuchDistribution(_))
     }
-    /// Returns true if the error kind is `AssociateAliasErrorKind::TooManyDistributionCnamEs`.
+    /// Returns `true` if the error kind is `AssociateAliasErrorKind::TooManyDistributionCnamEs`.
     pub fn is_too_many_distribution_cnam_es(&self) -> bool {
         matches!(
             &self.kind,
@@ -148,7 +148,7 @@ pub enum CreateCachePolicyErrorKind {
     InconsistentQuantities(crate::error::InconsistentQuantities),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// <p>You have reached the maximum number of cache policies for this account. For more
+    /// <p>You have reached the maximum number of cache policies for this Amazon Web Services account. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyCachePolicies(crate::error::TooManyCachePolicies),
@@ -164,7 +164,7 @@ pub enum CreateCachePolicyErrorKind {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyQueryStringsInCachePolicy(crate::error::TooManyQueryStringsInCachePolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCachePolicyError {
@@ -234,50 +234,50 @@ impl CreateCachePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCachePolicyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateCachePolicyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, CreateCachePolicyErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `CreateCachePolicyErrorKind::CachePolicyAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateCachePolicyErrorKind::CachePolicyAlreadyExists`.
     pub fn is_cache_policy_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateCachePolicyErrorKind::CachePolicyAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateCachePolicyErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateCachePolicyErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateCachePolicyErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateCachePolicyErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateCachePolicyErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, CreateCachePolicyErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `CreateCachePolicyErrorKind::TooManyCachePolicies`.
+    /// Returns `true` if the error kind is `CreateCachePolicyErrorKind::TooManyCachePolicies`.
     pub fn is_too_many_cache_policies(&self) -> bool {
         matches!(
             &self.kind,
             CreateCachePolicyErrorKind::TooManyCachePolicies(_)
         )
     }
-    /// Returns true if the error kind is `CreateCachePolicyErrorKind::TooManyCookiesInCachePolicy`.
+    /// Returns `true` if the error kind is `CreateCachePolicyErrorKind::TooManyCookiesInCachePolicy`.
     pub fn is_too_many_cookies_in_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateCachePolicyErrorKind::TooManyCookiesInCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateCachePolicyErrorKind::TooManyHeadersInCachePolicy`.
+    /// Returns `true` if the error kind is `CreateCachePolicyErrorKind::TooManyHeadersInCachePolicy`.
     pub fn is_too_many_headers_in_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateCachePolicyErrorKind::TooManyHeadersInCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy`.
+    /// Returns `true` if the error kind is `CreateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy`.
     pub fn is_too_many_query_strings_in_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -328,7 +328,7 @@ pub enum CreateCloudFrontOriginAccessIdentityErrorKind {
     MissingBody(crate::error::MissingBody),
     /// <p>Processing your request would cause you to exceed the maximum number of origin access identities allowed.</p>
     TooManyCloudFrontOriginAccessIdentities(crate::error::TooManyCloudFrontOriginAccessIdentities),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCloudFrontOriginAccessIdentityError {
@@ -410,32 +410,32 @@ impl CreateCloudFrontOriginAccessIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityAlreadyExists`.
     pub fn is_cloud_front_origin_access_identity_already_exists(&self) -> bool {
         matches!(&self.kind, CreateCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityAlreadyExists(_))
     }
-    /// Returns true if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFrontOriginAccessIdentityErrorKind::MissingBody(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::TooManyCloudFrontOriginAccessIdentities`.
+    /// Returns `true` if the error kind is `CreateCloudFrontOriginAccessIdentityErrorKind::TooManyCloudFrontOriginAccessIdentities`.
     pub fn is_too_many_cloud_front_origin_access_identities(&self) -> bool {
         matches!(
             &self.kind,
@@ -558,7 +558,9 @@ pub enum CreateDistributionErrorKind {
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
     /// <p>The real-time log configuration does not exist.</p>
     NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
-    /// <p>The specified real-time log configuration belongs to a different account.</p>
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
     RealtimeLogConfigOwnerMismatch(crate::error::RealtimeLogConfigOwnerMismatch),
     /// <p>You cannot create more cache behaviors for the distribution.</p>
     TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
@@ -591,6 +593,13 @@ pub enum CreateDistributionErrorKind {
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToOriginRequestPolicy(
         crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified response headers
+    /// policy.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToResponseHeadersPolicy(
+        crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
     ),
     /// <p>You have reached the maximum number of distributions that are associated with a CloudFront
     /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
@@ -636,7 +645,7 @@ pub enum CreateDistributionErrorKind {
     TrustedKeyGroupDoesNotExist(crate::error::TrustedKeyGroupDoesNotExist),
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDistributionError {
@@ -741,6 +750,9 @@ impl std::fmt::Display for CreateDistributionError {
             CreateDistributionErrorKind::NoSuchRealtimeLogConfig(_inner) =>
             _inner.fmt(f)
             ,
+            CreateDistributionErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
             CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
             _inner.fmt(f)
             ,
@@ -769,6 +781,9 @@ impl std::fmt::Display for CreateDistributionError {
             _inner.fmt(f)
             ,
             CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
             _inner.fmt(f)
             ,
             CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
@@ -871,260 +886,267 @@ impl CreateDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::CnameAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::CnameAlreadyExists`.
     pub fn is_cname_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::CnameAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::DistributionAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::DistributionAlreadyExists`.
     pub fn is_distribution_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::DistributionAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
     pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidDefaultRootObject`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidDefaultRootObject`.
     pub fn is_invalid_default_root_object(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidDefaultRootObject(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidErrorCode`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidErrorCode`.
     pub fn is_invalid_error_code(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::InvalidErrorCode(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidForwardCookies`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidForwardCookies`.
     pub fn is_invalid_forward_cookies(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidForwardCookies(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidFunctionAssociation`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidFunctionAssociation`.
     pub fn is_invalid_function_association(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidFunctionAssociation(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidGeoRestrictionParameter`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidGeoRestrictionParameter`.
     pub fn is_invalid_geo_restriction_parameter(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidGeoRestrictionParameter(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidHeadersForS3Origin`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidHeadersForS3Origin`.
     pub fn is_invalid_headers_for_s3_origin(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidHeadersForS3Origin(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidLambdaFunctionAssociation`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidLambdaFunctionAssociation`.
     pub fn is_invalid_lambda_function_association(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidLambdaFunctionAssociation(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidLocationCode`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidLocationCode`.
     pub fn is_invalid_location_code(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidLocationCode(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidMinimumProtocolVersion`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidMinimumProtocolVersion`.
     pub fn is_invalid_minimum_protocol_version(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidMinimumProtocolVersion(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidOrigin`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidOrigin`.
     pub fn is_invalid_origin(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::InvalidOrigin(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidOriginAccessIdentity`.
     pub fn is_invalid_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidOriginAccessIdentity(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidOriginKeepaliveTimeout`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidOriginKeepaliveTimeout`.
     pub fn is_invalid_origin_keepalive_timeout(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidOriginKeepaliveTimeout(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidOriginReadTimeout`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidOriginReadTimeout`.
     pub fn is_invalid_origin_read_timeout(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidOriginReadTimeout(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidProtocolSettings`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidProtocolSettings`.
     pub fn is_invalid_protocol_settings(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidProtocolSettings(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidQueryStringParameters`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidQueryStringParameters`.
     pub fn is_invalid_query_string_parameters(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidQueryStringParameters(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidRelativePath`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidRelativePath`.
     pub fn is_invalid_relative_path(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidRelativePath(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidRequiredProtocol`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidRequiredProtocol`.
     pub fn is_invalid_required_protocol(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidRequiredProtocol(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidResponseCode`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidResponseCode`.
     pub fn is_invalid_response_code(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidResponseCode(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidTtlOrder`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidTtlOrder`.
     pub fn is_invalid_ttl_order(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::InvalidTtlOrder(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidViewerCertificate`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidViewerCertificate`.
     pub fn is_invalid_viewer_certificate(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidViewerCertificate(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidWebAclId`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidWebAclId`.
     pub fn is_invalid_web_acl_id(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::InvalidWebAclId(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::MissingBody(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::NoSuchCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig`.
     pub fn is_no_such_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::NoSuchOrigin`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::NoSuchOrigin`.
     pub fn is_no_such_origin(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::NoSuchOrigin(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::NoSuchOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::NoSuchRealtimeLogConfig`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::NoSuchRealtimeLogConfig`.
     pub fn is_no_such_realtime_log_config(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::NoSuchRealtimeLogConfig(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDistributionErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch`.
     pub fn is_realtime_log_config_owner_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyCacheBehaviors`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyCacheBehaviors`.
     pub fn is_too_many_cache_behaviors(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyCacheBehaviors(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyCertificates`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyCertificates`.
     pub fn is_too_many_certificates(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyCertificates(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyCookieNamesInWhiteList`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyCookieNamesInWhiteList`.
     pub fn is_too_many_cookie_names_in_white_list(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyCookieNamesInWhiteList(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributionCnamEs`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionCnamEs`.
     pub fn is_too_many_distribution_cnam_es(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyDistributionCnamEs(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributions`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributions`.
     pub fn is_too_many_distributions(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyDistributions(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy`.
     pub fn is_too_many_distributions_associated_to_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
     pub fn is_too_many_distributions_associated_to_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -1133,109 +1155,116 @@ impl CreateDistributionError {
             )
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup`.
     pub fn is_too_many_distributions_associated_to_key_group(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy`.
     pub fn is_too_many_distributions_associated_to_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy`.
+    pub fn is_too_many_distributions_associated_to_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations`.
     pub fn is_too_many_distributions_with_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations`.
     pub fn is_too_many_distributions_with_lambda_associations(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn`.
     pub fn is_too_many_distributions_with_single_function_arn(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyFunctionAssociations`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyFunctionAssociations`.
     pub fn is_too_many_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyHeadersInForwardedValues`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyHeadersInForwardedValues`.
     pub fn is_too_many_headers_in_forwarded_values(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyHeadersInForwardedValues(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution`.
     pub fn is_too_many_key_groups_associated_to_distribution(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyLambdaFunctionAssociations`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyLambdaFunctionAssociations`.
     pub fn is_too_many_lambda_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyLambdaFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyOriginCustomHeaders`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyOriginCustomHeaders`.
     pub fn is_too_many_origin_custom_headers(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyOriginCustomHeaders(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyOriginGroupsPerDistribution`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyOriginGroupsPerDistribution`.
     pub fn is_too_many_origin_groups_per_distribution(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyOriginGroupsPerDistribution(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyOrigins`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyOrigins`.
     pub fn is_too_many_origins(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::TooManyOrigins(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyQueryStringParameters`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyQueryStringParameters`.
     pub fn is_too_many_query_string_parameters(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyQueryStringParameters(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TooManyTrustedSigners`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TooManyTrustedSigners`.
     pub fn is_too_many_trusted_signers(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TooManyTrustedSigners(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TrustedKeyGroupDoesNotExist`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TrustedKeyGroupDoesNotExist`.
     pub fn is_trusted_key_group_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::TrustedKeyGroupDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::TrustedSignerDoesNotExist`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::TrustedSignerDoesNotExist`.
     pub fn is_trusted_signer_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -1345,6 +1374,9 @@ impl std::error::Error for CreateDistributionError {
             CreateDistributionErrorKind::NoSuchRealtimeLogConfig(_inner) =>
             Some(_inner)
             ,
+            CreateDistributionErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
             CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
             Some(_inner)
             ,
@@ -1373,6 +1405,9 @@ impl std::error::Error for CreateDistributionError {
             Some(_inner)
             ,
             CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            Some(_inner)
+            ,
+            CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
             Some(_inner)
             ,
             CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
@@ -1514,7 +1549,9 @@ pub enum CreateDistributionWithTagsErrorKind {
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
     /// <p>The real-time log configuration does not exist.</p>
     NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
-    /// <p>The specified real-time log configuration belongs to a different account.</p>
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
     RealtimeLogConfigOwnerMismatch(crate::error::RealtimeLogConfigOwnerMismatch),
     /// <p>You cannot create more cache behaviors for the distribution.</p>
     TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
@@ -1547,6 +1584,13 @@ pub enum CreateDistributionWithTagsErrorKind {
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToOriginRequestPolicy(
         crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified response headers
+    /// policy.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToResponseHeadersPolicy(
+        crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
     ),
     /// <p>You have reached the maximum number of distributions that are associated with a CloudFront
     /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
@@ -1592,7 +1636,7 @@ pub enum CreateDistributionWithTagsErrorKind {
     TrustedKeyGroupDoesNotExist(crate::error::TrustedKeyGroupDoesNotExist),
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDistributionWithTagsError {
@@ -1700,6 +1744,9 @@ impl std::fmt::Display for CreateDistributionWithTagsError {
             CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig(_inner) =>
             _inner.fmt(f)
             ,
+            CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
             CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
             _inner.fmt(f)
             ,
@@ -1728,6 +1775,9 @@ impl std::fmt::Display for CreateDistributionWithTagsError {
             _inner.fmt(f)
             ,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
             _inner.fmt(f)
             ,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
@@ -1830,397 +1880,408 @@ impl CreateDistributionWithTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::CnameAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::CnameAlreadyExists`.
     pub fn is_cname_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::CnameAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::DistributionAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::DistributionAlreadyExists`.
     pub fn is_distribution_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::DistributionAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
     pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
         matches!(&self.kind, CreateDistributionWithTagsErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_))
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidDefaultRootObject`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidDefaultRootObject`.
     pub fn is_invalid_default_root_object(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidDefaultRootObject(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidErrorCode`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidErrorCode`.
     pub fn is_invalid_error_code(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidErrorCode(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidForwardCookies`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidForwardCookies`.
     pub fn is_invalid_forward_cookies(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidForwardCookies(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidFunctionAssociation`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidFunctionAssociation`.
     pub fn is_invalid_function_association(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidFunctionAssociation(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidGeoRestrictionParameter`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidGeoRestrictionParameter`.
     pub fn is_invalid_geo_restriction_parameter(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidGeoRestrictionParameter(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidHeadersForS3Origin`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidHeadersForS3Origin`.
     pub fn is_invalid_headers_for_s3_origin(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidHeadersForS3Origin(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidLambdaFunctionAssociation`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidLambdaFunctionAssociation`.
     pub fn is_invalid_lambda_function_association(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidLambdaFunctionAssociation(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidLocationCode`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidLocationCode`.
     pub fn is_invalid_location_code(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidLocationCode(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidMinimumProtocolVersion`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidMinimumProtocolVersion`.
     pub fn is_invalid_minimum_protocol_version(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidMinimumProtocolVersion(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidOrigin`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidOrigin`.
     pub fn is_invalid_origin(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidOrigin(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidOriginAccessIdentity`.
     pub fn is_invalid_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidOriginAccessIdentity(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidOriginKeepaliveTimeout`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidOriginKeepaliveTimeout`.
     pub fn is_invalid_origin_keepalive_timeout(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidOriginKeepaliveTimeout(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidOriginReadTimeout`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidOriginReadTimeout`.
     pub fn is_invalid_origin_read_timeout(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidOriginReadTimeout(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidProtocolSettings`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidProtocolSettings`.
     pub fn is_invalid_protocol_settings(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidProtocolSettings(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidQueryStringParameters`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidQueryStringParameters`.
     pub fn is_invalid_query_string_parameters(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidQueryStringParameters(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidRelativePath`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidRelativePath`.
     pub fn is_invalid_relative_path(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidRelativePath(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidRequiredProtocol`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidRequiredProtocol`.
     pub fn is_invalid_required_protocol(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidRequiredProtocol(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidResponseCode`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidResponseCode`.
     pub fn is_invalid_response_code(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidResponseCode(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidTagging`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidTagging`.
     pub fn is_invalid_tagging(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidTagging(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidTtlOrder`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidTtlOrder`.
     pub fn is_invalid_ttl_order(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidTtlOrder(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidViewerCertificate`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidViewerCertificate`.
     pub fn is_invalid_viewer_certificate(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidViewerCertificate(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::InvalidWebAclId`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::InvalidWebAclId`.
     pub fn is_invalid_web_acl_id(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::InvalidWebAclId(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::MissingBody(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::NoSuchCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig`.
     pub fn is_no_such_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchOrigin`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchOrigin`.
     pub fn is_no_such_origin(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::NoSuchOrigin(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::NoSuchOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig`.
     pub fn is_no_such_realtime_log_config(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch`.
     pub fn is_realtime_log_config_owner_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyCacheBehaviors`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyCacheBehaviors`.
     pub fn is_too_many_cache_behaviors(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyCacheBehaviors(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyCertificates`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyCertificates`.
     pub fn is_too_many_certificates(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyCertificates(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyCookieNamesInWhiteList`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyCookieNamesInWhiteList`.
     pub fn is_too_many_cookie_names_in_white_list(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyCookieNamesInWhiteList(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionCnamEs`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionCnamEs`.
     pub fn is_too_many_distribution_cnam_es(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyDistributionCnamEs(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributions`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributions`.
     pub fn is_too_many_distributions(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyDistributions(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToCachePolicy`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToCachePolicy`.
     pub fn is_too_many_distributions_associated_to_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
     pub fn is_too_many_distributions_associated_to_field_level_encryption_config(&self) -> bool {
         matches!(&self.kind, CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_))
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToKeyGroup`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToKeyGroup`.
     pub fn is_too_many_distributions_associated_to_key_group(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToKeyGroup(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy`.
     pub fn is_too_many_distributions_associated_to_origin_request_policy(&self) -> bool {
         matches!(&self.kind, CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_))
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy`.
+    pub fn is_too_many_distributions_associated_to_response_headers_policy(&self) -> bool {
+        matches!(&self.kind, CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_))
+    }
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations`.
     pub fn is_too_many_distributions_with_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsWithLambdaAssociations`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsWithLambdaAssociations`.
     pub fn is_too_many_distributions_with_lambda_associations(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsWithLambdaAssociations(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsWithSingleFunctionArn`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyDistributionsWithSingleFunctionArn`.
     pub fn is_too_many_distributions_with_single_function_arn(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsWithSingleFunctionArn(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyFunctionAssociations`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyFunctionAssociations`.
     pub fn is_too_many_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyHeadersInForwardedValues`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyHeadersInForwardedValues`.
     pub fn is_too_many_headers_in_forwarded_values(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyHeadersInForwardedValues(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyKeyGroupsAssociatedToDistribution`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyKeyGroupsAssociatedToDistribution`.
     pub fn is_too_many_key_groups_associated_to_distribution(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyKeyGroupsAssociatedToDistribution(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyLambdaFunctionAssociations`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyLambdaFunctionAssociations`.
     pub fn is_too_many_lambda_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyLambdaFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyOriginCustomHeaders`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyOriginCustomHeaders`.
     pub fn is_too_many_origin_custom_headers(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyOriginCustomHeaders(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyOriginGroupsPerDistribution`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyOriginGroupsPerDistribution`.
     pub fn is_too_many_origin_groups_per_distribution(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyOriginGroupsPerDistribution(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyOrigins`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyOrigins`.
     pub fn is_too_many_origins(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyOrigins(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyQueryStringParameters`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyQueryStringParameters`.
     pub fn is_too_many_query_string_parameters(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyQueryStringParameters(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TooManyTrustedSigners`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TooManyTrustedSigners`.
     pub fn is_too_many_trusted_signers(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TooManyTrustedSigners(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TrustedKeyGroupDoesNotExist`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TrustedKeyGroupDoesNotExist`.
     pub fn is_trusted_key_group_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionWithTagsErrorKind::TrustedKeyGroupDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionWithTagsErrorKind::TrustedSignerDoesNotExist`.
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsErrorKind::TrustedSignerDoesNotExist`.
     pub fn is_trusted_signer_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -2333,6 +2394,9 @@ impl std::error::Error for CreateDistributionWithTagsError {
             CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig(_inner) =>
             Some(_inner)
             ,
+            CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
             CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch(_inner) =>
             Some(_inner)
             ,
@@ -2361,6 +2425,9 @@ impl std::error::Error for CreateDistributionWithTagsError {
             Some(_inner)
             ,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            Some(_inner)
+            ,
+            CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
             Some(_inner)
             ,
             CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
@@ -2445,7 +2512,7 @@ pub enum CreateFieldLevelEncryptionConfigErrorKind {
     TooManyFieldLevelEncryptionQueryArgProfiles(
         crate::error::TooManyFieldLevelEncryptionQueryArgProfiles,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFieldLevelEncryptionConfigError {
@@ -2536,53 +2603,53 @@ impl CreateFieldLevelEncryptionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigAlreadyExists`.
     pub fn is_field_level_encryption_config_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionConfigErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile`.
     pub fn is_no_such_field_level_encryption_profile(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty`.
     pub fn is_query_arg_profile_empty(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionConfigs`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionConfigs`.
     pub fn is_too_many_field_level_encryption_configs(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionConfigs(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles`.
     pub fn is_too_many_field_level_encryption_content_type_profiles(&self) -> bool {
         matches!(&self.kind, CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles(_))
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles`.
     pub fn is_too_many_field_level_encryption_query_arg_profiles(&self) -> bool {
         matches!(
             &self.kind,
@@ -2661,7 +2728,7 @@ pub enum CreateFieldLevelEncryptionProfileErrorKind {
     ),
     /// <p>The maximum number of profiles for field-level encryption have been created.</p>
     TooManyFieldLevelEncryptionProfiles(crate::error::TooManyFieldLevelEncryptionProfiles),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFieldLevelEncryptionProfileError {
@@ -2752,53 +2819,53 @@ impl CreateFieldLevelEncryptionProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists`.
     pub fn is_field_level_encryption_profile_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded`.
     pub fn is_field_level_encryption_profile_size_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionProfileErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey`.
     pub fn is_no_such_public_key(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities`.
     pub fn is_too_many_field_level_encryption_encryption_entities(&self) -> bool {
         matches!(&self.kind, CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities(_))
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns`.
     pub fn is_too_many_field_level_encryption_field_patterns(&self) -> bool {
         matches!(
             &self.kind,
             CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns(_)
         )
     }
-    /// Returns true if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionProfiles`.
+    /// Returns `true` if the error kind is `CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionProfiles`.
     pub fn is_too_many_field_level_encryption_profiles(&self) -> bool {
         matches!(
             &self.kind,
@@ -2853,7 +2920,7 @@ pub struct CreateFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFunctionErrorKind {
-    /// <p>A function with the same name already exists in this account. To create a
+    /// <p>A function with the same name already exists in this Amazon Web Services account. To create a
     /// function, you must provide a unique name. To update an existing function, use
     /// <code>UpdateFunction</code>.</p>
     FunctionAlreadyExists(crate::error::FunctionAlreadyExists),
@@ -2862,13 +2929,13 @@ pub enum CreateFunctionErrorKind {
     FunctionSizeLimitExceeded(crate::error::FunctionSizeLimitExceeded),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// <p>You have reached the maximum number of CloudFront functions for this account. For more
+    /// <p>You have reached the maximum number of CloudFront functions for this Amazon Web Services account. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyFunctions(crate::error::TooManyFunctions),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFunctionError {
@@ -2935,29 +3002,29 @@ impl CreateFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::FunctionAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::FunctionAlreadyExists`.
     pub fn is_function_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::FunctionAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::FunctionSizeLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::FunctionSizeLimitExceeded`.
     pub fn is_function_size_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::FunctionSizeLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, CreateFunctionErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::TooManyFunctions`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::TooManyFunctions`.
     pub fn is_too_many_functions(&self) -> bool {
         matches!(&self.kind, CreateFunctionErrorKind::TooManyFunctions(_))
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, CreateFunctionErrorKind::UnsupportedOperation(_))
     }
@@ -3002,7 +3069,7 @@ pub enum CreateInvalidationErrorKind {
     NoSuchDistribution(crate::error::NoSuchDistribution),
     /// <p>You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation objects.</p>
     TooManyInvalidationsInProgress(crate::error::TooManyInvalidationsInProgress),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInvalidationError {
@@ -3071,37 +3138,37 @@ impl CreateInvalidationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInvalidationErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateInvalidationErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, CreateInvalidationErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `CreateInvalidationErrorKind::BatchTooLarge`.
+    /// Returns `true` if the error kind is `CreateInvalidationErrorKind::BatchTooLarge`.
     pub fn is_batch_too_large(&self) -> bool {
         matches!(&self.kind, CreateInvalidationErrorKind::BatchTooLarge(_))
     }
-    /// Returns true if the error kind is `CreateInvalidationErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateInvalidationErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateInvalidationErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateInvalidationErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateInvalidationErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, CreateInvalidationErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `CreateInvalidationErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `CreateInvalidationErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(&self.kind, CreateInvalidationErrorKind::MissingBody(_))
     }
-    /// Returns true if the error kind is `CreateInvalidationErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `CreateInvalidationErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
             CreateInvalidationErrorKind::NoSuchDistribution(_)
         )
     }
-    /// Returns true if the error kind is `CreateInvalidationErrorKind::TooManyInvalidationsInProgress`.
+    /// Returns `true` if the error kind is `CreateInvalidationErrorKind::TooManyInvalidationsInProgress`.
     pub fn is_too_many_invalidations_in_progress(&self) -> bool {
         matches!(
             &self.kind,
@@ -3142,7 +3209,7 @@ pub enum CreateKeyGroupErrorKind {
     /// <p>A key group with this name already exists. You must provide a unique name. To modify an
     /// existing key group, use <code>UpdateKeyGroup</code>.</p>
     KeyGroupAlreadyExists(crate::error::KeyGroupAlreadyExists),
-    /// <p>You have reached the maximum number of key groups for this account. For more
+    /// <p>You have reached the maximum number of key groups for this Amazon Web Services account. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyKeyGroups(crate::error::TooManyKeyGroups),
@@ -3150,7 +3217,7 @@ pub enum CreateKeyGroupErrorKind {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyPublicKeysInKeyGroup(crate::error::TooManyPublicKeysInKeyGroup),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateKeyGroupError {
@@ -3216,22 +3283,22 @@ impl CreateKeyGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateKeyGroupErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateKeyGroupErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, CreateKeyGroupErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `CreateKeyGroupErrorKind::KeyGroupAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateKeyGroupErrorKind::KeyGroupAlreadyExists`.
     pub fn is_key_group_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeyGroupErrorKind::KeyGroupAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeyGroupErrorKind::TooManyKeyGroups`.
+    /// Returns `true` if the error kind is `CreateKeyGroupErrorKind::TooManyKeyGroups`.
     pub fn is_too_many_key_groups(&self) -> bool {
         matches!(&self.kind, CreateKeyGroupErrorKind::TooManyKeyGroups(_))
     }
-    /// Returns true if the error kind is `CreateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup`.
+    /// Returns `true` if the error kind is `CreateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup`.
     pub fn is_too_many_public_keys_in_key_group(&self) -> bool {
         matches!(
             &self.kind,
@@ -3270,7 +3337,7 @@ pub enum CreateMonitoringSubscriptionErrorKind {
     NoSuchDistribution(crate::error::NoSuchDistribution),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMonitoringSubscriptionError {
@@ -3335,21 +3402,21 @@ impl CreateMonitoringSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMonitoringSubscriptionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateMonitoringSubscriptionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             CreateMonitoringSubscriptionErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `CreateMonitoringSubscriptionErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `CreateMonitoringSubscriptionErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
             CreateMonitoringSubscriptionErrorKind::NoSuchDistribution(_)
         )
     }
-    /// Returns true if the error kind is `CreateMonitoringSubscriptionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `CreateMonitoringSubscriptionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -3399,7 +3466,7 @@ pub enum CreateOriginRequestPolicyErrorKind {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyHeadersInOriginRequestPolicy(crate::error::TooManyHeadersInOriginRequestPolicy),
-    /// <p>You have reached the maximum number of origin request policies for this account.
+    /// <p>You have reached the maximum number of origin request policies for this Amazon Web Services account.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyOriginRequestPolicies(crate::error::TooManyOriginRequestPolicies),
@@ -3409,7 +3476,7 @@ pub enum CreateOriginRequestPolicyErrorKind {
     TooManyQueryStringsInOriginRequestPolicy(
         crate::error::TooManyQueryStringsInOriginRequestPolicy,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOriginRequestPolicyError {
@@ -3489,56 +3556,56 @@ impl CreateOriginRequestPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOriginRequestPolicyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateOriginRequestPolicyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginRequestPolicyErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginRequestPolicyErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateOriginRequestPolicyErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginRequestPolicyErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginRequestPolicyErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateOriginRequestPolicyErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginRequestPolicyErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists`.
     pub fn is_origin_request_policy_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `CreateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy`.
     pub fn is_too_many_cookies_in_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `CreateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy`.
     pub fn is_too_many_headers_in_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginRequestPolicyErrorKind::TooManyOriginRequestPolicies`.
+    /// Returns `true` if the error kind is `CreateOriginRequestPolicyErrorKind::TooManyOriginRequestPolicies`.
     pub fn is_too_many_origin_request_policies(&self) -> bool {
         matches!(
             &self.kind,
             CreateOriginRequestPolicyErrorKind::TooManyOriginRequestPolicies(_)
         )
     }
-    /// Returns true if the error kind is `CreateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `CreateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy`.
     pub fn is_too_many_query_strings_in_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -3591,7 +3658,7 @@ pub enum CreatePublicKeyErrorKind {
     PublicKeyAlreadyExists(crate::error::PublicKeyAlreadyExists),
     /// <p>The maximum number of public keys for field-level encryption have been created. To create a new public key, delete one of the existing keys.</p>
     TooManyPublicKeys(crate::error::TooManyPublicKeys),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePublicKeyError {
@@ -3656,18 +3723,18 @@ impl CreatePublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePublicKeyErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreatePublicKeyErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, CreatePublicKeyErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `CreatePublicKeyErrorKind::PublicKeyAlreadyExists`.
+    /// Returns `true` if the error kind is `CreatePublicKeyErrorKind::PublicKeyAlreadyExists`.
     pub fn is_public_key_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreatePublicKeyErrorKind::PublicKeyAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreatePublicKeyErrorKind::TooManyPublicKeys`.
+    /// Returns `true` if the error kind is `CreatePublicKeyErrorKind::TooManyPublicKeys`.
     pub fn is_too_many_public_keys(&self) -> bool {
         matches!(&self.kind, CreatePublicKeyErrorKind::TooManyPublicKeys(_))
     }
@@ -3704,11 +3771,11 @@ pub enum CreateRealtimeLogConfigErrorKind {
     /// To modify an existing real-time log configuration, use
     /// <code>UpdateRealtimeLogConfig</code>.</p>
     RealtimeLogConfigAlreadyExists(crate::error::RealtimeLogConfigAlreadyExists),
-    /// <p>You have reached the maximum number of real-time log configurations for this account.
+    /// <p>You have reached the maximum number of real-time log configurations for this Amazon Web Services account.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyRealtimeLogConfigs(crate::error::TooManyRealtimeLogConfigs),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRealtimeLogConfigError {
@@ -3776,28 +3843,28 @@ impl CreateRealtimeLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRealtimeLogConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateRealtimeLogConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             CreateRealtimeLogConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `CreateRealtimeLogConfigErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateRealtimeLogConfigErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateRealtimeLogConfigErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateRealtimeLogConfigErrorKind::RealtimeLogConfigAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateRealtimeLogConfigErrorKind::RealtimeLogConfigAlreadyExists`.
     pub fn is_realtime_log_config_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateRealtimeLogConfigErrorKind::RealtimeLogConfigAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateRealtimeLogConfigErrorKind::TooManyRealtimeLogConfigs`.
+    /// Returns `true` if the error kind is `CreateRealtimeLogConfigErrorKind::TooManyRealtimeLogConfigs`.
     pub fn is_too_many_realtime_log_configs(&self) -> bool {
         matches!(
             &self.kind,
@@ -3815,6 +3882,177 @@ impl std::error::Error for CreateRealtimeLogConfigError {
             }
             CreateRealtimeLogConfigErrorKind::TooManyRealtimeLogConfigs(_inner) => Some(_inner),
             CreateRealtimeLogConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateResponseHeadersPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateResponseHeadersPolicyError {
+    /// Kind of error that occurred.
+    pub kind: CreateResponseHeadersPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateResponseHeadersPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateResponseHeadersPolicyErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
+    InconsistentQuantities(crate::error::InconsistentQuantities),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>A response headers policy with this name already exists. You must provide a unique name. To
+    /// modify an existing response headers policy, use
+    /// <code>UpdateResponseHeadersPolicy</code>.</p>
+    ResponseHeadersPolicyAlreadyExists(crate::error::ResponseHeadersPolicyAlreadyExists),
+    /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyCustomHeadersInResponseHeadersPolicy(
+        crate::error::TooManyCustomHeadersInResponseHeadersPolicy,
+    ),
+    /// <p>You have reached the maximum number of response headers policies for this
+    /// Amazon Web Services account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyResponseHeadersPolicies(crate::error::TooManyResponseHeadersPolicies),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateResponseHeadersPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateResponseHeadersPolicyErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            CreateResponseHeadersPolicyErrorKind::InconsistentQuantities(_inner) => _inner.fmt(f),
+            CreateResponseHeadersPolicyErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateResponseHeadersPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateResponseHeadersPolicyError {
+    fn code(&self) -> Option<&str> {
+        CreateResponseHeadersPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateResponseHeadersPolicyError {
+    /// Creates a new `CreateResponseHeadersPolicyError`.
+    pub fn new(kind: CreateResponseHeadersPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateResponseHeadersPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateResponseHeadersPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateResponseHeadersPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateResponseHeadersPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateResponseHeadersPolicyErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResponseHeadersPolicyErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateResponseHeadersPolicyErrorKind::InconsistentQuantities`.
+    pub fn is_inconsistent_quantities(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResponseHeadersPolicyErrorKind::InconsistentQuantities(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateResponseHeadersPolicyErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResponseHeadersPolicyErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists`.
+    pub fn is_response_headers_policy_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy`.
+    pub fn is_too_many_custom_headers_in_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies`.
+    pub fn is_too_many_response_headers_policies(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(_)
+        )
+    }
+}
+impl std::error::Error for CreateResponseHeadersPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateResponseHeadersPolicyErrorKind::AccessDenied(_inner) => Some(_inner),
+            CreateResponseHeadersPolicyErrorKind::InconsistentQuantities(_inner) => Some(_inner),
+            CreateResponseHeadersPolicyErrorKind::InvalidArgument(_inner) => Some(_inner),
+            CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(_inner) => {
+                Some(_inner)
+            }
+            CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(
+                _inner,
+            ) => Some(_inner),
+            CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(_inner) => {
+                Some(_inner)
+            }
+            CreateResponseHeadersPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3857,7 +4095,7 @@ pub enum CreateStreamingDistributionErrorKind {
     TooManyTrustedSigners(crate::error::TooManyTrustedSigners),
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamingDistributionError {
@@ -3941,84 +4179,84 @@ impl CreateStreamingDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::CnameAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::CnameAlreadyExists`.
     pub fn is_cname_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::CnameAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::InvalidOrigin`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::InvalidOrigin`.
     pub fn is_invalid_origin(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::InvalidOrigin(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::InvalidOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::InvalidOriginAccessIdentity`.
     pub fn is_invalid_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::InvalidOriginAccessIdentity(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::MissingBody(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::StreamingDistributionAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::StreamingDistributionAlreadyExists`.
     pub fn is_streaming_distribution_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::StreamingDistributionAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs`.
     pub fn is_too_many_streaming_distribution_cnam_es(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::TooManyStreamingDistributions`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::TooManyStreamingDistributions`.
     pub fn is_too_many_streaming_distributions(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::TooManyStreamingDistributions(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::TooManyTrustedSigners`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::TooManyTrustedSigners`.
     pub fn is_too_many_trusted_signers(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionErrorKind::TooManyTrustedSigners(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionErrorKind::TrustedSignerDoesNotExist`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionErrorKind::TrustedSignerDoesNotExist`.
     pub fn is_trusted_signer_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -4094,7 +4332,7 @@ pub enum CreateStreamingDistributionWithTagsErrorKind {
     TooManyTrustedSigners(crate::error::TooManyTrustedSigners),
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamingDistributionWithTagsError {
@@ -4188,91 +4426,91 @@ impl CreateStreamingDistributionWithTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::CnameAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::CnameAlreadyExists`.
     pub fn is_cname_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::CnameAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InvalidOrigin`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InvalidOrigin`.
     pub fn is_invalid_origin(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::InvalidOrigin(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessIdentity`.
     pub fn is_invalid_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessIdentity(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InvalidTagging`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::InvalidTagging`.
     pub fn is_invalid_tagging(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::InvalidTagging(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::MissingBody(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::StreamingDistributionAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::StreamingDistributionAlreadyExists`.
     pub fn is_streaming_distribution_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::StreamingDistributionAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributionCnamEs`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributionCnamEs`.
     pub fn is_too_many_streaming_distribution_cnam_es(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributionCnamEs(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributions`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributions`.
     pub fn is_too_many_streaming_distributions(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributions(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::TooManyTrustedSigners`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::TooManyTrustedSigners`.
     pub fn is_too_many_trusted_signers(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingDistributionWithTagsErrorKind::TooManyTrustedSigners(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingDistributionWithTagsErrorKind::TrustedSignerDoesNotExist`.
+    /// Returns `true` if the error kind is `CreateStreamingDistributionWithTagsErrorKind::TrustedSignerDoesNotExist`.
     pub fn is_trusted_signer_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -4346,7 +4584,7 @@ pub enum DeleteCachePolicyErrorKind {
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCachePolicyError {
@@ -4414,30 +4652,30 @@ impl DeleteCachePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCachePolicyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteCachePolicyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, DeleteCachePolicyErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `DeleteCachePolicyErrorKind::CachePolicyInUse`.
+    /// Returns `true` if the error kind is `DeleteCachePolicyErrorKind::CachePolicyInUse`.
     pub fn is_cache_policy_in_use(&self) -> bool {
         matches!(&self.kind, DeleteCachePolicyErrorKind::CachePolicyInUse(_))
     }
-    /// Returns true if the error kind is `DeleteCachePolicyErrorKind::IllegalDelete`.
+    /// Returns `true` if the error kind is `DeleteCachePolicyErrorKind::IllegalDelete`.
     pub fn is_illegal_delete(&self) -> bool {
         matches!(&self.kind, DeleteCachePolicyErrorKind::IllegalDelete(_))
     }
-    /// Returns true if the error kind is `DeleteCachePolicyErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteCachePolicyErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCachePolicyErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCachePolicyErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `DeleteCachePolicyErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(&self.kind, DeleteCachePolicyErrorKind::NoSuchCachePolicy(_))
     }
-    /// Returns true if the error kind is `DeleteCachePolicyErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteCachePolicyErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
@@ -4483,7 +4721,7 @@ pub enum DeleteCloudFrontOriginAccessIdentityErrorKind {
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCloudFrontOriginAccessIdentityError {
@@ -4561,35 +4799,35 @@ impl DeleteCloudFrontOriginAccessIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCloudFrontOriginAccessIdentityErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityInUse`.
+    /// Returns `true` if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityInUse`.
     pub fn is_cloud_front_origin_access_identity_in_use(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityInUse(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity`.
     pub fn is_no_such_cloud_front_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
@@ -4645,7 +4883,7 @@ pub enum DeleteDistributionErrorKind {
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDistributionError {
@@ -4712,32 +4950,32 @@ impl DeleteDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, DeleteDistributionErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::DistributionNotDisabled`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::DistributionNotDisabled`.
     pub fn is_distribution_not_disabled(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionErrorKind::DistributionNotDisabled(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionErrorKind::NoSuchDistribution(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
@@ -4782,7 +5020,7 @@ pub enum DeleteFieldLevelEncryptionConfigErrorKind {
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFieldLevelEncryptionConfigError {
@@ -4858,35 +5096,35 @@ impl DeleteFieldLevelEncryptionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFieldLevelEncryptionConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigInUse`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigInUse`.
     pub fn is_field_level_encryption_config_in_use(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigInUse(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig`.
     pub fn is_no_such_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionConfigErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
@@ -4937,7 +5175,7 @@ pub enum DeleteFieldLevelEncryptionProfileErrorKind {
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFieldLevelEncryptionProfileError {
@@ -5013,35 +5251,35 @@ impl DeleteFieldLevelEncryptionProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFieldLevelEncryptionProfileErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileInUse`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileInUse`.
     pub fn is_field_level_encryption_profile_in_use(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileInUse(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile`.
     pub fn is_no_such_field_level_encryption_profile(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteFieldLevelEncryptionProfileErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
@@ -5093,7 +5331,7 @@ pub enum DeleteFunctionErrorKind {
     PreconditionFailed(crate::error::PreconditionFailed),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionError {
@@ -5160,26 +5398,26 @@ impl DeleteFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::FunctionInUse`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::FunctionInUse`.
     pub fn is_function_in_use(&self) -> bool {
         matches!(&self.kind, DeleteFunctionErrorKind::FunctionInUse(_))
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::NoSuchFunctionExists`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::NoSuchFunctionExists`.
     pub fn is_no_such_function_exists(&self) -> bool {
         matches!(&self.kind, DeleteFunctionErrorKind::NoSuchFunctionExists(_))
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(&self.kind, DeleteFunctionErrorKind::PreconditionFailed(_))
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, DeleteFunctionErrorKind::UnsupportedOperation(_))
     }
@@ -5219,7 +5457,7 @@ pub enum DeleteKeyGroupErrorKind {
     PreconditionFailed(crate::error::PreconditionFailed),
     /// <p>Cannot delete this resource because it is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteKeyGroupError {
@@ -5285,22 +5523,22 @@ impl DeleteKeyGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteKeyGroupErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteKeyGroupErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKeyGroupErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKeyGroupErrorKind::NoSuchResource`.
+    /// Returns `true` if the error kind is `DeleteKeyGroupErrorKind::NoSuchResource`.
     pub fn is_no_such_resource(&self) -> bool {
         matches!(&self.kind, DeleteKeyGroupErrorKind::NoSuchResource(_))
     }
-    /// Returns true if the error kind is `DeleteKeyGroupErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteKeyGroupErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(&self.kind, DeleteKeyGroupErrorKind::PreconditionFailed(_))
     }
-    /// Returns true if the error kind is `DeleteKeyGroupErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteKeyGroupErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteKeyGroupErrorKind::ResourceInUse(_))
     }
@@ -5336,7 +5574,7 @@ pub enum DeleteMonitoringSubscriptionErrorKind {
     NoSuchDistribution(crate::error::NoSuchDistribution),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMonitoringSubscriptionError {
@@ -5401,21 +5639,21 @@ impl DeleteMonitoringSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMonitoringSubscriptionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteMonitoringSubscriptionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMonitoringSubscriptionErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -5461,7 +5699,7 @@ pub enum DeleteOriginRequestPolicyErrorKind {
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOriginRequestPolicyError {
@@ -5529,42 +5767,42 @@ impl DeleteOriginRequestPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOriginRequestPolicyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteOriginRequestPolicyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginRequestPolicyErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginRequestPolicyErrorKind::IllegalDelete`.
+    /// Returns `true` if the error kind is `DeleteOriginRequestPolicyErrorKind::IllegalDelete`.
     pub fn is_illegal_delete(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginRequestPolicyErrorKind::IllegalDelete(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginRequestPolicyErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteOriginRequestPolicyErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginRequestPolicyErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `DeleteOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginRequestPolicyErrorKind::OriginRequestPolicyInUse`.
+    /// Returns `true` if the error kind is `DeleteOriginRequestPolicyErrorKind::OriginRequestPolicyInUse`.
     pub fn is_origin_request_policy_in_use(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOriginRequestPolicyErrorKind::OriginRequestPolicyInUse(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOriginRequestPolicyErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteOriginRequestPolicyErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
@@ -5610,7 +5848,7 @@ pub enum DeletePublicKeyErrorKind {
     PreconditionFailed(crate::error::PreconditionFailed),
     /// <p>The specified public key is in use. </p>
     PublicKeyInUse(crate::error::PublicKeyInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePublicKeyError {
@@ -5677,26 +5915,26 @@ impl DeletePublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePublicKeyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeletePublicKeyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, DeletePublicKeyErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `DeletePublicKeyErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeletePublicKeyErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeletePublicKeyErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeletePublicKeyErrorKind::NoSuchPublicKey`.
+    /// Returns `true` if the error kind is `DeletePublicKeyErrorKind::NoSuchPublicKey`.
     pub fn is_no_such_public_key(&self) -> bool {
         matches!(&self.kind, DeletePublicKeyErrorKind::NoSuchPublicKey(_))
     }
-    /// Returns true if the error kind is `DeletePublicKeyErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeletePublicKeyErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(&self.kind, DeletePublicKeyErrorKind::PreconditionFailed(_))
     }
-    /// Returns true if the error kind is `DeletePublicKeyErrorKind::PublicKeyInUse`.
+    /// Returns `true` if the error kind is `DeletePublicKeyErrorKind::PublicKeyInUse`.
     pub fn is_public_key_in_use(&self) -> bool {
         matches!(&self.kind, DeletePublicKeyErrorKind::PublicKeyInUse(_))
     }
@@ -5736,7 +5974,7 @@ pub enum DeleteRealtimeLogConfigErrorKind {
     /// <p>Cannot delete the real-time log configuration because it is attached to one or more cache
     /// behaviors.</p>
     RealtimeLogConfigInUse(crate::error::RealtimeLogConfigInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRealtimeLogConfigError {
@@ -5802,28 +6040,28 @@ impl DeleteRealtimeLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRealtimeLogConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteRealtimeLogConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRealtimeLogConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRealtimeLogConfigErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `DeleteRealtimeLogConfigErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRealtimeLogConfigErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig`.
+    /// Returns `true` if the error kind is `DeleteRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig`.
     pub fn is_no_such_realtime_log_config(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRealtimeLogConfigErrorKind::RealtimeLogConfigInUse`.
+    /// Returns `true` if the error kind is `DeleteRealtimeLogConfigErrorKind::RealtimeLogConfigInUse`.
     pub fn is_realtime_log_config_in_use(&self) -> bool {
         matches!(
             &self.kind,
@@ -5839,6 +6077,166 @@ impl std::error::Error for DeleteRealtimeLogConfigError {
             DeleteRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(_inner) => Some(_inner),
             DeleteRealtimeLogConfigErrorKind::RealtimeLogConfigInUse(_inner) => Some(_inner),
             DeleteRealtimeLogConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteResponseHeadersPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteResponseHeadersPolicyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteResponseHeadersPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteResponseHeadersPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteResponseHeadersPolicyErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>You cannot delete a managed policy.</p>
+    IllegalDelete(crate::error::IllegalDelete),
+    /// <p>The <code>If-Match</code> version is missing or not valid.</p>
+    InvalidIfMatchVersion(crate::error::InvalidIfMatchVersion),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// <p>The precondition in one or more of the request fields evaluated to
+    /// <code>false</code>.</p>
+    PreconditionFailed(crate::error::PreconditionFailed),
+    /// <p>Cannot delete the response headers policy because it is attached to one or more cache
+    /// behaviors in a CloudFront distribution. </p>
+    ResponseHeadersPolicyInUse(crate::error::ResponseHeadersPolicyInUse),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteResponseHeadersPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteResponseHeadersPolicyErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            DeleteResponseHeadersPolicyErrorKind::IllegalDelete(_inner) => _inner.fmt(f),
+            DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(_inner) => _inner.fmt(f),
+            DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteResponseHeadersPolicyErrorKind::PreconditionFailed(_inner) => _inner.fmt(f),
+            DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteResponseHeadersPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteResponseHeadersPolicyError {
+    fn code(&self) -> Option<&str> {
+        DeleteResponseHeadersPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteResponseHeadersPolicyError {
+    /// Creates a new `DeleteResponseHeadersPolicyError`.
+    pub fn new(kind: DeleteResponseHeadersPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteResponseHeadersPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteResponseHeadersPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteResponseHeadersPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteResponseHeadersPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteResponseHeadersPolicyErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResponseHeadersPolicyErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResponseHeadersPolicyErrorKind::IllegalDelete`.
+    pub fn is_illegal_delete(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResponseHeadersPolicyErrorKind::IllegalDelete(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion`.
+    pub fn is_invalid_if_match_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResponseHeadersPolicyErrorKind::PreconditionFailed`.
+    pub fn is_precondition_failed(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResponseHeadersPolicyErrorKind::PreconditionFailed(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse`.
+    pub fn is_response_headers_policy_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse(_)
+        )
+    }
+}
+impl std::error::Error for DeleteResponseHeadersPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteResponseHeadersPolicyErrorKind::AccessDenied(_inner) => Some(_inner),
+            DeleteResponseHeadersPolicyErrorKind::IllegalDelete(_inner) => Some(_inner),
+            DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(_inner) => Some(_inner),
+            DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_inner) => {
+                Some(_inner)
+            }
+            DeleteResponseHeadersPolicyErrorKind::PreconditionFailed(_inner) => Some(_inner),
+            DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse(_inner) => {
+                Some(_inner)
+            }
+            DeleteResponseHeadersPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5868,7 +6266,7 @@ pub enum DeleteStreamingDistributionErrorKind {
     /// <p>The specified CloudFront distribution is not disabled. You must disable
     /// the distribution before you can delete it.</p>
     StreamingDistributionNotDisabled(crate::error::StreamingDistributionNotDisabled),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStreamingDistributionError {
@@ -5939,35 +6337,35 @@ impl DeleteStreamingDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStreamingDistributionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `DeleteStreamingDistributionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingDistributionErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingDistributionErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `DeleteStreamingDistributionErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingDistributionErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingDistributionErrorKind::NoSuchStreamingDistribution`.
+    /// Returns `true` if the error kind is `DeleteStreamingDistributionErrorKind::NoSuchStreamingDistribution`.
     pub fn is_no_such_streaming_distribution(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingDistributionErrorKind::NoSuchStreamingDistribution(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingDistributionErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `DeleteStreamingDistributionErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingDistributionErrorKind::PreconditionFailed(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingDistributionErrorKind::StreamingDistributionNotDisabled`.
+    /// Returns `true` if the error kind is `DeleteStreamingDistributionErrorKind::StreamingDistributionNotDisabled`.
     pub fn is_streaming_distribution_not_disabled(&self) -> bool {
         matches!(
             &self.kind,
@@ -6009,7 +6407,7 @@ pub enum DescribeFunctionErrorKind {
     NoSuchFunctionExists(crate::error::NoSuchFunctionExists),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFunctionError {
@@ -6073,14 +6471,14 @@ impl DescribeFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFunctionErrorKind::NoSuchFunctionExists`.
+    /// Returns `true` if the error kind is `DescribeFunctionErrorKind::NoSuchFunctionExists`.
     pub fn is_no_such_function_exists(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFunctionErrorKind::NoSuchFunctionExists(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFunctionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `DescribeFunctionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -6115,7 +6513,7 @@ pub enum GetCachePolicyErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The cache policy does not exist.</p>
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCachePolicyError {
@@ -6179,11 +6577,11 @@ impl GetCachePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCachePolicyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetCachePolicyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetCachePolicyErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetCachePolicyErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `GetCachePolicyErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(&self.kind, GetCachePolicyErrorKind::NoSuchCachePolicy(_))
     }
@@ -6215,7 +6613,7 @@ pub enum GetCachePolicyConfigErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The cache policy does not exist.</p>
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCachePolicyConfigError {
@@ -6279,11 +6677,11 @@ impl GetCachePolicyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCachePolicyConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetCachePolicyConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetCachePolicyConfigErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetCachePolicyConfigErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `GetCachePolicyConfigErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -6318,7 +6716,7 @@ pub enum GetCloudFrontOriginAccessIdentityErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified origin access identity does not exist.</p>
     NoSuchCloudFrontOriginAccessIdentity(crate::error::NoSuchCloudFrontOriginAccessIdentity),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCloudFrontOriginAccessIdentityError {
@@ -6387,14 +6785,14 @@ impl GetCloudFrontOriginAccessIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCloudFrontOriginAccessIdentityErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetCloudFrontOriginAccessIdentityErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFrontOriginAccessIdentityErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `GetCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity`.
     pub fn is_no_such_cloud_front_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
@@ -6431,7 +6829,7 @@ pub enum GetCloudFrontOriginAccessIdentityConfigErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified origin access identity does not exist.</p>
     NoSuchCloudFrontOriginAccessIdentity(crate::error::NoSuchCloudFrontOriginAccessIdentity),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCloudFrontOriginAccessIdentityConfigError {
@@ -6504,14 +6902,14 @@ impl GetCloudFrontOriginAccessIdentityConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCloudFrontOriginAccessIdentityConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetCloudFrontOriginAccessIdentityConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFrontOriginAccessIdentityConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFrontOriginAccessIdentityConfigErrorKind::NoSuchCloudFrontOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `GetCloudFrontOriginAccessIdentityConfigErrorKind::NoSuchCloudFrontOriginAccessIdentity`.
     pub fn is_no_such_cloud_front_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
@@ -6554,7 +6952,7 @@ pub enum GetDistributionErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified distribution does not exist.</p>
     NoSuchDistribution(crate::error::NoSuchDistribution),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDistributionError {
@@ -6618,11 +7016,11 @@ impl GetDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDistributionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetDistributionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetDistributionErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetDistributionErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `GetDistributionErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(&self.kind, GetDistributionErrorKind::NoSuchDistribution(_))
     }
@@ -6654,7 +7052,7 @@ pub enum GetDistributionConfigErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified distribution does not exist.</p>
     NoSuchDistribution(crate::error::NoSuchDistribution),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDistributionConfigError {
@@ -6718,11 +7116,11 @@ impl GetDistributionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDistributionConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetDistributionConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetDistributionConfigErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetDistributionConfigErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `GetDistributionConfigErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
@@ -6757,7 +7155,7 @@ pub enum GetFieldLevelEncryptionErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified configuration for field-level encryption doesn't exist.</p>
     NoSuchFieldLevelEncryptionConfig(crate::error::NoSuchFieldLevelEncryptionConfig),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFieldLevelEncryptionError {
@@ -6823,14 +7221,14 @@ impl GetFieldLevelEncryptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFieldLevelEncryptionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetFieldLevelEncryptionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetFieldLevelEncryptionErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetFieldLevelEncryptionErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `GetFieldLevelEncryptionErrorKind::NoSuchFieldLevelEncryptionConfig`.
     pub fn is_no_such_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -6867,7 +7265,7 @@ pub enum GetFieldLevelEncryptionConfigErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified configuration for field-level encryption doesn't exist.</p>
     NoSuchFieldLevelEncryptionConfig(crate::error::NoSuchFieldLevelEncryptionConfig),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFieldLevelEncryptionConfigError {
@@ -6936,14 +7334,14 @@ impl GetFieldLevelEncryptionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFieldLevelEncryptionConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetFieldLevelEncryptionConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetFieldLevelEncryptionConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `GetFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig`.
     pub fn is_no_such_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -6980,7 +7378,7 @@ pub enum GetFieldLevelEncryptionProfileErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified profile for field-level encryption doesn't exist.</p>
     NoSuchFieldLevelEncryptionProfile(crate::error::NoSuchFieldLevelEncryptionProfile),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFieldLevelEncryptionProfileError {
@@ -7049,14 +7447,14 @@ impl GetFieldLevelEncryptionProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFieldLevelEncryptionProfileErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetFieldLevelEncryptionProfileErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetFieldLevelEncryptionProfileErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile`.
+    /// Returns `true` if the error kind is `GetFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile`.
     pub fn is_no_such_field_level_encryption_profile(&self) -> bool {
         matches!(
             &self.kind,
@@ -7093,7 +7491,7 @@ pub enum GetFieldLevelEncryptionProfileConfigErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified profile for field-level encryption doesn't exist.</p>
     NoSuchFieldLevelEncryptionProfile(crate::error::NoSuchFieldLevelEncryptionProfile),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFieldLevelEncryptionProfileConfigError {
@@ -7162,14 +7560,14 @@ impl GetFieldLevelEncryptionProfileConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFieldLevelEncryptionProfileConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetFieldLevelEncryptionProfileConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetFieldLevelEncryptionProfileConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetFieldLevelEncryptionProfileConfigErrorKind::NoSuchFieldLevelEncryptionProfile`.
+    /// Returns `true` if the error kind is `GetFieldLevelEncryptionProfileConfigErrorKind::NoSuchFieldLevelEncryptionProfile`.
     pub fn is_no_such_field_level_encryption_profile(&self) -> bool {
         matches!(
             &self.kind,
@@ -7208,7 +7606,7 @@ pub enum GetFunctionErrorKind {
     NoSuchFunctionExists(crate::error::NoSuchFunctionExists),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionError {
@@ -7272,11 +7670,11 @@ impl GetFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::NoSuchFunctionExists`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::NoSuchFunctionExists`.
     pub fn is_no_such_function_exists(&self) -> bool {
         matches!(&self.kind, GetFunctionErrorKind::NoSuchFunctionExists(_))
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, GetFunctionErrorKind::UnsupportedOperation(_))
     }
@@ -7310,7 +7708,7 @@ pub enum GetInvalidationErrorKind {
     NoSuchDistribution(crate::error::NoSuchDistribution),
     /// <p>The specified invalidation does not exist.</p>
     NoSuchInvalidation(crate::error::NoSuchInvalidation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInvalidationError {
@@ -7375,15 +7773,15 @@ impl GetInvalidationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInvalidationErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetInvalidationErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetInvalidationErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetInvalidationErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `GetInvalidationErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(&self.kind, GetInvalidationErrorKind::NoSuchDistribution(_))
     }
-    /// Returns true if the error kind is `GetInvalidationErrorKind::NoSuchInvalidation`.
+    /// Returns `true` if the error kind is `GetInvalidationErrorKind::NoSuchInvalidation`.
     pub fn is_no_such_invalidation(&self) -> bool {
         matches!(&self.kind, GetInvalidationErrorKind::NoSuchInvalidation(_))
     }
@@ -7414,7 +7812,7 @@ pub struct GetKeyGroupError {
 pub enum GetKeyGroupErrorKind {
     /// <p>A resource that was specified is not valid.</p>
     NoSuchResource(crate::error::NoSuchResource),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKeyGroupError {
@@ -7477,7 +7875,7 @@ impl GetKeyGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetKeyGroupErrorKind::NoSuchResource`.
+    /// Returns `true` if the error kind is `GetKeyGroupErrorKind::NoSuchResource`.
     pub fn is_no_such_resource(&self) -> bool {
         matches!(&self.kind, GetKeyGroupErrorKind::NoSuchResource(_))
     }
@@ -7506,7 +7904,7 @@ pub struct GetKeyGroupConfigError {
 pub enum GetKeyGroupConfigErrorKind {
     /// <p>A resource that was specified is not valid.</p>
     NoSuchResource(crate::error::NoSuchResource),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKeyGroupConfigError {
@@ -7569,7 +7967,7 @@ impl GetKeyGroupConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetKeyGroupConfigErrorKind::NoSuchResource`.
+    /// Returns `true` if the error kind is `GetKeyGroupConfigErrorKind::NoSuchResource`.
     pub fn is_no_such_resource(&self) -> bool {
         matches!(&self.kind, GetKeyGroupConfigErrorKind::NoSuchResource(_))
     }
@@ -7602,7 +8000,7 @@ pub enum GetMonitoringSubscriptionErrorKind {
     NoSuchDistribution(crate::error::NoSuchDistribution),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMonitoringSubscriptionError {
@@ -7667,21 +8065,21 @@ impl GetMonitoringSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMonitoringSubscriptionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetMonitoringSubscriptionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetMonitoringSubscriptionErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetMonitoringSubscriptionErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `GetMonitoringSubscriptionErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
             GetMonitoringSubscriptionErrorKind::NoSuchDistribution(_)
         )
     }
-    /// Returns true if the error kind is `GetMonitoringSubscriptionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `GetMonitoringSubscriptionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -7717,7 +8115,7 @@ pub enum GetOriginRequestPolicyErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The origin request policy does not exist.</p>
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOriginRequestPolicyError {
@@ -7781,11 +8179,11 @@ impl GetOriginRequestPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOriginRequestPolicyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetOriginRequestPolicyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetOriginRequestPolicyErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `GetOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -7820,7 +8218,7 @@ pub enum GetOriginRequestPolicyConfigErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The origin request policy does not exist.</p>
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOriginRequestPolicyConfigError {
@@ -7886,14 +8284,14 @@ impl GetOriginRequestPolicyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOriginRequestPolicyConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetOriginRequestPolicyConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetOriginRequestPolicyConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetOriginRequestPolicyConfigErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `GetOriginRequestPolicyConfigErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -7930,7 +8328,7 @@ pub enum GetPublicKeyErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified public key doesn't exist.</p>
     NoSuchPublicKey(crate::error::NoSuchPublicKey),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPublicKeyError {
@@ -7994,11 +8392,11 @@ impl GetPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetPublicKeyErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::NoSuchPublicKey`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::NoSuchPublicKey`.
     pub fn is_no_such_public_key(&self) -> bool {
         matches!(&self.kind, GetPublicKeyErrorKind::NoSuchPublicKey(_))
     }
@@ -8030,7 +8428,7 @@ pub enum GetPublicKeyConfigErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified public key doesn't exist.</p>
     NoSuchPublicKey(crate::error::NoSuchPublicKey),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPublicKeyConfigError {
@@ -8094,11 +8492,11 @@ impl GetPublicKeyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPublicKeyConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetPublicKeyConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetPublicKeyConfigErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetPublicKeyConfigErrorKind::NoSuchPublicKey`.
+    /// Returns `true` if the error kind is `GetPublicKeyConfigErrorKind::NoSuchPublicKey`.
     pub fn is_no_such_public_key(&self) -> bool {
         matches!(&self.kind, GetPublicKeyConfigErrorKind::NoSuchPublicKey(_))
     }
@@ -8132,7 +8530,7 @@ pub enum GetRealtimeLogConfigErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The real-time log configuration does not exist.</p>
     NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRealtimeLogConfigError {
@@ -8197,18 +8595,18 @@ impl GetRealtimeLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRealtimeLogConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetRealtimeLogConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, GetRealtimeLogConfigErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `GetRealtimeLogConfigErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `GetRealtimeLogConfigErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             GetRealtimeLogConfigErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `GetRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig`.
+    /// Returns `true` if the error kind is `GetRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig`.
     pub fn is_no_such_realtime_log_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -8223,6 +8621,225 @@ impl std::error::Error for GetRealtimeLogConfigError {
             GetRealtimeLogConfigErrorKind::InvalidArgument(_inner) => Some(_inner),
             GetRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(_inner) => Some(_inner),
             GetRealtimeLogConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetResponseHeadersPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetResponseHeadersPolicyError {
+    /// Kind of error that occurred.
+    pub kind: GetResponseHeadersPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetResponseHeadersPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetResponseHeadersPolicyErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetResponseHeadersPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetResponseHeadersPolicyErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_inner) => _inner.fmt(f),
+            GetResponseHeadersPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetResponseHeadersPolicyError {
+    fn code(&self) -> Option<&str> {
+        GetResponseHeadersPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetResponseHeadersPolicyError {
+    /// Creates a new `GetResponseHeadersPolicyError`.
+    pub fn new(kind: GetResponseHeadersPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetResponseHeadersPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetResponseHeadersPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetResponseHeadersPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetResponseHeadersPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetResponseHeadersPolicyErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResponseHeadersPolicyErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+}
+impl std::error::Error for GetResponseHeadersPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetResponseHeadersPolicyErrorKind::AccessDenied(_inner) => Some(_inner),
+            GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_inner) => Some(_inner),
+            GetResponseHeadersPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetResponseHeadersPolicyConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetResponseHeadersPolicyConfigError {
+    /// Kind of error that occurred.
+    pub kind: GetResponseHeadersPolicyConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetResponseHeadersPolicyConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetResponseHeadersPolicyConfigErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetResponseHeadersPolicyConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetResponseHeadersPolicyConfigErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(_inner) => {
+                _inner.fmt(f)
+            }
+            GetResponseHeadersPolicyConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetResponseHeadersPolicyConfigError {
+    fn code(&self) -> Option<&str> {
+        GetResponseHeadersPolicyConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetResponseHeadersPolicyConfigError {
+    /// Creates a new `GetResponseHeadersPolicyConfigError`.
+    pub fn new(
+        kind: GetResponseHeadersPolicyConfigErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetResponseHeadersPolicyConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetResponseHeadersPolicyConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetResponseHeadersPolicyConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetResponseHeadersPolicyConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetResponseHeadersPolicyConfigErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResponseHeadersPolicyConfigErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+}
+impl std::error::Error for GetResponseHeadersPolicyConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetResponseHeadersPolicyConfigErrorKind::AccessDenied(_inner) => Some(_inner),
+            GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(_inner) => {
+                Some(_inner)
+            }
+            GetResponseHeadersPolicyConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8244,7 +8861,7 @@ pub enum GetStreamingDistributionErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified streaming distribution does not exist.</p>
     NoSuchStreamingDistribution(crate::error::NoSuchStreamingDistribution),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStreamingDistributionError {
@@ -8308,14 +8925,14 @@ impl GetStreamingDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStreamingDistributionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetStreamingDistributionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingDistributionErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingDistributionErrorKind::NoSuchStreamingDistribution`.
+    /// Returns `true` if the error kind is `GetStreamingDistributionErrorKind::NoSuchStreamingDistribution`.
     pub fn is_no_such_streaming_distribution(&self) -> bool {
         matches!(
             &self.kind,
@@ -8350,7 +8967,7 @@ pub enum GetStreamingDistributionConfigErrorKind {
     AccessDenied(crate::error::AccessDenied),
     /// <p>The specified streaming distribution does not exist.</p>
     NoSuchStreamingDistribution(crate::error::NoSuchStreamingDistribution),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStreamingDistributionConfigError {
@@ -8419,14 +9036,14 @@ impl GetStreamingDistributionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStreamingDistributionConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `GetStreamingDistributionConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingDistributionConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingDistributionConfigErrorKind::NoSuchStreamingDistribution`.
+    /// Returns `true` if the error kind is `GetStreamingDistributionConfigErrorKind::NoSuchStreamingDistribution`.
     pub fn is_no_such_streaming_distribution(&self) -> bool {
         matches!(
             &self.kind,
@@ -8465,7 +9082,7 @@ pub enum ListCachePoliciesErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The cache policy does not exist.</p>
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCachePoliciesError {
@@ -8530,15 +9147,15 @@ impl ListCachePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCachePoliciesErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `ListCachePoliciesErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, ListCachePoliciesErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `ListCachePoliciesErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListCachePoliciesErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, ListCachePoliciesErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `ListCachePoliciesErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `ListCachePoliciesErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(&self.kind, ListCachePoliciesErrorKind::NoSuchCachePolicy(_))
     }
@@ -8569,7 +9186,7 @@ pub struct ListCloudFrontOriginAccessIdentitiesError {
 pub enum ListCloudFrontOriginAccessIdentitiesErrorKind {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCloudFrontOriginAccessIdentitiesError {
@@ -8635,7 +9252,7 @@ impl ListCloudFrontOriginAccessIdentitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCloudFrontOriginAccessIdentitiesErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListCloudFrontOriginAccessIdentitiesErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
@@ -8671,7 +9288,7 @@ pub enum ListConflictingAliasesErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The specified distribution does not exist.</p>
     NoSuchDistribution(crate::error::NoSuchDistribution),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConflictingAliasesError {
@@ -8735,14 +9352,14 @@ impl ListConflictingAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConflictingAliasesErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListConflictingAliasesErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             ListConflictingAliasesErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `ListConflictingAliasesErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `ListConflictingAliasesErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
@@ -8775,7 +9392,7 @@ pub struct ListDistributionsError {
 pub enum ListDistributionsErrorKind {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDistributionsError {
@@ -8838,7 +9455,7 @@ impl ListDistributionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDistributionsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListDistributionsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, ListDistributionsErrorKind::InvalidArgument(_))
     }
@@ -8871,7 +9488,7 @@ pub enum ListDistributionsByCachePolicyIdErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The cache policy does not exist.</p>
     NoSuchCachePolicy(crate::error::NoSuchCachePolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDistributionsByCachePolicyIdError {
@@ -8939,21 +9556,21 @@ impl ListDistributionsByCachePolicyIdError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDistributionsByCachePolicyIdErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `ListDistributionsByCachePolicyIdErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionsByCachePolicyIdErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionsByCachePolicyIdErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListDistributionsByCachePolicyIdErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionsByCachePolicyIdErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionsByCachePolicyIdErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `ListDistributionsByCachePolicyIdErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -8989,7 +9606,7 @@ pub enum ListDistributionsByKeyGroupErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>A resource that was specified is not valid.</p>
     NoSuchResource(crate::error::NoSuchResource),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDistributionsByKeyGroupError {
@@ -9053,14 +9670,14 @@ impl ListDistributionsByKeyGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDistributionsByKeyGroupErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListDistributionsByKeyGroupErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionsByKeyGroupErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionsByKeyGroupErrorKind::NoSuchResource`.
+    /// Returns `true` if the error kind is `ListDistributionsByKeyGroupErrorKind::NoSuchResource`.
     pub fn is_no_such_resource(&self) -> bool {
         matches!(
             &self.kind,
@@ -9097,7 +9714,7 @@ pub enum ListDistributionsByOriginRequestPolicyIdErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The origin request policy does not exist.</p>
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDistributionsByOriginRequestPolicyIdError {
@@ -9171,21 +9788,21 @@ impl ListDistributionsByOriginRequestPolicyIdError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDistributionsByOriginRequestPolicyIdErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `ListDistributionsByOriginRequestPolicyIdErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionsByOriginRequestPolicyIdErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionsByOriginRequestPolicyIdErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListDistributionsByOriginRequestPolicyIdErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionsByOriginRequestPolicyIdErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionsByOriginRequestPolicyIdErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `ListDistributionsByOriginRequestPolicyIdErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -9225,7 +9842,7 @@ pub struct ListDistributionsByRealtimeLogConfigError {
 pub enum ListDistributionsByRealtimeLogConfigErrorKind {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDistributionsByRealtimeLogConfigError {
@@ -9291,7 +9908,7 @@ impl ListDistributionsByRealtimeLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDistributionsByRealtimeLogConfigErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListDistributionsByRealtimeLogConfigErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
@@ -9304,6 +9921,140 @@ impl std::error::Error for ListDistributionsByRealtimeLogConfigError {
         match &self.kind {
             ListDistributionsByRealtimeLogConfigErrorKind::InvalidArgument(_inner) => Some(_inner),
             ListDistributionsByRealtimeLogConfigErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `ListDistributionsByResponseHeadersPolicyId` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDistributionsByResponseHeadersPolicyIdError {
+    /// Kind of error that occurred.
+    pub kind: ListDistributionsByResponseHeadersPolicyIdErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListDistributionsByResponseHeadersPolicyId` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDistributionsByResponseHeadersPolicyIdErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDistributionsByResponseHeadersPolicyIdError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy(
+                _inner,
+            ) => _inner.fmt(f),
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDistributionsByResponseHeadersPolicyIdError {
+    fn code(&self) -> Option<&str> {
+        ListDistributionsByResponseHeadersPolicyIdError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDistributionsByResponseHeadersPolicyIdError {
+    /// Creates a new `ListDistributionsByResponseHeadersPolicyIdError`.
+    pub fn new(
+        kind: ListDistributionsByResponseHeadersPolicyIdErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDistributionsByResponseHeadersPolicyIdError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDistributionsByResponseHeadersPolicyIdErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDistributionsByResponseHeadersPolicyIdError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDistributionsByResponseHeadersPolicyIdErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+}
+impl std::error::Error for ListDistributionsByResponseHeadersPolicyIdError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied(_inner) => {
+                Some(_inner)
+            }
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument(_inner) => {
+                Some(_inner)
+            }
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy(
+                _inner,
+            ) => Some(_inner),
+            ListDistributionsByResponseHeadersPolicyIdErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
         }
@@ -9331,7 +10082,7 @@ pub enum ListDistributionsByWebACLIdErrorKind {
     /// To specify a web ACL created using WAF Classic, use the ACL ID, for example
     /// <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
     InvalidWebAclId(crate::error::InvalidWebAclId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDistributionsByWebACLIdError {
@@ -9395,14 +10146,14 @@ impl ListDistributionsByWebACLIdError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDistributionsByWebACLIdErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListDistributionsByWebACLIdErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionsByWebACLIdErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionsByWebACLIdErrorKind::InvalidWebAclId`.
+    /// Returns `true` if the error kind is `ListDistributionsByWebACLIdErrorKind::InvalidWebAclId`.
     pub fn is_invalid_web_acl_id(&self) -> bool {
         matches!(
             &self.kind,
@@ -9435,7 +10186,7 @@ pub struct ListFieldLevelEncryptionConfigsError {
 pub enum ListFieldLevelEncryptionConfigsErrorKind {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFieldLevelEncryptionConfigsError {
@@ -9501,7 +10252,7 @@ impl ListFieldLevelEncryptionConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFieldLevelEncryptionConfigsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListFieldLevelEncryptionConfigsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
@@ -9533,7 +10284,7 @@ pub struct ListFieldLevelEncryptionProfilesError {
 pub enum ListFieldLevelEncryptionProfilesErrorKind {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFieldLevelEncryptionProfilesError {
@@ -9599,7 +10350,7 @@ impl ListFieldLevelEncryptionProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFieldLevelEncryptionProfilesErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListFieldLevelEncryptionProfilesErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
@@ -9633,7 +10384,7 @@ pub enum ListFunctionsErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionsError {
@@ -9697,11 +10448,11 @@ impl ListFunctionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, ListFunctionsErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, ListFunctionsErrorKind::UnsupportedOperation(_))
     }
@@ -9735,7 +10486,7 @@ pub enum ListInvalidationsErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The specified distribution does not exist.</p>
     NoSuchDistribution(crate::error::NoSuchDistribution),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInvalidationsError {
@@ -9800,15 +10551,15 @@ impl ListInvalidationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInvalidationsErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `ListInvalidationsErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, ListInvalidationsErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `ListInvalidationsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListInvalidationsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, ListInvalidationsErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `ListInvalidationsErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `ListInvalidationsErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
@@ -9842,7 +10593,7 @@ pub struct ListKeyGroupsError {
 pub enum ListKeyGroupsErrorKind {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListKeyGroupsError {
@@ -9905,7 +10656,7 @@ impl ListKeyGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListKeyGroupsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListKeyGroupsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, ListKeyGroupsErrorKind::InvalidArgument(_))
     }
@@ -9938,7 +10689,7 @@ pub enum ListOriginRequestPoliciesErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The origin request policy does not exist.</p>
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOriginRequestPoliciesError {
@@ -10003,21 +10754,21 @@ impl ListOriginRequestPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOriginRequestPoliciesErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `ListOriginRequestPoliciesErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginRequestPoliciesErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginRequestPoliciesErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListOriginRequestPoliciesErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             ListOriginRequestPoliciesErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `ListOriginRequestPoliciesErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `ListOriginRequestPoliciesErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -10051,7 +10802,7 @@ pub struct ListPublicKeysError {
 pub enum ListPublicKeysErrorKind {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPublicKeysError {
@@ -10114,7 +10865,7 @@ impl ListPublicKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPublicKeysErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListPublicKeysErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, ListPublicKeysErrorKind::InvalidArgument(_))
     }
@@ -10147,7 +10898,7 @@ pub enum ListRealtimeLogConfigsErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The real-time log configuration does not exist.</p>
     NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRealtimeLogConfigsError {
@@ -10212,18 +10963,18 @@ impl ListRealtimeLogConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRealtimeLogConfigsErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `ListRealtimeLogConfigsErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, ListRealtimeLogConfigsErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `ListRealtimeLogConfigsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListRealtimeLogConfigsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             ListRealtimeLogConfigsErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `ListRealtimeLogConfigsErrorKind::NoSuchRealtimeLogConfig`.
+    /// Returns `true` if the error kind is `ListRealtimeLogConfigsErrorKind::NoSuchRealtimeLogConfig`.
     pub fn is_no_such_realtime_log_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -10238,6 +10989,127 @@ impl std::error::Error for ListRealtimeLogConfigsError {
             ListRealtimeLogConfigsErrorKind::InvalidArgument(_inner) => Some(_inner),
             ListRealtimeLogConfigsErrorKind::NoSuchRealtimeLogConfig(_inner) => Some(_inner),
             ListRealtimeLogConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListResponseHeadersPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListResponseHeadersPoliciesError {
+    /// Kind of error that occurred.
+    pub kind: ListResponseHeadersPoliciesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListResponseHeadersPolicies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListResponseHeadersPoliciesErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListResponseHeadersPoliciesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListResponseHeadersPoliciesErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            ListResponseHeadersPoliciesErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(_inner) => {
+                _inner.fmt(f)
+            }
+            ListResponseHeadersPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListResponseHeadersPoliciesError {
+    fn code(&self) -> Option<&str> {
+        ListResponseHeadersPoliciesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListResponseHeadersPoliciesError {
+    /// Creates a new `ListResponseHeadersPoliciesError`.
+    pub fn new(kind: ListResponseHeadersPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListResponseHeadersPoliciesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListResponseHeadersPoliciesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListResponseHeadersPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListResponseHeadersPoliciesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListResponseHeadersPoliciesErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResponseHeadersPoliciesErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResponseHeadersPoliciesErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResponseHeadersPoliciesErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+}
+impl std::error::Error for ListResponseHeadersPoliciesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListResponseHeadersPoliciesErrorKind::AccessDenied(_inner) => Some(_inner),
+            ListResponseHeadersPoliciesErrorKind::InvalidArgument(_inner) => Some(_inner),
+            ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(_inner) => {
+                Some(_inner)
+            }
+            ListResponseHeadersPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -10257,7 +11129,7 @@ pub struct ListStreamingDistributionsError {
 pub enum ListStreamingDistributionsErrorKind {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::error::InvalidArgument),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamingDistributionsError {
@@ -10320,7 +11192,7 @@ impl ListStreamingDistributionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamingDistributionsErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListStreamingDistributionsErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
@@ -10358,7 +11230,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidTagging(crate::error::InvalidTagging),
     /// <p>A resource that was specified is not valid.</p>
     NoSuchResource(crate::error::NoSuchResource),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -10424,19 +11296,19 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidTagging`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidTagging`.
     pub fn is_invalid_tagging(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::InvalidTagging(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NoSuchResource`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NoSuchResource`.
     pub fn is_no_such_resource(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::NoSuchResource(_))
     }
@@ -10477,7 +11349,7 @@ pub enum PublishFunctionErrorKind {
     PreconditionFailed(crate::error::PreconditionFailed),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishFunctionError {
@@ -10544,29 +11416,29 @@ impl PublishFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PublishFunctionErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `PublishFunctionErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, PublishFunctionErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `PublishFunctionErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `PublishFunctionErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             PublishFunctionErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `PublishFunctionErrorKind::NoSuchFunctionExists`.
+    /// Returns `true` if the error kind is `PublishFunctionErrorKind::NoSuchFunctionExists`.
     pub fn is_no_such_function_exists(&self) -> bool {
         matches!(
             &self.kind,
             PublishFunctionErrorKind::NoSuchFunctionExists(_)
         )
     }
-    /// Returns true if the error kind is `PublishFunctionErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `PublishFunctionErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(&self.kind, PublishFunctionErrorKind::PreconditionFailed(_))
     }
-    /// Returns true if the error kind is `PublishFunctionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `PublishFunctionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -10608,7 +11480,7 @@ pub enum TagResourceErrorKind {
     InvalidTagging(crate::error::InvalidTagging),
     /// <p>A resource that was specified is not valid.</p>
     NoSuchResource(crate::error::NoSuchResource),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -10674,19 +11546,19 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidTagging`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidTagging`.
     pub fn is_invalid_tagging(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidTagging(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NoSuchResource`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NoSuchResource`.
     pub fn is_no_such_resource(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NoSuchResource(_))
     }
@@ -10726,7 +11598,7 @@ pub enum TestFunctionErrorKind {
     TestFunctionFailed(crate::error::TestFunctionFailed),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestFunctionError {
@@ -10793,23 +11665,23 @@ impl TestFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestFunctionErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `TestFunctionErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, TestFunctionErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `TestFunctionErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `TestFunctionErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(&self.kind, TestFunctionErrorKind::InvalidIfMatchVersion(_))
     }
-    /// Returns true if the error kind is `TestFunctionErrorKind::NoSuchFunctionExists`.
+    /// Returns `true` if the error kind is `TestFunctionErrorKind::NoSuchFunctionExists`.
     pub fn is_no_such_function_exists(&self) -> bool {
         matches!(&self.kind, TestFunctionErrorKind::NoSuchFunctionExists(_))
     }
-    /// Returns true if the error kind is `TestFunctionErrorKind::TestFunctionFailed`.
+    /// Returns `true` if the error kind is `TestFunctionErrorKind::TestFunctionFailed`.
     pub fn is_test_function_failed(&self) -> bool {
         matches!(&self.kind, TestFunctionErrorKind::TestFunctionFailed(_))
     }
-    /// Returns true if the error kind is `TestFunctionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `TestFunctionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, TestFunctionErrorKind::UnsupportedOperation(_))
     }
@@ -10848,7 +11720,7 @@ pub enum UntagResourceErrorKind {
     InvalidTagging(crate::error::InvalidTagging),
     /// <p>A resource that was specified is not valid.</p>
     NoSuchResource(crate::error::NoSuchResource),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -10914,19 +11786,19 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidTagging`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidTagging`.
     pub fn is_invalid_tagging(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidTagging(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NoSuchResource`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NoSuchResource`.
     pub fn is_no_such_resource(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NoSuchResource(_))
     }
@@ -10986,7 +11858,7 @@ pub enum UpdateCachePolicyErrorKind {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyQueryStringsInCachePolicy(crate::error::TooManyQueryStringsInCachePolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCachePolicyError {
@@ -11059,65 +11931,65 @@ impl UpdateCachePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, UpdateCachePolicyErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::CachePolicyAlreadyExists`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::CachePolicyAlreadyExists`.
     pub fn is_cache_policy_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCachePolicyErrorKind::CachePolicyAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(&self.kind, UpdateCachePolicyErrorKind::IllegalUpdate(_))
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCachePolicyErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, UpdateCachePolicyErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCachePolicyErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(&self.kind, UpdateCachePolicyErrorKind::NoSuchCachePolicy(_))
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCachePolicyErrorKind::PreconditionFailed(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::TooManyCookiesInCachePolicy`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::TooManyCookiesInCachePolicy`.
     pub fn is_too_many_cookies_in_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCachePolicyErrorKind::TooManyCookiesInCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::TooManyHeadersInCachePolicy`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::TooManyHeadersInCachePolicy`.
     pub fn is_too_many_headers_in_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCachePolicyErrorKind::TooManyHeadersInCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy`.
+    /// Returns `true` if the error kind is `UpdateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy`.
     pub fn is_too_many_query_strings_in_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -11174,7 +12046,7 @@ pub enum UpdateCloudFrontOriginAccessIdentityErrorKind {
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCloudFrontOriginAccessIdentityError {
@@ -11255,56 +12127,56 @@ impl UpdateCloudFrontOriginAccessIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCloudFrontOriginAccessIdentityErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCloudFrontOriginAccessIdentityErrorKind::IllegalUpdate(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCloudFrontOriginAccessIdentityErrorKind::MissingBody(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity`.
     pub fn is_no_such_cloud_front_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
@@ -11425,10 +12297,12 @@ pub enum UpdateDistributionErrorKind {
     NoSuchOriginRequestPolicy(crate::error::NoSuchOriginRequestPolicy),
     /// <p>The real-time log configuration does not exist.</p>
     NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// <p>The specified real-time log configuration belongs to a different account.</p>
+    /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
     RealtimeLogConfigOwnerMismatch(crate::error::RealtimeLogConfigOwnerMismatch),
     /// <p>You cannot create more cache behaviors for the distribution.</p>
     TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
@@ -11459,6 +12333,13 @@ pub enum UpdateDistributionErrorKind {
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToOriginRequestPolicy(
         crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified response headers
+    /// policy.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToResponseHeadersPolicy(
+        crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
     ),
     /// <p>You have reached the maximum number of distributions that are associated with a CloudFront
     /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
@@ -11504,7 +12385,7 @@ pub enum UpdateDistributionErrorKind {
     TrustedKeyGroupDoesNotExist(crate::error::TrustedKeyGroupDoesNotExist),
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDistributionError {
@@ -11609,6 +12490,9 @@ impl std::fmt::Display for UpdateDistributionError {
             UpdateDistributionErrorKind::NoSuchRealtimeLogConfig(_inner) =>
             _inner.fmt(f)
             ,
+            UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
             UpdateDistributionErrorKind::PreconditionFailed(_inner) =>
             _inner.fmt(f)
             ,
@@ -11637,6 +12521,9 @@ impl std::fmt::Display for UpdateDistributionError {
             _inner.fmt(f)
             ,
             UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
             _inner.fmt(f)
             ,
             UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
@@ -11739,260 +12626,267 @@ impl UpdateDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::CnameAlreadyExists`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::CnameAlreadyExists`.
     pub fn is_cname_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::CnameAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
     pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::IllegalUpdate(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidDefaultRootObject`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidDefaultRootObject`.
     pub fn is_invalid_default_root_object(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidDefaultRootObject(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidErrorCode`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidErrorCode`.
     pub fn is_invalid_error_code(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::InvalidErrorCode(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidForwardCookies`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidForwardCookies`.
     pub fn is_invalid_forward_cookies(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidForwardCookies(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidFunctionAssociation`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidFunctionAssociation`.
     pub fn is_invalid_function_association(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidFunctionAssociation(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidGeoRestrictionParameter`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidGeoRestrictionParameter`.
     pub fn is_invalid_geo_restriction_parameter(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidGeoRestrictionParameter(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidHeadersForS3Origin`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidHeadersForS3Origin`.
     pub fn is_invalid_headers_for_s3_origin(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidHeadersForS3Origin(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidLambdaFunctionAssociation`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidLambdaFunctionAssociation`.
     pub fn is_invalid_lambda_function_association(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidLambdaFunctionAssociation(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidLocationCode`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidLocationCode`.
     pub fn is_invalid_location_code(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidLocationCode(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidMinimumProtocolVersion`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidMinimumProtocolVersion`.
     pub fn is_invalid_minimum_protocol_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidMinimumProtocolVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidOriginAccessIdentity`.
     pub fn is_invalid_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidOriginAccessIdentity(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidOriginKeepaliveTimeout`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidOriginKeepaliveTimeout`.
     pub fn is_invalid_origin_keepalive_timeout(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidOriginKeepaliveTimeout(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidOriginReadTimeout`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidOriginReadTimeout`.
     pub fn is_invalid_origin_read_timeout(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidOriginReadTimeout(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidQueryStringParameters`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidQueryStringParameters`.
     pub fn is_invalid_query_string_parameters(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidQueryStringParameters(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidRelativePath`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidRelativePath`.
     pub fn is_invalid_relative_path(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidRelativePath(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidRequiredProtocol`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidRequiredProtocol`.
     pub fn is_invalid_required_protocol(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidRequiredProtocol(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidResponseCode`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidResponseCode`.
     pub fn is_invalid_response_code(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidResponseCode(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidTtlOrder`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidTtlOrder`.
     pub fn is_invalid_ttl_order(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::InvalidTtlOrder(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidViewerCertificate`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidViewerCertificate`.
     pub fn is_invalid_viewer_certificate(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidViewerCertificate(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidWebAclId`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidWebAclId`.
     pub fn is_invalid_web_acl_id(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::InvalidWebAclId(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::MissingBody(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::NoSuchCachePolicy`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchCachePolicy`.
     pub fn is_no_such_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::NoSuchCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::NoSuchDistribution`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchDistribution`.
     pub fn is_no_such_distribution(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::NoSuchDistribution(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig`.
     pub fn is_no_such_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::NoSuchOrigin`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchOrigin`.
     pub fn is_no_such_origin(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::NoSuchOrigin(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::NoSuchOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::NoSuchRealtimeLogConfig`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchRealtimeLogConfig`.
     pub fn is_no_such_realtime_log_config(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::NoSuchRealtimeLogConfig(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::PreconditionFailed(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch`.
     pub fn is_realtime_log_config_owner_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyCacheBehaviors`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyCacheBehaviors`.
     pub fn is_too_many_cache_behaviors(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyCacheBehaviors(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyCertificates`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyCertificates`.
     pub fn is_too_many_certificates(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyCertificates(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyCookieNamesInWhiteList`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyCookieNamesInWhiteList`.
     pub fn is_too_many_cookie_names_in_white_list(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyCookieNamesInWhiteList(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyDistributionCnamEs`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionCnamEs`.
     pub fn is_too_many_distribution_cnam_es(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyDistributionCnamEs(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy`.
     pub fn is_too_many_distributions_associated_to_cache_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
     pub fn is_too_many_distributions_associated_to_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -12001,109 +12895,116 @@ impl UpdateDistributionError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup`.
     pub fn is_too_many_distributions_associated_to_key_group(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy`.
     pub fn is_too_many_distributions_associated_to_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy`.
+    pub fn is_too_many_distributions_associated_to_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations`.
     pub fn is_too_many_distributions_with_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations`.
     pub fn is_too_many_distributions_with_lambda_associations(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn`.
     pub fn is_too_many_distributions_with_single_function_arn(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyFunctionAssociations`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyFunctionAssociations`.
     pub fn is_too_many_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyHeadersInForwardedValues`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyHeadersInForwardedValues`.
     pub fn is_too_many_headers_in_forwarded_values(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyHeadersInForwardedValues(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution`.
     pub fn is_too_many_key_groups_associated_to_distribution(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyLambdaFunctionAssociations`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyLambdaFunctionAssociations`.
     pub fn is_too_many_lambda_function_associations(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyLambdaFunctionAssociations(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyOriginCustomHeaders`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyOriginCustomHeaders`.
     pub fn is_too_many_origin_custom_headers(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyOriginCustomHeaders(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyOriginGroupsPerDistribution`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyOriginGroupsPerDistribution`.
     pub fn is_too_many_origin_groups_per_distribution(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyOriginGroupsPerDistribution(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyOrigins`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyOrigins`.
     pub fn is_too_many_origins(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::TooManyOrigins(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyQueryStringParameters`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyQueryStringParameters`.
     pub fn is_too_many_query_string_parameters(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyQueryStringParameters(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TooManyTrustedSigners`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TooManyTrustedSigners`.
     pub fn is_too_many_trusted_signers(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TooManyTrustedSigners(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TrustedKeyGroupDoesNotExist`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TrustedKeyGroupDoesNotExist`.
     pub fn is_trusted_key_group_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::TrustedKeyGroupDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::TrustedSignerDoesNotExist`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::TrustedSignerDoesNotExist`.
     pub fn is_trusted_signer_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -12213,6 +13114,9 @@ impl std::error::Error for UpdateDistributionError {
             UpdateDistributionErrorKind::NoSuchRealtimeLogConfig(_inner) =>
             Some(_inner)
             ,
+            UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
             UpdateDistributionErrorKind::PreconditionFailed(_inner) =>
             Some(_inner)
             ,
@@ -12241,6 +13145,9 @@ impl std::error::Error for UpdateDistributionError {
             Some(_inner)
             ,
             UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
             Some(_inner)
             ,
             UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(_inner) =>
@@ -12332,7 +13239,7 @@ pub enum UpdateFieldLevelEncryptionConfigErrorKind {
     TooManyFieldLevelEncryptionQueryArgProfiles(
         crate::error::TooManyFieldLevelEncryptionQueryArgProfiles,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFieldLevelEncryptionConfigError {
@@ -12432,74 +13339,74 @@ impl UpdateFieldLevelEncryptionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::IllegalUpdate(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig`.
     pub fn is_no_such_field_level_encryption_config(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile`.
     pub fn is_no_such_field_level_encryption_profile(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::PreconditionFailed(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty`.
     pub fn is_query_arg_profile_empty(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles`.
     pub fn is_too_many_field_level_encryption_content_type_profiles(&self) -> bool {
         matches!(&self.kind, UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles(_))
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles`.
     pub fn is_too_many_field_level_encryption_query_arg_profiles(&self) -> bool {
         matches!(
             &self.kind,
@@ -12596,7 +13503,7 @@ pub enum UpdateFieldLevelEncryptionProfileErrorKind {
     TooManyFieldLevelEncryptionFieldPatterns(
         crate::error::TooManyFieldLevelEncryptionFieldPatterns,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFieldLevelEncryptionProfileError {
@@ -12699,81 +13606,81 @@ impl UpdateFieldLevelEncryptionProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists`.
     pub fn is_field_level_encryption_profile_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded`.
     pub fn is_field_level_encryption_profile_size_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::IllegalUpdate(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile`.
     pub fn is_no_such_field_level_encryption_profile(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey`.
     pub fn is_no_such_public_key(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFieldLevelEncryptionProfileErrorKind::PreconditionFailed(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities`.
     pub fn is_too_many_field_level_encryption_encryption_entities(&self) -> bool {
         matches!(&self.kind, UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities(_))
     }
-    /// Returns true if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns`.
+    /// Returns `true` if the error kind is `UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns`.
     pub fn is_too_many_field_level_encryption_field_patterns(&self) -> bool {
         matches!(
             &self.kind,
@@ -12854,7 +13761,7 @@ pub enum UpdateFunctionErrorKind {
     PreconditionFailed(crate::error::PreconditionFailed),
     /// <p>This operation is not supported in this region.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionError {
@@ -12922,33 +13829,33 @@ impl UpdateFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::FunctionSizeLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::FunctionSizeLimitExceeded`.
     pub fn is_function_size_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionErrorKind::FunctionSizeLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, UpdateFunctionErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::NoSuchFunctionExists`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::NoSuchFunctionExists`.
     pub fn is_no_such_function_exists(&self) -> bool {
         matches!(&self.kind, UpdateFunctionErrorKind::NoSuchFunctionExists(_))
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(&self.kind, UpdateFunctionErrorKind::PreconditionFailed(_))
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, UpdateFunctionErrorKind::UnsupportedOperation(_))
     }
@@ -12996,7 +13903,7 @@ pub enum UpdateKeyGroupErrorKind {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyPublicKeysInKeyGroup(crate::error::TooManyPublicKeysInKeyGroup),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateKeyGroupError {
@@ -13064,33 +13971,33 @@ impl UpdateKeyGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateKeyGroupErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateKeyGroupErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, UpdateKeyGroupErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `UpdateKeyGroupErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateKeyGroupErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateKeyGroupErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateKeyGroupErrorKind::KeyGroupAlreadyExists`.
+    /// Returns `true` if the error kind is `UpdateKeyGroupErrorKind::KeyGroupAlreadyExists`.
     pub fn is_key_group_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             UpdateKeyGroupErrorKind::KeyGroupAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `UpdateKeyGroupErrorKind::NoSuchResource`.
+    /// Returns `true` if the error kind is `UpdateKeyGroupErrorKind::NoSuchResource`.
     pub fn is_no_such_resource(&self) -> bool {
         matches!(&self.kind, UpdateKeyGroupErrorKind::NoSuchResource(_))
     }
-    /// Returns true if the error kind is `UpdateKeyGroupErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateKeyGroupErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(&self.kind, UpdateKeyGroupErrorKind::PreconditionFailed(_))
     }
-    /// Returns true if the error kind is `UpdateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup`.
+    /// Returns `true` if the error kind is `UpdateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup`.
     pub fn is_too_many_public_keys_in_key_group(&self) -> bool {
         matches!(
             &self.kind,
@@ -13158,7 +14065,7 @@ pub enum UpdateOriginRequestPolicyErrorKind {
     TooManyQueryStringsInOriginRequestPolicy(
         crate::error::TooManyQueryStringsInOriginRequestPolicy,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOriginRequestPolicyError {
@@ -13239,77 +14146,77 @@ impl UpdateOriginRequestPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::IllegalUpdate(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy`.
     pub fn is_no_such_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists`.
     pub fn is_origin_request_policy_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::PreconditionFailed(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy`.
     pub fn is_too_many_cookies_in_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy`.
     pub fn is_too_many_headers_in_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy`.
+    /// Returns `true` if the error kind is `UpdateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy`.
     pub fn is_too_many_query_strings_in_origin_request_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -13372,7 +14279,7 @@ pub enum UpdatePublicKeyErrorKind {
     /// <p>The precondition in one or more of the request fields evaluated to
     /// <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePublicKeyError {
@@ -13441,37 +14348,37 @@ impl UpdatePublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePublicKeyErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdatePublicKeyErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(&self.kind, UpdatePublicKeyErrorKind::AccessDenied(_))
     }
-    /// Returns true if the error kind is `UpdatePublicKeyErrorKind::CannotChangeImmutablePublicKeyFields`.
+    /// Returns `true` if the error kind is `UpdatePublicKeyErrorKind::CannotChangeImmutablePublicKeyFields`.
     pub fn is_cannot_change_immutable_public_key_fields(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePublicKeyErrorKind::CannotChangeImmutablePublicKeyFields(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePublicKeyErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `UpdatePublicKeyErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(&self.kind, UpdatePublicKeyErrorKind::IllegalUpdate(_))
     }
-    /// Returns true if the error kind is `UpdatePublicKeyErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdatePublicKeyErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, UpdatePublicKeyErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `UpdatePublicKeyErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdatePublicKeyErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePublicKeyErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePublicKeyErrorKind::NoSuchPublicKey`.
+    /// Returns `true` if the error kind is `UpdatePublicKeyErrorKind::NoSuchPublicKey`.
     pub fn is_no_such_public_key(&self) -> bool {
         matches!(&self.kind, UpdatePublicKeyErrorKind::NoSuchPublicKey(_))
     }
-    /// Returns true if the error kind is `UpdatePublicKeyErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdatePublicKeyErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(&self.kind, UpdatePublicKeyErrorKind::PreconditionFailed(_))
     }
@@ -13510,7 +14417,7 @@ pub enum UpdateRealtimeLogConfigErrorKind {
     InvalidArgument(crate::error::InvalidArgument),
     /// <p>The real-time log configuration does not exist.</p>
     NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRealtimeLogConfigError {
@@ -13575,21 +14482,21 @@ impl UpdateRealtimeLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRealtimeLogConfigErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdateRealtimeLogConfigErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRealtimeLogConfigErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRealtimeLogConfigErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateRealtimeLogConfigErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRealtimeLogConfigErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig`.
+    /// Returns `true` if the error kind is `UpdateRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig`.
     pub fn is_no_such_realtime_log_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -13604,6 +14511,208 @@ impl std::error::Error for UpdateRealtimeLogConfigError {
             UpdateRealtimeLogConfigErrorKind::InvalidArgument(_inner) => Some(_inner),
             UpdateRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(_inner) => Some(_inner),
             UpdateRealtimeLogConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateResponseHeadersPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateResponseHeadersPolicyError {
+    /// Kind of error that occurred.
+    pub kind: UpdateResponseHeadersPolicyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateResponseHeadersPolicy` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateResponseHeadersPolicyErrorKind {
+    /// <p>Access denied.</p>
+    AccessDenied(crate::error::AccessDenied),
+    /// <p>The update contains modifications that are not allowed.</p>
+    IllegalUpdate(crate::error::IllegalUpdate),
+    /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
+    InconsistentQuantities(crate::error::InconsistentQuantities),
+    /// <p>An argument is invalid.</p>
+    InvalidArgument(crate::error::InvalidArgument),
+    /// <p>The <code>If-Match</code> version is missing or not valid.</p>
+    InvalidIfMatchVersion(crate::error::InvalidIfMatchVersion),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
+    /// <p>The precondition in one or more of the request fields evaluated to
+    /// <code>false</code>.</p>
+    PreconditionFailed(crate::error::PreconditionFailed),
+    /// <p>A response headers policy with this name already exists. You must provide a unique name. To
+    /// modify an existing response headers policy, use
+    /// <code>UpdateResponseHeadersPolicy</code>.</p>
+    ResponseHeadersPolicyAlreadyExists(crate::error::ResponseHeadersPolicyAlreadyExists),
+    /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyCustomHeadersInResponseHeadersPolicy(
+        crate::error::TooManyCustomHeadersInResponseHeadersPolicy,
+    ),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateResponseHeadersPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateResponseHeadersPolicyErrorKind::AccessDenied(_inner) => _inner.fmt(f),
+            UpdateResponseHeadersPolicyErrorKind::IllegalUpdate(_inner) => _inner.fmt(f),
+            UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities(_inner) => _inner.fmt(f),
+            UpdateResponseHeadersPolicyErrorKind::InvalidArgument(_inner) => _inner.fmt(f),
+            UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(_inner) => _inner.fmt(f),
+            UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateResponseHeadersPolicyErrorKind::PreconditionFailed(_inner) => _inner.fmt(f),
+            UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(
+                _inner,
+            ) => _inner.fmt(f),
+            UpdateResponseHeadersPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateResponseHeadersPolicyError {
+    fn code(&self) -> Option<&str> {
+        UpdateResponseHeadersPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateResponseHeadersPolicyError {
+    /// Creates a new `UpdateResponseHeadersPolicyError`.
+    pub fn new(kind: UpdateResponseHeadersPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateResponseHeadersPolicyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateResponseHeadersPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateResponseHeadersPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateResponseHeadersPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::AccessDenied`.
+    pub fn is_access_denied(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::AccessDenied(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::IllegalUpdate`.
+    pub fn is_illegal_update(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::IllegalUpdate(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities`.
+    pub fn is_inconsistent_quantities(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::InvalidArgument`.
+    pub fn is_invalid_argument(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::InvalidArgument(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion`.
+    pub fn is_invalid_if_match_version(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy`.
+    pub fn is_no_such_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::PreconditionFailed`.
+    pub fn is_precondition_failed(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::PreconditionFailed(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists`.
+    pub fn is_response_headers_policy_already_exists(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy`.
+    pub fn is_too_many_custom_headers_in_response_headers_policy(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(_)
+        )
+    }
+}
+impl std::error::Error for UpdateResponseHeadersPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateResponseHeadersPolicyErrorKind::AccessDenied(_inner) => Some(_inner),
+            UpdateResponseHeadersPolicyErrorKind::IllegalUpdate(_inner) => Some(_inner),
+            UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities(_inner) => Some(_inner),
+            UpdateResponseHeadersPolicyErrorKind::InvalidArgument(_inner) => Some(_inner),
+            UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(_inner) => Some(_inner),
+            UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(_inner) => {
+                Some(_inner)
+            }
+            UpdateResponseHeadersPolicyErrorKind::PreconditionFailed(_inner) => Some(_inner),
+            UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(_inner) => {
+                Some(_inner)
+            }
+            UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(
+                _inner,
+            ) => Some(_inner),
+            UpdateResponseHeadersPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -13648,7 +14757,7 @@ pub enum UpdateStreamingDistributionErrorKind {
     TooManyTrustedSigners(crate::error::TooManyTrustedSigners),
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::error::TrustedSignerDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStreamingDistributionError {
@@ -13731,91 +14840,91 @@ impl UpdateStreamingDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::AccessDenied`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::AccessDenied(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::CnameAlreadyExists`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::CnameAlreadyExists`.
     pub fn is_cname_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::CnameAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::IllegalUpdate`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::IllegalUpdate`.
     pub fn is_illegal_update(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::IllegalUpdate(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::InconsistentQuantities`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::InconsistentQuantities(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::InvalidIfMatchVersion`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::InvalidIfMatchVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::InvalidOriginAccessIdentity`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::InvalidOriginAccessIdentity`.
     pub fn is_invalid_origin_access_identity(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::InvalidOriginAccessIdentity(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::MissingBody`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::MissingBody`.
     pub fn is_missing_body(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::MissingBody(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::NoSuchStreamingDistribution`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::NoSuchStreamingDistribution`.
     pub fn is_no_such_streaming_distribution(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::NoSuchStreamingDistribution(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::PreconditionFailed`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::PreconditionFailed`.
     pub fn is_precondition_failed(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::PreconditionFailed(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs`.
     pub fn is_too_many_streaming_distribution_cnam_es(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::TooManyTrustedSigners`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::TooManyTrustedSigners`.
     pub fn is_too_many_trusted_signers(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingDistributionErrorKind::TooManyTrustedSigners(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingDistributionErrorKind::TrustedSignerDoesNotExist`.
+    /// Returns `true` if the error kind is `UpdateStreamingDistributionErrorKind::TrustedSignerDoesNotExist`.
     pub fn is_trusted_signer_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -14686,6 +15795,202 @@ impl AccessDenied {
     }
 }
 
+/// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+/// <i>Amazon CloudFront Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyCustomHeadersInResponseHeadersPolicy {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TooManyCustomHeadersInResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyCustomHeadersInResponseHeadersPolicy");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TooManyCustomHeadersInResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCustomHeadersInResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCustomHeadersInResponseHeadersPolicy")?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCustomHeadersInResponseHeadersPolicy {}
+/// See [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy)
+pub mod too_many_custom_headers_in_response_headers_policy {
+    /// A builder for [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy)
+        pub fn build(self) -> crate::error::TooManyCustomHeadersInResponseHeadersPolicy {
+            crate::error::TooManyCustomHeadersInResponseHeadersPolicy {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyCustomHeadersInResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy)
+    pub fn builder() -> crate::error::too_many_custom_headers_in_response_headers_policy::Builder {
+        crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default()
+    }
+}
+
+/// <p>A response headers policy with this name already exists. You must provide a unique name. To
+/// modify an existing response headers policy, use
+/// <code>UpdateResponseHeadersPolicy</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyAlreadyExists {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyAlreadyExists");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResponseHeadersPolicyAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResponseHeadersPolicyAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResponseHeadersPolicyAlreadyExists")?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResponseHeadersPolicyAlreadyExists {}
+/// See [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists)
+pub mod response_headers_policy_already_exists {
+    /// A builder for [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists)
+        pub fn build(self) -> crate::error::ResponseHeadersPolicyAlreadyExists {
+            crate::error::ResponseHeadersPolicyAlreadyExists {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyAlreadyExists {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists)
+    pub fn builder() -> crate::error::response_headers_policy_already_exists::Builder {
+        crate::error::response_headers_policy_already_exists::Builder::default()
+    }
+}
+
+/// <p>The response headers policy does not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NoSuchResponseHeadersPolicy {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NoSuchResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NoSuchResponseHeadersPolicy");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl NoSuchResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchResponseHeadersPolicy")?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchResponseHeadersPolicy {}
+/// See [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy)
+pub mod no_such_response_headers_policy {
+    /// A builder for [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy)
+        pub fn build(self) -> crate::error::NoSuchResponseHeadersPolicy {
+            crate::error::NoSuchResponseHeadersPolicy {
+                message: self.message,
+            }
+        }
+    }
+}
+impl NoSuchResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy)
+    pub fn builder() -> crate::error::no_such_response_headers_policy::Builder {
+        crate::error::no_such_response_headers_policy::Builder::default()
+    }
+}
+
 /// <p>The real-time log configuration does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14709,8 +16014,8 @@ impl NoSuchRealtimeLogConfig {
 impl std::fmt::Display for NoSuchRealtimeLogConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchRealtimeLogConfig")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -14773,8 +16078,8 @@ impl NoSuchPublicKey {
 impl std::fmt::Display for NoSuchPublicKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchPublicKey")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -14837,8 +16142,8 @@ impl CannotChangeImmutablePublicKeyFields {
 impl std::fmt::Display for CannotChangeImmutablePublicKeyFields {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CannotChangeImmutablePublicKeyFields")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -14903,8 +16208,8 @@ impl TooManyQueryStringsInOriginRequestPolicy {
 impl std::fmt::Display for TooManyQueryStringsInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringsInOriginRequestPolicy")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -14969,8 +16274,8 @@ impl TooManyHeadersInOriginRequestPolicy {
 impl std::fmt::Display for TooManyHeadersInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInOriginRequestPolicy")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -15035,8 +16340,8 @@ impl TooManyCookiesInOriginRequestPolicy {
 impl std::fmt::Display for TooManyCookiesInOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookiesInOriginRequestPolicy")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -15101,8 +16406,8 @@ impl OriginRequestPolicyAlreadyExists {
 impl std::fmt::Display for OriginRequestPolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginRequestPolicyAlreadyExists")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -15165,8 +16470,8 @@ impl NoSuchOriginRequestPolicy {
 impl std::fmt::Display for NoSuchOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOriginRequestPolicy")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -15231,8 +16536,8 @@ impl TooManyPublicKeysInKeyGroup {
 impl std::fmt::Display for TooManyPublicKeysInKeyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyPublicKeysInKeyGroup")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -15295,8 +16600,8 @@ impl NoSuchResource {
 impl std::fmt::Display for NoSuchResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchResource")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -15360,8 +16665,8 @@ impl KeyGroupAlreadyExists {
 impl std::fmt::Display for KeyGroupAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KeyGroupAlreadyExists")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -15424,8 +16729,8 @@ impl UnsupportedOperation {
 impl std::fmt::Display for UnsupportedOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOperation")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -15488,8 +16793,8 @@ impl NoSuchFunctionExists {
 impl std::fmt::Display for NoSuchFunctionExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFunctionExists")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -15553,8 +16858,8 @@ impl FunctionSizeLimitExceeded {
 impl std::fmt::Display for FunctionSizeLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionSizeLimitExceeded")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -15617,8 +16922,8 @@ impl TooManyFieldLevelEncryptionFieldPatterns {
 impl std::fmt::Display for TooManyFieldLevelEncryptionFieldPatterns {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionFieldPatterns")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -15681,8 +16986,8 @@ impl TooManyFieldLevelEncryptionEncryptionEntities {
 impl std::fmt::Display for TooManyFieldLevelEncryptionEncryptionEntities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionEncryptionEntities")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -15745,8 +17050,8 @@ impl NoSuchFieldLevelEncryptionProfile {
 impl std::fmt::Display for NoSuchFieldLevelEncryptionProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFieldLevelEncryptionProfile")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -15809,8 +17114,8 @@ impl FieldLevelEncryptionProfileSizeExceeded {
 impl std::fmt::Display for FieldLevelEncryptionProfileSizeExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileSizeExceeded")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
@@ -15873,8 +17178,8 @@ impl FieldLevelEncryptionProfileAlreadyExists {
 impl std::fmt::Display for FieldLevelEncryptionProfileAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileAlreadyExists")?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -15937,8 +17242,8 @@ impl TooManyFieldLevelEncryptionQueryArgProfiles {
 impl std::fmt::Display for TooManyFieldLevelEncryptionQueryArgProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionQueryArgProfiles")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
@@ -16001,8 +17306,8 @@ impl TooManyFieldLevelEncryptionContentTypeProfiles {
 impl std::fmt::Display for TooManyFieldLevelEncryptionContentTypeProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionContentTypeProfiles")?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
         }
         Ok(())
     }
@@ -16066,8 +17371,8 @@ impl QueryArgProfileEmpty {
 impl std::fmt::Display for QueryArgProfileEmpty {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueryArgProfileEmpty")?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -16130,8 +17435,8 @@ impl NoSuchFieldLevelEncryptionConfig {
 impl std::fmt::Display for NoSuchFieldLevelEncryptionConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchFieldLevelEncryptionConfig")?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
         }
         Ok(())
     }
@@ -16194,8 +17499,8 @@ impl TrustedKeyGroupDoesNotExist {
 impl std::fmt::Display for TrustedKeyGroupDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrustedKeyGroupDoesNotExist")?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
         }
         Ok(())
     }
@@ -16258,8 +17563,8 @@ impl TooManyQueryStringParameters {
 impl std::fmt::Display for TooManyQueryStringParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringParameters")?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
@@ -16322,8 +17627,8 @@ impl TooManyOrigins {
 impl std::fmt::Display for TooManyOrigins {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOrigins")?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -16386,8 +17691,8 @@ impl TooManyOriginGroupsPerDistribution {
 impl std::fmt::Display for TooManyOriginGroupsPerDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginGroupsPerDistribution")?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -16450,8 +17755,8 @@ impl TooManyOriginCustomHeaders {
 impl std::fmt::Display for TooManyOriginCustomHeaders {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginCustomHeaders")?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -16514,8 +17819,8 @@ impl TooManyLambdaFunctionAssociations {
 impl std::fmt::Display for TooManyLambdaFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyLambdaFunctionAssociations")?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -16580,8 +17885,8 @@ impl TooManyKeyGroupsAssociatedToDistribution {
 impl std::fmt::Display for TooManyKeyGroupsAssociatedToDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyKeyGroupsAssociatedToDistribution")?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -16644,8 +17949,8 @@ impl TooManyHeadersInForwardedValues {
 impl std::fmt::Display for TooManyHeadersInForwardedValues {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInForwardedValues")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -16710,8 +18015,8 @@ impl TooManyFunctionAssociations {
 impl std::fmt::Display for TooManyFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFunctionAssociations")?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
@@ -16778,8 +18083,8 @@ impl std::fmt::Display for TooManyDistributionsWithSingleFunctionArn {
             f,
             "TooManyDistributionsWithSingleFunctionArn [TooManyDistributionsWithSingleFunctionARN]"
         )?;
-        if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
         }
         Ok(())
     }
@@ -16843,8 +18148,8 @@ impl TooManyDistributionsWithLambdaAssociations {
 impl std::fmt::Display for TooManyDistributionsWithLambdaAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsWithLambdaAssociations")?;
-        if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
         }
         Ok(())
     }
@@ -16909,8 +18214,8 @@ impl TooManyDistributionsWithFunctionAssociations {
 impl std::fmt::Display for TooManyDistributionsWithFunctionAssociations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsWithFunctionAssociations")?;
-        if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -16950,6 +18255,75 @@ impl TooManyDistributionsWithFunctionAssociations {
     }
 }
 
+/// <p>The maximum number of distributions have been associated with the specified response headers
+/// policy.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+/// <i>Amazon CloudFront Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyDistributionsAssociatedToResponseHeadersPolicy {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TooManyDistributionsAssociatedToResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyDistributionsAssociatedToResponseHeadersPolicy");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsAssociatedToResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionsAssociatedToResponseHeadersPolicy")?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsAssociatedToResponseHeadersPolicy {}
+/// See [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy)
+pub mod too_many_distributions_associated_to_response_headers_policy {
+    /// A builder for [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy)
+        pub fn build(self) -> crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy {
+            crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy)
+    pub fn builder(
+    ) -> crate::error::too_many_distributions_associated_to_response_headers_policy::Builder {
+        crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default(
+        )
+    }
+}
+
 /// <p>The maximum number of distributions have been associated with the specified origin
 /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
 /// <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -16975,8 +18349,8 @@ impl TooManyDistributionsAssociatedToOriginRequestPolicy {
 impl std::fmt::Display for TooManyDistributionsAssociatedToOriginRequestPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToOriginRequestPolicy")?;
-        if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+        if let Some(inner_53) = &self.message {
+            write!(f, ": {}", inner_53)?;
         }
         Ok(())
     }
@@ -17042,8 +18416,8 @@ impl TooManyDistributionsAssociatedToKeyGroup {
 impl std::fmt::Display for TooManyDistributionsAssociatedToKeyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToKeyGroup")?;
-        if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+        if let Some(inner_54) = &self.message {
+            write!(f, ": {}", inner_54)?;
         }
         Ok(())
     }
@@ -17110,8 +18484,8 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToFieldLevelEncryptionC
             f,
             "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig"
         )?;
-        if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+        if let Some(inner_55) = &self.message {
+            write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
@@ -17180,8 +18554,8 @@ impl TooManyDistributionsAssociatedToCachePolicy {
 impl std::fmt::Display for TooManyDistributionsAssociatedToCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionsAssociatedToCachePolicy")?;
-        if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+        if let Some(inner_56) = &self.message {
+            write!(f, ": {}", inner_56)?;
         }
         Ok(())
     }
@@ -17244,8 +18618,8 @@ impl TooManyDistributionCnamEs {
 impl std::fmt::Display for TooManyDistributionCnamEs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributionCnamEs [TooManyDistributionCNAMEs]")?;
-        if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+        if let Some(inner_57) = &self.message {
+            write!(f, ": {}", inner_57)?;
         }
         Ok(())
     }
@@ -17308,8 +18682,8 @@ impl TooManyCookieNamesInWhiteList {
 impl std::fmt::Display for TooManyCookieNamesInWhiteList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookieNamesInWhiteList")?;
-        if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+        if let Some(inner_58) = &self.message {
+            write!(f, ": {}", inner_58)?;
         }
         Ok(())
     }
@@ -17372,8 +18746,8 @@ impl TooManyCertificates {
 impl std::fmt::Display for TooManyCertificates {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCertificates")?;
-        if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+        if let Some(inner_59) = &self.message {
+            write!(f, ": {}", inner_59)?;
         }
         Ok(())
     }
@@ -17436,8 +18810,8 @@ impl TooManyCacheBehaviors {
 impl std::fmt::Display for TooManyCacheBehaviors {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCacheBehaviors")?;
-        if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+        if let Some(inner_60) = &self.message {
+            write!(f, ": {}", inner_60)?;
         }
         Ok(())
     }
@@ -17477,7 +18851,7 @@ impl TooManyCacheBehaviors {
     }
 }
 
-/// <p>The specified real-time log configuration belongs to a different account.</p>
+/// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RealtimeLogConfigOwnerMismatch {
@@ -17500,8 +18874,8 @@ impl RealtimeLogConfigOwnerMismatch {
 impl std::fmt::Display for RealtimeLogConfigOwnerMismatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigOwnerMismatch")?;
-        if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+        if let Some(inner_61) = &self.message {
+            write!(f, ": {}", inner_61)?;
         }
         Ok(())
     }
@@ -17564,8 +18938,8 @@ impl NoSuchOrigin {
 impl std::fmt::Display for NoSuchOrigin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchOrigin")?;
-        if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+        if let Some(inner_62) = &self.message {
+            write!(f, ": {}", inner_62)?;
         }
         Ok(())
     }
@@ -17628,8 +19002,8 @@ impl NoSuchDistribution {
 impl std::fmt::Display for NoSuchDistribution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchDistribution")?;
-        if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+        if let Some(inner_63) = &self.message {
+            write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
@@ -17692,8 +19066,8 @@ impl NoSuchCachePolicy {
 impl std::fmt::Display for NoSuchCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchCachePolicy")?;
-        if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+        if let Some(inner_64) = &self.message {
+            write!(f, ": {}", inner_64)?;
         }
         Ok(())
     }
@@ -17760,8 +19134,8 @@ impl InvalidWebAclId {
 impl std::fmt::Display for InvalidWebAclId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidWebAclId [InvalidWebACLId]")?;
-        if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+        if let Some(inner_65) = &self.message {
+            write!(f, ": {}", inner_65)?;
         }
         Ok(())
     }
@@ -17824,8 +19198,8 @@ impl InvalidViewerCertificate {
 impl std::fmt::Display for InvalidViewerCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidViewerCertificate")?;
-        if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+        if let Some(inner_66) = &self.message {
+            write!(f, ": {}", inner_66)?;
         }
         Ok(())
     }
@@ -17888,8 +19262,8 @@ impl InvalidTtlOrder {
 impl std::fmt::Display for InvalidTtlOrder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTtlOrder [InvalidTTLOrder]")?;
-        if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+        if let Some(inner_67) = &self.message {
+            write!(f, ": {}", inner_67)?;
         }
         Ok(())
     }
@@ -17952,8 +19326,8 @@ impl InvalidResponseCode {
 impl std::fmt::Display for InvalidResponseCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResponseCode")?;
-        if let Some(inner_64) = &self.message {
-            write!(f, ": {}", inner_64)?;
+        if let Some(inner_68) = &self.message {
+            write!(f, ": {}", inner_68)?;
         }
         Ok(())
     }
@@ -18017,8 +19391,8 @@ impl InvalidRequiredProtocol {
 impl std::fmt::Display for InvalidRequiredProtocol {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequiredProtocol")?;
-        if let Some(inner_65) = &self.message {
-            write!(f, ": {}", inner_65)?;
+        if let Some(inner_69) = &self.message {
+            write!(f, ": {}", inner_69)?;
         }
         Ok(())
     }
@@ -18081,8 +19455,8 @@ impl InvalidRelativePath {
 impl std::fmt::Display for InvalidRelativePath {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRelativePath")?;
-        if let Some(inner_66) = &self.message {
-            write!(f, ": {}", inner_66)?;
+        if let Some(inner_70) = &self.message {
+            write!(f, ": {}", inner_70)?;
         }
         Ok(())
     }
@@ -18145,8 +19519,8 @@ impl InvalidQueryStringParameters {
 impl std::fmt::Display for InvalidQueryStringParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidQueryStringParameters")?;
-        if let Some(inner_67) = &self.message {
-            write!(f, ": {}", inner_67)?;
+        if let Some(inner_71) = &self.message {
+            write!(f, ": {}", inner_71)?;
         }
         Ok(())
     }
@@ -18209,8 +19583,8 @@ impl InvalidOriginReadTimeout {
 impl std::fmt::Display for InvalidOriginReadTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOriginReadTimeout")?;
-        if let Some(inner_68) = &self.message {
-            write!(f, ": {}", inner_68)?;
+        if let Some(inner_72) = &self.message {
+            write!(f, ": {}", inner_72)?;
         }
         Ok(())
     }
@@ -18273,8 +19647,8 @@ impl InvalidOriginKeepaliveTimeout {
 impl std::fmt::Display for InvalidOriginKeepaliveTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOriginKeepaliveTimeout")?;
-        if let Some(inner_69) = &self.message {
-            write!(f, ": {}", inner_69)?;
+        if let Some(inner_73) = &self.message {
+            write!(f, ": {}", inner_73)?;
         }
         Ok(())
     }
@@ -18337,8 +19711,8 @@ impl InvalidMinimumProtocolVersion {
 impl std::fmt::Display for InvalidMinimumProtocolVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMinimumProtocolVersion")?;
-        if let Some(inner_70) = &self.message {
-            write!(f, ": {}", inner_70)?;
+        if let Some(inner_74) = &self.message {
+            write!(f, ": {}", inner_74)?;
         }
         Ok(())
     }
@@ -18401,8 +19775,8 @@ impl InvalidLocationCode {
 impl std::fmt::Display for InvalidLocationCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLocationCode")?;
-        if let Some(inner_71) = &self.message {
-            write!(f, ": {}", inner_71)?;
+        if let Some(inner_75) = &self.message {
+            write!(f, ": {}", inner_75)?;
         }
         Ok(())
     }
@@ -18465,8 +19839,8 @@ impl InvalidLambdaFunctionAssociation {
 impl std::fmt::Display for InvalidLambdaFunctionAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLambdaFunctionAssociation")?;
-        if let Some(inner_72) = &self.message {
-            write!(f, ": {}", inner_72)?;
+        if let Some(inner_76) = &self.message {
+            write!(f, ": {}", inner_76)?;
         }
         Ok(())
     }
@@ -18529,8 +19903,8 @@ impl InvalidHeadersForS3Origin {
 impl std::fmt::Display for InvalidHeadersForS3Origin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHeadersForS3Origin")?;
-        if let Some(inner_73) = &self.message {
-            write!(f, ": {}", inner_73)?;
+        if let Some(inner_77) = &self.message {
+            write!(f, ": {}", inner_77)?;
         }
         Ok(())
     }
@@ -18593,8 +19967,8 @@ impl InvalidGeoRestrictionParameter {
 impl std::fmt::Display for InvalidGeoRestrictionParameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGeoRestrictionParameter")?;
-        if let Some(inner_74) = &self.message {
-            write!(f, ": {}", inner_74)?;
+        if let Some(inner_78) = &self.message {
+            write!(f, ": {}", inner_78)?;
         }
         Ok(())
     }
@@ -18657,8 +20031,8 @@ impl InvalidFunctionAssociation {
 impl std::fmt::Display for InvalidFunctionAssociation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidFunctionAssociation")?;
-        if let Some(inner_75) = &self.message {
-            write!(f, ": {}", inner_75)?;
+        if let Some(inner_79) = &self.message {
+            write!(f, ": {}", inner_79)?;
         }
         Ok(())
     }
@@ -18722,8 +20096,8 @@ impl InvalidForwardCookies {
 impl std::fmt::Display for InvalidForwardCookies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidForwardCookies")?;
-        if let Some(inner_76) = &self.message {
-            write!(f, ": {}", inner_76)?;
+        if let Some(inner_80) = &self.message {
+            write!(f, ": {}", inner_80)?;
         }
         Ok(())
     }
@@ -18786,8 +20160,8 @@ impl InvalidErrorCode {
 impl std::fmt::Display for InvalidErrorCode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidErrorCode")?;
-        if let Some(inner_77) = &self.message {
-            write!(f, ": {}", inner_77)?;
+        if let Some(inner_81) = &self.message {
+            write!(f, ": {}", inner_81)?;
         }
         Ok(())
     }
@@ -18850,8 +20224,8 @@ impl InvalidDefaultRootObject {
 impl std::fmt::Display for InvalidDefaultRootObject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDefaultRootObject")?;
-        if let Some(inner_78) = &self.message {
-            write!(f, ": {}", inner_78)?;
+        if let Some(inner_82) = &self.message {
+            write!(f, ": {}", inner_82)?;
         }
         Ok(())
     }
@@ -18918,8 +20292,8 @@ impl std::fmt::Display for IllegalFieldLevelEncryptionConfigAssociationWithCache
             f,
             "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"
         )?;
-        if let Some(inner_79) = &self.message {
-            write!(f, ": {}", inner_79)?;
+        if let Some(inner_83) = &self.message {
+            write!(f, ": {}", inner_83)?;
         }
         Ok(())
     }
@@ -18986,8 +20360,8 @@ impl NoSuchCloudFrontOriginAccessIdentity {
 impl std::fmt::Display for NoSuchCloudFrontOriginAccessIdentity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchCloudFrontOriginAccessIdentity")?;
-        if let Some(inner_80) = &self.message {
-            write!(f, ": {}", inner_80)?;
+        if let Some(inner_84) = &self.message {
+            write!(f, ": {}", inner_84)?;
         }
         Ok(())
     }
@@ -19052,8 +20426,8 @@ impl TooManyQueryStringsInCachePolicy {
 impl std::fmt::Display for TooManyQueryStringsInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyQueryStringsInCachePolicy")?;
-        if let Some(inner_81) = &self.message {
-            write!(f, ": {}", inner_81)?;
+        if let Some(inner_85) = &self.message {
+            write!(f, ": {}", inner_85)?;
         }
         Ok(())
     }
@@ -19118,8 +20492,8 @@ impl TooManyHeadersInCachePolicy {
 impl std::fmt::Display for TooManyHeadersInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyHeadersInCachePolicy")?;
-        if let Some(inner_82) = &self.message {
-            write!(f, ": {}", inner_82)?;
+        if let Some(inner_86) = &self.message {
+            write!(f, ": {}", inner_86)?;
         }
         Ok(())
     }
@@ -19184,8 +20558,8 @@ impl TooManyCookiesInCachePolicy {
 impl std::fmt::Display for TooManyCookiesInCachePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCookiesInCachePolicy")?;
-        if let Some(inner_83) = &self.message {
-            write!(f, ": {}", inner_83)?;
+        if let Some(inner_87) = &self.message {
+            write!(f, ": {}", inner_87)?;
         }
         Ok(())
     }
@@ -19249,8 +20623,8 @@ impl CachePolicyAlreadyExists {
 impl std::fmt::Display for CachePolicyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CachePolicyAlreadyExists")?;
-        if let Some(inner_84) = &self.message {
-            write!(f, ": {}", inner_84)?;
+        if let Some(inner_88) = &self.message {
+            write!(f, ": {}", inner_88)?;
         }
         Ok(())
     }
@@ -19313,8 +20687,8 @@ impl InvalidTagging {
 impl std::fmt::Display for InvalidTagging {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagging")?;
-        if let Some(inner_85) = &self.message {
-            write!(f, ": {}", inner_85)?;
+        if let Some(inner_89) = &self.message {
+            write!(f, ": {}", inner_89)?;
         }
         Ok(())
     }
@@ -19377,8 +20751,8 @@ impl TestFunctionFailed {
 impl std::fmt::Display for TestFunctionFailed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TestFunctionFailed")?;
-        if let Some(inner_86) = &self.message {
-            write!(f, ": {}", inner_86)?;
+        if let Some(inner_90) = &self.message {
+            write!(f, ": {}", inner_90)?;
         }
         Ok(())
     }
@@ -19441,8 +20815,8 @@ impl NoSuchInvalidation {
 impl std::fmt::Display for NoSuchInvalidation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchInvalidation")?;
-        if let Some(inner_87) = &self.message {
-            write!(f, ": {}", inner_87)?;
+        if let Some(inner_91) = &self.message {
+            write!(f, ": {}", inner_91)?;
         }
         Ok(())
     }
@@ -19506,8 +20880,8 @@ impl StreamingDistributionNotDisabled {
 impl std::fmt::Display for StreamingDistributionNotDisabled {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StreamingDistributionNotDisabled")?;
-        if let Some(inner_88) = &self.message {
-            write!(f, ": {}", inner_88)?;
+        if let Some(inner_92) = &self.message {
+            write!(f, ": {}", inner_92)?;
         }
         Ok(())
     }
@@ -19547,6 +20921,135 @@ impl StreamingDistributionNotDisabled {
     }
 }
 
+/// <p>Cannot delete the response headers policy because it is attached to one or more cache
+/// behaviors in a CloudFront distribution. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyInUse {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyInUse");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResponseHeadersPolicyInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResponseHeadersPolicyInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResponseHeadersPolicyInUse")?;
+        if let Some(inner_93) = &self.message {
+            write!(f, ": {}", inner_93)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResponseHeadersPolicyInUse {}
+/// See [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse)
+pub mod response_headers_policy_in_use {
+    /// A builder for [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse)
+        pub fn build(self) -> crate::error::ResponseHeadersPolicyInUse {
+            crate::error::ResponseHeadersPolicyInUse {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyInUse {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse)
+    pub fn builder() -> crate::error::response_headers_policy_in_use::Builder {
+        crate::error::response_headers_policy_in_use::Builder::default()
+    }
+}
+
+/// <p>You cannot delete a managed policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IllegalDelete {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IllegalDelete {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IllegalDelete");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl IllegalDelete {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IllegalDelete {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IllegalDelete")?;
+        if let Some(inner_94) = &self.message {
+            write!(f, ": {}", inner_94)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IllegalDelete {}
+/// See [`IllegalDelete`](crate::error::IllegalDelete)
+pub mod illegal_delete {
+    /// A builder for [`IllegalDelete`](crate::error::IllegalDelete)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IllegalDelete`](crate::error::IllegalDelete)
+        pub fn build(self) -> crate::error::IllegalDelete {
+            crate::error::IllegalDelete {
+                message: self.message,
+            }
+        }
+    }
+}
+impl IllegalDelete {
+    /// Creates a new builder-style object to manufacture [`IllegalDelete`](crate::error::IllegalDelete)
+    pub fn builder() -> crate::error::illegal_delete::Builder {
+        crate::error::illegal_delete::Builder::default()
+    }
+}
+
 /// <p>Cannot delete the real-time log configuration because it is attached to one or more cache
 /// behaviors.</p>
 #[non_exhaustive]
@@ -19571,8 +21074,8 @@ impl RealtimeLogConfigInUse {
 impl std::fmt::Display for RealtimeLogConfigInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigInUse")?;
-        if let Some(inner_89) = &self.message {
-            write!(f, ": {}", inner_89)?;
+        if let Some(inner_95) = &self.message {
+            write!(f, ": {}", inner_95)?;
         }
         Ok(())
     }
@@ -19635,8 +21138,8 @@ impl PublicKeyInUse {
 impl std::fmt::Display for PublicKeyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicKeyInUse")?;
-        if let Some(inner_90) = &self.message {
-            write!(f, ": {}", inner_90)?;
+        if let Some(inner_96) = &self.message {
+            write!(f, ": {}", inner_96)?;
         }
         Ok(())
     }
@@ -19700,8 +21203,8 @@ impl OriginRequestPolicyInUse {
 impl std::fmt::Display for OriginRequestPolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OriginRequestPolicyInUse")?;
-        if let Some(inner_91) = &self.message {
-            write!(f, ": {}", inner_91)?;
+        if let Some(inner_97) = &self.message {
+            write!(f, ": {}", inner_97)?;
         }
         Ok(())
     }
@@ -19741,70 +21244,6 @@ impl OriginRequestPolicyInUse {
     }
 }
 
-/// <p>You cannot delete a managed policy.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IllegalDelete {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IllegalDelete {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IllegalDelete");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl IllegalDelete {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IllegalDelete {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IllegalDelete")?;
-        if let Some(inner_92) = &self.message {
-            write!(f, ": {}", inner_92)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IllegalDelete {}
-/// See [`IllegalDelete`](crate::error::IllegalDelete)
-pub mod illegal_delete {
-    /// A builder for [`IllegalDelete`](crate::error::IllegalDelete)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`IllegalDelete`](crate::error::IllegalDelete)
-        pub fn build(self) -> crate::error::IllegalDelete {
-            crate::error::IllegalDelete {
-                message: self.message,
-            }
-        }
-    }
-}
-impl IllegalDelete {
-    /// Creates a new builder-style object to manufacture [`IllegalDelete`](crate::error::IllegalDelete)
-    pub fn builder() -> crate::error::illegal_delete::Builder {
-        crate::error::illegal_delete::Builder::default()
-    }
-}
-
 /// <p>Cannot delete this resource because it is in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -19828,8 +21267,8 @@ impl ResourceInUse {
 impl std::fmt::Display for ResourceInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUse")?;
-        if let Some(inner_93) = &self.message {
-            write!(f, ": {}", inner_93)?;
+        if let Some(inner_98) = &self.message {
+            write!(f, ": {}", inner_98)?;
         }
         Ok(())
     }
@@ -19893,8 +21332,8 @@ impl FunctionInUse {
 impl std::fmt::Display for FunctionInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionInUse")?;
-        if let Some(inner_94) = &self.message {
-            write!(f, ": {}", inner_94)?;
+        if let Some(inner_99) = &self.message {
+            write!(f, ": {}", inner_99)?;
         }
         Ok(())
     }
@@ -19957,8 +21396,8 @@ impl FieldLevelEncryptionProfileInUse {
 impl std::fmt::Display for FieldLevelEncryptionProfileInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionProfileInUse")?;
-        if let Some(inner_95) = &self.message {
-            write!(f, ": {}", inner_95)?;
+        if let Some(inner_100) = &self.message {
+            write!(f, ": {}", inner_100)?;
         }
         Ok(())
     }
@@ -20021,8 +21460,8 @@ impl FieldLevelEncryptionConfigInUse {
 impl std::fmt::Display for FieldLevelEncryptionConfigInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionConfigInUse")?;
-        if let Some(inner_96) = &self.message {
-            write!(f, ": {}", inner_96)?;
+        if let Some(inner_101) = &self.message {
+            write!(f, ": {}", inner_101)?;
         }
         Ok(())
     }
@@ -20086,8 +21525,8 @@ impl DistributionNotDisabled {
 impl std::fmt::Display for DistributionNotDisabled {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DistributionNotDisabled")?;
-        if let Some(inner_97) = &self.message {
-            write!(f, ": {}", inner_97)?;
+        if let Some(inner_102) = &self.message {
+            write!(f, ": {}", inner_102)?;
         }
         Ok(())
     }
@@ -20150,8 +21589,8 @@ impl CloudFrontOriginAccessIdentityInUse {
 impl std::fmt::Display for CloudFrontOriginAccessIdentityInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudFrontOriginAccessIdentityInUse")?;
-        if let Some(inner_98) = &self.message {
-            write!(f, ": {}", inner_98)?;
+        if let Some(inner_103) = &self.message {
+            write!(f, ": {}", inner_103)?;
         }
         Ok(())
     }
@@ -20215,8 +21654,8 @@ impl CachePolicyInUse {
 impl std::fmt::Display for CachePolicyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CachePolicyInUse")?;
-        if let Some(inner_99) = &self.message {
-            write!(f, ": {}", inner_99)?;
+        if let Some(inner_104) = &self.message {
+            write!(f, ": {}", inner_104)?;
         }
         Ok(())
     }
@@ -20279,8 +21718,8 @@ impl TooManyStreamingDistributions {
 impl std::fmt::Display for TooManyStreamingDistributions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyStreamingDistributions")?;
-        if let Some(inner_100) = &self.message {
-            write!(f, ": {}", inner_100)?;
+        if let Some(inner_105) = &self.message {
+            write!(f, ": {}", inner_105)?;
         }
         Ok(())
     }
@@ -20344,8 +21783,8 @@ impl StreamingDistributionAlreadyExists {
 impl std::fmt::Display for StreamingDistributionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StreamingDistributionAlreadyExists")?;
-        if let Some(inner_101) = &self.message {
-            write!(f, ": {}", inner_101)?;
+        if let Some(inner_106) = &self.message {
+            write!(f, ": {}", inner_106)?;
         }
         Ok(())
     }
@@ -20408,8 +21847,8 @@ impl InvalidOrigin {
 impl std::fmt::Display for InvalidOrigin {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOrigin")?;
-        if let Some(inner_102) = &self.message {
-            write!(f, ": {}", inner_102)?;
+        if let Some(inner_107) = &self.message {
+            write!(f, ": {}", inner_107)?;
         }
         Ok(())
     }
@@ -20449,7 +21888,74 @@ impl InvalidOrigin {
     }
 }
 
-/// <p>You have reached the maximum number of real-time log configurations for this account.
+/// <p>You have reached the maximum number of response headers policies for this
+/// Amazon Web Services account.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+/// <i>Amazon CloudFront Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyResponseHeadersPolicies {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TooManyResponseHeadersPolicies {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyResponseHeadersPolicies");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TooManyResponseHeadersPolicies {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyResponseHeadersPolicies {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyResponseHeadersPolicies")?;
+        if let Some(inner_108) = &self.message {
+            write!(f, ": {}", inner_108)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyResponseHeadersPolicies {}
+/// See [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies)
+pub mod too_many_response_headers_policies {
+    /// A builder for [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies)
+        pub fn build(self) -> crate::error::TooManyResponseHeadersPolicies {
+            crate::error::TooManyResponseHeadersPolicies {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyResponseHeadersPolicies {
+    /// Creates a new builder-style object to manufacture [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies)
+    pub fn builder() -> crate::error::too_many_response_headers_policies::Builder {
+        crate::error::too_many_response_headers_policies::Builder::default()
+    }
+}
+
+/// <p>You have reached the maximum number of real-time log configurations for this Amazon Web Services account.
 /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
 /// <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -20474,8 +21980,8 @@ impl TooManyRealtimeLogConfigs {
 impl std::fmt::Display for TooManyRealtimeLogConfigs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRealtimeLogConfigs")?;
-        if let Some(inner_103) = &self.message {
-            write!(f, ": {}", inner_103)?;
+        if let Some(inner_109) = &self.message {
+            write!(f, ": {}", inner_109)?;
         }
         Ok(())
     }
@@ -20540,8 +22046,8 @@ impl RealtimeLogConfigAlreadyExists {
 impl std::fmt::Display for RealtimeLogConfigAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RealtimeLogConfigAlreadyExists")?;
-        if let Some(inner_104) = &self.message {
-            write!(f, ": {}", inner_104)?;
+        if let Some(inner_110) = &self.message {
+            write!(f, ": {}", inner_110)?;
         }
         Ok(())
     }
@@ -20604,8 +22110,8 @@ impl TooManyPublicKeys {
 impl std::fmt::Display for TooManyPublicKeys {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyPublicKeys")?;
-        if let Some(inner_105) = &self.message {
-            write!(f, ": {}", inner_105)?;
+        if let Some(inner_111) = &self.message {
+            write!(f, ": {}", inner_111)?;
         }
         Ok(())
     }
@@ -20668,8 +22174,8 @@ impl PublicKeyAlreadyExists {
 impl std::fmt::Display for PublicKeyAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PublicKeyAlreadyExists")?;
-        if let Some(inner_106) = &self.message {
-            write!(f, ": {}", inner_106)?;
+        if let Some(inner_112) = &self.message {
+            write!(f, ": {}", inner_112)?;
         }
         Ok(())
     }
@@ -20709,7 +22215,7 @@ impl PublicKeyAlreadyExists {
     }
 }
 
-/// <p>You have reached the maximum number of origin request policies for this account.
+/// <p>You have reached the maximum number of origin request policies for this Amazon Web Services account.
 /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
 /// <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -20734,8 +22240,8 @@ impl TooManyOriginRequestPolicies {
 impl std::fmt::Display for TooManyOriginRequestPolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyOriginRequestPolicies")?;
-        if let Some(inner_107) = &self.message {
-            write!(f, ": {}", inner_107)?;
+        if let Some(inner_113) = &self.message {
+            write!(f, ": {}", inner_113)?;
         }
         Ok(())
     }
@@ -20775,7 +22281,7 @@ impl TooManyOriginRequestPolicies {
     }
 }
 
-/// <p>You have reached the maximum number of key groups for this account. For more
+/// <p>You have reached the maximum number of key groups for this Amazon Web Services account. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
 /// <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -20800,8 +22306,8 @@ impl TooManyKeyGroups {
 impl std::fmt::Display for TooManyKeyGroups {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyKeyGroups")?;
-        if let Some(inner_108) = &self.message {
-            write!(f, ": {}", inner_108)?;
+        if let Some(inner_114) = &self.message {
+            write!(f, ": {}", inner_114)?;
         }
         Ok(())
     }
@@ -20864,8 +22370,8 @@ impl TooManyInvalidationsInProgress {
 impl std::fmt::Display for TooManyInvalidationsInProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyInvalidationsInProgress")?;
-        if let Some(inner_109) = &self.message {
-            write!(f, ": {}", inner_109)?;
+        if let Some(inner_115) = &self.message {
+            write!(f, ": {}", inner_115)?;
         }
         Ok(())
     }
@@ -20928,8 +22434,8 @@ impl BatchTooLarge {
 impl std::fmt::Display for BatchTooLarge {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchTooLarge")?;
-        if let Some(inner_110) = &self.message {
-            write!(f, ": {}", inner_110)?;
+        if let Some(inner_116) = &self.message {
+            write!(f, ": {}", inner_116)?;
         }
         Ok(())
     }
@@ -20969,7 +22475,7 @@ impl BatchTooLarge {
     }
 }
 
-/// <p>You have reached the maximum number of CloudFront functions for this account. For more
+/// <p>You have reached the maximum number of CloudFront functions for this Amazon Web Services account. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
 /// <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -20994,8 +22500,8 @@ impl TooManyFunctions {
 impl std::fmt::Display for TooManyFunctions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFunctions")?;
-        if let Some(inner_111) = &self.message {
-            write!(f, ": {}", inner_111)?;
+        if let Some(inner_117) = &self.message {
+            write!(f, ": {}", inner_117)?;
         }
         Ok(())
     }
@@ -21035,7 +22541,7 @@ impl TooManyFunctions {
     }
 }
 
-/// <p>A function with the same name already exists in this account. To create a
+/// <p>A function with the same name already exists in this Amazon Web Services account. To create a
 /// function, you must provide a unique name. To update an existing function, use
 /// <code>UpdateFunction</code>.</p>
 #[non_exhaustive]
@@ -21060,8 +22566,8 @@ impl FunctionAlreadyExists {
 impl std::fmt::Display for FunctionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FunctionAlreadyExists")?;
-        if let Some(inner_112) = &self.message {
-            write!(f, ": {}", inner_112)?;
+        if let Some(inner_118) = &self.message {
+            write!(f, ": {}", inner_118)?;
         }
         Ok(())
     }
@@ -21124,8 +22630,8 @@ impl TooManyFieldLevelEncryptionProfiles {
 impl std::fmt::Display for TooManyFieldLevelEncryptionProfiles {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionProfiles")?;
-        if let Some(inner_113) = &self.message {
-            write!(f, ": {}", inner_113)?;
+        if let Some(inner_119) = &self.message {
+            write!(f, ": {}", inner_119)?;
         }
         Ok(())
     }
@@ -21188,8 +22694,8 @@ impl TooManyFieldLevelEncryptionConfigs {
 impl std::fmt::Display for TooManyFieldLevelEncryptionConfigs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFieldLevelEncryptionConfigs")?;
-        if let Some(inner_114) = &self.message {
-            write!(f, ": {}", inner_114)?;
+        if let Some(inner_120) = &self.message {
+            write!(f, ": {}", inner_120)?;
         }
         Ok(())
     }
@@ -21252,8 +22758,8 @@ impl FieldLevelEncryptionConfigAlreadyExists {
 impl std::fmt::Display for FieldLevelEncryptionConfigAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FieldLevelEncryptionConfigAlreadyExists")?;
-        if let Some(inner_115) = &self.message {
-            write!(f, ": {}", inner_115)?;
+        if let Some(inner_121) = &self.message {
+            write!(f, ": {}", inner_121)?;
         }
         Ok(())
     }
@@ -21316,8 +22822,8 @@ impl TooManyDistributions {
 impl std::fmt::Display for TooManyDistributions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyDistributions")?;
-        if let Some(inner_116) = &self.message {
-            write!(f, ": {}", inner_116)?;
+        if let Some(inner_122) = &self.message {
+            write!(f, ": {}", inner_122)?;
         }
         Ok(())
     }
@@ -21381,8 +22887,8 @@ impl InvalidProtocolSettings {
 impl std::fmt::Display for InvalidProtocolSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidProtocolSettings")?;
-        if let Some(inner_117) = &self.message {
-            write!(f, ": {}", inner_117)?;
+        if let Some(inner_123) = &self.message {
+            write!(f, ": {}", inner_123)?;
         }
         Ok(())
     }
@@ -21445,8 +22951,8 @@ impl DistributionAlreadyExists {
 impl std::fmt::Display for DistributionAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DistributionAlreadyExists")?;
-        if let Some(inner_118) = &self.message {
-            write!(f, ": {}", inner_118)?;
+        if let Some(inner_124) = &self.message {
+            write!(f, ": {}", inner_124)?;
         }
         Ok(())
     }
@@ -21509,8 +23015,8 @@ impl TooManyCloudFrontOriginAccessIdentities {
 impl std::fmt::Display for TooManyCloudFrontOriginAccessIdentities {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCloudFrontOriginAccessIdentities")?;
-        if let Some(inner_119) = &self.message {
-            write!(f, ": {}", inner_119)?;
+        if let Some(inner_125) = &self.message {
+            write!(f, ": {}", inner_125)?;
         }
         Ok(())
     }
@@ -21575,8 +23081,8 @@ impl CloudFrontOriginAccessIdentityAlreadyExists {
 impl std::fmt::Display for CloudFrontOriginAccessIdentityAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudFrontOriginAccessIdentityAlreadyExists")?;
-        if let Some(inner_120) = &self.message {
-            write!(f, ": {}", inner_120)?;
+        if let Some(inner_126) = &self.message {
+            write!(f, ": {}", inner_126)?;
         }
         Ok(())
     }
@@ -21616,7 +23122,7 @@ impl CloudFrontOriginAccessIdentityAlreadyExists {
     }
 }
 
-/// <p>You have reached the maximum number of cache policies for this account. For more
+/// <p>You have reached the maximum number of cache policies for this Amazon Web Services account. For more
 /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
 /// <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -21641,8 +23147,8 @@ impl TooManyCachePolicies {
 impl std::fmt::Display for TooManyCachePolicies {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyCachePolicies")?;
-        if let Some(inner_121) = &self.message {
-            write!(f, ": {}", inner_121)?;
+        if let Some(inner_127) = &self.message {
+            write!(f, ": {}", inner_127)?;
         }
         Ok(())
     }

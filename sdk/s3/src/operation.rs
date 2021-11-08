@@ -178,6 +178,7 @@ mod create_multipart_upload_request_test {
             .build()
             .unwrap()
             .make_operation(&config)
+            .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "POST");
@@ -1088,8 +1089,8 @@ mod get_bucket_location_request_test {
             .build();
         let http_response = http::response::Builder::new()
         .status(200)
-                        .body(aws_smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<LocationConstraint xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">us-west-2</LocationConstraint>"))
-                        .unwrap();
+                    .body(aws_smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<LocationConstraint xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">us-west-2</LocationConstraint>"))
+                    .unwrap();
         let mut op_response = aws_smithy_http::operation::Response::new(http_response);
         use aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::GetBucketLocation::new();
@@ -2190,8 +2191,8 @@ mod list_objects_request_test {
             .build();
         let http_response = http::response::Builder::new()
         .status(200)
-                        .body(aws_smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ListBucketResult\n\txmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n\t<Name>bucketname</Name>\n\t<Prefix></Prefix>\n\t<Marker></Marker>\n\t<MaxKeys>1000</MaxKeys>\n\t<IsTruncated>false</IsTruncated>\n\t<Contents>\n\t\t<Key>    </Key>\n\t\t<LastModified>2021-07-16T16:20:53.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n\t<Contents>\n\t\t<Key> a </Key>\n\t\t<LastModified>2021-07-16T16:02:10.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n</ListBucketResult>\n"))
-                        .unwrap();
+                    .body(aws_smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ListBucketResult\n\txmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n\t<Name>bucketname</Name>\n\t<Prefix></Prefix>\n\t<Marker></Marker>\n\t<MaxKeys>1000</MaxKeys>\n\t<IsTruncated>false</IsTruncated>\n\t<Contents>\n\t\t<Key>    </Key>\n\t\t<LastModified>2021-07-16T16:20:53.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n\t<Contents>\n\t\t<Key> a </Key>\n\t\t<LastModified>2021-07-16T16:02:10.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n</ListBucketResult>\n"))
+                    .unwrap();
         let mut op_response = aws_smithy_http::operation::Response::new(http_response);
         use aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::ListObjects::new();
@@ -2639,6 +2640,7 @@ mod put_bucket_lifecycle_configuration_request_test {
             .build()
             .unwrap()
             .make_operation(&config)
+            .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "PUT");
@@ -3040,6 +3042,7 @@ mod put_object_request_test {
             .build()
             .unwrap()
             .make_operation(&config)
+            .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "PUT");
@@ -3065,6 +3068,7 @@ mod put_object_request_test {
             .build()
             .unwrap()
             .make_operation(&config)
+            .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "PUT");

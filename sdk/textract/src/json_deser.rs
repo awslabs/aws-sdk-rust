@@ -988,6 +988,95 @@ pub fn deser_operation_crate_operation_get_document_text_detection(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_get_expense_analysis(
+    value: &[u8],
+    mut builder: crate::output::get_expense_analysis_output::Builder,
+) -> Result<crate::output::get_expense_analysis_output::Builder, aws_smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "DocumentMetadata" => {
+                        builder = builder.set_document_metadata(
+                            crate::json_deser::deser_structure_crate_model_document_metadata(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    "JobStatus" => {
+                        builder = builder.set_job_status(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::model::JobStatus::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "ExpenseDocuments" => {
+                        builder = builder.set_expense_documents(
+                            crate::json_deser::deser_list_com_amazonaws_textract_expense_document_list(tokens)?
+                        );
+                    }
+                    "Warnings" => {
+                        builder = builder.set_warnings(
+                            crate::json_deser::deser_list_com_amazonaws_textract_warnings(tokens)?,
+                        );
+                    }
+                    "StatusMessage" => {
+                        builder = builder.set_status_message(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "AnalyzeExpenseModelVersion" => {
+                        builder = builder.set_analyze_expense_model_version(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(aws_smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(
     value: &[u8],
     mut builder: crate::error::idempotent_parameter_mismatch_exception::Builder,
@@ -1140,6 +1229,50 @@ pub fn deser_operation_crate_operation_start_document_text_detection(
     mut builder: crate::output::start_document_text_detection_output::Builder,
 ) -> Result<
     crate::output::start_document_text_detection_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "JobId" => {
+                        builder = builder.set_job_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(aws_smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_start_expense_analysis(
+    value: &[u8],
+    mut builder: crate::output::start_expense_analysis_output::Builder,
+) -> Result<
+    crate::output::start_expense_analysis_output::Builder,
     aws_smithy_json::deserialize::Error,
 > {
     let mut tokens_owned =

@@ -16,7 +16,7 @@ pub enum BatchUpdateClusterErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p></p>
     ServiceUpdateNotFoundFault(crate::error::ServiceUpdateNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdateClusterError {
@@ -80,14 +80,14 @@ impl BatchUpdateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpdateClusterErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `BatchUpdateClusterErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateClusterErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateClusterErrorKind::ServiceUpdateNotFoundFault`.
+    /// Returns `true` if the error kind is `BatchUpdateClusterErrorKind::ServiceUpdateNotFoundFault`.
     pub fn is_service_update_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -134,7 +134,7 @@ pub enum CopySnapshotErrorKind {
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// <p></p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopySnapshotError {
@@ -204,53 +204,53 @@ impl CopySnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopySnapshotErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopySnapshotErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::InvalidSnapshotStateFault`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::InvalidSnapshotStateFault`.
     pub fn is_invalid_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopySnapshotErrorKind::InvalidSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopySnapshotErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::SnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::SnapshotAlreadyExistsFault`.
     pub fn is_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopySnapshotErrorKind::SnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::SnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
         matches!(&self.kind, CopySnapshotErrorKind::SnapshotNotFoundFault(_))
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopySnapshotErrorKind::SnapshotQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::TagQuotaPerResourceExceeded`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -301,7 +301,7 @@ pub enum CreateACLErrorKind {
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
     /// <p></p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateACLError {
@@ -370,37 +370,37 @@ impl CreateACLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateACLErrorKind::AclAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateACLErrorKind::AclAlreadyExistsFault`.
     pub fn is_acl_already_exists_fault(&self) -> bool {
         matches!(&self.kind, CreateACLErrorKind::AclAlreadyExistsFault(_))
     }
-    /// Returns true if the error kind is `CreateACLErrorKind::AclQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateACLErrorKind::AclQuotaExceededFault`.
     pub fn is_acl_quota_exceeded_fault(&self) -> bool {
         matches!(&self.kind, CreateACLErrorKind::AclQuotaExceededFault(_))
     }
-    /// Returns true if the error kind is `CreateACLErrorKind::DefaultUserRequired`.
+    /// Returns `true` if the error kind is `CreateACLErrorKind::DefaultUserRequired`.
     pub fn is_default_user_required(&self) -> bool {
         matches!(&self.kind, CreateACLErrorKind::DefaultUserRequired(_))
     }
-    /// Returns true if the error kind is `CreateACLErrorKind::DuplicateUserNameFault`.
+    /// Returns `true` if the error kind is `CreateACLErrorKind::DuplicateUserNameFault`.
     pub fn is_duplicate_user_name_fault(&self) -> bool {
         matches!(&self.kind, CreateACLErrorKind::DuplicateUserNameFault(_))
     }
-    /// Returns true if the error kind is `CreateACLErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateACLErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateACLErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateACLErrorKind::TagQuotaPerResourceExceeded`.
+    /// Returns `true` if the error kind is `CreateACLErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateACLErrorKind::TagQuotaPerResourceExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateACLErrorKind::UserNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateACLErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, CreateACLErrorKind::UserNotFoundFault(_))
     }
@@ -465,7 +465,7 @@ pub enum CreateClusterErrorKind {
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
     /// <p></p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterError {
@@ -543,106 +543,106 @@ impl CreateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::AclNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::AclNotFoundFault`.
     pub fn is_acl_not_found_fault(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::AclNotFoundFault(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClusterAlreadyExistsFault`.
     pub fn is_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClusterQuotaForCustomerExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClusterQuotaForCustomerExceededFault`.
     pub fn is_cluster_quota_for_customer_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ClusterQuotaForCustomerExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InsufficientClusterCapacityFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InsufficientClusterCapacityFault`.
     pub fn is_insufficient_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InsufficientClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidAclStateFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidAclStateFault`.
     pub fn is_invalid_acl_state_fault(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::InvalidAclStateFault(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidCredentialsException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidCredentialsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::NodeQuotaForClusterExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::NodeQuotaForClusterExceededFault`.
     pub fn is_node_quota_for_cluster_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::NodeQuotaForClusterExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::NodeQuotaForCustomerExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::NodeQuotaForCustomerExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ShardsPerClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ShardsPerClusterQuotaExceededFault`.
     pub fn is_shards_per_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ShardsPerClusterQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::SubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::SubnetGroupNotFoundFault`.
     pub fn is_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::SubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::TagQuotaPerResourceExceeded`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -701,7 +701,7 @@ pub enum CreateParameterGroupErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p></p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateParameterGroupError {
@@ -776,49 +776,49 @@ impl CreateParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateParameterGroupErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateParameterGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParameterGroupErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParameterGroupErrorKind::InvalidParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `CreateParameterGroupErrorKind::InvalidParameterGroupStateFault`.
     pub fn is_invalid_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateParameterGroupErrorKind::InvalidParameterGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateParameterGroupErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateParameterGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParameterGroupErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParameterGroupErrorKind::ParameterGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateParameterGroupErrorKind::ParameterGroupAlreadyExistsFault`.
     pub fn is_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateParameterGroupErrorKind::ParameterGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateParameterGroupErrorKind::ParameterGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateParameterGroupErrorKind::ParameterGroupQuotaExceededFault`.
     pub fn is_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateParameterGroupErrorKind::ParameterGroupQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateParameterGroupErrorKind::TagQuotaPerResourceExceeded`.
+    /// Returns `true` if the error kind is `CreateParameterGroupErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -872,7 +872,7 @@ pub enum CreateSnapshotErrorKind {
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// <p></p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSnapshotError {
@@ -942,53 +942,53 @@ impl CreateSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, CreateSnapshotErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::SnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::SnapshotAlreadyExistsFault`.
     pub fn is_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::SnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotErrorKind::SnapshotQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotErrorKind::TagQuotaPerResourceExceeded`.
+    /// Returns `true` if the error kind is `CreateSnapshotErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1039,7 +1039,7 @@ pub enum CreateSubnetGroupErrorKind {
     SubnetQuotaExceededFault(crate::error::SubnetQuotaExceededFault),
     /// <p></p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSubnetGroupError {
@@ -1108,46 +1108,46 @@ impl CreateSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSubnetGroupErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, CreateSubnetGroupErrorKind::InvalidSubnet(_))
     }
-    /// Returns true if the error kind is `CreateSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubnetGroupErrorKind::SubnetGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateSubnetGroupErrorKind::SubnetGroupAlreadyExistsFault`.
     pub fn is_subnet_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubnetGroupErrorKind::SubnetGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubnetGroupErrorKind::SubnetGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateSubnetGroupErrorKind::SubnetGroupQuotaExceededFault`.
     pub fn is_subnet_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubnetGroupErrorKind::SubnetGroupQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubnetGroupErrorKind::SubnetNotAllowedFault`.
+    /// Returns `true` if the error kind is `CreateSubnetGroupErrorKind::SubnetNotAllowedFault`.
     pub fn is_subnet_not_allowed_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubnetGroupErrorKind::SubnetNotAllowedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubnetGroupErrorKind::SubnetQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateSubnetGroupErrorKind::SubnetQuotaExceededFault`.
     pub fn is_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubnetGroupErrorKind::SubnetQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubnetGroupErrorKind::TagQuotaPerResourceExceeded`.
+    /// Returns `true` if the error kind is `CreateSubnetGroupErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1195,7 +1195,7 @@ pub enum CreateUserErrorKind {
     UserAlreadyExistsFault(crate::error::UserAlreadyExistsFault),
     /// <p></p>
     UserQuotaExceededFault(crate::error::UserQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -1263,36 +1263,36 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::DuplicateUserNameFault`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::DuplicateUserNameFault`.
     pub fn is_duplicate_user_name_fault(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::DuplicateUserNameFault(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::TagQuotaPerResourceExceeded`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::TagQuotaPerResourceExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::UserAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::UserAlreadyExistsFault`.
     pub fn is_user_already_exists_fault(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::UserAlreadyExistsFault(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::UserQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::UserQuotaExceededFault`.
     pub fn is_user_quota_exceeded_fault(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::UserQuotaExceededFault(_))
     }
@@ -1330,7 +1330,7 @@ pub enum DeleteACLErrorKind {
     InvalidAclStateFault(crate::error::InvalidAclStateFault),
     /// <p></p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteACLError {
@@ -1395,15 +1395,15 @@ impl DeleteACLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteACLErrorKind::AclNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteACLErrorKind::AclNotFoundFault`.
     pub fn is_acl_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeleteACLErrorKind::AclNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DeleteACLErrorKind::InvalidAclStateFault`.
+    /// Returns `true` if the error kind is `DeleteACLErrorKind::InvalidAclStateFault`.
     pub fn is_invalid_acl_state_fault(&self) -> bool {
         matches!(&self.kind, DeleteACLErrorKind::InvalidAclStateFault(_))
     }
-    /// Returns true if the error kind is `DeleteACLErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteACLErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1447,7 +1447,7 @@ pub enum DeleteClusterErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p></p>
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterError {
@@ -1515,39 +1515,39 @@ impl DeleteClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::SnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::SnapshotAlreadyExistsFault`.
     pub fn is_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1592,7 +1592,7 @@ pub enum DeleteParameterGroupErrorKind {
     ParameterGroupNotFoundFault(crate::error::ParameterGroupNotFoundFault),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteParameterGroupError {
@@ -1661,35 +1661,35 @@ impl DeleteParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteParameterGroupErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DeleteParameterGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteParameterGroupErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteParameterGroupErrorKind::InvalidParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteParameterGroupErrorKind::InvalidParameterGroupStateFault`.
     pub fn is_invalid_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteParameterGroupErrorKind::InvalidParameterGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteParameterGroupErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteParameterGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteParameterGroupErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteParameterGroupErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteParameterGroupErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteParameterGroupErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1735,7 +1735,7 @@ pub enum DeleteSnapshotErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p></p>
     SnapshotNotFoundFault(crate::error::SnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSnapshotError {
@@ -1802,35 +1802,35 @@ impl DeleteSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::InvalidSnapshotStateFault`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::InvalidSnapshotStateFault`.
     pub fn is_invalid_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotErrorKind::InvalidSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotErrorKind::SnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteSnapshotErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1870,7 +1870,7 @@ pub enum DeleteSubnetGroupErrorKind {
     SubnetGroupInUseFault(crate::error::SubnetGroupInUseFault),
     /// <p></p>
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSubnetGroupError {
@@ -1935,21 +1935,21 @@ impl DeleteSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubnetGroupErrorKind::SubnetGroupInUseFault`.
+    /// Returns `true` if the error kind is `DeleteSubnetGroupErrorKind::SubnetGroupInUseFault`.
     pub fn is_subnet_group_in_use_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubnetGroupErrorKind::SubnetGroupInUseFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubnetGroupErrorKind::SubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteSubnetGroupErrorKind::SubnetGroupNotFoundFault`.
     pub fn is_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1987,7 +1987,7 @@ pub enum DeleteUserErrorKind {
     InvalidUserStateFault(crate::error::InvalidUserStateFault),
     /// <p></p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -2052,18 +2052,18 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InvalidUserStateFault`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InvalidUserStateFault`.
     pub fn is_invalid_user_state_fault(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::InvalidUserStateFault(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::UserNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::UserNotFoundFault(_))
     }
@@ -2096,7 +2096,7 @@ pub enum DescribeACLsErrorKind {
     AclNotFoundFault(crate::error::AclNotFoundFault),
     /// <p></p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeACLsError {
@@ -2160,11 +2160,11 @@ impl DescribeACLsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeACLsErrorKind::AclNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeACLsErrorKind::AclNotFoundFault`.
     pub fn is_acl_not_found_fault(&self) -> bool {
         matches!(&self.kind, DescribeACLsErrorKind::AclNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DescribeACLsErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeACLsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2203,7 +2203,7 @@ pub enum DescribeClustersErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClustersError {
@@ -2271,28 +2271,28 @@ impl DescribeClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2331,7 +2331,7 @@ pub enum DescribeEngineVersionsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEngineVersionsError {
@@ -2402,21 +2402,21 @@ impl DescribeEngineVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEngineVersionsErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeEngineVersionsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEngineVersionsErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEngineVersionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeEngineVersionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEngineVersionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEngineVersionsErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEngineVersionsErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2456,7 +2456,7 @@ pub enum DescribeEventsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventsError {
@@ -2521,21 +2521,21 @@ impl DescribeEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventsErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeEventsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventsErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeEventsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventsErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEventsErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2575,7 +2575,7 @@ pub enum DescribeParameterGroupsErrorKind {
     ParameterGroupNotFoundFault(crate::error::ParameterGroupNotFoundFault),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeParameterGroupsError {
@@ -2647,28 +2647,28 @@ impl DescribeParameterGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeParameterGroupsErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeParameterGroupsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParameterGroupsErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParameterGroupsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeParameterGroupsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParameterGroupsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParameterGroupsErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeParameterGroupsErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParameterGroupsErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParameterGroupsErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeParameterGroupsErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2715,7 +2715,7 @@ pub enum DescribeParametersErrorKind {
     ParameterGroupNotFoundFault(crate::error::ParameterGroupNotFoundFault),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeParametersError {
@@ -2783,28 +2783,28 @@ impl DescribeParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParametersErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParametersErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParametersErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2843,7 +2843,7 @@ pub enum DescribeServiceUpdatesErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p></p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServiceUpdatesError {
@@ -2911,14 +2911,14 @@ impl DescribeServiceUpdatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServiceUpdatesErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServiceUpdatesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeServiceUpdatesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2959,7 +2959,7 @@ pub enum DescribeSnapshotsErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p></p>
     SnapshotNotFoundFault(crate::error::SnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSnapshotsError {
@@ -3027,28 +3027,28 @@ impl DescribeSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSnapshotsErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSnapshotsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSnapshotsErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSnapshotsErrorKind::SnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeSnapshotsErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3087,7 +3087,7 @@ pub enum DescribeSubnetGroupsErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p></p>
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSubnetGroupsError {
@@ -3151,14 +3151,14 @@ impl DescribeSubnetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSubnetGroupsErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeSubnetGroupsErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubnetGroupsErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubnetGroupsErrorKind::SubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeSubnetGroupsErrorKind::SubnetGroupNotFoundFault`.
     pub fn is_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3193,7 +3193,7 @@ pub enum DescribeUsersErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p></p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUsersError {
@@ -3257,14 +3257,14 @@ impl DescribeUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsersErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::UserNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, DescribeUsersErrorKind::UserNotFoundFault(_))
     }
@@ -3308,7 +3308,7 @@ pub enum FailoverShardErrorKind {
     ShardNotFoundFault(crate::error::ShardNotFoundFault),
     /// <p></p>
     TestFailoverNotAvailableFault(crate::error::TestFailoverNotAvailableFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FailoverShardError {
@@ -3378,47 +3378,47 @@ impl FailoverShardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `FailoverShardErrorKind::ApiCallRateForCustomerExceededFault`.
+    /// Returns `true` if the error kind is `FailoverShardErrorKind::ApiCallRateForCustomerExceededFault`.
     pub fn is_api_call_rate_for_customer_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             FailoverShardErrorKind::ApiCallRateForCustomerExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `FailoverShardErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `FailoverShardErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, FailoverShardErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `FailoverShardErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `FailoverShardErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             FailoverShardErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `FailoverShardErrorKind::InvalidKmsKeyFault`.
+    /// Returns `true` if the error kind is `FailoverShardErrorKind::InvalidKmsKeyFault`.
     pub fn is_invalid_kms_key_fault(&self) -> bool {
         matches!(&self.kind, FailoverShardErrorKind::InvalidKmsKeyFault(_))
     }
-    /// Returns true if the error kind is `FailoverShardErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `FailoverShardErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             FailoverShardErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `FailoverShardErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `FailoverShardErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             FailoverShardErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `FailoverShardErrorKind::ShardNotFoundFault`.
+    /// Returns `true` if the error kind is `FailoverShardErrorKind::ShardNotFoundFault`.
     pub fn is_shard_not_found_fault(&self) -> bool {
         matches!(&self.kind, FailoverShardErrorKind::ShardNotFoundFault(_))
     }
-    /// Returns true if the error kind is `FailoverShardErrorKind::TestFailoverNotAvailableFault`.
+    /// Returns `true` if the error kind is `FailoverShardErrorKind::TestFailoverNotAvailableFault`.
     pub fn is_test_failover_not_available_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3463,7 +3463,7 @@ pub enum ListAllowedNodeTypeUpdatesErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAllowedNodeTypeUpdatesError {
@@ -3535,28 +3535,28 @@ impl ListAllowedNodeTypeUpdatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAllowedNodeTypeUpdatesErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ListAllowedNodeTypeUpdatesErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListAllowedNodeTypeUpdatesErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ListAllowedNodeTypeUpdatesErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `ListAllowedNodeTypeUpdatesErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAllowedNodeTypeUpdatesErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `ListAllowedNodeTypeUpdatesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListAllowedNodeTypeUpdatesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAllowedNodeTypeUpdatesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListAllowedNodeTypeUpdatesErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `ListAllowedNodeTypeUpdatesErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3613,7 +3613,7 @@ pub enum ListTagsErrorKind {
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
     /// <p></p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -3684,45 +3684,45 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::AclNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::AclNotFoundFault`.
     pub fn is_acl_not_found_fault(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::AclNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InvalidArnFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidArnFault`.
     pub fn is_invalid_arn_fault(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::InvalidArnFault(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::InvalidClusterStateFault(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::SnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::SnapshotNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::SubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::SubnetGroupNotFoundFault`.
     pub fn is_subnet_group_not_found_fault(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::SubnetGroupNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::UserNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::UserNotFoundFault(_))
     }
@@ -3767,7 +3767,7 @@ pub enum ResetParameterGroupErrorKind {
     ParameterGroupNotFoundFault(crate::error::ParameterGroupNotFoundFault),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetParameterGroupError {
@@ -3836,35 +3836,35 @@ impl ResetParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetParameterGroupErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `ResetParameterGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetParameterGroupErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `ResetParameterGroupErrorKind::InvalidParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `ResetParameterGroupErrorKind::InvalidParameterGroupStateFault`.
     pub fn is_invalid_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResetParameterGroupErrorKind::InvalidParameterGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ResetParameterGroupErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ResetParameterGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetParameterGroupErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ResetParameterGroupErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ResetParameterGroupErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResetParameterGroupErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ResetParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `ResetParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3920,7 +3920,7 @@ pub enum TagResourceErrorKind {
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
     /// <p></p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3992,58 +3992,58 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AclNotFoundFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AclNotFoundFault`.
     pub fn is_acl_not_found_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AclNotFoundFault(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArnFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArnFault`.
     pub fn is_invalid_arn_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidArnFault(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::SnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::SnapshotNotFoundFault(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::SubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::SubnetGroupNotFoundFault`.
     pub fn is_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::SubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagQuotaPerResourceExceeded`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagQuotaPerResourceExceeded`.
     pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::TagQuotaPerResourceExceeded(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::UserNotFoundFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::UserNotFoundFault(_))
     }
@@ -4099,7 +4099,7 @@ pub enum UntagResourceErrorKind {
     TagNotFoundFault(crate::error::TagNotFoundFault),
     /// <p></p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4171,55 +4171,55 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AclNotFoundFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AclNotFoundFault`.
     pub fn is_acl_not_found_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AclNotFoundFault(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArnFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArnFault`.
     pub fn is_invalid_arn_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidArnFault(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::SnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::SnapshotNotFoundFault(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::SubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::SubnetGroupNotFoundFault`.
     pub fn is_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::SubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TagNotFoundFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TagNotFoundFault`.
     pub fn is_tag_not_found_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TagNotFoundFault(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::UserNotFoundFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::UserNotFoundFault(_))
     }
@@ -4269,7 +4269,7 @@ pub enum UpdateACLErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p></p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateACLError {
@@ -4338,37 +4338,37 @@ impl UpdateACLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateACLErrorKind::AclNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateACLErrorKind::AclNotFoundFault`.
     pub fn is_acl_not_found_fault(&self) -> bool {
         matches!(&self.kind, UpdateACLErrorKind::AclNotFoundFault(_))
     }
-    /// Returns true if the error kind is `UpdateACLErrorKind::DefaultUserRequired`.
+    /// Returns `true` if the error kind is `UpdateACLErrorKind::DefaultUserRequired`.
     pub fn is_default_user_required(&self) -> bool {
         matches!(&self.kind, UpdateACLErrorKind::DefaultUserRequired(_))
     }
-    /// Returns true if the error kind is `UpdateACLErrorKind::DuplicateUserNameFault`.
+    /// Returns `true` if the error kind is `UpdateACLErrorKind::DuplicateUserNameFault`.
     pub fn is_duplicate_user_name_fault(&self) -> bool {
         matches!(&self.kind, UpdateACLErrorKind::DuplicateUserNameFault(_))
     }
-    /// Returns true if the error kind is `UpdateACLErrorKind::InvalidAclStateFault`.
+    /// Returns `true` if the error kind is `UpdateACLErrorKind::InvalidAclStateFault`.
     pub fn is_invalid_acl_state_fault(&self) -> bool {
         matches!(&self.kind, UpdateACLErrorKind::InvalidAclStateFault(_))
     }
-    /// Returns true if the error kind is `UpdateACLErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `UpdateACLErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateACLErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateACLErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateACLErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateACLErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateACLErrorKind::UserNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateACLErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, UpdateACLErrorKind::UserNotFoundFault(_))
     }
@@ -4433,7 +4433,7 @@ pub enum UpdateClusterErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p></p>
     ShardsPerClusterQuotaExceededFault(crate::error::ShardsPerClusterQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClusterError {
@@ -4511,94 +4511,94 @@ impl UpdateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::AclNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::AclNotFoundFault`.
     pub fn is_acl_not_found_fault(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::AclNotFoundFault(_))
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::ClusterQuotaForCustomerExceededFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::ClusterQuotaForCustomerExceededFault`.
     pub fn is_cluster_quota_for_customer_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::ClusterQuotaForCustomerExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidAclStateFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidAclStateFault`.
     pub fn is_invalid_acl_state_fault(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::InvalidAclStateFault(_))
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidKmsKeyFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidKmsKeyFault`.
     pub fn is_invalid_kms_key_fault(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::InvalidKmsKeyFault(_))
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidNodeStateFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidNodeStateFault`.
     pub fn is_invalid_node_state_fault(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::InvalidNodeStateFault(_))
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::NodeQuotaForClusterExceededFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::NodeQuotaForClusterExceededFault`.
     pub fn is_node_quota_for_cluster_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::NodeQuotaForClusterExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::NodeQuotaForCustomerExceededFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::NodeQuotaForCustomerExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::NoOperationFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::NoOperationFault`.
     pub fn is_no_operation_fault(&self) -> bool {
         matches!(&self.kind, UpdateClusterErrorKind::NoOperationFault(_))
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateClusterErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateClusterErrorKind::ShardsPerClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `UpdateClusterErrorKind::ShardsPerClusterQuotaExceededFault`.
     pub fn is_shards_per_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4653,7 +4653,7 @@ pub enum UpdateParameterGroupErrorKind {
     ParameterGroupNotFoundFault(crate::error::ParameterGroupNotFoundFault),
     /// <p></p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateParameterGroupError {
@@ -4722,35 +4722,35 @@ impl UpdateParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateParameterGroupErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `UpdateParameterGroupErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParameterGroupErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParameterGroupErrorKind::InvalidParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `UpdateParameterGroupErrorKind::InvalidParameterGroupStateFault`.
     pub fn is_invalid_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParameterGroupErrorKind::InvalidParameterGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParameterGroupErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateParameterGroupErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParameterGroupErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParameterGroupErrorKind::ParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateParameterGroupErrorKind::ParameterGroupNotFoundFault`.
     pub fn is_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParameterGroupErrorKind::ParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateParameterGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4798,7 +4798,7 @@ pub enum UpdateSubnetGroupErrorKind {
     SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
     /// <p></p>
     SubnetQuotaExceededFault(crate::error::SubnetQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSubnetGroupError {
@@ -4866,36 +4866,36 @@ impl UpdateSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSubnetGroupErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `UpdateSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, UpdateSubnetGroupErrorKind::InvalidSubnet(_))
     }
-    /// Returns true if the error kind is `UpdateSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault`.
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubnetGroupErrorKind::ServiceLinkedRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubnetGroupErrorKind::SubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateSubnetGroupErrorKind::SubnetGroupNotFoundFault`.
     pub fn is_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubnetGroupErrorKind::SubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubnetGroupErrorKind::SubnetInUse`.
+    /// Returns `true` if the error kind is `UpdateSubnetGroupErrorKind::SubnetInUse`.
     pub fn is_subnet_in_use(&self) -> bool {
         matches!(&self.kind, UpdateSubnetGroupErrorKind::SubnetInUse(_))
     }
-    /// Returns true if the error kind is `UpdateSubnetGroupErrorKind::SubnetNotAllowedFault`.
+    /// Returns `true` if the error kind is `UpdateSubnetGroupErrorKind::SubnetNotAllowedFault`.
     pub fn is_subnet_not_allowed_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubnetGroupErrorKind::SubnetNotAllowedFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubnetGroupErrorKind::SubnetQuotaExceededFault`.
+    /// Returns `true` if the error kind is `UpdateSubnetGroupErrorKind::SubnetQuotaExceededFault`.
     pub fn is_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4938,7 +4938,7 @@ pub enum UpdateUserErrorKind {
     InvalidUserStateFault(crate::error::InvalidUserStateFault),
     /// <p></p>
     UserNotFoundFault(crate::error::UserNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserError {
@@ -5004,25 +5004,25 @@ impl UpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InvalidUserStateFault`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InvalidUserStateFault`.
     pub fn is_invalid_user_state_fault(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::InvalidUserStateFault(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::UserNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::UserNotFoundFault`.
     pub fn is_user_not_found_fault(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::UserNotFoundFault(_))
     }

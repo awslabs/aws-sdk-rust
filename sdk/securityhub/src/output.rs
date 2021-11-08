@@ -152,6 +152,120 @@ impl UpdateFindingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateFindingAggregatorOutput {
+    /// <p>The ARN of the finding aggregator.</p>
+    pub finding_aggregator_arn: std::option::Option<std::string::String>,
+    /// <p>The aggregation Region.</p>
+    pub finding_aggregation_region: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    pub region_linking_mode: std::option::Option<std::string::String>,
+    /// <p>The list of excluded Regions or included Regions.</p>
+    pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for UpdateFindingAggregatorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateFindingAggregatorOutput");
+        formatter.field("finding_aggregator_arn", &self.finding_aggregator_arn);
+        formatter.field(
+            "finding_aggregation_region",
+            &self.finding_aggregation_region,
+        );
+        formatter.field("region_linking_mode", &self.region_linking_mode);
+        formatter.field("regions", &self.regions);
+        formatter.finish()
+    }
+}
+/// See [`UpdateFindingAggregatorOutput`](crate::output::UpdateFindingAggregatorOutput)
+pub mod update_finding_aggregator_output {
+    /// A builder for [`UpdateFindingAggregatorOutput`](crate::output::UpdateFindingAggregatorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
+        pub(crate) finding_aggregation_region: std::option::Option<std::string::String>,
+        pub(crate) region_linking_mode: std::option::Option<std::string::String>,
+        pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the finding aggregator.</p>
+        pub fn finding_aggregator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_aggregator_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the finding aggregator.</p>
+        pub fn set_finding_aggregator_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.finding_aggregator_arn = input;
+            self
+        }
+        /// <p>The aggregation Region.</p>
+        pub fn finding_aggregation_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_aggregation_region = Some(input.into());
+            self
+        }
+        /// <p>The aggregation Region.</p>
+        pub fn set_finding_aggregation_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.finding_aggregation_region = input;
+            self
+        }
+        /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+        pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region_linking_mode = Some(input.into());
+            self
+        }
+        /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+        pub fn set_region_linking_mode(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.region_linking_mode = input;
+            self
+        }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>The list of excluded Regions or included Regions.</p>
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.regions.unwrap_or_default();
+            v.push(input.into());
+            self.regions = Some(v);
+            self
+        }
+        /// <p>The list of excluded Regions or included Regions.</p>
+        pub fn set_regions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.regions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateFindingAggregatorOutput`](crate::output::UpdateFindingAggregatorOutput)
+        pub fn build(self) -> crate::output::UpdateFindingAggregatorOutput {
+            crate::output::UpdateFindingAggregatorOutput {
+                finding_aggregator_arn: self.finding_aggregator_arn,
+                finding_aggregation_region: self.finding_aggregation_region,
+                region_linking_mode: self.region_linking_mode,
+                regions: self.regions,
+            }
+        }
+    }
+}
+impl UpdateFindingAggregatorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFindingAggregatorOutput`](crate::output::UpdateFindingAggregatorOutput)
+    pub fn builder() -> crate::output::update_finding_aggregator_output::Builder {
+        crate::output::update_finding_aggregator_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateActionTargetOutput {}
 impl std::fmt::Debug for UpdateActionTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -516,6 +630,88 @@ impl ListInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`ListInvitationsOutput`](crate::output::ListInvitationsOutput)
     pub fn builder() -> crate::output::list_invitations_output::Builder {
         crate::output::list_invitations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListFindingAggregatorsOutput {
+    /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
+    pub finding_aggregators: std::option::Option<std::vec::Vec<crate::model::FindingAggregator>>,
+    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
+    /// <p>This operation currently only returns a single result.
+    /// </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListFindingAggregatorsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListFindingAggregatorsOutput");
+        formatter.field("finding_aggregators", &self.finding_aggregators);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListFindingAggregatorsOutput`](crate::output::ListFindingAggregatorsOutput)
+pub mod list_finding_aggregators_output {
+    /// A builder for [`ListFindingAggregatorsOutput`](crate::output::ListFindingAggregatorsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) finding_aggregators:
+            std::option::Option<std::vec::Vec<crate::model::FindingAggregator>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `finding_aggregators`.
+        ///
+        /// To override the contents of this collection use [`set_finding_aggregators`](Self::set_finding_aggregators).
+        ///
+        /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
+        pub fn finding_aggregators(
+            mut self,
+            input: impl Into<crate::model::FindingAggregator>,
+        ) -> Self {
+            let mut v = self.finding_aggregators.unwrap_or_default();
+            v.push(input.into());
+            self.finding_aggregators = Some(v);
+            self
+        }
+        /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
+        pub fn set_finding_aggregators(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FindingAggregator>>,
+        ) -> Self {
+            self.finding_aggregators = input;
+            self
+        }
+        /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
+        /// <p>This operation currently only returns a single result.
+        /// </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
+        /// <p>This operation currently only returns a single result.
+        /// </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListFindingAggregatorsOutput`](crate::output::ListFindingAggregatorsOutput)
+        pub fn build(self) -> crate::output::ListFindingAggregatorsOutput {
+            crate::output::ListFindingAggregatorsOutput {
+                finding_aggregators: self.finding_aggregators,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListFindingAggregatorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFindingAggregatorsOutput`](crate::output::ListFindingAggregatorsOutput)
+    pub fn builder() -> crate::output::list_finding_aggregators_output::Builder {
+        crate::output::list_finding_aggregators_output::Builder::default()
     }
 }
 
@@ -1029,6 +1225,120 @@ impl GetFindingsOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsOutput`](crate::output::GetFindingsOutput)
     pub fn builder() -> crate::output::get_findings_output::Builder {
         crate::output::get_findings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetFindingAggregatorOutput {
+    /// <p>The ARN of the finding aggregator.</p>
+    pub finding_aggregator_arn: std::option::Option<std::string::String>,
+    /// <p>The aggregation Region.</p>
+    pub finding_aggregation_region: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    pub region_linking_mode: std::option::Option<std::string::String>,
+    /// <p>The list of excluded Regions or included Regions.</p>
+    pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for GetFindingAggregatorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetFindingAggregatorOutput");
+        formatter.field("finding_aggregator_arn", &self.finding_aggregator_arn);
+        formatter.field(
+            "finding_aggregation_region",
+            &self.finding_aggregation_region,
+        );
+        formatter.field("region_linking_mode", &self.region_linking_mode);
+        formatter.field("regions", &self.regions);
+        formatter.finish()
+    }
+}
+/// See [`GetFindingAggregatorOutput`](crate::output::GetFindingAggregatorOutput)
+pub mod get_finding_aggregator_output {
+    /// A builder for [`GetFindingAggregatorOutput`](crate::output::GetFindingAggregatorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
+        pub(crate) finding_aggregation_region: std::option::Option<std::string::String>,
+        pub(crate) region_linking_mode: std::option::Option<std::string::String>,
+        pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the finding aggregator.</p>
+        pub fn finding_aggregator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_aggregator_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the finding aggregator.</p>
+        pub fn set_finding_aggregator_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.finding_aggregator_arn = input;
+            self
+        }
+        /// <p>The aggregation Region.</p>
+        pub fn finding_aggregation_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_aggregation_region = Some(input.into());
+            self
+        }
+        /// <p>The aggregation Region.</p>
+        pub fn set_finding_aggregation_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.finding_aggregation_region = input;
+            self
+        }
+        /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+        pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region_linking_mode = Some(input.into());
+            self
+        }
+        /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+        pub fn set_region_linking_mode(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.region_linking_mode = input;
+            self
+        }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>The list of excluded Regions or included Regions.</p>
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.regions.unwrap_or_default();
+            v.push(input.into());
+            self.regions = Some(v);
+            self
+        }
+        /// <p>The list of excluded Regions or included Regions.</p>
+        pub fn set_regions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.regions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetFindingAggregatorOutput`](crate::output::GetFindingAggregatorOutput)
+        pub fn build(self) -> crate::output::GetFindingAggregatorOutput {
+            crate::output::GetFindingAggregatorOutput {
+                finding_aggregator_arn: self.finding_aggregator_arn,
+                finding_aggregation_region: self.finding_aggregation_region,
+                region_linking_mode: self.region_linking_mode,
+                regions: self.regions,
+            }
+        }
+    }
+}
+impl GetFindingAggregatorOutput {
+    /// Creates a new builder-style object to manufacture [`GetFindingAggregatorOutput`](crate::output::GetFindingAggregatorOutput)
+    pub fn builder() -> crate::output::get_finding_aggregator_output::Builder {
+        crate::output::get_finding_aggregator_output::Builder::default()
     }
 }
 
@@ -2087,6 +2397,36 @@ impl DeleteInsightOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteFindingAggregatorOutput {}
+impl std::fmt::Debug for DeleteFindingAggregatorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteFindingAggregatorOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteFindingAggregatorOutput`](crate::output::DeleteFindingAggregatorOutput)
+pub mod delete_finding_aggregator_output {
+    /// A builder for [`DeleteFindingAggregatorOutput`](crate::output::DeleteFindingAggregatorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteFindingAggregatorOutput`](crate::output::DeleteFindingAggregatorOutput)
+        pub fn build(self) -> crate::output::DeleteFindingAggregatorOutput {
+            crate::output::DeleteFindingAggregatorOutput {}
+        }
+    }
+}
+impl DeleteFindingAggregatorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFindingAggregatorOutput`](crate::output::DeleteFindingAggregatorOutput)
+    pub fn builder() -> crate::output::delete_finding_aggregator_output::Builder {
+        crate::output::delete_finding_aggregator_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteActionTargetOutput {
     /// <p>The ARN of the custom action target that was deleted.</p>
     pub action_target_arn: std::option::Option<std::string::String>,
@@ -2300,6 +2640,120 @@ impl CreateInsightOutput {
     /// Creates a new builder-style object to manufacture [`CreateInsightOutput`](crate::output::CreateInsightOutput)
     pub fn builder() -> crate::output::create_insight_output::Builder {
         crate::output::create_insight_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateFindingAggregatorOutput {
+    /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and stop finding aggregation.</p>
+    pub finding_aggregator_arn: std::option::Option<std::string::String>,
+    /// <p>The aggregation Region.</p>
+    pub finding_aggregation_region: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    pub region_linking_mode: std::option::Option<std::string::String>,
+    /// <p>The list of excluded Regions or included Regions.</p>
+    pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for CreateFindingAggregatorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateFindingAggregatorOutput");
+        formatter.field("finding_aggregator_arn", &self.finding_aggregator_arn);
+        formatter.field(
+            "finding_aggregation_region",
+            &self.finding_aggregation_region,
+        );
+        formatter.field("region_linking_mode", &self.region_linking_mode);
+        formatter.field("regions", &self.regions);
+        formatter.finish()
+    }
+}
+/// See [`CreateFindingAggregatorOutput`](crate::output::CreateFindingAggregatorOutput)
+pub mod create_finding_aggregator_output {
+    /// A builder for [`CreateFindingAggregatorOutput`](crate::output::CreateFindingAggregatorOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
+        pub(crate) finding_aggregation_region: std::option::Option<std::string::String>,
+        pub(crate) region_linking_mode: std::option::Option<std::string::String>,
+        pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and stop finding aggregation.</p>
+        pub fn finding_aggregator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_aggregator_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and stop finding aggregation.</p>
+        pub fn set_finding_aggregator_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.finding_aggregator_arn = input;
+            self
+        }
+        /// <p>The aggregation Region.</p>
+        pub fn finding_aggregation_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_aggregation_region = Some(input.into());
+            self
+        }
+        /// <p>The aggregation Region.</p>
+        pub fn set_finding_aggregation_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.finding_aggregation_region = input;
+            self
+        }
+        /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+        pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region_linking_mode = Some(input.into());
+            self
+        }
+        /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+        pub fn set_region_linking_mode(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.region_linking_mode = input;
+            self
+        }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>The list of excluded Regions or included Regions.</p>
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.regions.unwrap_or_default();
+            v.push(input.into());
+            self.regions = Some(v);
+            self
+        }
+        /// <p>The list of excluded Regions or included Regions.</p>
+        pub fn set_regions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.regions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateFindingAggregatorOutput`](crate::output::CreateFindingAggregatorOutput)
+        pub fn build(self) -> crate::output::CreateFindingAggregatorOutput {
+            crate::output::CreateFindingAggregatorOutput {
+                finding_aggregator_arn: self.finding_aggregator_arn,
+                finding_aggregation_region: self.finding_aggregation_region,
+                region_linking_mode: self.region_linking_mode,
+                regions: self.regions,
+            }
+        }
+    }
+}
+impl CreateFindingAggregatorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFindingAggregatorOutput`](crate::output::CreateFindingAggregatorOutput)
+    pub fn builder() -> crate::output::create_finding_aggregator_output::Builder {
+        crate::output::create_finding_aggregator_output::Builder::default()
     }
 }
 

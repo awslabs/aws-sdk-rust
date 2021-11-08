@@ -64,7 +64,7 @@ fn parse_request(
     s: &[u8],
 ) -> Result<Request<bytes::Bytes>, Box<dyn StdError + Send + Sync + 'static>> {
     let mut headers = [httparse::EMPTY_HEADER; 64];
-    // httparse 1.5 requres two trailing newlines to head the header section.
+    // httparse 1.5 requires two trailing newlines to head the header section.
     let mut with_newline = Vec::from(s);
     with_newline.push(b'\n');
     let mut req = httparse::Request::new(&mut headers);

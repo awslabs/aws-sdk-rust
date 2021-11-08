@@ -21,7 +21,7 @@ pub enum InvokeEndpointErrorKind {
     ServiceUnavailable(crate::error::ServiceUnavailable),
     /// <p> Inspect your request and try again. </p>
     ValidationError(crate::error::ValidationError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvokeEndpointError {
@@ -87,19 +87,19 @@ impl InvokeEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InvokeEndpointErrorKind::InternalFailure`.
+    /// Returns `true` if the error kind is `InvokeEndpointErrorKind::InternalFailure`.
     pub fn is_internal_failure(&self) -> bool {
         matches!(&self.kind, InvokeEndpointErrorKind::InternalFailure(_))
     }
-    /// Returns true if the error kind is `InvokeEndpointErrorKind::ModelError`.
+    /// Returns `true` if the error kind is `InvokeEndpointErrorKind::ModelError`.
     pub fn is_model_error(&self) -> bool {
         matches!(&self.kind, InvokeEndpointErrorKind::ModelError(_))
     }
-    /// Returns true if the error kind is `InvokeEndpointErrorKind::ServiceUnavailable`.
+    /// Returns `true` if the error kind is `InvokeEndpointErrorKind::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
         matches!(&self.kind, InvokeEndpointErrorKind::ServiceUnavailable(_))
     }
-    /// Returns true if the error kind is `InvokeEndpointErrorKind::ValidationError`.
+    /// Returns `true` if the error kind is `InvokeEndpointErrorKind::ValidationError`.
     pub fn is_validation_error(&self) -> bool {
         matches!(&self.kind, InvokeEndpointErrorKind::ValidationError(_))
     }
@@ -135,7 +135,7 @@ pub enum InvokeEndpointAsyncErrorKind {
     ServiceUnavailable(crate::error::ServiceUnavailable),
     /// <p> Inspect your request and try again. </p>
     ValidationError(crate::error::ValidationError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvokeEndpointAsyncError {
@@ -200,18 +200,18 @@ impl InvokeEndpointAsyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InvokeEndpointAsyncErrorKind::InternalFailure`.
+    /// Returns `true` if the error kind is `InvokeEndpointAsyncErrorKind::InternalFailure`.
     pub fn is_internal_failure(&self) -> bool {
         matches!(&self.kind, InvokeEndpointAsyncErrorKind::InternalFailure(_))
     }
-    /// Returns true if the error kind is `InvokeEndpointAsyncErrorKind::ServiceUnavailable`.
+    /// Returns `true` if the error kind is `InvokeEndpointAsyncErrorKind::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
         matches!(
             &self.kind,
             InvokeEndpointAsyncErrorKind::ServiceUnavailable(_)
         )
     }
-    /// Returns true if the error kind is `InvokeEndpointAsyncErrorKind::ValidationError`.
+    /// Returns `true` if the error kind is `InvokeEndpointAsyncErrorKind::ValidationError`.
     pub fn is_validation_error(&self) -> bool {
         matches!(&self.kind, InvokeEndpointAsyncErrorKind::ValidationError(_))
     }

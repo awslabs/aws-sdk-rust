@@ -24,7 +24,7 @@ pub enum AddFlowMediaStreamsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddFlowMediaStreamsError {
@@ -92,42 +92,42 @@ impl AddFlowMediaStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddFlowMediaStreamsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AddFlowMediaStreamsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowMediaStreamsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowMediaStreamsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AddFlowMediaStreamsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowMediaStreamsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowMediaStreamsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AddFlowMediaStreamsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowMediaStreamsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowMediaStreamsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AddFlowMediaStreamsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowMediaStreamsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowMediaStreamsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AddFlowMediaStreamsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowMediaStreamsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowMediaStreamsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AddFlowMediaStreamsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -176,7 +176,7 @@ pub enum AddFlowOutputsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddFlowOutputsError {
@@ -245,40 +245,40 @@ impl AddFlowOutputsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddFlowOutputsErrorKind::AddFlowOutputs420Exception`.
+    /// Returns `true` if the error kind is `AddFlowOutputsErrorKind::AddFlowOutputs420Exception`.
     pub fn is_add_flow_outputs420_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowOutputsErrorKind::AddFlowOutputs420Exception(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowOutputsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AddFlowOutputsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, AddFlowOutputsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `AddFlowOutputsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AddFlowOutputsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, AddFlowOutputsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `AddFlowOutputsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AddFlowOutputsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowOutputsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowOutputsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AddFlowOutputsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, AddFlowOutputsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `AddFlowOutputsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AddFlowOutputsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowOutputsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowOutputsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AddFlowOutputsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -326,7 +326,7 @@ pub enum AddFlowSourcesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddFlowSourcesError {
@@ -394,33 +394,33 @@ impl AddFlowSourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddFlowSourcesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AddFlowSourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, AddFlowSourcesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `AddFlowSourcesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AddFlowSourcesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, AddFlowSourcesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `AddFlowSourcesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AddFlowSourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowSourcesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowSourcesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AddFlowSourcesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, AddFlowSourcesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `AddFlowSourcesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AddFlowSourcesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowSourcesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowSourcesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AddFlowSourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -467,7 +467,7 @@ pub enum AddFlowVpcInterfacesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddFlowVpcInterfacesError {
@@ -535,42 +535,42 @@ impl AddFlowVpcInterfacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddFlowVpcInterfacesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AddFlowVpcInterfacesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowVpcInterfacesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowVpcInterfacesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AddFlowVpcInterfacesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowVpcInterfacesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowVpcInterfacesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AddFlowVpcInterfacesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowVpcInterfacesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowVpcInterfacesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AddFlowVpcInterfacesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowVpcInterfacesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowVpcInterfacesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AddFlowVpcInterfacesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFlowVpcInterfacesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AddFlowVpcInterfacesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AddFlowVpcInterfacesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -617,7 +617,7 @@ pub enum CreateFlowErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFlowError {
@@ -685,33 +685,33 @@ impl CreateFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateFlowErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::CreateFlow420Exception`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::CreateFlow420Exception`.
     pub fn is_create_flow420_exception(&self) -> bool {
         matches!(&self.kind, CreateFlowErrorKind::CreateFlow420Exception(_))
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateFlowErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFlowErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFlowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, CreateFlowErrorKind::TooManyRequestsException(_))
     }
@@ -755,7 +755,7 @@ pub enum DeleteFlowErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFlowError {
@@ -823,33 +823,33 @@ impl DeleteFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteFlowErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteFlowErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFlowErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteFlowErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFlowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, DeleteFlowErrorKind::TooManyRequestsException(_))
     }
@@ -893,7 +893,7 @@ pub enum DescribeFlowErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFlowError {
@@ -961,33 +961,33 @@ impl DescribeFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFlowErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeFlowErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeFlowErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeFlowErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeFlowErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeFlowErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeFlowErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeFlowErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFlowErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFlowErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFlowErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeFlowErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeFlowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeFlowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFlowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFlowErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeFlowErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1032,7 +1032,7 @@ pub enum DescribeOfferingErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOfferingError {
@@ -1099,32 +1099,32 @@ impl DescribeOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOfferingErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOfferingErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeOfferingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOfferingErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1168,7 +1168,7 @@ pub enum DescribeReservationErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservationError {
@@ -1235,35 +1235,35 @@ impl DescribeReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1311,7 +1311,7 @@ pub enum GrantFlowEntitlementsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GrantFlowEntitlementsError {
@@ -1382,49 +1382,49 @@ impl GrantFlowEntitlementsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GrantFlowEntitlementsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GrantFlowEntitlementsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GrantFlowEntitlementsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GrantFlowEntitlementsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GrantFlowEntitlementsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GrantFlowEntitlementsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GrantFlowEntitlementsErrorKind::GrantFlowEntitlements420Exception`.
+    /// Returns `true` if the error kind is `GrantFlowEntitlementsErrorKind::GrantFlowEntitlements420Exception`.
     pub fn is_grant_flow_entitlements420_exception(&self) -> bool {
         matches!(
             &self.kind,
             GrantFlowEntitlementsErrorKind::GrantFlowEntitlements420Exception(_)
         )
     }
-    /// Returns true if the error kind is `GrantFlowEntitlementsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GrantFlowEntitlementsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GrantFlowEntitlementsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GrantFlowEntitlementsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GrantFlowEntitlementsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GrantFlowEntitlementsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GrantFlowEntitlementsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GrantFlowEntitlementsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GrantFlowEntitlementsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GrantFlowEntitlementsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GrantFlowEntitlementsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1470,7 +1470,7 @@ pub enum ListEntitlementsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEntitlementsError {
@@ -1536,28 +1536,28 @@ impl ListEntitlementsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEntitlementsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListEntitlementsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitlementsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitlementsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListEntitlementsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitlementsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitlementsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListEntitlementsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitlementsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitlementsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListEntitlementsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1598,7 +1598,7 @@ pub enum ListFlowsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFlowsError {
@@ -1664,25 +1664,25 @@ impl ListFlowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFlowsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListFlowsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListFlowsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListFlowsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListFlowsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFlowsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListFlowsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListFlowsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFlowsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListFlowsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListFlowsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListFlowsErrorKind::TooManyRequestsException(_))
     }
@@ -1720,7 +1720,7 @@ pub enum ListOfferingsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOfferingsError {
@@ -1786,25 +1786,25 @@ impl ListOfferingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListOfferingsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1845,7 +1845,7 @@ pub enum ListReservationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReservationsError {
@@ -1911,28 +1911,28 @@ impl ListReservationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReservationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReservationsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReservationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1971,7 +1971,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2036,21 +2036,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2094,7 +2094,7 @@ pub enum PurchaseOfferingErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseOfferingError {
@@ -2162,36 +2162,36 @@ impl PurchaseOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, PurchaseOfferingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PurchaseOfferingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2238,7 +2238,7 @@ pub enum RemoveFlowMediaStreamErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveFlowMediaStreamError {
@@ -2306,42 +2306,42 @@ impl RemoveFlowMediaStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveFlowMediaStreamErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RemoveFlowMediaStreamErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowMediaStreamErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowMediaStreamErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RemoveFlowMediaStreamErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowMediaStreamErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowMediaStreamErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RemoveFlowMediaStreamErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowMediaStreamErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowMediaStreamErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RemoveFlowMediaStreamErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowMediaStreamErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowMediaStreamErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveFlowMediaStreamErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowMediaStreamErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowMediaStreamErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveFlowMediaStreamErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2388,7 +2388,7 @@ pub enum RemoveFlowOutputErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveFlowOutputError {
@@ -2456,36 +2456,36 @@ impl RemoveFlowOutputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveFlowOutputErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RemoveFlowOutputErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowOutputErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowOutputErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RemoveFlowOutputErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, RemoveFlowOutputErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `RemoveFlowOutputErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RemoveFlowOutputErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowOutputErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowOutputErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RemoveFlowOutputErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RemoveFlowOutputErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `RemoveFlowOutputErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveFlowOutputErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowOutputErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowOutputErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveFlowOutputErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2532,7 +2532,7 @@ pub enum RemoveFlowSourceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveFlowSourceError {
@@ -2600,36 +2600,36 @@ impl RemoveFlowSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveFlowSourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RemoveFlowSourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowSourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowSourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RemoveFlowSourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, RemoveFlowSourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `RemoveFlowSourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RemoveFlowSourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowSourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowSourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RemoveFlowSourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RemoveFlowSourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `RemoveFlowSourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveFlowSourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowSourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowSourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveFlowSourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2676,7 +2676,7 @@ pub enum RemoveFlowVpcInterfaceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveFlowVpcInterfaceError {
@@ -2744,42 +2744,42 @@ impl RemoveFlowVpcInterfaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveFlowVpcInterfaceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RemoveFlowVpcInterfaceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowVpcInterfaceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowVpcInterfaceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RemoveFlowVpcInterfaceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowVpcInterfaceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowVpcInterfaceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RemoveFlowVpcInterfaceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowVpcInterfaceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowVpcInterfaceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RemoveFlowVpcInterfaceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowVpcInterfaceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowVpcInterfaceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveFlowVpcInterfaceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFlowVpcInterfaceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFlowVpcInterfaceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveFlowVpcInterfaceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2826,7 +2826,7 @@ pub enum RevokeFlowEntitlementErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeFlowEntitlementError {
@@ -2894,42 +2894,42 @@ impl RevokeFlowEntitlementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeFlowEntitlementErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RevokeFlowEntitlementErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeFlowEntitlementErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeFlowEntitlementErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RevokeFlowEntitlementErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeFlowEntitlementErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeFlowEntitlementErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RevokeFlowEntitlementErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeFlowEntitlementErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeFlowEntitlementErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RevokeFlowEntitlementErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeFlowEntitlementErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeFlowEntitlementErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RevokeFlowEntitlementErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeFlowEntitlementErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeFlowEntitlementErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RevokeFlowEntitlementErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2976,7 +2976,7 @@ pub enum StartFlowErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartFlowError {
@@ -3044,33 +3044,33 @@ impl StartFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StartFlowErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, StartFlowErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFlowErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartFlowErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFlowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, StartFlowErrorKind::TooManyRequestsException(_))
     }
@@ -3114,7 +3114,7 @@ pub enum StopFlowErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopFlowError {
@@ -3182,33 +3182,33 @@ impl StopFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StopFlowErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, StopFlowErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopFlowErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopFlowErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopFlowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, StopFlowErrorKind::TooManyRequestsException(_))
     }
@@ -3246,7 +3246,7 @@ pub enum TagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3311,18 +3311,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
@@ -3357,7 +3357,7 @@ pub enum UntagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3422,18 +3422,18 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
@@ -3474,7 +3474,7 @@ pub enum UpdateFlowErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFlowError {
@@ -3542,33 +3542,33 @@ impl UpdateFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowErrorKind::TooManyRequestsException(_))
     }
@@ -3612,7 +3612,7 @@ pub enum UpdateFlowEntitlementErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFlowEntitlementError {
@@ -3680,42 +3680,42 @@ impl UpdateFlowEntitlementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFlowEntitlementErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateFlowEntitlementErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowEntitlementErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowEntitlementErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateFlowEntitlementErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowEntitlementErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowEntitlementErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateFlowEntitlementErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowEntitlementErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowEntitlementErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFlowEntitlementErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowEntitlementErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowEntitlementErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateFlowEntitlementErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowEntitlementErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowEntitlementErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFlowEntitlementErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3762,7 +3762,7 @@ pub enum UpdateFlowMediaStreamErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFlowMediaStreamError {
@@ -3830,42 +3830,42 @@ impl UpdateFlowMediaStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFlowMediaStreamErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateFlowMediaStreamErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowMediaStreamErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowMediaStreamErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateFlowMediaStreamErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowMediaStreamErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowMediaStreamErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateFlowMediaStreamErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowMediaStreamErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowMediaStreamErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFlowMediaStreamErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowMediaStreamErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowMediaStreamErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateFlowMediaStreamErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowMediaStreamErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowMediaStreamErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFlowMediaStreamErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3912,7 +3912,7 @@ pub enum UpdateFlowOutputErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFlowOutputError {
@@ -3980,36 +3980,36 @@ impl UpdateFlowOutputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFlowOutputErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateFlowOutputErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowOutputErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowOutputErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateFlowOutputErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowOutputErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowOutputErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateFlowOutputErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowOutputErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowOutputErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFlowOutputErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowOutputErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowOutputErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateFlowOutputErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowOutputErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowOutputErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFlowOutputErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4056,7 +4056,7 @@ pub enum UpdateFlowSourceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFlowSourceError {
@@ -4124,36 +4124,36 @@ impl UpdateFlowSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFlowSourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateFlowSourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowSourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowSourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateFlowSourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowSourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowSourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateFlowSourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowSourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowSourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFlowSourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowSourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowSourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateFlowSourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowSourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowSourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFlowSourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

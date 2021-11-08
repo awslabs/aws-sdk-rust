@@ -30,7 +30,7 @@ pub enum StartMedicalStreamTranscriptionErrorKind {
     /// has finished processing, or break your audio stream into smaller chunks and try your request
     /// again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMedicalStreamTranscriptionError {
@@ -106,35 +106,35 @@ impl StartMedicalStreamTranscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMedicalStreamTranscriptionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartMedicalStreamTranscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMedicalStreamTranscriptionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartMedicalStreamTranscriptionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartMedicalStreamTranscriptionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMedicalStreamTranscriptionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartMedicalStreamTranscriptionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartMedicalStreamTranscriptionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMedicalStreamTranscriptionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartMedicalStreamTranscriptionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartMedicalStreamTranscriptionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMedicalStreamTranscriptionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartMedicalStreamTranscriptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartMedicalStreamTranscriptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -192,7 +192,7 @@ pub enum StartStreamTranscriptionErrorKind {
     /// has finished processing, or break your audio stream into smaller chunks and try your request
     /// again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartStreamTranscriptionError {
@@ -259,35 +259,35 @@ impl StartStreamTranscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartStreamTranscriptionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartStreamTranscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamTranscriptionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamTranscriptionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartStreamTranscriptionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamTranscriptionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamTranscriptionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartStreamTranscriptionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamTranscriptionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamTranscriptionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartStreamTranscriptionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamTranscriptionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamTranscriptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartStreamTranscriptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,

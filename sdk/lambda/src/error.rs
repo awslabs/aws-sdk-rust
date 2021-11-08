@@ -29,7 +29,7 @@ pub enum AddLayerVersionPermissionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddLayerVersionPermissionError {
@@ -104,49 +104,49 @@ impl AddLayerVersionPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddLayerVersionPermissionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `AddLayerVersionPermissionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddLayerVersionPermissionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `AddLayerVersionPermissionErrorKind::PolicyLengthExceededException`.
+    /// Returns `true` if the error kind is `AddLayerVersionPermissionErrorKind::PolicyLengthExceededException`.
     pub fn is_policy_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddLayerVersionPermissionErrorKind::PolicyLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddLayerVersionPermissionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `AddLayerVersionPermissionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddLayerVersionPermissionErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `AddLayerVersionPermissionErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `AddLayerVersionPermissionErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddLayerVersionPermissionErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AddLayerVersionPermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddLayerVersionPermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddLayerVersionPermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddLayerVersionPermissionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AddLayerVersionPermissionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddLayerVersionPermissionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AddLayerVersionPermissionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AddLayerVersionPermissionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -203,7 +203,7 @@ pub enum AddPermissionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddPermissionError {
@@ -272,46 +272,46 @@ impl AddPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddPermissionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::PolicyLengthExceededException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::PolicyLengthExceededException`.
     pub fn is_policy_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddPermissionErrorKind::PolicyLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddPermissionErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddPermissionErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddPermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AddPermissionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `AddPermissionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AddPermissionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -357,7 +357,7 @@ pub enum CreateAliasErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAliasError {
@@ -424,32 +424,32 @@ impl CreateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -487,7 +487,7 @@ pub enum CreateCodeSigningConfigErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCodeSigningConfigError {
@@ -553,14 +553,14 @@ impl CreateCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCodeSigningConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateCodeSigningConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCodeSigningConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateCodeSigningConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -603,7 +603,7 @@ pub enum CreateEventSourceMappingErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEventSourceMappingError {
@@ -672,35 +672,35 @@ impl CreateEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEventSourceMappingErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateEventSourceMappingErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSourceMappingErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSourceMappingErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateEventSourceMappingErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSourceMappingErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSourceMappingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateEventSourceMappingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSourceMappingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSourceMappingErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateEventSourceMappingErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSourceMappingErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSourceMappingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateEventSourceMappingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -757,7 +757,7 @@ pub enum CreateFunctionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFunctionError {
@@ -828,60 +828,60 @@ impl CreateFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::CodeSigningConfigNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::CodeSigningConfigNotFoundException`.
     pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::CodeStorageExceededException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::CodeStorageExceededException`.
     pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::CodeStorageExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::CodeVerificationFailedException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::CodeVerificationFailedException`.
     pub fn is_code_verification_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::CodeVerificationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::InvalidCodeSignatureException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::InvalidCodeSignatureException`.
     pub fn is_invalid_code_signature_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::InvalidCodeSignatureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateFunctionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -927,7 +927,7 @@ pub enum DeleteAliasErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAliasError {
@@ -993,25 +993,25 @@ impl DeleteAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAliasErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1052,7 +1052,7 @@ pub enum DeleteCodeSigningConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCodeSigningConfigError {
@@ -1120,28 +1120,28 @@ impl DeleteCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCodeSigningConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteCodeSigningConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCodeSigningConfigErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `DeleteCodeSigningConfigErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCodeSigningConfigErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCodeSigningConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCodeSigningConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCodeSigningConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteCodeSigningConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1187,7 +1187,7 @@ pub enum DeleteEventSourceMappingErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventSourceMappingError {
@@ -1256,35 +1256,35 @@ impl DeleteEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEventSourceMappingErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteEventSourceMappingErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventSourceMappingErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventSourceMappingErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteEventSourceMappingErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventSourceMappingErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventSourceMappingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEventSourceMappingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventSourceMappingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventSourceMappingErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteEventSourceMappingErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventSourceMappingErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventSourceMappingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEventSourceMappingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1330,7 +1330,7 @@ pub enum DeleteFunctionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionError {
@@ -1397,32 +1397,32 @@ impl DeleteFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteFunctionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1468,7 +1468,7 @@ pub enum DeleteFunctionCodeSigningConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionCodeSigningConfigError {
@@ -1549,42 +1549,42 @@ impl DeleteFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException`.
     pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1639,7 +1639,7 @@ pub enum DeleteFunctionConcurrencyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionConcurrencyError {
@@ -1708,35 +1708,35 @@ impl DeleteFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFunctionConcurrencyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteFunctionConcurrencyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionConcurrencyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionConcurrencyErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `DeleteFunctionConcurrencyErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionConcurrencyErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionConcurrencyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteFunctionConcurrencyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionConcurrencyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionConcurrencyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteFunctionConcurrencyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1782,7 +1782,7 @@ pub enum DeleteFunctionEventInvokeConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionEventInvokeConfigError {
@@ -1860,35 +1860,35 @@ impl DeleteFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionEventInvokeConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1934,7 +1934,7 @@ pub enum DeleteLayerVersionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLayerVersionError {
@@ -1998,11 +1998,11 @@ impl DeleteLayerVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLayerVersionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteLayerVersionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteLayerVersionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteLayerVersionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteLayerVersionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2043,7 +2043,7 @@ pub enum DeleteProvisionedConcurrencyConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProvisionedConcurrencyConfigError {
@@ -2121,35 +2121,35 @@ impl DeleteProvisionedConcurrencyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProvisionedConcurrencyConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2195,7 +2195,7 @@ pub enum GetAccountSettingsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountSettingsError {
@@ -2259,11 +2259,11 @@ impl GetAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetAccountSettingsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2302,7 +2302,7 @@ pub enum GetAliasErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAliasError {
@@ -2368,22 +2368,22 @@ impl GetAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAliasErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetAliasErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAliasErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAliasErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetAliasErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetAliasErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetAliasErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAliasErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetAliasErrorKind::TooManyRequestsException(_))
     }
@@ -2419,7 +2419,7 @@ pub enum GetCodeSigningConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCodeSigningConfigError {
@@ -2484,21 +2484,21 @@ impl GetCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCodeSigningConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetCodeSigningConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetCodeSigningConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCodeSigningConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCodeSigningConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetCodeSigningConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2538,7 +2538,7 @@ pub enum GetEventSourceMappingErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEventSourceMappingError {
@@ -2604,28 +2604,28 @@ impl GetEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEventSourceMappingErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetEventSourceMappingErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventSourceMappingErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventSourceMappingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEventSourceMappingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventSourceMappingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventSourceMappingErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetEventSourceMappingErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventSourceMappingErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventSourceMappingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetEventSourceMappingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2666,7 +2666,7 @@ pub enum GetFunctionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionError {
@@ -2732,25 +2732,25 @@ impl GetFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetFunctionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2791,7 +2791,7 @@ pub enum GetFunctionCodeSigningConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionCodeSigningConfigError {
@@ -2863,28 +2863,28 @@ impl GetFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionCodeSigningConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetFunctionCodeSigningConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionCodeSigningConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetFunctionCodeSigningConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2929,7 +2929,7 @@ pub enum GetFunctionConcurrencyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionConcurrencyError {
@@ -2997,28 +2997,28 @@ impl GetFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionConcurrencyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetFunctionConcurrencyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionConcurrencyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionConcurrencyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFunctionConcurrencyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionConcurrencyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionConcurrencyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetFunctionConcurrencyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionConcurrencyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionConcurrencyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetFunctionConcurrencyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3059,7 +3059,7 @@ pub enum GetFunctionConfigurationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionConfigurationError {
@@ -3127,28 +3127,28 @@ impl GetFunctionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetFunctionConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFunctionConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetFunctionConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetFunctionConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3191,7 +3191,7 @@ pub enum GetFunctionEventInvokeConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionEventInvokeConfigError {
@@ -3263,28 +3263,28 @@ impl GetFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionEventInvokeConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetFunctionEventInvokeConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionEventInvokeConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3329,7 +3329,7 @@ pub enum GetLayerVersionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLayerVersionError {
@@ -3395,25 +3395,25 @@ impl GetLayerVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLayerVersionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLayerVersionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLayerVersionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLayerVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLayerVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLayerVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLayerVersionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetLayerVersionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetLayerVersionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetLayerVersionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetLayerVersionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3454,7 +3454,7 @@ pub enum GetLayerVersionByArnErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLayerVersionByArnError {
@@ -3520,28 +3520,28 @@ impl GetLayerVersionByArnError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLayerVersionByArnErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLayerVersionByArnErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLayerVersionByArnErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLayerVersionByArnErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLayerVersionByArnErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLayerVersionByArnErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLayerVersionByArnErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetLayerVersionByArnErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLayerVersionByArnErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetLayerVersionByArnErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetLayerVersionByArnErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3582,7 +3582,7 @@ pub enum GetLayerVersionPolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLayerVersionPolicyError {
@@ -3648,28 +3648,28 @@ impl GetLayerVersionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLayerVersionPolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLayerVersionPolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLayerVersionPolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLayerVersionPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLayerVersionPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLayerVersionPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLayerVersionPolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetLayerVersionPolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLayerVersionPolicyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetLayerVersionPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetLayerVersionPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3710,7 +3710,7 @@ pub enum GetPolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPolicyError {
@@ -3776,22 +3776,22 @@ impl GetPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::TooManyRequestsException(_))
     }
@@ -3833,7 +3833,7 @@ pub enum GetProvisionedConcurrencyConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProvisionedConcurrencyConfigError {
@@ -3915,14 +3915,14 @@ impl GetProvisionedConcurrencyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundException`.
+    /// Returns `true` if the error kind is `GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundException`.
     pub fn is_provisioned_concurrency_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3931,21 +3931,21 @@ impl GetProvisionedConcurrencyConfigError {
             )
         )
     }
-    /// Returns true if the error kind is `GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetProvisionedConcurrencyConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetProvisionedConcurrencyConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProvisionedConcurrencyConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4053,7 +4053,7 @@ pub enum InvokeErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The content type of the <code>Invoke</code> request body is not JSON.</p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvokeError {
@@ -4141,122 +4141,122 @@ impl InvokeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InvokeErrorKind::Ec2AccessDeniedException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::Ec2AccessDeniedException`.
     pub fn is_ec2_access_denied_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::Ec2AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::Ec2ThrottledException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::Ec2ThrottledException`.
     pub fn is_ec2_throttled_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::Ec2ThrottledException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::Ec2UnexpectedException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::Ec2UnexpectedException`.
     pub fn is_ec2_unexpected_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::Ec2UnexpectedException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::EfsioException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::EfsioException`.
     pub fn is_efsio_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::EfsioException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::EfsMountConnectivityException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::EfsMountConnectivityException`.
     pub fn is_efs_mount_connectivity_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeErrorKind::EfsMountConnectivityException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeErrorKind::EfsMountFailureException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::EfsMountFailureException`.
     pub fn is_efs_mount_failure_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::EfsMountFailureException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::EfsMountTimeoutException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::EfsMountTimeoutException`.
     pub fn is_efs_mount_timeout_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::EfsMountTimeoutException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::EniLimitReachedException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::EniLimitReachedException`.
     pub fn is_eni_limit_reached_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::EniLimitReachedException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeErrorKind::InvalidRequestContentException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::InvalidRequestContentException`.
     pub fn is_invalid_request_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeErrorKind::InvalidRequestContentException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeErrorKind::InvalidRuntimeException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::InvalidRuntimeException`.
     pub fn is_invalid_runtime_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::InvalidRuntimeException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::InvalidSecurityGroupIdException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::InvalidSecurityGroupIdException`.
     pub fn is_invalid_security_group_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeErrorKind::InvalidSecurityGroupIdException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeErrorKind::InvalidSubnetIdException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::InvalidSubnetIdException`.
     pub fn is_invalid_subnet_id_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::InvalidSubnetIdException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::InvalidZipFileException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::InvalidZipFileException`.
     pub fn is_invalid_zip_file_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::InvalidZipFileException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::KmsAccessDeniedException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::KmsAccessDeniedException`.
     pub fn is_kms_access_denied_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::KmsAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::KmsDisabledException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::KmsDisabledException`.
     pub fn is_kms_disabled_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::KmsDisabledException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::KmsNotFoundException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::KmsNotFoundException`.
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::KmsNotFoundException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::RequestTooLargeException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::RequestTooLargeException`.
     pub fn is_request_too_large_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::RequestTooLargeException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::ResourceConflictException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::ResourceNotReadyException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::ResourceNotReadyException`.
     pub fn is_resource_not_ready_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::ResourceNotReadyException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::SubnetIpAddressLimitReachedException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::SubnetIpAddressLimitReachedException`.
     pub fn is_subnet_ip_address_limit_reached_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeErrorKind::SubnetIpAddressLimitReachedException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, InvokeErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `InvokeErrorKind::UnsupportedMediaTypeException`.
+    /// Returns `true` if the error kind is `InvokeErrorKind::UnsupportedMediaTypeException`.
     pub fn is_unsupported_media_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4321,7 +4321,7 @@ pub enum InvokeAsyncErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvokeAsyncError {
@@ -4388,32 +4388,32 @@ impl InvokeAsyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InvokeAsyncErrorKind::InvalidRequestContentException`.
+    /// Returns `true` if the error kind is `InvokeAsyncErrorKind::InvalidRequestContentException`.
     pub fn is_invalid_request_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeAsyncErrorKind::InvalidRequestContentException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeAsyncErrorKind::InvalidRuntimeException`.
+    /// Returns `true` if the error kind is `InvokeAsyncErrorKind::InvalidRuntimeException`.
     pub fn is_invalid_runtime_exception(&self) -> bool {
         matches!(&self.kind, InvokeAsyncErrorKind::InvalidRuntimeException(_))
     }
-    /// Returns true if the error kind is `InvokeAsyncErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `InvokeAsyncErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeAsyncErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeAsyncErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InvokeAsyncErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeAsyncErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeAsyncErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `InvokeAsyncErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, InvokeAsyncErrorKind::ServiceException(_))
     }
@@ -4452,7 +4452,7 @@ pub enum ListAliasesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAliasesError {
@@ -4518,25 +4518,25 @@ impl ListAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAliasesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAliasesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4573,7 +4573,7 @@ pub enum ListCodeSigningConfigsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCodeSigningConfigsError {
@@ -4639,14 +4639,14 @@ impl ListCodeSigningConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCodeSigningConfigsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListCodeSigningConfigsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCodeSigningConfigsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListCodeSigningConfigsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListCodeSigningConfigsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4685,7 +4685,7 @@ pub enum ListEventSourceMappingsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEventSourceMappingsError {
@@ -4753,28 +4753,28 @@ impl ListEventSourceMappingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEventSourceMappingsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListEventSourceMappingsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventSourceMappingsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventSourceMappingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListEventSourceMappingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventSourceMappingsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventSourceMappingsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListEventSourceMappingsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventSourceMappingsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventSourceMappingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListEventSourceMappingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4817,7 +4817,7 @@ pub enum ListFunctionEventInvokeConfigsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionEventInvokeConfigsError {
@@ -4892,28 +4892,28 @@ impl ListFunctionEventInvokeConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFunctionEventInvokeConfigsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListFunctionEventInvokeConfigsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFunctionEventInvokeConfigsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4958,7 +4958,7 @@ pub enum ListFunctionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionsError {
@@ -5023,18 +5023,18 @@ impl ListFunctionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFunctionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListFunctionsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5072,7 +5072,7 @@ pub enum ListFunctionsByCodeSigningConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionsByCodeSigningConfigError {
@@ -5144,21 +5144,21 @@ impl ListFunctionsByCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFunctionsByCodeSigningConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListFunctionsByCodeSigningConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5200,7 +5200,7 @@ pub enum ListLayersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLayersError {
@@ -5265,18 +5265,18 @@ impl ListLayersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLayersErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListLayersErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLayersErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListLayersErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListLayersErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListLayersErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListLayersErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListLayersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListLayersErrorKind::TooManyRequestsException(_))
     }
@@ -5313,7 +5313,7 @@ pub enum ListLayerVersionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLayerVersionsError {
@@ -5379,25 +5379,25 @@ impl ListLayerVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLayerVersionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListLayerVersionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLayerVersionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListLayerVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListLayerVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLayerVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListLayerVersionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListLayerVersionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListLayerVersionsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListLayerVersionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListLayerVersionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5438,7 +5438,7 @@ pub enum ListProvisionedConcurrencyConfigsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProvisionedConcurrencyConfigsError {
@@ -5513,28 +5513,28 @@ impl ListProvisionedConcurrencyConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListProvisionedConcurrencyConfigsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListProvisionedConcurrencyConfigsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProvisionedConcurrencyConfigsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5581,7 +5581,7 @@ pub enum ListTagsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -5647,22 +5647,22 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::TooManyRequestsException(_))
     }
@@ -5700,7 +5700,7 @@ pub enum ListVersionsByFunctionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVersionsByFunctionError {
@@ -5768,28 +5768,28 @@ impl ListVersionsByFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVersionsByFunctionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListVersionsByFunctionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVersionsByFunctionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListVersionsByFunctionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListVersionsByFunctionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVersionsByFunctionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListVersionsByFunctionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListVersionsByFunctionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVersionsByFunctionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListVersionsByFunctionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListVersionsByFunctionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5833,7 +5833,7 @@ pub enum PublishLayerVersionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishLayerVersionError {
@@ -5900,35 +5900,35 @@ impl PublishLayerVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PublishLayerVersionErrorKind::CodeStorageExceededException`.
+    /// Returns `true` if the error kind is `PublishLayerVersionErrorKind::CodeStorageExceededException`.
     pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishLayerVersionErrorKind::CodeStorageExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PublishLayerVersionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PublishLayerVersionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishLayerVersionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PublishLayerVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PublishLayerVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishLayerVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PublishLayerVersionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PublishLayerVersionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishLayerVersionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PublishLayerVersionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PublishLayerVersionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5979,7 +5979,7 @@ pub enum PublishVersionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishVersionError {
@@ -6048,46 +6048,46 @@ impl PublishVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PublishVersionErrorKind::CodeStorageExceededException`.
+    /// Returns `true` if the error kind is `PublishVersionErrorKind::CodeStorageExceededException`.
     pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishVersionErrorKind::CodeStorageExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PublishVersionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PublishVersionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishVersionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PublishVersionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `PublishVersionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishVersionErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PublishVersionErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `PublishVersionErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishVersionErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PublishVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PublishVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PublishVersionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PublishVersionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, PublishVersionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `PublishVersionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PublishVersionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6135,7 +6135,7 @@ pub enum PutFunctionCodeSigningConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFunctionCodeSigningConfigError {
@@ -6213,42 +6213,42 @@ impl PutFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException`.
+    /// Returns `true` if the error kind is `PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException`.
     pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionCodeSigningConfigErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `PutFunctionCodeSigningConfigErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionCodeSigningConfigErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionCodeSigningConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutFunctionCodeSigningConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6301,7 +6301,7 @@ pub enum PutFunctionConcurrencyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFunctionConcurrencyError {
@@ -6370,35 +6370,35 @@ impl PutFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutFunctionConcurrencyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutFunctionConcurrencyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionConcurrencyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionConcurrencyErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `PutFunctionConcurrencyErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionConcurrencyErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionConcurrencyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutFunctionConcurrencyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionConcurrencyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionConcurrencyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutFunctionConcurrencyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionConcurrencyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionConcurrencyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutFunctionConcurrencyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6442,7 +6442,7 @@ pub enum PutFunctionEventInvokeConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFunctionEventInvokeConfigError {
@@ -6517,35 +6517,35 @@ impl PutFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionEventInvokeConfigErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `PutFunctionEventInvokeConfigErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionEventInvokeConfigErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionEventInvokeConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutFunctionEventInvokeConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFunctionEventInvokeConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6595,7 +6595,7 @@ pub enum PutProvisionedConcurrencyConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutProvisionedConcurrencyConfigError {
@@ -6673,35 +6673,35 @@ impl PutProvisionedConcurrencyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutProvisionedConcurrencyConfigErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `PutProvisionedConcurrencyConfigErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProvisionedConcurrencyConfigErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutProvisionedConcurrencyConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutProvisionedConcurrencyConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProvisionedConcurrencyConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6755,7 +6755,7 @@ pub enum RemoveLayerVersionPermissionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveLayerVersionPermissionError {
@@ -6830,35 +6830,35 @@ impl RemoveLayerVersionPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveLayerVersionPermissionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `RemoveLayerVersionPermissionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveLayerVersionPermissionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveLayerVersionPermissionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `RemoveLayerVersionPermissionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveLayerVersionPermissionErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveLayerVersionPermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveLayerVersionPermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveLayerVersionPermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveLayerVersionPermissionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RemoveLayerVersionPermissionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveLayerVersionPermissionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveLayerVersionPermissionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveLayerVersionPermissionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6910,7 +6910,7 @@ pub enum RemovePermissionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemovePermissionError {
@@ -6977,32 +6977,32 @@ impl RemovePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemovePermissionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemovePermissionErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemovePermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, RemovePermissionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7046,7 +7046,7 @@ pub enum TagResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -7113,32 +7113,32 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7182,7 +7182,7 @@ pub enum UntagResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7249,32 +7249,32 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7322,7 +7322,7 @@ pub enum UpdateAliasErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAliasError {
@@ -7390,39 +7390,39 @@ impl UpdateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAliasErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAliasErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAliasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateAliasErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7463,7 +7463,7 @@ pub enum UpdateCodeSigningConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCodeSigningConfigError {
@@ -7530,21 +7530,21 @@ impl UpdateCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCodeSigningConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateCodeSigningConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCodeSigningConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCodeSigningConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCodeSigningConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateCodeSigningConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7591,7 +7591,7 @@ pub enum UpdateEventSourceMappingErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEventSourceMappingError {
@@ -7661,42 +7661,42 @@ impl UpdateEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEventSourceMappingErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateEventSourceMappingErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventSourceMappingErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventSourceMappingErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UpdateEventSourceMappingErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventSourceMappingErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventSourceMappingErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateEventSourceMappingErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventSourceMappingErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventSourceMappingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEventSourceMappingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventSourceMappingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventSourceMappingErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateEventSourceMappingErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEventSourceMappingErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEventSourceMappingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEventSourceMappingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7758,7 +7758,7 @@ pub enum UpdateFunctionCodeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionCodeError {
@@ -7832,67 +7832,67 @@ impl UpdateFunctionCodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundException`.
     pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::CodeStorageExceededException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::CodeStorageExceededException`.
     pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionCodeErrorKind::CodeStorageExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::CodeVerificationFailedException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::CodeVerificationFailedException`.
     pub fn is_code_verification_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionCodeErrorKind::CodeVerificationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::InvalidCodeSignatureException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::InvalidCodeSignatureException`.
     pub fn is_invalid_code_signature_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionCodeErrorKind::InvalidCodeSignatureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionCodeErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionCodeErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionCodeErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionCodeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateFunctionCodeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UpdateFunctionCodeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFunctionCodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7953,7 +7953,7 @@ pub enum UpdateFunctionConfigurationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionConfigurationError {
@@ -8038,63 +8038,63 @@ impl UpdateFunctionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundException`.
     pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::CodeVerificationFailedException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::CodeVerificationFailedException`.
     pub fn is_code_verification_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionConfigurationErrorKind::CodeVerificationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureException`.
     pub fn is_invalid_code_signature_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionConfigurationErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionConfigurationErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFunctionConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8152,7 +8152,7 @@ pub enum UpdateFunctionEventInvokeConfigErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionEventInvokeConfigError {
@@ -8230,35 +8230,35 @@ impl UpdateFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionEventInvokeConfigErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

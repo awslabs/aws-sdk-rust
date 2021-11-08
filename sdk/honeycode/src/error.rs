@@ -35,7 +35,7 @@ pub enum BatchCreateTableRowsErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchCreateTableRowsError {
@@ -105,56 +105,56 @@ impl BatchCreateTableRowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchCreateTableRowsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchCreateTableRowsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateTableRowsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateTableRowsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchCreateTableRowsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateTableRowsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateTableRowsErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `BatchCreateTableRowsErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateTableRowsErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateTableRowsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchCreateTableRowsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateTableRowsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateTableRowsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `BatchCreateTableRowsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateTableRowsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateTableRowsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchCreateTableRowsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateTableRowsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateTableRowsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchCreateTableRowsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateTableRowsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateTableRowsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchCreateTableRowsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -210,7 +210,7 @@ pub enum BatchDeleteTableRowsErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteTableRowsError {
@@ -279,49 +279,49 @@ impl BatchDeleteTableRowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteTableRowsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableRowsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableRowsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableRowsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableRowsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableRowsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableRowsErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableRowsErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableRowsErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableRowsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableRowsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableRowsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableRowsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableRowsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableRowsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableRowsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableRowsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteTableRowsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteTableRowsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchDeleteTableRowsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -376,7 +376,7 @@ pub enum BatchUpdateTableRowsErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdateTableRowsError {
@@ -445,49 +445,49 @@ impl BatchUpdateTableRowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpdateTableRowsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchUpdateTableRowsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateTableRowsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateTableRowsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchUpdateTableRowsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateTableRowsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateTableRowsErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `BatchUpdateTableRowsErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateTableRowsErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateTableRowsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchUpdateTableRowsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateTableRowsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateTableRowsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchUpdateTableRowsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateTableRowsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateTableRowsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchUpdateTableRowsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateTableRowsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateTableRowsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchUpdateTableRowsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -546,7 +546,7 @@ pub enum BatchUpsertTableRowsErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpsertTableRowsError {
@@ -616,56 +616,56 @@ impl BatchUpsertTableRowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpsertTableRowsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchUpsertTableRowsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpsertTableRowsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpsertTableRowsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchUpsertTableRowsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpsertTableRowsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpsertTableRowsErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `BatchUpsertTableRowsErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpsertTableRowsErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpsertTableRowsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchUpsertTableRowsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpsertTableRowsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpsertTableRowsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `BatchUpsertTableRowsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpsertTableRowsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpsertTableRowsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchUpsertTableRowsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpsertTableRowsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpsertTableRowsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchUpsertTableRowsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpsertTableRowsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpsertTableRowsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchUpsertTableRowsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -719,7 +719,7 @@ pub enum DescribeTableDataImportJobErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTableDataImportJobError {
@@ -789,42 +789,42 @@ impl DescribeTableDataImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTableDataImportJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeTableDataImportJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableDataImportJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableDataImportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeTableDataImportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableDataImportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableDataImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTableDataImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableDataImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableDataImportJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeTableDataImportJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableDataImportJobErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableDataImportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeTableDataImportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableDataImportJobErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableDataImportJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeTableDataImportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -880,7 +880,7 @@ pub enum GetScreenDataErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetScreenDataError {
@@ -949,43 +949,43 @@ impl GetScreenDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetScreenDataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetScreenDataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetScreenDataErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetScreenDataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetScreenDataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetScreenDataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetScreenDataErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `GetScreenDataErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetScreenDataErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetScreenDataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetScreenDataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetScreenDataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetScreenDataErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetScreenDataErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetScreenDataErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetScreenDataErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetScreenDataErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetScreenDataErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetScreenDataErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetScreenDataErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetScreenDataErrorKind::ValidationException(_))
     }
@@ -1041,7 +1041,7 @@ pub enum InvokeScreenAutomationErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvokeScreenAutomationError {
@@ -1114,63 +1114,63 @@ impl InvokeScreenAutomationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeScreenAutomationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::AutomationExecutionException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::AutomationExecutionException`.
     pub fn is_automation_execution_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeScreenAutomationErrorKind::AutomationExecutionException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::AutomationExecutionTimeoutException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::AutomationExecutionTimeoutException`.
     pub fn is_automation_execution_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeScreenAutomationErrorKind::AutomationExecutionTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeScreenAutomationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeScreenAutomationErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeScreenAutomationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeScreenAutomationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeScreenAutomationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeScreenAutomationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `InvokeScreenAutomationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1229,7 +1229,7 @@ pub enum ListTableColumnsErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTableColumnsError {
@@ -1298,49 +1298,49 @@ impl ListTableColumnsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTableColumnsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTableColumnsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableColumnsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableColumnsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTableColumnsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableColumnsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableColumnsErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `ListTableColumnsErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableColumnsErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableColumnsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTableColumnsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableColumnsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableColumnsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListTableColumnsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableColumnsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableColumnsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTableColumnsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableColumnsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableColumnsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTableColumnsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1395,7 +1395,7 @@ pub enum ListTableRowsErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTableRowsError {
@@ -1464,43 +1464,43 @@ impl ListTableRowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTableRowsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTableRowsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListTableRowsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListTableRowsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTableRowsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableRowsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableRowsErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `ListTableRowsErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableRowsErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableRowsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTableRowsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableRowsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableRowsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListTableRowsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableRowsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableRowsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTableRowsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListTableRowsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListTableRowsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTableRowsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListTableRowsErrorKind::ValidationException(_))
     }
@@ -1552,7 +1552,7 @@ pub enum ListTablesErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTablesError {
@@ -1621,37 +1621,37 @@ impl ListTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::RequestTimeoutException(_))
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTablesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTablesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::ValidationException(_))
     }
@@ -1703,7 +1703,7 @@ pub enum QueryTableRowsErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for QueryTableRowsError {
@@ -1772,46 +1772,46 @@ impl QueryTableRowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `QueryTableRowsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `QueryTableRowsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryTableRowsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `QueryTableRowsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `QueryTableRowsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryTableRowsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `QueryTableRowsErrorKind::RequestTimeoutException`.
+    /// Returns `true` if the error kind is `QueryTableRowsErrorKind::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryTableRowsErrorKind::RequestTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `QueryTableRowsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `QueryTableRowsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryTableRowsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `QueryTableRowsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `QueryTableRowsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryTableRowsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `QueryTableRowsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `QueryTableRowsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, QueryTableRowsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `QueryTableRowsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `QueryTableRowsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, QueryTableRowsErrorKind::ValidationException(_))
     }
@@ -1861,7 +1861,7 @@ pub enum StartTableDataImportJobErrorKind {
     /// Request is invalid. The message in the response contains details on why the request is invalid.
     /// </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTableDataImportJobError {
@@ -1929,42 +1929,42 @@ impl StartTableDataImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartTableDataImportJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTableDataImportJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartTableDataImportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTableDataImportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartTableDataImportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTableDataImportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartTableDataImportJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTableDataImportJobErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartTableDataImportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTableDataImportJobErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartTableDataImportJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartTableDataImportJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

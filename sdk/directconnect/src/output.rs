@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualInterfaceAttributesOutput {
-    /// <p>The ID of the account that owns the virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -84,7 +84,7 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The Region where the virtual interface is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
@@ -160,12 +160,12 @@ pub mod update_virtual_interface_attributes_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -508,12 +508,12 @@ pub mod update_virtual_interface_attributes_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -615,7 +615,7 @@ pub struct UpdateLagOutput {
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the LAG.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: std::option::Option<std::string::String>,
@@ -654,7 +654,7 @@ pub struct UpdateLagOutput {
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub minimum_links: i32,
@@ -776,12 +776,12 @@ pub mod update_lag_output {
             self.lag_id = input;
             self
         }
-        /// <p>The ID of the account that owns the LAG.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the LAG.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -881,12 +881,12 @@ pub mod update_lag_output {
             self.location = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1161,11 +1161,62 @@ impl UpdateDirectConnectGatewayAssociationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDirectConnectGatewayOutput {
+    /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+    pub direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
+}
+impl std::fmt::Debug for UpdateDirectConnectGatewayOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDirectConnectGatewayOutput");
+        formatter.field("direct_connect_gateway", &self.direct_connect_gateway);
+        formatter.finish()
+    }
+}
+/// See [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput)
+pub mod update_direct_connect_gateway_output {
+    /// A builder for [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
+    }
+    impl Builder {
+        /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+        pub fn direct_connect_gateway(mut self, input: crate::model::DirectConnectGateway) -> Self {
+            self.direct_connect_gateway = Some(input);
+            self
+        }
+        /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+        pub fn set_direct_connect_gateway(
+            mut self,
+            input: std::option::Option<crate::model::DirectConnectGateway>,
+        ) -> Self {
+            self.direct_connect_gateway = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput)
+        pub fn build(self) -> crate::output::UpdateDirectConnectGatewayOutput {
+            crate::output::UpdateDirectConnectGatewayOutput {
+                direct_connect_gateway: self.direct_connect_gateway,
+            }
+        }
+    }
+}
+impl UpdateDirectConnectGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput)
+    pub fn builder() -> crate::output::update_direct_connect_gateway_output::Builder {
+        crate::output::update_direct_connect_gateway_output::Builder::default()
+    }
+}
+
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOutput {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -1211,7 +1262,7 @@ pub struct UpdateConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -1309,12 +1360,12 @@ pub mod update_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1437,12 +1488,12 @@ pub mod update_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -2027,7 +2078,7 @@ impl DisassociateMacSecKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateConnectionFromLagOutput {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -2073,7 +2124,7 @@ pub struct DisassociateConnectionFromLagOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -2171,12 +2222,12 @@ pub mod disassociate_connection_from_lag_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2299,12 +2350,12 @@ pub mod disassociate_connection_from_lag_output {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -2733,6 +2784,108 @@ impl DescribeTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
     pub fn builder() -> crate::output::describe_tags_output::Builder {
         crate::output::describe_tags_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRouterConfigurationOutput {
+    /// <p>The customer router configuration.</p>
+    pub customer_router_config: std::option::Option<std::string::String>,
+    /// <p>The details about the router.</p>
+    pub router: std::option::Option<crate::model::RouterType>,
+    /// <p>The ID assigned to the virtual interface.</p>
+    pub virtual_interface_id: std::option::Option<std::string::String>,
+    /// <p>The name of the virtual interface assigned by the customer network.</p>
+    pub virtual_interface_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeRouterConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeRouterConfigurationOutput");
+        formatter.field("customer_router_config", &self.customer_router_config);
+        formatter.field("router", &self.router);
+        formatter.field("virtual_interface_id", &self.virtual_interface_id);
+        formatter.field("virtual_interface_name", &self.virtual_interface_name);
+        formatter.finish()
+    }
+}
+/// See [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput)
+pub mod describe_router_configuration_output {
+    /// A builder for [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) customer_router_config: std::option::Option<std::string::String>,
+        pub(crate) router: std::option::Option<crate::model::RouterType>,
+        pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
+        pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The customer router configuration.</p>
+        pub fn customer_router_config(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_router_config = Some(input.into());
+            self
+        }
+        /// <p>The customer router configuration.</p>
+        pub fn set_customer_router_config(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.customer_router_config = input;
+            self
+        }
+        /// <p>The details about the router.</p>
+        pub fn router(mut self, input: crate::model::RouterType) -> Self {
+            self.router = Some(input);
+            self
+        }
+        /// <p>The details about the router.</p>
+        pub fn set_router(mut self, input: std::option::Option<crate::model::RouterType>) -> Self {
+            self.router = input;
+            self
+        }
+        /// <p>The ID assigned to the virtual interface.</p>
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.virtual_interface_id = Some(input.into());
+            self
+        }
+        /// <p>The ID assigned to the virtual interface.</p>
+        pub fn set_virtual_interface_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.virtual_interface_id = input;
+            self
+        }
+        /// <p>The name of the virtual interface assigned by the customer network.</p>
+        pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.virtual_interface_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the virtual interface assigned by the customer network.</p>
+        pub fn set_virtual_interface_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.virtual_interface_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput)
+        pub fn build(self) -> crate::output::DescribeRouterConfigurationOutput {
+            crate::output::DescribeRouterConfigurationOutput {
+                customer_router_config: self.customer_router_config,
+                router: self.router,
+                virtual_interface_id: self.virtual_interface_id,
+                virtual_interface_name: self.virtual_interface_name,
+            }
+        }
+    }
+}
+impl DescribeRouterConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput)
+    pub fn builder() -> crate::output::describe_router_configuration_output::Builder {
+        crate::output::describe_router_configuration_output::Builder::default()
     }
 }
 
@@ -3410,6 +3563,114 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeCustomerMetadataOutput {
+    /// <p>The list of customer agreements.</p>
+    pub agreements: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
+    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p>
+    /// </li>
+    /// <li>
+    /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p>
+    /// </li>
+    /// <li>
+    /// <p>nonPartner: The customer is not a partner.</p>
+    /// </li>
+    /// </ul>
+    pub nni_partner_type: std::option::Option<crate::model::NniPartnerType>,
+}
+impl std::fmt::Debug for DescribeCustomerMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeCustomerMetadataOutput");
+        formatter.field("agreements", &self.agreements);
+        formatter.field("nni_partner_type", &self.nni_partner_type);
+        formatter.finish()
+    }
+}
+/// See [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput)
+pub mod describe_customer_metadata_output {
+    /// A builder for [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agreements: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
+        pub(crate) nni_partner_type: std::option::Option<crate::model::NniPartnerType>,
+    }
+    impl Builder {
+        /// Appends an item to `agreements`.
+        ///
+        /// To override the contents of this collection use [`set_agreements`](Self::set_agreements).
+        ///
+        /// <p>The list of customer agreements.</p>
+        pub fn agreements(mut self, input: impl Into<crate::model::CustomerAgreement>) -> Self {
+            let mut v = self.agreements.unwrap_or_default();
+            v.push(input.into());
+            self.agreements = Some(v);
+            self
+        }
+        /// <p>The list of customer agreements.</p>
+        pub fn set_agreements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
+        ) -> Self {
+            self.agreements = input;
+            self
+        }
+        /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p>
+        /// </li>
+        /// <li>
+        /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p>
+        /// </li>
+        /// <li>
+        /// <p>nonPartner: The customer is not a partner.</p>
+        /// </li>
+        /// </ul>
+        pub fn nni_partner_type(mut self, input: crate::model::NniPartnerType) -> Self {
+            self.nni_partner_type = Some(input);
+            self
+        }
+        /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p>
+        /// </li>
+        /// <li>
+        /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p>
+        /// </li>
+        /// <li>
+        /// <p>nonPartner: The customer is not a partner.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_nni_partner_type(
+            mut self,
+            input: std::option::Option<crate::model::NniPartnerType>,
+        ) -> Self {
+            self.nni_partner_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput)
+        pub fn build(self) -> crate::output::DescribeCustomerMetadataOutput {
+            crate::output::DescribeCustomerMetadataOutput {
+                agreements: self.agreements,
+                nni_partner_type: self.nni_partner_type,
+            }
+        }
+    }
+}
+impl DescribeCustomerMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput)
+    pub fn builder() -> crate::output::describe_customer_metadata_output::Builder {
+        crate::output::describe_customer_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionsOnInterconnectOutput {
     /// <p>The connections.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -3747,7 +4008,7 @@ pub struct DeleteLagOutput {
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the LAG.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: std::option::Option<std::string::String>,
@@ -3786,7 +4047,7 @@ pub struct DeleteLagOutput {
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub minimum_links: i32,
@@ -3908,12 +4169,12 @@ pub mod delete_lag_output {
             self.lag_id = input;
             self
         }
-        /// <p>The ID of the account that owns the LAG.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the LAG.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4013,12 +4274,12 @@ pub mod delete_lag_output {
             self.location = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -4553,7 +4814,7 @@ impl DeleteDirectConnectGatewayOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -4599,7 +4860,7 @@ pub struct DeleteConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -4697,12 +4958,12 @@ pub mod delete_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4825,12 +5086,12 @@ pub mod delete_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -5192,7 +5453,7 @@ impl CreateTransitVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicVirtualInterfaceOutput {
-    /// <p>The ID of the account that owns the virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -5273,7 +5534,7 @@ pub struct CreatePublicVirtualInterfaceOutput {
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The Region where the virtual interface is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
@@ -5349,12 +5610,12 @@ pub mod create_public_virtual_interface_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5697,12 +5958,12 @@ pub mod create_public_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -5797,7 +6058,7 @@ impl CreatePublicVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePrivateVirtualInterfaceOutput {
-    /// <p>The ID of the account that owns the virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -5878,7 +6139,7 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The Region where the virtual interface is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
@@ -5954,12 +6215,12 @@ pub mod create_private_virtual_interface_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6302,12 +6563,12 @@ pub mod create_private_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -6409,7 +6670,7 @@ pub struct CreateLagOutput {
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the LAG.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: std::option::Option<std::string::String>,
@@ -6448,7 +6709,7 @@ pub struct CreateLagOutput {
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub minimum_links: i32,
@@ -6570,12 +6831,12 @@ pub mod create_lag_output {
             self.lag_id = input;
             self
         }
-        /// <p>The ID of the account that owns the LAG.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the LAG.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6675,12 +6936,12 @@ pub mod create_lag_output {
             self.location = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -6937,7 +7198,7 @@ pub struct CreateInterconnectOutput {
     /// </li>
     /// </ul>
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -7108,12 +7369,12 @@ pub mod create_interconnect_output {
             self.interconnect_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -7458,7 +7719,7 @@ impl CreateDirectConnectGatewayOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOutput {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -7504,7 +7765,7 @@ pub struct CreateConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -7602,12 +7863,12 @@ pub mod create_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7730,12 +7991,12 @@ pub mod create_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -8552,6 +8813,60 @@ impl ConfirmPrivateVirtualInterfaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConfirmCustomerAgreementOutput {
+    /// <p>
+    /// The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.
+    /// </p>
+    pub status: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConfirmCustomerAgreementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConfirmCustomerAgreementOutput");
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput)
+pub mod confirm_customer_agreement_output {
+    /// A builder for [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.
+        /// </p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>
+        /// The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.
+        /// </p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput)
+        pub fn build(self) -> crate::output::ConfirmCustomerAgreementOutput {
+            crate::output::ConfirmCustomerAgreementOutput {
+                status: self.status,
+            }
+        }
+    }
+}
+impl ConfirmCustomerAgreementOutput {
+    /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput)
+    pub fn builder() -> crate::output::confirm_customer_agreement_output::Builder {
+        crate::output::confirm_customer_agreement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmConnectionOutput {
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
@@ -8718,7 +9033,7 @@ impl ConfirmConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateVirtualInterfaceOutput {
-    /// <p>The ID of the account that owns the virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -8799,7 +9114,7 @@ pub struct AssociateVirtualInterfaceOutput {
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The Region where the virtual interface is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
@@ -8875,12 +9190,12 @@ pub mod associate_virtual_interface_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9223,12 +9538,12 @@ pub mod associate_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -9398,7 +9713,7 @@ impl AssociateMacSecKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateHostedConnectionOutput {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -9444,7 +9759,7 @@ pub struct AssociateHostedConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -9542,12 +9857,12 @@ pub mod associate_hosted_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9670,12 +9985,12 @@ pub mod associate_hosted_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -9935,7 +10250,7 @@ impl AssociateHostedConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConnectionWithLagOutput {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -9981,7 +10296,7 @@ pub struct AssociateConnectionWithLagOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -10079,12 +10394,12 @@ pub mod associate_connection_with_lag_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10207,12 +10522,12 @@ pub mod associate_connection_with_lag_output {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -10523,7 +10838,7 @@ impl AllocateTransitVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocatePublicVirtualInterfaceOutput {
-    /// <p>The ID of the account that owns the virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -10604,7 +10919,7 @@ pub struct AllocatePublicVirtualInterfaceOutput {
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The Region where the virtual interface is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
@@ -10680,12 +10995,12 @@ pub mod allocate_public_virtual_interface_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11028,12 +11343,12 @@ pub mod allocate_public_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -11128,7 +11443,7 @@ impl AllocatePublicVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocatePrivateVirtualInterfaceOutput {
-    /// <p>The ID of the account that owns the virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -11209,7 +11524,7 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     pub route_filter_prefixes: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
     /// <p>The BGP peers configured on this virtual interface.</p>
     pub bgp_peers: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
-    /// <p>The Region where the virtual interface is located.</p>
+    /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
@@ -11285,12 +11600,12 @@ pub mod allocate_private_virtual_interface_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11633,12 +11948,12 @@ pub mod allocate_private_virtual_interface_output {
             self.bgp_peers = input;
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the virtual interface is located.</p>
+        /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -11733,7 +12048,7 @@ impl AllocatePrivateVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateHostedConnectionOutput {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -11779,7 +12094,7 @@ pub struct AllocateHostedConnectionOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -11877,12 +12192,12 @@ pub mod allocate_hosted_connection_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12005,12 +12320,12 @@ pub mod allocate_hosted_connection_output {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -12270,7 +12585,7 @@ impl AllocateHostedConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateConnectionOnInterconnectOutput {
-    /// <p>The ID of the account that owns the connection.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
@@ -12316,7 +12631,7 @@ pub struct AllocateConnectionOnInterconnectOutput {
     /// </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
-    /// <p>The Region where the connection is located.</p>
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The location of the connection.</p>
     pub location: std::option::Option<std::string::String>,
@@ -12414,12 +12729,12 @@ pub mod allocate_connection_on_interconnect_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account = Some(input.into());
             self
         }
-        /// <p>The ID of the account that owns the connection.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12542,12 +12857,12 @@ pub mod allocate_connection_on_interconnect_output {
             self.connection_state = input;
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The Region where the connection is located.</p>
+        /// <p>The Amazon Web Services Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self

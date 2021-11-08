@@ -108,6 +108,13 @@ where
     ) -> fluent_builders::GetDocumentTextDetection<C, M, R> {
         fluent_builders::GetDocumentTextDetection::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetExpenseAnalysis` operation.
+    ///
+    /// See [`GetExpenseAnalysis`](crate::client::fluent_builders::GetExpenseAnalysis) for more information about the
+    /// operation and its arguments.
+    pub fn get_expense_analysis(&self) -> fluent_builders::GetExpenseAnalysis<C, M, R> {
+        fluent_builders::GetExpenseAnalysis::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `StartDocumentAnalysis` operation.
     ///
     /// See [`StartDocumentAnalysis`](crate::client::fluent_builders::StartDocumentAnalysis) for more information about the
@@ -123,6 +130,13 @@ where
         &self,
     ) -> fluent_builders::StartDocumentTextDetection<C, M, R> {
         fluent_builders::StartDocumentTextDetection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StartExpenseAnalysis` operation.
+    ///
+    /// See [`StartExpenseAnalysis`](crate::client::fluent_builders::StartExpenseAnalysis) for more information about the
+    /// operation and its arguments.
+    pub fn start_expense_analysis(&self) -> fluent_builders::StartExpenseAnalysis<C, M, R> {
+        fluent_builders::StartExpenseAnalysis::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -214,9 +228,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
@@ -340,9 +357,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input document, either as bytes or as an S3 object.</p>
@@ -449,9 +469,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
@@ -568,9 +591,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from
@@ -687,9 +713,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
@@ -731,13 +760,127 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetExpenseAnalysis`.
+    ///
+    /// <p>Gets the results for an Amazon Textract asynchronous operation that analyzes invoices and
+    /// receipts. Amazon Textract finds contact information, items purchased, and vendor name, from input
+    /// invoices and receipts.</p>
+    /// <p>You start asynchronous invoice/receipt analysis by calling <a>StartExpenseAnalysis</a>, which returns a job identifier (<code>JobId</code>). Upon
+    /// completion of the invoice/receipt analysis, Amazon Textract publishes the completion status to the
+    /// Amazon Simple Notification Service (Amazon SNS) topic. This topic must be registered in the initial call to
+    /// <code>StartExpenseAnalysis</code>. To get the results of the invoice/receipt analysis operation,
+    /// first ensure that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+    /// call <code>GetExpenseAnalysis</code>, and pass the job identifier (<code>JobId</code>) from the
+    /// initial call to <code>StartExpenseAnalysis</code>.</p>
+    /// <p>Use the MaxResults parameter to limit the number of blocks that are returned. If there are
+    /// more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in
+    /// the operation response contains a pagination token for getting the next set of results. To get
+    /// the next page of results, call <code>GetExpenseAnalysis</code>, and populate the
+    /// <code>NextToken</code> request parameter with the token value that's returned from the previous
+    /// call to <code>GetExpenseAnalysis</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/invoices-receipts.html">Analyzing Invoices and Receipts</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetExpenseAnalysis<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_expense_analysis_input::Builder,
+    }
+    impl<C, M, R> GetExpenseAnalysis<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetExpenseAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetExpenseAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetExpenseAnalysisError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetExpenseAnalysisInputOperationOutputAlias,
+                crate::output::GetExpenseAnalysisOutput,
+                crate::error::GetExpenseAnalysisError,
+                crate::input::GetExpenseAnalysisInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
+        /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(inp);
+            self
+        }
+        /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
+        /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can
+        /// specify is 20. If you specify a value greater than 20, a maximum of 20 results is
+        /// returned. The default value is 20.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can
+        /// specify is 20. If you specify a value greater than 20, a maximum of 20 results is
+        /// returned. The default value is 20.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination
+        /// token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination
+        /// token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartDocumentAnalysis`.
     ///
     /// <p>Starts the asynchronous analysis of an input document for relationships between detected
     /// items such as key-value pairs, tables, and selection elements.</p>
     ///
     /// <p>
-    /// <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPEG, PNG, and PDF format. The
+    /// <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPEG, PNG, TIFF, and PDF format. The
     /// documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name and file name
     /// of the document.
     /// </p>
@@ -799,9 +942,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The location of the document to be processed.</p>
@@ -935,7 +1081,7 @@ pub mod fluent_builders {
     /// <p>Starts the asynchronous detection of text in a document. Amazon Textract can detect lines of
     /// text and the words that make up a line of text.</p>
     /// <p>
-    /// <code>StartDocumentTextDetection</code> can analyze text in documents that are in JPEG, PNG, and PDF format. The
+    /// <code>StartDocumentTextDetection</code> can analyze text in documents that are in JPEG, PNG, TIFF, and PDF format. The
     /// documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name and file name
     /// of the document.
     /// </p>
@@ -997,9 +1143,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The location of the document to be processed.</p>
@@ -1075,6 +1224,179 @@ pub mod fluent_builders {
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will
         /// save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_output_config(input);
+            self
+        }
+        /// <p>The KMS key used to encrypt the inference results. This can be
+        /// in either Key ID or Key Alias format. When a KMS key is provided, the
+        /// KMS key will be used for server-side encryption of the objects in the
+        /// customer bucket. When this parameter is not enabled, the result will
+        /// be encrypted server side,using SSE-S3.</p>
+        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(inp);
+            self
+        }
+        /// <p>The KMS key used to encrypt the inference results. This can be
+        /// in either Key ID or Key Alias format. When a KMS key is provided, the
+        /// KMS key will be used for server-side encryption of the objects in the
+        /// customer bucket. When this parameter is not enabled, the result will
+        /// be encrypted server side,using SSE-S3.</p>
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartExpenseAnalysis`.
+    ///
+    /// <p>Starts the asynchronous analysis of invoices or receipts for data like contact information,
+    /// items purchased, and vendor names.</p>
+    ///
+    /// <p>
+    /// <code>StartExpenseAnalysis</code> can analyze text in documents that are in JPEG, PNG, and
+    /// PDF format. The documents must be stored in an Amazon S3 bucket. Use the <a>DocumentLocation</a> parameter to specify the name of your S3 bucket and the name of the
+    /// document in that bucket. </p>
+    /// <p>
+    /// <code>StartExpenseAnalysis</code> returns a job identifier (<code>JobId</code>) that you
+    /// will provide to <code>GetExpenseAnalysis</code> to retrieve the results of the operation. When
+    /// the analysis of the input invoices/receipts is finished, Amazon Textract publishes a completion
+    /// status to the Amazon Simple Notification Service (Amazon SNS) topic that you provide to the <code>NotificationChannel</code>.
+    /// To obtain the results of the invoice and receipt analysis operation, ensure that the status value
+    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetExpenseAnalysis</a>, and pass the job identifier (<code>JobId</code>) that was
+    /// returned by your call to <code>StartExpenseAnalysis</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/invoice-receipts.html">Analyzing Invoices and Receipts</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartExpenseAnalysis<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_expense_analysis_input::Builder,
+    }
+    impl<C, M, R> StartExpenseAnalysis<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartExpenseAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartExpenseAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartExpenseAnalysisError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartExpenseAnalysisInputOperationOutputAlias,
+                crate::output::StartExpenseAnalysisOutput,
+                crate::error::StartExpenseAnalysisError,
+                crate::input::StartExpenseAnalysisInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The location of the document to be processed.</p>
+        pub fn document_location(mut self, inp: crate::model::DocumentLocation) -> Self {
+            self.inner = self.inner.document_location(inp);
+            self
+        }
+        /// <p>The location of the document to be processed.</p>
+        pub fn set_document_location(
+            mut self,
+            input: std::option::Option<crate::model::DocumentLocation>,
+        ) -> Self {
+            self.inner = self.inner.set_document_location(input);
+            self
+        }
+        /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned.
+        /// Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
+        /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>
+        /// </p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned.
+        /// Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
+        /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>
+        /// </p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>An identifier you specify that's included in the completion notification published
+        /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of
+        /// document that the completion notification corresponds to (such as a tax form or a
+        /// receipt).</p>
+        pub fn job_tag(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(inp);
+            self
+        }
+        /// <p>An identifier you specify that's included in the completion notification published
+        /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of
+        /// document that the completion notification corresponds to (such as a tax form or a
+        /// receipt).</p>
+        pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_tag(input);
+            self
+        }
+        /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the
+        /// operation to. </p>
+        pub fn notification_channel(mut self, inp: crate::model::NotificationChannel) -> Self {
+            self.inner = self.inner.notification_channel(inp);
+            self
+        }
+        /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the
+        /// operation to. </p>
+        pub fn set_notification_channel(
+            mut self,
+            input: std::option::Option<crate::model::NotificationChannel>,
+        ) -> Self {
+            self.inner = self.inner.set_notification_channel(input);
+            self
+        }
+        /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will
+        /// save the results internally to be accessed by the <code>GetExpenseAnalysis</code>
+        /// operation.</p>
+        pub fn output_config(mut self, inp: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(inp);
+            self
+        }
+        /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will
+        /// save the results internally to be accessed by the <code>GetExpenseAnalysis</code>
+        /// operation.</p>
         pub fn set_output_config(
             mut self,
             input: std::option::Option<crate::model::OutputConfig>,

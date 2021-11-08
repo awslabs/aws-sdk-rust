@@ -24,7 +24,7 @@ pub enum CreateAssistantErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssistantError {
@@ -90,25 +90,25 @@ impl CreateAssistantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssistantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAssistantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssistantErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssistantErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAssistantErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateAssistantErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateAssistantErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateAssistantErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssistantErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssistantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAssistantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateAssistantErrorKind::ValidationException(_))
     }
@@ -152,7 +152,7 @@ pub enum CreateAssistantAssociationErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssistantAssociationError {
@@ -221,35 +221,35 @@ impl CreateAssistantAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssistantAssociationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAssistantAssociationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssistantAssociationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssistantAssociationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAssistantAssociationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssistantAssociationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssistantAssociationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAssistantAssociationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssistantAssociationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssistantAssociationErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateAssistantAssociationErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssistantAssociationErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssistantAssociationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAssistantAssociationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -299,7 +299,7 @@ pub enum CreateContentErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContentError {
@@ -366,29 +366,29 @@ impl CreateContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateContentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateContentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateContentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateContentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateContentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateContentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateContentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateContentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateContentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateContentErrorKind::ValidationException(_))
     }
@@ -431,7 +431,7 @@ pub enum CreateKnowledgeBaseErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateKnowledgeBaseError {
@@ -497,28 +497,28 @@ impl CreateKnowledgeBaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateKnowledgeBaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateKnowledgeBaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKnowledgeBaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKnowledgeBaseErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateKnowledgeBaseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKnowledgeBaseErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKnowledgeBaseErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateKnowledgeBaseErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKnowledgeBaseErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKnowledgeBaseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateKnowledgeBaseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -560,7 +560,7 @@ pub enum CreateSessionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSessionError {
@@ -625,18 +625,18 @@ impl CreateSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateSessionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateSessionErrorKind::ValidationException(_))
     }
@@ -671,7 +671,7 @@ pub enum DeleteAssistantErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssistantError {
@@ -736,21 +736,21 @@ impl DeleteAssistantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssistantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAssistantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssistantErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssistantErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAssistantErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssistantErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssistantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAssistantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteAssistantErrorKind::ValidationException(_))
     }
@@ -785,7 +785,7 @@ pub enum DeleteAssistantAssociationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssistantAssociationError {
@@ -850,21 +850,21 @@ impl DeleteAssistantAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssistantAssociationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAssistantAssociationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssistantAssociationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssistantAssociationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAssistantAssociationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssistantAssociationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssistantAssociationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAssistantAssociationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -902,7 +902,7 @@ pub enum DeleteContentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContentError {
@@ -967,18 +967,18 @@ impl DeleteContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteContentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteContentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteContentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteContentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteContentErrorKind::ValidationException(_))
     }
@@ -1016,7 +1016,7 @@ pub enum DeleteKnowledgeBaseErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteKnowledgeBaseError {
@@ -1081,21 +1081,21 @@ impl DeleteKnowledgeBaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteKnowledgeBaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteKnowledgeBaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKnowledgeBaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKnowledgeBaseErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteKnowledgeBaseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKnowledgeBaseErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKnowledgeBaseErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteKnowledgeBaseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1133,7 +1133,7 @@ pub enum GetAssistantErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssistantError {
@@ -1198,18 +1198,18 @@ impl GetAssistantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssistantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAssistantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetAssistantErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetAssistantErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAssistantErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssistantErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssistantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAssistantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetAssistantErrorKind::ValidationException(_))
     }
@@ -1244,7 +1244,7 @@ pub enum GetAssistantAssociationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssistantAssociationError {
@@ -1309,21 +1309,21 @@ impl GetAssistantAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssistantAssociationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAssistantAssociationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssistantAssociationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssistantAssociationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAssistantAssociationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssistantAssociationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssistantAssociationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAssistantAssociationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1361,7 +1361,7 @@ pub enum GetContentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContentError {
@@ -1426,18 +1426,18 @@ impl GetContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetContentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetContentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetContentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetContentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetContentErrorKind::ValidationException(_))
     }
@@ -1472,7 +1472,7 @@ pub enum GetContentSummaryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContentSummaryError {
@@ -1537,21 +1537,21 @@ impl GetContentSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContentSummaryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContentSummaryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContentSummaryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContentSummaryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetContentSummaryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContentSummaryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContentSummaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetContentSummaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1589,7 +1589,7 @@ pub enum GetKnowledgeBaseErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKnowledgeBaseError {
@@ -1654,21 +1654,21 @@ impl GetKnowledgeBaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetKnowledgeBaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetKnowledgeBaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKnowledgeBaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetKnowledgeBaseErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetKnowledgeBaseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKnowledgeBaseErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetKnowledgeBaseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetKnowledgeBaseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1706,7 +1706,7 @@ pub enum GetRecommendationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecommendationsError {
@@ -1771,21 +1771,21 @@ impl GetRecommendationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecommendationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommendationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommendationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetRecommendationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1823,7 +1823,7 @@ pub enum GetSessionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSessionError {
@@ -1888,18 +1888,18 @@ impl GetSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetSessionErrorKind::ValidationException(_))
     }
@@ -1934,7 +1934,7 @@ pub enum ListAssistantAssociationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssistantAssociationsError {
@@ -1999,21 +1999,21 @@ impl ListAssistantAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssistantAssociationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssistantAssociationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssistantAssociationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssistantAssociationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAssistantAssociationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssistantAssociationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssistantAssociationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAssistantAssociationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2049,7 +2049,7 @@ pub enum ListAssistantsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssistantsError {
@@ -2113,14 +2113,14 @@ impl ListAssistantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssistantsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssistantsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssistantsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssistantsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAssistantsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListAssistantsErrorKind::ValidationException(_))
     }
@@ -2154,7 +2154,7 @@ pub enum ListContentsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContentsError {
@@ -2219,18 +2219,18 @@ impl ListContentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListContentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListContentsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListContentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListContentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListContentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListContentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListContentsErrorKind::ValidationException(_))
     }
@@ -2263,7 +2263,7 @@ pub enum ListKnowledgeBasesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListKnowledgeBasesError {
@@ -2327,14 +2327,14 @@ impl ListKnowledgeBasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListKnowledgeBasesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListKnowledgeBasesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListKnowledgeBasesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListKnowledgeBasesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListKnowledgeBasesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2367,7 +2367,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2430,7 +2430,7 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2466,7 +2466,7 @@ pub enum NotifyRecommendationsReceivedErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for NotifyRecommendationsReceivedError {
@@ -2536,21 +2536,21 @@ impl NotifyRecommendationsReceivedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `NotifyRecommendationsReceivedErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `NotifyRecommendationsReceivedErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyRecommendationsReceivedErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyRecommendationsReceivedErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `NotifyRecommendationsReceivedErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyRecommendationsReceivedErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyRecommendationsReceivedErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `NotifyRecommendationsReceivedErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2590,7 +2590,7 @@ pub enum QueryAssistantErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for QueryAssistantError {
@@ -2655,21 +2655,21 @@ impl QueryAssistantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `QueryAssistantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `QueryAssistantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryAssistantErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `QueryAssistantErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `QueryAssistantErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryAssistantErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `QueryAssistantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `QueryAssistantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, QueryAssistantErrorKind::ValidationException(_))
     }
@@ -2704,7 +2704,7 @@ pub enum RemoveKnowledgeBaseTemplateUriErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveKnowledgeBaseTemplateUriError {
@@ -2774,21 +2774,21 @@ impl RemoveKnowledgeBaseTemplateUriError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveKnowledgeBaseTemplateUriErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RemoveKnowledgeBaseTemplateUriErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveKnowledgeBaseTemplateUriErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveKnowledgeBaseTemplateUriErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveKnowledgeBaseTemplateUriErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveKnowledgeBaseTemplateUriErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveKnowledgeBaseTemplateUriErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RemoveKnowledgeBaseTemplateUriErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2828,7 +2828,7 @@ pub enum SearchContentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchContentError {
@@ -2893,18 +2893,18 @@ impl SearchContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchContentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchContentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, SearchContentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `SearchContentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchContentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchContentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchContentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SearchContentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, SearchContentErrorKind::ValidationException(_))
     }
@@ -2939,7 +2939,7 @@ pub enum SearchSessionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchSessionsError {
@@ -3004,21 +3004,21 @@ impl SearchSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchSessionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchSessionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchSessionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SearchSessionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchSessionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchSessionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchSessionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SearchSessionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, SearchSessionsErrorKind::ValidationException(_))
     }
@@ -3053,7 +3053,7 @@ pub enum StartContentUploadErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartContentUploadError {
@@ -3118,21 +3118,21 @@ impl StartContentUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartContentUploadErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartContentUploadErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentUploadErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentUploadErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartContentUploadErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentUploadErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentUploadErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartContentUploadErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3168,7 +3168,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Connect Wisdom throws this exception if you have too many tags in your tag set.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3232,14 +3232,14 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -3269,7 +3269,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3332,7 +3332,7 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3371,7 +3371,7 @@ pub enum UpdateContentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContentError {
@@ -3437,25 +3437,25 @@ impl UpdateContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateContentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateContentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateContentErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `UpdateContentErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContentErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateContentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateContentErrorKind::ValidationException(_))
     }
@@ -3491,7 +3491,7 @@ pub enum UpdateKnowledgeBaseTemplateUriErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateKnowledgeBaseTemplateUriError {
@@ -3561,21 +3561,21 @@ impl UpdateKnowledgeBaseTemplateUriError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateKnowledgeBaseTemplateUriErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateKnowledgeBaseTemplateUriErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateKnowledgeBaseTemplateUriErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateKnowledgeBaseTemplateUriErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateKnowledgeBaseTemplateUriErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateKnowledgeBaseTemplateUriErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateKnowledgeBaseTemplateUriErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateKnowledgeBaseTemplateUriErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

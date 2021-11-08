@@ -25,7 +25,7 @@ pub enum CreateApiCacheErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApiCacheError {
@@ -92,29 +92,29 @@ impl CreateApiCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApiCacheErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateApiCacheErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateApiCacheErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateApiCacheErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateApiCacheErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiCacheErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiCacheErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateApiCacheErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiCacheErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiCacheErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateApiCacheErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateApiCacheErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateApiCacheErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateApiCacheErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -165,7 +165,7 @@ pub enum CreateApiKeyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApiKeyError {
@@ -234,40 +234,40 @@ impl CreateApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApiKeyErrorKind::ApiKeyLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateApiKeyErrorKind::ApiKeyLimitExceededException`.
     pub fn is_api_key_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiKeyErrorKind::ApiKeyLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException`.
+    /// Returns `true` if the error kind is `CreateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException`.
     pub fn is_api_key_validity_out_of_bounds_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiKeyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateApiKeyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateApiKeyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateApiKeyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateApiKeyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiKeyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateApiKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateApiKeyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateApiKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateApiKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateApiKeyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateApiKeyErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateApiKeyErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateApiKeyErrorKind::UnauthorizedException(_))
     }
@@ -313,7 +313,7 @@ pub enum CreateDataSourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataSourceError {
@@ -380,32 +380,32 @@ impl CreateDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateDataSourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateDataSourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateDataSourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -449,7 +449,7 @@ pub enum CreateFunctionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFunctionError {
@@ -515,25 +515,25 @@ impl CreateFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFunctionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateFunctionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateFunctionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateFunctionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -580,7 +580,7 @@ pub enum CreateGraphqlApiErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGraphqlApiError {
@@ -648,42 +648,42 @@ impl CreateGraphqlApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGraphqlApiErrorKind::ApiLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGraphqlApiErrorKind::ApiLimitExceededException`.
     pub fn is_api_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGraphqlApiErrorKind::ApiLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGraphqlApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateGraphqlApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGraphqlApiErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGraphqlApiErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateGraphqlApiErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGraphqlApiErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGraphqlApiErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateGraphqlApiErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGraphqlApiErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGraphqlApiErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGraphqlApiErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGraphqlApiErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGraphqlApiErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateGraphqlApiErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -728,7 +728,7 @@ pub enum CreateResolverErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResolverError {
@@ -794,25 +794,25 @@ impl CreateResolverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResolverErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateResolverErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateResolverErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateResolverErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateResolverErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateResolverErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateResolverErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -858,7 +858,7 @@ pub enum CreateTypeErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTypeError {
@@ -925,26 +925,26 @@ impl CreateTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateTypeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateTypeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateTypeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateTypeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, CreateTypeErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `CreateTypeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateTypeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateTypeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateTypeErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateTypeErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateTypeErrorKind::UnauthorizedException(_))
     }
@@ -988,7 +988,7 @@ pub enum DeleteApiCacheErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApiCacheError {
@@ -1055,29 +1055,29 @@ impl DeleteApiCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApiCacheErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApiCacheErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiCacheErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteApiCacheErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteApiCacheErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApiCacheErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApiCacheErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteApiCacheErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApiCacheErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApiCacheErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApiCacheErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiCacheErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteApiCacheErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteApiCacheErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1121,7 +1121,7 @@ pub enum DeleteApiKeyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApiKeyError {
@@ -1187,22 +1187,22 @@ impl DeleteApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApiKeyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApiKeyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiKeyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteApiKeyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteApiKeyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApiKeyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApiKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApiKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiKeyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteApiKeyErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteApiKeyErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiKeyErrorKind::UnauthorizedException(_))
     }
@@ -1245,7 +1245,7 @@ pub enum DeleteDataSourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDataSourceError {
@@ -1312,32 +1312,32 @@ impl DeleteDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDataSourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1381,7 +1381,7 @@ pub enum DeleteFunctionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionError {
@@ -1447,25 +1447,25 @@ impl DeleteFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFunctionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteFunctionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteFunctionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteFunctionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1513,7 +1513,7 @@ pub enum DeleteGraphqlApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGraphqlApiError {
@@ -1581,39 +1581,39 @@ impl DeleteGraphqlApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGraphqlApiErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteGraphqlApiErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGraphqlApiErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGraphqlApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteGraphqlApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGraphqlApiErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGraphqlApiErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteGraphqlApiErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGraphqlApiErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGraphqlApiErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteGraphqlApiErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGraphqlApiErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGraphqlApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGraphqlApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteGraphqlApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteGraphqlApiErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteGraphqlApiErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1658,7 +1658,7 @@ pub enum DeleteResolverErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResolverError {
@@ -1724,25 +1724,25 @@ impl DeleteResolverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResolverErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteResolverErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteResolverErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResolverErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteResolverErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteResolverErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteResolverErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1788,7 +1788,7 @@ pub enum DeleteTypeErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTypeError {
@@ -1855,26 +1855,26 @@ impl DeleteTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteTypeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteTypeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteTypeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTypeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTypeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteTypeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, DeleteTypeErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `DeleteTypeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTypeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteTypeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteTypeErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteTypeErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteTypeErrorKind::UnauthorizedException(_))
     }
@@ -1918,7 +1918,7 @@ pub enum FlushApiCacheErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FlushApiCacheError {
@@ -1985,29 +1985,29 @@ impl FlushApiCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `FlushApiCacheErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `FlushApiCacheErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, FlushApiCacheErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `FlushApiCacheErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `FlushApiCacheErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             FlushApiCacheErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `FlushApiCacheErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `FlushApiCacheErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             FlushApiCacheErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `FlushApiCacheErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `FlushApiCacheErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, FlushApiCacheErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `FlushApiCacheErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `FlushApiCacheErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, FlushApiCacheErrorKind::UnauthorizedException(_))
     }
@@ -2051,7 +2051,7 @@ pub enum GetApiCacheErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApiCacheError {
@@ -2118,29 +2118,29 @@ impl GetApiCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApiCacheErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApiCacheErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetApiCacheErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetApiCacheErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `GetApiCacheErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApiCacheErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `GetApiCacheErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetApiCacheErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApiCacheErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetApiCacheErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApiCacheErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetApiCacheErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetApiCacheErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetApiCacheErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, GetApiCacheErrorKind::UnauthorizedException(_))
     }
@@ -2184,7 +2184,7 @@ pub enum GetDataSourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDataSourceError {
@@ -2251,29 +2251,29 @@ impl GetDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDataSourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDataSourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetDataSourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetDataSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `GetDataSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataSourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetDataSourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataSourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataSourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDataSourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDataSourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDataSourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetDataSourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, GetDataSourceErrorKind::UnauthorizedException(_))
     }
@@ -2312,7 +2312,7 @@ pub enum GetFunctionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionError {
@@ -2377,18 +2377,18 @@ impl GetFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFunctionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetFunctionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetFunctionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetFunctionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, GetFunctionErrorKind::UnauthorizedException(_))
     }
@@ -2429,7 +2429,7 @@ pub enum GetGraphqlApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGraphqlApiError {
@@ -2496,26 +2496,26 @@ impl GetGraphqlApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGraphqlApiErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetGraphqlApiErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetGraphqlApiErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetGraphqlApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGraphqlApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetGraphqlApiErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetGraphqlApiErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetGraphqlApiErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGraphqlApiErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetGraphqlApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetGraphqlApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetGraphqlApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetGraphqlApiErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetGraphqlApiErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, GetGraphqlApiErrorKind::UnauthorizedException(_))
     }
@@ -2555,7 +2555,7 @@ pub enum GetIntrospectionSchemaErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntrospectionSchemaError {
@@ -2621,28 +2621,28 @@ impl GetIntrospectionSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntrospectionSchemaErrorKind::GraphQlSchemaException`.
+    /// Returns `true` if the error kind is `GetIntrospectionSchemaErrorKind::GraphQlSchemaException`.
     pub fn is_graph_ql_schema_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntrospectionSchemaErrorKind::GraphQlSchemaException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntrospectionSchemaErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetIntrospectionSchemaErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntrospectionSchemaErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntrospectionSchemaErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetIntrospectionSchemaErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntrospectionSchemaErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntrospectionSchemaErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetIntrospectionSchemaErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2683,7 +2683,7 @@ pub enum GetResolverErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverError {
@@ -2748,18 +2748,18 @@ impl GetResolverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `GetResolverErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetResolverErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetResolverErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetResolverErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetResolverErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, GetResolverErrorKind::UnauthorizedException(_))
     }
@@ -2798,7 +2798,7 @@ pub enum GetSchemaCreationStatusErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSchemaCreationStatusError {
@@ -2864,28 +2864,28 @@ impl GetSchemaCreationStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSchemaCreationStatusErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSchemaCreationStatusErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaCreationStatusErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaCreationStatusErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetSchemaCreationStatusErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaCreationStatusErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaCreationStatusErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSchemaCreationStatusErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaCreationStatusErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaCreationStatusErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetSchemaCreationStatusErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2931,7 +2931,7 @@ pub enum GetTypeErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTypeError {
@@ -2998,26 +2998,26 @@ impl GetTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetTypeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetTypeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `GetTypeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetTypeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, GetTypeErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `GetTypeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTypeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTypeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTypeErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetTypeErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, GetTypeErrorKind::UnauthorizedException(_))
     }
@@ -3058,7 +3058,7 @@ pub enum ListApiKeysErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApiKeysError {
@@ -3124,22 +3124,22 @@ impl ListApiKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApiKeysErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListApiKeysErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListApiKeysErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListApiKeysErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListApiKeysErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApiKeysErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListApiKeysErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListApiKeysErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListApiKeysErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListApiKeysErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListApiKeysErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListApiKeysErrorKind::UnauthorizedException(_))
     }
@@ -3179,7 +3179,7 @@ pub enum ListDataSourcesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataSourcesError {
@@ -3245,22 +3245,22 @@ impl ListDataSourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListDataSourcesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataSourcesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListDataSourcesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListDataSourcesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListDataSourcesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3303,7 +3303,7 @@ pub enum ListFunctionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionsError {
@@ -3369,22 +3369,22 @@ impl ListFunctionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListFunctionsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFunctionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListFunctionsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListFunctionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListFunctionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListFunctionsErrorKind::UnauthorizedException(_))
     }
@@ -3421,7 +3421,7 @@ pub enum ListGraphqlApisErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGraphqlApisError {
@@ -3486,18 +3486,18 @@ impl ListGraphqlApisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGraphqlApisErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListGraphqlApisErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListGraphqlApisErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListGraphqlApisErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListGraphqlApisErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGraphqlApisErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListGraphqlApisErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListGraphqlApisErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3539,7 +3539,7 @@ pub enum ListResolversErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolversError {
@@ -3605,22 +3605,22 @@ impl ListResolversError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolversErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListResolversErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListResolversErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListResolversErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListResolversErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolversErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolversErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListResolversErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListResolversErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListResolversErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListResolversErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListResolversErrorKind::UnauthorizedException(_))
     }
@@ -3660,7 +3660,7 @@ pub enum ListResolversByFunctionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolversByFunctionError {
@@ -3726,28 +3726,28 @@ impl ListResolversByFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolversByFunctionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListResolversByFunctionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolversByFunctionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolversByFunctionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListResolversByFunctionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolversByFunctionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolversByFunctionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListResolversByFunctionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolversByFunctionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolversByFunctionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListResolversByFunctionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3794,7 +3794,7 @@ pub enum ListTagsForResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3862,42 +3862,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3945,7 +3945,7 @@ pub enum ListTypesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypesError {
@@ -4012,26 +4012,26 @@ impl ListTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTypesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTypesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListTypesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListTypesErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `ListTypesErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypesErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTypesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, ListTypesErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `ListTypesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTypesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTypesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListTypesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListTypesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListTypesErrorKind::UnauthorizedException(_))
     }
@@ -4075,7 +4075,7 @@ pub enum StartSchemaCreationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSchemaCreationError {
@@ -4142,35 +4142,35 @@ impl StartSchemaCreationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSchemaCreationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartSchemaCreationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaCreationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaCreationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `StartSchemaCreationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaCreationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaCreationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartSchemaCreationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaCreationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaCreationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartSchemaCreationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSchemaCreationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartSchemaCreationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `StartSchemaCreationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4218,7 +4218,7 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -4286,30 +4286,30 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::UnauthorizedException(_))
     }
@@ -4355,7 +4355,7 @@ pub enum UntagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4423,33 +4423,33 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::UnauthorizedException(_))
     }
@@ -4494,7 +4494,7 @@ pub enum UpdateApiCacheErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApiCacheError {
@@ -4561,29 +4561,29 @@ impl UpdateApiCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApiCacheErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApiCacheErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiCacheErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateApiCacheErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateApiCacheErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApiCacheErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApiCacheErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateApiCacheErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApiCacheErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApiCacheErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApiCacheErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiCacheErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateApiCacheErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateApiCacheErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4632,7 +4632,7 @@ pub enum UpdateApiKeyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApiKeyError {
@@ -4700,33 +4700,33 @@ impl UpdateApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException`.
+    /// Returns `true` if the error kind is `UpdateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException`.
     pub fn is_api_key_validity_out_of_bounds_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApiKeyErrorKind::ApiKeyValidityOutOfBoundsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApiKeyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApiKeyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiKeyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateApiKeyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateApiKeyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApiKeyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApiKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateApiKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiKeyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateApiKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApiKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiKeyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateApiKeyErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateApiKeyErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiKeyErrorKind::UnauthorizedException(_))
     }
@@ -4771,7 +4771,7 @@ pub enum UpdateDataSourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataSourceError {
@@ -4838,32 +4838,32 @@ impl UpdateDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateDataSourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4907,7 +4907,7 @@ pub enum UpdateFunctionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionError {
@@ -4973,25 +4973,25 @@ impl UpdateFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFunctionErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateFunctionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateFunctionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateFunctionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5039,7 +5039,7 @@ pub enum UpdateGraphqlApiErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGraphqlApiError {
@@ -5107,39 +5107,39 @@ impl UpdateGraphqlApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGraphqlApiErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateGraphqlApiErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGraphqlApiErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGraphqlApiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateGraphqlApiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGraphqlApiErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGraphqlApiErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateGraphqlApiErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGraphqlApiErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGraphqlApiErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateGraphqlApiErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGraphqlApiErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGraphqlApiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGraphqlApiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateGraphqlApiErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateGraphqlApiErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateGraphqlApiErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5184,7 +5184,7 @@ pub enum UpdateResolverErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResolverError {
@@ -5250,25 +5250,25 @@ impl UpdateResolverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResolverErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateResolverErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateResolverErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResolverErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateResolverErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateResolverErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateResolverErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5314,7 +5314,7 @@ pub enum UpdateTypeErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTypeError {
@@ -5381,26 +5381,26 @@ impl UpdateTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateTypeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateTypeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateTypeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateTypeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, UpdateTypeErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `UpdateTypeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTypeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateTypeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateTypeErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateTypeErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, UpdateTypeErrorKind::UnauthorizedException(_))
     }

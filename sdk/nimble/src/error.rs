@@ -12,21 +12,24 @@ pub struct AcceptEulasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptEulasErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptEulasError {
@@ -48,7 +51,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for AcceptEulasError {
         AcceptEulasError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            AcceptEulasErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            AcceptEulasErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl AcceptEulasError {
@@ -95,40 +104,40 @@ impl AcceptEulasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptEulasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AcceptEulasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AcceptEulasErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AcceptEulasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AcceptEulasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, AcceptEulasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `AcceptEulasErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AcceptEulasErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptEulasErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptEulasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AcceptEulasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptEulasErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptEulasErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `AcceptEulasErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptEulasErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptEulasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AcceptEulasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, AcceptEulasErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `AcceptEulasErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AcceptEulasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AcceptEulasErrorKind::ValidationException(_))
     }
@@ -161,21 +170,24 @@ pub struct CreateLaunchProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLaunchProfileErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLaunchProfileError {
@@ -197,7 +209,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateLaunchProfileError {
         CreateLaunchProfileError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            CreateLaunchProfileErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CreateLaunchProfileErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl CreateLaunchProfileError {
@@ -244,49 +264,49 @@ impl CreateLaunchProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLaunchProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLaunchProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLaunchProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLaunchProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateLaunchProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLaunchProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLaunchProfileErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateLaunchProfileErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLaunchProfileErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLaunchProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLaunchProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLaunchProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLaunchProfileErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateLaunchProfileErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLaunchProfileErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLaunchProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateLaunchProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLaunchProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLaunchProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateLaunchProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -322,21 +342,24 @@ pub struct CreateStreamingImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamingImageErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamingImageError {
@@ -358,7 +381,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateStreamingImageError {
         CreateStreamingImageError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            CreateStreamingImageErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CreateStreamingImageErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl CreateStreamingImageError {
@@ -405,49 +436,49 @@ impl CreateStreamingImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamingImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateStreamingImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingImageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateStreamingImageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingImageErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingImageErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateStreamingImageErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingImageErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStreamingImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingImageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingImageErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamingImageErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingImageErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingImageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateStreamingImageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingImageErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingImageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateStreamingImageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -483,21 +514,24 @@ pub struct CreateStreamingSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamingSessionErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamingSessionError {
@@ -519,7 +553,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateStreamingSessionError {
         CreateStreamingSessionError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            CreateStreamingSessionErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CreateStreamingSessionErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl CreateStreamingSessionError {
@@ -566,49 +608,49 @@ impl CreateStreamingSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamingSessionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -644,21 +686,24 @@ pub struct CreateStreamingSessionStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamingSessionStreamErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamingSessionStreamError {
@@ -686,7 +731,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateStreamingSessionStreamE
         CreateStreamingSessionStreamError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            CreateStreamingSessionStreamErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CreateStreamingSessionStreamErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl CreateStreamingSessionStreamError {
@@ -733,49 +786,49 @@ impl CreateStreamingSessionStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamingSessionStreamErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionStreamErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionStreamErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionStreamErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionStreamErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionStreamErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionStreamErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionStreamErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionStreamErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionStreamErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionStreamErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionStreamErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionStreamErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionStreamErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingSessionStreamErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingSessionStreamErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateStreamingSessionStreamErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -817,21 +870,24 @@ pub struct CreateStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStudioErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStudioError {
@@ -853,7 +909,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateStudioError {
         CreateStudioError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            CreateStudioErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CreateStudioErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl CreateStudioError {
@@ -900,40 +962,40 @@ impl CreateStudioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateStudioErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateStudioErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateStudioErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateStudioErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateStudioErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateStudioErrorKind::ValidationException(_))
     }
@@ -966,21 +1028,24 @@ pub struct CreateStudioComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStudioComponentErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStudioComponentError {
@@ -1002,7 +1067,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateStudioComponentError {
         CreateStudioComponentError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            CreateStudioComponentErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            CreateStudioComponentErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl CreateStudioComponentError {
@@ -1049,49 +1122,49 @@ impl CreateStudioComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStudioComponentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateStudioComponentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioComponentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioComponentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateStudioComponentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioComponentErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioComponentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateStudioComponentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioComponentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStudioComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioComponentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateStudioComponentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioComponentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioComponentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateStudioComponentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStudioComponentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStudioComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateStudioComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1127,21 +1200,24 @@ pub struct DeleteLaunchProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLaunchProfileErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLaunchProfileError {
@@ -1163,7 +1239,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLaunchProfileError {
         DeleteLaunchProfileError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            DeleteLaunchProfileErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteLaunchProfileErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl DeleteLaunchProfileError {
@@ -1210,49 +1294,49 @@ impl DeleteLaunchProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1288,21 +1372,24 @@ pub struct DeleteLaunchProfileMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLaunchProfileMemberErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLaunchProfileMemberError {
@@ -1328,7 +1415,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLaunchProfileMemberErro
         DeleteLaunchProfileMemberError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            DeleteLaunchProfileMemberErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteLaunchProfileMemberErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl DeleteLaunchProfileMemberError {
@@ -1375,49 +1470,49 @@ impl DeleteLaunchProfileMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileMemberErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileMemberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileMemberErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileMemberErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileMemberErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileMemberErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileMemberErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileMemberErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileMemberErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileMemberErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileMemberErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileMemberErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileMemberErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileMemberErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileMemberErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileMemberErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileMemberErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLaunchProfileMemberErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLaunchProfileMemberErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteLaunchProfileMemberErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1457,21 +1552,24 @@ pub struct DeleteStreamingImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamingImageErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStreamingImageError {
@@ -1493,7 +1591,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteStreamingImageError {
         DeleteStreamingImageError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            DeleteStreamingImageErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteStreamingImageErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl DeleteStreamingImageError {
@@ -1540,49 +1646,49 @@ impl DeleteStreamingImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStreamingImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteStreamingImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingImageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteStreamingImageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingImageErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingImageErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteStreamingImageErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingImageErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStreamingImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingImageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingImageErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteStreamingImageErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingImageErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingImageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteStreamingImageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingImageErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingImageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteStreamingImageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1618,21 +1724,24 @@ pub struct DeleteStreamingSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamingSessionErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStreamingSessionError {
@@ -1654,7 +1763,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteStreamingSessionError {
         DeleteStreamingSessionError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            DeleteStreamingSessionErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteStreamingSessionErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl DeleteStreamingSessionError {
@@ -1701,49 +1818,49 @@ impl DeleteStreamingSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStreamingSessionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteStreamingSessionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingSessionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteStreamingSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingSessionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingSessionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteStreamingSessionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingSessionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStreamingSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingSessionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteStreamingSessionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingSessionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingSessionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteStreamingSessionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamingSessionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamingSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteStreamingSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1779,21 +1896,24 @@ pub struct DeleteStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStudioError {
@@ -1815,7 +1935,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteStudioError {
         DeleteStudioError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            DeleteStudioErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteStudioErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl DeleteStudioError {
@@ -1862,40 +1988,40 @@ impl DeleteStudioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteStudioErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteStudioErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteStudioErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteStudioErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteStudioErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteStudioErrorKind::ValidationException(_))
     }
@@ -1928,21 +2054,24 @@ pub struct DeleteStudioComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioComponentErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStudioComponentError {
@@ -1964,7 +2093,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteStudioComponentError {
         DeleteStudioComponentError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            DeleteStudioComponentErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteStudioComponentErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl DeleteStudioComponentError {
@@ -2011,49 +2148,49 @@ impl DeleteStudioComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStudioComponentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteStudioComponentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioComponentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioComponentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteStudioComponentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioComponentErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioComponentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteStudioComponentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioComponentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStudioComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioComponentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteStudioComponentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioComponentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioComponentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteStudioComponentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioComponentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteStudioComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2089,21 +2226,24 @@ pub struct DeleteStudioMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioMemberErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStudioMemberError {
@@ -2125,7 +2265,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteStudioMemberError {
         DeleteStudioMemberError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            DeleteStudioMemberErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            DeleteStudioMemberErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl DeleteStudioMemberError {
@@ -2172,49 +2320,49 @@ impl DeleteStudioMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStudioMemberErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteStudioMemberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioMemberErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioMemberErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteStudioMemberErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioMemberErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioMemberErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteStudioMemberErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioMemberErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioMemberErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStudioMemberErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioMemberErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioMemberErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `DeleteStudioMemberErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioMemberErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioMemberErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteStudioMemberErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStudioMemberErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStudioMemberErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteStudioMemberErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2250,21 +2398,24 @@ pub struct GetEulaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEulaErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEulaError {
@@ -2286,7 +2437,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetEulaError {
         GetEulaError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetEulaErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetEulaErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl GetEulaError {
@@ -2333,37 +2490,37 @@ impl GetEulaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEulaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEulaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetEulaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetEulaErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetEulaErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetEulaErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetEulaErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetEulaErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEulaErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetEulaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEulaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetEulaErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetEulaErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetEulaErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEulaErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetEulaErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetEulaErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetEulaErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetEulaErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetEulaErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetEulaErrorKind::ValidationException(_))
     }
@@ -2396,21 +2553,24 @@ pub struct GetLaunchProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchProfileErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLaunchProfileError {
@@ -2432,7 +2592,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLaunchProfileError {
         GetLaunchProfileError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetLaunchProfileErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetLaunchProfileErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetLaunchProfileError {
@@ -2479,46 +2647,46 @@ impl GetLaunchProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLaunchProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetLaunchProfileErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetLaunchProfileErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2554,21 +2722,24 @@ pub struct GetLaunchProfileDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchProfileDetailsErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLaunchProfileDetailsError {
@@ -2592,7 +2763,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLaunchProfileDetailsError 
         GetLaunchProfileDetailsError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetLaunchProfileDetailsErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetLaunchProfileDetailsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetLaunchProfileDetailsError {
@@ -2639,49 +2818,49 @@ impl GetLaunchProfileDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLaunchProfileDetailsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileDetailsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileDetailsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileDetailsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileDetailsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileDetailsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileDetailsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileDetailsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileDetailsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileDetailsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileDetailsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileDetailsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileDetailsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileDetailsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileDetailsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileDetailsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileDetailsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileDetailsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileDetailsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileDetailsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2717,21 +2896,24 @@ pub struct GetLaunchProfileInitializationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchProfileInitializationErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLaunchProfileInitializationError {
@@ -2759,7 +2941,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLaunchProfileInitializatio
         GetLaunchProfileInitializationError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetLaunchProfileInitializationErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetLaunchProfileInitializationErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetLaunchProfileInitializationError {
@@ -2809,49 +2999,49 @@ impl GetLaunchProfileInitializationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLaunchProfileInitializationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileInitializationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileInitializationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileInitializationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileInitializationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileInitializationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileInitializationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileInitializationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileInitializationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileInitializationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileInitializationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileInitializationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileInitializationErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileInitializationErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileInitializationErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileInitializationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileInitializationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileInitializationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileInitializationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileInitializationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2893,21 +3083,24 @@ pub struct GetLaunchProfileMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchProfileMemberErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLaunchProfileMemberError {
@@ -2929,7 +3122,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLaunchProfileMemberError {
         GetLaunchProfileMemberError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetLaunchProfileMemberErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetLaunchProfileMemberErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetLaunchProfileMemberError {
@@ -2976,49 +3177,49 @@ impl GetLaunchProfileMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLaunchProfileMemberErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileMemberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileMemberErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileMemberErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileMemberErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileMemberErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileMemberErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileMemberErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileMemberErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileMemberErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileMemberErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileMemberErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileMemberErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileMemberErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileMemberErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileMemberErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileMemberErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchProfileMemberErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchProfileMemberErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLaunchProfileMemberErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3054,21 +3255,24 @@ pub struct GetStreamingImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamingImageErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStreamingImageError {
@@ -3090,7 +3294,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetStreamingImageError {
         GetStreamingImageError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetStreamingImageErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetStreamingImageErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetStreamingImageError {
@@ -3137,46 +3349,46 @@ impl GetStreamingImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStreamingImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStreamingImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingImageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetStreamingImageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetStreamingImageErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetStreamingImageErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetStreamingImageErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingImageErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStreamingImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingImageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingImageErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetStreamingImageErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingImageErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingImageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetStreamingImageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingImageErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingImageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStreamingImageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3212,21 +3424,24 @@ pub struct GetStreamingSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamingSessionErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStreamingSessionError {
@@ -3248,7 +3463,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetStreamingSessionError {
         GetStreamingSessionError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetStreamingSessionErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetStreamingSessionErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetStreamingSessionError {
@@ -3295,49 +3518,49 @@ impl GetStreamingSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStreamingSessionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3373,21 +3596,24 @@ pub struct GetStreamingSessionStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamingSessionStreamErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStreamingSessionStreamError {
@@ -3413,7 +3639,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetStreamingSessionStreamErro
         GetStreamingSessionStreamError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetStreamingSessionStreamErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetStreamingSessionStreamErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetStreamingSessionStreamError {
@@ -3460,49 +3694,49 @@ impl GetStreamingSessionStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStreamingSessionStreamErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionStreamErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionStreamErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionStreamErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionStreamErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionStreamErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionStreamErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionStreamErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionStreamErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionStreamErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionStreamErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionStreamErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionStreamErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionStreamErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStreamingSessionStreamErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetStreamingSessionStreamErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStreamingSessionStreamErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3542,21 +3776,24 @@ pub struct GetStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStudioErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStudioError {
@@ -3578,7 +3815,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetStudioError {
         GetStudioError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetStudioErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetStudioErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl GetStudioError {
@@ -3625,37 +3868,37 @@ impl GetStudioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStudioErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStudioErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetStudioErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetStudioErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetStudioErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetStudioErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetStudioErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetStudioErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStudioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetStudioErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetStudioErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetStudioErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetStudioErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetStudioErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetStudioErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStudioErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetStudioErrorKind::ValidationException(_))
     }
@@ -3688,21 +3931,24 @@ pub struct GetStudioComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStudioComponentErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStudioComponentError {
@@ -3724,7 +3970,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetStudioComponentError {
         GetStudioComponentError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetStudioComponentErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetStudioComponentErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetStudioComponentError {
@@ -3771,49 +4025,49 @@ impl GetStudioComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStudioComponentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStudioComponentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioComponentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioComponentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetStudioComponentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioComponentErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioComponentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetStudioComponentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioComponentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStudioComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioComponentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetStudioComponentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioComponentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioComponentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetStudioComponentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioComponentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStudioComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3849,21 +4103,24 @@ pub struct GetStudioMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStudioMemberErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStudioMemberError {
@@ -3885,7 +4142,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetStudioMemberError {
         GetStudioMemberError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            GetStudioMemberErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetStudioMemberErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl GetStudioMemberError {
@@ -3932,43 +4197,43 @@ impl GetStudioMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStudioMemberErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStudioMemberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioMemberErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioMemberErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetStudioMemberErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetStudioMemberErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetStudioMemberErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetStudioMemberErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioMemberErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioMemberErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStudioMemberErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioMemberErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioMemberErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetStudioMemberErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStudioMemberErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetStudioMemberErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetStudioMemberErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetStudioMemberErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetStudioMemberErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStudioMemberErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetStudioMemberErrorKind::ValidationException(_))
     }
@@ -4001,21 +4266,24 @@ pub struct ListEulaAcceptancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEulaAcceptancesErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEulaAcceptancesError {
@@ -4037,7 +4305,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListEulaAcceptancesError {
         ListEulaAcceptancesError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListEulaAcceptancesErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListEulaAcceptancesErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl ListEulaAcceptancesError {
@@ -4084,49 +4360,49 @@ impl ListEulaAcceptancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEulaAcceptancesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEulaAcceptancesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEulaAcceptancesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListEulaAcceptancesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListEulaAcceptancesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEulaAcceptancesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListEulaAcceptancesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListEulaAcceptancesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEulaAcceptancesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListEulaAcceptancesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListEulaAcceptancesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEulaAcceptancesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListEulaAcceptancesErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListEulaAcceptancesErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEulaAcceptancesErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListEulaAcceptancesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListEulaAcceptancesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEulaAcceptancesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListEulaAcceptancesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEulaAcceptancesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4162,21 +4438,24 @@ pub struct ListEulasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEulasErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEulasError {
@@ -4198,7 +4477,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListEulasError {
         ListEulasError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListEulasErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListEulasErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl ListEulasError {
@@ -4245,37 +4530,37 @@ impl ListEulasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEulasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEulasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListEulasErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListEulasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListEulasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListEulasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListEulasErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListEulasErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEulasErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListEulasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListEulasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListEulasErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListEulasErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListEulasErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEulasErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListEulasErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListEulasErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListEulasErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListEulasErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEulasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListEulasErrorKind::ValidationException(_))
     }
@@ -4308,21 +4593,24 @@ pub struct ListLaunchProfileMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLaunchProfileMembersErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLaunchProfileMembersError {
@@ -4348,7 +4636,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLaunchProfileMembersError
         ListLaunchProfileMembersError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListLaunchProfileMembersErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListLaunchProfileMembersErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl ListLaunchProfileMembersError {
@@ -4395,49 +4691,49 @@ impl ListLaunchProfileMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLaunchProfileMembersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListLaunchProfileMembersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfileMembersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfileMembersErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListLaunchProfileMembersErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfileMembersErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfileMembersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListLaunchProfileMembersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfileMembersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfileMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListLaunchProfileMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfileMembersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfileMembersErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListLaunchProfileMembersErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfileMembersErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfileMembersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListLaunchProfileMembersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfileMembersErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfileMembersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListLaunchProfileMembersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4475,21 +4771,24 @@ pub struct ListLaunchProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLaunchProfilesErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLaunchProfilesError {
@@ -4511,7 +4810,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLaunchProfilesError {
         ListLaunchProfilesError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListLaunchProfilesErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListLaunchProfilesErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl ListLaunchProfilesError {
@@ -4558,49 +4865,49 @@ impl ListLaunchProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLaunchProfilesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListLaunchProfilesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfilesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfilesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListLaunchProfilesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfilesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfilesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListLaunchProfilesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfilesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfilesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListLaunchProfilesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfilesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfilesErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListLaunchProfilesErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfilesErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfilesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListLaunchProfilesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLaunchProfilesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListLaunchProfilesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListLaunchProfilesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4636,21 +4943,24 @@ pub struct ListStreamingImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamingImagesErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamingImagesError {
@@ -4672,7 +4982,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListStreamingImagesError {
         ListStreamingImagesError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListStreamingImagesErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListStreamingImagesErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl ListStreamingImagesError {
@@ -4719,49 +5037,49 @@ impl ListStreamingImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamingImagesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListStreamingImagesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingImagesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingImagesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListStreamingImagesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingImagesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingImagesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListStreamingImagesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingImagesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingImagesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStreamingImagesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingImagesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingImagesErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListStreamingImagesErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingImagesErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingImagesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListStreamingImagesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingImagesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingImagesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListStreamingImagesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4797,21 +5115,24 @@ pub struct ListStreamingSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamingSessionsErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamingSessionsError {
@@ -4833,7 +5154,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListStreamingSessionsError {
         ListStreamingSessionsError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListStreamingSessionsErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListStreamingSessionsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl ListStreamingSessionsError {
@@ -4880,49 +5209,49 @@ impl ListStreamingSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamingSessionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListStreamingSessionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingSessionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingSessionsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListStreamingSessionsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingSessionsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingSessionsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListStreamingSessionsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingSessionsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingSessionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStreamingSessionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingSessionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingSessionsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListStreamingSessionsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingSessionsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingSessionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListStreamingSessionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamingSessionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamingSessionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListStreamingSessionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4958,21 +5287,24 @@ pub struct ListStudioComponentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudioComponentsErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStudioComponentsError {
@@ -4994,7 +5326,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListStudioComponentsError {
         ListStudioComponentsError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListStudioComponentsErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListStudioComponentsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl ListStudioComponentsError {
@@ -5041,49 +5381,49 @@ impl ListStudioComponentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStudioComponentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListStudioComponentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioComponentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioComponentsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListStudioComponentsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioComponentsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioComponentsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListStudioComponentsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioComponentsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioComponentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStudioComponentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioComponentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioComponentsErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListStudioComponentsErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioComponentsErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioComponentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListStudioComponentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioComponentsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioComponentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListStudioComponentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5119,21 +5459,24 @@ pub struct ListStudioMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudioMembersErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStudioMembersError {
@@ -5155,7 +5498,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListStudioMembersError {
         ListStudioMembersError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListStudioMembersErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListStudioMembersErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl ListStudioMembersError {
@@ -5202,46 +5553,46 @@ impl ListStudioMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStudioMembersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListStudioMembersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioMembersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioMembersErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListStudioMembersErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListStudioMembersErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListStudioMembersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListStudioMembersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioMembersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStudioMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioMembersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioMembersErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListStudioMembersErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioMembersErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioMembersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListStudioMembersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudioMembersErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudioMembersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListStudioMembersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5277,21 +5628,24 @@ pub struct ListStudiosError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudiosErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStudiosError {
@@ -5313,7 +5667,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListStudiosError {
         ListStudiosError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListStudiosErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListStudiosErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl ListStudiosError {
@@ -5360,40 +5720,40 @@ impl ListStudiosError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListStudiosErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListStudiosErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudiosErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudiosErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStudiosErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListStudiosErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListStudiosErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListStudiosErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListStudiosErrorKind::ValidationException(_))
     }
@@ -5426,21 +5786,24 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -5462,7 +5825,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
         ListTagsForResourceError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            ListTagsForResourceErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl ListTagsForResourceError {
@@ -5509,49 +5880,49 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5587,21 +5958,24 @@ pub struct PutLaunchProfileMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLaunchProfileMembersErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLaunchProfileMembersError {
@@ -5625,7 +5999,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutLaunchProfileMembersError 
         PutLaunchProfileMembersError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            PutLaunchProfileMembersErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            PutLaunchProfileMembersErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl PutLaunchProfileMembersError {
@@ -5672,49 +6054,49 @@ impl PutLaunchProfileMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLaunchProfileMembersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutLaunchProfileMembersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLaunchProfileMembersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutLaunchProfileMembersErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutLaunchProfileMembersErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLaunchProfileMembersErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutLaunchProfileMembersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutLaunchProfileMembersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLaunchProfileMembersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutLaunchProfileMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutLaunchProfileMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLaunchProfileMembersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutLaunchProfileMembersErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `PutLaunchProfileMembersErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLaunchProfileMembersErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutLaunchProfileMembersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutLaunchProfileMembersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLaunchProfileMembersErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutLaunchProfileMembersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutLaunchProfileMembersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5750,21 +6132,24 @@ pub struct PutStudioMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutStudioMembersErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutStudioMembersError {
@@ -5786,7 +6171,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutStudioMembersError {
         PutStudioMembersError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            PutStudioMembersErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            PutStudioMembersErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl PutStudioMembersError {
@@ -5833,46 +6226,46 @@ impl PutStudioMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutStudioMembersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutStudioMembersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStudioMembersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutStudioMembersErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutStudioMembersErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutStudioMembersErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutStudioMembersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutStudioMembersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStudioMembersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutStudioMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutStudioMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStudioMembersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutStudioMembersErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `PutStudioMembersErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStudioMembersErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutStudioMembersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutStudioMembersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStudioMembersErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutStudioMembersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutStudioMembersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5895,6 +6288,178 @@ impl std::error::Error for PutStudioMembersError {
     }
 }
 
+/// Error type for the `StartStreamingSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartStreamingSessionError {
+    /// Kind of error that occurred.
+    pub kind: StartStreamingSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartStreamingSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartStreamingSessionErrorKind {
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Another operation is in progress. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request throughput limit was exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the parameters in the request is invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartStreamingSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartStreamingSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartStreamingSessionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StartStreamingSessionErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            StartStreamingSessionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartStreamingSessionErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            StartStreamingSessionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartStreamingSessionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            StartStreamingSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartStreamingSessionError {
+    fn code(&self) -> Option<&str> {
+        StartStreamingSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            StartStreamingSessionErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            StartStreamingSessionErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl StartStreamingSessionError {
+    /// Creates a new `StartStreamingSessionError`.
+    pub fn new(kind: StartStreamingSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartStreamingSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartStreamingSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartStreamingSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartStreamingSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartStreamingSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamingSessionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartStreamingSessionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamingSessionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartStreamingSessionErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamingSessionErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartStreamingSessionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamingSessionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartStreamingSessionErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamingSessionErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartStreamingSessionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamingSessionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartStreamingSessionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamingSessionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StartStreamingSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartStreamingSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartStreamingSessionErrorKind::ConflictException(_inner) => Some(_inner),
+            StartStreamingSessionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            StartStreamingSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartStreamingSessionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            StartStreamingSessionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartStreamingSessionErrorKind::ValidationException(_inner) => Some(_inner),
+            StartStreamingSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartStudioSSOConfigurationRepair` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5908,21 +6473,24 @@ pub struct StartStudioSSOConfigurationRepairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartStudioSSOConfigurationRepairErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartStudioSSOConfigurationRepairError {
@@ -5956,7 +6524,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartStudioSSOConfigurationRe
         StartStudioSSOConfigurationRepairError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            StartStudioSSOConfigurationRepairErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            StartStudioSSOConfigurationRepairErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl StartStudioSSOConfigurationRepairError {
@@ -6006,49 +6582,49 @@ impl StartStudioSSOConfigurationRepairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartStudioSSOConfigurationRepairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartStudioSSOConfigurationRepairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStudioSSOConfigurationRepairErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStudioSSOConfigurationRepairErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartStudioSSOConfigurationRepairErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StartStudioSSOConfigurationRepairErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStudioSSOConfigurationRepairErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStudioSSOConfigurationRepairErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStudioSSOConfigurationRepairErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStudioSSOConfigurationRepairErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartStudioSSOConfigurationRepairErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6079,6 +6655,178 @@ impl std::error::Error for StartStudioSSOConfigurationRepairError {
     }
 }
 
+/// Error type for the `StopStreamingSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopStreamingSessionError {
+    /// Kind of error that occurred.
+    pub kind: StopStreamingSessionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StopStreamingSession` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopStreamingSessionErrorKind {
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Another operation is in progress. </p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An internal error has occurred. Please retry your request.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// <p>The specified resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request throughput limit was exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>One of the parameters in the request is invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopStreamingSessionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopStreamingSessionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StopStreamingSessionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            StopStreamingSessionErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            StopStreamingSessionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StopStreamingSessionErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            StopStreamingSessionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StopStreamingSessionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            StopStreamingSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopStreamingSessionError {
+    fn code(&self) -> Option<&str> {
+        StopStreamingSessionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            StopStreamingSessionErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            StopStreamingSessionErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl StopStreamingSessionError {
+    /// Creates a new `StopStreamingSessionError`.
+    pub fn new(kind: StopStreamingSessionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopStreamingSessionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopStreamingSessionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopStreamingSessionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopStreamingSessionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopStreamingSessionErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamingSessionErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopStreamingSessionErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamingSessionErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopStreamingSessionErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamingSessionErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopStreamingSessionErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamingSessionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopStreamingSessionErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamingSessionErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopStreamingSessionErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamingSessionErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopStreamingSessionErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamingSessionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StopStreamingSessionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopStreamingSessionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StopStreamingSessionErrorKind::ConflictException(_inner) => Some(_inner),
+            StopStreamingSessionErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            StopStreamingSessionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StopStreamingSessionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            StopStreamingSessionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StopStreamingSessionErrorKind::ValidationException(_inner) => Some(_inner),
+            StopStreamingSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6092,21 +6840,24 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6128,7 +6879,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
         TagResourceError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            TagResourceErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            TagResourceErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl TagResourceError {
@@ -6175,40 +6932,40 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -6241,21 +6998,24 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -6277,7 +7037,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
         UntagResourceError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            UntagResourceErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UntagResourceErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl UntagResourceError {
@@ -6324,40 +7092,40 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -6390,21 +7158,24 @@ pub struct UpdateLaunchProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLaunchProfileErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLaunchProfileError {
@@ -6426,7 +7197,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateLaunchProfileError {
         UpdateLaunchProfileError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            UpdateLaunchProfileErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateLaunchProfileErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl UpdateLaunchProfileError {
@@ -6473,49 +7252,49 @@ impl UpdateLaunchProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6551,21 +7330,24 @@ pub struct UpdateLaunchProfileMemberError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLaunchProfileMemberErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLaunchProfileMemberError {
@@ -6591,7 +7373,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateLaunchProfileMemberErro
         UpdateLaunchProfileMemberError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            UpdateLaunchProfileMemberErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateLaunchProfileMemberErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl UpdateLaunchProfileMemberError {
@@ -6638,49 +7428,49 @@ impl UpdateLaunchProfileMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileMemberErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileMemberErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileMemberErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileMemberErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileMemberErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileMemberErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileMemberErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileMemberErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileMemberErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileMemberErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileMemberErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileMemberErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileMemberErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileMemberErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileMemberErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileMemberErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileMemberErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchProfileMemberErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchProfileMemberErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLaunchProfileMemberErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6720,21 +7510,24 @@ pub struct UpdateStreamingImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStreamingImageErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStreamingImageError {
@@ -6756,7 +7549,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateStreamingImageError {
         UpdateStreamingImageError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            UpdateStreamingImageErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateStreamingImageErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl UpdateStreamingImageError {
@@ -6803,49 +7604,49 @@ impl UpdateStreamingImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStreamingImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateStreamingImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingImageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateStreamingImageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingImageErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingImageErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateStreamingImageErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingImageErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStreamingImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingImageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingImageErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateStreamingImageErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingImageErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingImageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateStreamingImageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStreamingImageErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStreamingImageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateStreamingImageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6881,21 +7682,24 @@ pub struct UpdateStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStudioErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStudioError {
@@ -6917,7 +7721,13 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateStudioError {
         UpdateStudioError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            UpdateStudioErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateStudioErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
     }
 }
 impl UpdateStudioError {
@@ -6964,40 +7774,40 @@ impl UpdateStudioError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateStudioErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateStudioErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateStudioErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateStudioErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateStudioErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateStudioErrorKind::ValidationException(_))
     }
@@ -7030,21 +7840,24 @@ pub struct UpdateStudioComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStudioComponentErrorKind {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Another operation is in progress. </p>
     ConflictException(crate::error::ConflictException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>An internal error has occurred. Please retry your request.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.</p>
+    /// <p>Please use AWS Service Quotas to request an increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The request throughput limit was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>One of the parameters in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStudioComponentError {
@@ -7066,7 +7879,15 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateStudioComponentError {
         UpdateStudioComponentError::code(self)
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
-        None
+        match &self.kind {
+            UpdateStudioComponentErrorKind::InternalServerErrorException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateStudioComponentErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
     }
 }
 impl UpdateStudioComponentError {
@@ -7113,49 +7934,49 @@ impl UpdateStudioComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStudioComponentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateStudioComponentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioComponentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioComponentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateStudioComponentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioComponentErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioComponentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateStudioComponentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioComponentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStudioComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioComponentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateStudioComponentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioComponentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioComponentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateStudioComponentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStudioComponentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStudioComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateStudioComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7178,7 +7999,7 @@ impl std::error::Error for UpdateStudioComponentError {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>One of the parameters in the request is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -7290,7 +8111,7 @@ impl ValidationException {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The request throughput limit was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -7312,6 +8133,10 @@ impl std::fmt::Debug for ThrottlingException {
     }
 }
 impl ThrottlingException {
+    /// Returns `Some(ErrorKind)` if the error is retryable. Otherwise, returns `None`.
+    pub fn retryable_error_kind(&self) -> aws_smithy_types::retry::ErrorKind {
+        aws_smithy_types::retry::ErrorKind::ClientError
+    }
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
@@ -7402,7 +8227,9 @@ impl ThrottlingException {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Your current quota does not allow you to perform the request action. You can request
+/// increases for some quotas, and other quotas cannot be increased.</p>
+/// <p>Please use AWS Service Quotas to request an increase. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -7514,7 +8341,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The specified resource could not be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -7626,7 +8453,7 @@ impl ResourceNotFoundException {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>An internal error has occurred. Please retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
@@ -7648,6 +8475,10 @@ impl std::fmt::Debug for InternalServerErrorException {
     }
 }
 impl InternalServerErrorException {
+    /// Returns `Some(ErrorKind)` if the error is retryable. Otherwise, returns `None`.
+    pub fn retryable_error_kind(&self) -> aws_smithy_types::retry::ErrorKind {
+        aws_smithy_types::retry::ErrorKind::ServerError
+    }
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
@@ -7738,7 +8569,7 @@ impl InternalServerErrorException {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Another operation is in progress. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -7850,7 +8681,8 @@ impl ConflictException {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>You are not authorized to perform this operation. Check your IAM policies, and ensure
+/// that you are using the correct access keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

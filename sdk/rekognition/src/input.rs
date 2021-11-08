@@ -124,7 +124,7 @@ pub type CompareFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CompareFacesInput {
     /// Consumes the builder and constructs an Operation<[`CompareFaces`](crate::operation::CompareFaces)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -156,6 +156,7 @@ impl CompareFacesInput {
             input: &crate::input::CompareFacesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -217,9 +218,10 @@ impl CompareFacesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -310,7 +312,7 @@ pub type CreateCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreateCollectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateCollection`](crate::operation::CreateCollection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -342,6 +344,7 @@ impl CreateCollectionInput {
             input: &crate::input::CreateCollectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -404,9 +407,10 @@ impl CreateCollectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -419,6 +423,208 @@ impl CreateCollectionInput {
     /// Creates a new builder-style object to manufacture [`CreateCollectionInput`](crate::input::CreateCollectionInput)
     pub fn builder() -> crate::input::create_collection_input::Builder {
         crate::input::create_collection_input::Builder::default()
+    }
+}
+
+/// See [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+pub mod create_dataset_input {
+    /// A builder for [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_source: std::option::Option<crate::model::DatasetSource>,
+        pub(crate) dataset_type: std::option::Option<crate::model::DatasetType>,
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
+        /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
+        /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
+        ///
+        /// </p>
+        pub fn dataset_source(mut self, input: crate::model::DatasetSource) -> Self {
+            self.dataset_source = Some(input);
+            self
+        }
+        /// <p>
+        /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
+        /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
+        /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
+        ///
+        /// </p>
+        pub fn set_dataset_source(
+            mut self,
+            input: std::option::Option<crate::model::DatasetSource>,
+        ) -> Self {
+            self.dataset_source = input;
+            self
+        }
+        /// <p>
+        /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
+        /// to create a test dataset.
+        /// </p>
+        pub fn dataset_type(mut self, input: crate::model::DatasetType) -> Self {
+            self.dataset_type = Some(input);
+            self
+        }
+        /// <p>
+        /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
+        /// to create a test dataset.
+        /// </p>
+        pub fn set_dataset_type(
+            mut self,
+            input: std::option::Option<crate::model::DatasetType>,
+        ) -> Self {
+            self.dataset_type = input;
+            self
+        }
+        /// <p>
+        /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
+        /// </p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        /// <p>
+        /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
+        /// </p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateDatasetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateDatasetInput {
+                dataset_source: self.dataset_source,
+                dataset_type: self.dataset_type,
+                project_arn: self.project_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
+#[doc(hidden)]
+pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateDatasetInput {
+    /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateDataset,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateDatasetInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateDatasetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateDatasetInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.CreateDataset",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateDataset",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+    pub fn builder() -> crate::input::create_dataset_input::Builder {
+        crate::input::create_dataset_input::Builder::default()
     }
 }
 
@@ -461,7 +667,7 @@ pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -493,6 +699,7 @@ impl CreateProjectInput {
             input: &crate::input::CreateProjectInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -554,9 +761,10 @@ impl CreateProjectInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -628,12 +836,18 @@ pub mod create_project_version_input {
             self.output_config = input;
             self
         }
-        /// <p>The dataset to use for training. </p>
+        /// <p>Specifies an external manifest that the services uses to train the model.
+        /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
+        /// The project must not have any associated datasets.
+        /// </p>
         pub fn training_data(mut self, input: crate::model::TrainingData) -> Self {
             self.training_data = Some(input);
             self
         }
-        /// <p>The dataset to use for training. </p>
+        /// <p>Specifies an external manifest that the services uses to train the model.
+        /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
+        /// The project must not have any associated datasets.
+        /// </p>
         pub fn set_training_data(
             mut self,
             input: std::option::Option<crate::model::TrainingData>,
@@ -641,12 +855,16 @@ pub mod create_project_version_input {
             self.training_data = input;
             self
         }
-        /// <p>The dataset to use for testing.</p>
+        /// <p>Specifies an external manifest that the service uses to test the model.
+        /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
+        /// The project must not have any associated datasets.</p>
         pub fn testing_data(mut self, input: crate::model::TestingData) -> Self {
             self.testing_data = Some(input);
             self
         }
-        /// <p>The dataset to use for testing.</p>
+        /// <p>Specifies an external manifest that the service uses to test the model.
+        /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
+        /// The project must not have any associated datasets.</p>
         pub fn set_testing_data(
             mut self,
             input: std::option::Option<crate::model::TestingData>,
@@ -683,13 +901,13 @@ pub mod create_project_version_input {
             self.tags = input;
             self
         }
-        /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-        /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK,
-        /// an alias for your CMK, or an alias ARN.
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
+        /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
+        /// an alias for your KMS key, or an alias ARN.
         /// The key is used to encrypt training and test images copied into the service for model training.
         /// Your source images are unaffected. The key is also used to encrypt training results
         /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-        /// <p>If you choose to use your own CMK, you need the following permissions on the CMK.</p>
+        /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
         /// <ul>
         /// <li>
         /// <p>kms:CreateGrant</p>
@@ -710,13 +928,13 @@ pub mod create_project_version_input {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-        /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK,
-        /// an alias for your CMK, or an alias ARN.
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
+        /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
+        /// an alias for your KMS key, or an alias ARN.
         /// The key is used to encrypt training and test images copied into the service for model training.
         /// Your source images are unaffected. The key is also used to encrypt training results
         /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-        /// <p>If you choose to use your own CMK, you need the following permissions on the CMK.</p>
+        /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
         /// <ul>
         /// <li>
         /// <p>kms:CreateGrant</p>
@@ -763,7 +981,7 @@ pub type CreateProjectVersionInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl CreateProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateProjectVersion`](crate::operation::CreateProjectVersion)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -795,6 +1013,7 @@ impl CreateProjectVersionInput {
             input: &crate::input::CreateProjectVersionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -857,9 +1076,10 @@ impl CreateProjectVersionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1012,7 +1232,7 @@ pub type CreateStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CreateStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamProcessor`](crate::operation::CreateStreamProcessor)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1044,6 +1264,7 @@ impl CreateStreamProcessorInput {
             input: &crate::input::CreateStreamProcessorInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1108,9 +1329,10 @@ impl CreateStreamProcessorInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1168,7 +1390,7 @@ pub type DeleteCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeleteCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCollection`](crate::operation::DeleteCollection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1200,6 +1422,7 @@ impl DeleteCollectionInput {
             input: &crate::input::DeleteCollectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1262,9 +1485,10 @@ impl DeleteCollectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1277,6 +1501,162 @@ impl DeleteCollectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteCollectionInput`](crate::input::DeleteCollectionInput)
     pub fn builder() -> crate::input::delete_collection_input::Builder {
         crate::input::delete_collection_input::Builder::default()
+    }
+}
+
+/// See [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+pub mod delete_dataset_input {
+    /// A builder for [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
+        /// </p>
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_arn = Some(input.into());
+            self
+        }
+        /// <p>
+        /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteDatasetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteDatasetInput {
+                dataset_arn: self.dataset_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
+#[doc(hidden)]
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteDatasetInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteDataset,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteDatasetInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteDatasetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteDatasetInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.DeleteDataset",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDataset",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+    pub fn builder() -> crate::input::delete_dataset_input::Builder {
+        crate::input::delete_dataset_input::Builder::default()
     }
 }
 
@@ -1343,7 +1723,7 @@ pub type DeleteFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteFacesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFaces`](crate::operation::DeleteFaces)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1375,6 +1755,7 @@ impl DeleteFacesInput {
             input: &crate::input::DeleteFacesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1436,9 +1817,10 @@ impl DeleteFacesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1493,7 +1875,7 @@ pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1525,6 +1907,7 @@ impl DeleteProjectInput {
             input: &crate::input::DeleteProjectInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1586,9 +1969,10 @@ impl DeleteProjectInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1646,7 +2030,7 @@ pub type DeleteProjectVersionInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DeleteProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProjectVersion`](crate::operation::DeleteProjectVersion)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1678,6 +2062,7 @@ impl DeleteProjectVersionInput {
             input: &crate::input::DeleteProjectVersionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1740,9 +2125,10 @@ impl DeleteProjectVersionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1795,7 +2181,7 @@ pub type DeleteStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamProcessor`](crate::operation::DeleteStreamProcessor)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1827,6 +2213,7 @@ impl DeleteStreamProcessorInput {
             input: &crate::input::DeleteStreamProcessorInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1891,9 +2278,10 @@ impl DeleteStreamProcessorInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1951,7 +2339,7 @@ pub type DescribeCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DescribeCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCollection`](crate::operation::DescribeCollection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1983,6 +2371,7 @@ impl DescribeCollectionInput {
             input: &crate::input::DescribeCollectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2045,9 +2434,10 @@ impl DescribeCollectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2063,6 +2453,163 @@ impl DescribeCollectionInput {
     }
 }
 
+/// See [`DescribeDatasetInput`](crate::input::DescribeDatasetInput)
+pub mod describe_dataset_input {
+    /// A builder for [`DescribeDatasetInput`](crate::input::DescribeDatasetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
+        /// </p>
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_arn = Some(input.into());
+            self
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::input::DescribeDatasetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeDatasetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeDatasetInput {
+                dataset_arn: self.dataset_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
+#[doc(hidden)]
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeDatasetInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeDataset,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeDatasetInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeDatasetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeDatasetInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.DescribeDataset",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)
+                .map_err(|err| {
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeDataset",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeDatasetInput`](crate::input::DescribeDatasetInput)
+    pub fn builder() -> crate::input::describe_dataset_input::Builder {
+        crate::input::describe_dataset_input::Builder::default()
+    }
+}
+
 /// See [`DescribeProjectsInput`](crate::input::DescribeProjectsInput)
 pub mod describe_projects_input {
     /// A builder for [`DescribeProjectsInput`](crate::input::DescribeProjectsInput)
@@ -2071,6 +2618,7 @@ pub mod describe_projects_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) project_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>If the previous response was incomplete (because there is more
@@ -2101,6 +2649,27 @@ pub mod describe_projects_input {
             self.max_results = input;
             self
         }
+        /// Appends an item to `project_names`.
+        ///
+        /// To override the contents of this collection use [`set_project_names`](Self::set_project_names).
+        ///
+        /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
+        /// the response includes descriptions for all the projects in your AWS account.</p>
+        pub fn project_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.project_names.unwrap_or_default();
+            v.push(input.into());
+            self.project_names = Some(v);
+            self
+        }
+        /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
+        /// the response includes descriptions for all the projects in your AWS account.</p>
+        pub fn set_project_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.project_names = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeProjectsInput`](crate::input::DescribeProjectsInput)
         pub fn build(
             self,
@@ -2111,6 +2680,7 @@ pub mod describe_projects_input {
             Ok(crate::input::DescribeProjectsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                project_names: self.project_names,
             })
         }
     }
@@ -2122,7 +2692,7 @@ pub type DescribeProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DescribeProjectsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProjects`](crate::operation::DescribeProjects)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2154,6 +2724,7 @@ impl DescribeProjectsInput {
             input: &crate::input::DescribeProjectsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2216,9 +2787,10 @@ impl DescribeProjectsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2333,7 +2905,7 @@ pub type DescribeProjectVersionsInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeProjectVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProjectVersions`](crate::operation::DescribeProjectVersions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2365,6 +2937,7 @@ impl DescribeProjectVersionsInput {
             input: &crate::input::DescribeProjectVersionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2429,9 +3002,10 @@ impl DescribeProjectVersionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2485,7 +3059,7 @@ pub type DescribeStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStreamProcessor`](crate::operation::DescribeStreamProcessor)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2517,6 +3091,7 @@ impl DescribeStreamProcessorInput {
             input: &crate::input::DescribeStreamProcessorInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2581,9 +3156,10 @@ impl DescribeStreamProcessorInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2737,7 +3313,7 @@ pub type DetectCustomLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DetectCustomLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectCustomLabels`](crate::operation::DetectCustomLabels)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2769,6 +3345,7 @@ impl DetectCustomLabelsInput {
             input: &crate::input::DetectCustomLabelsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2831,9 +3408,10 @@ impl DetectCustomLabelsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2931,7 +3509,7 @@ pub type DetectFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DetectFacesInput {
     /// Consumes the builder and constructs an Operation<[`DetectFaces`](crate::operation::DetectFaces)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2963,6 +3541,7 @@ impl DetectFacesInput {
             input: &crate::input::DetectFacesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3024,9 +3603,10 @@ impl DetectFacesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3123,7 +3703,7 @@ pub type DetectLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DetectLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectLabels`](crate::operation::DetectLabels)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3155,6 +3735,7 @@ impl DetectLabelsInput {
             input: &crate::input::DetectLabelsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3216,9 +3797,10 @@ impl DetectLabelsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3318,7 +3900,7 @@ pub type DetectModerationLabelsInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DetectModerationLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectModerationLabels`](crate::operation::DetectModerationLabels)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3350,6 +3932,7 @@ impl DetectModerationLabelsInput {
             input: &crate::input::DetectModerationLabelsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3414,9 +3997,10 @@ impl DetectModerationLabelsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3493,7 +4077,7 @@ pub type DetectProtectiveEquipmentInputOperationRetryAlias = aws_http::AwsErrorR
 impl DetectProtectiveEquipmentInput {
     /// Consumes the builder and constructs an Operation<[`DetectProtectiveEquipment`](crate::operation::DetectProtectiveEquipment)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3525,6 +4109,7 @@ impl DetectProtectiveEquipmentInput {
             input: &crate::input::DetectProtectiveEquipmentInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3589,9 +4174,10 @@ impl DetectProtectiveEquipmentInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3669,7 +4255,7 @@ pub type DetectTextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DetectTextInput {
     /// Consumes the builder and constructs an Operation<[`DetectText`](crate::operation::DetectText)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3701,6 +4287,7 @@ impl DetectTextInput {
             input: &crate::input::DetectTextInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3762,9 +4349,10 @@ impl DetectTextInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3777,6 +4365,175 @@ impl DetectTextInput {
     /// Creates a new builder-style object to manufacture [`DetectTextInput`](crate::input::DetectTextInput)
     pub fn builder() -> crate::input::detect_text_input::Builder {
         crate::input::detect_text_input::Builder::default()
+    }
+}
+
+/// See [`DistributeDatasetEntriesInput`](crate::input::DistributeDatasetEntriesInput)
+pub mod distribute_dataset_entries_input {
+    /// A builder for [`DistributeDatasetEntriesInput`](crate::input::DistributeDatasetEntriesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) datasets: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
+    }
+    impl Builder {
+        /// Appends an item to `datasets`.
+        ///
+        /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
+        ///
+        /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
+        /// the same project. The test dataset must be empty.
+        /// </p>
+        pub fn datasets(mut self, input: impl Into<crate::model::DistributeDataset>) -> Self {
+            let mut v = self.datasets.unwrap_or_default();
+            v.push(input.into());
+            self.datasets = Some(v);
+            self
+        }
+        /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
+        /// the same project. The test dataset must be empty.
+        /// </p>
+        pub fn set_datasets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
+        ) -> Self {
+            self.datasets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DistributeDatasetEntriesInput`](crate::input::DistributeDatasetEntriesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DistributeDatasetEntriesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DistributeDatasetEntriesInput {
+                datasets: self.datasets,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DistributeDatasetEntriesInputOperationOutputAlias =
+    crate::operation::DistributeDatasetEntries;
+#[doc(hidden)]
+pub type DistributeDatasetEntriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DistributeDatasetEntriesInput {
+    /// Consumes the builder and constructs an Operation<[`DistributeDatasetEntries`](crate::operation::DistributeDatasetEntries)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DistributeDatasetEntries,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DistributeDatasetEntriesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DistributeDatasetEntriesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DistributeDatasetEntriesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.DistributeDatasetEntries",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_distribute_dataset_entries(
+                &self,
+            )
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DistributeDatasetEntries::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DistributeDatasetEntries",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DistributeDatasetEntriesInput`](crate::input::DistributeDatasetEntriesInput)
+    pub fn builder() -> crate::input::distribute_dataset_entries_input::Builder {
+        crate::input::distribute_dataset_entries_input::Builder::default()
     }
 }
 
@@ -3819,7 +4576,7 @@ pub type GetCelebrityInfoInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl GetCelebrityInfoInput {
     /// Consumes the builder and constructs an Operation<[`GetCelebrityInfo`](crate::operation::GetCelebrityInfo)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3851,6 +4608,7 @@ impl GetCelebrityInfoInput {
             input: &crate::input::GetCelebrityInfoInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3913,9 +4671,10 @@ impl GetCelebrityInfoInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4020,7 +4779,7 @@ pub type GetCelebrityRecognitionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl GetCelebrityRecognitionInput {
     /// Consumes the builder and constructs an Operation<[`GetCelebrityRecognition`](crate::operation::GetCelebrityRecognition)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4052,6 +4811,7 @@ impl GetCelebrityRecognitionInput {
             input: &crate::input::GetCelebrityRecognitionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4116,9 +4876,10 @@ impl GetCelebrityRecognitionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4230,7 +4991,7 @@ pub type GetContentModerationInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl GetContentModerationInput {
     /// Consumes the builder and constructs an Operation<[`GetContentModeration`](crate::operation::GetContentModeration)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4262,6 +5023,7 @@ impl GetContentModerationInput {
             input: &crate::input::GetContentModerationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4324,9 +5086,10 @@ impl GetContentModerationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4411,7 +5174,7 @@ pub type GetFaceDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl GetFaceDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetFaceDetection`](crate::operation::GetFaceDetection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4443,6 +5206,7 @@ impl GetFaceDetectionInput {
             input: &crate::input::GetFaceDetectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4505,9 +5269,10 @@ impl GetFaceDetectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4609,7 +5374,7 @@ pub type GetFaceSearchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetFaceSearchInput {
     /// Consumes the builder and constructs an Operation<[`GetFaceSearch`](crate::operation::GetFaceSearch)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4641,6 +5406,7 @@ impl GetFaceSearchInput {
             input: &crate::input::GetFaceSearchInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4702,9 +5468,10 @@ impl GetFaceSearchInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4814,7 +5581,7 @@ pub type GetLabelDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetLabelDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetLabelDetection`](crate::operation::GetLabelDetection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4846,6 +5613,7 @@ impl GetLabelDetectionInput {
             input: &crate::input::GetLabelDetectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4908,9 +5676,10 @@ impl GetLabelDetectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5018,7 +5787,7 @@ pub type GetPersonTrackingInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetPersonTrackingInput {
     /// Consumes the builder and constructs an Operation<[`GetPersonTracking`](crate::operation::GetPersonTracking)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5050,6 +5819,7 @@ impl GetPersonTrackingInput {
             input: &crate::input::GetPersonTrackingInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5112,9 +5882,10 @@ impl GetPersonTrackingInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5197,7 +5968,7 @@ pub type GetSegmentDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetSegmentDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetSegmentDetection`](crate::operation::GetSegmentDetection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5229,6 +6000,7 @@ impl GetSegmentDetectionInput {
             input: &crate::input::GetSegmentDetectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5291,9 +6063,10 @@ impl GetSegmentDetectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5376,7 +6149,7 @@ pub type GetTextDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl GetTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetTextDetection`](crate::operation::GetTextDetection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5408,6 +6181,7 @@ impl GetTextDetectionInput {
             input: &crate::input::GetTextDetectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5470,9 +6244,10 @@ impl GetTextDetectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5678,7 +6453,7 @@ pub type IndexFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl IndexFacesInput {
     /// Consumes the builder and constructs an Operation<[`IndexFaces`](crate::operation::IndexFaces)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5710,6 +6485,7 @@ impl IndexFacesInput {
             input: &crate::input::IndexFacesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5771,9 +6547,10 @@ impl IndexFacesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5840,7 +6617,7 @@ pub type ListCollectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl ListCollectionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCollections`](crate::operation::ListCollections)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5872,6 +6649,7 @@ impl ListCollectionsInput {
             input: &crate::input::ListCollectionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5934,9 +6712,10 @@ impl ListCollectionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5949,6 +6728,462 @@ impl ListCollectionsInput {
     /// Creates a new builder-style object to manufacture [`ListCollectionsInput`](crate::input::ListCollectionsInput)
     pub fn builder() -> crate::input::list_collections_input::Builder {
         crate::input::list_collections_input::Builder::default()
+    }
+}
+
+/// See [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput)
+pub mod list_dataset_entries_input {
+    /// A builder for [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_arn: std::option::Option<std::string::String>,
+        pub(crate) contains_labels: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) labeled: std::option::Option<bool>,
+        pub(crate) source_ref_contains: std::option::Option<std::string::String>,
+        pub(crate) has_errors: std::option::Option<bool>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>
+        /// The Amazon Resource Name (ARN) for the dataset that you want to use.
+        /// </p>
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_arn = Some(input.into());
+            self
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) for the dataset that you want to use.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_arn = input;
+            self
+        }
+        /// Appends an item to `contains_labels`.
+        ///
+        /// To override the contents of this collection use [`set_contains_labels`](Self::set_contains_labels).
+        ///
+        /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
+        /// </p>
+        pub fn contains_labels(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.contains_labels.unwrap_or_default();
+            v.push(input.into());
+            self.contains_labels = Some(v);
+            self
+        }
+        /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
+        /// </p>
+        pub fn set_contains_labels(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.contains_labels = input;
+            self
+        }
+        /// <p>
+        /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
+        /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
+        /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
+        /// images.
+        /// </p>
+        pub fn labeled(mut self, input: bool) -> Self {
+            self.labeled = Some(input);
+            self
+        }
+        /// <p>
+        /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
+        /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
+        /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
+        /// images.
+        /// </p>
+        pub fn set_labeled(mut self, input: std::option::Option<bool>) -> Self {
+            self.labeled = input;
+            self
+        }
+        /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
+        /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
+        /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+        pub fn source_ref_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_ref_contains = Some(input.into());
+            self
+        }
+        /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
+        /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
+        /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+        pub fn set_source_ref_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_ref_contains = input;
+            self
+        }
+        /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
+        /// </p>
+        pub fn has_errors(mut self, input: bool) -> Self {
+            self.has_errors = Some(input);
+            self
+        }
+        /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
+        /// </p>
+        pub fn set_has_errors(mut self, input: std::option::Option<bool>) -> Self {
+            self.has_errors = input;
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListDatasetEntriesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListDatasetEntriesInput {
+                dataset_arn: self.dataset_arn,
+                contains_labels: self.contains_labels,
+                labeled: self.labeled,
+                source_ref_contains: self.source_ref_contains,
+                has_errors: self.has_errors,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListDatasetEntriesInputOperationOutputAlias = crate::operation::ListDatasetEntries;
+#[doc(hidden)]
+pub type ListDatasetEntriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListDatasetEntriesInput {
+    /// Consumes the builder and constructs an Operation<[`ListDatasetEntries`](crate::operation::ListDatasetEntries)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDatasetEntries,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListDatasetEntriesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListDatasetEntriesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListDatasetEntriesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.ListDatasetEntries",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_dataset_entries(&self)
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDatasetEntries::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDatasetEntries",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput)
+    pub fn builder() -> crate::input::list_dataset_entries_input::Builder {
+        crate::input::list_dataset_entries_input::Builder::default()
+    }
+}
+
+/// See [`ListDatasetLabelsInput`](crate::input::ListDatasetLabelsInput)
+pub mod list_dataset_labels_input {
+    /// A builder for [`ListDatasetLabelsInput`](crate::input::ListDatasetLabelsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to use.
+        /// </p>
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_arn = Some(input.into());
+            self
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to use.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_arn = input;
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDatasetLabelsInput`](crate::input::ListDatasetLabelsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListDatasetLabelsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListDatasetLabelsInput {
+                dataset_arn: self.dataset_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListDatasetLabelsInputOperationOutputAlias = crate::operation::ListDatasetLabels;
+#[doc(hidden)]
+pub type ListDatasetLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListDatasetLabelsInput {
+    /// Consumes the builder and constructs an Operation<[`ListDatasetLabels`](crate::operation::ListDatasetLabels)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDatasetLabels,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListDatasetLabelsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListDatasetLabelsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListDatasetLabelsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.ListDatasetLabels",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_dataset_labels(&self)
+                .map_err(|err| {
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDatasetLabels::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDatasetLabels",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListDatasetLabelsInput`](crate::input::ListDatasetLabelsInput)
+    pub fn builder() -> crate::input::list_dataset_labels_input::Builder {
+        crate::input::list_dataset_labels_input::Builder::default()
     }
 }
 
@@ -6020,7 +7255,7 @@ pub type ListFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListFacesInput {
     /// Consumes the builder and constructs an Operation<[`ListFaces`](crate::operation::ListFaces)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6052,6 +7287,7 @@ impl ListFacesInput {
             input: &crate::input::ListFacesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6111,9 +7347,10 @@ impl ListFacesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6182,7 +7419,7 @@ pub type ListStreamProcessorsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListStreamProcessorsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamProcessors`](crate::operation::ListStreamProcessors)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6214,6 +7451,7 @@ impl ListStreamProcessorsInput {
             input: &crate::input::ListStreamProcessorsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6276,9 +7514,10 @@ impl ListStreamProcessorsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6337,7 +7576,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6369,6 +7608,7 @@ impl ListTagsForResourceInput {
             input: &crate::input::ListTagsForResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6431,9 +7671,10 @@ impl ListTagsForResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6494,7 +7735,7 @@ pub type RecognizeCelebritiesInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl RecognizeCelebritiesInput {
     /// Consumes the builder and constructs an Operation<[`RecognizeCelebrities`](crate::operation::RecognizeCelebrities)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6526,6 +7767,7 @@ impl RecognizeCelebritiesInput {
             input: &crate::input::RecognizeCelebritiesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6588,9 +7830,10 @@ impl RecognizeCelebritiesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6692,7 +7935,7 @@ pub type SearchFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SearchFacesInput {
     /// Consumes the builder and constructs an Operation<[`SearchFaces`](crate::operation::SearchFaces)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6724,6 +7967,7 @@ impl SearchFacesInput {
             input: &crate::input::SearchFacesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6785,9 +8029,10 @@ impl SearchFacesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6936,7 +8181,7 @@ pub type SearchFacesByImageInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl SearchFacesByImageInput {
     /// Consumes the builder and constructs an Operation<[`SearchFacesByImage`](crate::operation::SearchFacesByImage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6968,6 +8213,7 @@ impl SearchFacesByImageInput {
             input: &crate::input::SearchFacesByImageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7030,9 +8276,10 @@ impl SearchFacesByImageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7140,7 +8387,7 @@ pub type StartCelebrityRecognitionInputOperationRetryAlias = aws_http::AwsErrorR
 impl StartCelebrityRecognitionInput {
     /// Consumes the builder and constructs an Operation<[`StartCelebrityRecognition`](crate::operation::StartCelebrityRecognition)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7172,6 +8419,7 @@ impl StartCelebrityRecognitionInput {
             input: &crate::input::StartCelebrityRecognitionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7236,9 +8484,10 @@ impl StartCelebrityRecognitionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7365,7 +8614,7 @@ pub type StartContentModerationInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl StartContentModerationInput {
     /// Consumes the builder and constructs an Operation<[`StartContentModeration`](crate::operation::StartContentModeration)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7397,6 +8646,7 @@ impl StartContentModerationInput {
             input: &crate::input::StartContentModerationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7461,9 +8711,10 @@ impl StartContentModerationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7593,7 +8844,7 @@ pub type StartFaceDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl StartFaceDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartFaceDetection`](crate::operation::StartFaceDetection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7625,6 +8876,7 @@ impl StartFaceDetectionInput {
             input: &crate::input::StartFaceDetectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7687,9 +8939,10 @@ impl StartFaceDetectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7821,7 +9074,7 @@ pub type StartFaceSearchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl StartFaceSearchInput {
     /// Consumes the builder and constructs an Operation<[`StartFaceSearch`](crate::operation::StartFaceSearch)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7853,6 +9106,7 @@ impl StartFaceSearchInput {
             input: &crate::input::StartFaceSearchInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7915,9 +9169,10 @@ impl StartFaceSearchInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8046,7 +9301,7 @@ pub type StartLabelDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StartLabelDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartLabelDetection`](crate::operation::StartLabelDetection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8078,6 +9333,7 @@ impl StartLabelDetectionInput {
             input: &crate::input::StartLabelDetectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8140,9 +9396,10 @@ impl StartLabelDetectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8249,7 +9506,7 @@ pub type StartPersonTrackingInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StartPersonTrackingInput {
     /// Consumes the builder and constructs an Operation<[`StartPersonTracking`](crate::operation::StartPersonTracking)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8281,6 +9538,7 @@ impl StartPersonTrackingInput {
             input: &crate::input::StartPersonTrackingInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8343,9 +9601,10 @@ impl StartPersonTrackingInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8423,7 +9682,7 @@ pub type StartProjectVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StartProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`StartProjectVersion`](crate::operation::StartProjectVersion)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8455,6 +9714,7 @@ impl StartProjectVersionInput {
             input: &crate::input::StartProjectVersionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8517,9 +9777,10 @@ impl StartProjectVersionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8662,7 +9923,7 @@ pub type StartSegmentDetectionInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl StartSegmentDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartSegmentDetection`](crate::operation::StartSegmentDetection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8694,6 +9955,7 @@ impl StartSegmentDetectionInput {
             input: &crate::input::StartSegmentDetectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8758,9 +10020,10 @@ impl StartSegmentDetectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8813,7 +10076,7 @@ pub type StartStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl StartStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamProcessor`](crate::operation::StartStreamProcessor)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8845,6 +10108,7 @@ impl StartStreamProcessorInput {
             input: &crate::input::StartStreamProcessorInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8907,9 +10171,10 @@ impl StartStreamProcessorInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9033,7 +10298,7 @@ pub type StartTextDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl StartTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartTextDetection`](crate::operation::StartTextDetection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9065,6 +10330,7 @@ impl StartTextDetectionInput {
             input: &crate::input::StartTextDetectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9127,9 +10393,10 @@ impl StartTextDetectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9189,7 +10456,7 @@ pub type StopProjectVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl StopProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`StopProjectVersion`](crate::operation::StopProjectVersion)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9221,6 +10488,7 @@ impl StopProjectVersionInput {
             input: &crate::input::StopProjectVersionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9283,9 +10551,10 @@ impl StopProjectVersionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9338,7 +10607,7 @@ pub type StopStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl StopStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`StopStreamProcessor`](crate::operation::StopStreamProcessor)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9370,6 +10639,7 @@ impl StopStreamProcessorInput {
             input: &crate::input::StopStreamProcessorInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9432,9 +10702,10 @@ impl StopStreamProcessorInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9526,7 +10797,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9558,6 +10829,7 @@ impl TagResourceInput {
             input: &crate::input::TagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9619,9 +10891,10 @@ impl TagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9705,7 +10978,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9737,6 +11010,7 @@ impl UntagResourceInput {
             input: &crate::input::UntagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9798,9 +11072,10 @@ impl UntagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9813,6 +11088,204 @@ impl UntagResourceInput {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput)
+pub mod update_dataset_entries_input {
+    /// A builder for [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dataset_arn: std::option::Option<std::string::String>,
+        pub(crate) changes: std::option::Option<crate::model::DatasetChanges>,
+    }
+    impl Builder {
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to update.
+        /// </p>
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dataset_arn = Some(input.into());
+            self
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to update.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataset_arn = input;
+            self
+        }
+        /// <p>
+        /// The changes that you want to make to the dataset.
+        /// </p>
+        pub fn changes(mut self, input: crate::model::DatasetChanges) -> Self {
+            self.changes = Some(input);
+            self
+        }
+        /// <p>
+        /// The changes that you want to make to the dataset.
+        /// </p>
+        pub fn set_changes(
+            mut self,
+            input: std::option::Option<crate::model::DatasetChanges>,
+        ) -> Self {
+            self.changes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateDatasetEntriesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateDatasetEntriesInput {
+                dataset_arn: self.dataset_arn,
+                changes: self.changes,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateDatasetEntriesInputOperationOutputAlias = crate::operation::UpdateDatasetEntries;
+#[doc(hidden)]
+pub type UpdateDatasetEntriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateDatasetEntriesInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDatasetEntries`](crate::operation::UpdateDatasetEntries)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateDatasetEntries,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateDatasetEntriesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateDatasetEntriesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateDatasetEntriesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "RekognitionService.UpdateDatasetEntries",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_dataset_entries(&self)
+                .map_err(|err| {
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateDatasetEntries::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateDatasetEntries",
+            "rekognition",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput)
+    pub fn builder() -> crate::input::update_dataset_entries_input::Builder {
+        crate::input::update_dataset_entries_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDatasetEntriesInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the dataset that you want to update.
+    /// </p>
+    pub dataset_arn: std::option::Option<std::string::String>,
+    /// <p>
+    /// The changes that you want to make to the dataset.
+    /// </p>
+    pub changes: std::option::Option<crate::model::DatasetChanges>,
+}
+impl std::fmt::Debug for UpdateDatasetEntriesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDatasetEntriesInput");
+        formatter.field("dataset_arn", &self.dataset_arn);
+        formatter.field("changes", &self.changes);
+        formatter.finish()
     }
 }
 
@@ -10354,6 +11827,81 @@ impl std::fmt::Debug for ListFacesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDatasetLabelsInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the dataset that you want to use.
+    /// </p>
+    pub dataset_arn: std::option::Option<std::string::String>,
+    /// <p>If the previous response was incomplete (because there is more
+    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+    /// If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100. </p>
+    pub max_results: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListDatasetLabelsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDatasetLabelsInput");
+        formatter.field("dataset_arn", &self.dataset_arn);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDatasetEntriesInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) for the dataset that you want to use.
+    /// </p>
+    pub dataset_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
+    /// </p>
+    pub contains_labels: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>
+    /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
+    /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
+    /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
+    /// images.
+    /// </p>
+    pub labeled: std::option::Option<bool>,
+    /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
+    /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
+    /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+    pub source_ref_contains: std::option::Option<std::string::String>,
+    /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
+    /// </p>
+    pub has_errors: std::option::Option<bool>,
+    /// <p>If the previous response was incomplete (because there is more
+    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+    /// token to retrieve the next set of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+    /// If you specify a value greater than 100, a ValidationException
+    /// error occurs. The default value is 100. </p>
+    pub max_results: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListDatasetEntriesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDatasetEntriesInput");
+        formatter.field("dataset_arn", &self.dataset_arn);
+        formatter.field("contains_labels", &self.contains_labels);
+        formatter.field("labeled", &self.labeled);
+        formatter.field("source_ref_contains", &self.source_ref_contains);
+        formatter.field("has_errors", &self.has_errors);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCollectionsInput {
     /// <p>Pagination token from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -10677,6 +12225,23 @@ impl std::fmt::Debug for GetCelebrityInfoInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DistributeDatasetEntriesInput {
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
+    /// the same project. The test dataset must be empty.
+    /// </p>
+    pub datasets: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
+}
+impl std::fmt::Debug for DistributeDatasetEntriesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DistributeDatasetEntriesInput");
+        formatter.field("datasets", &self.datasets);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectTextInput {
     /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
     /// to call Amazon Rekognition operations, you can't pass image bytes. </p>
@@ -10917,12 +12482,33 @@ pub struct DescribeProjectsInput {
     /// If you specify a value greater than 100, a ValidationException
     /// error occurs. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
+    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
+    /// the response includes descriptions for all the projects in your AWS account.</p>
+    pub project_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DescribeProjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectsInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("project_names", &self.project_names);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDatasetInput {
+    /// <p>
+    /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
+    /// </p>
+    pub dataset_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeDatasetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDatasetInput");
+        formatter.field("dataset_arn", &self.dataset_arn);
         formatter.finish()
     }
 }
@@ -11008,6 +12594,23 @@ impl std::fmt::Debug for DeleteFacesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDatasetInput {
+    /// <p>
+    /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
+    /// </p>
+    pub dataset_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteDatasetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDatasetInput");
+        formatter.field("dataset_arn", &self.dataset_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCollectionInput {
     /// <p>ID of the collection to delete.</p>
     pub collection_id: std::option::Option<std::string::String>,
@@ -11070,22 +12673,27 @@ pub struct CreateProjectVersionInput {
     /// The S3 bucket can be in any AWS account as long as the caller has
     /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
     pub output_config: std::option::Option<crate::model::OutputConfig>,
-    /// <p>The dataset to use for training. </p>
+    /// <p>Specifies an external manifest that the services uses to train the model.
+    /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
+    /// The project must not have any associated datasets.
+    /// </p>
     pub training_data: std::option::Option<crate::model::TrainingData>,
-    /// <p>The dataset to use for testing.</p>
+    /// <p>Specifies an external manifest that the service uses to test the model.
+    /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
+    /// The project must not have any associated datasets.</p>
     pub testing_data: std::option::Option<crate::model::TestingData>,
     /// <p>
     /// A set of tags (key-value pairs) that you want to attach to the model.
     /// </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-    /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK,
-    /// an alias for your CMK, or an alias ARN.
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
+    /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
+    /// an alias for your KMS key, or an alias ARN.
     /// The key is used to encrypt training and test images copied into the service for model training.
     /// Your source images are unaffected. The key is also used to encrypt training results
     /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-    /// <p>If you choose to use your own CMK, you need the following permissions on the CMK.</p>
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
     /// <li>
     /// <p>kms:CreateGrant</p>
@@ -11129,6 +12737,37 @@ impl std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectInput");
         formatter.field("project_name", &self.project_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDatasetInput {
+    /// <p>
+    /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
+    /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
+    /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
+    ///
+    /// </p>
+    pub dataset_source: std::option::Option<crate::model::DatasetSource>,
+    /// <p>
+    /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
+    /// to create a test dataset.
+    /// </p>
+    pub dataset_type: std::option::Option<crate::model::DatasetType>,
+    /// <p>
+    /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
+    /// </p>
+    pub project_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateDatasetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDatasetInput");
+        formatter.field("dataset_source", &self.dataset_source);
+        formatter.field("dataset_type", &self.dataset_type);
+        formatter.field("project_arn", &self.project_arn);
         formatter.finish()
     }
 }

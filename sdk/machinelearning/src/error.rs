@@ -22,7 +22,7 @@ pub enum AddTagsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     #[allow(missing_docs)] // documentation missing in model
     TagLimitExceededException(crate::error::TagLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsError {
@@ -89,23 +89,23 @@ impl AddTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InvalidTagException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::TagLimitExceededException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::TagLimitExceededException(_))
     }
@@ -142,7 +142,7 @@ pub enum CreateBatchPredictionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBatchPredictionError {
@@ -209,21 +209,21 @@ impl CreateBatchPredictionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBatchPredictionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateBatchPredictionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBatchPredictionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBatchPredictionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateBatchPredictionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBatchPredictionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBatchPredictionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateBatchPredictionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -263,7 +263,7 @@ pub enum CreateDataSourceFromRDSErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataSourceFromRDSError {
@@ -330,21 +330,21 @@ impl CreateDataSourceFromRDSError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataSourceFromRDSErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromRDSErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceFromRDSErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceFromRDSErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromRDSErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceFromRDSErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceFromRDSErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromRDSErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -384,7 +384,7 @@ pub enum CreateDataSourceFromRedshiftErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataSourceFromRedshiftError {
@@ -451,21 +451,21 @@ impl CreateDataSourceFromRedshiftError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataSourceFromRedshiftErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromRedshiftErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceFromRedshiftErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceFromRedshiftErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromRedshiftErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceFromRedshiftErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceFromRedshiftErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromRedshiftErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -505,7 +505,7 @@ pub enum CreateDataSourceFromS3ErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataSourceFromS3Error {
@@ -572,21 +572,21 @@ impl CreateDataSourceFromS3Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataSourceFromS3ErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromS3ErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceFromS3ErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceFromS3ErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromS3ErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataSourceFromS3ErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataSourceFromS3ErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDataSourceFromS3ErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -626,7 +626,7 @@ pub enum CreateEvaluationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEvaluationError {
@@ -693,21 +693,21 @@ impl CreateEvaluationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEvaluationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateEvaluationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEvaluationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEvaluationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateEvaluationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEvaluationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEvaluationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateEvaluationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -745,7 +745,7 @@ pub enum CreateMLModelErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMLModelError {
@@ -810,21 +810,21 @@ impl CreateMLModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMLModelErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateMLModelErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMLModelErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMLModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateMLModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMLModelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMLModelErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateMLModelErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateMLModelErrorKind::InvalidInputException(_))
     }
@@ -859,7 +859,7 @@ pub enum CreateRealtimeEndpointErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRealtimeEndpointError {
@@ -924,21 +924,21 @@ impl CreateRealtimeEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRealtimeEndpointErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateRealtimeEndpointErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRealtimeEndpointErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRealtimeEndpointErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateRealtimeEndpointErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRealtimeEndpointErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRealtimeEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateRealtimeEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -976,7 +976,7 @@ pub enum DeleteBatchPredictionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBatchPredictionError {
@@ -1041,21 +1041,21 @@ impl DeleteBatchPredictionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBatchPredictionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteBatchPredictionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBatchPredictionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBatchPredictionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteBatchPredictionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBatchPredictionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBatchPredictionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBatchPredictionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1093,7 +1093,7 @@ pub enum DeleteDataSourceErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDataSourceError {
@@ -1158,21 +1158,21 @@ impl DeleteDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataSourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1210,7 +1210,7 @@ pub enum DeleteEvaluationErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEvaluationError {
@@ -1275,21 +1275,21 @@ impl DeleteEvaluationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEvaluationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteEvaluationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEvaluationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEvaluationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteEvaluationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEvaluationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEvaluationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEvaluationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1327,7 +1327,7 @@ pub enum DeleteMLModelErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMLModelError {
@@ -1392,18 +1392,18 @@ impl DeleteMLModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMLModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteMLModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMLModelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMLModelErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteMLModelErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteMLModelErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteMLModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMLModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1441,7 +1441,7 @@ pub enum DeleteRealtimeEndpointErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRealtimeEndpointError {
@@ -1506,21 +1506,21 @@ impl DeleteRealtimeEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRealtimeEndpointErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteRealtimeEndpointErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRealtimeEndpointErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRealtimeEndpointErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteRealtimeEndpointErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRealtimeEndpointErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRealtimeEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRealtimeEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1560,7 +1560,7 @@ pub enum DeleteTagsErrorKind {
     InvalidTagException(crate::error::InvalidTagException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -1626,19 +1626,19 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::InvalidTagException(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1675,7 +1675,7 @@ pub enum DescribeBatchPredictionsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBatchPredictionsError {
@@ -1739,14 +1739,14 @@ impl DescribeBatchPredictionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBatchPredictionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeBatchPredictionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBatchPredictionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBatchPredictionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeBatchPredictionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1781,7 +1781,7 @@ pub enum DescribeDataSourcesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataSourcesError {
@@ -1845,14 +1845,14 @@ impl DescribeDataSourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataSourcesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeDataSourcesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataSourcesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataSourcesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeDataSourcesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1887,7 +1887,7 @@ pub enum DescribeEvaluationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEvaluationsError {
@@ -1951,14 +1951,14 @@ impl DescribeEvaluationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEvaluationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeEvaluationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEvaluationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEvaluationsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeEvaluationsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1993,7 +1993,7 @@ pub enum DescribeMLModelsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMLModelsError {
@@ -2057,14 +2057,14 @@ impl DescribeMLModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMLModelsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeMLModelsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMLModelsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMLModelsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeMLModelsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2101,7 +2101,7 @@ pub enum DescribeTagsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -2166,18 +2166,18 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DescribeTagsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2215,7 +2215,7 @@ pub enum GetBatchPredictionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBatchPredictionError {
@@ -2280,21 +2280,21 @@ impl GetBatchPredictionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBatchPredictionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetBatchPredictionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBatchPredictionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetBatchPredictionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBatchPredictionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBatchPredictionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetBatchPredictionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetBatchPredictionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2332,7 +2332,7 @@ pub enum GetDataSourceErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDataSourceError {
@@ -2397,18 +2397,18 @@ impl GetDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDataSourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDataSourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataSourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataSourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDataSourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetDataSourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2446,7 +2446,7 @@ pub enum GetEvaluationErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEvaluationError {
@@ -2511,18 +2511,18 @@ impl GetEvaluationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEvaluationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEvaluationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvaluationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvaluationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetEvaluationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetEvaluationErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetEvaluationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEvaluationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2560,7 +2560,7 @@ pub enum GetMLModelErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMLModelError {
@@ -2625,15 +2625,15 @@ impl GetMLModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMLModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetMLModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetMLModelErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetMLModelErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetMLModelErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetMLModelErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetMLModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMLModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2675,7 +2675,7 @@ pub enum PredictErrorKind {
     PredictorNotMountedException(crate::error::PredictorNotMountedException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PredictError {
@@ -2742,26 +2742,26 @@ impl PredictError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PredictErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PredictErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, PredictErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `PredictErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PredictErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, PredictErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `PredictErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PredictErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PredictErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PredictErrorKind::PredictorNotMountedException`.
+    /// Returns `true` if the error kind is `PredictErrorKind::PredictorNotMountedException`.
     pub fn is_predictor_not_mounted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PredictErrorKind::PredictorNotMountedException(_)
         )
     }
-    /// Returns true if the error kind is `PredictErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PredictErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, PredictErrorKind::ResourceNotFoundException(_))
     }
@@ -2798,7 +2798,7 @@ pub enum UpdateBatchPredictionErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBatchPredictionError {
@@ -2863,21 +2863,21 @@ impl UpdateBatchPredictionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBatchPredictionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateBatchPredictionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBatchPredictionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBatchPredictionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateBatchPredictionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBatchPredictionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBatchPredictionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBatchPredictionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2915,7 +2915,7 @@ pub enum UpdateDataSourceErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataSourceError {
@@ -2980,21 +2980,21 @@ impl UpdateDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataSourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3032,7 +3032,7 @@ pub enum UpdateEvaluationErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEvaluationError {
@@ -3097,21 +3097,21 @@ impl UpdateEvaluationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEvaluationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateEvaluationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEvaluationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEvaluationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateEvaluationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEvaluationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEvaluationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEvaluationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3149,7 +3149,7 @@ pub enum UpdateMLModelErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A specified resource cannot be located.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMLModelError {
@@ -3214,18 +3214,18 @@ impl UpdateMLModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMLModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateMLModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMLModelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMLModelErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateMLModelErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateMLModelErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateMLModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMLModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

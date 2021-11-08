@@ -314,6 +314,19 @@ pub fn serialize_operation_crate_operation_start_contact_recording(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_start_contact_streaming(
+    input: &crate::input::StartContactStreamingInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_start_contact_streaming_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_start_outbound_voice_contact(
     input: &crate::input::StartOutboundVoiceContactInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
@@ -353,6 +366,19 @@ pub fn serialize_operation_crate_operation_stop_contact_recording(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_stop_contact_recording_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_stop_contact_streaming(
+    input: &crate::input::StopContactStreamingInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_stop_contact_streaming_input(
         &mut object,
         input,
     );

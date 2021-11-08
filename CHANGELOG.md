@@ -1,6 +1,21 @@
 vNext (Month Day, Year)
 =======================
 
+v0.0.23-alpha (November 3rd, 2021)
+==================================
+**New this week**
+- The SDK is available on crates.io!
+- :tada: Add support for AWS Glacier (smithy-rs#801)
+- :tada: Add support for AWS Panorama
+- :bug: Fix `native-tls` feature in `aws-config` (aws-sdk-rust#265, smithy-rs#803)
+- Add example to aws-sig-auth for generating an IAM Token for RDS (smithy-rs#811, aws-sdk-rust#147)
+- :bug: `hyper::Error(IncompleteMessage)` will now be retried (smithy-rs#815)
+- :bug: Fix generated docs on unions like `dynamodb::AttributeValue`. (smithy-rs#826)
+
+**Breaking Changes**
+- `<operation>.make_operation(&config)` is now an `async` function for all operations. Code should be updated to call `.await`. This will only impact users using the low-level API. (smithy-rs#797)
+- :bug: S3 request metadata signing now correctly trims headers fixing [problems like this](https://github.com/awslabs/aws-sdk-rust/issues/248) (smithy-rs#761)
+
 v0.0.22-alpha (October 20th, 2021)
 ==================================
 

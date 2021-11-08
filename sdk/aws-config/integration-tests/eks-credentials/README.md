@@ -10,5 +10,5 @@ cdk bootstrap aws://accountid/region
 cdk deploy
 # make lunch, go for a bike ride, etc. ~1h.
 kubectl exec rust-sdk-test -it bash
-# write some rust code, eg. test.rs, run it.
+# write some rust code, e.g. test.rs, run it.
 ```

@@ -3,7 +3,9 @@ on:
     paths: 'tools/**'
 
 env:
-  rust_version: 1.53.0
+  # The publisher tool can use the latest Rust since it isn't published.
+  # Build with a minimum of Rust 1.56.1 to check for CVE-2021-42574.
+  rust_version: 1.56.1
   rust_toolchain_components: clippy,rustfmt
 
 name: Tools CI
@@ -14,21 +16,16 @@ jobs:
     name: Compile, Test, and Lint the `tools/` path
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        name: Cargo Cache
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            tools/publisher/target
-          key: tools-${{ runner.os }}-cargo-${{ hashFiles('tools/**/Cargo.toml') }}
-          restore-keys: |
-            tools-${{ runner.os }}-cargo-
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ env.rust_version }}
           components: ${{ env.rust_toolchain_components }}
           default: true
+      # Pinned to the commit hash of v1.3.0
+      - uses: Swatinem/rust-cache@842ef286fff290e445b90b4002cc9807c3669641
+        with:
+          sharedKey: tools-test
+          working-directory: tools/publisher
       - name: Format Check
         run: rustfmt --check --edition 2018 $(find tools -name '*.rs' -print | grep -v /target/)
       - name: Cargo Test

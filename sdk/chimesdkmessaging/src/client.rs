@@ -233,6 +233,15 @@ where
     pub fn disassociate_channel_flow(&self) -> fluent_builders::DisassociateChannelFlow<C, M, R> {
         fluent_builders::DisassociateChannelFlow::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetChannelMembershipPreferences` operation.
+    ///
+    /// See [`GetChannelMembershipPreferences`](crate::client::fluent_builders::GetChannelMembershipPreferences) for more information about the
+    /// operation and its arguments.
+    pub fn get_channel_membership_preferences(
+        &self,
+    ) -> fluent_builders::GetChannelMembershipPreferences<C, M, R> {
+        fluent_builders::GetChannelMembershipPreferences::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetChannelMessage` operation.
     ///
     /// See [`GetChannelMessage`](crate::client::fluent_builders::GetChannelMessage) for more information about the
@@ -331,6 +340,15 @@ where
     /// operation and its arguments.
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `PutChannelMembershipPreferences` operation.
+    ///
+    /// See [`PutChannelMembershipPreferences`](crate::client::fluent_builders::PutChannelMembershipPreferences) for more information about the
+    /// operation and its arguments.
+    pub fn put_channel_membership_preferences(
+        &self,
+    ) -> fluent_builders::PutChannelMembershipPreferences<C, M, R> {
+        fluent_builders::PutChannelMembershipPreferences::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `RedactChannelMessage` operation.
     ///
@@ -454,9 +472,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -544,9 +565,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
@@ -584,12 +608,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_member_arns`](Self::set_member_arns).
         ///
-        /// <p>The ARNs of the members you want to add to the channel.</p>
+        /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
         pub fn member_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_arns(inp);
             self
         }
-        /// <p>The ARNs of the members you want to add to the channel.</p>
+        /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
         pub fn set_member_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -671,9 +695,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
@@ -781,9 +808,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel request.</p>
@@ -953,9 +983,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the ban request.</p>
@@ -968,12 +1001,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The ARN of the member being banned.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
         pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_arn(inp);
             self
         }
-        /// <p>The ARN of the member being banned.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
         pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_member_arn(input);
             self
@@ -1061,9 +1094,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow request.</p>
@@ -1139,7 +1175,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelMembership`.
     ///
-    /// <p>Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the
+    /// <p>Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the
     /// request header. A channel member can:</p>
     ///
     /// <ul>
@@ -1225,9 +1261,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
@@ -1240,12 +1279,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The ARN of the member you want to add to the channel.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
         pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_arn(inp);
             self
         }
-        /// <p>The ARN of the member you want to add to the channel.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
         pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_member_arn(input);
             self
@@ -1357,9 +1396,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -1372,12 +1414,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The ARN of the moderator.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
         pub fn channel_moderator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_moderator_arn(inp);
             self
         }
-        /// <p>The ARN of the moderator.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
         pub fn set_channel_moderator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1454,9 +1496,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel being deleted.</p>
@@ -1537,9 +1582,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
@@ -1628,9 +1676,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
@@ -1704,9 +1755,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which you want to remove the user.</p>
@@ -1719,12 +1773,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The ARN of the member that you're removing from the channel.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
         pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_arn(inp);
             self
         }
-        /// <p>The ARN of the member that you're removing from the channel.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
         pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_member_arn(input);
             self
@@ -1799,9 +1853,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -1892,9 +1949,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -1907,12 +1967,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The ARN of the moderator being deleted.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
         pub fn channel_moderator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_moderator_arn(inp);
             self
         }
-        /// <p>The ARN of the moderator being deleted.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
         pub fn set_channel_moderator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1990,9 +2050,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -2074,9 +2137,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which the user is banned.</p>
@@ -2089,12 +2155,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The ARN of the member being banned.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
         pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_arn(inp);
             self
         }
-        /// <p>The ARN of the member being banned.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
         pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_member_arn(input);
             self
@@ -2161,9 +2227,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
@@ -2236,9 +2305,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -2251,12 +2323,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The ARN of the member.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
         pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_arn(inp);
             self
         }
-        /// <p>The ARN of the member.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
         pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_member_arn(input);
             self
@@ -2332,9 +2404,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which the user belongs.</p>
@@ -2431,9 +2506,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the moderated channel.</p>
@@ -2526,9 +2604,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -2541,12 +2622,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The ARN of the channel moderator.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
         pub fn channel_moderator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.channel_moderator_arn(inp);
             self
         }
-        /// <p>The ARN of the channel moderator.</p>
+        /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
         pub fn set_channel_moderator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2621,9 +2702,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -2655,6 +2739,98 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+        pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_chime_bearer(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetChannelMembershipPreferences`.
+    ///
+    /// <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel.
+    /// Only the <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences for other users.
+    /// Banned users can't retrieve membership preferences for the channel from which they are banned.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetChannelMembershipPreferences<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_channel_membership_preferences_input::Builder,
+    }
+    impl<C, M, R> GetChannelMembershipPreferences<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetChannelMembershipPreferences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetChannelMembershipPreferencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetChannelMembershipPreferencesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetChannelMembershipPreferencesInputOperationOutputAlias,
+                crate::output::GetChannelMembershipPreferencesOutput,
+                crate::error::GetChannelMembershipPreferencesError,
+                crate::input::GetChannelMembershipPreferencesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the channel.</p>
+        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(inp);
+            self
+        }
+        /// <p>The ARN of the channel.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_arn(input);
+            self
+        }
+        /// <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
+        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(inp);
+            self
+        }
+        /// <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
+        pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_member_arn(input);
+            self
+        }
+        /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(inp);
+            self
+        }
+        /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_chime_bearer(input);
             self
@@ -2717,9 +2893,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -2840,9 +3019,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel</p>
@@ -2927,9 +3109,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
     }
@@ -2990,9 +3175,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -3087,9 +3275,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the app instance.</p>
@@ -3131,11 +3322,13 @@ pub mod fluent_builders {
     /// <p>Lists all channel memberships in a channel.</p>
     ///
     /// <note>
-    ///
     /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
     /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
     /// the header.</p>
     /// </note>
+    ///
+    /// <p>If you want to list the channels to which a specific app instance user belongs, see the
+    /// <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListChannelMemberships<
         C = aws_smithy_client::erase::DynConnector,
@@ -3184,9 +3377,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
@@ -3311,9 +3507,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
@@ -3423,9 +3622,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -3566,9 +3768,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -3686,9 +3891,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -3805,9 +4013,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
@@ -3903,9 +4114,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user in the moderated channel.</p>
@@ -4005,9 +4219,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
@@ -4018,6 +4235,111 @@ pub mod fluent_builders {
         /// <p>The ARN of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutChannelMembershipPreferences`.
+    ///
+    /// <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel.
+    /// Only the <code>AppInstanceUser</code> who owns the membership can set preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users.
+    /// Banned users can't set membership preferences for the channel from which they are banned.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct PutChannelMembershipPreferences<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_channel_membership_preferences_input::Builder,
+    }
+    impl<C, M, R> PutChannelMembershipPreferences<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `PutChannelMembershipPreferences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutChannelMembershipPreferencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutChannelMembershipPreferencesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutChannelMembershipPreferencesInputOperationOutputAlias,
+                crate::output::PutChannelMembershipPreferencesOutput,
+                crate::error::PutChannelMembershipPreferencesError,
+                crate::input::PutChannelMembershipPreferencesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the channel.</p>
+        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(inp);
+            self
+        }
+        /// <p>The ARN of the channel.</p>
+        pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_channel_arn(input);
+            self
+        }
+        /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(inp);
+            self
+        }
+        /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+        pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_member_arn(input);
+            self
+        }
+        /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(inp);
+            self
+        }
+        /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+        pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_chime_bearer(input);
+            self
+        }
+        /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+        pub fn preferences(mut self, inp: crate::model::ChannelMembershipPreferences) -> Self {
+            self.inner = self.inner.preferences(inp);
+            self
+        }
+        /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+        pub fn set_preferences(
+            mut self,
+            input: std::option::Option<crate::model::ChannelMembershipPreferences>,
+        ) -> Self {
+            self.inner = self.inner.set_preferences(input);
             self
         }
     }
@@ -4079,9 +4401,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
@@ -4175,9 +4500,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -4259,6 +4587,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chime_bearer(input);
             self
         }
+        /// <p>The push notification configuration of the message.</p>
+        pub fn push_notification(
+            mut self,
+            inp: crate::model::PushNotificationConfiguration,
+        ) -> Self {
+            self.inner = self.inner.push_notification(inp);
+            self
+        }
+        /// <p>The push notification configuration of the message.</p>
+        pub fn set_push_notification(
+            mut self,
+            input: std::option::Option<crate::model::PushNotificationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_push_notification(input);
+            self
+        }
+        /// Adds a key-value pair to `MessageAttributes`.
+        ///
+        /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
+        ///
+        /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+        pub fn message_attributes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::MessageAttributeValue>,
+        ) -> Self {
+            self.inner = self.inner.message_attributes(k, v);
+            self
+        }
+        /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+        pub fn set_message_attributes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_message_attributes(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
@@ -4311,9 +4678,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
@@ -4395,9 +4765,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
@@ -4486,9 +4859,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -4593,9 +4969,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
@@ -4696,9 +5075,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
@@ -4809,9 +5191,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>

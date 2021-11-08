@@ -18,7 +18,7 @@ pub enum CancelContactErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelContactError {
@@ -83,18 +83,18 @@ impl CancelContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelContactErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `CancelContactErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, CancelContactErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `CancelContactErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelContactErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelContactErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -134,7 +134,7 @@ pub enum CreateConfigErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigError {
@@ -200,25 +200,25 @@ impl CreateConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `CreateConfigErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, CreateConfigErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `CreateConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConfigErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -257,7 +257,7 @@ pub enum CreateDataflowEndpointGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataflowEndpointGroupError {
@@ -326,21 +326,21 @@ impl CreateDataflowEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataflowEndpointGroupErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `CreateDataflowEndpointGroupErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataflowEndpointGroupErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataflowEndpointGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateDataflowEndpointGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataflowEndpointGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataflowEndpointGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDataflowEndpointGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -378,7 +378,7 @@ pub enum CreateMissionProfileErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMissionProfileError {
@@ -443,21 +443,21 @@ impl CreateMissionProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMissionProfileErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `CreateMissionProfileErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMissionProfileErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMissionProfileErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateMissionProfileErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMissionProfileErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMissionProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateMissionProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -495,7 +495,7 @@ pub enum DeleteConfigErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigError {
@@ -560,18 +560,18 @@ impl DeleteConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `DeleteConfigErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, DeleteConfigErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `DeleteConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -609,7 +609,7 @@ pub enum DeleteDataflowEndpointGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDataflowEndpointGroupError {
@@ -678,21 +678,21 @@ impl DeleteDataflowEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDataflowEndpointGroupErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `DeleteDataflowEndpointGroupErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataflowEndpointGroupErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataflowEndpointGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteDataflowEndpointGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataflowEndpointGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataflowEndpointGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDataflowEndpointGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -730,7 +730,7 @@ pub enum DeleteMissionProfileErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMissionProfileError {
@@ -795,21 +795,21 @@ impl DeleteMissionProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMissionProfileErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `DeleteMissionProfileErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMissionProfileErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMissionProfileErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteMissionProfileErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMissionProfileErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMissionProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMissionProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -847,7 +847,7 @@ pub enum DescribeContactErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeContactError {
@@ -912,18 +912,18 @@ impl DescribeContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeContactErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `DescribeContactErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, DescribeContactErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `DescribeContactErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeContactErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContactErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -961,7 +961,7 @@ pub enum GetConfigErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigError {
@@ -1026,15 +1026,15 @@ impl GetConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConfigErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `GetConfigErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, GetConfigErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `GetConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, GetConfigErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `GetConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetConfigErrorKind::ResourceNotFoundException(_))
     }
@@ -1069,7 +1069,7 @@ pub enum GetDataflowEndpointGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDataflowEndpointGroupError {
@@ -1134,21 +1134,21 @@ impl GetDataflowEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDataflowEndpointGroupErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `GetDataflowEndpointGroupErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataflowEndpointGroupErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataflowEndpointGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetDataflowEndpointGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataflowEndpointGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataflowEndpointGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDataflowEndpointGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1186,7 +1186,7 @@ pub enum GetMinuteUsageErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMinuteUsageError {
@@ -1251,18 +1251,18 @@ impl GetMinuteUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMinuteUsageErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `GetMinuteUsageErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, GetMinuteUsageErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `GetMinuteUsageErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetMinuteUsageErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMinuteUsageErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetMinuteUsageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMinuteUsageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1300,7 +1300,7 @@ pub enum GetMissionProfileErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMissionProfileError {
@@ -1365,21 +1365,21 @@ impl GetMissionProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMissionProfileErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `GetMissionProfileErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMissionProfileErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `GetMissionProfileErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetMissionProfileErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMissionProfileErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetMissionProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMissionProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1417,7 +1417,7 @@ pub enum GetSatelliteErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSatelliteError {
@@ -1482,18 +1482,18 @@ impl GetSatelliteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSatelliteErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `GetSatelliteErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, GetSatelliteErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `GetSatelliteErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetSatelliteErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSatelliteErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetSatelliteErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSatelliteErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1531,7 +1531,7 @@ pub enum ListConfigsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigsError {
@@ -1596,18 +1596,18 @@ impl ListConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConfigsErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `ListConfigsErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, ListConfigsErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `ListConfigsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListConfigsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListConfigsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1645,7 +1645,7 @@ pub enum ListContactsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContactsError {
@@ -1710,18 +1710,18 @@ impl ListContactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, ListContactsErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContactsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1759,7 +1759,7 @@ pub enum ListDataflowEndpointGroupsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataflowEndpointGroupsError {
@@ -1824,21 +1824,21 @@ impl ListDataflowEndpointGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDataflowEndpointGroupsErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `ListDataflowEndpointGroupsErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataflowEndpointGroupsErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataflowEndpointGroupsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListDataflowEndpointGroupsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataflowEndpointGroupsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataflowEndpointGroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDataflowEndpointGroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1876,7 +1876,7 @@ pub enum ListGroundStationsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroundStationsError {
@@ -1941,21 +1941,21 @@ impl ListGroundStationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroundStationsErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `ListGroundStationsErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroundStationsErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroundStationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListGroundStationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroundStationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroundStationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroundStationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1993,7 +1993,7 @@ pub enum ListMissionProfilesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMissionProfilesError {
@@ -2058,21 +2058,21 @@ impl ListMissionProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMissionProfilesErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `ListMissionProfilesErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMissionProfilesErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `ListMissionProfilesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListMissionProfilesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMissionProfilesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListMissionProfilesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListMissionProfilesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2110,7 +2110,7 @@ pub enum ListSatellitesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSatellitesError {
@@ -2175,18 +2175,18 @@ impl ListSatellitesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSatellitesErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `ListSatellitesErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, ListSatellitesErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `ListSatellitesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSatellitesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSatellitesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListSatellitesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListSatellitesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2224,7 +2224,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2289,21 +2289,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2341,7 +2341,7 @@ pub enum ReserveContactErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReserveContactError {
@@ -2406,18 +2406,18 @@ impl ReserveContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReserveContactErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `ReserveContactErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, ReserveContactErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `ReserveContactErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ReserveContactErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReserveContactErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ReserveContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ReserveContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2455,7 +2455,7 @@ pub enum TagResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2520,18 +2520,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2569,7 +2569,7 @@ pub enum UntagResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2634,18 +2634,18 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2683,7 +2683,7 @@ pub enum UpdateConfigErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigError {
@@ -2748,18 +2748,18 @@ impl UpdateConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `UpdateConfigErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(&self.kind, UpdateConfigErrorKind::DependencyException(_))
     }
-    /// Returns true if the error kind is `UpdateConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2797,7 +2797,7 @@ pub enum UpdateMissionProfileErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMissionProfileError {
@@ -2862,21 +2862,21 @@ impl UpdateMissionProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMissionProfileErrorKind::DependencyException`.
+    /// Returns `true` if the error kind is `UpdateMissionProfileErrorKind::DependencyException`.
     pub fn is_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMissionProfileErrorKind::DependencyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMissionProfileErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateMissionProfileErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMissionProfileErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMissionProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMissionProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

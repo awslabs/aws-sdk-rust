@@ -1255,6 +1255,113 @@ pub fn parse_delete_assessment_framework_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_assessment_framework_share_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteAssessmentFrameworkShareOutput,
+    crate::error::DeleteAssessmentFrameworkShareError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteAssessmentFrameworkShareError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteAssessmentFrameworkShareError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DeleteAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::DeleteAssessmentFrameworkShareErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::DeleteAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::DeleteAssessmentFrameworkShareErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::DeleteAssessmentFrameworkShareErrorKind::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssessmentFrameworkShareError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ValidationException" => crate::error::DeleteAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::DeleteAssessmentFrameworkShareErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteAssessmentFrameworkShareError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_assessment_framework_share_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteAssessmentFrameworkShareOutput,
+    crate::error::DeleteAssessmentFrameworkShareError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_assessment_framework_share_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_assessment_report_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3339,6 +3446,106 @@ pub fn parse_list_assessment_frameworks_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_assessment_framework_share_requests_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAssessmentFrameworkShareRequestsOutput,
+    crate::error::ListAssessmentFrameworkShareRequestsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListAssessmentFrameworkShareRequestsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListAssessmentFrameworkShareRequestsError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListAssessmentFrameworkShareRequestsError {
+            meta: generic,
+            kind:
+                crate::error::ListAssessmentFrameworkShareRequestsErrorKind::AccessDeniedException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::access_denied_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentFrameworkShareRequestsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InternalServerException" => crate::error::ListAssessmentFrameworkShareRequestsError {
+            meta: generic,
+            kind:
+                crate::error::ListAssessmentFrameworkShareRequestsErrorKind::InternalServerException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::internal_server_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentFrameworkShareRequestsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ValidationException" => crate::error::ListAssessmentFrameworkShareRequestsError {
+            meta: generic,
+            kind: crate::error::ListAssessmentFrameworkShareRequestsErrorKind::ValidationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentFrameworkShareRequestsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::ListAssessmentFrameworkShareRequestsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_assessment_framework_share_requests_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAssessmentFrameworkShareRequestsOutput,
+    crate::error::ListAssessmentFrameworkShareRequestsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_assessment_framework_share_requests_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_assessment_framework_share_requests(response.body().as_ref(), output).map_err(crate::error::ListAssessmentFrameworkShareRequestsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_assessment_reports_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4094,6 +4301,122 @@ pub fn parse_register_organization_admin_account_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_assessment_framework_share_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartAssessmentFrameworkShareOutput,
+    crate::error::StartAssessmentFrameworkShareError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartAssessmentFrameworkShareError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StartAssessmentFrameworkShareError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::StartAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::StartAssessmentFrameworkShareErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::StartAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::StartAssessmentFrameworkShareErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::StartAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::StartAssessmentFrameworkShareErrorKind::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartAssessmentFrameworkShareError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ValidationException" => crate::error::StartAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::StartAssessmentFrameworkShareErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StartAssessmentFrameworkShareError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_assessment_framework_share_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartAssessmentFrameworkShareOutput,
+    crate::error::StartAssessmentFrameworkShareError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_assessment_framework_share_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_start_assessment_framework_share(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::StartAssessmentFrameworkShareError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
@@ -4691,6 +5014,119 @@ pub fn parse_update_assessment_framework_response(
             output,
         )
         .map_err(crate::error::UpdateAssessmentFrameworkError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_assessment_framework_share_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateAssessmentFrameworkShareOutput,
+    crate::error::UpdateAssessmentFrameworkShareError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateAssessmentFrameworkShareError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateAssessmentFrameworkShareError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::UpdateAssessmentFrameworkShareErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::UpdateAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::UpdateAssessmentFrameworkShareErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::UpdateAssessmentFrameworkShareErrorKind::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssessmentFrameworkShareError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ValidationException" => crate::error::UpdateAssessmentFrameworkShareError {
+            meta: generic,
+            kind: crate::error::UpdateAssessmentFrameworkShareErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssessmentFrameworkShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateAssessmentFrameworkShareError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_assessment_framework_share_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateAssessmentFrameworkShareOutput,
+    crate::error::UpdateAssessmentFrameworkShareError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_assessment_framework_share_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_update_assessment_framework_share(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::UpdateAssessmentFrameworkShareError::unhandled)?;
         output.build()
     })
 }

@@ -18,7 +18,7 @@ pub enum BatchDeleteRecipeVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteRecipeVersionError {
@@ -83,21 +83,21 @@ impl BatchDeleteRecipeVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteRecipeVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `BatchDeleteRecipeVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteRecipeVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteRecipeVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeleteRecipeVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteRecipeVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteRecipeVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchDeleteRecipeVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -137,7 +137,7 @@ pub enum CreateDatasetErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDatasetError {
@@ -203,22 +203,22 @@ impl CreateDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::ValidationException(_))
     }
@@ -258,7 +258,7 @@ pub enum CreateProfileJobErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProfileJobError {
@@ -325,32 +325,32 @@ impl CreateProfileJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProfileJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateProfileJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProfileJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProfileJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateProfileJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateProfileJobErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateProfileJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProfileJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProfileJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProfileJobErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateProfileJobErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProfileJobErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProfileJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateProfileJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -392,7 +392,7 @@ pub enum CreateProjectErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -458,25 +458,25 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ValidationException(_))
     }
@@ -512,7 +512,7 @@ pub enum CreateRecipeErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRecipeError {
@@ -577,18 +577,18 @@ impl CreateRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRecipeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRecipeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateRecipeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateRecipeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateRecipeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecipeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecipeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateRecipeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateRecipeErrorKind::ValidationException(_))
     }
@@ -627,7 +627,7 @@ pub enum CreateRecipeJobErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRecipeJobError {
@@ -694,32 +694,32 @@ impl CreateRecipeJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRecipeJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRecipeJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecipeJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecipeJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRecipeJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateRecipeJobErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateRecipeJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateRecipeJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecipeJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecipeJobErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateRecipeJobErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecipeJobErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecipeJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateRecipeJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateRecipeJobErrorKind::ValidationException(_))
     }
@@ -756,7 +756,7 @@ pub enum CreateScheduleErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateScheduleError {
@@ -821,18 +821,18 @@ impl CreateScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateScheduleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateScheduleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateScheduleErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateScheduleErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateScheduleErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateScheduleErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateScheduleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateScheduleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateScheduleErrorKind::ValidationException(_))
     }
@@ -867,7 +867,7 @@ pub enum DeleteDatasetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDatasetError {
@@ -932,18 +932,18 @@ impl DeleteDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::ValidationException(_))
     }
@@ -978,7 +978,7 @@ pub enum DeleteJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteJobError {
@@ -1043,15 +1043,15 @@ impl DeleteJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobErrorKind::ValidationException(_))
     }
@@ -1086,7 +1086,7 @@ pub enum DeleteProjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -1151,18 +1151,18 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ValidationException(_))
     }
@@ -1197,7 +1197,7 @@ pub enum DeleteRecipeVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRecipeVersionError {
@@ -1262,21 +1262,21 @@ impl DeleteRecipeVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRecipeVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteRecipeVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecipeVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecipeVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRecipeVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecipeVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecipeVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteRecipeVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1312,7 +1312,7 @@ pub enum DeleteScheduleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScheduleError {
@@ -1376,14 +1376,14 @@ impl DeleteScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScheduleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteScheduleErrorKind::ValidationException(_))
     }
@@ -1415,7 +1415,7 @@ pub enum DescribeDatasetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDatasetError {
@@ -1479,14 +1479,14 @@ impl DescribeDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeDatasetErrorKind::ValidationException(_))
     }
@@ -1518,7 +1518,7 @@ pub enum DescribeJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobError {
@@ -1582,14 +1582,14 @@ impl DescribeJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobErrorKind::ValidationException(_))
     }
@@ -1621,7 +1621,7 @@ pub enum DescribeJobRunErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobRunError {
@@ -1685,14 +1685,14 @@ impl DescribeJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobRunErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeJobRunErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobRunErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeJobRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobRunErrorKind::ValidationException(_))
     }
@@ -1724,7 +1724,7 @@ pub enum DescribeProjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectError {
@@ -1788,14 +1788,14 @@ impl DescribeProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeProjectErrorKind::ValidationException(_))
     }
@@ -1827,7 +1827,7 @@ pub enum DescribeRecipeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRecipeError {
@@ -1891,14 +1891,14 @@ impl DescribeRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRecipeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRecipeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRecipeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRecipeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeRecipeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeRecipeErrorKind::ValidationException(_))
     }
@@ -1930,7 +1930,7 @@ pub enum DescribeScheduleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScheduleError {
@@ -1994,14 +1994,14 @@ impl DescribeScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2034,7 +2034,7 @@ pub struct ListDatasetsError {
 pub enum ListDatasetsErrorKind {
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDatasetsError {
@@ -2097,7 +2097,7 @@ impl ListDatasetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDatasetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListDatasetsErrorKind::ValidationException(_))
     }
@@ -2128,7 +2128,7 @@ pub enum ListJobRunsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobRunsError {
@@ -2192,14 +2192,14 @@ impl ListJobRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobRunsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListJobRunsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobRunsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobRunsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListJobRunsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListJobRunsErrorKind::ValidationException(_))
     }
@@ -2229,7 +2229,7 @@ pub struct ListJobsError {
 pub enum ListJobsErrorKind {
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsError {
@@ -2292,7 +2292,7 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::ValidationException(_))
     }
@@ -2321,7 +2321,7 @@ pub struct ListProjectsError {
 pub enum ListProjectsErrorKind {
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -2384,7 +2384,7 @@ impl ListProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::ValidationException(_))
     }
@@ -2413,7 +2413,7 @@ pub struct ListRecipesError {
 pub enum ListRecipesErrorKind {
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRecipesError {
@@ -2476,7 +2476,7 @@ impl ListRecipesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRecipesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListRecipesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListRecipesErrorKind::ValidationException(_))
     }
@@ -2505,7 +2505,7 @@ pub struct ListRecipeVersionsError {
 pub enum ListRecipeVersionsErrorKind {
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRecipeVersionsError {
@@ -2568,7 +2568,7 @@ impl ListRecipeVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRecipeVersionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListRecipeVersionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2600,7 +2600,7 @@ pub struct ListSchedulesError {
 pub enum ListSchedulesErrorKind {
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSchedulesError {
@@ -2663,7 +2663,7 @@ impl ListSchedulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSchedulesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSchedulesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListSchedulesErrorKind::ValidationException(_))
     }
@@ -2696,7 +2696,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2761,21 +2761,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2813,7 +2813,7 @@ pub enum PublishRecipeErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishRecipeError {
@@ -2878,21 +2878,21 @@ impl PublishRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PublishRecipeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PublishRecipeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishRecipeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PublishRecipeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `PublishRecipeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishRecipeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PublishRecipeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PublishRecipeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PublishRecipeErrorKind::ValidationException(_))
     }
@@ -2927,7 +2927,7 @@ pub enum SendProjectSessionActionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendProjectSessionActionError {
@@ -2992,21 +2992,21 @@ impl SendProjectSessionActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendProjectSessionActionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `SendProjectSessionActionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendProjectSessionActionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `SendProjectSessionActionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SendProjectSessionActionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendProjectSessionActionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendProjectSessionActionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SendProjectSessionActionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3046,7 +3046,7 @@ pub enum StartJobRunErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartJobRunError {
@@ -3112,25 +3112,25 @@ impl StartJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartJobRunErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartJobRunErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartJobRunErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartJobRunErrorKind::ValidationException(_))
     }
@@ -3168,7 +3168,7 @@ pub enum StartProjectSessionErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartProjectSessionError {
@@ -3234,28 +3234,28 @@ impl StartProjectSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartProjectSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartProjectSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectSessionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectSessionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartProjectSessionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectSessionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectSessionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartProjectSessionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectSessionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectSessionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartProjectSessionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3292,7 +3292,7 @@ pub enum StopJobRunErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopJobRunError {
@@ -3356,14 +3356,14 @@ impl StopJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopJobRunErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopJobRunErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopJobRunErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopJobRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopJobRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopJobRunErrorKind::ValidationException(_))
     }
@@ -3397,7 +3397,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3462,18 +3462,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -3508,7 +3508,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3573,21 +3573,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -3622,7 +3622,7 @@ pub enum UpdateDatasetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDatasetError {
@@ -3687,18 +3687,18 @@ impl UpdateDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDatasetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateDatasetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateDatasetErrorKind::ValidationException(_))
     }
@@ -3733,7 +3733,7 @@ pub enum UpdateProfileJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProfileJobError {
@@ -3798,21 +3798,21 @@ impl UpdateProfileJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProfileJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateProfileJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProfileJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProfileJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProfileJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProfileJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProfileJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateProfileJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3848,7 +3848,7 @@ pub enum UpdateProjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProjectError {
@@ -3912,14 +3912,14 @@ impl UpdateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::ValidationException(_))
     }
@@ -3951,7 +3951,7 @@ pub enum UpdateRecipeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRecipeError {
@@ -4015,14 +4015,14 @@ impl UpdateRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRecipeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRecipeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecipeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecipeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateRecipeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateRecipeErrorKind::ValidationException(_))
     }
@@ -4056,7 +4056,7 @@ pub enum UpdateRecipeJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRecipeJobError {
@@ -4121,21 +4121,21 @@ impl UpdateRecipeJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRecipeJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRecipeJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecipeJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecipeJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRecipeJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecipeJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecipeJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateRecipeJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateRecipeJobErrorKind::ValidationException(_))
     }
@@ -4170,7 +4170,7 @@ pub enum UpdateScheduleErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input parameters for this request failed validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateScheduleError {
@@ -4235,21 +4235,21 @@ impl UpdateScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateScheduleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateScheduleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScheduleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScheduleErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateScheduleErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScheduleErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScheduleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateScheduleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateScheduleErrorKind::ValidationException(_))
     }

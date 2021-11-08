@@ -22,7 +22,7 @@ pub enum AddApplicationCloudWatchLoggingOptionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddApplicationCloudWatchLoggingOptionError {
@@ -102,35 +102,35 @@ impl AddApplicationCloudWatchLoggingOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `AddApplicationCloudWatchLoggingOptionErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -188,7 +188,7 @@ pub enum AddApplicationInputErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddApplicationInputError {
@@ -256,42 +256,42 @@ impl AddApplicationInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddApplicationInputErrorKind::CodeValidationException`.
+    /// Returns `true` if the error kind is `AddApplicationInputErrorKind::CodeValidationException`.
     pub fn is_code_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputErrorKind::CodeValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AddApplicationInputErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AddApplicationInputErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `AddApplicationInputErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddApplicationInputErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `AddApplicationInputErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -336,7 +336,7 @@ pub enum AddApplicationInputProcessingConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddApplicationInputProcessingConfigurationError {
@@ -418,35 +418,35 @@ impl AddApplicationInputProcessingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputProcessingConfigurationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `AddApplicationInputProcessingConfigurationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -502,7 +502,7 @@ pub enum AddApplicationOutputErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddApplicationOutputError {
@@ -569,35 +569,35 @@ impl AddApplicationOutputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddApplicationOutputErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AddApplicationOutputErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationOutputErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationOutputErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AddApplicationOutputErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationOutputErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationOutputErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `AddApplicationOutputErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationOutputErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationOutputErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddApplicationOutputErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationOutputErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationOutputErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `AddApplicationOutputErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -641,7 +641,7 @@ pub enum AddApplicationReferenceDataSourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddApplicationReferenceDataSourceError {
@@ -721,35 +721,35 @@ impl AddApplicationReferenceDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddApplicationReferenceDataSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AddApplicationReferenceDataSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationReferenceDataSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationReferenceDataSourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AddApplicationReferenceDataSourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationReferenceDataSourceErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationReferenceDataSourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `AddApplicationReferenceDataSourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationReferenceDataSourceErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationReferenceDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddApplicationReferenceDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddApplicationReferenceDataSourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddApplicationReferenceDataSourceErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `AddApplicationReferenceDataSourceErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -805,7 +805,7 @@ pub enum CreateApplicationErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationError {
@@ -873,42 +873,42 @@ impl CreateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::CodeValidationException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::CodeValidationException`.
     pub fn is_code_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::CodeValidationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -951,7 +951,7 @@ pub enum DeleteApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationError {
@@ -1017,28 +1017,28 @@ impl DeleteApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1081,7 +1081,7 @@ pub enum DeleteApplicationCloudWatchLoggingOptionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationCloudWatchLoggingOptionError {
@@ -1161,35 +1161,35 @@ impl DeleteApplicationCloudWatchLoggingOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationCloudWatchLoggingOptionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationCloudWatchLoggingOptionErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationCloudWatchLoggingOptionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationCloudWatchLoggingOptionErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1245,7 +1245,7 @@ pub enum DeleteApplicationInputProcessingConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationInputProcessingConfigurationError {
@@ -1329,7 +1329,7 @@ impl DeleteApplicationInputProcessingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1338,28 +1338,28 @@ impl DeleteApplicationInputProcessingConfigurationError {
             )
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationInputProcessingConfigurationErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationInputProcessingConfigurationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationInputProcessingConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationInputProcessingConfigurationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1417,7 +1417,7 @@ pub enum DeleteApplicationOutputErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationOutputError {
@@ -1488,35 +1488,35 @@ impl DeleteApplicationOutputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationOutputErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationOutputErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationOutputErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationOutputErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteApplicationOutputErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationOutputErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationOutputErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteApplicationOutputErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationOutputErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationOutputErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApplicationOutputErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationOutputErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationOutputErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationOutputErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1562,7 +1562,7 @@ pub enum DeleteApplicationReferenceDataSourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationReferenceDataSourceError {
@@ -1642,35 +1642,35 @@ impl DeleteApplicationReferenceDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationReferenceDataSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationReferenceDataSourceErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationReferenceDataSourceErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationReferenceDataSourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationReferenceDataSourceErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1720,7 +1720,7 @@ pub enum DescribeApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeApplicationError {
@@ -1784,14 +1784,14 @@ impl DescribeApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DescribeApplicationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1837,7 +1837,7 @@ pub enum DiscoverInputSchemaErrorKind {
     /// <p>Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for
     /// the given streaming source.</p>
     UnableToDetectSchemaException(crate::error::UnableToDetectSchemaException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DiscoverInputSchemaError {
@@ -1905,28 +1905,28 @@ impl DiscoverInputSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DiscoverInputSchemaErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DiscoverInputSchemaErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DiscoverInputSchemaErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DiscoverInputSchemaErrorKind::ResourceProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DiscoverInputSchemaErrorKind::ResourceProvisionedThroughputExceededException`.
     pub fn is_resource_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DiscoverInputSchemaErrorKind::ResourceProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DiscoverInputSchemaErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DiscoverInputSchemaErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DiscoverInputSchemaErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DiscoverInputSchemaErrorKind::UnableToDetectSchemaException`.
+    /// Returns `true` if the error kind is `DiscoverInputSchemaErrorKind::UnableToDetectSchemaException`.
     pub fn is_unable_to_detect_schema_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1961,7 +1961,7 @@ pub struct ListApplicationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListApplicationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationsError {
@@ -2051,7 +2051,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2116,21 +2116,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2174,7 +2174,7 @@ pub enum StartApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartApplicationError {
@@ -2243,35 +2243,35 @@ impl StartApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartApplicationErrorKind::InvalidApplicationConfigurationException`.
+    /// Returns `true` if the error kind is `StartApplicationErrorKind::InvalidApplicationConfigurationException`.
     pub fn is_invalid_application_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartApplicationErrorKind::InvalidApplicationConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `StartApplicationErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `StartApplicationErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartApplicationErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `StartApplicationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartApplicationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartApplicationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartApplicationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `StartApplicationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2313,7 +2313,7 @@ pub enum StopApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopApplicationError {
@@ -2378,21 +2378,21 @@ impl StopApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopApplicationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StopApplicationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopApplicationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StopApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopApplicationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `StopApplicationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2434,7 +2434,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2501,32 +2501,32 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -2567,7 +2567,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2634,35 +2634,35 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TooManyTagsException(_))
     }
@@ -2705,7 +2705,7 @@ pub enum UpdateApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationError {
@@ -2773,42 +2773,42 @@ impl UpdateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::CodeValidationException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::CodeValidationException`.
     pub fn is_code_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::CodeValidationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,

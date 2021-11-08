@@ -24,7 +24,7 @@ pub enum CancelQuantumTaskErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelQuantumTaskError {
@@ -92,39 +92,39 @@ impl CancelQuantumTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelQuantumTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CancelQuantumTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelQuantumTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CancelQuantumTaskErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CancelQuantumTaskErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CancelQuantumTaskErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CancelQuantumTaskErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CancelQuantumTaskErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelQuantumTaskErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CancelQuantumTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelQuantumTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelQuantumTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelQuantumTaskErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelQuantumTaskErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelQuantumTaskErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CancelQuantumTaskErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CancelQuantumTaskErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -171,7 +171,7 @@ pub enum CreateQuantumTaskErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateQuantumTaskError {
@@ -239,42 +239,42 @@ impl CreateQuantumTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateQuantumTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateQuantumTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateQuantumTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateQuantumTaskErrorKind::DeviceOfflineException`.
+    /// Returns `true` if the error kind is `CreateQuantumTaskErrorKind::DeviceOfflineException`.
     pub fn is_device_offline_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateQuantumTaskErrorKind::DeviceOfflineException(_)
         )
     }
-    /// Returns true if the error kind is `CreateQuantumTaskErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateQuantumTaskErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateQuantumTaskErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateQuantumTaskErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateQuantumTaskErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateQuantumTaskErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateQuantumTaskErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateQuantumTaskErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateQuantumTaskErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateQuantumTaskErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateQuantumTaskErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -323,7 +323,7 @@ pub enum GetDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceError {
@@ -392,31 +392,31 @@ impl GetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::DeviceOfflineException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::DeviceOfflineException`.
     pub fn is_device_offline_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::DeviceOfflineException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::DeviceRetiredException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::DeviceRetiredException`.
     pub fn is_device_retired_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::DeviceRetiredException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::ValidationException(_))
     }
@@ -459,7 +459,7 @@ pub enum GetQuantumTaskErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQuantumTaskError {
@@ -526,32 +526,32 @@ impl GetQuantumTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQuantumTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetQuantumTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetQuantumTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetQuantumTaskErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetQuantumTaskErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetQuantumTaskErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetQuantumTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetQuantumTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetQuantumTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetQuantumTaskErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetQuantumTaskErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetQuantumTaskErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetQuantumTaskErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetQuantumTaskErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetQuantumTaskErrorKind::ValidationException(_))
     }
@@ -588,7 +588,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -653,21 +653,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -707,7 +707,7 @@ pub enum SearchDevicesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchDevicesError {
@@ -773,22 +773,22 @@ impl SearchDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchDevicesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchDevicesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, SearchDevicesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `SearchDevicesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `SearchDevicesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchDevicesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `SearchDevicesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SearchDevicesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, SearchDevicesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `SearchDevicesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SearchDevicesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, SearchDevicesErrorKind::ValidationException(_))
     }
@@ -826,7 +826,7 @@ pub enum SearchQuantumTasksErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchQuantumTasksError {
@@ -892,28 +892,28 @@ impl SearchQuantumTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchQuantumTasksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchQuantumTasksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchQuantumTasksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SearchQuantumTasksErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `SearchQuantumTasksErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchQuantumTasksErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `SearchQuantumTasksErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SearchQuantumTasksErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchQuantumTasksErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `SearchQuantumTasksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SearchQuantumTasksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -952,7 +952,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1017,21 +1017,21 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1066,7 +1066,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1131,21 +1131,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }

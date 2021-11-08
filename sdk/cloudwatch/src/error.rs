@@ -14,7 +14,7 @@ pub struct DeleteAlarmsError {
 pub enum DeleteAlarmsErrorKind {
     /// <p>The named resource does not exist.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAlarmsError {
@@ -77,7 +77,7 @@ impl DeleteAlarmsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAlarmsErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `DeleteAlarmsErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, DeleteAlarmsErrorKind::ResourceNotFound(_))
     }
@@ -112,7 +112,7 @@ pub enum DeleteAnomalyDetectorErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAnomalyDetectorError {
@@ -180,28 +180,28 @@ impl DeleteAnomalyDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyDetectorErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyDetectorErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -242,7 +242,7 @@ pub enum DeleteDashboardsErrorKind {
     InternalServiceFault(crate::error::InternalServiceFault),
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDashboardsError {
@@ -307,21 +307,21 @@ impl DeleteDashboardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDashboardsErrorKind::DashboardNotFoundError`.
+    /// Returns `true` if the error kind is `DeleteDashboardsErrorKind::DashboardNotFoundError`.
     pub fn is_dashboard_not_found_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDashboardsErrorKind::DashboardNotFoundError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDashboardsErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `DeleteDashboardsErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDashboardsErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDashboardsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteDashboardsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -357,7 +357,7 @@ pub enum DeleteInsightRulesErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInsightRulesError {
@@ -421,14 +421,14 @@ impl DeleteInsightRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInsightRulesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteInsightRulesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInsightRulesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInsightRulesErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteInsightRulesErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -465,7 +465,7 @@ pub enum DeleteMetricStreamErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMetricStreamError {
@@ -530,21 +530,21 @@ impl DeleteMetricStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMetricStreamErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `DeleteMetricStreamErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMetricStreamErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMetricStreamErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteMetricStreamErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMetricStreamErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMetricStreamErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteMetricStreamErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -578,7 +578,7 @@ pub struct DescribeAlarmHistoryError {
 pub enum DescribeAlarmHistoryErrorKind {
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAlarmHistoryError {
@@ -641,7 +641,7 @@ impl DescribeAlarmHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAlarmHistoryErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAlarmHistoryErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -673,7 +673,7 @@ pub struct DescribeAlarmsError {
 pub enum DescribeAlarmsErrorKind {
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAlarmsError {
@@ -736,7 +736,7 @@ impl DescribeAlarmsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAlarmsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAlarmsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, DescribeAlarmsErrorKind::InvalidNextToken(_))
     }
@@ -763,7 +763,7 @@ pub struct DescribeAlarmsForMetricError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAlarmsForMetricErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAlarmsForMetricError {
@@ -853,7 +853,7 @@ pub enum DescribeAnomalyDetectorsErrorKind {
     InvalidNextToken(crate::error::InvalidNextToken),
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAnomalyDetectorsError {
@@ -920,21 +920,21 @@ impl DescribeAnomalyDetectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectorsErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorsErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectorsErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectorsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectorsErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -970,7 +970,7 @@ pub struct DescribeInsightRulesError {
 pub enum DescribeInsightRulesErrorKind {
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInsightRulesError {
@@ -1033,7 +1033,7 @@ impl DescribeInsightRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInsightRulesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeInsightRulesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -1063,7 +1063,7 @@ pub struct DisableAlarmActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableAlarmActionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableAlarmActionsError {
@@ -1151,7 +1151,7 @@ pub enum DisableInsightRulesErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableInsightRulesError {
@@ -1217,14 +1217,14 @@ impl DisableInsightRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableInsightRulesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DisableInsightRulesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableInsightRulesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DisableInsightRulesErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DisableInsightRulesErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1255,7 +1255,7 @@ pub struct EnableAlarmActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableAlarmActionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableAlarmActionsError {
@@ -1345,7 +1345,7 @@ pub enum EnableInsightRulesErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableInsightRulesError {
@@ -1410,21 +1410,21 @@ impl EnableInsightRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableInsightRulesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `EnableInsightRulesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableInsightRulesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `EnableInsightRulesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableInsightRulesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableInsightRulesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `EnableInsightRulesErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `EnableInsightRulesErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1462,7 +1462,7 @@ pub enum GetDashboardErrorKind {
     InternalServiceFault(crate::error::InternalServiceFault),
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDashboardError {
@@ -1527,15 +1527,15 @@ impl GetDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDashboardErrorKind::DashboardNotFoundError`.
+    /// Returns `true` if the error kind is `GetDashboardErrorKind::DashboardNotFoundError`.
     pub fn is_dashboard_not_found_error(&self) -> bool {
         matches!(&self.kind, GetDashboardErrorKind::DashboardNotFoundError(_))
     }
-    /// Returns true if the error kind is `GetDashboardErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `GetDashboardErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(&self.kind, GetDashboardErrorKind::InternalServiceFault(_))
     }
-    /// Returns true if the error kind is `GetDashboardErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetDashboardErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1573,7 +1573,7 @@ pub enum GetInsightRuleReportErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInsightRuleReportError {
@@ -1640,21 +1640,21 @@ impl GetInsightRuleReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInsightRuleReportErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetInsightRuleReportErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightRuleReportErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightRuleReportErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetInsightRuleReportErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightRuleReportErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightRuleReportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetInsightRuleReportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1690,7 +1690,7 @@ pub struct GetMetricDataError {
 pub enum GetMetricDataErrorKind {
     /// <p>The next token specified is invalid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMetricDataError {
@@ -1753,7 +1753,7 @@ impl GetMetricDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMetricDataErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `GetMetricDataErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, GetMetricDataErrorKind::InvalidNextToken(_))
     }
@@ -1788,7 +1788,7 @@ pub enum GetMetricStatisticsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMetricStatisticsError {
@@ -1858,28 +1858,28 @@ impl GetMetricStatisticsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMetricStatisticsErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `GetMetricStatisticsErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricStatisticsErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricStatisticsErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `GetMetricStatisticsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricStatisticsErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricStatisticsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetMetricStatisticsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricStatisticsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricStatisticsErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetMetricStatisticsErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1924,7 +1924,7 @@ pub enum GetMetricStreamErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMetricStreamError {
@@ -1991,35 +1991,35 @@ impl GetMetricStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMetricStreamErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `GetMetricStreamErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricStreamErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricStreamErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `GetMetricStreamErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricStreamErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricStreamErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetMetricStreamErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricStreamErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricStreamErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetMetricStreamErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMetricStreamErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetMetricStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMetricStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2053,7 +2053,7 @@ pub struct GetMetricWidgetImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMetricWidgetImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMetricWidgetImageError {
@@ -2141,7 +2141,7 @@ pub enum ListDashboardsErrorKind {
     InternalServiceFault(crate::error::InternalServiceFault),
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDashboardsError {
@@ -2205,11 +2205,11 @@ impl ListDashboardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(&self.kind, ListDashboardsErrorKind::InternalServiceFault(_))
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2244,7 +2244,7 @@ pub enum ListMetricsErrorKind {
     InternalServiceFault(crate::error::InternalServiceFault),
     /// <p>The value of an input parameter is bad or out-of-range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMetricsError {
@@ -2308,11 +2308,11 @@ impl ListMetricsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMetricsErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `ListMetricsErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(&self.kind, ListMetricsErrorKind::InternalServiceFault(_))
     }
-    /// Returns true if the error kind is `ListMetricsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListMetricsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2351,7 +2351,7 @@ pub enum ListMetricStreamsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMetricStreamsError {
@@ -2417,25 +2417,25 @@ impl ListMetricStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMetricStreamsErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `ListMetricStreamsErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListMetricStreamsErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `ListMetricStreamsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListMetricStreamsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, ListMetricStreamsErrorKind::InvalidNextToken(_))
     }
-    /// Returns true if the error kind is `ListMetricStreamsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListMetricStreamsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMetricStreamsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListMetricStreamsErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `ListMetricStreamsErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2474,7 +2474,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2539,21 +2539,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2593,7 +2593,7 @@ pub enum PutAnomalyDetectorErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAnomalyDetectorError {
@@ -2659,28 +2659,28 @@ impl PutAnomalyDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAnomalyDetectorErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `PutAnomalyDetectorErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             PutAnomalyDetectorErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `PutAnomalyDetectorErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutAnomalyDetectorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAnomalyDetectorErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutAnomalyDetectorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutAnomalyDetectorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAnomalyDetectorErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutAnomalyDetectorErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `PutAnomalyDetectorErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2715,7 +2715,7 @@ pub struct PutCompositeAlarmError {
 pub enum PutCompositeAlarmErrorKind {
     /// <p>The quota for alarms for this customer has already been reached.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutCompositeAlarmError {
@@ -2778,7 +2778,7 @@ impl PutCompositeAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutCompositeAlarmErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PutCompositeAlarmErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2812,7 +2812,7 @@ pub enum PutDashboardErrorKind {
     DashboardInvalidInputError(crate::error::DashboardInvalidInputError),
     /// <p>Request processing has failed due to some unknown error, exception, or failure.</p>
     InternalServiceFault(crate::error::InternalServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDashboardError {
@@ -2876,14 +2876,14 @@ impl PutDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDashboardErrorKind::DashboardInvalidInputError`.
+    /// Returns `true` if the error kind is `PutDashboardErrorKind::DashboardInvalidInputError`.
     pub fn is_dashboard_invalid_input_error(&self) -> bool {
         matches!(
             &self.kind,
             PutDashboardErrorKind::DashboardInvalidInputError(_)
         )
     }
-    /// Returns true if the error kind is `PutDashboardErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `PutDashboardErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(&self.kind, PutDashboardErrorKind::InternalServiceFault(_))
     }
@@ -2917,7 +2917,7 @@ pub enum PutInsightRuleErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutInsightRuleError {
@@ -2982,21 +2982,21 @@ impl PutInsightRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutInsightRuleErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutInsightRuleErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightRuleErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutInsightRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInsightRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutInsightRuleErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `PutInsightRuleErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3030,7 +3030,7 @@ pub struct PutMetricAlarmError {
 pub enum PutMetricAlarmErrorKind {
     /// <p>The quota for alarms for this customer has already been reached.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMetricAlarmError {
@@ -3093,7 +3093,7 @@ impl PutMetricAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutMetricAlarmErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PutMetricAlarmErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, PutMetricAlarmErrorKind::LimitExceededFault(_))
     }
@@ -3128,7 +3128,7 @@ pub enum PutMetricDataErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMetricDataError {
@@ -3194,25 +3194,25 @@ impl PutMetricDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutMetricDataErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `PutMetricDataErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(&self.kind, PutMetricDataErrorKind::InternalServiceFault(_))
     }
-    /// Returns true if the error kind is `PutMetricDataErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `PutMetricDataErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricDataErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricDataErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutMetricDataErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricDataErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricDataErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `PutMetricDataErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3255,7 +3255,7 @@ pub enum PutMetricStreamErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMetricStreamError {
@@ -3322,35 +3322,35 @@ impl PutMetricStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutMetricStreamErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutMetricStreamErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricStreamErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricStreamErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `PutMetricStreamErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricStreamErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricStreamErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `PutMetricStreamErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricStreamErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricStreamErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutMetricStreamErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricStreamErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricStreamErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `PutMetricStreamErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3388,7 +3388,7 @@ pub enum SetAlarmStateErrorKind {
     InvalidFormatFault(crate::error::InvalidFormatFault),
     /// <p>The named resource does not exist.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetAlarmStateError {
@@ -3452,11 +3452,11 @@ impl SetAlarmStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetAlarmStateErrorKind::InvalidFormatFault`.
+    /// Returns `true` if the error kind is `SetAlarmStateErrorKind::InvalidFormatFault`.
     pub fn is_invalid_format_fault(&self) -> bool {
         matches!(&self.kind, SetAlarmStateErrorKind::InvalidFormatFault(_))
     }
-    /// Returns true if the error kind is `SetAlarmStateErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `SetAlarmStateErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, SetAlarmStateErrorKind::ResourceNotFound(_))
     }
@@ -3490,7 +3490,7 @@ pub enum StartMetricStreamsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMetricStreamsError {
@@ -3555,21 +3555,21 @@ impl StartMetricStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMetricStreamsErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `StartMetricStreamsErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartMetricStreamsErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `StartMetricStreamsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartMetricStreamsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMetricStreamsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartMetricStreamsErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `StartMetricStreamsErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3607,7 +3607,7 @@ pub enum StopMetricStreamsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopMetricStreamsError {
@@ -3672,21 +3672,21 @@ impl StopMetricStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopMetricStreamsErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `StopMetricStreamsErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopMetricStreamsErrorKind::InternalServiceFault(_)
         )
     }
-    /// Returns true if the error kind is `StopMetricStreamsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StopMetricStreamsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMetricStreamsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StopMetricStreamsErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `StopMetricStreamsErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3726,7 +3726,7 @@ pub enum TagResourceErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3792,25 +3792,25 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServiceFault(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3851,7 +3851,7 @@ pub enum UntagResourceErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3917,25 +3917,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceFault`.
     pub fn is_internal_service_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServiceFault(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

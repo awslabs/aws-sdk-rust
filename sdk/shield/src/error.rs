@@ -30,7 +30,7 @@ pub enum AssociateDRTLogBucketErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDRTLogBucketError {
@@ -102,56 +102,56 @@ impl AssociateDRTLogBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDRTLogBucketErrorKind::AccessDeniedForDependencyException`.
+    /// Returns `true` if the error kind is `AssociateDRTLogBucketErrorKind::AccessDeniedForDependencyException`.
     pub fn is_access_denied_for_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTLogBucketErrorKind::AccessDeniedForDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTLogBucketErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AssociateDRTLogBucketErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTLogBucketErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTLogBucketErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `AssociateDRTLogBucketErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTLogBucketErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTLogBucketErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateDRTLogBucketErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTLogBucketErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTLogBucketErrorKind::LimitsExceededException`.
+    /// Returns `true` if the error kind is `AssociateDRTLogBucketErrorKind::LimitsExceededException`.
     pub fn is_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTLogBucketErrorKind::LimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTLogBucketErrorKind::NoAssociatedRoleException`.
+    /// Returns `true` if the error kind is `AssociateDRTLogBucketErrorKind::NoAssociatedRoleException`.
     pub fn is_no_associated_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTLogBucketErrorKind::NoAssociatedRoleException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTLogBucketErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `AssociateDRTLogBucketErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTLogBucketErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTLogBucketErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateDRTLogBucketErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -204,7 +204,7 @@ pub enum AssociateDRTRoleErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDRTRoleError {
@@ -272,42 +272,42 @@ impl AssociateDRTRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDRTRoleErrorKind::AccessDeniedForDependencyException`.
+    /// Returns `true` if the error kind is `AssociateDRTRoleErrorKind::AccessDeniedForDependencyException`.
     pub fn is_access_denied_for_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTRoleErrorKind::AccessDeniedForDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTRoleErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AssociateDRTRoleErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTRoleErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTRoleErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `AssociateDRTRoleErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTRoleErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTRoleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateDRTRoleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTRoleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTRoleErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `AssociateDRTRoleErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDRTRoleErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDRTRoleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateDRTRoleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -354,7 +354,7 @@ pub enum AssociateHealthCheckErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateHealthCheckError {
@@ -421,35 +421,35 @@ impl AssociateHealthCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateHealthCheckErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AssociateHealthCheckErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateHealthCheckErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateHealthCheckErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateHealthCheckErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateHealthCheckErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateHealthCheckErrorKind::LimitsExceededException`.
+    /// Returns `true` if the error kind is `AssociateHealthCheckErrorKind::LimitsExceededException`.
     pub fn is_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateHealthCheckErrorKind::LimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateHealthCheckErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `AssociateHealthCheckErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateHealthCheckErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateHealthCheckErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateHealthCheckErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -495,7 +495,7 @@ pub enum AssociateProactiveEngagementDetailsErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateProactiveEngagementDetailsError {
@@ -575,35 +575,35 @@ impl AssociateProactiveEngagementDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateProactiveEngagementDetailsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `AssociateProactiveEngagementDetailsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateProactiveEngagementDetailsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateProactiveEngagementDetailsErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `AssociateProactiveEngagementDetailsErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateProactiveEngagementDetailsErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateProactiveEngagementDetailsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateProactiveEngagementDetailsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateProactiveEngagementDetailsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateProactiveEngagementDetailsErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `AssociateProactiveEngagementDetailsErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateProactiveEngagementDetailsErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateProactiveEngagementDetailsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateProactiveEngagementDetailsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -667,7 +667,7 @@ pub enum CreateProtectionErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProtectionError {
@@ -737,56 +737,56 @@ impl CreateProtectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProtectionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateProtectionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `CreateProtectionErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateProtectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `CreateProtectionErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionErrorKind::InvalidResourceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionErrorKind::LimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateProtectionErrorKind::LimitsExceededException`.
     pub fn is_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionErrorKind::LimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `CreateProtectionErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateProtectionErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProtectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -837,7 +837,7 @@ pub enum CreateProtectionGroupErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProtectionGroupError {
@@ -905,42 +905,42 @@ impl CreateProtectionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProtectionGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateProtectionGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionGroupErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateProtectionGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionGroupErrorKind::LimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateProtectionGroupErrorKind::LimitsExceededException`.
     pub fn is_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionGroupErrorKind::LimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionGroupErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `CreateProtectionGroupErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionGroupErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionGroupErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateProtectionGroupErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProtectionGroupErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProtectionGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProtectionGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -980,7 +980,7 @@ pub enum CreateSubscriptionErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSubscriptionError {
@@ -1044,14 +1044,14 @@ impl CreateSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSubscriptionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `CreateSubscriptionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSubscriptionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSubscriptionErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateSubscriptionErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1090,7 +1090,7 @@ pub enum DeleteProtectionErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProtectionError {
@@ -1155,21 +1155,21 @@ impl DeleteProtectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProtectionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteProtectionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProtectionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProtectionErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `DeleteProtectionErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProtectionErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProtectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProtectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1209,7 +1209,7 @@ pub enum DeleteProtectionGroupErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProtectionGroupError {
@@ -1274,21 +1274,21 @@ impl DeleteProtectionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProtectionGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteProtectionGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProtectionGroupErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProtectionGroupErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `DeleteProtectionGroupErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProtectionGroupErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProtectionGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProtectionGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1327,7 +1327,7 @@ pub enum DeleteSubscriptionErrorKind {
     LockedSubscriptionException(crate::error::LockedSubscriptionException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSubscriptionError {
@@ -1392,21 +1392,21 @@ impl DeleteSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSubscriptionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteSubscriptionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubscriptionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubscriptionErrorKind::LockedSubscriptionException`.
+    /// Returns `true` if the error kind is `DeleteSubscriptionErrorKind::LockedSubscriptionException`.
     pub fn is_locked_subscription_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubscriptionErrorKind::LockedSubscriptionException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubscriptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSubscriptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1443,7 +1443,7 @@ pub enum DescribeAttackErrorKind {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
     /// can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAttackError {
@@ -1507,14 +1507,14 @@ impl DescribeAttackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAttackErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAttackErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAttackErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAttackErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeAttackErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1548,7 +1548,7 @@ pub enum DescribeAttackStatisticsErrorKind {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
     /// can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAttackStatisticsError {
@@ -1611,7 +1611,7 @@ impl DescribeAttackStatisticsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAttackStatisticsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeAttackStatisticsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1646,7 +1646,7 @@ pub enum DescribeDRTAccessErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDRTAccessError {
@@ -1710,14 +1710,14 @@ impl DescribeDRTAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDRTAccessErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeDRTAccessErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDRTAccessErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDRTAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDRTAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1753,7 +1753,7 @@ pub enum DescribeEmergencyContactSettingsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEmergencyContactSettingsError {
@@ -1824,14 +1824,14 @@ impl DescribeEmergencyContactSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEmergencyContactSettingsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeEmergencyContactSettingsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEmergencyContactSettingsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEmergencyContactSettingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEmergencyContactSettingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1873,7 +1873,7 @@ pub enum DescribeProtectionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProtectionError {
@@ -1938,21 +1938,21 @@ impl DescribeProtectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProtectionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeProtectionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProtectionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProtectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeProtectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProtectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProtectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProtectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1989,7 +1989,7 @@ pub enum DescribeProtectionGroupErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProtectionGroupError {
@@ -2053,14 +2053,14 @@ impl DescribeProtectionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProtectionGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeProtectionGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProtectionGroupErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProtectionGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProtectionGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2096,7 +2096,7 @@ pub enum DescribeSubscriptionErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSubscriptionError {
@@ -2160,14 +2160,14 @@ impl DescribeSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSubscriptionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeSubscriptionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubscriptionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubscriptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSubscriptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2210,7 +2210,7 @@ pub enum DisableProactiveEngagementErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableProactiveEngagementError {
@@ -2277,35 +2277,35 @@ impl DisableProactiveEngagementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableProactiveEngagementErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DisableProactiveEngagementErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableProactiveEngagementErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisableProactiveEngagementErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `DisableProactiveEngagementErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableProactiveEngagementErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DisableProactiveEngagementErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisableProactiveEngagementErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableProactiveEngagementErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisableProactiveEngagementErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `DisableProactiveEngagementErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableProactiveEngagementErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `DisableProactiveEngagementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableProactiveEngagementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2353,7 +2353,7 @@ pub enum DisassociateDRTLogBucketErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateDRTLogBucketError {
@@ -2423,42 +2423,42 @@ impl DisassociateDRTLogBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateDRTLogBucketErrorKind::AccessDeniedForDependencyException`.
+    /// Returns `true` if the error kind is `DisassociateDRTLogBucketErrorKind::AccessDeniedForDependencyException`.
     pub fn is_access_denied_for_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDRTLogBucketErrorKind::AccessDeniedForDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDRTLogBucketErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DisassociateDRTLogBucketErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDRTLogBucketErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDRTLogBucketErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `DisassociateDRTLogBucketErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDRTLogBucketErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDRTLogBucketErrorKind::NoAssociatedRoleException`.
+    /// Returns `true` if the error kind is `DisassociateDRTLogBucketErrorKind::NoAssociatedRoleException`.
     pub fn is_no_associated_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDRTLogBucketErrorKind::NoAssociatedRoleException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDRTLogBucketErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `DisassociateDRTLogBucketErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDRTLogBucketErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDRTLogBucketErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateDRTLogBucketErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2505,7 +2505,7 @@ pub enum DisassociateDRTRoleErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateDRTRoleError {
@@ -2571,28 +2571,28 @@ impl DisassociateDRTRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateDRTRoleErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DisassociateDRTRoleErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDRTRoleErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDRTRoleErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `DisassociateDRTRoleErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDRTRoleErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDRTRoleErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `DisassociateDRTRoleErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDRTRoleErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDRTRoleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateDRTRoleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2635,7 +2635,7 @@ pub enum DisassociateHealthCheckErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateHealthCheckError {
@@ -2701,28 +2701,28 @@ impl DisassociateHealthCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateHealthCheckErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DisassociateHealthCheckErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateHealthCheckErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateHealthCheckErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateHealthCheckErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateHealthCheckErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateHealthCheckErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `DisassociateHealthCheckErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateHealthCheckErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateHealthCheckErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateHealthCheckErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2767,7 +2767,7 @@ pub enum EnableProactiveEngagementErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableProactiveEngagementError {
@@ -2834,35 +2834,35 @@ impl EnableProactiveEngagementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableProactiveEngagementErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `EnableProactiveEngagementErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableProactiveEngagementErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `EnableProactiveEngagementErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `EnableProactiveEngagementErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableProactiveEngagementErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `EnableProactiveEngagementErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `EnableProactiveEngagementErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableProactiveEngagementErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `EnableProactiveEngagementErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `EnableProactiveEngagementErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableProactiveEngagementErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `EnableProactiveEngagementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `EnableProactiveEngagementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2899,7 +2899,7 @@ pub enum GetSubscriptionStateErrorKind {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You
     /// can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSubscriptionStateError {
@@ -2962,7 +2962,7 @@ impl GetSubscriptionStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSubscriptionStateErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `GetSubscriptionStateErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2999,7 +2999,7 @@ pub enum ListAttacksErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttacksError {
@@ -3064,18 +3064,18 @@ impl ListAttacksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAttacksErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListAttacksErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ListAttacksErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `ListAttacksErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `ListAttacksErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttacksErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttacksErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListAttacksErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3114,7 +3114,7 @@ pub enum ListProtectionGroupsErrorKind {
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProtectionGroupsError {
@@ -3179,21 +3179,21 @@ impl ListProtectionGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProtectionGroupsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListProtectionGroupsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProtectionGroupsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListProtectionGroupsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListProtectionGroupsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProtectionGroupsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListProtectionGroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProtectionGroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3232,7 +3232,7 @@ pub enum ListProtectionsErrorKind {
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProtectionsError {
@@ -3297,21 +3297,21 @@ impl ListProtectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProtectionsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListProtectionsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProtectionsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListProtectionsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListProtectionsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProtectionsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListProtectionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProtectionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3350,7 +3350,7 @@ pub enum ListResourcesInProtectionGroupErrorKind {
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourcesInProtectionGroupError {
@@ -3424,21 +3424,21 @@ impl ListResourcesInProtectionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourcesInProtectionGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListResourcesInProtectionGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesInProtectionGroupErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesInProtectionGroupErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListResourcesInProtectionGroupErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesInProtectionGroupErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesInProtectionGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourcesInProtectionGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3481,7 +3481,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3546,21 +3546,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidResourceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3601,7 +3601,7 @@ pub enum TagResourceErrorKind {
     InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3667,25 +3667,25 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalErrorException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidResourceException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3727,7 +3727,7 @@ pub enum UntagResourceErrorKind {
     InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3793,28 +3793,28 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidResourceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidResourceException`.
     pub fn is_invalid_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidResourceException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3857,7 +3857,7 @@ pub enum UpdateEmergencyContactSettingsErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEmergencyContactSettingsError {
@@ -3934,28 +3934,28 @@ impl UpdateEmergencyContactSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEmergencyContactSettingsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateEmergencyContactSettingsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmergencyContactSettingsErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmergencyContactSettingsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateEmergencyContactSettingsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmergencyContactSettingsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmergencyContactSettingsErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `UpdateEmergencyContactSettingsErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmergencyContactSettingsErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmergencyContactSettingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEmergencyContactSettingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4004,7 +4004,7 @@ pub enum UpdateProtectionGroupErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProtectionGroupError {
@@ -4070,28 +4070,28 @@ impl UpdateProtectionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProtectionGroupErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateProtectionGroupErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProtectionGroupErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProtectionGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateProtectionGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProtectionGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProtectionGroupErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `UpdateProtectionGroupErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProtectionGroupErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProtectionGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProtectionGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4136,7 +4136,7 @@ pub enum UpdateSubscriptionErrorKind {
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSubscriptionError {
@@ -4203,35 +4203,35 @@ impl UpdateSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSubscriptionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateSubscriptionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubscriptionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubscriptionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateSubscriptionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubscriptionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubscriptionErrorKind::LockedSubscriptionException`.
+    /// Returns `true` if the error kind is `UpdateSubscriptionErrorKind::LockedSubscriptionException`.
     pub fn is_locked_subscription_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubscriptionErrorKind::LockedSubscriptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubscriptionErrorKind::OptimisticLockException`.
+    /// Returns `true` if the error kind is `UpdateSubscriptionErrorKind::OptimisticLockException`.
     pub fn is_optimistic_lock_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSubscriptionErrorKind::OptimisticLockException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSubscriptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSubscriptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

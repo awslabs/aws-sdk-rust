@@ -24,7 +24,7 @@ pub enum CreateConfigurationSetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetError {
@@ -94,42 +94,42 @@ impl CreateConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -176,7 +176,7 @@ pub enum CreateConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetEventDestinationError {
@@ -256,35 +256,35 @@ impl CreateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -338,7 +338,7 @@ pub enum CreateContactErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContactError {
@@ -404,22 +404,22 @@ impl CreateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateContactErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateContactErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateContactErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateContactErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -460,7 +460,7 @@ pub enum CreateContactListErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContactListError {
@@ -526,28 +526,28 @@ impl CreateContactListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContactListErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateContactListErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactListErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactListErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateContactListErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactListErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactListErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateContactListErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactListErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactListErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateContactListErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -590,7 +590,7 @@ pub enum CreateCustomVerificationEmailTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomVerificationEmailTemplateError {
@@ -670,35 +670,35 @@ impl CreateCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomVerificationEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomVerificationEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -754,7 +754,7 @@ pub enum CreateDedicatedIpPoolErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDedicatedIpPoolError {
@@ -823,35 +823,35 @@ impl CreateDedicatedIpPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDedicatedIpPoolErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDedicatedIpPoolErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDedicatedIpPoolErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDedicatedIpPoolErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDedicatedIpPoolErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDedicatedIpPoolErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDedicatedIpPoolErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateDedicatedIpPoolErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDedicatedIpPoolErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDedicatedIpPoolErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDedicatedIpPoolErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDedicatedIpPoolErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDedicatedIpPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateDedicatedIpPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -905,7 +905,7 @@ pub enum CreateDeliverabilityTestReportErrorKind {
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeliverabilityTestReportError {
@@ -991,63 +991,63 @@ impl CreateDeliverabilityTestReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::AccountSuspendedException`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::AccountSuspendedException`.
     pub fn is_account_suspended_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeliverabilityTestReportErrorKind::AccountSuspendedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeliverabilityTestReportErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeliverabilityTestReportErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeliverabilityTestReportErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedException`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedException`.
     pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeliverabilityTestReportErrorKind::MessageRejected(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeliverabilityTestReportErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::SendingPausedException`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::SendingPausedException`.
     pub fn is_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeliverabilityTestReportErrorKind::SendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeliverabilityTestReportErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateDeliverabilityTestReportErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1105,7 +1105,7 @@ pub enum CreateEmailIdentityErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEmailIdentityError {
@@ -1173,42 +1173,42 @@ impl CreateEmailIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEmailIdentityErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1253,7 +1253,7 @@ pub enum CreateEmailIdentityPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEmailIdentityPolicyError {
@@ -1320,35 +1320,35 @@ impl CreateEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEmailIdentityPolicyErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityPolicyErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityPolicyErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityPolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityPolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityPolicyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailIdentityPolicyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailIdentityPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateEmailIdentityPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1390,7 +1390,7 @@ pub enum CreateEmailTemplateErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEmailTemplateError {
@@ -1456,28 +1456,28 @@ impl CreateEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailTemplateErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailTemplateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1516,7 +1516,7 @@ pub enum CreateImportJobErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImportJobError {
@@ -1581,18 +1581,18 @@ impl CreateImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateImportJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImportJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1632,7 +1632,7 @@ pub enum DeleteConfigurationSetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetError {
@@ -1700,28 +1700,28 @@ impl DeleteConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1762,7 +1762,7 @@ pub enum DeleteConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetEventDestinationError {
@@ -1836,21 +1836,21 @@ impl DeleteConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1896,7 +1896,7 @@ pub enum DeleteContactErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContactError {
@@ -1961,15 +1961,15 @@ impl DeleteContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteContactErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteContactErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteContactErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteContactErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2009,7 +2009,7 @@ pub enum DeleteContactListErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContactListError {
@@ -2075,25 +2075,25 @@ impl DeleteContactListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContactListErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteContactListErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactListErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactListErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteContactListErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactListErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactListErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContactListErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteContactListErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteContactListErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteContactListErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2132,7 +2132,7 @@ pub enum DeleteCustomVerificationEmailTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomVerificationEmailTemplateError {
@@ -2206,21 +2206,21 @@ impl DeleteCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCustomVerificationEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteCustomVerificationEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomVerificationEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomVerificationEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCustomVerificationEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomVerificationEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2268,7 +2268,7 @@ pub enum DeleteDedicatedIpPoolErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDedicatedIpPoolError {
@@ -2336,28 +2336,28 @@ impl DeleteDedicatedIpPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDedicatedIpPoolErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteDedicatedIpPoolErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDedicatedIpPoolErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDedicatedIpPoolErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDedicatedIpPoolErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDedicatedIpPoolErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDedicatedIpPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteDedicatedIpPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2398,7 +2398,7 @@ pub enum DeleteEmailIdentityErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEmailIdentityError {
@@ -2464,28 +2464,28 @@ impl DeleteEmailIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEmailIdentityErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEmailIdentityErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailIdentityErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailIdentityErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteEmailIdentityErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailIdentityErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailIdentityErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEmailIdentityErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailIdentityErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEmailIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2524,7 +2524,7 @@ pub enum DeleteEmailIdentityPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEmailIdentityPolicyError {
@@ -2589,21 +2589,21 @@ impl DeleteEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEmailIdentityPolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEmailIdentityPolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailIdentityPolicyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailIdentityPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEmailIdentityPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailIdentityPolicyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailIdentityPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEmailIdentityPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2641,7 +2641,7 @@ pub enum DeleteEmailTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEmailTemplateError {
@@ -2706,21 +2706,21 @@ impl DeleteEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2758,7 +2758,7 @@ pub enum DeleteSuppressedDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSuppressedDestinationError {
@@ -2823,21 +2823,21 @@ impl DeleteSuppressedDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSuppressedDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSuppressedDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSuppressedDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSuppressedDestinationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSuppressedDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSuppressedDestinationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSuppressedDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteSuppressedDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2873,7 +2873,7 @@ pub enum GetAccountErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountError {
@@ -2937,11 +2937,11 @@ impl GetAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetAccountErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetAccountErrorKind::TooManyRequestsException(_))
     }
@@ -2975,7 +2975,7 @@ pub enum GetBlacklistReportsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlacklistReportsError {
@@ -3040,21 +3040,21 @@ impl GetBlacklistReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBlacklistReportsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBlacklistReportsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlacklistReportsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlacklistReportsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBlacklistReportsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlacklistReportsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlacklistReportsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetBlacklistReportsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3092,7 +3092,7 @@ pub enum GetConfigurationSetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigurationSetError {
@@ -3157,21 +3157,21 @@ impl GetConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConfigurationSetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationSetErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationSetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationSetErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3209,7 +3209,7 @@ pub enum GetConfigurationSetEventDestinationsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigurationSetEventDestinationsError {
@@ -3283,21 +3283,21 @@ impl GetConfigurationSetEventDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConfigurationSetEventDestinationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationSetEventDestinationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3343,7 +3343,7 @@ pub enum GetContactErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactError {
@@ -3408,15 +3408,15 @@ impl GetContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContactErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetContactErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetContactErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetContactErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetContactErrorKind::TooManyRequestsException(_))
     }
@@ -3451,7 +3451,7 @@ pub enum GetContactListErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactListError {
@@ -3516,15 +3516,15 @@ impl GetContactListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContactListErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetContactListErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetContactListErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetContactListErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContactListErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetContactListErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetContactListErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetContactListErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3562,7 +3562,7 @@ pub enum GetCustomVerificationEmailTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCustomVerificationEmailTemplateError {
@@ -3634,21 +3634,21 @@ impl GetCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCustomVerificationEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCustomVerificationEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCustomVerificationEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCustomVerificationEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCustomVerificationEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCustomVerificationEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3690,7 +3690,7 @@ pub enum GetDedicatedIpErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDedicatedIpError {
@@ -3755,15 +3755,15 @@ impl GetDedicatedIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDedicatedIpErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDedicatedIpErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetDedicatedIpErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetDedicatedIpErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDedicatedIpErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDedicatedIpErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDedicatedIpErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDedicatedIpErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3801,7 +3801,7 @@ pub enum GetDedicatedIpsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDedicatedIpsError {
@@ -3866,15 +3866,15 @@ impl GetDedicatedIpsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDedicatedIpsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDedicatedIpsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetDedicatedIpsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetDedicatedIpsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDedicatedIpsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDedicatedIpsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDedicatedIpsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDedicatedIpsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3912,7 +3912,7 @@ pub enum GetDeliverabilityDashboardOptionsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeliverabilityDashboardOptionsError {
@@ -3986,21 +3986,21 @@ impl GetDeliverabilityDashboardOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeliverabilityDashboardOptionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDeliverabilityDashboardOptionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeliverabilityDashboardOptionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeliverabilityDashboardOptionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetDeliverabilityDashboardOptionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeliverabilityDashboardOptionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4042,7 +4042,7 @@ pub enum GetDeliverabilityTestReportErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeliverabilityTestReportError {
@@ -4107,21 +4107,21 @@ impl GetDeliverabilityTestReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeliverabilityTestReportErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDeliverabilityTestReportErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeliverabilityTestReportErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeliverabilityTestReportErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDeliverabilityTestReportErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeliverabilityTestReportErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeliverabilityTestReportErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDeliverabilityTestReportErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4159,7 +4159,7 @@ pub enum GetDomainDeliverabilityCampaignErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainDeliverabilityCampaignError {
@@ -4229,21 +4229,21 @@ impl GetDomainDeliverabilityCampaignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainDeliverabilityCampaignErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDomainDeliverabilityCampaignErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDomainDeliverabilityCampaignErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDomainDeliverabilityCampaignErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDomainDeliverabilityCampaignErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDomainDeliverabilityCampaignErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4283,7 +4283,7 @@ pub enum GetDomainStatisticsReportErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainStatisticsReportError {
@@ -4348,21 +4348,21 @@ impl GetDomainStatisticsReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainStatisticsReportErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDomainStatisticsReportErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDomainStatisticsReportErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDomainStatisticsReportErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDomainStatisticsReportErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDomainStatisticsReportErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDomainStatisticsReportErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetDomainStatisticsReportErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4400,7 +4400,7 @@ pub enum GetEmailIdentityErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEmailIdentityError {
@@ -4465,18 +4465,18 @@ impl GetEmailIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEmailIdentityErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEmailIdentityErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailIdentityErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailIdentityErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEmailIdentityErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetEmailIdentityErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetEmailIdentityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetEmailIdentityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4514,7 +4514,7 @@ pub enum GetEmailIdentityPoliciesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEmailIdentityPoliciesError {
@@ -4579,21 +4579,21 @@ impl GetEmailIdentityPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEmailIdentityPoliciesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEmailIdentityPoliciesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailIdentityPoliciesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailIdentityPoliciesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEmailIdentityPoliciesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailIdentityPoliciesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailIdentityPoliciesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetEmailIdentityPoliciesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4631,7 +4631,7 @@ pub enum GetEmailTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEmailTemplateError {
@@ -4696,18 +4696,18 @@ impl GetEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetEmailTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4745,7 +4745,7 @@ pub enum GetImportJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImportJobError {
@@ -4810,15 +4810,15 @@ impl GetImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetImportJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetImportJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4856,7 +4856,7 @@ pub enum GetSuppressedDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSuppressedDestinationError {
@@ -4921,21 +4921,21 @@ impl GetSuppressedDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSuppressedDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSuppressedDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSuppressedDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSuppressedDestinationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSuppressedDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSuppressedDestinationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSuppressedDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSuppressedDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4971,7 +4971,7 @@ pub enum ListConfigurationSetsErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationSetsError {
@@ -5035,14 +5035,14 @@ impl ListConfigurationSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConfigurationSetsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListConfigurationSetsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationSetsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationSetsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListConfigurationSetsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5077,7 +5077,7 @@ pub enum ListContactListsErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContactListsError {
@@ -5141,14 +5141,14 @@ impl ListContactListsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContactListsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListContactListsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContactListsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListContactListsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListContactListsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5185,7 +5185,7 @@ pub enum ListContactsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContactsError {
@@ -5250,15 +5250,15 @@ impl ListContactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListContactsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListContactsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListContactsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListContactsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5294,7 +5294,7 @@ pub enum ListCustomVerificationEmailTemplatesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomVerificationEmailTemplatesError {
@@ -5365,14 +5365,14 @@ impl ListCustomVerificationEmailTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCustomVerificationEmailTemplatesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListCustomVerificationEmailTemplatesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomVerificationEmailTemplatesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5413,7 +5413,7 @@ pub enum ListDedicatedIpPoolsErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDedicatedIpPoolsError {
@@ -5477,14 +5477,14 @@ impl ListDedicatedIpPoolsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDedicatedIpPoolsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDedicatedIpPoolsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDedicatedIpPoolsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDedicatedIpPoolsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListDedicatedIpPoolsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5521,7 +5521,7 @@ pub enum ListDeliverabilityTestReportsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeliverabilityTestReportsError {
@@ -5591,21 +5591,21 @@ impl ListDeliverabilityTestReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeliverabilityTestReportsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDeliverabilityTestReportsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeliverabilityTestReportsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeliverabilityTestReportsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListDeliverabilityTestReportsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeliverabilityTestReportsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeliverabilityTestReportsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListDeliverabilityTestReportsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5645,7 +5645,7 @@ pub enum ListDomainDeliverabilityCampaignsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDomainDeliverabilityCampaignsError {
@@ -5717,21 +5717,21 @@ impl ListDomainDeliverabilityCampaignsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDomainDeliverabilityCampaignsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDomainDeliverabilityCampaignsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDomainDeliverabilityCampaignsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDomainDeliverabilityCampaignsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListDomainDeliverabilityCampaignsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDomainDeliverabilityCampaignsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5769,7 +5769,7 @@ pub enum ListEmailIdentitiesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEmailIdentitiesError {
@@ -5833,14 +5833,14 @@ impl ListEmailIdentitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEmailIdentitiesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListEmailIdentitiesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEmailIdentitiesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListEmailIdentitiesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListEmailIdentitiesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5875,7 +5875,7 @@ pub enum ListEmailTemplatesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEmailTemplatesError {
@@ -5939,14 +5939,14 @@ impl ListEmailTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEmailTemplatesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListEmailTemplatesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEmailTemplatesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListEmailTemplatesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListEmailTemplatesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5981,7 +5981,7 @@ pub enum ListImportJobsErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImportJobsError {
@@ -6045,11 +6045,11 @@ impl ListImportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImportJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListImportJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListImportJobsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListImportJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListImportJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6086,7 +6086,7 @@ pub enum ListSuppressedDestinationsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSuppressedDestinationsError {
@@ -6151,21 +6151,21 @@ impl ListSuppressedDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSuppressedDestinationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListSuppressedDestinationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSuppressedDestinationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListSuppressedDestinationsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListSuppressedDestinationsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSuppressedDestinationsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSuppressedDestinationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListSuppressedDestinationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6203,7 +6203,7 @@ pub enum ListTagsForResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6268,21 +6268,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6318,7 +6318,7 @@ pub enum PutAccountDedicatedIpWarmupAttributesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountDedicatedIpWarmupAttributesError {
@@ -6389,14 +6389,14 @@ impl PutAccountDedicatedIpWarmupAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6439,7 +6439,7 @@ pub enum PutAccountDetailsErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountDetailsError {
@@ -6504,18 +6504,18 @@ impl PutAccountDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAccountDetailsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutAccountDetailsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccountDetailsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccountDetailsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutAccountDetailsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutAccountDetailsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutAccountDetailsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutAccountDetailsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6551,7 +6551,7 @@ pub enum PutAccountSendingAttributesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountSendingAttributesError {
@@ -6615,14 +6615,14 @@ impl PutAccountSendingAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAccountSendingAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutAccountSendingAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccountSendingAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccountSendingAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutAccountSendingAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6657,7 +6657,7 @@ pub enum PutAccountSuppressionAttributesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountSuppressionAttributesError {
@@ -6726,14 +6726,14 @@ impl PutAccountSuppressionAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAccountSuppressionAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutAccountSuppressionAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccountSuppressionAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccountSuppressionAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutAccountSuppressionAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6772,7 +6772,7 @@ pub enum PutConfigurationSetDeliveryOptionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetDeliveryOptionsError {
@@ -6844,21 +6844,21 @@ impl PutConfigurationSetDeliveryOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetDeliveryOptionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetDeliveryOptionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6900,7 +6900,7 @@ pub enum PutConfigurationSetReputationOptionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetReputationOptionsError {
@@ -6974,21 +6974,21 @@ impl PutConfigurationSetReputationOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigurationSetReputationOptionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetReputationOptionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetReputationOptionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetReputationOptionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetReputationOptionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetReputationOptionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7034,7 +7034,7 @@ pub enum PutConfigurationSetSendingOptionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetSendingOptionsError {
@@ -7106,21 +7106,21 @@ impl PutConfigurationSetSendingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigurationSetSendingOptionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetSendingOptionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetSendingOptionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetSendingOptionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetSendingOptionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetSendingOptionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7160,7 +7160,7 @@ pub enum PutConfigurationSetSuppressionOptionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetSuppressionOptionsError {
@@ -7234,21 +7234,21 @@ impl PutConfigurationSetSuppressionOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigurationSetSuppressionOptionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetSuppressionOptionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetSuppressionOptionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetSuppressionOptionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetSuppressionOptionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetSuppressionOptionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7294,7 +7294,7 @@ pub enum PutConfigurationSetTrackingOptionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetTrackingOptionsError {
@@ -7366,21 +7366,21 @@ impl PutConfigurationSetTrackingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigurationSetTrackingOptionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetTrackingOptionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetTrackingOptionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetTrackingOptionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetTrackingOptionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetTrackingOptionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7422,7 +7422,7 @@ pub enum PutDedicatedIpInPoolErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDedicatedIpInPoolError {
@@ -7487,21 +7487,21 @@ impl PutDedicatedIpInPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDedicatedIpInPoolErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutDedicatedIpInPoolErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDedicatedIpInPoolErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutDedicatedIpInPoolErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutDedicatedIpInPoolErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDedicatedIpInPoolErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutDedicatedIpInPoolErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutDedicatedIpInPoolErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7539,7 +7539,7 @@ pub enum PutDedicatedIpWarmupAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDedicatedIpWarmupAttributesError {
@@ -7609,21 +7609,21 @@ impl PutDedicatedIpWarmupAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDedicatedIpWarmupAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutDedicatedIpWarmupAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDedicatedIpWarmupAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutDedicatedIpWarmupAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutDedicatedIpWarmupAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDedicatedIpWarmupAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7667,7 +7667,7 @@ pub enum PutDeliverabilityDashboardOptionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDeliverabilityDashboardOptionError {
@@ -7743,35 +7743,35 @@ impl PutDeliverabilityDashboardOptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliverabilityDashboardOptionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutDeliverabilityDashboardOptionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliverabilityDashboardOptionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliverabilityDashboardOptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutDeliverabilityDashboardOptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliverabilityDashboardOptionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliverabilityDashboardOptionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutDeliverabilityDashboardOptionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDeliverabilityDashboardOptionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7817,7 +7817,7 @@ pub enum PutEmailIdentityConfigurationSetAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityConfigurationSetAttributesError {
@@ -7891,21 +7891,21 @@ impl PutEmailIdentityConfigurationSetAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7951,7 +7951,7 @@ pub enum PutEmailIdentityDkimAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityDkimAttributesError {
@@ -8021,21 +8021,21 @@ impl PutEmailIdentityDkimAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEmailIdentityDkimAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityDkimAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityDkimAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityDkimAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityDkimAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityDkimAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8075,7 +8075,7 @@ pub enum PutEmailIdentityDkimSigningAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityDkimSigningAttributesError {
@@ -8149,21 +8149,21 @@ impl PutEmailIdentityDkimSigningAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8209,7 +8209,7 @@ pub enum PutEmailIdentityFeedbackAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityFeedbackAttributesError {
@@ -8281,21 +8281,21 @@ impl PutEmailIdentityFeedbackAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEmailIdentityFeedbackAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityFeedbackAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityFeedbackAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityFeedbackAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityFeedbackAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityFeedbackAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8337,7 +8337,7 @@ pub enum PutEmailIdentityMailFromAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEmailIdentityMailFromAttributesError {
@@ -8409,21 +8409,21 @@ impl PutEmailIdentityMailFromAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEmailIdentityMailFromAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityMailFromAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityMailFromAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityMailFromAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityMailFromAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEmailIdentityMailFromAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8463,7 +8463,7 @@ pub enum PutSuppressedDestinationErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSuppressedDestinationError {
@@ -8527,14 +8527,14 @@ impl PutSuppressedDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSuppressedDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutSuppressedDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSuppressedDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutSuppressedDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutSuppressedDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8583,7 +8583,7 @@ pub enum SendBulkEmailErrorKind {
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendBulkEmailError {
@@ -8653,47 +8653,47 @@ impl SendBulkEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendBulkEmailErrorKind::AccountSuspendedException`.
+    /// Returns `true` if the error kind is `SendBulkEmailErrorKind::AccountSuspendedException`.
     pub fn is_account_suspended_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkEmailErrorKind::AccountSuspendedException(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkEmailErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SendBulkEmailErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, SendBulkEmailErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `SendBulkEmailErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SendBulkEmailErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkEmailErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkEmailErrorKind::MailFromDomainNotVerifiedException`.
+    /// Returns `true` if the error kind is `SendBulkEmailErrorKind::MailFromDomainNotVerifiedException`.
     pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkEmailErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendBulkEmailErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(&self.kind, SendBulkEmailErrorKind::MessageRejected(_))
     }
-    /// Returns true if the error kind is `SendBulkEmailErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SendBulkEmailErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, SendBulkEmailErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `SendBulkEmailErrorKind::SendingPausedException`.
+    /// Returns `true` if the error kind is `SendBulkEmailErrorKind::SendingPausedException`.
     pub fn is_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkEmailErrorKind::SendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkEmailErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SendBulkEmailErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8745,7 +8745,7 @@ pub enum SendCustomVerificationEmailErrorKind {
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendCustomVerificationEmailError {
@@ -8816,49 +8816,49 @@ impl SendCustomVerificationEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedException`.
     pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::MessageRejected(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::SendingPausedException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::SendingPausedException`.
     pub fn is_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::SendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8914,7 +8914,7 @@ pub enum SendEmailErrorKind {
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendEmailError {
@@ -8984,38 +8984,38 @@ impl SendEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::AccountSuspendedException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::AccountSuspendedException`.
     pub fn is_account_suspended_exception(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::AccountSuspendedException(_))
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::MailFromDomainNotVerifiedException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::MailFromDomainNotVerifiedException`.
     pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::MessageRejected(_))
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::SendingPausedException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::SendingPausedException`.
     pub fn is_sending_paused_exception(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::SendingPausedException(_))
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::TooManyRequestsException(_))
     }
@@ -9057,7 +9057,7 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -9123,22 +9123,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9177,7 +9177,7 @@ pub enum TestRenderEmailTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestRenderEmailTemplateError {
@@ -9242,21 +9242,21 @@ impl TestRenderEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestRenderEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TestRenderEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRenderEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `TestRenderEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TestRenderEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRenderEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TestRenderEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TestRenderEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9296,7 +9296,7 @@ pub enum UntagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -9362,22 +9362,22 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9416,7 +9416,7 @@ pub enum UpdateConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationSetEventDestinationError {
@@ -9490,21 +9490,21 @@ impl UpdateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9552,7 +9552,7 @@ pub enum UpdateContactErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContactError {
@@ -9618,22 +9618,22 @@ impl UpdateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateContactErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateContactErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateContactErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateContactErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9674,7 +9674,7 @@ pub enum UpdateContactListErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContactListError {
@@ -9740,25 +9740,25 @@ impl UpdateContactListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContactListErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateContactListErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactListErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactListErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateContactListErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContactListErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContactListErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContactListErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateContactListErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateContactListErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateContactListErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9797,7 +9797,7 @@ pub enum UpdateCustomVerificationEmailTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCustomVerificationEmailTemplateError {
@@ -9871,21 +9871,21 @@ impl UpdateCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomVerificationEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomVerificationEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9931,7 +9931,7 @@ pub enum UpdateEmailIdentityPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEmailIdentityPolicyError {
@@ -9996,21 +9996,21 @@ impl UpdateEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEmailIdentityPolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEmailIdentityPolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailIdentityPolicyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailIdentityPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEmailIdentityPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailIdentityPolicyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailIdentityPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEmailIdentityPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10048,7 +10048,7 @@ pub enum UpdateEmailTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEmailTemplateError {
@@ -10113,21 +10113,21 @@ impl UpdateEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

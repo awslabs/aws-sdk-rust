@@ -1217,8 +1217,8 @@ pub enum VirtualServiceProvider {
     VirtualRouter(crate::model::VirtualRouterServiceProvider),
 }
 impl VirtualServiceProvider {
-    /// Tries to convert the enum instance into its [`VirtualServiceProvider`](crate::model::VirtualServiceProvider) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`VirtualNode`](crate::model::VirtualServiceProvider::VirtualNode), extracting the inner [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_virtual_node(
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeServiceProvider, &Self> {
@@ -1228,12 +1228,12 @@ impl VirtualServiceProvider {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualServiceProvider` variant.
+    /// Returns true if this is a [`VirtualNode`](crate::model::VirtualServiceProvider::VirtualNode).
     pub fn is_virtual_node(&self) -> bool {
         self.as_virtual_node().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualServiceProvider`](crate::model::VirtualServiceProvider) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`VirtualRouter`](crate::model::VirtualServiceProvider::VirtualRouter), extracting the inner [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_virtual_router(
         &self,
     ) -> std::result::Result<&crate::model::VirtualRouterServiceProvider, &Self> {
@@ -1243,7 +1243,7 @@ impl VirtualServiceProvider {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualServiceProvider` variant.
+    /// Returns true if this is a [`VirtualRouter`](crate::model::VirtualServiceProvider::VirtualRouter).
     pub fn is_virtual_router(&self) -> bool {
         self.as_virtual_router().is_ok()
     }
@@ -3355,8 +3355,8 @@ pub enum GrpcRouteMetadataMatchMethod {
     Suffix(std::string::String),
 }
 impl GrpcRouteMetadataMatchMethod {
-    /// Tries to convert the enum instance into its [`GrpcRouteMetadataMatchMethod`](crate::model::GrpcRouteMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Exact`](crate::model::GrpcRouteMetadataMatchMethod::Exact), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Exact(val) = &self {
             Ok(&val)
@@ -3364,12 +3364,12 @@ impl GrpcRouteMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcRouteMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Exact`](crate::model::GrpcRouteMetadataMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    /// Tries to convert the enum instance into its [`GrpcRouteMetadataMatchMethod`](crate::model::GrpcRouteMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Prefix`](crate::model::GrpcRouteMetadataMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Prefix(val) = &self {
             Ok(&val)
@@ -3377,12 +3377,12 @@ impl GrpcRouteMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcRouteMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Prefix`](crate::model::GrpcRouteMetadataMatchMethod::Prefix).
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    /// Tries to convert the enum instance into its [`GrpcRouteMetadataMatchMethod`](crate::model::GrpcRouteMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Range`](crate::model::GrpcRouteMetadataMatchMethod::Range), extracting the inner [`MatchRange`](crate::model::MatchRange).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let GrpcRouteMetadataMatchMethod::Range(val) = &self {
             Ok(&val)
@@ -3390,12 +3390,12 @@ impl GrpcRouteMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcRouteMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Range`](crate::model::GrpcRouteMetadataMatchMethod::Range).
     pub fn is_range(&self) -> bool {
         self.as_range().is_ok()
     }
-    /// Tries to convert the enum instance into its [`GrpcRouteMetadataMatchMethod`](crate::model::GrpcRouteMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Regex`](crate::model::GrpcRouteMetadataMatchMethod::Regex), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Regex(val) = &self {
             Ok(&val)
@@ -3403,12 +3403,12 @@ impl GrpcRouteMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcRouteMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Regex`](crate::model::GrpcRouteMetadataMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
         self.as_regex().is_ok()
     }
-    /// Tries to convert the enum instance into its [`GrpcRouteMetadataMatchMethod`](crate::model::GrpcRouteMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Suffix`](crate::model::GrpcRouteMetadataMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Suffix(val) = &self {
             Ok(&val)
@@ -3416,7 +3416,7 @@ impl GrpcRouteMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcRouteMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Suffix`](crate::model::GrpcRouteMetadataMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
         self.as_suffix().is_ok()
     }
@@ -4289,8 +4289,8 @@ pub enum HeaderMatchMethod {
     Suffix(std::string::String),
 }
 impl HeaderMatchMethod {
-    /// Tries to convert the enum instance into its [`HeaderMatchMethod`](crate::model::HeaderMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Exact`](crate::model::HeaderMatchMethod::Exact), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Exact(val) = &self {
             Ok(&val)
@@ -4298,12 +4298,12 @@ impl HeaderMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `HeaderMatchMethod` variant.
+    /// Returns true if this is a [`Exact`](crate::model::HeaderMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    /// Tries to convert the enum instance into its [`HeaderMatchMethod`](crate::model::HeaderMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Prefix`](crate::model::HeaderMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Prefix(val) = &self {
             Ok(&val)
@@ -4311,12 +4311,12 @@ impl HeaderMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `HeaderMatchMethod` variant.
+    /// Returns true if this is a [`Prefix`](crate::model::HeaderMatchMethod::Prefix).
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    /// Tries to convert the enum instance into its [`HeaderMatchMethod`](crate::model::HeaderMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Range`](crate::model::HeaderMatchMethod::Range), extracting the inner [`MatchRange`](crate::model::MatchRange).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let HeaderMatchMethod::Range(val) = &self {
             Ok(&val)
@@ -4324,12 +4324,12 @@ impl HeaderMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `HeaderMatchMethod` variant.
+    /// Returns true if this is a [`Range`](crate::model::HeaderMatchMethod::Range).
     pub fn is_range(&self) -> bool {
         self.as_range().is_ok()
     }
-    /// Tries to convert the enum instance into its [`HeaderMatchMethod`](crate::model::HeaderMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Regex`](crate::model::HeaderMatchMethod::Regex), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Regex(val) = &self {
             Ok(&val)
@@ -4337,12 +4337,12 @@ impl HeaderMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `HeaderMatchMethod` variant.
+    /// Returns true if this is a [`Regex`](crate::model::HeaderMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
         self.as_regex().is_ok()
     }
-    /// Tries to convert the enum instance into its [`HeaderMatchMethod`](crate::model::HeaderMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Suffix`](crate::model::HeaderMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Suffix(val) = &self {
             Ok(&val)
@@ -4350,7 +4350,7 @@ impl HeaderMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `HeaderMatchMethod` variant.
+    /// Returns true if this is a [`Suffix`](crate::model::HeaderMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
         self.as_suffix().is_ok()
     }
@@ -5443,8 +5443,8 @@ pub enum AccessLog {
 }
 impl AccessLog {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`AccessLog`](crate::model::AccessLog) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::AccessLog::File), extracting the inner [`FileAccessLog`](crate::model::FileAccessLog).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::FileAccessLog, &Self> {
         if let AccessLog::File(val) = &self {
             Ok(&val)
@@ -5452,7 +5452,7 @@ impl AccessLog {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AccessLog` variant.
+    /// Returns true if this is a [`File`](crate::model::AccessLog::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
@@ -5932,8 +5932,8 @@ pub enum TlsValidationContextTrust {
     Sds(crate::model::TlsValidationContextSdsTrust),
 }
 impl TlsValidationContextTrust {
-    /// Tries to convert the enum instance into its [`TlsValidationContextTrust`](crate::model::TlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Acm`](crate::model::TlsValidationContextTrust::Acm), extracting the inner [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextAcmTrust, &Self> {
@@ -5943,12 +5943,12 @@ impl TlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TlsValidationContextTrust` variant.
+    /// Returns true if this is a [`Acm`](crate::model::TlsValidationContextTrust::Acm).
     pub fn is_acm(&self) -> bool {
         self.as_acm().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TlsValidationContextTrust`](crate::model::TlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::TlsValidationContextTrust::File), extracting the inner [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
@@ -5958,12 +5958,12 @@ impl TlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TlsValidationContextTrust` variant.
+    /// Returns true if this is a [`File`](crate::model::TlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TlsValidationContextTrust`](crate::model::TlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Sds`](crate::model::TlsValidationContextTrust::Sds), extracting the inner [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
@@ -5973,7 +5973,7 @@ impl TlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TlsValidationContextTrust` variant.
+    /// Returns true if this is a [`Sds`](crate::model::TlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
@@ -6162,8 +6162,8 @@ pub enum ClientTlsCertificate {
     Sds(crate::model::ListenerTlsSdsCertificate),
 }
 impl ClientTlsCertificate {
-    /// Tries to convert the enum instance into its [`ClientTlsCertificate`](crate::model::ClientTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::ClientTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::ListenerTlsFileCertificate, &Self> {
         if let ClientTlsCertificate::File(val) = &self {
             Ok(&val)
@@ -6171,12 +6171,12 @@ impl ClientTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ClientTlsCertificate` variant.
+    /// Returns true if this is a [`File`](crate::model::ClientTlsCertificate::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ClientTlsCertificate`](crate::model::ClientTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Sds`](crate::model::ClientTlsCertificate::Sds), extracting the inner [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(&self) -> std::result::Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
         if let ClientTlsCertificate::Sds(val) = &self {
             Ok(&val)
@@ -6184,7 +6184,7 @@ impl ClientTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ClientTlsCertificate` variant.
+    /// Returns true if this is a [`Sds`](crate::model::ClientTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
@@ -6326,8 +6326,8 @@ pub enum Backend {
 }
 impl Backend {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`Backend`](crate::model::Backend) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`VirtualService`](crate::model::Backend::VirtualService), extracting the inner [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_virtual_service(
         &self,
     ) -> std::result::Result<&crate::model::VirtualServiceBackend, &Self> {
@@ -6337,7 +6337,7 @@ impl Backend {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Backend` variant.
+    /// Returns true if this is a [`VirtualService`](crate::model::Backend::VirtualService).
     pub fn is_virtual_service(&self) -> bool {
         self.as_virtual_service().is_ok()
     }
@@ -6569,8 +6569,8 @@ pub enum VirtualNodeConnectionPool {
     Tcp(crate::model::VirtualNodeTcpConnectionPool),
 }
 impl VirtualNodeConnectionPool {
-    /// Tries to convert the enum instance into its [`VirtualNodeConnectionPool`](crate::model::VirtualNodeConnectionPool) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Grpc`](crate::model::VirtualNodeConnectionPool::Grpc), extracting the inner [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeGrpcConnectionPool, &Self> {
@@ -6580,12 +6580,12 @@ impl VirtualNodeConnectionPool {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualNodeConnectionPool` variant.
+    /// Returns true if this is a [`Grpc`](crate::model::VirtualNodeConnectionPool::Grpc).
     pub fn is_grpc(&self) -> bool {
         self.as_grpc().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualNodeConnectionPool`](crate::model::VirtualNodeConnectionPool) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Http`](crate::model::VirtualNodeConnectionPool::Http), extracting the inner [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeHttpConnectionPool, &Self> {
@@ -6595,12 +6595,12 @@ impl VirtualNodeConnectionPool {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualNodeConnectionPool` variant.
+    /// Returns true if this is a [`Http`](crate::model::VirtualNodeConnectionPool::Http).
     pub fn is_http(&self) -> bool {
         self.as_http().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualNodeConnectionPool`](crate::model::VirtualNodeConnectionPool) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Http2`](crate::model::VirtualNodeConnectionPool::Http2), extracting the inner [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeHttp2ConnectionPool, &Self> {
@@ -6610,12 +6610,12 @@ impl VirtualNodeConnectionPool {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualNodeConnectionPool` variant.
+    /// Returns true if this is a [`Http2`](crate::model::VirtualNodeConnectionPool::Http2).
     pub fn is_http2(&self) -> bool {
         self.as_http2().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualNodeConnectionPool`](crate::model::VirtualNodeConnectionPool) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Tcp`](crate::model::VirtualNodeConnectionPool::Tcp), extracting the inner [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tcp(
         &self,
     ) -> std::result::Result<&crate::model::VirtualNodeTcpConnectionPool, &Self> {
@@ -6625,7 +6625,7 @@ impl VirtualNodeConnectionPool {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualNodeConnectionPool` variant.
+    /// Returns true if this is a [`Tcp`](crate::model::VirtualNodeConnectionPool::Tcp).
     pub fn is_tcp(&self) -> bool {
         self.as_tcp().is_ok()
     }
@@ -6966,8 +6966,8 @@ pub enum ListenerTimeout {
     Tcp(crate::model::TcpTimeout),
 }
 impl ListenerTimeout {
-    /// Tries to convert the enum instance into its [`ListenerTimeout`](crate::model::ListenerTimeout) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Grpc`](crate::model::ListenerTimeout::Grpc), extracting the inner [`GrpcTimeout`](crate::model::GrpcTimeout).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(&self) -> std::result::Result<&crate::model::GrpcTimeout, &Self> {
         if let ListenerTimeout::Grpc(val) = &self {
             Ok(&val)
@@ -6975,12 +6975,12 @@ impl ListenerTimeout {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTimeout` variant.
+    /// Returns true if this is a [`Grpc`](crate::model::ListenerTimeout::Grpc).
     pub fn is_grpc(&self) -> bool {
         self.as_grpc().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ListenerTimeout`](crate::model::ListenerTimeout) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Http`](crate::model::ListenerTimeout::Http), extracting the inner [`HttpTimeout`](crate::model::HttpTimeout).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(&self) -> std::result::Result<&crate::model::HttpTimeout, &Self> {
         if let ListenerTimeout::Http(val) = &self {
             Ok(&val)
@@ -6988,12 +6988,12 @@ impl ListenerTimeout {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTimeout` variant.
+    /// Returns true if this is a [`Http`](crate::model::ListenerTimeout::Http).
     pub fn is_http(&self) -> bool {
         self.as_http().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ListenerTimeout`](crate::model::ListenerTimeout) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Http2`](crate::model::ListenerTimeout::Http2), extracting the inner [`HttpTimeout`](crate::model::HttpTimeout).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(&self) -> std::result::Result<&crate::model::HttpTimeout, &Self> {
         if let ListenerTimeout::Http2(val) = &self {
             Ok(&val)
@@ -7001,12 +7001,12 @@ impl ListenerTimeout {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTimeout` variant.
+    /// Returns true if this is a [`Http2`](crate::model::ListenerTimeout::Http2).
     pub fn is_http2(&self) -> bool {
         self.as_http2().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ListenerTimeout`](crate::model::ListenerTimeout) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Tcp`](crate::model::ListenerTimeout::Tcp), extracting the inner [`TcpTimeout`](crate::model::TcpTimeout).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tcp(&self) -> std::result::Result<&crate::model::TcpTimeout, &Self> {
         if let ListenerTimeout::Tcp(val) = &self {
             Ok(&val)
@@ -7014,7 +7014,7 @@ impl ListenerTimeout {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTimeout` variant.
+    /// Returns true if this is a [`Tcp`](crate::model::ListenerTimeout::Tcp).
     pub fn is_tcp(&self) -> bool {
         self.as_tcp().is_ok()
     }
@@ -7410,8 +7410,8 @@ pub enum ListenerTlsValidationContextTrust {
     Sds(crate::model::TlsValidationContextSdsTrust),
 }
 impl ListenerTlsValidationContextTrust {
-    /// Tries to convert the enum instance into its [`ListenerTlsValidationContextTrust`](crate::model::ListenerTlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::ListenerTlsValidationContextTrust::File), extracting the inner [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
@@ -7421,12 +7421,12 @@ impl ListenerTlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTlsValidationContextTrust` variant.
+    /// Returns true if this is a [`File`](crate::model::ListenerTlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ListenerTlsValidationContextTrust`](crate::model::ListenerTlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Sds`](crate::model::ListenerTlsValidationContextTrust::Sds), extracting the inner [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
     ) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
@@ -7436,7 +7436,7 @@ impl ListenerTlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTlsValidationContextTrust` variant.
+    /// Returns true if this is a [`Sds`](crate::model::ListenerTlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
@@ -7455,8 +7455,8 @@ pub enum ListenerTlsCertificate {
     Sds(crate::model::ListenerTlsSdsCertificate),
 }
 impl ListenerTlsCertificate {
-    /// Tries to convert the enum instance into its [`ListenerTlsCertificate`](crate::model::ListenerTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Acm`](crate::model::ListenerTlsCertificate::Acm), extracting the inner [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(&self) -> std::result::Result<&crate::model::ListenerTlsAcmCertificate, &Self> {
         if let ListenerTlsCertificate::Acm(val) = &self {
             Ok(&val)
@@ -7464,12 +7464,12 @@ impl ListenerTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTlsCertificate` variant.
+    /// Returns true if this is a [`Acm`](crate::model::ListenerTlsCertificate::Acm).
     pub fn is_acm(&self) -> bool {
         self.as_acm().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ListenerTlsCertificate`](crate::model::ListenerTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::ListenerTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::ListenerTlsFileCertificate, &Self> {
         if let ListenerTlsCertificate::File(val) = &self {
             Ok(&val)
@@ -7477,12 +7477,12 @@ impl ListenerTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTlsCertificate` variant.
+    /// Returns true if this is a [`File`](crate::model::ListenerTlsCertificate::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ListenerTlsCertificate`](crate::model::ListenerTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Sds`](crate::model::ListenerTlsCertificate::Sds), extracting the inner [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(&self) -> std::result::Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
         if let ListenerTlsCertificate::Sds(val) = &self {
             Ok(&val)
@@ -7490,7 +7490,7 @@ impl ListenerTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ListenerTlsCertificate` variant.
+    /// Returns true if this is a [`Sds`](crate::model::ListenerTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
@@ -7616,8 +7616,8 @@ pub enum ServiceDiscovery {
     Dns(crate::model::DnsServiceDiscovery),
 }
 impl ServiceDiscovery {
-    /// Tries to convert the enum instance into its [`ServiceDiscovery`](crate::model::ServiceDiscovery) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AwsCloudMap`](crate::model::ServiceDiscovery::AwsCloudMap), extracting the inner [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_cloud_map(
         &self,
     ) -> std::result::Result<&crate::model::AwsCloudMapServiceDiscovery, &Self> {
@@ -7627,12 +7627,12 @@ impl ServiceDiscovery {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ServiceDiscovery` variant.
+    /// Returns true if this is a [`AwsCloudMap`](crate::model::ServiceDiscovery::AwsCloudMap).
     pub fn is_aws_cloud_map(&self) -> bool {
         self.as_aws_cloud_map().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ServiceDiscovery`](crate::model::ServiceDiscovery) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Dns`](crate::model::ServiceDiscovery::Dns), extracting the inner [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dns(&self) -> std::result::Result<&crate::model::DnsServiceDiscovery, &Self> {
         if let ServiceDiscovery::Dns(val) = &self {
             Ok(&val)
@@ -7640,7 +7640,7 @@ impl ServiceDiscovery {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ServiceDiscovery` variant.
+    /// Returns true if this is a [`Dns`](crate::model::ServiceDiscovery::Dns).
     pub fn is_dns(&self) -> bool {
         self.as_dns().is_ok()
     }
@@ -8507,8 +8507,8 @@ pub enum VirtualGatewayAccessLog {
 }
 impl VirtualGatewayAccessLog {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`VirtualGatewayAccessLog`](crate::model::VirtualGatewayAccessLog) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayAccessLog::File), extracting the inner [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayFileAccessLog, &Self> {
@@ -8518,7 +8518,7 @@ impl VirtualGatewayAccessLog {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayAccessLog` variant.
+    /// Returns true if this is a [`File`](crate::model::VirtualGatewayAccessLog::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
@@ -8709,8 +8709,8 @@ pub enum VirtualGatewayConnectionPool {
     Http2(crate::model::VirtualGatewayHttp2ConnectionPool),
 }
 impl VirtualGatewayConnectionPool {
-    /// Tries to convert the enum instance into its [`VirtualGatewayConnectionPool`](crate::model::VirtualGatewayConnectionPool) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Grpc`](crate::model::VirtualGatewayConnectionPool::Grpc), extracting the inner [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayGrpcConnectionPool, &Self> {
@@ -8720,12 +8720,12 @@ impl VirtualGatewayConnectionPool {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayConnectionPool` variant.
+    /// Returns true if this is a [`Grpc`](crate::model::VirtualGatewayConnectionPool::Grpc).
     pub fn is_grpc(&self) -> bool {
         self.as_grpc().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualGatewayConnectionPool`](crate::model::VirtualGatewayConnectionPool) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Http`](crate::model::VirtualGatewayConnectionPool::Http), extracting the inner [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayHttpConnectionPool, &Self> {
@@ -8735,12 +8735,12 @@ impl VirtualGatewayConnectionPool {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayConnectionPool` variant.
+    /// Returns true if this is a [`Http`](crate::model::VirtualGatewayConnectionPool::Http).
     pub fn is_http(&self) -> bool {
         self.as_http().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualGatewayConnectionPool`](crate::model::VirtualGatewayConnectionPool) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Http2`](crate::model::VirtualGatewayConnectionPool::Http2), extracting the inner [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayHttp2ConnectionPool, &Self> {
@@ -8750,7 +8750,7 @@ impl VirtualGatewayConnectionPool {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayConnectionPool` variant.
+    /// Returns true if this is a [`Http2`](crate::model::VirtualGatewayConnectionPool::Http2).
     pub fn is_http2(&self) -> bool {
         self.as_http2().is_ok()
     }
@@ -9089,8 +9089,8 @@ pub enum VirtualGatewayListenerTlsCertificate {
     Sds(crate::model::VirtualGatewayListenerTlsSdsCertificate),
 }
 impl VirtualGatewayListenerTlsCertificate {
-    /// Tries to convert the enum instance into its [`VirtualGatewayListenerTlsCertificate`](crate::model::VirtualGatewayListenerTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Acm`](crate::model::VirtualGatewayListenerTlsCertificate::Acm), extracting the inner [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsAcmCertificate, &Self> {
@@ -9100,12 +9100,12 @@ impl VirtualGatewayListenerTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayListenerTlsCertificate` variant.
+    /// Returns true if this is a [`Acm`](crate::model::VirtualGatewayListenerTlsCertificate::Acm).
     pub fn is_acm(&self) -> bool {
         self.as_acm().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualGatewayListenerTlsCertificate`](crate::model::VirtualGatewayListenerTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayListenerTlsCertificate::File), extracting the inner [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
@@ -9115,12 +9115,12 @@ impl VirtualGatewayListenerTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayListenerTlsCertificate` variant.
+    /// Returns true if this is a [`File`](crate::model::VirtualGatewayListenerTlsCertificate::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualGatewayListenerTlsCertificate`](crate::model::VirtualGatewayListenerTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Sds`](crate::model::VirtualGatewayListenerTlsCertificate::Sds), extracting the inner [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
@@ -9130,7 +9130,7 @@ impl VirtualGatewayListenerTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayListenerTlsCertificate` variant.
+    /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayListenerTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
@@ -9412,8 +9412,8 @@ pub enum VirtualGatewayListenerTlsValidationContextTrust {
     Sds(crate::model::VirtualGatewayTlsValidationContextSdsTrust),
 }
 impl VirtualGatewayListenerTlsValidationContextTrust {
-    /// Tries to convert the enum instance into its [`VirtualGatewayListenerTlsValidationContextTrust`](crate::model::VirtualGatewayListenerTlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::File), extracting the inner [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self>
@@ -9424,12 +9424,12 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayListenerTlsValidationContextTrust` variant.
+    /// Returns true if this is a [`File`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualGatewayListenerTlsValidationContextTrust`](crate::model::VirtualGatewayListenerTlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Sds`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::Sds), extracting the inner [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
@@ -9439,7 +9439,7 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayListenerTlsValidationContextTrust` variant.
+    /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
@@ -10215,8 +10215,8 @@ pub enum VirtualGatewayTlsValidationContextTrust {
     Sds(crate::model::VirtualGatewayTlsValidationContextSdsTrust),
 }
 impl VirtualGatewayTlsValidationContextTrust {
-    /// Tries to convert the enum instance into its [`VirtualGatewayTlsValidationContextTrust`](crate::model::VirtualGatewayTlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Acm`](crate::model::VirtualGatewayTlsValidationContextTrust::Acm), extracting the inner [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextAcmTrust, &Self> {
@@ -10226,12 +10226,12 @@ impl VirtualGatewayTlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayTlsValidationContextTrust` variant.
+    /// Returns true if this is a [`Acm`](crate::model::VirtualGatewayTlsValidationContextTrust::Acm).
     pub fn is_acm(&self) -> bool {
         self.as_acm().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualGatewayTlsValidationContextTrust`](crate::model::VirtualGatewayTlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayTlsValidationContextTrust::File), extracting the inner [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self>
@@ -10242,12 +10242,12 @@ impl VirtualGatewayTlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayTlsValidationContextTrust` variant.
+    /// Returns true if this is a [`File`](crate::model::VirtualGatewayTlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualGatewayTlsValidationContextTrust`](crate::model::VirtualGatewayTlsValidationContextTrust) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Sds`](crate::model::VirtualGatewayTlsValidationContextTrust::Sds), extracting the inner [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
@@ -10257,7 +10257,7 @@ impl VirtualGatewayTlsValidationContextTrust {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayTlsValidationContextTrust` variant.
+    /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayTlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
@@ -10339,8 +10339,8 @@ pub enum VirtualGatewayClientTlsCertificate {
     Sds(crate::model::VirtualGatewayListenerTlsSdsCertificate),
 }
 impl VirtualGatewayClientTlsCertificate {
-    /// Tries to convert the enum instance into its [`VirtualGatewayClientTlsCertificate`](crate::model::VirtualGatewayClientTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayClientTlsCertificate::File), extracting the inner [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
@@ -10350,12 +10350,12 @@ impl VirtualGatewayClientTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayClientTlsCertificate` variant.
+    /// Returns true if this is a [`File`](crate::model::VirtualGatewayClientTlsCertificate::File).
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    /// Tries to convert the enum instance into its [`VirtualGatewayClientTlsCertificate`](crate::model::VirtualGatewayClientTlsCertificate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Sds`](crate::model::VirtualGatewayClientTlsCertificate::Sds), extracting the inner [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
     ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
@@ -10365,7 +10365,7 @@ impl VirtualGatewayClientTlsCertificate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `VirtualGatewayClientTlsCertificate` variant.
+    /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayClientTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
         self.as_sds().is_ok()
     }
@@ -11503,8 +11503,8 @@ pub enum GrpcMetadataMatchMethod {
     Suffix(std::string::String),
 }
 impl GrpcMetadataMatchMethod {
-    /// Tries to convert the enum instance into its [`GrpcMetadataMatchMethod`](crate::model::GrpcMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Exact`](crate::model::GrpcMetadataMatchMethod::Exact), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Exact(val) = &self {
             Ok(&val)
@@ -11512,12 +11512,12 @@ impl GrpcMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Exact`](crate::model::GrpcMetadataMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    /// Tries to convert the enum instance into its [`GrpcMetadataMatchMethod`](crate::model::GrpcMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Prefix`](crate::model::GrpcMetadataMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Prefix(val) = &self {
             Ok(&val)
@@ -11525,12 +11525,12 @@ impl GrpcMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Prefix`](crate::model::GrpcMetadataMatchMethod::Prefix).
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    /// Tries to convert the enum instance into its [`GrpcMetadataMatchMethod`](crate::model::GrpcMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Range`](crate::model::GrpcMetadataMatchMethod::Range), extracting the inner [`MatchRange`](crate::model::MatchRange).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let GrpcMetadataMatchMethod::Range(val) = &self {
             Ok(&val)
@@ -11538,12 +11538,12 @@ impl GrpcMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Range`](crate::model::GrpcMetadataMatchMethod::Range).
     pub fn is_range(&self) -> bool {
         self.as_range().is_ok()
     }
-    /// Tries to convert the enum instance into its [`GrpcMetadataMatchMethod`](crate::model::GrpcMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Regex`](crate::model::GrpcMetadataMatchMethod::Regex), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Regex(val) = &self {
             Ok(&val)
@@ -11551,12 +11551,12 @@ impl GrpcMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Regex`](crate::model::GrpcMetadataMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
         self.as_regex().is_ok()
     }
-    /// Tries to convert the enum instance into its [`GrpcMetadataMatchMethod`](crate::model::GrpcMetadataMatchMethod) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Suffix`](crate::model::GrpcMetadataMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Suffix(val) = &self {
             Ok(&val)
@@ -11564,7 +11564,7 @@ impl GrpcMetadataMatchMethod {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `GrpcMetadataMatchMethod` variant.
+    /// Returns true if this is a [`Suffix`](crate::model::GrpcMetadataMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
         self.as_suffix().is_ok()
     }

@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteSnapshot {
 #[allow(unreachable_code, unused_variables)]
 mod complete_snapshot_request_test {
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: lowercase message
+    /// Test ID: LowercaseMessage
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -78,7 +78,7 @@ mod complete_snapshot_request_test {
         }
     }
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: uppercase message
+    /// Test ID: UppercaseMessage
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -94,8 +94,8 @@ mod complete_snapshot_request_test {
         .header("x-amzn-errortype", "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/")
         .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
         .status(400)
-                        .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
-                        .unwrap();
+                    .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
+                    .unwrap();
         let mut op_response = aws_smithy_http::operation::Response::new(http_response);
         use aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::CompleteSnapshot::new();
@@ -163,7 +163,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetSnapshotBlock {
 #[allow(unreachable_code, unused_variables)]
 mod get_snapshot_block_request_test {
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: lowercase message
+    /// Test ID: LowercaseMessage
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -205,7 +205,7 @@ mod get_snapshot_block_request_test {
         }
     }
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: uppercase message
+    /// Test ID: UppercaseMessage
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -221,8 +221,8 @@ mod get_snapshot_block_request_test {
         .header("x-amzn-errortype", "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/")
         .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
         .status(400)
-                        .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
-                        .unwrap();
+                    .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
+                    .unwrap();
         let mut op_response = aws_smithy_http::operation::Response::new(http_response);
         use aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::GetSnapshotBlock::new();
@@ -283,7 +283,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangedBlocks {
 #[allow(unreachable_code, unused_variables)]
 mod list_changed_blocks_request_test {
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: lowercase message
+    /// Test ID: LowercaseMessage
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -325,7 +325,7 @@ mod list_changed_blocks_request_test {
         }
     }
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: uppercase message
+    /// Test ID: UppercaseMessage
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -341,8 +341,8 @@ mod list_changed_blocks_request_test {
         .header("x-amzn-errortype", "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/")
         .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
         .status(400)
-                        .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
-                        .unwrap();
+                    .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
+                    .unwrap();
         let mut op_response = aws_smithy_http::operation::Response::new(http_response);
         use aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::ListChangedBlocks::new();
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshotBlocks {
 #[allow(unreachable_code, unused_variables)]
 mod list_snapshot_blocks_request_test {
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: lowercase message
+    /// Test ID: LowercaseMessage
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -445,7 +445,7 @@ mod list_snapshot_blocks_request_test {
         }
     }
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: uppercase message
+    /// Test ID: UppercaseMessage
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -461,8 +461,8 @@ mod list_snapshot_blocks_request_test {
         .header("x-amzn-errortype", "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/")
         .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
         .status(400)
-                        .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
-                        .unwrap();
+                    .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
+                    .unwrap();
         let mut op_response = aws_smithy_http::operation::Response::new(http_response);
         use aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::ListSnapshotBlocks::new();
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSnapshotBlock {
 #[allow(unreachable_code, unused_variables)]
 mod put_snapshot_block_request_test {
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: lowercase message
+    /// Test ID: LowercaseMessage
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -565,7 +565,7 @@ mod put_snapshot_block_request_test {
         }
     }
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: uppercase message
+    /// Test ID: UppercaseMessage
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -581,8 +581,8 @@ mod put_snapshot_block_request_test {
         .header("x-amzn-errortype", "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/")
         .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
         .status(400)
-                        .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
-                        .unwrap();
+                    .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
+                    .unwrap();
         let mut op_response = aws_smithy_http::operation::Response::new(http_response);
         use aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::PutSnapshotBlock::new();
@@ -641,7 +641,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSnapshot {
 #[allow(unreachable_code, unused_variables)]
 mod start_snapshot_request_test {
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: lowercase message
+    /// Test ID: LowercaseMessage
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -682,7 +682,7 @@ mod start_snapshot_request_test {
         }
     }
     /// This test case validates case insensitive parsing of `message`
-    /// Test ID: uppercase message
+    /// Test ID: UppercaseMessage
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
@@ -698,8 +698,8 @@ mod start_snapshot_request_test {
         .header("x-amzn-errortype", "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/")
         .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
         .status(400)
-                        .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
-                        .unwrap();
+                    .body(aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
+                    .unwrap();
         let mut op_response = aws_smithy_http::operation::Response::new(http_response);
         use aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::StartSnapshot::new();

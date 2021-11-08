@@ -20,7 +20,7 @@ pub enum BatchAcknowledgeAlarmErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchAcknowledgeAlarmError {
@@ -86,28 +86,28 @@ impl BatchAcknowledgeAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchAcknowledgeAlarmErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchAcknowledgeAlarmErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAcknowledgeAlarmErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAcknowledgeAlarmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchAcknowledgeAlarmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAcknowledgeAlarmErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAcknowledgeAlarmErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchAcknowledgeAlarmErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAcknowledgeAlarmErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAcknowledgeAlarmErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchAcknowledgeAlarmErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -148,7 +148,7 @@ pub enum BatchDisableAlarmErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDisableAlarmError {
@@ -214,28 +214,28 @@ impl BatchDisableAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDisableAlarmErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchDisableAlarmErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisableAlarmErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisableAlarmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchDisableAlarmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisableAlarmErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisableAlarmErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchDisableAlarmErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisableAlarmErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisableAlarmErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchDisableAlarmErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -276,7 +276,7 @@ pub enum BatchEnableAlarmErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchEnableAlarmError {
@@ -342,28 +342,28 @@ impl BatchEnableAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchEnableAlarmErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchEnableAlarmErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchEnableAlarmErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchEnableAlarmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchEnableAlarmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchEnableAlarmErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchEnableAlarmErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchEnableAlarmErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchEnableAlarmErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchEnableAlarmErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchEnableAlarmErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -404,7 +404,7 @@ pub enum BatchPutMessageErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchPutMessageError {
@@ -470,28 +470,28 @@ impl BatchPutMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchPutMessageErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchPutMessageErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutMessageErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutMessageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchPutMessageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutMessageErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchPutMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutMessageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchPutMessageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, BatchPutMessageErrorKind::ThrottlingException(_))
     }
@@ -529,7 +529,7 @@ pub enum BatchResetAlarmErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchResetAlarmError {
@@ -595,28 +595,28 @@ impl BatchResetAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchResetAlarmErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchResetAlarmErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchResetAlarmErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchResetAlarmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchResetAlarmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchResetAlarmErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchResetAlarmErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchResetAlarmErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchResetAlarmErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchResetAlarmErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchResetAlarmErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, BatchResetAlarmErrorKind::ThrottlingException(_))
     }
@@ -654,7 +654,7 @@ pub enum BatchSnoozeAlarmErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchSnoozeAlarmError {
@@ -720,28 +720,28 @@ impl BatchSnoozeAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchSnoozeAlarmErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchSnoozeAlarmErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchSnoozeAlarmErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchSnoozeAlarmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchSnoozeAlarmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchSnoozeAlarmErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchSnoozeAlarmErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchSnoozeAlarmErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchSnoozeAlarmErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchSnoozeAlarmErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchSnoozeAlarmErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -782,7 +782,7 @@ pub enum BatchUpdateDetectorErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdateDetectorError {
@@ -848,28 +848,28 @@ impl BatchUpdateDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpdateDetectorErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchUpdateDetectorErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateDetectorErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateDetectorErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchUpdateDetectorErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateDetectorErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateDetectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchUpdateDetectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateDetectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateDetectorErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchUpdateDetectorErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -912,7 +912,7 @@ pub enum DescribeAlarmErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAlarmError {
@@ -979,35 +979,35 @@ impl DescribeAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAlarmErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAlarmErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlarmErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlarmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAlarmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlarmErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlarmErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAlarmErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlarmErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlarmErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAlarmErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlarmErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlarmErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAlarmErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeAlarmErrorKind::ThrottlingException(_))
     }
@@ -1048,7 +1048,7 @@ pub enum DescribeDetectorErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDetectorError {
@@ -1115,35 +1115,35 @@ impl DescribeDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDetectorErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDetectorErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDetectorErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDetectorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeDetectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDetectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDetectorErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDetectorErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1187,7 +1187,7 @@ pub enum ListAlarmsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAlarmsError {
@@ -1254,29 +1254,29 @@ impl ListAlarmsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAlarmsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAlarmsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, ListAlarmsErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `ListAlarmsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAlarmsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListAlarmsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListAlarmsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAlarmsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAlarmsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlarmsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlarmsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAlarmsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListAlarmsErrorKind::ThrottlingException(_))
     }
@@ -1317,7 +1317,7 @@ pub enum ListDetectorsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request could not be completed due to throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDetectorsError {
@@ -1384,35 +1384,35 @@ impl ListDetectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDetectorsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDetectorsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDetectorsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDetectorsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListDetectorsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDetectorsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListDetectorsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDetectorsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListDetectorsErrorKind::ThrottlingException(_))
     }

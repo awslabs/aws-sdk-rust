@@ -26,7 +26,7 @@ pub enum CreateEnvironmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEnvironmentError {
@@ -94,42 +94,42 @@ impl CreateEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -175,7 +175,7 @@ pub enum DeleteEnvironmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEnvironmentError {
@@ -242,35 +242,35 @@ impl DeleteEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -313,7 +313,7 @@ pub enum GetEnvironmentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEnvironmentError {
@@ -379,28 +379,28 @@ impl GetEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEnvironmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEnvironmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnvironmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnvironmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEnvironmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnvironmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnvironmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEnvironmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnvironmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnvironmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetEnvironmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetEnvironmentErrorKind::ValidationException(_))
     }
@@ -435,7 +435,7 @@ pub enum ListEnvironmentsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEnvironmentsError {
@@ -499,14 +499,14 @@ impl ListEnvironmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEnvironmentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -544,7 +544,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -609,21 +609,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -662,7 +662,7 @@ pub enum TagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -727,15 +727,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -774,7 +774,7 @@ pub enum UntagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -839,21 +839,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -896,7 +896,7 @@ pub enum UpdateEnvironmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEnvironmentError {
@@ -963,35 +963,35 @@ impl UpdateEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

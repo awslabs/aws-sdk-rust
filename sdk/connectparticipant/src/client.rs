@@ -142,6 +142,8 @@ pub mod fluent_builders {
     ///
     /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL
     /// provided in StartAttachmentUpload API. </p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+    /// authentication</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct CompleteAttachmentUpload<
         C = aws_smithy_client::erase::DynConnector,
@@ -190,9 +192,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `AttachmentIds`.
@@ -240,25 +245,31 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateParticipantConnection`.
     ///
-    /// <p>Creates the participant's connection. Note that ParticipantToken is used for invoking
-    /// this API instead of ConnectionToken.</p>
-    /// <p>The participant token is valid for the lifetime of the participant – until they are
-    /// part of a contact.</p>
+    /// <p>Creates the participant's connection.  Note that ParticipantToken is used for invoking this API instead of
+    /// ConnectionToken.</p>
+    /// <p>The participant token is valid for the lifetime of the participant –
+    /// until they are part of a contact.</p>        
     /// <p>The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s.
     /// Clients must manually connect to the returned websocket URL and subscribe to the desired
     /// topic. </p>
     /// <p>For chat, you need to publish the following on the established websocket
     /// connection:</p>
-    ///
-    ///
     /// <p>
     /// <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code>
     /// </p>
-    ///
     /// <p>Upon websocket URL expiry, as specified in the response ConnectionExpiry parameter,
     /// clients need to call this API again to obtain a new websocket URL and perform the same
     /// steps as before.</p>
-    ///
+    /// <p>
+    /// <b>Message streaming support</b>: This API can also be used together with the
+    /// <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
+    /// API to create a participant connection for chat contacts that are
+    /// not using a websocket. For more information about message streaming, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message streaming</a> in the <i>Amazon Connect
+    /// Administrator Guide</i>.</p>
+    /// <p>
+    /// <b>Feature specifications</b>: For information about feature specifications, such as the allowed number of open
+    /// websocket connections per participant, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>. </p>
     /// <note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
     /// authentication</a>.</p>
@@ -311,9 +322,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `Type`.
@@ -334,20 +348,32 @@ pub mod fluent_builders {
             self
         }
         /// <p>This is a header parameter.</p>
-        /// <p>The Participant Token as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
         /// API response.</p>
         pub fn participant_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.participant_token(inp);
             self
         }
         /// <p>This is a header parameter.</p>
-        /// <p>The Participant Token as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
         /// API response.</p>
         pub fn set_participant_token(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_participant_token(input);
+            self
+        }
+        /// <p>Amazon Connect Participant is used to mark the participant as connected for message
+        /// streaming.</p>
+        pub fn connect_participant(mut self, inp: bool) -> Self {
+            self.inner = self.inner.connect_participant(inp);
+            self
+        }
+        /// <p>Amazon Connect Participant is used to mark the participant as connected for message
+        /// streaming.</p>
+        pub fn set_connect_participant(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_connect_participant(input);
             self
         }
     }
@@ -405,9 +431,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -440,6 +469,8 @@ pub mod fluent_builders {
     ///
     /// <p>Provides a pre-signed URL for download of a completed attachment. This is an
     /// asynchronous API for use with active contacts.</p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+    /// authentication</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetAttachment<
         C = aws_smithy_client::erase::DynConnector,
@@ -488,9 +519,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the attachment.</p>
@@ -574,9 +608,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The contactId from the current contact chain for which transcript is needed.</p>
@@ -717,9 +754,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The content type of the request. Supported types are:</p>
@@ -792,10 +832,8 @@ pub mod fluent_builders {
     ///
     /// <p>Sends a message. Note that ConnectionToken is used for invoking this API instead of
     /// ParticipantToken.</p>
-    /// <note>
     /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
     /// authentication</a>.</p>
-    /// </note>
     #[derive(std::fmt::Debug)]
     pub struct SendMessage<
         C = aws_smithy_client::erase::DynConnector,
@@ -844,9 +882,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The type of the content. Supported types are text/plain.</p>
@@ -899,6 +940,8 @@ pub mod fluent_builders {
     ///
     /// <p>Provides a pre-signed Amazon S3 URL in response for uploading the file directly to
     /// S3.</p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
+    /// authentication</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartAttachmentUpload<
         C = aws_smithy_client::erase::DynConnector,
@@ -947,9 +990,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>

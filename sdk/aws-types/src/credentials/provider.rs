@@ -65,7 +65,7 @@ impl CredentialsError {
         }
     }
 
-    /// An unexpected error occured loading credentials from this provider
+    /// An unexpected error occurred loading credentials from this provider
     ///
     /// Unhandled errors should not occur during normal operation and should be reserved for exceptional
     /// cases, such as a JSON API returning an output that was not parseable as JSON.
@@ -77,7 +77,7 @@ impl CredentialsError {
 
     /// The credentials provider returned an error
     ///
-    /// Provider errors may occur during normal use of a credentials provider, eg. a 503 when
+    /// Provider errors may occur during normal use of a credentials provider, e.g. a 503 when
     /// retrieving credentials from IMDS.
     pub fn provider_error(cause: impl Into<Box<dyn Error + Send + Sync + 'static>>) -> Self {
         Self::ProviderError {
@@ -120,7 +120,7 @@ impl Display for CredentialsError {
                 )
             }
             CredentialsError::ProviderError { cause } => {
-                write!(f, "An error occured while loading credentials: {}", cause)
+                write!(f, "An error occurred while loading credentials: {}", cause)
             }
         }
     }

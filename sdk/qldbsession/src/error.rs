@@ -26,7 +26,7 @@ pub enum SendCommandErrorKind {
     OccConflictException(crate::error::OccConflictException),
     /// <p>Returned when the rate of requests exceeds the allowed throughput.</p>
     RateExceededException(crate::error::RateExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendCommandError {
@@ -94,30 +94,30 @@ impl SendCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::CapacityExceededException`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::CapacityExceededException`.
     pub fn is_capacity_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendCommandErrorKind::CapacityExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InvalidSessionException`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InvalidSessionException`.
     pub fn is_invalid_session_exception(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::InvalidSessionException(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::OccConflictException`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::OccConflictException`.
     pub fn is_occ_conflict_exception(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::OccConflictException(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::RateExceededException`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::RateExceededException`.
     pub fn is_rate_exceeded_exception(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::RateExceededException(_))
     }

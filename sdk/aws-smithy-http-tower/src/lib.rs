@@ -18,7 +18,7 @@ use tower::BoxError;
 ///    SDK never attempted to dispatch the underlying `http::Request`. These represent errors that
 ///    occurred during the request construction pipeline. These generally stem from configuration issues.
 /// 2. [`RequestDispatchError`](SendOperationError::RequestDispatchError): Errors where the inner
-///    tower service failed (eg. because the hostname couldn't be resolved, connection errors,
+///    tower service failed (e.g. because the hostname couldn't be resolved, connection errors,
 ///    socket hangup etc.). In this case, we don't know how much of the request was _actually_ sent
 ///    to the client. We only know that we never got back an `http::Response` (and instead got an error).
 ///
@@ -30,7 +30,7 @@ use tower::BoxError;
 pub enum SendOperationError {
     /// The request could not be constructed
     ///
-    /// These errors usually stem from configuration issues (eg. no region, bad credential provider, etc.)
+    /// These errors usually stem from configuration issues (e.g. no region, bad credential provider, etc.)
     RequestConstructionError(BoxError),
 
     /// The request could not be dispatched

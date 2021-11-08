@@ -77,7 +77,7 @@ pub type AddTagsToCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl AddTagsToCertificateInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToCertificate`](crate::operation::AddTagsToCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -109,6 +109,7 @@ impl AddTagsToCertificateInput {
             input: &crate::input::AddTagsToCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -173,9 +174,10 @@ impl AddTagsToCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -243,7 +245,7 @@ pub type DeleteCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCertificate`](crate::operation::DeleteCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -275,6 +277,7 @@ impl DeleteCertificateInput {
             input: &crate::input::DeleteCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -337,9 +340,10 @@ impl DeleteCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -407,7 +411,7 @@ pub type DescribeCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCertificate`](crate::operation::DescribeCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -439,6 +443,7 @@ impl DescribeCertificateInput {
             input: &crate::input::DescribeCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -501,9 +506,10 @@ impl DescribeCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -592,7 +598,7 @@ pub type ExportCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ExportCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ExportCertificate`](crate::operation::ExportCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -624,6 +630,7 @@ impl ExportCertificateInput {
             input: &crate::input::ExportCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -686,9 +693,10 @@ impl ExportCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -730,7 +738,7 @@ pub type GetAccountConfigurationInputOperationRetryAlias = aws_http::AwsErrorRet
 impl GetAccountConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountConfiguration`](crate::operation::GetAccountConfiguration)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -762,6 +770,7 @@ impl GetAccountConfigurationInput {
             input: &crate::input::GetAccountConfigurationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -826,16 +835,9 @@ impl GetAccountConfigurationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetAccountConfigurationInput`](crate::input::GetAccountConfigurationInput)
@@ -894,7 +896,7 @@ pub type GetCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetCertificate`](crate::operation::GetCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -926,6 +928,7 @@ impl GetCertificateInput {
             input: &crate::input::GetCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -987,9 +990,10 @@ impl GetCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1119,7 +1123,7 @@ pub type ImportCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ImportCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ImportCertificate`](crate::operation::ImportCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1151,6 +1155,7 @@ impl ImportCertificateInput {
             input: &crate::input::ImportCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1213,9 +1218,10 @@ impl ImportCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1331,7 +1337,7 @@ pub type ListCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`ListCertificates`](crate::operation::ListCertificates)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1363,6 +1369,7 @@ impl ListCertificatesInput {
             input: &crate::input::ListCertificatesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1425,9 +1432,10 @@ impl ListCertificatesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1495,7 +1503,7 @@ pub type ListTagsForCertificateInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ListTagsForCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForCertificate`](crate::operation::ListTagsForCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1527,6 +1535,7 @@ impl ListTagsForCertificateInput {
             input: &crate::input::ListTagsForCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1591,9 +1600,10 @@ impl ListTagsForCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1679,7 +1689,7 @@ pub type PutAccountConfigurationInputOperationRetryAlias = aws_http::AwsErrorRet
 impl PutAccountConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountConfiguration`](crate::operation::PutAccountConfiguration)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1711,6 +1721,7 @@ impl PutAccountConfigurationInput {
             input: &crate::input::PutAccountConfigurationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1775,9 +1786,10 @@ impl PutAccountConfigurationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1871,7 +1883,7 @@ pub type RemoveTagsFromCertificateInputOperationRetryAlias = aws_http::AwsErrorR
 impl RemoveTagsFromCertificateInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromCertificate`](crate::operation::RemoveTagsFromCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1903,6 +1915,7 @@ impl RemoveTagsFromCertificateInput {
             input: &crate::input::RemoveTagsFromCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1967,9 +1980,10 @@ impl RemoveTagsFromCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2037,7 +2051,7 @@ pub type RenewCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl RenewCertificateInput {
     /// Consumes the builder and constructs an Operation<[`RenewCertificate`](crate::operation::RenewCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2069,6 +2083,7 @@ impl RenewCertificateInput {
             input: &crate::input::RenewCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2131,9 +2146,10 @@ impl RenewCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2420,7 +2436,7 @@ pub type RequestCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl RequestCertificateInput {
     /// Consumes the builder and constructs an Operation<[`RequestCertificate`](crate::operation::RequestCertificate)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2452,6 +2468,7 @@ impl RequestCertificateInput {
             input: &crate::input::RequestCertificateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2514,9 +2531,10 @@ impl RequestCertificateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2661,7 +2679,7 @@ pub type ResendValidationEmailInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ResendValidationEmailInput {
     /// Consumes the builder and constructs an Operation<[`ResendValidationEmail`](crate::operation::ResendValidationEmail)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2693,6 +2711,7 @@ impl ResendValidationEmailInput {
             input: &crate::input::ResendValidationEmailInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2757,9 +2776,10 @@ impl ResendValidationEmailInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2847,7 +2867,7 @@ pub type UpdateCertificateOptionsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl UpdateCertificateOptionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCertificateOptions`](crate::operation::UpdateCertificateOptions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2879,6 +2899,7 @@ impl UpdateCertificateOptionsInput {
             input: &crate::input::UpdateCertificateOptionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2943,9 +2964,10 @@ impl UpdateCertificateOptionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

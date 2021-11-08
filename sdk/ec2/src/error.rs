@@ -12,7 +12,7 @@ pub struct AcceptReservedInstancesExchangeQuoteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptReservedInstancesExchangeQuoteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptReservedInstancesExchangeQuoteError {
@@ -101,7 +101,7 @@ pub struct AcceptTransitGatewayMulticastDomainAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptTransitGatewayMulticastDomainAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptTransitGatewayMulticastDomainAssociationsError {
@@ -194,7 +194,7 @@ pub struct AcceptTransitGatewayPeeringAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptTransitGatewayPeeringAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptTransitGatewayPeeringAttachmentError {
@@ -283,7 +283,7 @@ pub struct AcceptTransitGatewayVpcAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptTransitGatewayVpcAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptTransitGatewayVpcAttachmentError {
@@ -370,7 +370,7 @@ pub struct AcceptVpcEndpointConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptVpcEndpointConnectionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptVpcEndpointConnectionsError {
@@ -454,7 +454,7 @@ pub struct AcceptVpcPeeringConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptVpcPeeringConnectionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptVpcPeeringConnectionError {
@@ -538,7 +538,7 @@ pub struct AdvertiseByoipCidrError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdvertiseByoipCidrErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdvertiseByoipCidrError {
@@ -622,7 +622,7 @@ pub struct AllocateAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AllocateAddressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllocateAddressError {
@@ -706,7 +706,7 @@ pub struct AllocateHostsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AllocateHostsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllocateHostsError {
@@ -790,7 +790,7 @@ pub struct ApplySecurityGroupsToClientVpnTargetNetworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ApplySecurityGroupsToClientVpnTargetNetworkErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ApplySecurityGroupsToClientVpnTargetNetworkError {
@@ -883,7 +883,7 @@ pub struct AssignIpv6AddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssignIpv6AddressesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssignIpv6AddressesError {
@@ -967,7 +967,7 @@ pub struct AssignPrivateIpAddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssignPrivateIpAddressesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssignPrivateIpAddressesError {
@@ -1051,7 +1051,7 @@ pub struct AssociateAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateAddressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateAddressError {
@@ -1135,7 +1135,7 @@ pub struct AssociateClientVpnTargetNetworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateClientVpnTargetNetworkErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateClientVpnTargetNetworkError {
@@ -1222,7 +1222,7 @@ pub struct AssociateDhcpOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateDhcpOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDhcpOptionsError {
@@ -1306,7 +1306,7 @@ pub struct AssociateEnclaveCertificateIamRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateEnclaveCertificateIamRoleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateEnclaveCertificateIamRoleError {
@@ -1393,7 +1393,7 @@ pub struct AssociateIamInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateIamInstanceProfileErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateIamInstanceProfileError {
@@ -1477,7 +1477,7 @@ pub struct AssociateInstanceEventWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateInstanceEventWindowErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateInstanceEventWindowError {
@@ -1561,7 +1561,7 @@ pub struct AssociateRouteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateRouteTableErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateRouteTableError {
@@ -1645,7 +1645,7 @@ pub struct AssociateSubnetCidrBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateSubnetCidrBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateSubnetCidrBlockError {
@@ -1729,7 +1729,7 @@ pub struct AssociateTransitGatewayMulticastDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateTransitGatewayMulticastDomainErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateTransitGatewayMulticastDomainError {
@@ -1818,7 +1818,7 @@ pub struct AssociateTransitGatewayRouteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateTransitGatewayRouteTableErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateTransitGatewayRouteTableError {
@@ -1905,7 +1905,7 @@ pub struct AssociateTrunkInterfaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateTrunkInterfaceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateTrunkInterfaceError {
@@ -1989,7 +1989,7 @@ pub struct AssociateVpcCidrBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateVpcCidrBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateVpcCidrBlockError {
@@ -2073,7 +2073,7 @@ pub struct AttachClassicLinkVpcError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachClassicLinkVpcErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachClassicLinkVpcError {
@@ -2157,7 +2157,7 @@ pub struct AttachInternetGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachInternetGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachInternetGatewayError {
@@ -2241,7 +2241,7 @@ pub struct AttachNetworkInterfaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachNetworkInterfaceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachNetworkInterfaceError {
@@ -2325,7 +2325,7 @@ pub struct AttachVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachVolumeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachVolumeError {
@@ -2409,7 +2409,7 @@ pub struct AttachVpnGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachVpnGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachVpnGatewayError {
@@ -2493,7 +2493,7 @@ pub struct AuthorizeClientVpnIngressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AuthorizeClientVpnIngressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeClientVpnIngressError {
@@ -2577,7 +2577,7 @@ pub struct AuthorizeSecurityGroupEgressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AuthorizeSecurityGroupEgressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeSecurityGroupEgressError {
@@ -2661,7 +2661,7 @@ pub struct AuthorizeSecurityGroupIngressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AuthorizeSecurityGroupIngressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeSecurityGroupIngressError {
@@ -2748,7 +2748,7 @@ pub struct BundleInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BundleInstanceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BundleInstanceError {
@@ -2832,7 +2832,7 @@ pub struct CancelBundleTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelBundleTaskErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelBundleTaskError {
@@ -2916,7 +2916,7 @@ pub struct CancelCapacityReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelCapacityReservationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelCapacityReservationError {
@@ -3000,7 +3000,7 @@ pub struct CancelCapacityReservationFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelCapacityReservationFleetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelCapacityReservationFleetsError {
@@ -3087,7 +3087,7 @@ pub struct CancelConversionTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelConversionTaskErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelConversionTaskError {
@@ -3171,7 +3171,7 @@ pub struct CancelExportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelExportTaskErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelExportTaskError {
@@ -3255,7 +3255,7 @@ pub struct CancelImportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelImportTaskErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelImportTaskError {
@@ -3339,7 +3339,7 @@ pub struct CancelReservedInstancesListingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelReservedInstancesListingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelReservedInstancesListingError {
@@ -3426,7 +3426,7 @@ pub struct CancelSpotFleetRequestsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelSpotFleetRequestsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelSpotFleetRequestsError {
@@ -3510,7 +3510,7 @@ pub struct CancelSpotInstanceRequestsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelSpotInstanceRequestsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelSpotInstanceRequestsError {
@@ -3594,7 +3594,7 @@ pub struct ConfirmProductInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfirmProductInstanceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfirmProductInstanceError {
@@ -3678,7 +3678,7 @@ pub struct CopyFpgaImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyFpgaImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyFpgaImageError {
@@ -3762,7 +3762,7 @@ pub struct CopyImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyImageError {
@@ -3846,7 +3846,7 @@ pub struct CopySnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopySnapshotErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopySnapshotError {
@@ -3930,7 +3930,7 @@ pub struct CreateCapacityReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCapacityReservationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCapacityReservationError {
@@ -4014,7 +4014,7 @@ pub struct CreateCapacityReservationFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCapacityReservationFleetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCapacityReservationFleetError {
@@ -4101,7 +4101,7 @@ pub struct CreateCarrierGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCarrierGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCarrierGatewayError {
@@ -4185,7 +4185,7 @@ pub struct CreateClientVpnEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClientVpnEndpointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClientVpnEndpointError {
@@ -4269,7 +4269,7 @@ pub struct CreateClientVpnRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClientVpnRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClientVpnRouteError {
@@ -4353,7 +4353,7 @@ pub struct CreateCustomerGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCustomerGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomerGatewayError {
@@ -4437,7 +4437,7 @@ pub struct CreateDefaultSubnetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDefaultSubnetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDefaultSubnetError {
@@ -4521,7 +4521,7 @@ pub struct CreateDefaultVpcError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDefaultVpcErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDefaultVpcError {
@@ -4605,7 +4605,7 @@ pub struct CreateDhcpOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDhcpOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDhcpOptionsError {
@@ -4689,7 +4689,7 @@ pub struct CreateEgressOnlyInternetGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEgressOnlyInternetGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEgressOnlyInternetGatewayError {
@@ -4776,7 +4776,7 @@ pub struct CreateFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFleetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFleetError {
@@ -4860,7 +4860,7 @@ pub struct CreateFlowLogsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFlowLogsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFlowLogsError {
@@ -4944,7 +4944,7 @@ pub struct CreateFpgaImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFpgaImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFpgaImageError {
@@ -5028,7 +5028,7 @@ pub struct CreateImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImageError {
@@ -5112,7 +5112,7 @@ pub struct CreateInstanceEventWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInstanceEventWindowErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstanceEventWindowError {
@@ -5196,7 +5196,7 @@ pub struct CreateInstanceExportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInstanceExportTaskErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstanceExportTaskError {
@@ -5280,7 +5280,7 @@ pub struct CreateInternetGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInternetGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInternetGatewayError {
@@ -5364,7 +5364,7 @@ pub struct CreateKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateKeyPairErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateKeyPairError {
@@ -5448,7 +5448,7 @@ pub struct CreateLaunchTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLaunchTemplateErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLaunchTemplateError {
@@ -5532,7 +5532,7 @@ pub struct CreateLaunchTemplateVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLaunchTemplateVersionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLaunchTemplateVersionError {
@@ -5616,7 +5616,7 @@ pub struct CreateLocalGatewayRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLocalGatewayRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLocalGatewayRouteError {
@@ -5700,7 +5700,7 @@ pub struct CreateLocalGatewayRouteTableVpcAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLocalGatewayRouteTableVpcAssociationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLocalGatewayRouteTableVpcAssociationError {
@@ -5789,7 +5789,7 @@ pub struct CreateManagedPrefixListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateManagedPrefixListErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateManagedPrefixListError {
@@ -5873,7 +5873,7 @@ pub struct CreateNatGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNatGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNatGatewayError {
@@ -5957,7 +5957,7 @@ pub struct CreateNetworkAclError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNetworkAclErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNetworkAclError {
@@ -6041,7 +6041,7 @@ pub struct CreateNetworkAclEntryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNetworkAclEntryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNetworkAclEntryError {
@@ -6125,7 +6125,7 @@ pub struct CreateNetworkInsightsPathError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNetworkInsightsPathErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNetworkInsightsPathError {
@@ -6209,7 +6209,7 @@ pub struct CreateNetworkInterfaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNetworkInterfaceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNetworkInterfaceError {
@@ -6293,7 +6293,7 @@ pub struct CreateNetworkInterfacePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNetworkInterfacePermissionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNetworkInterfacePermissionError {
@@ -6380,7 +6380,7 @@ pub struct CreatePlacementGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlacementGroupErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlacementGroupError {
@@ -6464,7 +6464,7 @@ pub struct CreateReplaceRootVolumeTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReplaceRootVolumeTaskErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReplaceRootVolumeTaskError {
@@ -6548,7 +6548,7 @@ pub struct CreateReservedInstancesListingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReservedInstancesListingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReservedInstancesListingError {
@@ -6635,7 +6635,7 @@ pub struct CreateRestoreImageTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRestoreImageTaskErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRestoreImageTaskError {
@@ -6719,7 +6719,7 @@ pub struct CreateRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRouteError {
@@ -6803,7 +6803,7 @@ pub struct CreateRouteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRouteTableErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRouteTableError {
@@ -6887,7 +6887,7 @@ pub struct CreateSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSecurityGroupErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSecurityGroupError {
@@ -6971,7 +6971,7 @@ pub struct CreateSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSnapshotErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSnapshotError {
@@ -7055,7 +7055,7 @@ pub struct CreateSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSnapshotsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSnapshotsError {
@@ -7139,7 +7139,7 @@ pub struct CreateSpotDatafeedSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSpotDatafeedSubscriptionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSpotDatafeedSubscriptionError {
@@ -7226,7 +7226,7 @@ pub struct CreateStoreImageTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStoreImageTaskErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStoreImageTaskError {
@@ -7310,7 +7310,7 @@ pub struct CreateSubnetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSubnetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSubnetError {
@@ -7394,7 +7394,7 @@ pub struct CreateSubnetCidrReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSubnetCidrReservationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSubnetCidrReservationError {
@@ -7478,7 +7478,7 @@ pub struct CreateTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTagsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagsError {
@@ -7562,7 +7562,7 @@ pub struct CreateTrafficMirrorFilterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrafficMirrorFilterErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrafficMirrorFilterError {
@@ -7646,7 +7646,7 @@ pub struct CreateTrafficMirrorFilterRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrafficMirrorFilterRuleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrafficMirrorFilterRuleError {
@@ -7733,7 +7733,7 @@ pub struct CreateTrafficMirrorSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrafficMirrorSessionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrafficMirrorSessionError {
@@ -7817,7 +7817,7 @@ pub struct CreateTrafficMirrorTargetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrafficMirrorTargetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrafficMirrorTargetError {
@@ -7901,7 +7901,7 @@ pub struct CreateTransitGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayError {
@@ -7985,7 +7985,7 @@ pub struct CreateTransitGatewayConnectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayConnectErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayConnectError {
@@ -8069,7 +8069,7 @@ pub struct CreateTransitGatewayConnectPeerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayConnectPeerErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayConnectPeerError {
@@ -8156,7 +8156,7 @@ pub struct CreateTransitGatewayMulticastDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayMulticastDomainErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayMulticastDomainError {
@@ -8245,7 +8245,7 @@ pub struct CreateTransitGatewayPeeringAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayPeeringAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayPeeringAttachmentError {
@@ -8334,7 +8334,7 @@ pub struct CreateTransitGatewayPrefixListReferenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayPrefixListReferenceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayPrefixListReferenceError {
@@ -8423,7 +8423,7 @@ pub struct CreateTransitGatewayRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayRouteError {
@@ -8507,7 +8507,7 @@ pub struct CreateTransitGatewayRouteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayRouteTableErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayRouteTableError {
@@ -8594,7 +8594,7 @@ pub struct CreateTransitGatewayVpcAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTransitGatewayVpcAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTransitGatewayVpcAttachmentError {
@@ -8681,7 +8681,7 @@ pub struct CreateVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVolumeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVolumeError {
@@ -8765,7 +8765,7 @@ pub struct CreateVpcError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcError {
@@ -8849,7 +8849,7 @@ pub struct CreateVpcEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcEndpointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcEndpointError {
@@ -8933,7 +8933,7 @@ pub struct CreateVpcEndpointConnectionNotificationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcEndpointConnectionNotificationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcEndpointConnectionNotificationError {
@@ -9022,7 +9022,7 @@ pub struct CreateVpcEndpointServiceConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcEndpointServiceConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcEndpointServiceConfigurationError {
@@ -9111,7 +9111,7 @@ pub struct CreateVpcPeeringConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcPeeringConnectionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcPeeringConnectionError {
@@ -9195,7 +9195,7 @@ pub struct CreateVpnConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpnConnectionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpnConnectionError {
@@ -9279,7 +9279,7 @@ pub struct CreateVpnConnectionRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpnConnectionRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpnConnectionRouteError {
@@ -9363,7 +9363,7 @@ pub struct CreateVpnGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpnGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpnGatewayError {
@@ -9447,7 +9447,7 @@ pub struct DeleteCarrierGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCarrierGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCarrierGatewayError {
@@ -9531,7 +9531,7 @@ pub struct DeleteClientVpnEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClientVpnEndpointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClientVpnEndpointError {
@@ -9615,7 +9615,7 @@ pub struct DeleteClientVpnRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClientVpnRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClientVpnRouteError {
@@ -9699,7 +9699,7 @@ pub struct DeleteCustomerGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCustomerGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomerGatewayError {
@@ -9783,7 +9783,7 @@ pub struct DeleteDhcpOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDhcpOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDhcpOptionsError {
@@ -9867,7 +9867,7 @@ pub struct DeleteEgressOnlyInternetGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEgressOnlyInternetGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEgressOnlyInternetGatewayError {
@@ -9954,7 +9954,7 @@ pub struct DeleteFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFleetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFleetsError {
@@ -10038,7 +10038,7 @@ pub struct DeleteFlowLogsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFlowLogsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFlowLogsError {
@@ -10122,7 +10122,7 @@ pub struct DeleteFpgaImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFpgaImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFpgaImageError {
@@ -10206,7 +10206,7 @@ pub struct DeleteInstanceEventWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInstanceEventWindowErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInstanceEventWindowError {
@@ -10290,7 +10290,7 @@ pub struct DeleteInternetGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInternetGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInternetGatewayError {
@@ -10374,7 +10374,7 @@ pub struct DeleteKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteKeyPairErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteKeyPairError {
@@ -10458,7 +10458,7 @@ pub struct DeleteLaunchTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLaunchTemplateErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLaunchTemplateError {
@@ -10542,7 +10542,7 @@ pub struct DeleteLaunchTemplateVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLaunchTemplateVersionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLaunchTemplateVersionsError {
@@ -10626,7 +10626,7 @@ pub struct DeleteLocalGatewayRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLocalGatewayRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLocalGatewayRouteError {
@@ -10710,7 +10710,7 @@ pub struct DeleteLocalGatewayRouteTableVpcAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLocalGatewayRouteTableVpcAssociationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLocalGatewayRouteTableVpcAssociationError {
@@ -10799,7 +10799,7 @@ pub struct DeleteManagedPrefixListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteManagedPrefixListErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteManagedPrefixListError {
@@ -10883,7 +10883,7 @@ pub struct DeleteNatGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNatGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNatGatewayError {
@@ -10967,7 +10967,7 @@ pub struct DeleteNetworkAclError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNetworkAclErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNetworkAclError {
@@ -11051,7 +11051,7 @@ pub struct DeleteNetworkAclEntryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNetworkAclEntryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNetworkAclEntryError {
@@ -11135,7 +11135,7 @@ pub struct DeleteNetworkInsightsAnalysisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNetworkInsightsAnalysisErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNetworkInsightsAnalysisError {
@@ -11222,7 +11222,7 @@ pub struct DeleteNetworkInsightsPathError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNetworkInsightsPathErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNetworkInsightsPathError {
@@ -11306,7 +11306,7 @@ pub struct DeleteNetworkInterfaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNetworkInterfaceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNetworkInterfaceError {
@@ -11390,7 +11390,7 @@ pub struct DeleteNetworkInterfacePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNetworkInterfacePermissionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNetworkInterfacePermissionError {
@@ -11477,7 +11477,7 @@ pub struct DeletePlacementGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePlacementGroupErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePlacementGroupError {
@@ -11561,7 +11561,7 @@ pub struct DeleteQueuedReservedInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteQueuedReservedInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteQueuedReservedInstancesError {
@@ -11648,7 +11648,7 @@ pub struct DeleteRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRouteError {
@@ -11732,7 +11732,7 @@ pub struct DeleteRouteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRouteTableErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRouteTableError {
@@ -11816,7 +11816,7 @@ pub struct DeleteSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSecurityGroupErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSecurityGroupError {
@@ -11900,7 +11900,7 @@ pub struct DeleteSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSnapshotErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSnapshotError {
@@ -11984,7 +11984,7 @@ pub struct DeleteSpotDatafeedSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSpotDatafeedSubscriptionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSpotDatafeedSubscriptionError {
@@ -12071,7 +12071,7 @@ pub struct DeleteSubnetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSubnetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSubnetError {
@@ -12155,7 +12155,7 @@ pub struct DeleteSubnetCidrReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSubnetCidrReservationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSubnetCidrReservationError {
@@ -12239,7 +12239,7 @@ pub struct DeleteTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -12323,7 +12323,7 @@ pub struct DeleteTrafficMirrorFilterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrafficMirrorFilterErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrafficMirrorFilterError {
@@ -12407,7 +12407,7 @@ pub struct DeleteTrafficMirrorFilterRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrafficMirrorFilterRuleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrafficMirrorFilterRuleError {
@@ -12494,7 +12494,7 @@ pub struct DeleteTrafficMirrorSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrafficMirrorSessionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrafficMirrorSessionError {
@@ -12578,7 +12578,7 @@ pub struct DeleteTrafficMirrorTargetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrafficMirrorTargetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrafficMirrorTargetError {
@@ -12662,7 +12662,7 @@ pub struct DeleteTransitGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayError {
@@ -12746,7 +12746,7 @@ pub struct DeleteTransitGatewayConnectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayConnectErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayConnectError {
@@ -12830,7 +12830,7 @@ pub struct DeleteTransitGatewayConnectPeerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayConnectPeerErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayConnectPeerError {
@@ -12917,7 +12917,7 @@ pub struct DeleteTransitGatewayMulticastDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayMulticastDomainErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayMulticastDomainError {
@@ -13006,7 +13006,7 @@ pub struct DeleteTransitGatewayPeeringAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayPeeringAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayPeeringAttachmentError {
@@ -13095,7 +13095,7 @@ pub struct DeleteTransitGatewayPrefixListReferenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayPrefixListReferenceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayPrefixListReferenceError {
@@ -13184,7 +13184,7 @@ pub struct DeleteTransitGatewayRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayRouteError {
@@ -13268,7 +13268,7 @@ pub struct DeleteTransitGatewayRouteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayRouteTableErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayRouteTableError {
@@ -13355,7 +13355,7 @@ pub struct DeleteTransitGatewayVpcAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTransitGatewayVpcAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTransitGatewayVpcAttachmentError {
@@ -13442,7 +13442,7 @@ pub struct DeleteVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVolumeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVolumeError {
@@ -13526,7 +13526,7 @@ pub struct DeleteVpcError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcError {
@@ -13610,7 +13610,7 @@ pub struct DeleteVpcEndpointConnectionNotificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcEndpointConnectionNotificationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcEndpointConnectionNotificationsError {
@@ -13699,7 +13699,7 @@ pub struct DeleteVpcEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcEndpointsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcEndpointsError {
@@ -13783,7 +13783,7 @@ pub struct DeleteVpcEndpointServiceConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcEndpointServiceConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcEndpointServiceConfigurationsError {
@@ -13872,7 +13872,7 @@ pub struct DeleteVpcPeeringConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcPeeringConnectionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcPeeringConnectionError {
@@ -13956,7 +13956,7 @@ pub struct DeleteVpnConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpnConnectionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpnConnectionError {
@@ -14040,7 +14040,7 @@ pub struct DeleteVpnConnectionRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpnConnectionRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpnConnectionRouteError {
@@ -14124,7 +14124,7 @@ pub struct DeleteVpnGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpnGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpnGatewayError {
@@ -14208,7 +14208,7 @@ pub struct DeprovisionByoipCidrError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeprovisionByoipCidrErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeprovisionByoipCidrError {
@@ -14292,7 +14292,7 @@ pub struct DeregisterImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterImageError {
@@ -14376,7 +14376,7 @@ pub struct DeregisterInstanceEventNotificationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterInstanceEventNotificationAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterInstanceEventNotificationAttributesError {
@@ -14469,7 +14469,7 @@ pub struct DeregisterTransitGatewayMulticastGroupMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterTransitGatewayMulticastGroupMembersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTransitGatewayMulticastGroupMembersError {
@@ -14562,7 +14562,7 @@ pub struct DeregisterTransitGatewayMulticastGroupSourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterTransitGatewayMulticastGroupSourcesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTransitGatewayMulticastGroupSourcesError {
@@ -14655,7 +14655,7 @@ pub struct DescribeAccountAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountAttributesError {
@@ -14739,7 +14739,7 @@ pub struct DescribeAddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAddressesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAddressesError {
@@ -14823,7 +14823,7 @@ pub struct DescribeAddressesAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAddressesAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAddressesAttributeError {
@@ -14907,7 +14907,7 @@ pub struct DescribeAggregateIdFormatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAggregateIdFormatErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAggregateIdFormatError {
@@ -14991,7 +14991,7 @@ pub struct DescribeAvailabilityZonesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAvailabilityZonesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAvailabilityZonesError {
@@ -15075,7 +15075,7 @@ pub struct DescribeBundleTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBundleTasksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBundleTasksError {
@@ -15159,7 +15159,7 @@ pub struct DescribeByoipCidrsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeByoipCidrsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeByoipCidrsError {
@@ -15243,7 +15243,7 @@ pub struct DescribeCapacityReservationFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCapacityReservationFleetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCapacityReservationFleetsError {
@@ -15330,7 +15330,7 @@ pub struct DescribeCapacityReservationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCapacityReservationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCapacityReservationsError {
@@ -15414,7 +15414,7 @@ pub struct DescribeCarrierGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCarrierGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCarrierGatewaysError {
@@ -15498,7 +15498,7 @@ pub struct DescribeClassicLinkInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClassicLinkInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClassicLinkInstancesError {
@@ -15582,7 +15582,7 @@ pub struct DescribeClientVpnAuthorizationRulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClientVpnAuthorizationRulesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClientVpnAuthorizationRulesError {
@@ -15671,7 +15671,7 @@ pub struct DescribeClientVpnConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClientVpnConnectionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClientVpnConnectionsError {
@@ -15755,7 +15755,7 @@ pub struct DescribeClientVpnEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClientVpnEndpointsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClientVpnEndpointsError {
@@ -15839,7 +15839,7 @@ pub struct DescribeClientVpnRoutesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClientVpnRoutesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClientVpnRoutesError {
@@ -15923,7 +15923,7 @@ pub struct DescribeClientVpnTargetNetworksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClientVpnTargetNetworksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClientVpnTargetNetworksError {
@@ -16010,7 +16010,7 @@ pub struct DescribeCoipPoolsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCoipPoolsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCoipPoolsError {
@@ -16094,7 +16094,7 @@ pub struct DescribeConversionTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeConversionTasksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConversionTasksError {
@@ -16178,7 +16178,7 @@ pub struct DescribeCustomerGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCustomerGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomerGatewaysError {
@@ -16262,7 +16262,7 @@ pub struct DescribeDhcpOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDhcpOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDhcpOptionsError {
@@ -16346,7 +16346,7 @@ pub struct DescribeEgressOnlyInternetGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEgressOnlyInternetGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEgressOnlyInternetGatewaysError {
@@ -16433,7 +16433,7 @@ pub struct DescribeElasticGpusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeElasticGpusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeElasticGpusError {
@@ -16517,7 +16517,7 @@ pub struct DescribeExportImageTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportImageTasksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportImageTasksError {
@@ -16601,7 +16601,7 @@ pub struct DescribeExportTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportTasksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportTasksError {
@@ -16685,7 +16685,7 @@ pub struct DescribeFastSnapshotRestoresError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFastSnapshotRestoresErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFastSnapshotRestoresError {
@@ -16769,7 +16769,7 @@ pub struct DescribeFleetHistoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetHistoryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetHistoryError {
@@ -16853,7 +16853,7 @@ pub struct DescribeFleetInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetInstancesError {
@@ -16937,7 +16937,7 @@ pub struct DescribeFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetsError {
@@ -17021,7 +17021,7 @@ pub struct DescribeFlowLogsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFlowLogsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFlowLogsError {
@@ -17105,7 +17105,7 @@ pub struct DescribeFpgaImageAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFpgaImageAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFpgaImageAttributeError {
@@ -17189,7 +17189,7 @@ pub struct DescribeFpgaImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFpgaImagesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFpgaImagesError {
@@ -17273,7 +17273,7 @@ pub struct DescribeHostReservationOfferingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeHostReservationOfferingsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHostReservationOfferingsError {
@@ -17360,7 +17360,7 @@ pub struct DescribeHostReservationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeHostReservationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHostReservationsError {
@@ -17444,7 +17444,7 @@ pub struct DescribeHostsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeHostsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHostsError {
@@ -17528,7 +17528,7 @@ pub struct DescribeIamInstanceProfileAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIamInstanceProfileAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIamInstanceProfileAssociationsError {
@@ -17617,7 +17617,7 @@ pub struct DescribeIdentityIdFormatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIdentityIdFormatErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIdentityIdFormatError {
@@ -17701,7 +17701,7 @@ pub struct DescribeIdFormatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIdFormatErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIdFormatError {
@@ -17785,7 +17785,7 @@ pub struct DescribeImageAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImageAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImageAttributeError {
@@ -17869,7 +17869,7 @@ pub struct DescribeImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImagesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImagesError {
@@ -17953,7 +17953,7 @@ pub struct DescribeImportImageTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImportImageTasksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImportImageTasksError {
@@ -18037,7 +18037,7 @@ pub struct DescribeImportSnapshotTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImportSnapshotTasksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImportSnapshotTasksError {
@@ -18121,7 +18121,7 @@ pub struct DescribeInstanceAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstanceAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceAttributeError {
@@ -18205,7 +18205,7 @@ pub struct DescribeInstanceCreditSpecificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstanceCreditSpecificationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceCreditSpecificationsError {
@@ -18294,7 +18294,7 @@ pub struct DescribeInstanceEventNotificationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstanceEventNotificationAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceEventNotificationAttributesError {
@@ -18387,7 +18387,7 @@ pub struct DescribeInstanceEventWindowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstanceEventWindowsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceEventWindowsError {
@@ -18471,7 +18471,7 @@ pub struct DescribeInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstancesError {
@@ -18555,7 +18555,7 @@ pub struct DescribeInstanceStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstanceStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceStatusError {
@@ -18639,7 +18639,7 @@ pub struct DescribeInstanceTypeOfferingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstanceTypeOfferingsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceTypeOfferingsError {
@@ -18726,7 +18726,7 @@ pub struct DescribeInstanceTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstanceTypesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceTypesError {
@@ -18810,7 +18810,7 @@ pub struct DescribeInternetGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInternetGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInternetGatewaysError {
@@ -18894,7 +18894,7 @@ pub struct DescribeIpv6PoolsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIpv6PoolsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIpv6PoolsError {
@@ -18978,7 +18978,7 @@ pub struct DescribeKeyPairsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeKeyPairsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeKeyPairsError {
@@ -19062,7 +19062,7 @@ pub struct DescribeLaunchTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLaunchTemplatesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLaunchTemplatesError {
@@ -19146,7 +19146,7 @@ pub struct DescribeLaunchTemplateVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLaunchTemplateVersionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLaunchTemplateVersionsError {
@@ -19233,7 +19233,7 @@ pub struct DescribeLocalGatewayRouteTablesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLocalGatewayRouteTablesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocalGatewayRouteTablesError {
@@ -19320,7 +19320,7 @@ pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError {
@@ -19419,7 +19419,7 @@ pub struct DescribeLocalGatewayRouteTableVpcAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLocalGatewayRouteTableVpcAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocalGatewayRouteTableVpcAssociationsError {
@@ -19512,7 +19512,7 @@ pub struct DescribeLocalGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLocalGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocalGatewaysError {
@@ -19596,7 +19596,7 @@ pub struct DescribeLocalGatewayVirtualInterfaceGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLocalGatewayVirtualInterfaceGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocalGatewayVirtualInterfaceGroupsError {
@@ -19685,7 +19685,7 @@ pub struct DescribeLocalGatewayVirtualInterfacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLocalGatewayVirtualInterfacesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocalGatewayVirtualInterfacesError {
@@ -19774,7 +19774,7 @@ pub struct DescribeManagedPrefixListsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeManagedPrefixListsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeManagedPrefixListsError {
@@ -19858,7 +19858,7 @@ pub struct DescribeMovingAddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMovingAddressesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMovingAddressesError {
@@ -19942,7 +19942,7 @@ pub struct DescribeNatGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNatGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNatGatewaysError {
@@ -20026,7 +20026,7 @@ pub struct DescribeNetworkAclsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNetworkAclsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNetworkAclsError {
@@ -20110,7 +20110,7 @@ pub struct DescribeNetworkInsightsAnalysesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNetworkInsightsAnalysesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNetworkInsightsAnalysesError {
@@ -20197,7 +20197,7 @@ pub struct DescribeNetworkInsightsPathsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNetworkInsightsPathsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNetworkInsightsPathsError {
@@ -20281,7 +20281,7 @@ pub struct DescribeNetworkInterfaceAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNetworkInterfaceAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNetworkInterfaceAttributeError {
@@ -20368,7 +20368,7 @@ pub struct DescribeNetworkInterfacePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNetworkInterfacePermissionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNetworkInterfacePermissionsError {
@@ -20457,7 +20457,7 @@ pub struct DescribeNetworkInterfacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNetworkInterfacesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNetworkInterfacesError {
@@ -20541,7 +20541,7 @@ pub struct DescribePlacementGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePlacementGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePlacementGroupsError {
@@ -20625,7 +20625,7 @@ pub struct DescribePrefixListsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePrefixListsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePrefixListsError {
@@ -20709,7 +20709,7 @@ pub struct DescribePrincipalIdFormatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePrincipalIdFormatErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePrincipalIdFormatError {
@@ -20793,7 +20793,7 @@ pub struct DescribePublicIpv4PoolsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePublicIpv4PoolsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePublicIpv4PoolsError {
@@ -20877,7 +20877,7 @@ pub struct DescribeRegionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRegionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRegionsError {
@@ -20961,7 +20961,7 @@ pub struct DescribeReplaceRootVolumeTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReplaceRootVolumeTasksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplaceRootVolumeTasksError {
@@ -21048,7 +21048,7 @@ pub struct DescribeReservedInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservedInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedInstancesError {
@@ -21132,7 +21132,7 @@ pub struct DescribeReservedInstancesListingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservedInstancesListingsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedInstancesListingsError {
@@ -21219,7 +21219,7 @@ pub struct DescribeReservedInstancesModificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservedInstancesModificationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedInstancesModificationsError {
@@ -21308,7 +21308,7 @@ pub struct DescribeReservedInstancesOfferingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservedInstancesOfferingsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedInstancesOfferingsError {
@@ -21395,7 +21395,7 @@ pub struct DescribeRouteTablesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRouteTablesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRouteTablesError {
@@ -21479,7 +21479,7 @@ pub struct DescribeScheduledInstanceAvailabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScheduledInstanceAvailabilityErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScheduledInstanceAvailabilityError {
@@ -21568,7 +21568,7 @@ pub struct DescribeScheduledInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScheduledInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScheduledInstancesError {
@@ -21652,7 +21652,7 @@ pub struct DescribeSecurityGroupReferencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSecurityGroupReferencesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSecurityGroupReferencesError {
@@ -21739,7 +21739,7 @@ pub struct DescribeSecurityGroupRulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSecurityGroupRulesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSecurityGroupRulesError {
@@ -21823,7 +21823,7 @@ pub struct DescribeSecurityGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSecurityGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSecurityGroupsError {
@@ -21907,7 +21907,7 @@ pub struct DescribeSnapshotAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSnapshotAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSnapshotAttributeError {
@@ -21991,7 +21991,7 @@ pub struct DescribeSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSnapshotsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSnapshotsError {
@@ -22075,7 +22075,7 @@ pub struct DescribeSpotDatafeedSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSpotDatafeedSubscriptionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSpotDatafeedSubscriptionError {
@@ -22162,7 +22162,7 @@ pub struct DescribeSpotFleetInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSpotFleetInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSpotFleetInstancesError {
@@ -22246,7 +22246,7 @@ pub struct DescribeSpotFleetRequestHistoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSpotFleetRequestHistoryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSpotFleetRequestHistoryError {
@@ -22333,7 +22333,7 @@ pub struct DescribeSpotFleetRequestsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSpotFleetRequestsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSpotFleetRequestsError {
@@ -22417,7 +22417,7 @@ pub struct DescribeSpotInstanceRequestsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSpotInstanceRequestsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSpotInstanceRequestsError {
@@ -22501,7 +22501,7 @@ pub struct DescribeSpotPriceHistoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSpotPriceHistoryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSpotPriceHistoryError {
@@ -22585,7 +22585,7 @@ pub struct DescribeStaleSecurityGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStaleSecurityGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStaleSecurityGroupsError {
@@ -22669,7 +22669,7 @@ pub struct DescribeStoreImageTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStoreImageTasksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStoreImageTasksError {
@@ -22753,7 +22753,7 @@ pub struct DescribeSubnetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSubnetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSubnetsError {
@@ -22837,7 +22837,7 @@ pub struct DescribeTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTagsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -22921,7 +22921,7 @@ pub struct DescribeTrafficMirrorFiltersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrafficMirrorFiltersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrafficMirrorFiltersError {
@@ -23005,7 +23005,7 @@ pub struct DescribeTrafficMirrorSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrafficMirrorSessionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrafficMirrorSessionsError {
@@ -23092,7 +23092,7 @@ pub struct DescribeTrafficMirrorTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrafficMirrorTargetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrafficMirrorTargetsError {
@@ -23176,7 +23176,7 @@ pub struct DescribeTransitGatewayAttachmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTransitGatewayAttachmentsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransitGatewayAttachmentsError {
@@ -23263,7 +23263,7 @@ pub struct DescribeTransitGatewayConnectPeersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTransitGatewayConnectPeersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransitGatewayConnectPeersError {
@@ -23350,7 +23350,7 @@ pub struct DescribeTransitGatewayConnectsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTransitGatewayConnectsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransitGatewayConnectsError {
@@ -23437,7 +23437,7 @@ pub struct DescribeTransitGatewayMulticastDomainsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTransitGatewayMulticastDomainsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransitGatewayMulticastDomainsError {
@@ -23526,7 +23526,7 @@ pub struct DescribeTransitGatewayPeeringAttachmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTransitGatewayPeeringAttachmentsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransitGatewayPeeringAttachmentsError {
@@ -23615,7 +23615,7 @@ pub struct DescribeTransitGatewayRouteTablesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTransitGatewayRouteTablesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransitGatewayRouteTablesError {
@@ -23702,7 +23702,7 @@ pub struct DescribeTransitGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTransitGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransitGatewaysError {
@@ -23786,7 +23786,7 @@ pub struct DescribeTransitGatewayVpcAttachmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTransitGatewayVpcAttachmentsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTransitGatewayVpcAttachmentsError {
@@ -23875,7 +23875,7 @@ pub struct DescribeTrunkInterfaceAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrunkInterfaceAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrunkInterfaceAssociationsError {
@@ -23962,7 +23962,7 @@ pub struct DescribeVolumeAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVolumeAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVolumeAttributeError {
@@ -24046,7 +24046,7 @@ pub struct DescribeVolumesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVolumesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVolumesError {
@@ -24130,7 +24130,7 @@ pub struct DescribeVolumesModificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVolumesModificationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVolumesModificationsError {
@@ -24214,7 +24214,7 @@ pub struct DescribeVolumeStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVolumeStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVolumeStatusError {
@@ -24298,7 +24298,7 @@ pub struct DescribeVpcAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcAttributeError {
@@ -24382,7 +24382,7 @@ pub struct DescribeVpcClassicLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcClassicLinkErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcClassicLinkError {
@@ -24466,7 +24466,7 @@ pub struct DescribeVpcClassicLinkDnsSupportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcClassicLinkDnsSupportErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcClassicLinkDnsSupportError {
@@ -24553,7 +24553,7 @@ pub struct DescribeVpcEndpointConnectionNotificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcEndpointConnectionNotificationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcEndpointConnectionNotificationsError {
@@ -24642,7 +24642,7 @@ pub struct DescribeVpcEndpointConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcEndpointConnectionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcEndpointConnectionsError {
@@ -24729,7 +24729,7 @@ pub struct DescribeVpcEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcEndpointsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcEndpointsError {
@@ -24813,7 +24813,7 @@ pub struct DescribeVpcEndpointServiceConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcEndpointServiceConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcEndpointServiceConfigurationsError {
@@ -24902,7 +24902,7 @@ pub struct DescribeVpcEndpointServicePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcEndpointServicePermissionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcEndpointServicePermissionsError {
@@ -24991,7 +24991,7 @@ pub struct DescribeVpcEndpointServicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcEndpointServicesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcEndpointServicesError {
@@ -25075,7 +25075,7 @@ pub struct DescribeVpcPeeringConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcPeeringConnectionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcPeeringConnectionsError {
@@ -25162,7 +25162,7 @@ pub struct DescribeVpcsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcsError {
@@ -25246,7 +25246,7 @@ pub struct DescribeVpnConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpnConnectionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpnConnectionsError {
@@ -25330,7 +25330,7 @@ pub struct DescribeVpnGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpnGatewaysErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpnGatewaysError {
@@ -25414,7 +25414,7 @@ pub struct DetachClassicLinkVpcError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachClassicLinkVpcErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachClassicLinkVpcError {
@@ -25498,7 +25498,7 @@ pub struct DetachInternetGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachInternetGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachInternetGatewayError {
@@ -25582,7 +25582,7 @@ pub struct DetachNetworkInterfaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachNetworkInterfaceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachNetworkInterfaceError {
@@ -25666,7 +25666,7 @@ pub struct DetachVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachVolumeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachVolumeError {
@@ -25750,7 +25750,7 @@ pub struct DetachVpnGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachVpnGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachVpnGatewayError {
@@ -25834,7 +25834,7 @@ pub struct DisableEbsEncryptionByDefaultError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableEbsEncryptionByDefaultErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableEbsEncryptionByDefaultError {
@@ -25921,7 +25921,7 @@ pub struct DisableFastSnapshotRestoresError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableFastSnapshotRestoresErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableFastSnapshotRestoresError {
@@ -26005,7 +26005,7 @@ pub struct DisableImageDeprecationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableImageDeprecationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableImageDeprecationError {
@@ -26089,7 +26089,7 @@ pub struct DisableSerialConsoleAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableSerialConsoleAccessErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableSerialConsoleAccessError {
@@ -26173,7 +26173,7 @@ pub struct DisableTransitGatewayRouteTablePropagationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableTransitGatewayRouteTablePropagationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableTransitGatewayRouteTablePropagationError {
@@ -26262,7 +26262,7 @@ pub struct DisableVgwRoutePropagationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableVgwRoutePropagationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableVgwRoutePropagationError {
@@ -26346,7 +26346,7 @@ pub struct DisableVpcClassicLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableVpcClassicLinkErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableVpcClassicLinkError {
@@ -26430,7 +26430,7 @@ pub struct DisableVpcClassicLinkDnsSupportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableVpcClassicLinkDnsSupportErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableVpcClassicLinkDnsSupportError {
@@ -26517,7 +26517,7 @@ pub struct DisassociateAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateAddressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateAddressError {
@@ -26601,7 +26601,7 @@ pub struct DisassociateClientVpnTargetNetworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateClientVpnTargetNetworkErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateClientVpnTargetNetworkError {
@@ -26688,7 +26688,7 @@ pub struct DisassociateEnclaveCertificateIamRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateEnclaveCertificateIamRoleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateEnclaveCertificateIamRoleError {
@@ -26777,7 +26777,7 @@ pub struct DisassociateIamInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateIamInstanceProfileErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateIamInstanceProfileError {
@@ -26864,7 +26864,7 @@ pub struct DisassociateInstanceEventWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateInstanceEventWindowErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateInstanceEventWindowError {
@@ -26951,7 +26951,7 @@ pub struct DisassociateRouteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateRouteTableErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateRouteTableError {
@@ -27035,7 +27035,7 @@ pub struct DisassociateSubnetCidrBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateSubnetCidrBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateSubnetCidrBlockError {
@@ -27119,7 +27119,7 @@ pub struct DisassociateTransitGatewayMulticastDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateTransitGatewayMulticastDomainErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateTransitGatewayMulticastDomainError {
@@ -27208,7 +27208,7 @@ pub struct DisassociateTransitGatewayRouteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateTransitGatewayRouteTableErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateTransitGatewayRouteTableError {
@@ -27297,7 +27297,7 @@ pub struct DisassociateTrunkInterfaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateTrunkInterfaceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateTrunkInterfaceError {
@@ -27381,7 +27381,7 @@ pub struct DisassociateVpcCidrBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateVpcCidrBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateVpcCidrBlockError {
@@ -27465,7 +27465,7 @@ pub struct EnableEbsEncryptionByDefaultError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableEbsEncryptionByDefaultErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableEbsEncryptionByDefaultError {
@@ -27549,7 +27549,7 @@ pub struct EnableFastSnapshotRestoresError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableFastSnapshotRestoresErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableFastSnapshotRestoresError {
@@ -27633,7 +27633,7 @@ pub struct EnableImageDeprecationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableImageDeprecationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableImageDeprecationError {
@@ -27717,7 +27717,7 @@ pub struct EnableSerialConsoleAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableSerialConsoleAccessErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableSerialConsoleAccessError {
@@ -27801,7 +27801,7 @@ pub struct EnableTransitGatewayRouteTablePropagationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableTransitGatewayRouteTablePropagationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableTransitGatewayRouteTablePropagationError {
@@ -27890,7 +27890,7 @@ pub struct EnableVgwRoutePropagationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableVgwRoutePropagationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableVgwRoutePropagationError {
@@ -27974,7 +27974,7 @@ pub struct EnableVolumeIOError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableVolumeIOErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableVolumeIOError {
@@ -28058,7 +28058,7 @@ pub struct EnableVpcClassicLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableVpcClassicLinkErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableVpcClassicLinkError {
@@ -28142,7 +28142,7 @@ pub struct EnableVpcClassicLinkDnsSupportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableVpcClassicLinkDnsSupportErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableVpcClassicLinkDnsSupportError {
@@ -28229,7 +28229,7 @@ pub struct ExportClientVpnClientCertificateRevocationListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportClientVpnClientCertificateRevocationListErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportClientVpnClientCertificateRevocationListError {
@@ -28322,7 +28322,7 @@ pub struct ExportClientVpnClientConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportClientVpnClientConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportClientVpnClientConfigurationError {
@@ -28409,7 +28409,7 @@ pub struct ExportImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportImageError {
@@ -28493,7 +28493,7 @@ pub struct ExportTransitGatewayRoutesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportTransitGatewayRoutesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportTransitGatewayRoutesError {
@@ -28577,7 +28577,7 @@ pub struct GetAssociatedEnclaveCertificateIamRolesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssociatedEnclaveCertificateIamRolesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssociatedEnclaveCertificateIamRolesError {
@@ -28666,7 +28666,7 @@ pub struct GetAssociatedIpv6PoolCidrsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssociatedIpv6PoolCidrsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssociatedIpv6PoolCidrsError {
@@ -28750,7 +28750,7 @@ pub struct GetCapacityReservationUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCapacityReservationUsageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCapacityReservationUsageError {
@@ -28834,7 +28834,7 @@ pub struct GetCoipPoolUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCoipPoolUsageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCoipPoolUsageError {
@@ -28918,7 +28918,7 @@ pub struct GetConsoleOutputError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConsoleOutputErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConsoleOutputError {
@@ -29002,7 +29002,7 @@ pub struct GetConsoleScreenshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConsoleScreenshotErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConsoleScreenshotError {
@@ -29086,7 +29086,7 @@ pub struct GetDefaultCreditSpecificationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDefaultCreditSpecificationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDefaultCreditSpecificationError {
@@ -29173,7 +29173,7 @@ pub struct GetEbsDefaultKmsKeyIdError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEbsDefaultKmsKeyIdErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEbsDefaultKmsKeyIdError {
@@ -29257,7 +29257,7 @@ pub struct GetEbsEncryptionByDefaultError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEbsEncryptionByDefaultErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEbsEncryptionByDefaultError {
@@ -29341,7 +29341,7 @@ pub struct GetFlowLogsIntegrationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFlowLogsIntegrationTemplateErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFlowLogsIntegrationTemplateError {
@@ -29428,7 +29428,7 @@ pub struct GetGroupsForCapacityReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGroupsForCapacityReservationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupsForCapacityReservationError {
@@ -29515,7 +29515,7 @@ pub struct GetHostReservationPurchasePreviewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetHostReservationPurchasePreviewErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHostReservationPurchasePreviewError {
@@ -29589,6 +29589,95 @@ impl std::error::Error for GetHostReservationPurchasePreviewError {
     }
 }
 
+/// Error type for the `GetInstanceTypesFromInstanceRequirements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetInstanceTypesFromInstanceRequirementsError {
+    /// Kind of error that occurred.
+    pub kind: GetInstanceTypesFromInstanceRequirementsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetInstanceTypesFromInstanceRequirements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetInstanceTypesFromInstanceRequirementsErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetInstanceTypesFromInstanceRequirementsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetInstanceTypesFromInstanceRequirementsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetInstanceTypesFromInstanceRequirementsError {
+    fn code(&self) -> Option<&str> {
+        GetInstanceTypesFromInstanceRequirementsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetInstanceTypesFromInstanceRequirementsError {
+    /// Creates a new `GetInstanceTypesFromInstanceRequirementsError`.
+    pub fn new(
+        kind: GetInstanceTypesFromInstanceRequirementsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetInstanceTypesFromInstanceRequirementsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetInstanceTypesFromInstanceRequirementsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetInstanceTypesFromInstanceRequirementsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetInstanceTypesFromInstanceRequirementsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for GetInstanceTypesFromInstanceRequirementsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetInstanceTypesFromInstanceRequirementsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `GetLaunchTemplateData` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -29602,7 +29691,7 @@ pub struct GetLaunchTemplateDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLaunchTemplateDataErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLaunchTemplateDataError {
@@ -29686,7 +29775,7 @@ pub struct GetManagedPrefixListAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetManagedPrefixListAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetManagedPrefixListAssociationsError {
@@ -29773,7 +29862,7 @@ pub struct GetManagedPrefixListEntriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetManagedPrefixListEntriesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetManagedPrefixListEntriesError {
@@ -29857,7 +29946,7 @@ pub struct GetPasswordDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPasswordDataErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPasswordDataError {
@@ -29941,7 +30030,7 @@ pub struct GetReservedInstancesExchangeQuoteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetReservedInstancesExchangeQuoteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReservedInstancesExchangeQuoteError {
@@ -30028,7 +30117,7 @@ pub struct GetSerialConsoleAccessStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSerialConsoleAccessStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSerialConsoleAccessStatusError {
@@ -30099,6 +30188,90 @@ impl std::error::Error for GetSerialConsoleAccessStatusError {
     }
 }
 
+/// Error type for the `GetSpotPlacementScores` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetSpotPlacementScoresError {
+    /// Kind of error that occurred.
+    pub kind: GetSpotPlacementScoresErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetSpotPlacementScores` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetSpotPlacementScoresErrorKind {
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetSpotPlacementScoresError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetSpotPlacementScoresErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetSpotPlacementScoresError {
+    fn code(&self) -> Option<&str> {
+        GetSpotPlacementScoresError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetSpotPlacementScoresError {
+    /// Creates a new `GetSpotPlacementScoresError`.
+    pub fn new(kind: GetSpotPlacementScoresErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetSpotPlacementScoresError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetSpotPlacementScoresErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetSpotPlacementScoresError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetSpotPlacementScoresErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for GetSpotPlacementScoresError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetSpotPlacementScoresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetSubnetCidrReservations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -30112,7 +30285,7 @@ pub struct GetSubnetCidrReservationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSubnetCidrReservationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSubnetCidrReservationsError {
@@ -30196,7 +30369,7 @@ pub struct GetTransitGatewayAttachmentPropagationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTransitGatewayAttachmentPropagationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTransitGatewayAttachmentPropagationsError {
@@ -30285,7 +30458,7 @@ pub struct GetTransitGatewayMulticastDomainAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTransitGatewayMulticastDomainAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTransitGatewayMulticastDomainAssociationsError {
@@ -30378,7 +30551,7 @@ pub struct GetTransitGatewayPrefixListReferencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTransitGatewayPrefixListReferencesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTransitGatewayPrefixListReferencesError {
@@ -30467,7 +30640,7 @@ pub struct GetTransitGatewayRouteTableAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTransitGatewayRouteTableAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTransitGatewayRouteTableAssociationsError {
@@ -30556,7 +30729,7 @@ pub struct GetTransitGatewayRouteTablePropagationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTransitGatewayRouteTablePropagationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTransitGatewayRouteTablePropagationsError {
@@ -30645,7 +30818,7 @@ pub struct GetVpnConnectionDeviceSampleConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetVpnConnectionDeviceSampleConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVpnConnectionDeviceSampleConfigurationError {
@@ -30734,7 +30907,7 @@ pub struct GetVpnConnectionDeviceTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetVpnConnectionDeviceTypesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVpnConnectionDeviceTypesError {
@@ -30818,7 +30991,7 @@ pub struct ImportClientVpnClientCertificateRevocationListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportClientVpnClientCertificateRevocationListErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportClientVpnClientCertificateRevocationListError {
@@ -30911,7 +31084,7 @@ pub struct ImportImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportImageError {
@@ -30995,7 +31168,7 @@ pub struct ImportInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportInstanceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportInstanceError {
@@ -31079,7 +31252,7 @@ pub struct ImportKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportKeyPairErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportKeyPairError {
@@ -31163,7 +31336,7 @@ pub struct ImportSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportSnapshotErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportSnapshotError {
@@ -31247,7 +31420,7 @@ pub struct ImportVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportVolumeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportVolumeError {
@@ -31331,7 +31504,7 @@ pub struct ModifyAddressAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyAddressAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyAddressAttributeError {
@@ -31415,7 +31588,7 @@ pub struct ModifyAvailabilityZoneGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyAvailabilityZoneGroupErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyAvailabilityZoneGroupError {
@@ -31499,7 +31672,7 @@ pub struct ModifyCapacityReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyCapacityReservationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyCapacityReservationError {
@@ -31583,7 +31756,7 @@ pub struct ModifyCapacityReservationFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyCapacityReservationFleetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyCapacityReservationFleetError {
@@ -31670,7 +31843,7 @@ pub struct ModifyClientVpnEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClientVpnEndpointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClientVpnEndpointError {
@@ -31754,7 +31927,7 @@ pub struct ModifyDefaultCreditSpecificationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDefaultCreditSpecificationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDefaultCreditSpecificationError {
@@ -31841,7 +32014,7 @@ pub struct ModifyEbsDefaultKmsKeyIdError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyEbsDefaultKmsKeyIdErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyEbsDefaultKmsKeyIdError {
@@ -31925,7 +32098,7 @@ pub struct ModifyFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyFleetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyFleetError {
@@ -32009,7 +32182,7 @@ pub struct ModifyFpgaImageAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyFpgaImageAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyFpgaImageAttributeError {
@@ -32093,7 +32266,7 @@ pub struct ModifyHostsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyHostsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyHostsError {
@@ -32177,7 +32350,7 @@ pub struct ModifyIdentityIdFormatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyIdentityIdFormatErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyIdentityIdFormatError {
@@ -32261,7 +32434,7 @@ pub struct ModifyIdFormatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyIdFormatErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyIdFormatError {
@@ -32345,7 +32518,7 @@ pub struct ModifyImageAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyImageAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyImageAttributeError {
@@ -32429,7 +32602,7 @@ pub struct ModifyInstanceAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstanceAttributeError {
@@ -32513,7 +32686,7 @@ pub struct ModifyInstanceCapacityReservationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceCapacityReservationAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstanceCapacityReservationAttributesError {
@@ -32606,7 +32779,7 @@ pub struct ModifyInstanceCreditSpecificationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceCreditSpecificationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstanceCreditSpecificationError {
@@ -32693,7 +32866,7 @@ pub struct ModifyInstanceEventStartTimeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceEventStartTimeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstanceEventStartTimeError {
@@ -32777,7 +32950,7 @@ pub struct ModifyInstanceEventWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceEventWindowErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstanceEventWindowError {
@@ -32861,7 +33034,7 @@ pub struct ModifyInstanceMetadataOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceMetadataOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstanceMetadataOptionsError {
@@ -32948,7 +33121,7 @@ pub struct ModifyInstancePlacementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstancePlacementErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyInstancePlacementError {
@@ -33032,7 +33205,7 @@ pub struct ModifyLaunchTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyLaunchTemplateErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyLaunchTemplateError {
@@ -33116,7 +33289,7 @@ pub struct ModifyManagedPrefixListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyManagedPrefixListErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyManagedPrefixListError {
@@ -33200,7 +33373,7 @@ pub struct ModifyNetworkInterfaceAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyNetworkInterfaceAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyNetworkInterfaceAttributeError {
@@ -33287,7 +33460,7 @@ pub struct ModifyReservedInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyReservedInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyReservedInstancesError {
@@ -33371,7 +33544,7 @@ pub struct ModifySecurityGroupRulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifySecurityGroupRulesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifySecurityGroupRulesError {
@@ -33455,7 +33628,7 @@ pub struct ModifySnapshotAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifySnapshotAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifySnapshotAttributeError {
@@ -33539,7 +33712,7 @@ pub struct ModifySpotFleetRequestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifySpotFleetRequestErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifySpotFleetRequestError {
@@ -33623,7 +33796,7 @@ pub struct ModifySubnetAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifySubnetAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifySubnetAttributeError {
@@ -33707,7 +33880,7 @@ pub struct ModifyTrafficMirrorFilterNetworkServicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyTrafficMirrorFilterNetworkServicesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyTrafficMirrorFilterNetworkServicesError {
@@ -33796,7 +33969,7 @@ pub struct ModifyTrafficMirrorFilterRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyTrafficMirrorFilterRuleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyTrafficMirrorFilterRuleError {
@@ -33883,7 +34056,7 @@ pub struct ModifyTrafficMirrorSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyTrafficMirrorSessionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyTrafficMirrorSessionError {
@@ -33967,7 +34140,7 @@ pub struct ModifyTransitGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyTransitGatewayErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyTransitGatewayError {
@@ -34051,7 +34224,7 @@ pub struct ModifyTransitGatewayPrefixListReferenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyTransitGatewayPrefixListReferenceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyTransitGatewayPrefixListReferenceError {
@@ -34140,7 +34313,7 @@ pub struct ModifyTransitGatewayVpcAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyTransitGatewayVpcAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyTransitGatewayVpcAttachmentError {
@@ -34227,7 +34400,7 @@ pub struct ModifyVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVolumeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVolumeError {
@@ -34311,7 +34484,7 @@ pub struct ModifyVolumeAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVolumeAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVolumeAttributeError {
@@ -34395,7 +34568,7 @@ pub struct ModifyVpcAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpcAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpcAttributeError {
@@ -34479,7 +34652,7 @@ pub struct ModifyVpcEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpcEndpointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpcEndpointError {
@@ -34563,7 +34736,7 @@ pub struct ModifyVpcEndpointConnectionNotificationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpcEndpointConnectionNotificationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpcEndpointConnectionNotificationError {
@@ -34652,7 +34825,7 @@ pub struct ModifyVpcEndpointServiceConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpcEndpointServiceConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpcEndpointServiceConfigurationError {
@@ -34741,7 +34914,7 @@ pub struct ModifyVpcEndpointServicePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpcEndpointServicePermissionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpcEndpointServicePermissionsError {
@@ -34830,7 +35003,7 @@ pub struct ModifyVpcPeeringConnectionOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpcPeeringConnectionOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpcPeeringConnectionOptionsError {
@@ -34917,7 +35090,7 @@ pub struct ModifyVpcTenancyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpcTenancyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpcTenancyError {
@@ -35001,7 +35174,7 @@ pub struct ModifyVpnConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpnConnectionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpnConnectionError {
@@ -35085,7 +35258,7 @@ pub struct ModifyVpnConnectionOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpnConnectionOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpnConnectionOptionsError {
@@ -35169,7 +35342,7 @@ pub struct ModifyVpnTunnelCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpnTunnelCertificateErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpnTunnelCertificateError {
@@ -35253,7 +35426,7 @@ pub struct ModifyVpnTunnelOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyVpnTunnelOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyVpnTunnelOptionsError {
@@ -35337,7 +35510,7 @@ pub struct MonitorInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum MonitorInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MonitorInstancesError {
@@ -35421,7 +35594,7 @@ pub struct MoveAddressToVpcError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum MoveAddressToVpcErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MoveAddressToVpcError {
@@ -35505,7 +35678,7 @@ pub struct ProvisionByoipCidrError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ProvisionByoipCidrErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ProvisionByoipCidrError {
@@ -35589,7 +35762,7 @@ pub struct PurchaseHostReservationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PurchaseHostReservationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseHostReservationError {
@@ -35673,7 +35846,7 @@ pub struct PurchaseReservedInstancesOfferingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PurchaseReservedInstancesOfferingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseReservedInstancesOfferingError {
@@ -35760,7 +35933,7 @@ pub struct PurchaseScheduledInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PurchaseScheduledInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseScheduledInstancesError {
@@ -35844,7 +36017,7 @@ pub struct RebootInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootInstancesError {
@@ -35928,7 +36101,7 @@ pub struct RegisterImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterImageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterImageError {
@@ -36012,7 +36185,7 @@ pub struct RegisterInstanceEventNotificationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterInstanceEventNotificationAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterInstanceEventNotificationAttributesError {
@@ -36105,7 +36278,7 @@ pub struct RegisterTransitGatewayMulticastGroupMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterTransitGatewayMulticastGroupMembersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTransitGatewayMulticastGroupMembersError {
@@ -36198,7 +36371,7 @@ pub struct RegisterTransitGatewayMulticastGroupSourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterTransitGatewayMulticastGroupSourcesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTransitGatewayMulticastGroupSourcesError {
@@ -36291,7 +36464,7 @@ pub struct RejectTransitGatewayMulticastDomainAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectTransitGatewayMulticastDomainAssociationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectTransitGatewayMulticastDomainAssociationsError {
@@ -36384,7 +36557,7 @@ pub struct RejectTransitGatewayPeeringAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectTransitGatewayPeeringAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectTransitGatewayPeeringAttachmentError {
@@ -36473,7 +36646,7 @@ pub struct RejectTransitGatewayVpcAttachmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectTransitGatewayVpcAttachmentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectTransitGatewayVpcAttachmentError {
@@ -36560,7 +36733,7 @@ pub struct RejectVpcEndpointConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectVpcEndpointConnectionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectVpcEndpointConnectionsError {
@@ -36644,7 +36817,7 @@ pub struct RejectVpcPeeringConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectVpcPeeringConnectionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectVpcPeeringConnectionError {
@@ -36728,7 +36901,7 @@ pub struct ReleaseAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReleaseAddressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReleaseAddressError {
@@ -36812,7 +36985,7 @@ pub struct ReleaseHostsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReleaseHostsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReleaseHostsError {
@@ -36896,7 +37069,7 @@ pub struct ReplaceIamInstanceProfileAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReplaceIamInstanceProfileAssociationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReplaceIamInstanceProfileAssociationError {
@@ -36985,7 +37158,7 @@ pub struct ReplaceNetworkAclAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReplaceNetworkAclAssociationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReplaceNetworkAclAssociationError {
@@ -37069,7 +37242,7 @@ pub struct ReplaceNetworkAclEntryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReplaceNetworkAclEntryErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReplaceNetworkAclEntryError {
@@ -37153,7 +37326,7 @@ pub struct ReplaceRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReplaceRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReplaceRouteError {
@@ -37237,7 +37410,7 @@ pub struct ReplaceRouteTableAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReplaceRouteTableAssociationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReplaceRouteTableAssociationError {
@@ -37321,7 +37494,7 @@ pub struct ReplaceTransitGatewayRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReplaceTransitGatewayRouteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReplaceTransitGatewayRouteError {
@@ -37405,7 +37578,7 @@ pub struct ReportInstanceStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReportInstanceStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReportInstanceStatusError {
@@ -37489,7 +37662,7 @@ pub struct RequestSpotFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RequestSpotFleetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RequestSpotFleetError {
@@ -37573,7 +37746,7 @@ pub struct RequestSpotInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RequestSpotInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RequestSpotInstancesError {
@@ -37657,7 +37830,7 @@ pub struct ResetAddressAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetAddressAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetAddressAttributeError {
@@ -37741,7 +37914,7 @@ pub struct ResetEbsDefaultKmsKeyIdError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetEbsDefaultKmsKeyIdErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetEbsDefaultKmsKeyIdError {
@@ -37825,7 +37998,7 @@ pub struct ResetFpgaImageAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetFpgaImageAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetFpgaImageAttributeError {
@@ -37909,7 +38082,7 @@ pub struct ResetImageAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetImageAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetImageAttributeError {
@@ -37993,7 +38166,7 @@ pub struct ResetInstanceAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetInstanceAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetInstanceAttributeError {
@@ -38077,7 +38250,7 @@ pub struct ResetNetworkInterfaceAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetNetworkInterfaceAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetNetworkInterfaceAttributeError {
@@ -38164,7 +38337,7 @@ pub struct ResetSnapshotAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetSnapshotAttributeErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetSnapshotAttributeError {
@@ -38248,7 +38421,7 @@ pub struct RestoreAddressToClassicError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreAddressToClassicErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreAddressToClassicError {
@@ -38332,7 +38505,7 @@ pub struct RestoreManagedPrefixListVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreManagedPrefixListVersionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreManagedPrefixListVersionError {
@@ -38419,7 +38592,7 @@ pub struct RevokeClientVpnIngressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeClientVpnIngressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeClientVpnIngressError {
@@ -38503,7 +38676,7 @@ pub struct RevokeSecurityGroupEgressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeSecurityGroupEgressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeSecurityGroupEgressError {
@@ -38587,7 +38760,7 @@ pub struct RevokeSecurityGroupIngressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeSecurityGroupIngressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeSecurityGroupIngressError {
@@ -38671,7 +38844,7 @@ pub struct RunInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RunInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RunInstancesError {
@@ -38755,7 +38928,7 @@ pub struct RunScheduledInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RunScheduledInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RunScheduledInstancesError {
@@ -38839,7 +39012,7 @@ pub struct SearchLocalGatewayRoutesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchLocalGatewayRoutesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchLocalGatewayRoutesError {
@@ -38923,7 +39096,7 @@ pub struct SearchTransitGatewayMulticastGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchTransitGatewayMulticastGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchTransitGatewayMulticastGroupsError {
@@ -39012,7 +39185,7 @@ pub struct SearchTransitGatewayRoutesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchTransitGatewayRoutesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchTransitGatewayRoutesError {
@@ -39096,7 +39269,7 @@ pub struct SendDiagnosticInterruptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendDiagnosticInterruptErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendDiagnosticInterruptError {
@@ -39180,7 +39353,7 @@ pub struct StartInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartInstancesError {
@@ -39264,7 +39437,7 @@ pub struct StartNetworkInsightsAnalysisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartNetworkInsightsAnalysisErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartNetworkInsightsAnalysisError {
@@ -39348,7 +39521,7 @@ pub struct StartVpcEndpointServicePrivateDnsVerificationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartVpcEndpointServicePrivateDnsVerificationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartVpcEndpointServicePrivateDnsVerificationError {
@@ -39441,7 +39614,7 @@ pub struct StopInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopInstancesError {
@@ -39525,7 +39698,7 @@ pub struct TerminateClientVpnConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateClientVpnConnectionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateClientVpnConnectionsError {
@@ -39612,7 +39785,7 @@ pub struct TerminateInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateInstancesError {
@@ -39696,7 +39869,7 @@ pub struct UnassignIpv6AddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UnassignIpv6AddressesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnassignIpv6AddressesError {
@@ -39780,7 +39953,7 @@ pub struct UnassignPrivateIpAddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UnassignPrivateIpAddressesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnassignPrivateIpAddressesError {
@@ -39864,7 +40037,7 @@ pub struct UnmonitorInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UnmonitorInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnmonitorInstancesError {
@@ -39948,7 +40121,7 @@ pub struct UpdateSecurityGroupRuleDescriptionsEgressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSecurityGroupRuleDescriptionsEgressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSecurityGroupRuleDescriptionsEgressError {
@@ -40037,7 +40210,7 @@ pub struct UpdateSecurityGroupRuleDescriptionsIngressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSecurityGroupRuleDescriptionsIngressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSecurityGroupRuleDescriptionsIngressError {
@@ -40126,7 +40299,7 @@ pub struct WithdrawByoipCidrError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum WithdrawByoipCidrErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for WithdrawByoipCidrError {

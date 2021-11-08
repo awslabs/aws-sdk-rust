@@ -74,6 +74,76 @@ impl UpdateStreamingDistributionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateResponseHeadersPolicyOutput {
+    /// <p>A response headers policy.</p>
+    pub response_headers_policy: std::option::Option<crate::model::ResponseHeadersPolicy>,
+    /// <p>The current version of the response headers policy.</p>
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateResponseHeadersPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateResponseHeadersPolicyOutput");
+        formatter.field("response_headers_policy", &self.response_headers_policy);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`UpdateResponseHeadersPolicyOutput`](crate::output::UpdateResponseHeadersPolicyOutput)
+pub mod update_response_headers_policy_output {
+    /// A builder for [`UpdateResponseHeadersPolicyOutput`](crate::output::UpdateResponseHeadersPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) response_headers_policy:
+            std::option::Option<crate::model::ResponseHeadersPolicy>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A response headers policy.</p>
+        pub fn response_headers_policy(
+            mut self,
+            input: crate::model::ResponseHeadersPolicy,
+        ) -> Self {
+            self.response_headers_policy = Some(input);
+            self
+        }
+        /// <p>A response headers policy.</p>
+        pub fn set_response_headers_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicy>,
+        ) -> Self {
+            self.response_headers_policy = input;
+            self
+        }
+        /// <p>The current version of the response headers policy.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The current version of the response headers policy.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateResponseHeadersPolicyOutput`](crate::output::UpdateResponseHeadersPolicyOutput)
+        pub fn build(self) -> crate::output::UpdateResponseHeadersPolicyOutput {
+            crate::output::UpdateResponseHeadersPolicyOutput {
+                response_headers_policy: self.response_headers_policy,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl UpdateResponseHeadersPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResponseHeadersPolicyOutput`](crate::output::UpdateResponseHeadersPolicyOutput)
+    pub fn builder() -> crate::output::update_response_headers_policy_output::Builder {
+        crate::output::update_response_headers_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
     pub realtime_log_config: std::option::Option<crate::model::RealtimeLogConfig>,
@@ -1010,6 +1080,64 @@ impl ListStreamingDistributionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListResponseHeadersPoliciesOutput {
+    /// <p>A list of response headers policies.</p>
+    pub response_headers_policy_list: std::option::Option<crate::model::ResponseHeadersPolicyList>,
+}
+impl std::fmt::Debug for ListResponseHeadersPoliciesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListResponseHeadersPoliciesOutput");
+        formatter.field(
+            "response_headers_policy_list",
+            &self.response_headers_policy_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ListResponseHeadersPoliciesOutput`](crate::output::ListResponseHeadersPoliciesOutput)
+pub mod list_response_headers_policies_output {
+    /// A builder for [`ListResponseHeadersPoliciesOutput`](crate::output::ListResponseHeadersPoliciesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) response_headers_policy_list:
+            std::option::Option<crate::model::ResponseHeadersPolicyList>,
+    }
+    impl Builder {
+        /// <p>A list of response headers policies.</p>
+        pub fn response_headers_policy_list(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyList,
+        ) -> Self {
+            self.response_headers_policy_list = Some(input);
+            self
+        }
+        /// <p>A list of response headers policies.</p>
+        pub fn set_response_headers_policy_list(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyList>,
+        ) -> Self {
+            self.response_headers_policy_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResponseHeadersPoliciesOutput`](crate::output::ListResponseHeadersPoliciesOutput)
+        pub fn build(self) -> crate::output::ListResponseHeadersPoliciesOutput {
+            crate::output::ListResponseHeadersPoliciesOutput {
+                response_headers_policy_list: self.response_headers_policy_list,
+            }
+        }
+    }
+}
+impl ListResponseHeadersPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`ListResponseHeadersPoliciesOutput`](crate::output::ListResponseHeadersPoliciesOutput)
+    pub fn builder() -> crate::output::list_response_headers_policies_output::Builder {
+        crate::output::list_response_headers_policies_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRealtimeLogConfigsOutput {
     /// <p>A list of real-time log configurations.</p>
     pub realtime_log_configs: std::option::Option<crate::model::RealtimeLogConfigs>,
@@ -1486,6 +1614,58 @@ impl ListDistributionsByWebAclIdOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByWebAclIdOutput`](crate::output::ListDistributionsByWebAclIdOutput)
     pub fn builder() -> crate::output::list_distributions_by_web_acl_id_output::Builder {
         crate::output::list_distributions_by_web_acl_id_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDistributionsByResponseHeadersPolicyIdOutput {
+    /// <p>A list of distribution IDs.</p>
+    pub distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
+}
+impl std::fmt::Debug for ListDistributionsByResponseHeadersPolicyIdOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDistributionsByResponseHeadersPolicyIdOutput");
+        formatter.field("distribution_id_list", &self.distribution_id_list);
+        formatter.finish()
+    }
+}
+/// See [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput)
+pub mod list_distributions_by_response_headers_policy_id_output {
+    /// A builder for [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) distribution_id_list: std::option::Option<crate::model::DistributionIdList>,
+    }
+    impl Builder {
+        /// <p>A list of distribution IDs.</p>
+        pub fn distribution_id_list(mut self, input: crate::model::DistributionIdList) -> Self {
+            self.distribution_id_list = Some(input);
+            self
+        }
+        /// <p>A list of distribution IDs.</p>
+        pub fn set_distribution_id_list(
+            mut self,
+            input: std::option::Option<crate::model::DistributionIdList>,
+        ) -> Self {
+            self.distribution_id_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput)
+        pub fn build(self) -> crate::output::ListDistributionsByResponseHeadersPolicyIdOutput {
+            crate::output::ListDistributionsByResponseHeadersPolicyIdOutput {
+                distribution_id_list: self.distribution_id_list,
+            }
+        }
+    }
+}
+impl ListDistributionsByResponseHeadersPolicyIdOutput {
+    /// Creates a new builder-style object to manufacture [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput)
+    pub fn builder(
+    ) -> crate::output::list_distributions_by_response_headers_policy_id_output::Builder {
+        crate::output::list_distributions_by_response_headers_policy_id_output::Builder::default()
     }
 }
 
@@ -2057,6 +2237,150 @@ impl GetStreamingDistributionOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionOutput`](crate::output::GetStreamingDistributionOutput)
     pub fn builder() -> crate::output::get_streaming_distribution_output::Builder {
         crate::output::get_streaming_distribution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResponseHeadersPolicyConfigOutput {
+    /// <p>Contains a response headers policy.</p>
+    pub response_headers_policy_config:
+        std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+    /// <p>The version identifier for the current version of the response headers policy.</p>
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetResponseHeadersPolicyConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResponseHeadersPolicyConfigOutput");
+        formatter.field(
+            "response_headers_policy_config",
+            &self.response_headers_policy_config,
+        );
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`GetResponseHeadersPolicyConfigOutput`](crate::output::GetResponseHeadersPolicyConfigOutput)
+pub mod get_response_headers_policy_config_output {
+    /// A builder for [`GetResponseHeadersPolicyConfigOutput`](crate::output::GetResponseHeadersPolicyConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) response_headers_policy_config:
+            std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Contains a response headers policy.</p>
+        pub fn response_headers_policy_config(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyConfig,
+        ) -> Self {
+            self.response_headers_policy_config = Some(input);
+            self
+        }
+        /// <p>Contains a response headers policy.</p>
+        pub fn set_response_headers_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+        ) -> Self {
+            self.response_headers_policy_config = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the response headers policy.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the response headers policy.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResponseHeadersPolicyConfigOutput`](crate::output::GetResponseHeadersPolicyConfigOutput)
+        pub fn build(self) -> crate::output::GetResponseHeadersPolicyConfigOutput {
+            crate::output::GetResponseHeadersPolicyConfigOutput {
+                response_headers_policy_config: self.response_headers_policy_config,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl GetResponseHeadersPolicyConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyConfigOutput`](crate::output::GetResponseHeadersPolicyConfigOutput)
+    pub fn builder() -> crate::output::get_response_headers_policy_config_output::Builder {
+        crate::output::get_response_headers_policy_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResponseHeadersPolicyOutput {
+    /// <p>Contains a response headers policy.</p>
+    pub response_headers_policy: std::option::Option<crate::model::ResponseHeadersPolicy>,
+    /// <p>The version identifier for the current version of the response headers policy.</p>
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetResponseHeadersPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResponseHeadersPolicyOutput");
+        formatter.field("response_headers_policy", &self.response_headers_policy);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`GetResponseHeadersPolicyOutput`](crate::output::GetResponseHeadersPolicyOutput)
+pub mod get_response_headers_policy_output {
+    /// A builder for [`GetResponseHeadersPolicyOutput`](crate::output::GetResponseHeadersPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) response_headers_policy:
+            std::option::Option<crate::model::ResponseHeadersPolicy>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Contains a response headers policy.</p>
+        pub fn response_headers_policy(
+            mut self,
+            input: crate::model::ResponseHeadersPolicy,
+        ) -> Self {
+            self.response_headers_policy = Some(input);
+            self
+        }
+        /// <p>Contains a response headers policy.</p>
+        pub fn set_response_headers_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicy>,
+        ) -> Self {
+            self.response_headers_policy = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the response headers policy.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the response headers policy.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResponseHeadersPolicyOutput`](crate::output::GetResponseHeadersPolicyOutput)
+        pub fn build(self) -> crate::output::GetResponseHeadersPolicyOutput {
+            crate::output::GetResponseHeadersPolicyOutput {
+                response_headers_policy: self.response_headers_policy,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl GetResponseHeadersPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyOutput`](crate::output::GetResponseHeadersPolicyOutput)
+    pub fn builder() -> crate::output::get_response_headers_policy_output::Builder {
+        crate::output::get_response_headers_policy_output::Builder::default()
     }
 }
 
@@ -3514,6 +3838,36 @@ impl DeleteStreamingDistributionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteResponseHeadersPolicyOutput {}
+impl std::fmt::Debug for DeleteResponseHeadersPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteResponseHeadersPolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteResponseHeadersPolicyOutput`](crate::output::DeleteResponseHeadersPolicyOutput)
+pub mod delete_response_headers_policy_output {
+    /// A builder for [`DeleteResponseHeadersPolicyOutput`](crate::output::DeleteResponseHeadersPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteResponseHeadersPolicyOutput`](crate::output::DeleteResponseHeadersPolicyOutput)
+        pub fn build(self) -> crate::output::DeleteResponseHeadersPolicyOutput {
+            crate::output::DeleteResponseHeadersPolicyOutput {}
+        }
+    }
+}
+impl DeleteResponseHeadersPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResponseHeadersPolicyOutput`](crate::output::DeleteResponseHeadersPolicyOutput)
+    pub fn builder() -> crate::output::delete_response_headers_policy_output::Builder {
+        crate::output::delete_response_headers_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRealtimeLogConfigOutput {}
 impl std::fmt::Debug for DeleteRealtimeLogConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4006,6 +4360,91 @@ impl CreateStreamingDistributionOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingDistributionOutput`](crate::output::CreateStreamingDistributionOutput)
     pub fn builder() -> crate::output::create_streaming_distribution_output::Builder {
         crate::output::create_streaming_distribution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateResponseHeadersPolicyOutput {
+    /// <p>Contains a response headers policy.</p>
+    pub response_headers_policy: std::option::Option<crate::model::ResponseHeadersPolicy>,
+    /// <p>The URL of the response headers policy.</p>
+    pub location: std::option::Option<std::string::String>,
+    /// <p>The version identifier for the current version of the response headers policy.</p>
+    pub e_tag: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateResponseHeadersPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateResponseHeadersPolicyOutput");
+        formatter.field("response_headers_policy", &self.response_headers_policy);
+        formatter.field("location", &self.location);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.finish()
+    }
+}
+/// See [`CreateResponseHeadersPolicyOutput`](crate::output::CreateResponseHeadersPolicyOutput)
+pub mod create_response_headers_policy_output {
+    /// A builder for [`CreateResponseHeadersPolicyOutput`](crate::output::CreateResponseHeadersPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) response_headers_policy:
+            std::option::Option<crate::model::ResponseHeadersPolicy>,
+        pub(crate) location: std::option::Option<std::string::String>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Contains a response headers policy.</p>
+        pub fn response_headers_policy(
+            mut self,
+            input: crate::model::ResponseHeadersPolicy,
+        ) -> Self {
+            self.response_headers_policy = Some(input);
+            self
+        }
+        /// <p>Contains a response headers policy.</p>
+        pub fn set_response_headers_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicy>,
+        ) -> Self {
+            self.response_headers_policy = input;
+            self
+        }
+        /// <p>The URL of the response headers policy.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
+            self
+        }
+        /// <p>The URL of the response headers policy.</p>
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
+            self
+        }
+        /// <p>The version identifier for the current version of the response headers policy.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>The version identifier for the current version of the response headers policy.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateResponseHeadersPolicyOutput`](crate::output::CreateResponseHeadersPolicyOutput)
+        pub fn build(self) -> crate::output::CreateResponseHeadersPolicyOutput {
+            crate::output::CreateResponseHeadersPolicyOutput {
+                response_headers_policy: self.response_headers_policy,
+                location: self.location,
+                e_tag: self.e_tag,
+            }
+        }
+    }
+}
+impl CreateResponseHeadersPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateResponseHeadersPolicyOutput`](crate::output::CreateResponseHeadersPolicyOutput)
+    pub fn builder() -> crate::output::create_response_headers_policy_output::Builder {
+        crate::output::create_response_headers_policy_output::Builder::default()
     }
 }
 

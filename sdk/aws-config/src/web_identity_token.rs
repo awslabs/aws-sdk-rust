@@ -247,6 +247,7 @@ async fn load_credentials(
         .build()
         .expect("valid operation")
         .make_operation(&conf)
+        .await
         .expect("valid operation");
     let resp = client.call(operation).await.map_err(|sdk_error| {
         tracing::warn!(error = ?sdk_error, "sts returned an error assuming web identity role");

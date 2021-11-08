@@ -7003,6 +7003,127 @@ impl GetSubnetCidrReservationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSpotPlacementScoresOutput {
+    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
+    /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
+    /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
+    /// placement score request</i>. A score of <code>10</code> means that your Spot
+    /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
+    /// request will be configured to use all Availability Zones and the
+    /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
+    /// score for Availability Zones, a high score assumes that your fleet request will be
+    /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
+    /// allocation strategy.</p>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p>
+    /// <note>
+    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
+    /// Spot request will be fully or partially fulfilled.</p>
+    /// </note>
+    pub spot_placement_scores: std::option::Option<std::vec::Vec<crate::model::SpotPlacementScore>>,
+    /// <p>The token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetSpotPlacementScoresOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSpotPlacementScoresOutput");
+        formatter.field("spot_placement_scores", &self.spot_placement_scores);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetSpotPlacementScoresOutput`](crate::output::GetSpotPlacementScoresOutput)
+pub mod get_spot_placement_scores_output {
+    /// A builder for [`GetSpotPlacementScoresOutput`](crate::output::GetSpotPlacementScoresOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) spot_placement_scores:
+            std::option::Option<std::vec::Vec<crate::model::SpotPlacementScore>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `spot_placement_scores`.
+        ///
+        /// To override the contents of this collection use [`set_spot_placement_scores`](Self::set_spot_placement_scores).
+        ///
+        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
+        /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
+        /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
+        /// placement score request</i>. A score of <code>10</code> means that your Spot
+        /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
+        /// request will be configured to use all Availability Zones and the
+        /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
+        /// score for Availability Zones, a high score assumes that your fleet request will be
+        /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
+        /// allocation strategy.</p>
+        /// <p>Different  Regions or Availability Zones might return the same score.</p>
+        /// <note>
+        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
+        /// Spot request will be fully or partially fulfilled.</p>
+        /// </note>
+        pub fn spot_placement_scores(
+            mut self,
+            input: impl Into<crate::model::SpotPlacementScore>,
+        ) -> Self {
+            let mut v = self.spot_placement_scores.unwrap_or_default();
+            v.push(input.into());
+            self.spot_placement_scores = Some(v);
+            self
+        }
+        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
+        /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
+        /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
+        /// placement score request</i>. A score of <code>10</code> means that your Spot
+        /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
+        /// request will be configured to use all Availability Zones and the
+        /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
+        /// score for Availability Zones, a high score assumes that your fleet request will be
+        /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
+        /// allocation strategy.</p>
+        /// <p>Different  Regions or Availability Zones might return the same score.</p>
+        /// <note>
+        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
+        /// Spot request will be fully or partially fulfilled.</p>
+        /// </note>
+        pub fn set_spot_placement_scores(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SpotPlacementScore>>,
+        ) -> Self {
+            self.spot_placement_scores = input;
+            self
+        }
+        /// <p>The token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSpotPlacementScoresOutput`](crate::output::GetSpotPlacementScoresOutput)
+        pub fn build(self) -> crate::output::GetSpotPlacementScoresOutput {
+            crate::output::GetSpotPlacementScoresOutput {
+                spot_placement_scores: self.spot_placement_scores,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetSpotPlacementScoresOutput {
+    /// Creates a new builder-style object to manufacture [`GetSpotPlacementScoresOutput`](crate::output::GetSpotPlacementScoresOutput)
+    pub fn builder() -> crate::output::get_spot_placement_scores_output::Builder {
+        crate::output::get_spot_placement_scores_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSerialConsoleAccessStatusOutput {
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
     /// your account. If <code>false</code>, access to the EC2 serial console of all instances
@@ -7589,6 +7710,87 @@ impl GetLaunchTemplateDataOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchTemplateDataOutput`](crate::output::GetLaunchTemplateDataOutput)
     pub fn builder() -> crate::output::get_launch_template_data_output::Builder {
         crate::output::get_launch_template_data_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetInstanceTypesFromInstanceRequirementsOutput {
+    /// <p>The instance types with the specified instance attributes.</p>
+    pub instance_types:
+        std::option::Option<std::vec::Vec<crate::model::InstanceTypeInfoFromInstanceRequirements>>,
+    /// <p>The token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetInstanceTypesFromInstanceRequirementsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetInstanceTypesFromInstanceRequirementsOutput");
+        formatter.field("instance_types", &self.instance_types);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetInstanceTypesFromInstanceRequirementsOutput`](crate::output::GetInstanceTypesFromInstanceRequirementsOutput)
+pub mod get_instance_types_from_instance_requirements_output {
+    /// A builder for [`GetInstanceTypesFromInstanceRequirementsOutput`](crate::output::GetInstanceTypesFromInstanceRequirementsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_types: std::option::Option<
+            std::vec::Vec<crate::model::InstanceTypeInfoFromInstanceRequirements>,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
+        ///
+        /// <p>The instance types with the specified instance attributes.</p>
+        pub fn instance_types(
+            mut self,
+            input: impl Into<crate::model::InstanceTypeInfoFromInstanceRequirements>,
+        ) -> Self {
+            let mut v = self.instance_types.unwrap_or_default();
+            v.push(input.into());
+            self.instance_types = Some(v);
+            self
+        }
+        /// <p>The instance types with the specified instance attributes.</p>
+        pub fn set_instance_types(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::InstanceTypeInfoFromInstanceRequirements>,
+            >,
+        ) -> Self {
+            self.instance_types = input;
+            self
+        }
+        /// <p>The token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetInstanceTypesFromInstanceRequirementsOutput`](crate::output::GetInstanceTypesFromInstanceRequirementsOutput)
+        pub fn build(self) -> crate::output::GetInstanceTypesFromInstanceRequirementsOutput {
+            crate::output::GetInstanceTypesFromInstanceRequirementsOutput {
+                instance_types: self.instance_types,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetInstanceTypesFromInstanceRequirementsOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceTypesFromInstanceRequirementsOutput`](crate::output::GetInstanceTypesFromInstanceRequirementsOutput)
+    pub fn builder() -> crate::output::get_instance_types_from_instance_requirements_output::Builder
+    {
+        crate::output::get_instance_types_from_instance_requirements_output::Builder::default()
     }
 }
 

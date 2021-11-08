@@ -143,9 +143,19 @@ pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     Postgresql,
     #[allow(missing_docs)] // documentation missing in model
+    SapHana,
+    #[allow(missing_docs)] // documentation missing in model
+    SapHanaHighAvailability,
+    #[allow(missing_docs)] // documentation missing in model
+    SapHanaMultiNode,
+    #[allow(missing_docs)] // documentation missing in model
+    SapHanaSingleNode,
+    #[allow(missing_docs)] // documentation missing in model
     SqlServer,
     #[allow(missing_docs)] // documentation missing in model
     SqlServerAlwaysonAvailabilityGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    SqlServerFailoverClusterInstance,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -162,8 +172,13 @@ impl std::convert::From<&str> for Tier {
             "MYSQL" => Tier::Mysql,
             "ORACLE" => Tier::Oracle,
             "POSTGRESQL" => Tier::Postgresql,
+            "SAP_HANA" => Tier::SapHana,
+            "SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
+            "SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
+            "SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
             "SQL_SERVER" => Tier::SqlServer,
             "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" => Tier::SqlServerAlwaysonAvailabilityGroup,
+            "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" => Tier::SqlServerFailoverClusterInstance,
             other => Tier::Unknown(other.to_owned()),
         }
     }
@@ -189,8 +204,13 @@ impl Tier {
             Tier::Mysql => "MYSQL",
             Tier::Oracle => "ORACLE",
             Tier::Postgresql => "POSTGRESQL",
+            Tier::SapHana => "SAP_HANA",
+            Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
+            Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
+            Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
             Tier::SqlServer => "SQL_SERVER",
             Tier::SqlServerAlwaysonAvailabilityGroup => "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
+            Tier::SqlServerFailoverClusterInstance => "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
             Tier::Unknown(s) => s.as_ref(),
         }
     }
@@ -207,8 +227,13 @@ impl Tier {
             "MYSQL",
             "ORACLE",
             "POSTGRESQL",
+            "SAP_HANA",
+            "SAP_HANA_HIGH_AVAILABILITY",
+            "SAP_HANA_MULTI_NODE",
+            "SAP_HANA_SINGLE_NODE",
             "SQL_SERVER",
             "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
+            "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
         ]
     }
 }
@@ -251,6 +276,10 @@ pub struct ApplicationInfo {
     /// </li>
     /// </ul>
     pub remarks: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub auto_config_enabled: std::option::Option<bool>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub discovery_type: std::option::Option<crate::model::DiscoveryType>,
 }
 impl std::fmt::Debug for ApplicationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -261,6 +290,8 @@ impl std::fmt::Debug for ApplicationInfo {
         formatter.field("ops_center_enabled", &self.ops_center_enabled);
         formatter.field("cwe_monitor_enabled", &self.cwe_monitor_enabled);
         formatter.field("remarks", &self.remarks);
+        formatter.field("auto_config_enabled", &self.auto_config_enabled);
+        formatter.field("discovery_type", &self.discovery_type);
         formatter.finish()
     }
 }
@@ -276,6 +307,8 @@ pub mod application_info {
         pub(crate) ops_center_enabled: std::option::Option<bool>,
         pub(crate) cwe_monitor_enabled: std::option::Option<bool>,
         pub(crate) remarks: std::option::Option<std::string::String>,
+        pub(crate) auto_config_enabled: std::option::Option<bool>,
+        pub(crate) discovery_type: std::option::Option<crate::model::DiscoveryType>,
     }
     impl Builder {
         /// <p>The name of the resource group used for the application.</p>
@@ -378,6 +411,29 @@ pub mod application_info {
             self.remarks = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn auto_config_enabled(mut self, input: bool) -> Self {
+            self.auto_config_enabled = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_config_enabled = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn discovery_type(mut self, input: crate::model::DiscoveryType) -> Self {
+            self.discovery_type = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_discovery_type(
+            mut self,
+            input: std::option::Option<crate::model::DiscoveryType>,
+        ) -> Self {
+            self.discovery_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ApplicationInfo`](crate::model::ApplicationInfo)
         pub fn build(self) -> crate::model::ApplicationInfo {
             crate::model::ApplicationInfo {
@@ -387,6 +443,8 @@ pub mod application_info {
                 ops_center_enabled: self.ops_center_enabled,
                 cwe_monitor_enabled: self.cwe_monitor_enabled,
                 remarks: self.remarks,
+                auto_config_enabled: self.auto_config_enabled,
+                discovery_type: self.discovery_type,
             }
         }
     }
@@ -395,6 +453,61 @@ impl ApplicationInfo {
     /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::model::ApplicationInfo)
     pub fn builder() -> crate::model::application_info::Builder {
         crate::model::application_info::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DiscoveryType {
+    #[allow(missing_docs)] // documentation missing in model
+    AccountBased,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceGroupBased,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DiscoveryType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCOUNT_BASED" => DiscoveryType::AccountBased,
+            "RESOURCE_GROUP_BASED" => DiscoveryType::ResourceGroupBased,
+            other => DiscoveryType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DiscoveryType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DiscoveryType::from(s))
+    }
+}
+impl DiscoveryType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DiscoveryType::AccountBased => "ACCOUNT_BASED",
+            DiscoveryType::ResourceGroupBased => "RESOURCE_GROUP_BASED",
+            DiscoveryType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACCOUNT_BASED", "RESOURCE_GROUP_BASED"]
+    }
+}
+impl AsRef<str> for DiscoveryType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -520,6 +633,10 @@ pub struct Problem {
     pub feedback: std::option::Option<
         std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
     >,
+    #[allow(missing_docs)] // documentation missing in model
+    pub recurring_count: std::option::Option<i64>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub last_recurrence_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Problem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -534,6 +651,8 @@ impl std::fmt::Debug for Problem {
         formatter.field("severity_level", &self.severity_level);
         formatter.field("resource_group_name", &self.resource_group_name);
         formatter.field("feedback", &self.feedback);
+        formatter.field("recurring_count", &self.recurring_count);
+        formatter.field("last_recurrence_time", &self.last_recurrence_time);
         formatter.finish()
     }
 }
@@ -555,6 +674,8 @@ pub mod problem {
         pub(crate) feedback: std::option::Option<
             std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
         >,
+        pub(crate) recurring_count: std::option::Option<i64>,
+        pub(crate) last_recurrence_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the problem.</p>
@@ -687,6 +808,29 @@ pub mod problem {
             self.feedback = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn recurring_count(mut self, input: i64) -> Self {
+            self.recurring_count = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_recurring_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.recurring_count = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn last_recurrence_time(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.last_recurrence_time = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_last_recurrence_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.last_recurrence_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Problem`](crate::model::Problem)
         pub fn build(self) -> crate::model::Problem {
             crate::model::Problem {
@@ -700,6 +844,8 @@ pub mod problem {
                 severity_level: self.severity_level,
                 resource_group_name: self.resource_group_name,
                 feedback: self.feedback,
+                recurring_count: self.recurring_count,
+                last_recurrence_time: self.last_recurrence_time,
             }
         }
     }
@@ -897,6 +1043,8 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
+    Recurring,
+    #[allow(missing_docs)] // documentation missing in model
     Resolved,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -906,6 +1054,7 @@ impl std::convert::From<&str> for Status {
         match s {
             "IGNORE" => Status::Ignore,
             "PENDING" => Status::Pending,
+            "RECURRING" => Status::Recurring,
             "RESOLVED" => Status::Resolved,
             other => Status::Unknown(other.to_owned()),
         }
@@ -924,13 +1073,14 @@ impl Status {
         match self {
             Status::Ignore => "IGNORE",
             Status::Pending => "PENDING",
+            Status::Recurring => "RECURRING",
             Status::Resolved => "RESOLVED",
             Status::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["IGNORE", "PENDING", "RESOLVED"]
+        &["IGNORE", "PENDING", "RECURRING", "RESOLVED"]
     }
 }
 impl AsRef<str> for Status {

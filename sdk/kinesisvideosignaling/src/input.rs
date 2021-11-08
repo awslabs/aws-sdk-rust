@@ -79,7 +79,7 @@ pub type GetIceServerConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl GetIceServerConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetIceServerConfig`](crate::operation::GetIceServerConfig)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -111,6 +111,7 @@ impl GetIceServerConfigInput {
             input: &crate::input::GetIceServerConfigInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -168,9 +169,10 @@ impl GetIceServerConfigInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -257,7 +259,7 @@ pub type SendAlexaOfferToMasterInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl SendAlexaOfferToMasterInput {
     /// Consumes the builder and constructs an Operation<[`SendAlexaOfferToMaster`](crate::operation::SendAlexaOfferToMaster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -289,6 +291,7 @@ impl SendAlexaOfferToMasterInput {
             input: &crate::input::SendAlexaOfferToMasterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -348,9 +351,10 @@ impl SendAlexaOfferToMasterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

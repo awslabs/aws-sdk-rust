@@ -24,7 +24,7 @@ pub enum CreateHttpNamespaceErrorKind {
     /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
     /// is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHttpNamespaceError {
@@ -91,32 +91,32 @@ impl CreateHttpNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHttpNamespaceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `CreateHttpNamespaceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             CreateHttpNamespaceErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `CreateHttpNamespaceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateHttpNamespaceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, CreateHttpNamespaceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `CreateHttpNamespaceErrorKind::NamespaceAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateHttpNamespaceErrorKind::NamespaceAlreadyExists`.
     pub fn is_namespace_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateHttpNamespaceErrorKind::NamespaceAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateHttpNamespaceErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateHttpNamespaceErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateHttpNamespaceErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateHttpNamespaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateHttpNamespaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -162,7 +162,7 @@ pub enum CreatePrivateDnsNamespaceErrorKind {
     /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
     /// is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePrivateDnsNamespaceError {
@@ -229,35 +229,35 @@ impl CreatePrivateDnsNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePrivateDnsNamespaceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `CreatePrivateDnsNamespaceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             CreatePrivateDnsNamespaceErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `CreatePrivateDnsNamespaceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreatePrivateDnsNamespaceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CreatePrivateDnsNamespaceErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CreatePrivateDnsNamespaceErrorKind::NamespaceAlreadyExists`.
+    /// Returns `true` if the error kind is `CreatePrivateDnsNamespaceErrorKind::NamespaceAlreadyExists`.
     pub fn is_namespace_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreatePrivateDnsNamespaceErrorKind::NamespaceAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreatePrivateDnsNamespaceErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreatePrivateDnsNamespaceErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreatePrivateDnsNamespaceErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreatePrivateDnsNamespaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreatePrivateDnsNamespaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -303,7 +303,7 @@ pub enum CreatePublicDnsNamespaceErrorKind {
     /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
     /// is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePublicDnsNamespaceError {
@@ -370,35 +370,35 @@ impl CreatePublicDnsNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePublicDnsNamespaceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `CreatePublicDnsNamespaceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             CreatePublicDnsNamespaceErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `CreatePublicDnsNamespaceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreatePublicDnsNamespaceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CreatePublicDnsNamespaceErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CreatePublicDnsNamespaceErrorKind::NamespaceAlreadyExists`.
+    /// Returns `true` if the error kind is `CreatePublicDnsNamespaceErrorKind::NamespaceAlreadyExists`.
     pub fn is_namespace_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreatePublicDnsNamespaceErrorKind::NamespaceAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreatePublicDnsNamespaceErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreatePublicDnsNamespaceErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreatePublicDnsNamespaceErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreatePublicDnsNamespaceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreatePublicDnsNamespaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -444,7 +444,7 @@ pub enum CreateServiceErrorKind {
     /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
     /// is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceError {
@@ -511,23 +511,23 @@ impl CreateServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::NamespaceNotFound`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::NamespaceNotFound`.
     pub fn is_namespace_not_found(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::NamespaceNotFound(_))
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::ResourceLimitExceeded(_))
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::ServiceAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::ServiceAlreadyExists`.
     pub fn is_service_already_exists(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::ServiceAlreadyExists(_))
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, CreateServiceErrorKind::TooManyTagsException(_))
     }
@@ -568,7 +568,7 @@ pub enum DeleteNamespaceErrorKind {
     /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
     /// service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNamespaceError {
@@ -634,19 +634,19 @@ impl DeleteNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, DeleteNamespaceErrorKind::DuplicateRequest(_))
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeleteNamespaceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::NamespaceNotFound`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::NamespaceNotFound`.
     pub fn is_namespace_not_found(&self) -> bool {
         matches!(&self.kind, DeleteNamespaceErrorKind::NamespaceNotFound(_))
     }
-    /// Returns true if the error kind is `DeleteNamespaceErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteNamespaceErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteNamespaceErrorKind::ResourceInUse(_))
     }
@@ -684,7 +684,7 @@ pub enum DeleteServiceErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceError {
@@ -749,15 +749,15 @@ impl DeleteServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeleteServiceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeleteServiceErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(&self.kind, DeleteServiceErrorKind::ServiceNotFound(_))
     }
@@ -799,7 +799,7 @@ pub enum DeregisterInstanceErrorKind {
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterInstanceError {
@@ -866,23 +866,23 @@ impl DeregisterInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterInstanceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `DeregisterInstanceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, DeregisterInstanceErrorKind::DuplicateRequest(_))
     }
-    /// Returns true if the error kind is `DeregisterInstanceErrorKind::InstanceNotFound`.
+    /// Returns `true` if the error kind is `DeregisterInstanceErrorKind::InstanceNotFound`.
     pub fn is_instance_not_found(&self) -> bool {
         matches!(&self.kind, DeregisterInstanceErrorKind::InstanceNotFound(_))
     }
-    /// Returns true if the error kind is `DeregisterInstanceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeregisterInstanceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeregisterInstanceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DeregisterInstanceErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `DeregisterInstanceErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, DeregisterInstanceErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `DeregisterInstanceErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `DeregisterInstanceErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(&self.kind, DeregisterInstanceErrorKind::ServiceNotFound(_))
     }
@@ -924,7 +924,7 @@ pub enum DiscoverInstancesErrorKind {
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DiscoverInstancesError {
@@ -990,22 +990,22 @@ impl DiscoverInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DiscoverInstancesErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DiscoverInstancesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DiscoverInstancesErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DiscoverInstancesErrorKind::NamespaceNotFound`.
+    /// Returns `true` if the error kind is `DiscoverInstancesErrorKind::NamespaceNotFound`.
     pub fn is_namespace_not_found(&self) -> bool {
         matches!(&self.kind, DiscoverInstancesErrorKind::NamespaceNotFound(_))
     }
-    /// Returns true if the error kind is `DiscoverInstancesErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `DiscoverInstancesErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             DiscoverInstancesErrorKind::RequestLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `DiscoverInstancesErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `DiscoverInstancesErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(&self.kind, DiscoverInstancesErrorKind::ServiceNotFound(_))
     }
@@ -1043,7 +1043,7 @@ pub enum GetInstanceErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceError {
@@ -1108,15 +1108,15 @@ impl GetInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::InstanceNotFound`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::InstanceNotFound`.
     pub fn is_instance_not_found(&self) -> bool {
         matches!(&self.kind, GetInstanceErrorKind::InstanceNotFound(_))
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetInstanceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(&self.kind, GetInstanceErrorKind::ServiceNotFound(_))
     }
@@ -1153,7 +1153,7 @@ pub enum GetInstancesHealthStatusErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstancesHealthStatusError {
@@ -1218,21 +1218,21 @@ impl GetInstancesHealthStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstancesHealthStatusErrorKind::InstanceNotFound`.
+    /// Returns `true` if the error kind is `GetInstancesHealthStatusErrorKind::InstanceNotFound`.
     pub fn is_instance_not_found(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancesHealthStatusErrorKind::InstanceNotFound(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancesHealthStatusErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetInstancesHealthStatusErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancesHealthStatusErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancesHealthStatusErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `GetInstancesHealthStatusErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -1269,7 +1269,7 @@ pub enum GetNamespaceErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No namespace exists with the specified ID.</p>
     NamespaceNotFound(crate::error::NamespaceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetNamespaceError {
@@ -1333,11 +1333,11 @@ impl GetNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetNamespaceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetNamespaceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetNamespaceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetNamespaceErrorKind::NamespaceNotFound`.
+    /// Returns `true` if the error kind is `GetNamespaceErrorKind::NamespaceNotFound`.
     pub fn is_namespace_not_found(&self) -> bool {
         matches!(&self.kind, GetNamespaceErrorKind::NamespaceNotFound(_))
     }
@@ -1370,7 +1370,7 @@ pub enum GetOperationErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No operation exists with the specified ID.</p>
     OperationNotFound(crate::error::OperationNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOperationError {
@@ -1434,11 +1434,11 @@ impl GetOperationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetOperationErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::OperationNotFound`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::OperationNotFound`.
     pub fn is_operation_not_found(&self) -> bool {
         matches!(&self.kind, GetOperationErrorKind::OperationNotFound(_))
     }
@@ -1471,7 +1471,7 @@ pub enum GetServiceErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceError {
@@ -1535,11 +1535,11 @@ impl GetServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetServiceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetServiceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetServiceErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `GetServiceErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(&self.kind, GetServiceErrorKind::ServiceNotFound(_))
     }
@@ -1572,7 +1572,7 @@ pub enum ListInstancesErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstancesError {
@@ -1636,11 +1636,11 @@ impl ListInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstancesErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListInstancesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListInstancesErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ListInstancesErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `ListInstancesErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(&self.kind, ListInstancesErrorKind::ServiceNotFound(_))
     }
@@ -1671,7 +1671,7 @@ pub enum ListNamespacesErrorKind {
     /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
     /// be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNamespacesError {
@@ -1734,7 +1734,7 @@ impl ListNamespacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNamespacesErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListNamespacesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListNamespacesErrorKind::InvalidInput(_))
     }
@@ -1764,7 +1764,7 @@ pub enum ListOperationsErrorKind {
     /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
     /// be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOperationsError {
@@ -1827,7 +1827,7 @@ impl ListOperationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOperationsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListOperationsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListOperationsErrorKind::InvalidInput(_))
     }
@@ -1857,7 +1857,7 @@ pub enum ListServicesErrorKind {
     /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
     /// be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServicesError {
@@ -1920,7 +1920,7 @@ impl ListServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListServicesErrorKind::InvalidInput(_))
     }
@@ -1952,7 +1952,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>The operation can't be completed because the resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2016,11 +2016,11 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2063,7 +2063,7 @@ pub enum RegisterInstanceErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterInstanceError {
@@ -2130,26 +2130,26 @@ impl RegisterInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterInstanceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `RegisterInstanceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, RegisterInstanceErrorKind::DuplicateRequest(_))
     }
-    /// Returns true if the error kind is `RegisterInstanceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `RegisterInstanceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, RegisterInstanceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `RegisterInstanceErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `RegisterInstanceErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, RegisterInstanceErrorKind::ResourceInUse(_))
     }
-    /// Returns true if the error kind is `RegisterInstanceErrorKind::ResourceLimitExceeded`.
+    /// Returns `true` if the error kind is `RegisterInstanceErrorKind::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             RegisterInstanceErrorKind::ResourceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `RegisterInstanceErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `RegisterInstanceErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(&self.kind, RegisterInstanceErrorKind::ServiceNotFound(_))
     }
@@ -2188,7 +2188,7 @@ pub enum TagResourceErrorKind {
     /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
     /// is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2253,18 +2253,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -2298,7 +2298,7 @@ pub enum UntagResourceErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>The operation can't be completed because the resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2362,11 +2362,11 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2407,7 +2407,7 @@ pub enum UpdateHttpNamespaceErrorKind {
     /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
     /// service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateHttpNamespaceError {
@@ -2473,25 +2473,25 @@ impl UpdateHttpNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateHttpNamespaceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `UpdateHttpNamespaceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             UpdateHttpNamespaceErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `UpdateHttpNamespaceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateHttpNamespaceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, UpdateHttpNamespaceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `UpdateHttpNamespaceErrorKind::NamespaceNotFound`.
+    /// Returns `true` if the error kind is `UpdateHttpNamespaceErrorKind::NamespaceNotFound`.
     pub fn is_namespace_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UpdateHttpNamespaceErrorKind::NamespaceNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UpdateHttpNamespaceErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `UpdateHttpNamespaceErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(&self.kind, UpdateHttpNamespaceErrorKind::ResourceInUse(_))
     }
@@ -2532,7 +2532,7 @@ pub enum UpdateInstanceCustomHealthStatusErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInstanceCustomHealthStatusError {
@@ -2603,28 +2603,28 @@ impl UpdateInstanceCustomHealthStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInstanceCustomHealthStatusErrorKind::CustomHealthNotFound`.
+    /// Returns `true` if the error kind is `UpdateInstanceCustomHealthStatusErrorKind::CustomHealthNotFound`.
     pub fn is_custom_health_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInstanceCustomHealthStatusErrorKind::CustomHealthNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInstanceCustomHealthStatusErrorKind::InstanceNotFound`.
+    /// Returns `true` if the error kind is `UpdateInstanceCustomHealthStatusErrorKind::InstanceNotFound`.
     pub fn is_instance_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInstanceCustomHealthStatusErrorKind::InstanceNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInstanceCustomHealthStatusErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateInstanceCustomHealthStatusErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInstanceCustomHealthStatusErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInstanceCustomHealthStatusErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `UpdateInstanceCustomHealthStatusErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -2667,7 +2667,7 @@ pub enum UpdatePrivateDnsNamespaceErrorKind {
     /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
     /// service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePrivateDnsNamespaceError {
@@ -2733,28 +2733,28 @@ impl UpdatePrivateDnsNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePrivateDnsNamespaceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `UpdatePrivateDnsNamespaceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrivateDnsNamespaceErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrivateDnsNamespaceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdatePrivateDnsNamespaceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrivateDnsNamespaceErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrivateDnsNamespaceErrorKind::NamespaceNotFound`.
+    /// Returns `true` if the error kind is `UpdatePrivateDnsNamespaceErrorKind::NamespaceNotFound`.
     pub fn is_namespace_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrivateDnsNamespaceErrorKind::NamespaceNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrivateDnsNamespaceErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `UpdatePrivateDnsNamespaceErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
@@ -2797,7 +2797,7 @@ pub enum UpdatePublicDnsNamespaceErrorKind {
     /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
     /// service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePublicDnsNamespaceError {
@@ -2863,28 +2863,28 @@ impl UpdatePublicDnsNamespaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePublicDnsNamespaceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `UpdatePublicDnsNamespaceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePublicDnsNamespaceErrorKind::DuplicateRequest(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePublicDnsNamespaceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdatePublicDnsNamespaceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePublicDnsNamespaceErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePublicDnsNamespaceErrorKind::NamespaceNotFound`.
+    /// Returns `true` if the error kind is `UpdatePublicDnsNamespaceErrorKind::NamespaceNotFound`.
     pub fn is_namespace_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePublicDnsNamespaceErrorKind::NamespaceNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePublicDnsNamespaceErrorKind::ResourceInUse`.
+    /// Returns `true` if the error kind is `UpdatePublicDnsNamespaceErrorKind::ResourceInUse`.
     pub fn is_resource_in_use(&self) -> bool {
         matches!(
             &self.kind,
@@ -2924,7 +2924,7 @@ pub enum UpdateServiceErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceError {
@@ -2989,15 +2989,15 @@ impl UpdateServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::DuplicateRequest`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::DuplicateRequest`.
     pub fn is_duplicate_request(&self) -> bool {
         matches!(&self.kind, UpdateServiceErrorKind::DuplicateRequest(_))
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, UpdateServiceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::ServiceNotFound`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::ServiceNotFound`.
     pub fn is_service_not_found(&self) -> bool {
         matches!(&self.kind, UpdateServiceErrorKind::ServiceNotFound(_))
     }

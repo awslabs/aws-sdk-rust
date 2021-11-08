@@ -28,7 +28,7 @@ pub enum AssociatePhoneNumbersWithVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociatePhoneNumbersWithVoiceConnectorError {
@@ -117,56 +117,56 @@ impl AssociatePhoneNumbersWithVoiceConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -237,7 +237,7 @@ pub enum AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociatePhoneNumbersWithVoiceConnectorGroupError {
@@ -330,56 +330,56 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -450,7 +450,7 @@ pub enum AssociatePhoneNumberWithUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociatePhoneNumberWithUserError {
@@ -526,56 +526,56 @@ impl AssociatePhoneNumberWithUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociatePhoneNumberWithUserErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumberWithUserErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumberWithUserErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumberWithUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumberWithUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumberWithUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumberWithUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumberWithUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumberWithUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumberWithUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumberWithUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumberWithUserErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumberWithUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumberWithUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumberWithUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumberWithUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumberWithUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumberWithUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumberWithUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumberWithUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociatePhoneNumberWithUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociatePhoneNumberWithUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `AssociatePhoneNumberWithUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -630,7 +630,7 @@ pub enum AssociateSigninDelegateGroupsWithAccountErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateSigninDelegateGroupsWithAccountError {
@@ -716,49 +716,49 @@ impl AssociateSigninDelegateGroupsWithAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSigninDelegateGroupsWithAccountErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSigninDelegateGroupsWithAccountErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSigninDelegateGroupsWithAccountErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSigninDelegateGroupsWithAccountErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSigninDelegateGroupsWithAccountErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateSigninDelegateGroupsWithAccountErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `AssociateSigninDelegateGroupsWithAccountErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -826,7 +826,7 @@ pub enum BatchCreateAttendeeErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchCreateAttendeeError {
@@ -896,56 +896,56 @@ impl BatchCreateAttendeeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchCreateAttendeeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateAttendeeErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateAttendeeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateAttendeeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateAttendeeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateAttendeeErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateAttendeeErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateAttendeeErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateAttendeeErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateAttendeeErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateAttendeeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateAttendeeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateAttendeeErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateAttendeeErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateAttendeeErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `BatchCreateAttendeeErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -994,7 +994,7 @@ pub enum BatchCreateChannelMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchCreateChannelMembershipError {
@@ -1068,42 +1068,42 @@ impl BatchCreateChannelMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchCreateChannelMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateChannelMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateChannelMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateChannelMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateChannelMembershipErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateChannelMembershipErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateChannelMembershipErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateChannelMembershipErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateChannelMembershipErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateChannelMembershipErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateChannelMembershipErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `BatchCreateChannelMembershipErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1156,7 +1156,7 @@ pub enum BatchCreateRoomMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchCreateRoomMembershipError {
@@ -1229,49 +1229,49 @@ impl BatchCreateRoomMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchCreateRoomMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchCreateRoomMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateRoomMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateRoomMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchCreateRoomMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateRoomMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateRoomMembershipErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchCreateRoomMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateRoomMembershipErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateRoomMembershipErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `BatchCreateRoomMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateRoomMembershipErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateRoomMembershipErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchCreateRoomMembershipErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateRoomMembershipErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateRoomMembershipErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `BatchCreateRoomMembershipErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateRoomMembershipErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateRoomMembershipErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `BatchCreateRoomMembershipErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1321,7 +1321,7 @@ pub enum BatchDeletePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeletePhoneNumberError {
@@ -1390,49 +1390,49 @@ impl BatchDeletePhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeletePhoneNumberErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePhoneNumberErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePhoneNumberErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePhoneNumberErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePhoneNumberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePhoneNumberErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePhoneNumberErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePhoneNumberErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePhoneNumberErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePhoneNumberErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeletePhoneNumberErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeletePhoneNumberErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `BatchDeletePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1482,7 +1482,7 @@ pub enum BatchSuspendUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchSuspendUserError {
@@ -1551,43 +1551,43 @@ impl BatchSuspendUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchSuspendUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchSuspendUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchSuspendUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchSuspendUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchSuspendUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, BatchSuspendUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `BatchSuspendUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchSuspendUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, BatchSuspendUserErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `BatchSuspendUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `BatchSuspendUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchSuspendUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchSuspendUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchSuspendUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchSuspendUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchSuspendUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `BatchSuspendUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchSuspendUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `BatchSuspendUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `BatchSuspendUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1637,7 +1637,7 @@ pub enum BatchUnsuspendUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUnsuspendUserError {
@@ -1706,49 +1706,49 @@ impl BatchUnsuspendUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUnsuspendUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchUnsuspendUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUnsuspendUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUnsuspendUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchUnsuspendUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUnsuspendUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUnsuspendUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchUnsuspendUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUnsuspendUserErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUnsuspendUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `BatchUnsuspendUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUnsuspendUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUnsuspendUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchUnsuspendUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUnsuspendUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUnsuspendUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `BatchUnsuspendUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUnsuspendUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUnsuspendUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `BatchUnsuspendUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1798,7 +1798,7 @@ pub enum BatchUpdatePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdatePhoneNumberError {
@@ -1867,49 +1867,49 @@ impl BatchUpdatePhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpdatePhoneNumberErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePhoneNumberErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePhoneNumberErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePhoneNumberErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePhoneNumberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePhoneNumberErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePhoneNumberErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePhoneNumberErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePhoneNumberErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdatePhoneNumberErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1959,7 +1959,7 @@ pub enum BatchUpdateUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdateUserError {
@@ -2028,40 +2028,40 @@ impl BatchUpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpdateUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchUpdateUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, BatchUpdateUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `BatchUpdateUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchUpdateUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, BatchUpdateUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `BatchUpdateUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchUpdateUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, BatchUpdateUserErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `BatchUpdateUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `BatchUpdateUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchUpdateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `BatchUpdateUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `BatchUpdateUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2111,7 +2111,7 @@ pub enum CreateAccountErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccountError {
@@ -2180,40 +2180,40 @@ impl CreateAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateAccountErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateAccountErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAccountErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2266,7 +2266,7 @@ pub enum CreateAppInstanceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppInstanceError {
@@ -2336,53 +2336,53 @@ impl CreateAppInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppInstanceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateAppInstanceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateAppInstanceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2436,7 +2436,7 @@ pub enum CreateAppInstanceAdminErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppInstanceAdminError {
@@ -2508,56 +2508,56 @@ impl CreateAppInstanceAdminError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppInstanceAdminErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceAdminErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceAdminErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceAdminErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceAdminErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceAdminErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceAdminErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceAdminErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceAdminErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceAdminErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceAdminErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceAdminErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceAdminErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceAdminErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceAdminErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2611,7 +2611,7 @@ pub enum CreateAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppInstanceUserError {
@@ -2681,56 +2681,56 @@ impl CreateAppInstanceUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppInstanceUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceUserErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceUserErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceUserErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceUserErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppInstanceUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppInstanceUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2783,7 +2783,7 @@ pub enum CreateAttendeeErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAttendeeError {
@@ -2853,47 +2853,47 @@ impl CreateAttendeeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAttendeeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateAttendeeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateAttendeeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateAttendeeErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateAttendeeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAttendeeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateAttendeeErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAttendeeErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAttendeeErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAttendeeErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAttendeeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAttendeeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAttendeeErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAttendeeErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAttendeeErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateAttendeeErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2946,7 +2946,7 @@ pub enum CreateBotErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBotError {
@@ -3016,41 +3016,41 @@ impl CreateBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBotErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, CreateBotErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `CreateBotErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateBotErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3104,7 +3104,7 @@ pub enum CreateChannelErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelError {
@@ -3174,47 +3174,47 @@ impl CreateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3268,7 +3268,7 @@ pub enum CreateChannelBanErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelBanError {
@@ -3338,50 +3338,50 @@ impl CreateChannelBanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChannelBanErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateChannelBanErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelBanErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelBanErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateChannelBanErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelBanErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateChannelBanErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateChannelBanErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelBanErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateChannelBanErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateChannelBanErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelBanErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelBanErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateChannelBanErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelBanErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelBanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateChannelBanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelBanErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelBanErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateChannelBanErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelBanErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelBanErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateChannelBanErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3435,7 +3435,7 @@ pub enum CreateChannelMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelMembershipError {
@@ -3507,56 +3507,56 @@ impl CreateChannelMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChannelMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelMembershipErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelMembershipErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelMembershipErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelMembershipErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelMembershipErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelMembershipErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelMembershipErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelMembershipErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelMembershipErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelMembershipErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelMembershipErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateChannelMembershipErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3612,7 +3612,7 @@ pub enum CreateChannelModeratorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelModeratorError {
@@ -3684,56 +3684,56 @@ impl CreateChannelModeratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChannelModeratorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateChannelModeratorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelModeratorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelModeratorErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateChannelModeratorErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelModeratorErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelModeratorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateChannelModeratorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelModeratorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelModeratorErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateChannelModeratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelModeratorErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelModeratorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateChannelModeratorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelModeratorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelModeratorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateChannelModeratorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelModeratorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelModeratorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateChannelModeratorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelModeratorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelModeratorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateChannelModeratorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3784,7 +3784,7 @@ pub enum CreateMediaCapturePipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMediaCapturePipelineError {
@@ -3859,49 +3859,49 @@ impl CreateMediaCapturePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMediaCapturePipelineErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMediaCapturePipelineErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMediaCapturePipelineErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMediaCapturePipelineErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMediaCapturePipelineErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMediaCapturePipelineErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMediaCapturePipelineErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMediaCapturePipelineErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMediaCapturePipelineErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMediaCapturePipelineErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateMediaCapturePipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3957,7 +3957,7 @@ pub enum CreateMeetingErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMeetingError {
@@ -4026,43 +4026,43 @@ impl CreateMeetingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMeetingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateMeetingErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateMeetingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateMeetingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateMeetingErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateMeetingErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4112,7 +4112,7 @@ pub enum CreateMeetingDialOutErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMeetingDialOutError {
@@ -4181,49 +4181,49 @@ impl CreateMeetingDialOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMeetingDialOutErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingDialOutErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingDialOutErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingDialOutErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingDialOutErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingDialOutErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingDialOutErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingDialOutErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingDialOutErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingDialOutErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingDialOutErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingDialOutErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingDialOutErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateMeetingDialOutErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4273,7 +4273,7 @@ pub enum CreateMeetingWithAttendeesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMeetingWithAttendeesError {
@@ -4348,49 +4348,49 @@ impl CreateMeetingWithAttendeesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMeetingWithAttendeesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingWithAttendeesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingWithAttendeesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingWithAttendeesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingWithAttendeesErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingWithAttendeesErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingWithAttendeesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingWithAttendeesErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingWithAttendeesErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeetingWithAttendeesErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeetingWithAttendeesErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateMeetingWithAttendeesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4448,7 +4448,7 @@ pub enum CreatePhoneNumberOrderErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePhoneNumberOrderError {
@@ -4520,56 +4520,56 @@ impl CreatePhoneNumberOrderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePhoneNumberOrderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePhoneNumberOrderErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePhoneNumberOrderErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePhoneNumberOrderErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePhoneNumberOrderErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePhoneNumberOrderErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePhoneNumberOrderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePhoneNumberOrderErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePhoneNumberOrderErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePhoneNumberOrderErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePhoneNumberOrderErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePhoneNumberOrderErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreatePhoneNumberOrderErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4620,7 +4620,7 @@ pub enum CreateProxySessionErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProxySessionError {
@@ -4689,49 +4689,49 @@ impl CreateProxySessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProxySessionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateProxySessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProxySessionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProxySessionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateProxySessionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProxySessionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProxySessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateProxySessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProxySessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProxySessionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateProxySessionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProxySessionErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProxySessionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateProxySessionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProxySessionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProxySessionErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateProxySessionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProxySessionErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProxySessionErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateProxySessionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4783,7 +4783,7 @@ pub enum CreateRoomErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRoomError {
@@ -4853,41 +4853,41 @@ impl CreateRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateRoomErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateRoomErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateRoomErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, CreateRoomErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, CreateRoomErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `CreateRoomErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateRoomErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4943,7 +4943,7 @@ pub enum CreateRoomMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRoomMembershipError {
@@ -5014,63 +5014,63 @@ impl CreateRoomMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomMembershipErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomMembershipErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomMembershipErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomMembershipErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomMembershipErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRoomMembershipErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRoomMembershipErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateRoomMembershipErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5127,7 +5127,7 @@ pub enum CreateSipMediaApplicationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSipMediaApplicationError {
@@ -5204,63 +5204,63 @@ impl CreateSipMediaApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5316,7 +5316,7 @@ pub enum CreateSipMediaApplicationCallErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSipMediaApplicationCallError {
@@ -5399,56 +5399,56 @@ impl CreateSipMediaApplicationCallError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationCallErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationCallErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationCallErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationCallErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationCallErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationCallErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationCallErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationCallErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationCallErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipMediaApplicationCallErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5512,7 +5512,7 @@ pub enum CreateSipRuleErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSipRuleError {
@@ -5583,51 +5583,51 @@ impl CreateSipRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateSipRuleErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateSipRuleErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateSipRuleErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateSipRuleErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipRuleErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipRuleErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipRuleErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSipRuleErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSipRuleErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateSipRuleErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5682,7 +5682,7 @@ pub enum CreateUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -5752,38 +5752,38 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5836,7 +5836,7 @@ pub enum CreateVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVoiceConnectorError {
@@ -5906,56 +5906,56 @@ impl CreateVoiceConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6008,7 +6008,7 @@ pub enum CreateVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVoiceConnectorGroupError {
@@ -6084,56 +6084,56 @@ impl CreateVoiceConnectorGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorGroupErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorGroupErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceConnectorGroupErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6188,7 +6188,7 @@ pub enum DeleteAccountErrorKind {
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccountError {
@@ -6258,47 +6258,47 @@ impl DeleteAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccountErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteAccountErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteAccountErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteAccountErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAccountErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteAccountErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteAccountErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAccountErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAccountErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAccountErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAccountErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAccountErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteAccountErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteAccountErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccountErrorKind::UnauthorizedClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccountErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `DeleteAccountErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6347,7 +6347,7 @@ pub enum DeleteAppInstanceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppInstanceError {
@@ -6415,42 +6415,42 @@ impl DeleteAppInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppInstanceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6500,7 +6500,7 @@ pub enum DeleteAppInstanceAdminErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppInstanceAdminError {
@@ -6569,49 +6569,49 @@ impl DeleteAppInstanceAdminError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppInstanceAdminErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceAdminErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceAdminErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceAdminErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceAdminErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceAdminErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceAdminErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceAdminErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceAdminErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceAdminErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceAdminErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceAdminErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceAdminErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6661,7 +6661,7 @@ pub enum DeleteAppInstanceStreamingConfigurationsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppInstanceStreamingConfigurationsError {
@@ -6747,49 +6747,49 @@ impl DeleteAppInstanceStreamingConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceStreamingConfigurationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceStreamingConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceStreamingConfigurationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceStreamingConfigurationsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6853,7 +6853,7 @@ pub enum DeleteAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppInstanceUserError {
@@ -6921,42 +6921,42 @@ impl DeleteAppInstanceUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppInstanceUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppInstanceUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppInstanceUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7005,7 +7005,7 @@ pub enum DeleteAttendeeErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAttendeeError {
@@ -7074,40 +7074,40 @@ impl DeleteAttendeeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAttendeeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteAttendeeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteAttendeeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteAttendeeErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteAttendeeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAttendeeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAttendeeErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAttendeeErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAttendeeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAttendeeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAttendeeErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAttendeeErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAttendeeErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteAttendeeErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7155,7 +7155,7 @@ pub enum DeleteChannelErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelError {
@@ -7223,36 +7223,36 @@ impl DeleteChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7299,7 +7299,7 @@ pub enum DeleteChannelBanErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelBanError {
@@ -7367,39 +7367,39 @@ impl DeleteChannelBanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChannelBanErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteChannelBanErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelBanErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelBanErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteChannelBanErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelBanErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelBanErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteChannelBanErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelBanErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelBanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteChannelBanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelBanErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelBanErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelBanErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelBanErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelBanErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelBanErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7449,7 +7449,7 @@ pub enum DeleteChannelMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelMembershipError {
@@ -7518,49 +7518,49 @@ impl DeleteChannelMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChannelMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteChannelMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMembershipErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteChannelMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMembershipErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteChannelMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMembershipErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteChannelMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMembershipErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMembershipErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteChannelMembershipErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMembershipErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMembershipErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelMembershipErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMembershipErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMembershipErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelMembershipErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7608,7 +7608,7 @@ pub enum DeleteChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelMessageError {
@@ -7676,42 +7676,42 @@ impl DeleteChannelMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChannelMessageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteChannelMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMessageErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMessageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteChannelMessageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMessageErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMessageErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteChannelMessageErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMessageErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteChannelMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMessageErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelMessageErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelMessageErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelMessageErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelMessageErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7758,7 +7758,7 @@ pub enum DeleteChannelModeratorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelModeratorError {
@@ -7826,42 +7826,42 @@ impl DeleteChannelModeratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChannelModeratorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteChannelModeratorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelModeratorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelModeratorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteChannelModeratorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelModeratorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelModeratorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteChannelModeratorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelModeratorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelModeratorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteChannelModeratorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelModeratorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelModeratorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelModeratorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelModeratorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelModeratorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteChannelModeratorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7908,7 +7908,7 @@ pub enum DeleteEventsConfigurationErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventsConfigurationError {
@@ -7982,42 +7982,42 @@ impl DeleteEventsConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEventsConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEventsConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventsConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventsConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteEventsConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventsConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventsConfigurationErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteEventsConfigurationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventsConfigurationErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventsConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteEventsConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventsConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventsConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteEventsConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventsConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventsConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteEventsConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8068,7 +8068,7 @@ pub enum DeleteMediaCapturePipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMediaCapturePipelineError {
@@ -8141,49 +8141,49 @@ impl DeleteMediaCapturePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMediaCapturePipelineErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMediaCapturePipelineErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMediaCapturePipelineErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMediaCapturePipelineErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMediaCapturePipelineErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMediaCapturePipelineErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMediaCapturePipelineErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMediaCapturePipelineErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8237,7 +8237,7 @@ pub enum DeleteMeetingErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMeetingError {
@@ -8306,40 +8306,40 @@ impl DeleteMeetingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMeetingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeetingErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteMeetingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeetingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteMeetingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeetingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteMeetingErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMeetingErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMeetingErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMeetingErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMeetingErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMeetingErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMeetingErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteMeetingErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8389,7 +8389,7 @@ pub enum DeletePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePhoneNumberError {
@@ -8458,46 +8458,46 @@ impl DeletePhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePhoneNumberErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePhoneNumberErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePhoneNumberErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePhoneNumberErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePhoneNumberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeletePhoneNumberErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeletePhoneNumberErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePhoneNumberErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePhoneNumberErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePhoneNumberErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePhoneNumberErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePhoneNumberErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePhoneNumberErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeletePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8547,7 +8547,7 @@ pub enum DeleteProxySessionErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProxySessionError {
@@ -8616,49 +8616,49 @@ impl DeleteProxySessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProxySessionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProxySessionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProxySessionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProxySessionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProxySessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProxySessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProxySessionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProxySessionErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProxySessionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProxySessionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProxySessionErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProxySessionErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProxySessionErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteProxySessionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8708,7 +8708,7 @@ pub enum DeleteRoomErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRoomError {
@@ -8777,34 +8777,34 @@ impl DeleteRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoomErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoomErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoomErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoomErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoomErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteRoomErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `DeleteRoomErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteRoomErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8854,7 +8854,7 @@ pub enum DeleteRoomMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRoomMembershipError {
@@ -8923,49 +8923,49 @@ impl DeleteRoomMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRoomMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteRoomMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoomMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoomMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteRoomMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoomMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoomMembershipErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRoomMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoomMembershipErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoomMembershipErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteRoomMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoomMembershipErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoomMembershipErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteRoomMembershipErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoomMembershipErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoomMembershipErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteRoomMembershipErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRoomMembershipErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRoomMembershipErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteRoomMembershipErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9018,7 +9018,7 @@ pub enum DeleteSipMediaApplicationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSipMediaApplicationError {
@@ -9092,56 +9092,56 @@ impl DeleteSipMediaApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSipMediaApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipMediaApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipMediaApplicationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipMediaApplicationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipMediaApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipMediaApplicationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipMediaApplicationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipMediaApplicationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipMediaApplicationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipMediaApplicationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipMediaApplicationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipMediaApplicationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipMediaApplicationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipMediaApplicationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteSipMediaApplicationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9195,7 +9195,7 @@ pub enum DeleteSipRuleErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSipRuleError {
@@ -9265,44 +9265,44 @@ impl DeleteSipRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSipRuleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteSipRuleErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteSipRuleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteSipRuleErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteSipRuleErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteSipRuleErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteSipRuleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSipRuleErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteSipRuleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipRuleErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipRuleErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipRuleErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipRuleErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSipRuleErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSipRuleErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteSipRuleErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9356,7 +9356,7 @@ pub enum DeleteVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceConnectorError {
@@ -9426,56 +9426,56 @@ impl DeleteVoiceConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9526,7 +9526,7 @@ pub enum DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceConnectorEmergencyCallingConfigurationError {
@@ -9616,35 +9616,35 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9653,14 +9653,14 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationError {
             )
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9731,7 +9731,7 @@ pub enum DeleteVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceConnectorGroupError {
@@ -9805,56 +9805,56 @@ impl DeleteVoiceConnectorGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorGroupErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorGroupErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorGroupErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9905,7 +9905,7 @@ pub enum DeleteVoiceConnectorOriginationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceConnectorOriginationError {
@@ -9985,49 +9985,49 @@ impl DeleteVoiceConnectorOriginationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorOriginationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorOriginationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorOriginationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorOriginationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10085,7 +10085,7 @@ pub enum DeleteVoiceConnectorProxyErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceConnectorProxyError {
@@ -10158,49 +10158,49 @@ impl DeleteVoiceConnectorProxyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorProxyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorProxyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorProxyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorProxyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorProxyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorProxyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorProxyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorProxyErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10250,7 +10250,7 @@ pub enum DeleteVoiceConnectorStreamingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceConnectorStreamingConfigurationError {
@@ -10336,49 +10336,49 @@ impl DeleteVoiceConnectorStreamingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10444,7 +10444,7 @@ pub enum DeleteVoiceConnectorTerminationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceConnectorTerminationError {
@@ -10524,49 +10524,49 @@ impl DeleteVoiceConnectorTerminationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10624,7 +10624,7 @@ pub enum DeleteVoiceConnectorTerminationCredentialsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceConnectorTerminationCredentialsError {
@@ -10710,49 +10710,49 @@ impl DeleteVoiceConnectorTerminationCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10816,7 +10816,7 @@ pub enum DescribeAppInstanceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAppInstanceError {
@@ -10884,42 +10884,42 @@ impl DescribeAppInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAppInstanceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10966,7 +10966,7 @@ pub enum DescribeAppInstanceAdminErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAppInstanceAdminError {
@@ -11034,42 +11034,42 @@ impl DescribeAppInstanceAdminError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAppInstanceAdminErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceAdminErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceAdminErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceAdminErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceAdminErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceAdminErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceAdminErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceAdminErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceAdminErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceAdminErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceAdminErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11116,7 +11116,7 @@ pub enum DescribeAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAppInstanceUserError {
@@ -11184,42 +11184,42 @@ impl DescribeAppInstanceUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAppInstanceUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppInstanceUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppInstanceUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11266,7 +11266,7 @@ pub enum DescribeChannelErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelError {
@@ -11334,36 +11334,36 @@ impl DescribeChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11412,7 +11412,7 @@ pub enum DescribeChannelBanErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelBanError {
@@ -11481,49 +11481,49 @@ impl DescribeChannelBanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChannelBanErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeChannelBanErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelBanErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelBanErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeChannelBanErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelBanErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelBanErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeChannelBanErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelBanErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelBanErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeChannelBanErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelBanErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelBanErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeChannelBanErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelBanErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelBanErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelBanErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelBanErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelBanErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelBanErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11573,7 +11573,7 @@ pub enum DescribeChannelMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelMembershipError {
@@ -11646,49 +11646,49 @@ impl DescribeChannelMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11736,7 +11736,7 @@ pub enum DescribeChannelMembershipForAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelMembershipForAppInstanceUserError {
@@ -11823,42 +11823,42 @@ impl DescribeChannelMembershipForAppInstanceUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipForAppInstanceUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipForAppInstanceUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipForAppInstanceUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipForAppInstanceUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelMembershipForAppInstanceUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelMembershipForAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11919,7 +11919,7 @@ pub enum DescribeChannelModeratedByAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelModeratedByAppInstanceUserError {
@@ -12002,42 +12002,42 @@ impl DescribeChannelModeratedByAppInstanceUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratedByAppInstanceUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratedByAppInstanceUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratedByAppInstanceUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratedByAppInstanceUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratedByAppInstanceUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratedByAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12100,7 +12100,7 @@ pub enum DescribeChannelModeratorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelModeratorError {
@@ -12169,49 +12169,49 @@ impl DescribeChannelModeratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChannelModeratorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratorErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelModeratorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelModeratorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DescribeChannelModeratorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12261,7 +12261,7 @@ pub enum DisassociatePhoneNumberFromUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociatePhoneNumberFromUserError {
@@ -12341,49 +12341,49 @@ impl DisassociatePhoneNumberFromUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumberFromUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberFromUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumberFromUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumberFromUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberFromUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumberFromUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumberFromUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberFromUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumberFromUserErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumberFromUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberFromUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumberFromUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumberFromUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberFromUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumberFromUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumberFromUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberFromUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumberFromUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumberFromUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumberFromUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12441,7 +12441,7 @@ pub enum DisassociatePhoneNumbersFromVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociatePhoneNumbersFromVoiceConnectorError {
@@ -12527,49 +12527,49 @@ impl DisassociatePhoneNumbersFromVoiceConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12635,7 +12635,7 @@ pub enum DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociatePhoneNumbersFromVoiceConnectorGroupError {
@@ -12725,35 +12725,35 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12762,14 +12762,14 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupError {
             )
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12837,7 +12837,7 @@ pub enum DisassociateSigninDelegateGroupsFromAccountErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateSigninDelegateGroupsFromAccountError {
@@ -12927,49 +12927,49 @@ impl DisassociateSigninDelegateGroupsFromAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateSigninDelegateGroupsFromAccountErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateSigninDelegateGroupsFromAccountErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateSigninDelegateGroupsFromAccountErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateSigninDelegateGroupsFromAccountErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateSigninDelegateGroupsFromAccountErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateSigninDelegateGroupsFromAccountErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `DisassociateSigninDelegateGroupsFromAccountErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13035,7 +13035,7 @@ pub enum GetAccountErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountError {
@@ -13104,34 +13104,34 @@ impl GetAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetAccountErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetAccountErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAccountErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetAccountErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, GetAccountErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `GetAccountErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetAccountErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13181,7 +13181,7 @@ pub enum GetAccountSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountSettingsError {
@@ -13250,49 +13250,49 @@ impl GetAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccountSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccountSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetAccountSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13342,7 +13342,7 @@ pub enum GetAppInstanceRetentionSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppInstanceRetentionSettingsError {
@@ -13422,49 +13422,49 @@ impl GetAppInstanceRetentionSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppInstanceRetentionSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceRetentionSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceRetentionSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceRetentionSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13522,7 +13522,7 @@ pub enum GetAppInstanceStreamingConfigurationsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppInstanceStreamingConfigurationsError {
@@ -13608,49 +13608,49 @@ impl GetAppInstanceStreamingConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceStreamingConfigurationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceStreamingConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceStreamingConfigurationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetAppInstanceStreamingConfigurationsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13716,7 +13716,7 @@ pub enum GetAttendeeErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAttendeeError {
@@ -13785,37 +13785,37 @@ impl GetAttendeeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAttendeeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetAttendeeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetAttendeeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetAttendeeErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetAttendeeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAttendeeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAttendeeErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetAttendeeErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `GetAttendeeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAttendeeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAttendeeErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAttendeeErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetAttendeeErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetAttendeeErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13865,7 +13865,7 @@ pub enum GetBotErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBotError {
@@ -13934,31 +13934,31 @@ impl GetBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBotErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::ServiceUnavailableException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `GetBotErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetBotErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(&self.kind, GetBotErrorKind::UnauthorizedClientException(_))
     }
@@ -14005,7 +14005,7 @@ pub enum GetChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChannelMessageError {
@@ -14074,46 +14074,46 @@ impl GetChannelMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetChannelMessageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetChannelMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelMessageErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelMessageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetChannelMessageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelMessageErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelMessageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetChannelMessageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetChannelMessageErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetChannelMessageErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetChannelMessageErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelMessageErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetChannelMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelMessageErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetChannelMessageErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelMessageErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelMessageErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetChannelMessageErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14163,7 +14163,7 @@ pub enum GetEventsConfigurationErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEventsConfigurationError {
@@ -14234,49 +14234,49 @@ impl GetEventsConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEventsConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEventsConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventsConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventsConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetEventsConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventsConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventsConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEventsConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventsConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventsConfigurationErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `GetEventsConfigurationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventsConfigurationErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventsConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetEventsConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventsConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventsConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetEventsConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventsConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventsConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetEventsConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14324,7 +14324,7 @@ pub enum GetGlobalSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGlobalSettingsError {
@@ -14392,42 +14392,42 @@ impl GetGlobalSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGlobalSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGlobalSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetGlobalSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGlobalSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetGlobalSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGlobalSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetGlobalSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGlobalSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetGlobalSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGlobalSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetGlobalSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetGlobalSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14476,7 +14476,7 @@ pub enum GetMediaCapturePipelineErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMediaCapturePipelineError {
@@ -14545,49 +14545,49 @@ impl GetMediaCapturePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMediaCapturePipelineErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaCapturePipelineErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaCapturePipelineErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaCapturePipelineErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaCapturePipelineErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaCapturePipelineErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaCapturePipelineErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaCapturePipelineErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaCapturePipelineErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaCapturePipelineErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaCapturePipelineErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaCapturePipelineErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetMediaCapturePipelineErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14637,7 +14637,7 @@ pub enum GetMeetingErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMeetingError {
@@ -14706,34 +14706,34 @@ impl GetMeetingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMeetingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetMeetingErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetMeetingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetMeetingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetMeetingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetMeetingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetMeetingErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetMeetingErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `GetMeetingErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMeetingErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetMeetingErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, GetMeetingErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `GetMeetingErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetMeetingErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14779,7 +14779,7 @@ pub enum GetMessagingSessionEndpointErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMessagingSessionEndpointError {
@@ -14850,35 +14850,35 @@ impl GetMessagingSessionEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMessagingSessionEndpointErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetMessagingSessionEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMessagingSessionEndpointErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetMessagingSessionEndpointErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetMessagingSessionEndpointErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMessagingSessionEndpointErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetMessagingSessionEndpointErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetMessagingSessionEndpointErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMessagingSessionEndpointErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetMessagingSessionEndpointErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetMessagingSessionEndpointErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMessagingSessionEndpointErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetMessagingSessionEndpointErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetMessagingSessionEndpointErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14930,7 +14930,7 @@ pub enum GetPhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPhoneNumberError {
@@ -14999,40 +14999,40 @@ impl GetPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPhoneNumberErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetPhoneNumberErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetPhoneNumberErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetPhoneNumberErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetPhoneNumberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetPhoneNumberErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetPhoneNumberErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15082,7 +15082,7 @@ pub enum GetPhoneNumberOrderErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPhoneNumberOrderError {
@@ -15151,49 +15151,49 @@ impl GetPhoneNumberOrderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPhoneNumberOrderErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberOrderErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberOrderErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberOrderErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberOrderErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberOrderErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberOrderErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberOrderErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberOrderErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberOrderErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberOrderErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberOrderErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberOrderErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberOrderErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15241,7 +15241,7 @@ pub enum GetPhoneNumberSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPhoneNumberSettingsError {
@@ -15309,42 +15309,42 @@ impl GetPhoneNumberSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPhoneNumberSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPhoneNumberSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetPhoneNumberSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetPhoneNumberSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15393,7 +15393,7 @@ pub enum GetProxySessionErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProxySessionError {
@@ -15462,40 +15462,40 @@ impl GetProxySessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProxySessionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetProxySessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetProxySessionErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetProxySessionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetProxySessionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetProxySessionErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetProxySessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetProxySessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetProxySessionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetProxySessionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetProxySessionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProxySessionErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetProxySessionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetProxySessionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProxySessionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetProxySessionErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetProxySessionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProxySessionErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetProxySessionErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetProxySessionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15545,7 +15545,7 @@ pub enum GetRetentionSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRetentionSettingsError {
@@ -15614,49 +15614,49 @@ impl GetRetentionSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRetentionSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetRetentionSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetentionSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetentionSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetRetentionSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetentionSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetentionSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRetentionSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetentionSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetentionSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetRetentionSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetentionSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetentionSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetRetentionSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetentionSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetentionSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetRetentionSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRetentionSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetRetentionSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetRetentionSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15706,7 +15706,7 @@ pub enum GetRoomErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRoomError {
@@ -15775,31 +15775,31 @@ impl GetRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRoomErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetRoomErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetRoomErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetRoomErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetRoomErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetRoomErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetRoomErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRoomErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRoomErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRoomErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetRoomErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetRoomErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `GetRoomErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetRoomErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(&self.kind, GetRoomErrorKind::ServiceUnavailableException(_))
     }
-    /// Returns true if the error kind is `GetRoomErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetRoomErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, GetRoomErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `GetRoomErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetRoomErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(&self.kind, GetRoomErrorKind::UnauthorizedClientException(_))
     }
@@ -15846,7 +15846,7 @@ pub enum GetSipMediaApplicationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSipMediaApplicationError {
@@ -15915,49 +15915,49 @@ impl GetSipMediaApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16007,7 +16007,7 @@ pub enum GetSipMediaApplicationLoggingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSipMediaApplicationLoggingConfigurationError {
@@ -16093,49 +16093,49 @@ impl GetSipMediaApplicationLoggingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16201,7 +16201,7 @@ pub enum GetSipRuleErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSipRuleError {
@@ -16270,34 +16270,34 @@ impl GetSipRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSipRuleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSipRuleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSipRuleErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetSipRuleErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSipRuleErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetSipRuleErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetSipRuleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSipRuleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSipRuleErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSipRuleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetSipRuleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetSipRuleErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `GetSipRuleErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetSipRuleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSipRuleErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetSipRuleErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetSipRuleErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, GetSipRuleErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `GetSipRuleErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetSipRuleErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16347,7 +16347,7 @@ pub enum GetUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserError {
@@ -16416,31 +16416,31 @@ impl GetUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::ServiceUnavailableException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `GetUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::UnauthorizedClientException(_))
     }
@@ -16487,7 +16487,7 @@ pub enum GetUserSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserSettingsError {
@@ -16556,40 +16556,40 @@ impl GetUserSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetUserSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetUserSettingsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetUserSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetUserSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetUserSettingsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetUserSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetUserSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetUserSettingsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetUserSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetUserSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetUserSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetUserSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetUserSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16639,7 +16639,7 @@ pub enum GetVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorError {
@@ -16708,46 +16708,46 @@ impl GetVoiceConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetVoiceConnectorErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetVoiceConnectorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16797,7 +16797,7 @@ pub enum GetVoiceConnectorEmergencyCallingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorEmergencyCallingConfigurationError {
@@ -16887,49 +16887,49 @@ impl GetVoiceConnectorEmergencyCallingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16995,7 +16995,7 @@ pub enum GetVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorGroupError {
@@ -17064,49 +17064,49 @@ impl GetVoiceConnectorGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorGroupErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorGroupErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorGroupErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17156,7 +17156,7 @@ pub enum GetVoiceConnectorLoggingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorLoggingConfigurationError {
@@ -17242,49 +17242,49 @@ impl GetVoiceConnectorLoggingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17350,7 +17350,7 @@ pub enum GetVoiceConnectorOriginationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorOriginationError {
@@ -17425,49 +17425,49 @@ impl GetVoiceConnectorOriginationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorOriginationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorOriginationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorOriginationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorOriginationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorOriginationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorOriginationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorOriginationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorOriginationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorOriginationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorOriginationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17521,7 +17521,7 @@ pub enum GetVoiceConnectorProxyErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorProxyError {
@@ -17590,49 +17590,49 @@ impl GetVoiceConnectorProxyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorProxyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorProxyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorProxyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorProxyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorProxyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorProxyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorProxyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorProxyErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorProxyErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorProxyErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17682,7 +17682,7 @@ pub enum GetVoiceConnectorStreamingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorStreamingConfigurationError {
@@ -17768,49 +17768,49 @@ impl GetVoiceConnectorStreamingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17876,7 +17876,7 @@ pub enum GetVoiceConnectorTerminationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorTerminationError {
@@ -17951,49 +17951,49 @@ impl GetVoiceConnectorTerminationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18047,7 +18047,7 @@ pub enum GetVoiceConnectorTerminationHealthErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceConnectorTerminationHealthError {
@@ -18131,49 +18131,49 @@ impl GetVoiceConnectorTerminationHealthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationHealthErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationHealthErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18233,7 +18233,7 @@ pub enum InviteUsersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InviteUsersError {
@@ -18302,37 +18302,37 @@ impl InviteUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InviteUsersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `InviteUsersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, InviteUsersErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `InviteUsersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `InviteUsersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, InviteUsersErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `InviteUsersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `InviteUsersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, InviteUsersErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `InviteUsersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `InviteUsersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, InviteUsersErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `InviteUsersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `InviteUsersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteUsersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `InviteUsersErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `InviteUsersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteUsersErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `InviteUsersErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `InviteUsersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18382,7 +18382,7 @@ pub enum ListAccountsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountsError {
@@ -18451,40 +18451,40 @@ impl ListAccountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListAccountsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListAccountsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListAccountsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18532,7 +18532,7 @@ pub enum ListAppInstanceAdminsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAppInstanceAdminsError {
@@ -18600,42 +18600,42 @@ impl ListAppInstanceAdminsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAppInstanceAdminsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceAdminsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceAdminsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceAdminsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceAdminsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceAdminsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceAdminsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceAdminsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceAdminsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceAdminsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceAdminsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListAppInstanceAdminsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18682,7 +18682,7 @@ pub enum ListAppInstancesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAppInstancesError {
@@ -18750,39 +18750,39 @@ impl ListAppInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAppInstancesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListAppInstancesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstancesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstancesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListAppInstancesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListAppInstancesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListAppInstancesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAppInstancesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstancesErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstancesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAppInstancesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstancesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstancesErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListAppInstancesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstancesErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstancesErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListAppInstancesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18829,7 +18829,7 @@ pub enum ListAppInstanceUsersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAppInstanceUsersError {
@@ -18897,42 +18897,42 @@ impl ListAppInstanceUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAppInstanceUsersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceUsersErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceUsersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceUsersErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceUsersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceUsersErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceUsersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceUsersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceUsersErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppInstanceUsersErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppInstanceUsersErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListAppInstanceUsersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18981,7 +18981,7 @@ pub enum ListAttendeesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttendeesError {
@@ -19050,40 +19050,40 @@ impl ListAttendeesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAttendeesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListAttendeesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListAttendeesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListAttendeesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListAttendeesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListAttendeesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListAttendeesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttendeesErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttendeesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttendeesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttendeesErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttendeesErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttendeesErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListAttendeesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19133,7 +19133,7 @@ pub enum ListAttendeeTagsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttendeeTagsError {
@@ -19202,43 +19202,43 @@ impl ListAttendeeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAttendeeTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListAttendeeTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttendeeTagsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttendeeTagsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListAttendeeTagsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListAttendeeTagsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListAttendeeTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListAttendeeTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListAttendeeTagsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListAttendeeTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListAttendeeTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttendeeTagsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttendeeTagsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAttendeeTagsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttendeeTagsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttendeeTagsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListAttendeeTagsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttendeeTagsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttendeeTagsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListAttendeeTagsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19288,7 +19288,7 @@ pub enum ListBotsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBotsError {
@@ -19357,34 +19357,34 @@ impl ListBotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListBotsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListBotsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListBotsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, ListBotsErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBotsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, ListBotsErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `ListBotsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListBotsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19432,7 +19432,7 @@ pub enum ListChannelBansErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelBansError {
@@ -19500,36 +19500,36 @@ impl ListChannelBansError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelBansErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListChannelBansErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListChannelBansErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListChannelBansErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelBansErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListChannelBansErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListChannelBansErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListChannelBansErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelBansErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelBansErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListChannelBansErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelBansErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelBansErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListChannelBansErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelBansErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelBansErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListChannelBansErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19576,7 +19576,7 @@ pub enum ListChannelMembershipsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelMembershipsError {
@@ -19644,42 +19644,42 @@ impl ListChannelMembershipsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelMembershipsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19726,7 +19726,7 @@ pub enum ListChannelMembershipsForAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelMembershipsForAppInstanceUserError {
@@ -19809,42 +19809,42 @@ impl ListChannelMembershipsForAppInstanceUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsForAppInstanceUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsForAppInstanceUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsForAppInstanceUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsForAppInstanceUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMembershipsForAppInstanceUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListChannelMembershipsForAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19905,7 +19905,7 @@ pub enum ListChannelMessagesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelMessagesError {
@@ -19973,42 +19973,42 @@ impl ListChannelMessagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelMessagesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListChannelMessagesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMessagesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMessagesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelMessagesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMessagesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMessagesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListChannelMessagesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMessagesErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMessagesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListChannelMessagesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMessagesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMessagesErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListChannelMessagesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelMessagesErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelMessagesErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListChannelMessagesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20055,7 +20055,7 @@ pub enum ListChannelModeratorsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelModeratorsError {
@@ -20123,42 +20123,42 @@ impl ListChannelModeratorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelModeratorsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListChannelModeratorsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelModeratorsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelModeratorsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelModeratorsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelModeratorsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelModeratorsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListChannelModeratorsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelModeratorsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelModeratorsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListChannelModeratorsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelModeratorsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelModeratorsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListChannelModeratorsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelModeratorsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelModeratorsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListChannelModeratorsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20205,7 +20205,7 @@ pub enum ListChannelsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelsError {
@@ -20273,36 +20273,36 @@ impl ListChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20349,7 +20349,7 @@ pub enum ListChannelsModeratedByAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelsModeratedByAppInstanceUserError {
@@ -20432,42 +20432,42 @@ impl ListChannelsModeratedByAppInstanceUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsModeratedByAppInstanceUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsModeratedByAppInstanceUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsModeratedByAppInstanceUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsModeratedByAppInstanceUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsModeratedByAppInstanceUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListChannelsModeratedByAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20528,7 +20528,7 @@ pub enum ListMediaCapturePipelinesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMediaCapturePipelinesError {
@@ -20600,42 +20600,42 @@ impl ListMediaCapturePipelinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMediaCapturePipelinesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMediaCapturePipelinesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListMediaCapturePipelinesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMediaCapturePipelinesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListMediaCapturePipelinesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMediaCapturePipelinesErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListMediaCapturePipelinesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListMediaCapturePipelinesErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMediaCapturePipelinesErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListMediaCapturePipelinesErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListMediaCapturePipelinesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20682,7 +20682,7 @@ pub enum ListMeetingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMeetingsError {
@@ -20750,36 +20750,36 @@ impl ListMeetingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMeetingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListMeetingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListMeetingsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListMeetingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListMeetingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListMeetingsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListMeetingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListMeetingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMeetingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListMeetingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListMeetingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMeetingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListMeetingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListMeetingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMeetingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListMeetingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListMeetingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20828,7 +20828,7 @@ pub enum ListMeetingTagsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMeetingTagsError {
@@ -20897,40 +20897,40 @@ impl ListMeetingTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMeetingTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListMeetingTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListMeetingTagsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListMeetingTagsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListMeetingTagsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListMeetingTagsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListMeetingTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListMeetingTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListMeetingTagsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListMeetingTagsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListMeetingTagsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMeetingTagsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListMeetingTagsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListMeetingTagsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMeetingTagsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListMeetingTagsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListMeetingTagsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMeetingTagsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListMeetingTagsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListMeetingTagsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20978,7 +20978,7 @@ pub enum ListPhoneNumberOrdersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPhoneNumberOrdersError {
@@ -21046,42 +21046,42 @@ impl ListPhoneNumberOrdersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPhoneNumberOrdersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumberOrdersErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumberOrdersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumberOrdersErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumberOrdersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumberOrdersErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumberOrdersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumberOrdersErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumberOrdersErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumberOrdersErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListPhoneNumberOrdersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21130,7 +21130,7 @@ pub enum ListPhoneNumbersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPhoneNumbersError {
@@ -21199,43 +21199,43 @@ impl ListPhoneNumbersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPhoneNumbersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumbersErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumbersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListPhoneNumbersErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListPhoneNumbersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListPhoneNumbersErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListPhoneNumbersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumbersErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumbersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumbersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumbersErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPhoneNumbersErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListPhoneNumbersErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListPhoneNumbersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21285,7 +21285,7 @@ pub enum ListProxySessionsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProxySessionsError {
@@ -21354,46 +21354,46 @@ impl ListProxySessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProxySessionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListProxySessionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProxySessionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListProxySessionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListProxySessionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProxySessionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListProxySessionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListProxySessionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListProxySessionsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListProxySessionsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListProxySessionsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProxySessionsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListProxySessionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListProxySessionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProxySessionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListProxySessionsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListProxySessionsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProxySessionsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListProxySessionsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListProxySessionsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21443,7 +21443,7 @@ pub enum ListRoomMembershipsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRoomMembershipsError {
@@ -21512,49 +21512,49 @@ impl ListRoomMembershipsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRoomMembershipsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListRoomMembershipsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoomMembershipsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoomMembershipsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListRoomMembershipsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoomMembershipsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoomMembershipsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListRoomMembershipsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoomMembershipsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoomMembershipsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListRoomMembershipsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoomMembershipsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoomMembershipsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListRoomMembershipsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoomMembershipsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoomMembershipsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListRoomMembershipsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoomMembershipsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoomMembershipsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListRoomMembershipsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21604,7 +21604,7 @@ pub enum ListRoomsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRoomsError {
@@ -21673,34 +21673,34 @@ impl ListRoomsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRoomsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListRoomsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListRoomsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListRoomsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListRoomsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListRoomsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListRoomsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListRoomsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListRoomsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListRoomsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListRoomsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, ListRoomsErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `ListRoomsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListRoomsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoomsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoomsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListRoomsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, ListRoomsErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `ListRoomsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListRoomsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21748,7 +21748,7 @@ pub enum ListSipMediaApplicationsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSipMediaApplicationsError {
@@ -21816,42 +21816,42 @@ impl ListSipMediaApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSipMediaApplicationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSipMediaApplicationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListSipMediaApplicationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSipMediaApplicationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSipMediaApplicationsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSipMediaApplicationsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListSipMediaApplicationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSipMediaApplicationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListSipMediaApplicationsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSipMediaApplicationsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListSipMediaApplicationsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListSipMediaApplicationsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21898,7 +21898,7 @@ pub enum ListSipRulesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSipRulesError {
@@ -21966,36 +21966,36 @@ impl ListSipRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSipRulesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListSipRulesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListSipRulesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListSipRulesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListSipRulesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListSipRulesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListSipRulesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListSipRulesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSipRulesErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListSipRulesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListSipRulesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSipRulesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListSipRulesErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListSipRulesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSipRulesErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListSipRulesErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListSipRulesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22044,7 +22044,7 @@ pub enum ListSupportedPhoneNumberCountriesErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSupportedPhoneNumberCountriesError {
@@ -22128,49 +22128,49 @@ impl ListSupportedPhoneNumberCountriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSupportedPhoneNumberCountriesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22228,7 +22228,7 @@ pub enum ListTagsForResourceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -22296,42 +22296,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22380,7 +22380,7 @@ pub enum ListUsersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
@@ -22449,34 +22449,34 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22524,7 +22524,7 @@ pub enum ListVoiceConnectorGroupsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVoiceConnectorGroupsError {
@@ -22592,42 +22592,42 @@ impl ListVoiceConnectorGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVoiceConnectorGroupsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorGroupsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorGroupsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorGroupsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorGroupsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorGroupsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorGroupsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorGroupsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22674,7 +22674,7 @@ pub enum ListVoiceConnectorsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVoiceConnectorsError {
@@ -22742,42 +22742,42 @@ impl ListVoiceConnectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVoiceConnectorsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22826,7 +22826,7 @@ pub enum ListVoiceConnectorTerminationCredentialsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVoiceConnectorTerminationCredentialsError {
@@ -22912,49 +22912,49 @@ impl ListVoiceConnectorTerminationCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23020,7 +23020,7 @@ pub enum LogoutUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for LogoutUserError {
@@ -23089,34 +23089,34 @@ impl LogoutUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `LogoutUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `LogoutUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, LogoutUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `LogoutUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `LogoutUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, LogoutUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `LogoutUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `LogoutUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, LogoutUserErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `LogoutUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `LogoutUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, LogoutUserErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `LogoutUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `LogoutUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             LogoutUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `LogoutUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `LogoutUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, LogoutUserErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `LogoutUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `LogoutUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23169,7 +23169,7 @@ pub enum PutAppInstanceRetentionSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAppInstanceRetentionSettingsError {
@@ -23250,56 +23250,56 @@ impl PutAppInstanceRetentionSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAppInstanceRetentionSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceRetentionSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceRetentionSettingsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceRetentionSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceRetentionSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23358,7 +23358,7 @@ pub enum PutAppInstanceStreamingConfigurationsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAppInstanceStreamingConfigurationsError {
@@ -23444,49 +23444,49 @@ impl PutAppInstanceStreamingConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceStreamingConfigurationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceStreamingConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceStreamingConfigurationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceStreamingConfigurationsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceStreamingConfigurationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppInstanceStreamingConfigurationsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutAppInstanceStreamingConfigurationsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23552,7 +23552,7 @@ pub enum PutEventsConfigurationErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEventsConfigurationError {
@@ -23623,49 +23623,49 @@ impl PutEventsConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEventsConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutEventsConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventsConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventsConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutEventsConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventsConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventsConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutEventsConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventsConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventsConfigurationErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `PutEventsConfigurationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventsConfigurationErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventsConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutEventsConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventsConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventsConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutEventsConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventsConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventsConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutEventsConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23718,7 +23718,7 @@ pub enum PutRetentionSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRetentionSettingsError {
@@ -23788,56 +23788,56 @@ impl PutRetentionSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRetentionSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutRetentionSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionSettingsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutRetentionSettingsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionSettingsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutRetentionSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutRetentionSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutRetentionSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutRetentionSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutRetentionSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutRetentionSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23888,7 +23888,7 @@ pub enum PutSipMediaApplicationLoggingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSipMediaApplicationLoggingConfigurationError {
@@ -23974,49 +23974,49 @@ impl PutSipMediaApplicationLoggingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24082,7 +24082,7 @@ pub enum PutVoiceConnectorEmergencyCallingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutVoiceConnectorEmergencyCallingConfigurationError {
@@ -24172,49 +24172,49 @@ impl PutVoiceConnectorEmergencyCallingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24280,7 +24280,7 @@ pub enum PutVoiceConnectorLoggingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutVoiceConnectorLoggingConfigurationError {
@@ -24366,49 +24366,49 @@ impl PutVoiceConnectorLoggingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24474,7 +24474,7 @@ pub enum PutVoiceConnectorOriginationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutVoiceConnectorOriginationError {
@@ -24549,49 +24549,49 @@ impl PutVoiceConnectorOriginationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutVoiceConnectorOriginationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorOriginationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorOriginationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorOriginationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorOriginationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorOriginationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorOriginationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorOriginationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorOriginationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorOriginationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24647,7 +24647,7 @@ pub enum PutVoiceConnectorProxyErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutVoiceConnectorProxyError {
@@ -24717,56 +24717,56 @@ impl PutVoiceConnectorProxyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutVoiceConnectorProxyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorProxyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorProxyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorProxyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorProxyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorProxyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorProxyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorProxyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorProxyErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorProxyErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorProxyErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorProxyErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorProxyErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24817,7 +24817,7 @@ pub enum PutVoiceConnectorStreamingConfigurationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutVoiceConnectorStreamingConfigurationError {
@@ -24903,49 +24903,49 @@ impl PutVoiceConnectorStreamingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -25013,7 +25013,7 @@ pub enum PutVoiceConnectorTerminationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutVoiceConnectorTerminationError {
@@ -25089,56 +25089,56 @@ impl PutVoiceConnectorTerminationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -25193,7 +25193,7 @@ pub enum PutVoiceConnectorTerminationCredentialsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutVoiceConnectorTerminationCredentialsError {
@@ -25279,49 +25279,49 @@ impl PutVoiceConnectorTerminationCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -25385,7 +25385,7 @@ pub enum RedactChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RedactChannelMessageError {
@@ -25453,42 +25453,42 @@ impl RedactChannelMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RedactChannelMessageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RedactChannelMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactChannelMessageErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RedactChannelMessageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RedactChannelMessageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactChannelMessageErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RedactChannelMessageErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `RedactChannelMessageErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactChannelMessageErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RedactChannelMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RedactChannelMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactChannelMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RedactChannelMessageErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `RedactChannelMessageErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactChannelMessageErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `RedactChannelMessageErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `RedactChannelMessageErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -25537,7 +25537,7 @@ pub enum RedactConversationMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RedactConversationMessageError {
@@ -25610,49 +25610,49 @@ impl RedactConversationMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RedactConversationMessageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RedactConversationMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactConversationMessageErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RedactConversationMessageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RedactConversationMessageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactConversationMessageErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RedactConversationMessageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RedactConversationMessageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactConversationMessageErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RedactConversationMessageErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `RedactConversationMessageErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactConversationMessageErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RedactConversationMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RedactConversationMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactConversationMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RedactConversationMessageErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `RedactConversationMessageErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactConversationMessageErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `RedactConversationMessageErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `RedactConversationMessageErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -25702,7 +25702,7 @@ pub enum RedactRoomMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RedactRoomMessageError {
@@ -25771,46 +25771,46 @@ impl RedactRoomMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RedactRoomMessageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RedactRoomMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactRoomMessageErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RedactRoomMessageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RedactRoomMessageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactRoomMessageErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RedactRoomMessageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RedactRoomMessageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RedactRoomMessageErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `RedactRoomMessageErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `RedactRoomMessageErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactRoomMessageErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RedactRoomMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RedactRoomMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactRoomMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RedactRoomMessageErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `RedactRoomMessageErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RedactRoomMessageErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `RedactRoomMessageErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `RedactRoomMessageErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -25860,7 +25860,7 @@ pub enum RegenerateSecurityTokenErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegenerateSecurityTokenError {
@@ -25929,49 +25929,49 @@ impl RegenerateSecurityTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegenerateSecurityTokenErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RegenerateSecurityTokenErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegenerateSecurityTokenErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RegenerateSecurityTokenErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RegenerateSecurityTokenErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegenerateSecurityTokenErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RegenerateSecurityTokenErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RegenerateSecurityTokenErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegenerateSecurityTokenErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegenerateSecurityTokenErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `RegenerateSecurityTokenErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegenerateSecurityTokenErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RegenerateSecurityTokenErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RegenerateSecurityTokenErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegenerateSecurityTokenErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RegenerateSecurityTokenErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `RegenerateSecurityTokenErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegenerateSecurityTokenErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `RegenerateSecurityTokenErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `RegenerateSecurityTokenErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -26021,7 +26021,7 @@ pub enum ResetPersonalPINErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetPersonalPINError {
@@ -26090,43 +26090,43 @@ impl ResetPersonalPINError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetPersonalPINErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ResetPersonalPINErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPersonalPINErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPersonalPINErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ResetPersonalPINErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ResetPersonalPINErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ResetPersonalPINErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ResetPersonalPINErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ResetPersonalPINErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ResetPersonalPINErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `ResetPersonalPINErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPersonalPINErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPersonalPINErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ResetPersonalPINErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPersonalPINErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPersonalPINErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `ResetPersonalPINErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPersonalPINErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPersonalPINErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `ResetPersonalPINErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -26178,7 +26178,7 @@ pub enum RestorePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestorePhoneNumberError {
@@ -26248,56 +26248,56 @@ impl RestorePhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestorePhoneNumberErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestorePhoneNumberErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RestorePhoneNumberErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestorePhoneNumberErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RestorePhoneNumberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestorePhoneNumberErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RestorePhoneNumberErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestorePhoneNumberErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RestorePhoneNumberErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestorePhoneNumberErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RestorePhoneNumberErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestorePhoneNumberErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RestorePhoneNumberErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestorePhoneNumberErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `RestorePhoneNumberErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `RestorePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -26348,7 +26348,7 @@ pub enum SearchAvailablePhoneNumbersErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchAvailablePhoneNumbersError {
@@ -26421,49 +26421,49 @@ impl SearchAvailablePhoneNumbersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchAvailablePhoneNumbersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAvailablePhoneNumbersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAvailablePhoneNumbersErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAvailablePhoneNumbersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAvailablePhoneNumbersErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAvailablePhoneNumbersErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAvailablePhoneNumbersErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -26518,7 +26518,7 @@ pub enum SendChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendChannelMessageError {
@@ -26587,49 +26587,49 @@ impl SendChannelMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendChannelMessageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SendChannelMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendChannelMessageErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SendChannelMessageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `SendChannelMessageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendChannelMessageErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `SendChannelMessageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `SendChannelMessageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendChannelMessageErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `SendChannelMessageErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `SendChannelMessageErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendChannelMessageErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SendChannelMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `SendChannelMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendChannelMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `SendChannelMessageErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `SendChannelMessageErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendChannelMessageErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `SendChannelMessageErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `SendChannelMessageErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -26683,7 +26683,7 @@ pub enum StartMeetingTranscriptionErrorKind {
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMeetingTranscriptionError {
@@ -26762,63 +26762,63 @@ impl StartMeetingTranscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMeetingTranscriptionErrorKind::UnauthorizedClientException(_)
         )
     }
-    /// Returns true if the error kind is `StartMeetingTranscriptionErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `StartMeetingTranscriptionErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -26876,7 +26876,7 @@ pub enum StopMeetingTranscriptionErrorKind {
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopMeetingTranscriptionError {
@@ -26948,56 +26948,56 @@ impl StopMeetingTranscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopMeetingTranscriptionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMeetingTranscriptionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopMeetingTranscriptionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMeetingTranscriptionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `StopMeetingTranscriptionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMeetingTranscriptionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopMeetingTranscriptionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMeetingTranscriptionErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StopMeetingTranscriptionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMeetingTranscriptionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StopMeetingTranscriptionErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMeetingTranscriptionErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `StopMeetingTranscriptionErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMeetingTranscriptionErrorKind::UnauthorizedClientException(_)
         )
     }
-    /// Returns true if the error kind is `StopMeetingTranscriptionErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `StopMeetingTranscriptionErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -27050,7 +27050,7 @@ pub enum TagAttendeeErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagAttendeeError {
@@ -27120,44 +27120,44 @@ impl TagAttendeeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagAttendeeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagAttendeeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagAttendeeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagAttendeeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `TagAttendeeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, TagAttendeeErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `TagAttendeeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagAttendeeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagAttendeeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagAttendeeErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `TagAttendeeErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagAttendeeErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagAttendeeErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagAttendeeErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, TagAttendeeErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `TagAttendeeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TagAttendeeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagAttendeeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `TagAttendeeErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `TagAttendeeErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagAttendeeErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `TagAttendeeErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `TagAttendeeErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -27210,7 +27210,7 @@ pub enum TagMeetingErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagMeetingError {
@@ -27280,41 +27280,41 @@ impl TagMeetingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagMeetingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagMeetingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagMeetingErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagMeetingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `TagMeetingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, TagMeetingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `TagMeetingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagMeetingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagMeetingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagMeetingErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `TagMeetingErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagMeetingErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagMeetingErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagMeetingErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, TagMeetingErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `TagMeetingErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TagMeetingErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagMeetingErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `TagMeetingErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `TagMeetingErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, TagMeetingErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `TagMeetingErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `TagMeetingErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -27363,7 +27363,7 @@ pub enum TagResourceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -27431,30 +27431,30 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -27503,7 +27503,7 @@ pub enum UntagAttendeeErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagAttendeeError {
@@ -27572,40 +27572,40 @@ impl UntagAttendeeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagAttendeeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagAttendeeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagAttendeeErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagAttendeeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UntagAttendeeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UntagAttendeeErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UntagAttendeeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagAttendeeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagAttendeeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagAttendeeErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagAttendeeErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagAttendeeErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagAttendeeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UntagAttendeeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagAttendeeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UntagAttendeeErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UntagAttendeeErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagAttendeeErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UntagAttendeeErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UntagAttendeeErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -27655,7 +27655,7 @@ pub enum UntagMeetingErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagMeetingError {
@@ -27724,40 +27724,40 @@ impl UntagMeetingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagMeetingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagMeetingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagMeetingErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagMeetingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UntagMeetingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UntagMeetingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UntagMeetingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagMeetingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagMeetingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagMeetingErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagMeetingErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagMeetingErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagMeetingErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UntagMeetingErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagMeetingErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UntagMeetingErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UntagMeetingErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagMeetingErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UntagMeetingErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UntagMeetingErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -27805,7 +27805,7 @@ pub enum UntagResourceErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -27873,33 +27873,33 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -27948,7 +27948,7 @@ pub enum UpdateAccountErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccountError {
@@ -28017,40 +28017,40 @@ impl UpdateAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAccountErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateAccountErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateAccountErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateAccountErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateAccountErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateAccountErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateAccountErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAccountErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateAccountErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateAccountErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateAccountErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAccountErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateAccountErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateAccountErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -28103,7 +28103,7 @@ pub enum UpdateAccountSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccountSettingsError {
@@ -28173,56 +28173,56 @@ impl UpdateAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccountSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccountSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateAccountSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -28274,7 +28274,7 @@ pub enum UpdateAppInstanceErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAppInstanceError {
@@ -28343,46 +28343,46 @@ impl UpdateAppInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAppInstanceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateAppInstanceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateAppInstanceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -28433,7 +28433,7 @@ pub enum UpdateAppInstanceUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAppInstanceUserError {
@@ -28502,49 +28502,49 @@ impl UpdateAppInstanceUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAppInstanceUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceUserErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceUserErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceUserErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceUserErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceUserErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppInstanceUserErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppInstanceUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateAppInstanceUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -28594,7 +28594,7 @@ pub enum UpdateBotErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBotError {
@@ -28663,34 +28663,34 @@ impl UpdateBotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBotErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateBotErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `UpdateBotErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateBotErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -28741,7 +28741,7 @@ pub enum UpdateChannelErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelError {
@@ -28810,40 +28810,40 @@ impl UpdateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -28894,7 +28894,7 @@ pub enum UpdateChannelMessageErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelMessageError {
@@ -28963,49 +28963,49 @@ impl UpdateChannelMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateChannelMessageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateChannelMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelMessageErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelMessageErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateChannelMessageErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelMessageErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelMessageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateChannelMessageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelMessageErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelMessageErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateChannelMessageErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelMessageErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelMessageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateChannelMessageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelMessageErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelMessageErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateChannelMessageErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelMessageErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelMessageErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateChannelMessageErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -29056,7 +29056,7 @@ pub enum UpdateChannelReadMarkerErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelReadMarkerError {
@@ -29125,49 +29125,49 @@ impl UpdateChannelReadMarkerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateChannelReadMarkerErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateChannelReadMarkerErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelReadMarkerErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelReadMarkerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateChannelReadMarkerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelReadMarkerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelReadMarkerErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateChannelReadMarkerErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelReadMarkerErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelReadMarkerErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateChannelReadMarkerErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelReadMarkerErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelReadMarkerErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateChannelReadMarkerErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelReadMarkerErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelReadMarkerErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateChannelReadMarkerErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelReadMarkerErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelReadMarkerErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateChannelReadMarkerErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -29215,7 +29215,7 @@ pub enum UpdateGlobalSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGlobalSettingsError {
@@ -29283,42 +29283,42 @@ impl UpdateGlobalSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateGlobalSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -29370,7 +29370,7 @@ pub enum UpdatePhoneNumberErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePhoneNumberError {
@@ -29440,50 +29440,50 @@ impl UpdatePhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdatePhoneNumberErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdatePhoneNumberErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -29532,7 +29532,7 @@ pub enum UpdatePhoneNumberSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePhoneNumberSettingsError {
@@ -29604,42 +29604,42 @@ impl UpdatePhoneNumberSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -29688,7 +29688,7 @@ pub enum UpdateProxySessionErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProxySessionError {
@@ -29757,49 +29757,49 @@ impl UpdateProxySessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProxySessionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProxySessionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProxySessionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProxySessionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProxySessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProxySessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProxySessionErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProxySessionErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProxySessionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProxySessionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProxySessionErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProxySessionErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProxySessionErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateProxySessionErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -29849,7 +29849,7 @@ pub enum UpdateRoomErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoomError {
@@ -29918,34 +29918,34 @@ impl UpdateRoomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoomErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoomErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoomErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoomErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoomErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateRoomErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `UpdateRoomErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateRoomErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -29995,7 +29995,7 @@ pub enum UpdateRoomMembershipErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRoomMembershipError {
@@ -30064,49 +30064,49 @@ impl UpdateRoomMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRoomMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateRoomMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoomMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoomMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateRoomMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoomMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoomMembershipErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRoomMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoomMembershipErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoomMembershipErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateRoomMembershipErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoomMembershipErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoomMembershipErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRoomMembershipErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoomMembershipErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoomMembershipErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateRoomMembershipErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRoomMembershipErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRoomMembershipErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateRoomMembershipErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -30159,7 +30159,7 @@ pub enum UpdateSipMediaApplicationErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSipMediaApplicationError {
@@ -30233,56 +30233,56 @@ impl UpdateSipMediaApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -30335,7 +30335,7 @@ pub enum UpdateSipMediaApplicationCallErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSipMediaApplicationCallError {
@@ -30418,56 +30418,56 @@ impl UpdateSipMediaApplicationCallError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationCallErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationCallErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationCallErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationCallErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationCallErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationCallErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationCallErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationCallErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationCallErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipMediaApplicationCallErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -30531,7 +30531,7 @@ pub enum UpdateSipRuleErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSipRuleError {
@@ -30602,51 +30602,51 @@ impl UpdateSipRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateSipRuleErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateSipRuleErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateSipRuleErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateSipRuleErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipRuleErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipRuleErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipRuleErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSipRuleErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSipRuleErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateSipRuleErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -30698,7 +30698,7 @@ pub enum UpdateUserErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserError {
@@ -30767,34 +30767,34 @@ impl UpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::ServiceFailureException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::ThrottledClientException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -30844,7 +30844,7 @@ pub enum UpdateUserSettingsErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserSettingsError {
@@ -30913,49 +30913,49 @@ impl UpdateUserSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateUserSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateUserSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserSettingsErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateUserSettingsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserSettingsErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserSettingsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateUserSettingsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserSettingsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserSettingsErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateUserSettingsErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserSettingsErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserSettingsErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateUserSettingsErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -31005,7 +31005,7 @@ pub enum UpdateVoiceConnectorErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVoiceConnectorError {
@@ -31074,49 +31074,49 @@ impl UpdateVoiceConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -31169,7 +31169,7 @@ pub enum UpdateVoiceConnectorGroupErrorKind {
     ThrottledClientException(crate::error::ThrottledClientException),
     /// <p>The client is not currently authorized to make the request.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVoiceConnectorGroupError {
@@ -31243,56 +31243,56 @@ impl UpdateVoiceConnectorGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorGroupErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorGroupErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorGroupErrorKind::ServiceFailureException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorGroupErrorKind::ThrottledClientException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::ThrottledClientException`.
     pub fn is_throttled_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,

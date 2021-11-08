@@ -427,6 +427,62 @@ mod tests {
     }
 
     #[test]
+    fn test_sign_headers_space_trimming() {
+        let settings = SigningSettings::default();
+        let params = SigningParams {
+            access_key: "AKIDEXAMPLE",
+            secret_key: "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY",
+            security_token: None,
+            region: "us-east-1",
+            service_name: "service",
+            date_time: parse_date_time("20150830T123600Z").unwrap(),
+            settings,
+        };
+
+        let original = http::Request::builder()
+            .uri("https://some-endpoint.some-region.amazonaws.com")
+            .header(
+                "some-header",
+                HeaderValue::from_str("  test  test   ").unwrap(),
+            )
+            .body("")
+            .unwrap();
+        let signable = SignableRequest::from(&original);
+        let out = sign(signable, &params).unwrap();
+        assert_eq!(
+            "0bd74dbf6f21161f61a1a3a1c313b6a4bc67ec57bf5ea9ae956a63753ca1d7f7",
+            out.signature
+        );
+
+        let mut signed = original;
+        out.output.apply_to_request(&mut signed);
+
+        let mut expected = http::Request::builder()
+            .uri("https://some-endpoint.some-region.amazonaws.com")
+            .header(
+                "some-header",
+                HeaderValue::from_str("  test  test   ").unwrap(),
+            )
+            .header(
+                "x-amz-date",
+                HeaderValue::from_str("20150830T123600Z").unwrap(),
+            )
+            .header(
+                "authorization",
+                HeaderValue::from_str(
+                    "AWS4-HMAC-SHA256 \
+                        Credential=AKIDEXAMPLE/20150830/us-east-1/service/aws4_request, \
+                        SignedHeaders=host;some-header;x-amz-date, \
+                        Signature=0bd74dbf6f21161f61a1a3a1c313b6a4bc67ec57bf5ea9ae956a63753ca1d7f7",
+                )
+                .unwrap(),
+            )
+            .body("")
+            .unwrap();
+        assert_req_eq!(expected, signed);
+    }
+
+    #[test]
     fn apply_signing_instructions_headers() {
         let mut headers = HeaderMap::new();
         headers.insert("some-header", HeaderValue::from_static("foo"));

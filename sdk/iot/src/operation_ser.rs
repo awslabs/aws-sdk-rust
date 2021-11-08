@@ -343,7 +343,11 @@ pub fn ser_payload_create_topic_rule_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_create_topic_rule_input_topic_rule_payload(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -591,7 +595,11 @@ pub fn ser_payload_replace_topic_rule_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_replace_topic_rule_input_topic_rule_payload(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -626,7 +634,11 @@ pub fn ser_payload_set_logging_options_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_iot_synthetic_set_logging_options_input_logging_options_payload(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -1041,6 +1053,10 @@ pub fn serialize_operation_crate_operation_validate_security_profile_behaviors(
     );
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn rest_json_unsetpayload() -> std::vec::Vec<u8> {
+    b"{}"[..].into()
 }
 
 pub fn serialize_member_com_amazonaws_iot_synthetic_create_topic_rule_input_topic_rule_payload(

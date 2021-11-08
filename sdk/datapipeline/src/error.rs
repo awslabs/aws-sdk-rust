@@ -20,7 +20,7 @@ pub enum ActivatePipelineErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ActivatePipelineError {
@@ -86,28 +86,28 @@ impl ActivatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ActivatePipelineErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ActivatePipelineErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ActivatePipelineErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ActivatePipelineErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ActivatePipelineErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivatePipelineErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ActivatePipelineErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `ActivatePipelineErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivatePipelineErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `ActivatePipelineErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `ActivatePipelineErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -148,7 +148,7 @@ pub enum AddTagsErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsError {
@@ -214,19 +214,19 @@ impl AddTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::PipelineDeletedException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::PipelineNotFoundException(_))
     }
@@ -260,7 +260,7 @@ pub enum CreatePipelineErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePipelineError {
@@ -324,11 +324,11 @@ impl CreatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, CreatePipelineErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -367,7 +367,7 @@ pub enum DeactivatePipelineErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeactivatePipelineError {
@@ -433,28 +433,28 @@ impl DeactivatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeactivatePipelineErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeactivatePipelineErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DeactivatePipelineErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DeactivatePipelineErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeactivatePipelineErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivatePipelineErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivatePipelineErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `DeactivatePipelineErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivatePipelineErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivatePipelineErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `DeactivatePipelineErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -493,7 +493,7 @@ pub enum DeletePipelineErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePipelineError {
@@ -558,18 +558,18 @@ impl DeletePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DeletePipelineErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePipelineErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -609,7 +609,7 @@ pub enum DescribeObjectsErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeObjectsError {
@@ -675,28 +675,28 @@ impl DescribeObjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeObjectsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeObjectsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeObjectsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeObjectsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeObjectsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeObjectsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeObjectsErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `DescribeObjectsErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeObjectsErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeObjectsErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeObjectsErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -737,7 +737,7 @@ pub enum DescribePipelinesErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePipelinesError {
@@ -803,28 +803,28 @@ impl DescribePipelinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePipelinesErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribePipelinesErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribePipelinesErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DescribePipelinesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribePipelinesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePipelinesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePipelinesErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `DescribePipelinesErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePipelinesErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePipelinesErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePipelinesErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -867,7 +867,7 @@ pub enum EvaluateExpressionErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The specified task was not found. </p>
     TaskNotFoundException(crate::error::TaskNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EvaluateExpressionError {
@@ -934,35 +934,35 @@ impl EvaluateExpressionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EvaluateExpressionErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `EvaluateExpressionErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             EvaluateExpressionErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `EvaluateExpressionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `EvaluateExpressionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluateExpressionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluateExpressionErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `EvaluateExpressionErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluateExpressionErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluateExpressionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `EvaluateExpressionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluateExpressionErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluateExpressionErrorKind::TaskNotFoundException`.
+    /// Returns `true` if the error kind is `EvaluateExpressionErrorKind::TaskNotFoundException`.
     pub fn is_task_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1004,7 +1004,7 @@ pub enum GetPipelineDefinitionErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPipelineDefinitionError {
@@ -1070,28 +1070,28 @@ impl GetPipelineDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPipelineDefinitionErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `GetPipelineDefinitionErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             GetPipelineDefinitionErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `GetPipelineDefinitionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetPipelineDefinitionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPipelineDefinitionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetPipelineDefinitionErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `GetPipelineDefinitionErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPipelineDefinitionErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPipelineDefinitionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `GetPipelineDefinitionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1128,7 +1128,7 @@ pub enum ListPipelinesErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPipelinesError {
@@ -1192,11 +1192,11 @@ impl ListPipelinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPipelinesErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListPipelinesErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, ListPipelinesErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `ListPipelinesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListPipelinesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1233,7 +1233,7 @@ pub enum PollForTaskErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified task was not found. </p>
     TaskNotFoundException(crate::error::TaskNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PollForTaskError {
@@ -1298,15 +1298,15 @@ impl PollForTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PollForTaskErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `PollForTaskErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, PollForTaskErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `PollForTaskErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PollForTaskErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, PollForTaskErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `PollForTaskErrorKind::TaskNotFoundException`.
+    /// Returns `true` if the error kind is `PollForTaskErrorKind::TaskNotFoundException`.
     pub fn is_task_not_found_exception(&self) -> bool {
         matches!(&self.kind, PollForTaskErrorKind::TaskNotFoundException(_))
     }
@@ -1343,7 +1343,7 @@ pub enum PutPipelineDefinitionErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPipelineDefinitionError {
@@ -1409,28 +1409,28 @@ impl PutPipelineDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutPipelineDefinitionErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `PutPipelineDefinitionErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             PutPipelineDefinitionErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `PutPipelineDefinitionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutPipelineDefinitionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPipelineDefinitionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutPipelineDefinitionErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `PutPipelineDefinitionErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPipelineDefinitionErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `PutPipelineDefinitionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `PutPipelineDefinitionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1471,7 +1471,7 @@ pub enum QueryObjectsErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for QueryObjectsError {
@@ -1537,25 +1537,25 @@ impl QueryObjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `QueryObjectsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `QueryObjectsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, QueryObjectsErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `QueryObjectsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `QueryObjectsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryObjectsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `QueryObjectsErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `QueryObjectsErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryObjectsErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `QueryObjectsErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `QueryObjectsErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1596,7 +1596,7 @@ pub enum RemoveTagsErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsError {
@@ -1662,19 +1662,19 @@ impl RemoveTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, RemoveTagsErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, RemoveTagsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(&self.kind, RemoveTagsErrorKind::PipelineDeletedException(_))
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1717,7 +1717,7 @@ pub enum ReportTaskProgressErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The specified task was not found. </p>
     TaskNotFoundException(crate::error::TaskNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReportTaskProgressError {
@@ -1784,35 +1784,35 @@ impl ReportTaskProgressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReportTaskProgressErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ReportTaskProgressErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ReportTaskProgressErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ReportTaskProgressErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ReportTaskProgressErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReportTaskProgressErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ReportTaskProgressErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `ReportTaskProgressErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReportTaskProgressErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `ReportTaskProgressErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `ReportTaskProgressErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReportTaskProgressErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ReportTaskProgressErrorKind::TaskNotFoundException`.
+    /// Returns `true` if the error kind is `ReportTaskProgressErrorKind::TaskNotFoundException`.
     pub fn is_task_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1850,7 +1850,7 @@ pub enum ReportTaskRunnerHeartbeatErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReportTaskRunnerHeartbeatError {
@@ -1914,14 +1914,14 @@ impl ReportTaskRunnerHeartbeatError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReportTaskRunnerHeartbeatErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ReportTaskRunnerHeartbeatErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ReportTaskRunnerHeartbeatErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ReportTaskRunnerHeartbeatErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ReportTaskRunnerHeartbeatErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1960,7 +1960,7 @@ pub enum SetStatusErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetStatusError {
@@ -2026,19 +2026,19 @@ impl SetStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetStatusErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `SetStatusErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, SetStatusErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `SetStatusErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `SetStatusErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, SetStatusErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `SetStatusErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `SetStatusErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(&self.kind, SetStatusErrorKind::PipelineDeletedException(_))
     }
-    /// Returns true if the error kind is `SetStatusErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `SetStatusErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(&self.kind, SetStatusErrorKind::PipelineNotFoundException(_))
     }
@@ -2078,7 +2078,7 @@ pub enum SetTaskStatusErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The specified task was not found. </p>
     TaskNotFoundException(crate::error::TaskNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTaskStatusError {
@@ -2145,32 +2145,32 @@ impl SetTaskStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetTaskStatusErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `SetTaskStatusErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, SetTaskStatusErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `SetTaskStatusErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `SetTaskStatusErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTaskStatusErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SetTaskStatusErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `SetTaskStatusErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTaskStatusErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `SetTaskStatusErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `SetTaskStatusErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTaskStatusErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetTaskStatusErrorKind::TaskNotFoundException`.
+    /// Returns `true` if the error kind is `SetTaskStatusErrorKind::TaskNotFoundException`.
     pub fn is_task_not_found_exception(&self) -> bool {
         matches!(&self.kind, SetTaskStatusErrorKind::TaskNotFoundException(_))
     }
@@ -2209,7 +2209,7 @@ pub enum ValidatePipelineDefinitionErrorKind {
     PipelineDeletedException(crate::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ValidatePipelineDefinitionError {
@@ -2275,28 +2275,28 @@ impl ValidatePipelineDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ValidatePipelineDefinitionErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ValidatePipelineDefinitionErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ValidatePipelineDefinitionErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ValidatePipelineDefinitionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ValidatePipelineDefinitionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidatePipelineDefinitionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ValidatePipelineDefinitionErrorKind::PipelineDeletedException`.
+    /// Returns `true` if the error kind is `ValidatePipelineDefinitionErrorKind::PipelineDeletedException`.
     pub fn is_pipeline_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidatePipelineDefinitionErrorKind::PipelineDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `ValidatePipelineDefinitionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `ValidatePipelineDefinitionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

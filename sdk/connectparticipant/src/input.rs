@@ -78,7 +78,7 @@ pub type CompleteAttachmentUploadInputOperationRetryAlias = aws_http::AwsErrorRe
 impl CompleteAttachmentUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteAttachmentUpload`](crate::operation::CompleteAttachmentUpload)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -135,6 +135,7 @@ impl CompleteAttachmentUploadInput {
             input: &crate::input::CompleteAttachmentUploadInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -197,9 +198,10 @@ impl CompleteAttachmentUploadInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -223,6 +225,7 @@ pub mod create_participant_connection_input {
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
         pub(crate) participant_token: std::option::Option<std::string::String>,
+        pub(crate) connect_participant: std::option::Option<bool>,
     }
     impl Builder {
         /// Appends an item to `r#type`.
@@ -245,20 +248,32 @@ pub mod create_participant_connection_input {
             self
         }
         /// <p>This is a header parameter.</p>
-        /// <p>The Participant Token as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
         /// API response.</p>
         pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.participant_token = Some(input.into());
             self
         }
         /// <p>This is a header parameter.</p>
-        /// <p>The Participant Token as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
         /// API response.</p>
         pub fn set_participant_token(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.participant_token = input;
+            self
+        }
+        /// <p>Amazon Connect Participant is used to mark the participant as connected for message
+        /// streaming.</p>
+        pub fn connect_participant(mut self, input: bool) -> Self {
+            self.connect_participant = Some(input);
+            self
+        }
+        /// <p>Amazon Connect Participant is used to mark the participant as connected for message
+        /// streaming.</p>
+        pub fn set_connect_participant(mut self, input: std::option::Option<bool>) -> Self {
+            self.connect_participant = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateParticipantConnectionInput`](crate::input::CreateParticipantConnectionInput)
@@ -271,6 +286,7 @@ pub mod create_participant_connection_input {
             Ok(crate::input::CreateParticipantConnectionInput {
                 r#type: self.r#type,
                 participant_token: self.participant_token,
+                connect_participant: self.connect_participant,
             })
         }
     }
@@ -283,7 +299,7 @@ pub type CreateParticipantConnectionInputOperationRetryAlias = aws_http::AwsErro
 impl CreateParticipantConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateParticipantConnection`](crate::operation::CreateParticipantConnection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -339,6 +355,7 @@ impl CreateParticipantConnectionInput {
             input: &crate::input::CreateParticipantConnectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -394,9 +411,10 @@ impl CreateParticipantConnectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -468,7 +486,7 @@ pub type DisconnectParticipantInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DisconnectParticipantInput {
     /// Consumes the builder and constructs an Operation<[`DisconnectParticipant`](crate::operation::DisconnectParticipant)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -524,6 +542,7 @@ impl DisconnectParticipantInput {
             input: &crate::input::DisconnectParticipantInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -584,9 +603,10 @@ impl DisconnectParticipantInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -659,7 +679,7 @@ pub type GetAttachmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`GetAttachment`](crate::operation::GetAttachment)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -715,6 +735,7 @@ impl GetAttachmentInput {
             input: &crate::input::GetAttachmentInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -771,9 +792,10 @@ impl GetAttachmentInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -913,7 +935,7 @@ pub type GetTranscriptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetTranscriptInput {
     /// Consumes the builder and constructs an Operation<[`GetTranscript`](crate::operation::GetTranscript)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -969,6 +991,7 @@ impl GetTranscriptInput {
             input: &crate::input::GetTranscriptInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1025,9 +1048,10 @@ impl GetTranscriptInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1141,7 +1165,7 @@ pub type SendEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SendEventInput {
     /// Consumes the builder and constructs an Operation<[`SendEvent`](crate::operation::SendEvent)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1197,6 +1221,7 @@ impl SendEventInput {
             input: &crate::input::SendEventInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1254,9 +1279,10 @@ impl SendEventInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1352,7 +1378,7 @@ pub type SendMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SendMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendMessage`](crate::operation::SendMessage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1408,6 +1434,7 @@ impl SendMessageInput {
             input: &crate::input::SendMessageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1467,9 +1494,10 @@ impl SendMessageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1578,7 +1606,7 @@ pub type StartAttachmentUploadInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl StartAttachmentUploadInput {
     /// Consumes the builder and constructs an Operation<[`StartAttachmentUpload`](crate::operation::StartAttachmentUpload)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1635,6 +1663,7 @@ impl StartAttachmentUploadInput {
             input: &crate::input::StartAttachmentUploadInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1697,9 +1726,10 @@ impl StartAttachmentUploadInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1881,15 +1911,19 @@ pub struct CreateParticipantConnectionInput {
     /// <p>Type of connection information required.</p>
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
     /// <p>This is a header parameter.</p>
-    /// <p>The Participant Token as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+    /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
     /// API response.</p>
     pub participant_token: std::option::Option<std::string::String>,
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for message
+    /// streaming.</p>
+    pub connect_participant: std::option::Option<bool>,
 }
 impl std::fmt::Debug for CreateParticipantConnectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateParticipantConnectionInput");
         formatter.field("r#type", &self.r#type);
         formatter.field("participant_token", &self.participant_token);
+        formatter.field("connect_participant", &self.connect_participant);
         formatter.finish()
     }
 }

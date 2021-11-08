@@ -41,6 +41,8 @@ pub struct StartStreamTranscriptionOutput {
     pub content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
     /// <p>Lists the PII entity types you specified in your request.</p>
     pub pii_entity_types: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub language_model_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartStreamTranscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -71,6 +73,7 @@ impl std::fmt::Debug for StartStreamTranscriptionOutput {
         );
         formatter.field("content_redaction_type", &self.content_redaction_type);
         formatter.field("pii_entity_types", &self.pii_entity_types);
+        formatter.field("language_model_name", &self.language_model_name);
         formatter.finish()
     }
 }
@@ -105,6 +108,7 @@ pub mod start_stream_transcription_output {
             std::option::Option<crate::model::ContentIdentificationType>,
         pub(crate) content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
         pub(crate) pii_entity_types: std::option::Option<std::string::String>,
+        pub(crate) language_model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An identifier for the streaming transcription.</p>
@@ -337,6 +341,19 @@ pub mod start_stream_transcription_output {
             self.pii_entity_types = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_model_name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_language_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_model_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
         pub fn build(
             self,
@@ -385,6 +402,8 @@ pub mod start_stream_transcription_output {
                     content_redaction_type: self.content_redaction_type
                     ,
                     pii_entity_types: self.pii_entity_types
+                    ,
+                    language_model_name: self.language_model_name
                     ,
                 }
             )

@@ -306,6 +306,16 @@ pub fn serialize_operation_crate_operation_get_firewall_rule_group_policy(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_get_resolver_config(
+    input: &crate::input::GetResolverConfigInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_resolver_config_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_get_resolver_dnssec_config(
     input: &crate::input::GetResolverDnssecConfigInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
@@ -488,6 +498,19 @@ pub fn serialize_operation_crate_operation_list_firewall_rules(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_list_firewall_rules_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_resolver_configs(
+    input: &crate::input::ListResolverConfigsInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_resolver_configs_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -691,6 +714,19 @@ pub fn serialize_operation_crate_operation_update_firewall_rule_group_associatio
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_update_firewall_rule_group_association_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_resolver_config(
+    input: &crate::input::UpdateResolverConfigInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_resolver_config_input(
         &mut object,
         input,
     );

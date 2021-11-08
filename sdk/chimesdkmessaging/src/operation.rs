@@ -755,6 +755,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateChannelFlow 
     }
 }
 
+/// Operation shape for `GetChannelMembershipPreferences`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_channel_membership_preferences`](crate::client::Client::get_channel_membership_preferences).
+///
+/// See [`crate::client::fluent_builders::GetChannelMembershipPreferences`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetChannelMembershipPreferences {
+    _private: (),
+}
+impl GetChannelMembershipPreferences {
+    /// Creates a new builder-style object to manufacture [`GetChannelMembershipPreferencesInput`](crate::input::GetChannelMembershipPreferencesInput)
+    pub fn builder() -> crate::input::get_channel_membership_preferences_input::Builder {
+        crate::input::get_channel_membership_preferences_input::Builder::default()
+    }
+    /// Creates a new `GetChannelMembershipPreferences` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetChannelMembershipPreferences {
+    type Output = std::result::Result<
+        crate::output::GetChannelMembershipPreferencesOutput,
+        crate::error::GetChannelMembershipPreferencesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_channel_membership_preferences_error(response)
+        } else {
+            crate::operation_deser::parse_get_channel_membership_preferences_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetChannelMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1202,6 +1236,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutChannelMembershipPreferences`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_channel_membership_preferences`](crate::client::Client::put_channel_membership_preferences).
+///
+/// See [`crate::client::fluent_builders::PutChannelMembershipPreferences`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutChannelMembershipPreferences {
+    _private: (),
+}
+impl PutChannelMembershipPreferences {
+    /// Creates a new builder-style object to manufacture [`PutChannelMembershipPreferencesInput`](crate::input::PutChannelMembershipPreferencesInput)
+    pub fn builder() -> crate::input::put_channel_membership_preferences_input::Builder {
+        crate::input::put_channel_membership_preferences_input::Builder::default()
+    }
+    /// Creates a new `PutChannelMembershipPreferences` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutChannelMembershipPreferences {
+    type Output = std::result::Result<
+        crate::output::PutChannelMembershipPreferencesOutput,
+        crate::error::PutChannelMembershipPreferencesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_channel_membership_preferences_error(response)
+        } else {
+            crate::operation_deser::parse_put_channel_membership_preferences_response(response)
         }
     }
 }

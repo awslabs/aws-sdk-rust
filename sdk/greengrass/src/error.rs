@@ -16,7 +16,7 @@ pub enum AssociateRoleToGroupErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateRoleToGroupError {
@@ -80,14 +80,14 @@ impl AssociateRoleToGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateRoleToGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AssociateRoleToGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateRoleToGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateRoleToGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AssociateRoleToGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -122,7 +122,7 @@ pub enum AssociateServiceRoleToAccountErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateServiceRoleToAccountError {
@@ -191,14 +191,14 @@ impl AssociateServiceRoleToAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateServiceRoleToAccountErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AssociateServiceRoleToAccountErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateServiceRoleToAccountErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateServiceRoleToAccountErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AssociateServiceRoleToAccountErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -233,7 +233,7 @@ pub struct CreateConnectorDefinitionError {
 pub enum CreateConnectorDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectorDefinitionError {
@@ -296,7 +296,7 @@ impl CreateConnectorDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectorDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConnectorDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -328,7 +328,7 @@ pub struct CreateConnectorDefinitionVersionError {
 pub enum CreateConnectorDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectorDefinitionVersionError {
@@ -394,7 +394,7 @@ impl CreateConnectorDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectorDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConnectorDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -426,7 +426,7 @@ pub struct CreateCoreDefinitionError {
 pub enum CreateCoreDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCoreDefinitionError {
@@ -489,7 +489,7 @@ impl CreateCoreDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCoreDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateCoreDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -521,7 +521,7 @@ pub struct CreateCoreDefinitionVersionError {
 pub enum CreateCoreDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCoreDefinitionVersionError {
@@ -584,7 +584,7 @@ impl CreateCoreDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCoreDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateCoreDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -616,7 +616,7 @@ pub struct CreateDeploymentError {
 pub enum CreateDeploymentErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentError {
@@ -679,7 +679,7 @@ impl CreateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -711,7 +711,7 @@ pub struct CreateDeviceDefinitionError {
 pub enum CreateDeviceDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeviceDefinitionError {
@@ -774,7 +774,7 @@ impl CreateDeviceDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeviceDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDeviceDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -806,7 +806,7 @@ pub struct CreateDeviceDefinitionVersionError {
 pub enum CreateDeviceDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeviceDefinitionVersionError {
@@ -872,7 +872,7 @@ impl CreateDeviceDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeviceDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDeviceDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -904,7 +904,7 @@ pub struct CreateFunctionDefinitionError {
 pub enum CreateFunctionDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFunctionDefinitionError {
@@ -967,7 +967,7 @@ impl CreateFunctionDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFunctionDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateFunctionDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -999,7 +999,7 @@ pub struct CreateFunctionDefinitionVersionError {
 pub enum CreateFunctionDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFunctionDefinitionVersionError {
@@ -1065,7 +1065,7 @@ impl CreateFunctionDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFunctionDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateFunctionDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1097,7 +1097,7 @@ pub struct CreateGroupError {
 pub enum CreateGroupErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupError {
@@ -1160,7 +1160,7 @@ impl CreateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::BadRequestException(_))
     }
@@ -1191,7 +1191,7 @@ pub enum CreateGroupCertificateAuthorityErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupCertificateAuthorityError {
@@ -1260,14 +1260,14 @@ impl CreateGroupCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupCertificateAuthorityErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateGroupCertificateAuthorityErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupCertificateAuthorityErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupCertificateAuthorityErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateGroupCertificateAuthorityErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1302,7 +1302,7 @@ pub struct CreateGroupVersionError {
 pub enum CreateGroupVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupVersionError {
@@ -1365,7 +1365,7 @@ impl CreateGroupVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateGroupVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1397,7 +1397,7 @@ pub struct CreateLoggerDefinitionError {
 pub enum CreateLoggerDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoggerDefinitionError {
@@ -1460,7 +1460,7 @@ impl CreateLoggerDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoggerDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateLoggerDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1492,7 +1492,7 @@ pub struct CreateLoggerDefinitionVersionError {
 pub enum CreateLoggerDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoggerDefinitionVersionError {
@@ -1558,7 +1558,7 @@ impl CreateLoggerDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoggerDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateLoggerDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1590,7 +1590,7 @@ pub struct CreateResourceDefinitionError {
 pub enum CreateResourceDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceDefinitionError {
@@ -1653,7 +1653,7 @@ impl CreateResourceDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourceDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateResourceDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1685,7 +1685,7 @@ pub struct CreateResourceDefinitionVersionError {
 pub enum CreateResourceDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceDefinitionVersionError {
@@ -1751,7 +1751,7 @@ impl CreateResourceDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourceDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateResourceDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1785,7 +1785,7 @@ pub enum CreateSoftwareUpdateJobErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSoftwareUpdateJobError {
@@ -1849,14 +1849,14 @@ impl CreateSoftwareUpdateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSoftwareUpdateJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSoftwareUpdateJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSoftwareUpdateJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSoftwareUpdateJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateSoftwareUpdateJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1889,7 +1889,7 @@ pub struct CreateSubscriptionDefinitionError {
 pub enum CreateSubscriptionDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSubscriptionDefinitionError {
@@ -1952,7 +1952,7 @@ impl CreateSubscriptionDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSubscriptionDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSubscriptionDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1984,7 +1984,7 @@ pub struct CreateSubscriptionDefinitionVersionError {
 pub enum CreateSubscriptionDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSubscriptionDefinitionVersionError {
@@ -2052,7 +2052,7 @@ impl CreateSubscriptionDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSubscriptionDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSubscriptionDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2088,7 +2088,7 @@ pub struct DeleteConnectorDefinitionError {
 pub enum DeleteConnectorDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectorDefinitionError {
@@ -2151,7 +2151,7 @@ impl DeleteConnectorDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectorDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteConnectorDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2183,7 +2183,7 @@ pub struct DeleteCoreDefinitionError {
 pub enum DeleteCoreDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCoreDefinitionError {
@@ -2246,7 +2246,7 @@ impl DeleteCoreDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCoreDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteCoreDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2278,7 +2278,7 @@ pub struct DeleteDeviceDefinitionError {
 pub enum DeleteDeviceDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeviceDefinitionError {
@@ -2341,7 +2341,7 @@ impl DeleteDeviceDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeviceDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteDeviceDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2373,7 +2373,7 @@ pub struct DeleteFunctionDefinitionError {
 pub enum DeleteFunctionDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionDefinitionError {
@@ -2436,7 +2436,7 @@ impl DeleteFunctionDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFunctionDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteFunctionDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2468,7 +2468,7 @@ pub struct DeleteGroupError {
 pub enum DeleteGroupErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupError {
@@ -2531,7 +2531,7 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::BadRequestException(_))
     }
@@ -2560,7 +2560,7 @@ pub struct DeleteLoggerDefinitionError {
 pub enum DeleteLoggerDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoggerDefinitionError {
@@ -2623,7 +2623,7 @@ impl DeleteLoggerDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLoggerDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteLoggerDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2655,7 +2655,7 @@ pub struct DeleteResourceDefinitionError {
 pub enum DeleteResourceDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceDefinitionError {
@@ -2718,7 +2718,7 @@ impl DeleteResourceDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourceDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteResourceDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2750,7 +2750,7 @@ pub struct DeleteSubscriptionDefinitionError {
 pub enum DeleteSubscriptionDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSubscriptionDefinitionError {
@@ -2813,7 +2813,7 @@ impl DeleteSubscriptionDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSubscriptionDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSubscriptionDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2847,7 +2847,7 @@ pub enum DisassociateRoleFromGroupErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateRoleFromGroupError {
@@ -2913,14 +2913,14 @@ impl DisassociateRoleFromGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateRoleFromGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DisassociateRoleFromGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateRoleFromGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateRoleFromGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DisassociateRoleFromGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2955,7 +2955,7 @@ pub struct DisassociateServiceRoleFromAccountError {
 pub enum DisassociateServiceRoleFromAccountErrorKind {
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateServiceRoleFromAccountError {
@@ -3023,7 +3023,7 @@ impl DisassociateServiceRoleFromAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateServiceRoleFromAccountErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DisassociateServiceRoleFromAccountErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3059,7 +3059,7 @@ pub enum GetAssociatedRoleErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssociatedRoleError {
@@ -3123,14 +3123,14 @@ impl GetAssociatedRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssociatedRoleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAssociatedRoleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssociatedRoleErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssociatedRoleErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetAssociatedRoleErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3163,7 +3163,7 @@ pub struct GetBulkDeploymentStatusError {
 pub enum GetBulkDeploymentStatusErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBulkDeploymentStatusError {
@@ -3226,7 +3226,7 @@ impl GetBulkDeploymentStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBulkDeploymentStatusErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBulkDeploymentStatusErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3260,7 +3260,7 @@ pub enum GetConnectivityInfoErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectivityInfoError {
@@ -3324,14 +3324,14 @@ impl GetConnectivityInfoError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectivityInfoErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetConnectivityInfoErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConnectivityInfoErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetConnectivityInfoErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetConnectivityInfoErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3364,7 +3364,7 @@ pub struct GetConnectorDefinitionError {
 pub enum GetConnectorDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectorDefinitionError {
@@ -3427,7 +3427,7 @@ impl GetConnectorDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectorDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetConnectorDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3459,7 +3459,7 @@ pub struct GetConnectorDefinitionVersionError {
 pub enum GetConnectorDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectorDefinitionVersionError {
@@ -3525,7 +3525,7 @@ impl GetConnectorDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectorDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetConnectorDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3557,7 +3557,7 @@ pub struct GetCoreDefinitionError {
 pub enum GetCoreDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCoreDefinitionError {
@@ -3620,7 +3620,7 @@ impl GetCoreDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCoreDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCoreDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3652,7 +3652,7 @@ pub struct GetCoreDefinitionVersionError {
 pub enum GetCoreDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCoreDefinitionVersionError {
@@ -3715,7 +3715,7 @@ impl GetCoreDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCoreDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCoreDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3747,7 +3747,7 @@ pub struct GetDeploymentStatusError {
 pub enum GetDeploymentStatusErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentStatusError {
@@ -3810,7 +3810,7 @@ impl GetDeploymentStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentStatusErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDeploymentStatusErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3842,7 +3842,7 @@ pub struct GetDeviceDefinitionError {
 pub enum GetDeviceDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceDefinitionError {
@@ -3905,7 +3905,7 @@ impl GetDeviceDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDeviceDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3937,7 +3937,7 @@ pub struct GetDeviceDefinitionVersionError {
 pub enum GetDeviceDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceDefinitionVersionError {
@@ -4000,7 +4000,7 @@ impl GetDeviceDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDeviceDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4032,7 +4032,7 @@ pub struct GetFunctionDefinitionError {
 pub enum GetFunctionDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionDefinitionError {
@@ -4095,7 +4095,7 @@ impl GetFunctionDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetFunctionDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4127,7 +4127,7 @@ pub struct GetFunctionDefinitionVersionError {
 pub enum GetFunctionDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionDefinitionVersionError {
@@ -4190,7 +4190,7 @@ impl GetFunctionDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFunctionDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetFunctionDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4222,7 +4222,7 @@ pub struct GetGroupError {
 pub enum GetGroupErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupError {
@@ -4285,7 +4285,7 @@ impl GetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::BadRequestException(_))
     }
@@ -4316,7 +4316,7 @@ pub enum GetGroupCertificateAuthorityErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupCertificateAuthorityError {
@@ -4382,14 +4382,14 @@ impl GetGroupCertificateAuthorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupCertificateAuthorityErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGroupCertificateAuthorityErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupCertificateAuthorityErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupCertificateAuthorityErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetGroupCertificateAuthorityErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4426,7 +4426,7 @@ pub enum GetGroupCertificateConfigurationErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupCertificateConfigurationError {
@@ -4495,14 +4495,14 @@ impl GetGroupCertificateConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupCertificateConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGroupCertificateConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupCertificateConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupCertificateConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetGroupCertificateConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4537,7 +4537,7 @@ pub struct GetGroupVersionError {
 pub enum GetGroupVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupVersionError {
@@ -4600,7 +4600,7 @@ impl GetGroupVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGroupVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetGroupVersionErrorKind::BadRequestException(_))
     }
@@ -4629,7 +4629,7 @@ pub struct GetLoggerDefinitionError {
 pub enum GetLoggerDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoggerDefinitionError {
@@ -4692,7 +4692,7 @@ impl GetLoggerDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLoggerDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetLoggerDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4724,7 +4724,7 @@ pub struct GetLoggerDefinitionVersionError {
 pub enum GetLoggerDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoggerDefinitionVersionError {
@@ -4787,7 +4787,7 @@ impl GetLoggerDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLoggerDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetLoggerDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4819,7 +4819,7 @@ pub struct GetResourceDefinitionError {
 pub enum GetResourceDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceDefinitionError {
@@ -4882,7 +4882,7 @@ impl GetResourceDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetResourceDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4914,7 +4914,7 @@ pub struct GetResourceDefinitionVersionError {
 pub enum GetResourceDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceDefinitionVersionError {
@@ -4977,7 +4977,7 @@ impl GetResourceDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetResourceDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5009,7 +5009,7 @@ pub struct GetServiceRoleForAccountError {
 pub enum GetServiceRoleForAccountErrorKind {
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceRoleForAccountError {
@@ -5074,7 +5074,7 @@ impl GetServiceRoleForAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceRoleForAccountErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetServiceRoleForAccountErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5106,7 +5106,7 @@ pub struct GetSubscriptionDefinitionError {
 pub enum GetSubscriptionDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSubscriptionDefinitionError {
@@ -5169,7 +5169,7 @@ impl GetSubscriptionDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSubscriptionDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSubscriptionDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5201,7 +5201,7 @@ pub struct GetSubscriptionDefinitionVersionError {
 pub enum GetSubscriptionDefinitionVersionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSubscriptionDefinitionVersionError {
@@ -5267,7 +5267,7 @@ impl GetSubscriptionDefinitionVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSubscriptionDefinitionVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSubscriptionDefinitionVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5301,7 +5301,7 @@ pub enum GetThingRuntimeConfigurationErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetThingRuntimeConfigurationError {
@@ -5367,14 +5367,14 @@ impl GetThingRuntimeConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetThingRuntimeConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetThingRuntimeConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThingRuntimeConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetThingRuntimeConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetThingRuntimeConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5409,7 +5409,7 @@ pub struct ListBulkDeploymentDetailedReportsError {
 pub enum ListBulkDeploymentDetailedReportsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBulkDeploymentDetailedReportsError {
@@ -5477,7 +5477,7 @@ impl ListBulkDeploymentDetailedReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBulkDeploymentDetailedReportsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListBulkDeploymentDetailedReportsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5509,7 +5509,7 @@ pub struct ListBulkDeploymentsError {
 pub enum ListBulkDeploymentsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBulkDeploymentsError {
@@ -5572,7 +5572,7 @@ impl ListBulkDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBulkDeploymentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListBulkDeploymentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5602,7 +5602,7 @@ pub struct ListConnectorDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConnectorDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConnectorDefinitionsError {
@@ -5688,7 +5688,7 @@ pub struct ListConnectorDefinitionVersionsError {
 pub enum ListConnectorDefinitionVersionsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConnectorDefinitionVersionsError {
@@ -5754,7 +5754,7 @@ impl ListConnectorDefinitionVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConnectorDefinitionVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListConnectorDefinitionVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5784,7 +5784,7 @@ pub struct ListCoreDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCoreDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCoreDefinitionsError {
@@ -5870,7 +5870,7 @@ pub struct ListCoreDefinitionVersionsError {
 pub enum ListCoreDefinitionVersionsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCoreDefinitionVersionsError {
@@ -5933,7 +5933,7 @@ impl ListCoreDefinitionVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCoreDefinitionVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListCoreDefinitionVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5965,7 +5965,7 @@ pub struct ListDeploymentsError {
 pub enum ListDeploymentsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentsError {
@@ -6028,7 +6028,7 @@ impl ListDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListDeploymentsErrorKind::BadRequestException(_))
     }
@@ -6055,7 +6055,7 @@ pub struct ListDeviceDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDeviceDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeviceDefinitionsError {
@@ -6141,7 +6141,7 @@ pub struct ListDeviceDefinitionVersionsError {
 pub enum ListDeviceDefinitionVersionsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeviceDefinitionVersionsError {
@@ -6204,7 +6204,7 @@ impl ListDeviceDefinitionVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeviceDefinitionVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDeviceDefinitionVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6234,7 +6234,7 @@ pub struct ListFunctionDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFunctionDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionDefinitionsError {
@@ -6320,7 +6320,7 @@ pub struct ListFunctionDefinitionVersionsError {
 pub enum ListFunctionDefinitionVersionsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionDefinitionVersionsError {
@@ -6386,7 +6386,7 @@ impl ListFunctionDefinitionVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFunctionDefinitionVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListFunctionDefinitionVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6420,7 +6420,7 @@ pub enum ListGroupCertificateAuthoritiesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupCertificateAuthoritiesError {
@@ -6489,14 +6489,14 @@ impl ListGroupCertificateAuthoritiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupCertificateAuthoritiesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListGroupCertificateAuthoritiesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupCertificateAuthoritiesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupCertificateAuthoritiesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListGroupCertificateAuthoritiesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6529,7 +6529,7 @@ pub struct ListGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsError {
@@ -6615,7 +6615,7 @@ pub struct ListGroupVersionsError {
 pub enum ListGroupVersionsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupVersionsError {
@@ -6678,7 +6678,7 @@ impl ListGroupVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListGroupVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6708,7 +6708,7 @@ pub struct ListLoggerDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLoggerDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLoggerDefinitionsError {
@@ -6794,7 +6794,7 @@ pub struct ListLoggerDefinitionVersionsError {
 pub enum ListLoggerDefinitionVersionsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLoggerDefinitionVersionsError {
@@ -6857,7 +6857,7 @@ impl ListLoggerDefinitionVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLoggerDefinitionVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListLoggerDefinitionVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6887,7 +6887,7 @@ pub struct ListResourceDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceDefinitionsError {
@@ -6973,7 +6973,7 @@ pub struct ListResourceDefinitionVersionsError {
 pub enum ListResourceDefinitionVersionsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceDefinitionVersionsError {
@@ -7039,7 +7039,7 @@ impl ListResourceDefinitionVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceDefinitionVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListResourceDefinitionVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7069,7 +7069,7 @@ pub struct ListSubscriptionDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSubscriptionDefinitionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSubscriptionDefinitionsError {
@@ -7155,7 +7155,7 @@ pub struct ListSubscriptionDefinitionVersionsError {
 pub enum ListSubscriptionDefinitionVersionsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSubscriptionDefinitionVersionsError {
@@ -7223,7 +7223,7 @@ impl ListSubscriptionDefinitionVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSubscriptionDefinitionVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListSubscriptionDefinitionVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7257,7 +7257,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -7320,7 +7320,7 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7352,7 +7352,7 @@ pub struct ResetDeploymentsError {
 pub enum ResetDeploymentsErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetDeploymentsError {
@@ -7415,7 +7415,7 @@ impl ResetDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetDeploymentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ResetDeploymentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7447,7 +7447,7 @@ pub struct StartBulkDeploymentError {
 pub enum StartBulkDeploymentErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartBulkDeploymentError {
@@ -7510,7 +7510,7 @@ impl StartBulkDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartBulkDeploymentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartBulkDeploymentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7542,7 +7542,7 @@ pub struct StopBulkDeploymentError {
 pub enum StopBulkDeploymentErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopBulkDeploymentError {
@@ -7605,7 +7605,7 @@ impl StopBulkDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopBulkDeploymentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StopBulkDeploymentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7637,7 +7637,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -7700,7 +7700,7 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
@@ -7729,7 +7729,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7792,7 +7792,7 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
@@ -7823,7 +7823,7 @@ pub enum UpdateConnectivityInfoErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectivityInfoError {
@@ -7887,14 +7887,14 @@ impl UpdateConnectivityInfoError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectivityInfoErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateConnectivityInfoErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectivityInfoErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectivityInfoErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateConnectivityInfoErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7927,7 +7927,7 @@ pub struct UpdateConnectorDefinitionError {
 pub enum UpdateConnectorDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectorDefinitionError {
@@ -7990,7 +7990,7 @@ impl UpdateConnectorDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectorDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateConnectorDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8022,7 +8022,7 @@ pub struct UpdateCoreDefinitionError {
 pub enum UpdateCoreDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCoreDefinitionError {
@@ -8085,7 +8085,7 @@ impl UpdateCoreDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCoreDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateCoreDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8117,7 +8117,7 @@ pub struct UpdateDeviceDefinitionError {
 pub enum UpdateDeviceDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeviceDefinitionError {
@@ -8180,7 +8180,7 @@ impl UpdateDeviceDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeviceDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateDeviceDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8212,7 +8212,7 @@ pub struct UpdateFunctionDefinitionError {
 pub enum UpdateFunctionDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionDefinitionError {
@@ -8275,7 +8275,7 @@ impl UpdateFunctionDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFunctionDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateFunctionDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8307,7 +8307,7 @@ pub struct UpdateGroupError {
 pub enum UpdateGroupErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupError {
@@ -8370,7 +8370,7 @@ impl UpdateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::BadRequestException(_))
     }
@@ -8401,7 +8401,7 @@ pub enum UpdateGroupCertificateConfigurationErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupCertificateConfigurationError {
@@ -8472,14 +8472,14 @@ impl UpdateGroupCertificateConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGroupCertificateConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateGroupCertificateConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupCertificateConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupCertificateConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateGroupCertificateConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8518,7 +8518,7 @@ pub struct UpdateLoggerDefinitionError {
 pub enum UpdateLoggerDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLoggerDefinitionError {
@@ -8581,7 +8581,7 @@ impl UpdateLoggerDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLoggerDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateLoggerDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8613,7 +8613,7 @@ pub struct UpdateResourceDefinitionError {
 pub enum UpdateResourceDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResourceDefinitionError {
@@ -8676,7 +8676,7 @@ impl UpdateResourceDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResourceDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateResourceDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8708,7 +8708,7 @@ pub struct UpdateSubscriptionDefinitionError {
 pub enum UpdateSubscriptionDefinitionErrorKind {
     /// General error information.
     BadRequestException(crate::error::BadRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSubscriptionDefinitionError {
@@ -8771,7 +8771,7 @@ impl UpdateSubscriptionDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSubscriptionDefinitionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateSubscriptionDefinitionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8805,7 +8805,7 @@ pub enum UpdateThingRuntimeConfigurationErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// General error information.
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateThingRuntimeConfigurationError {
@@ -8874,14 +8874,14 @@ impl UpdateThingRuntimeConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateThingRuntimeConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateThingRuntimeConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateThingRuntimeConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateThingRuntimeConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateThingRuntimeConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,

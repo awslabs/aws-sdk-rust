@@ -473,6 +473,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomAvailability
     }
 }
 
+/// Operation shape for `CreateCustomDBEngineVersion`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_custom_db_engine_version`](crate::client::Client::create_custom_db_engine_version).
+///
+/// See [`crate::client::fluent_builders::CreateCustomDBEngineVersion`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateCustomDBEngineVersion {
+    _private: (),
+}
+impl CreateCustomDBEngineVersion {
+    /// Creates a new builder-style object to manufacture [`CreateCustomDbEngineVersionInput`](crate::input::CreateCustomDbEngineVersionInput)
+    pub fn builder() -> crate::input::create_custom_db_engine_version_input::Builder {
+        crate::input::create_custom_db_engine_version_input::Builder::default()
+    }
+    /// Creates a new `CreateCustomDBEngineVersion` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateCustomDBEngineVersion {
+    type Output = std::result::Result<
+        crate::output::CreateCustomDbEngineVersionOutput,
+        crate::error::CreateCustomDBEngineVersionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_custom_db_engine_version_error(response)
+        } else {
+            crate::operation_deser::parse_create_custom_db_engine_version_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1011,6 +1045,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomAvailability
             crate::operation_deser::parse_delete_custom_availability_zone_error(response)
         } else {
             crate::operation_deser::parse_delete_custom_availability_zone_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteCustomDBEngineVersion`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_custom_db_engine_version`](crate::client::Client::delete_custom_db_engine_version).
+///
+/// See [`crate::client::fluent_builders::DeleteCustomDBEngineVersion`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteCustomDBEngineVersion {
+    _private: (),
+}
+impl DeleteCustomDBEngineVersion {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomDbEngineVersionInput`](crate::input::DeleteCustomDbEngineVersionInput)
+    pub fn builder() -> crate::input::delete_custom_db_engine_version_input::Builder {
+        crate::input::delete_custom_db_engine_version_input::Builder::default()
+    }
+    /// Creates a new `DeleteCustomDBEngineVersion` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomDBEngineVersion {
+    type Output = std::result::Result<
+        crate::output::DeleteCustomDbEngineVersionOutput,
+        crate::error::DeleteCustomDBEngineVersionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_custom_db_engine_version_error(response)
+        } else {
+            crate::operation_deser::parse_delete_custom_db_engine_version_response(response)
         }
     }
 }
@@ -3189,6 +3257,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyCurrentDBClusterCa
             crate::operation_deser::parse_modify_current_db_cluster_capacity_error(response)
         } else {
             crate::operation_deser::parse_modify_current_db_cluster_capacity_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ModifyCustomDBEngineVersion`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_custom_db_engine_version`](crate::client::Client::modify_custom_db_engine_version).
+///
+/// See [`crate::client::fluent_builders::ModifyCustomDBEngineVersion`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyCustomDBEngineVersion {
+    _private: (),
+}
+impl ModifyCustomDBEngineVersion {
+    /// Creates a new builder-style object to manufacture [`ModifyCustomDbEngineVersionInput`](crate::input::ModifyCustomDbEngineVersionInput)
+    pub fn builder() -> crate::input::modify_custom_db_engine_version_input::Builder {
+        crate::input::modify_custom_db_engine_version_input::Builder::default()
+    }
+    /// Creates a new `ModifyCustomDBEngineVersion` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyCustomDBEngineVersion {
+    type Output = std::result::Result<
+        crate::output::ModifyCustomDbEngineVersionOutput,
+        crate::error::ModifyCustomDBEngineVersionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_custom_db_engine_version_error(response)
+        } else {
+            crate::operation_deser::parse_modify_custom_db_engine_version_response(response)
         }
     }
 }

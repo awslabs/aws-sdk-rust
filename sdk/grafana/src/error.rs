@@ -22,7 +22,7 @@ pub enum AssociateLicenseErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateLicenseError {
@@ -97,35 +97,35 @@ impl AssociateLicenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateLicenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateLicenseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateLicenseErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateLicenseErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateLicenseErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateLicenseErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateLicenseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateLicenseErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateLicenseErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateLicenseErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateLicenseErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateLicenseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -171,7 +171,7 @@ pub enum CreateWorkspaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkspaceError {
@@ -247,36 +247,36 @@ impl CreateWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateWorkspaceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateWorkspaceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateWorkspaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateWorkspaceErrorKind::ValidationException(_))
     }
@@ -320,7 +320,7 @@ pub enum DeleteWorkspaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkspaceError {
@@ -396,36 +396,36 @@ impl DeleteWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteWorkspaceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteWorkspaceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteWorkspaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteWorkspaceErrorKind::ValidationException(_))
     }
@@ -467,7 +467,7 @@ pub enum DescribeWorkspaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspaceError {
@@ -542,35 +542,35 @@ impl DescribeWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -614,7 +614,7 @@ pub enum DescribeWorkspaceAuthenticationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspaceAuthenticationError {
@@ -698,35 +698,35 @@ impl DescribeWorkspaceAuthenticationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspaceAuthenticationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceAuthenticationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceAuthenticationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceAuthenticationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceAuthenticationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceAuthenticationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceAuthenticationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceAuthenticationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceAuthenticationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceAuthenticationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceAuthenticationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceAuthenticationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceAuthenticationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceAuthenticationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -774,7 +774,7 @@ pub enum DisassociateLicenseErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateLicenseError {
@@ -849,35 +849,35 @@ impl DisassociateLicenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateLicenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateLicenseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateLicenseErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateLicenseErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateLicenseErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateLicenseErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateLicenseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateLicenseErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateLicenseErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateLicenseErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateLicenseErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateLicenseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -921,7 +921,7 @@ pub enum ListPermissionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPermissionsError {
@@ -996,32 +996,32 @@ impl ListPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListPermissionsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListPermissionsErrorKind::ValidationException(_))
     }
@@ -1058,7 +1058,7 @@ pub enum ListWorkspacesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied because of request throttling. Retry the request.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkspacesError {
@@ -1131,21 +1131,21 @@ impl ListWorkspacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkspacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListWorkspacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkspacesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkspacesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWorkspacesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkspacesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkspacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWorkspacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListWorkspacesErrorKind::ThrottlingException(_))
     }
@@ -1184,7 +1184,7 @@ pub enum UpdatePermissionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePermissionsError {
@@ -1259,35 +1259,35 @@ impl UpdatePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdatePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePermissionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdatePermissionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePermissionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePermissionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdatePermissionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePermissionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePermissionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdatePermissionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1333,7 +1333,7 @@ pub enum UpdateWorkspaceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkspaceError {
@@ -1409,36 +1409,36 @@ impl UpdateWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateWorkspaceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateWorkspaceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateWorkspaceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateWorkspaceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateWorkspaceErrorKind::ValidationException(_))
     }
@@ -1482,7 +1482,7 @@ pub enum UpdateWorkspaceAuthenticationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkspaceAuthenticationError {
@@ -1565,42 +1565,42 @@ impl UpdateWorkspaceAuthenticationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAuthenticationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAuthenticationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAuthenticationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAuthenticationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAuthenticationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAuthenticationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAuthenticationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAuthenticationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAuthenticationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAuthenticationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAuthenticationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAuthenticationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAuthenticationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAuthenticationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceAuthenticationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceAuthenticationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceAuthenticationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

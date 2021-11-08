@@ -58,7 +58,7 @@ pub type AcceptResourceShareInvitationInputOperationRetryAlias = aws_http::AwsEr
 impl AcceptResourceShareInvitationInput {
     /// Consumes the builder and constructs an Operation<[`AcceptResourceShareInvitation`](crate::operation::AcceptResourceShareInvitation)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -90,6 +90,7 @@ impl AcceptResourceShareInvitationInput {
             input: &crate::input::AcceptResourceShareInvitationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -145,9 +146,10 @@ impl AcceptResourceShareInvitationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -303,7 +305,7 @@ pub type AssociateResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl AssociateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResourceShare`](crate::operation::AssociateResourceShare)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -335,6 +337,7 @@ impl AssociateResourceShareInput {
             input: &crate::input::AssociateResourceShareInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -394,9 +397,10 @@ impl AssociateResourceShareInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -512,7 +516,7 @@ pub type AssociateResourceSharePermissionInputOperationRetryAlias = aws_http::Aw
 impl AssociateResourceSharePermissionInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResourceSharePermission`](crate::operation::AssociateResourceSharePermission)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -544,6 +548,7 @@ impl AssociateResourceSharePermissionInput {
             input: &crate::input::AssociateResourceSharePermissionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -599,9 +604,10 @@ impl AssociateResourceSharePermissionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -816,7 +822,7 @@ pub type CreateResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceShare`](crate::operation::CreateResourceShare)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -848,6 +854,7 @@ impl CreateResourceShareInput {
             input: &crate::input::CreateResourceShareInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -905,9 +912,10 @@ impl CreateResourceShareInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -977,7 +985,7 @@ pub type DeleteResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceShare`](crate::operation::DeleteResourceShare)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1022,12 +1030,8 @@ impl DeleteResourceShareInput {
             input: &crate::input::DeleteResourceShareInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1075,16 +1079,9 @@ impl DeleteResourceShareInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteResourceShareInput`](crate::input::DeleteResourceShareInput)
@@ -1190,7 +1187,7 @@ pub type DisassociateResourceShareInputOperationRetryAlias = aws_http::AwsErrorR
 impl DisassociateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResourceShare`](crate::operation::DisassociateResourceShare)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1222,6 +1219,7 @@ impl DisassociateResourceShareInput {
             input: &crate::input::DisassociateResourceShareInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1281,9 +1279,10 @@ impl DisassociateResourceShareInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1370,7 +1369,7 @@ pub type DisassociateResourceSharePermissionInputOperationRetryAlias =
 impl DisassociateResourceSharePermissionInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResourceSharePermission`](crate::operation::DisassociateResourceSharePermission)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1403,6 +1402,7 @@ impl DisassociateResourceSharePermissionInput {
             input: &crate::input::DisassociateResourceSharePermissionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1458,9 +1458,10 @@ impl DisassociateResourceSharePermissionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1502,7 +1503,7 @@ pub type EnableSharingWithAwsOrganizationInputOperationRetryAlias = aws_http::Aw
 impl EnableSharingWithAwsOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`EnableSharingWithAwsOrganization`](crate::operation::EnableSharingWithAwsOrganization)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1534,12 +1535,8 @@ impl EnableSharingWithAwsOrganizationInput {
             input: &crate::input::EnableSharingWithAwsOrganizationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1587,16 +1584,9 @@ impl EnableSharingWithAwsOrganizationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationInput`](crate::input::EnableSharingWithAwsOrganizationInput)
@@ -1659,7 +1649,7 @@ pub type GetPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetPermissionInput {
     /// Consumes the builder and constructs an Operation<[`GetPermission`](crate::operation::GetPermission)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1691,6 +1681,7 @@ impl GetPermissionInput {
             input: &crate::input::GetPermissionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1747,9 +1738,10 @@ impl GetPermissionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1851,7 +1843,7 @@ pub type GetResourcePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetResourcePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicies`](crate::operation::GetResourcePolicies)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1883,6 +1875,7 @@ impl GetResourcePoliciesInput {
             input: &crate::input::GetResourcePoliciesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1940,9 +1933,10 @@ impl GetResourcePoliciesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2103,7 +2097,7 @@ pub type GetResourceShareAssociationsInputOperationRetryAlias = aws_http::AwsErr
 impl GetResourceShareAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShareAssociations`](crate::operation::GetResourceShareAssociations)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2135,6 +2129,7 @@ impl GetResourceShareAssociationsInput {
             input: &crate::input::GetResourceShareAssociationsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2190,9 +2185,10 @@ impl GetResourceShareAssociationsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2308,7 +2304,7 @@ pub type GetResourceShareInvitationsInputOperationRetryAlias = aws_http::AwsErro
 impl GetResourceShareInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShareInvitations`](crate::operation::GetResourceShareInvitations)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2340,6 +2336,7 @@ impl GetResourceShareInvitationsInput {
             input: &crate::input::GetResourceShareInvitationsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2395,9 +2392,10 @@ impl GetResourceShareInvitationsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2567,7 +2565,7 @@ pub type GetResourceSharesInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl GetResourceSharesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShares`](crate::operation::GetResourceShares)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2599,6 +2597,7 @@ impl GetResourceSharesInput {
             input: &crate::input::GetResourceSharesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2656,9 +2655,10 @@ impl GetResourceSharesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2746,7 +2746,7 @@ pub type ListPendingInvitationResourcesInputOperationRetryAlias = aws_http::AwsE
 impl ListPendingInvitationResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListPendingInvitationResources`](crate::operation::ListPendingInvitationResources)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2778,6 +2778,7 @@ impl ListPendingInvitationResourcesInput {
             input: &crate::input::ListPendingInvitationResourcesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2833,9 +2834,10 @@ impl ListPendingInvitationResourcesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2921,7 +2923,7 @@ pub type ListPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl ListPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissions`](crate::operation::ListPermissions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2953,6 +2955,7 @@ impl ListPermissionsInput {
             input: &crate::input::ListPermissionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3010,9 +3013,10 @@ impl ListPermissionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3169,7 +3173,7 @@ pub type ListPrincipalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListPrincipalsInput {
     /// Consumes the builder and constructs an Operation<[`ListPrincipals`](crate::operation::ListPrincipals)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3201,6 +3205,7 @@ impl ListPrincipalsInput {
             input: &crate::input::ListPrincipalsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3257,9 +3262,10 @@ impl ListPrincipalsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3416,7 +3422,7 @@ pub type ListResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListResources`](crate::operation::ListResources)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3448,6 +3454,7 @@ impl ListResourcesInput {
             input: &crate::input::ListResourcesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3504,9 +3511,10 @@ impl ListResourcesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3591,7 +3599,7 @@ pub type ListResourceSharePermissionsInputOperationRetryAlias = aws_http::AwsErr
 impl ListResourceSharePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceSharePermissions`](crate::operation::ListResourceSharePermissions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3623,6 +3631,7 @@ impl ListResourceSharePermissionsInput {
             input: &crate::input::ListResourceSharePermissionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3678,9 +3687,10 @@ impl ListResourceSharePermissionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3749,7 +3759,7 @@ pub type ListResourceTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl ListResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceTypes`](crate::operation::ListResourceTypes)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3781,6 +3791,7 @@ impl ListResourceTypesInput {
             input: &crate::input::ListResourceTypesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3838,9 +3849,10 @@ impl ListResourceTypesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3900,7 +3912,7 @@ pub type PromoteResourceShareCreatedFromPolicyInputOperationRetryAlias =
 impl PromoteResourceShareCreatedFromPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PromoteResourceShareCreatedFromPolicy`](crate::operation::PromoteResourceShareCreatedFromPolicy)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3946,12 +3958,8 @@ impl PromoteResourceShareCreatedFromPolicyInput {
             input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3999,16 +4007,9 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyInput`](crate::input::PromoteResourceShareCreatedFromPolicyInput)
@@ -4075,7 +4076,7 @@ pub type RejectResourceShareInvitationInputOperationRetryAlias = aws_http::AwsEr
 impl RejectResourceShareInvitationInput {
     /// Consumes the builder and constructs an Operation<[`RejectResourceShareInvitation`](crate::operation::RejectResourceShareInvitation)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4107,6 +4108,7 @@ impl RejectResourceShareInvitationInput {
             input: &crate::input::RejectResourceShareInvitationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4162,9 +4164,10 @@ impl RejectResourceShareInvitationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4243,7 +4246,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4275,6 +4278,7 @@ impl TagResourceInput {
             input: &crate::input::TagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4331,9 +4335,10 @@ impl TagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4412,7 +4417,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4444,6 +4449,7 @@ impl UntagResourceInput {
             input: &crate::input::UntagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4500,9 +4506,10 @@ impl UntagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4598,7 +4605,7 @@ pub type UpdateResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl UpdateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceShare`](crate::operation::UpdateResourceShare)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4630,6 +4637,7 @@ impl UpdateResourceShareInput {
             input: &crate::input::UpdateResourceShareInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4687,9 +4695,10 @@ impl UpdateResourceShareInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

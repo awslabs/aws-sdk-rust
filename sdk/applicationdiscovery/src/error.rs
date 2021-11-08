@@ -24,7 +24,7 @@ pub enum AssociateConfigurationItemsToApplicationErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateConfigurationItemsToApplicationError {
@@ -104,35 +104,35 @@ impl AssociateConfigurationItemsToApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConfigurationItemsToApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConfigurationItemsToApplicationErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConfigurationItemsToApplicationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `AssociateConfigurationItemsToApplicationErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -190,7 +190,7 @@ pub enum BatchDeleteImportDataErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteImportDataError {
@@ -257,35 +257,35 @@ impl BatchDeleteImportDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteImportDataErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `BatchDeleteImportDataErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteImportDataErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteImportDataErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `BatchDeleteImportDataErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteImportDataErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteImportDataErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `BatchDeleteImportDataErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteImportDataErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteImportDataErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `BatchDeleteImportDataErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteImportDataErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteImportDataErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `BatchDeleteImportDataErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -331,7 +331,7 @@ pub enum CreateApplicationErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationError {
@@ -398,35 +398,35 @@ impl CreateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -475,7 +475,7 @@ pub enum CreateTagsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagsError {
@@ -543,42 +543,42 @@ impl CreateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -625,7 +625,7 @@ pub enum DeleteApplicationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationsError {
@@ -692,35 +692,35 @@ impl DeleteApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DeleteApplicationsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DeleteApplicationsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteApplicationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteApplicationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteApplicationsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -769,7 +769,7 @@ pub enum DeleteTagsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -837,42 +837,42 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -919,7 +919,7 @@ pub enum DescribeAgentsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAgentsError {
@@ -986,35 +986,35 @@ impl DescribeAgentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAgentsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DescribeAgentsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAgentsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAgentsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeAgentsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAgentsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAgentsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeAgentsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAgentsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAgentsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeAgentsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAgentsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAgentsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeAgentsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1060,7 +1060,7 @@ pub enum DescribeConfigurationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationsError {
@@ -1129,35 +1129,35 @@ impl DescribeConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1208,7 +1208,7 @@ pub enum DescribeContinuousExportsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeContinuousExportsError {
@@ -1285,49 +1285,49 @@ impl DescribeContinuousExportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeContinuousExportsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DescribeContinuousExportsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContinuousExportsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContinuousExportsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeContinuousExportsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContinuousExportsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContinuousExportsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeContinuousExportsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContinuousExportsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContinuousExportsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeContinuousExportsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContinuousExportsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContinuousExportsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DescribeContinuousExportsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContinuousExportsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContinuousExportsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeContinuousExportsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContinuousExportsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContinuousExportsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeContinuousExportsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1384,7 +1384,7 @@ pub enum DescribeExportConfigurationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportConfigurationsError {
@@ -1464,42 +1464,42 @@ impl DescribeExportConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExportConfigurationsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DescribeExportConfigurationsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportConfigurationsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportConfigurationsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeExportConfigurationsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportConfigurationsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportConfigurationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeExportConfigurationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportConfigurationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportConfigurationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeExportConfigurationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportConfigurationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportConfigurationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeExportConfigurationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportConfigurationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportConfigurationsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeExportConfigurationsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1558,7 +1558,7 @@ pub enum DescribeExportTasksErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportTasksError {
@@ -1625,35 +1625,35 @@ impl DescribeExportTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExportTasksErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DescribeExportTasksErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportTasksErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportTasksErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeExportTasksErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportTasksErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportTasksErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeExportTasksErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportTasksErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportTasksErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeExportTasksErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportTasksErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportTasksErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeExportTasksErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1699,7 +1699,7 @@ pub enum DescribeImportTasksErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImportTasksError {
@@ -1766,35 +1766,35 @@ impl DescribeImportTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImportTasksErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DescribeImportTasksErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImportTasksErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImportTasksErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeImportTasksErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImportTasksErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImportTasksErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeImportTasksErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImportTasksErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImportTasksErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeImportTasksErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImportTasksErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImportTasksErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeImportTasksErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1843,7 +1843,7 @@ pub enum DescribeTagsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -1911,42 +1911,42 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1993,7 +1993,7 @@ pub enum DisassociateConfigurationItemsFromApplicationErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateConfigurationItemsFromApplicationError {
@@ -2077,28 +2077,28 @@ impl DisassociateConfigurationItemsFromApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConfigurationItemsFromApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConfigurationItemsFromApplicationErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2107,7 +2107,7 @@ impl DisassociateConfigurationItemsFromApplicationError {
             )
         )
     }
-    /// Returns true if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `DisassociateConfigurationItemsFromApplicationErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2167,7 +2167,7 @@ pub enum ExportConfigurationsErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportConfigurationsError {
@@ -2235,42 +2235,42 @@ impl ExportConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportConfigurationsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ExportConfigurationsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportConfigurationsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ExportConfigurationsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ExportConfigurationsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportConfigurationsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ExportConfigurationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ExportConfigurationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportConfigurationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ExportConfigurationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ExportConfigurationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportConfigurationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ExportConfigurationsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ExportConfigurationsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportConfigurationsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ExportConfigurationsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `ExportConfigurationsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2317,7 +2317,7 @@ pub enum GetDiscoverySummaryErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDiscoverySummaryError {
@@ -2384,35 +2384,35 @@ impl GetDiscoverySummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDiscoverySummaryErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `GetDiscoverySummaryErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoverySummaryErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoverySummaryErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `GetDiscoverySummaryErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoverySummaryErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoverySummaryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetDiscoverySummaryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoverySummaryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoverySummaryErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetDiscoverySummaryErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiscoverySummaryErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiscoverySummaryErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `GetDiscoverySummaryErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2461,7 +2461,7 @@ pub enum ListConfigurationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationsError {
@@ -2529,42 +2529,42 @@ impl ListConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2611,7 +2611,7 @@ pub enum ListServerNeighborsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServerNeighborsError {
@@ -2678,35 +2678,35 @@ impl ListServerNeighborsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServerNeighborsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `ListServerNeighborsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServerNeighborsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListServerNeighborsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ListServerNeighborsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServerNeighborsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ListServerNeighborsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListServerNeighborsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServerNeighborsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListServerNeighborsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListServerNeighborsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServerNeighborsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListServerNeighborsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `ListServerNeighborsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2762,7 +2762,7 @@ pub enum StartContinuousExportErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartContinuousExportError {
@@ -2832,56 +2832,56 @@ impl StartContinuousExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartContinuousExportErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `StartContinuousExportErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContinuousExportErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartContinuousExportErrorKind::ConflictErrorException`.
+    /// Returns `true` if the error kind is `StartContinuousExportErrorKind::ConflictErrorException`.
     pub fn is_conflict_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContinuousExportErrorKind::ConflictErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartContinuousExportErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `StartContinuousExportErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContinuousExportErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `StartContinuousExportErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartContinuousExportErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContinuousExportErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartContinuousExportErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartContinuousExportErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContinuousExportErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartContinuousExportErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StartContinuousExportErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContinuousExportErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StartContinuousExportErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartContinuousExportErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContinuousExportErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartContinuousExportErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `StartContinuousExportErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2930,7 +2930,7 @@ pub enum StartDataCollectionByAgentIdsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDataCollectionByAgentIdsError {
@@ -3010,35 +3010,35 @@ impl StartDataCollectionByAgentIdsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDataCollectionByAgentIdsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `StartDataCollectionByAgentIdsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataCollectionByAgentIdsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataCollectionByAgentIdsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `StartDataCollectionByAgentIdsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataCollectionByAgentIdsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataCollectionByAgentIdsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartDataCollectionByAgentIdsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataCollectionByAgentIdsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataCollectionByAgentIdsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartDataCollectionByAgentIdsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataCollectionByAgentIdsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataCollectionByAgentIdsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `StartDataCollectionByAgentIdsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3096,7 +3096,7 @@ pub enum StartExportTaskErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartExportTaskError {
@@ -3164,42 +3164,42 @@ impl StartExportTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3252,7 +3252,7 @@ pub enum StartImportTaskErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartImportTaskError {
@@ -3320,42 +3320,42 @@ impl StartImportTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartImportTaskErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `StartImportTaskErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportTaskErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportTaskErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `StartImportTaskErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportTaskErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportTaskErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartImportTaskErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportTaskErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportTaskErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StartImportTaskErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportTaskErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportTaskErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartImportTaskErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImportTaskErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartImportTaskErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `StartImportTaskErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3413,7 +3413,7 @@ pub enum StopContinuousExportErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopContinuousExportError {
@@ -3483,56 +3483,56 @@ impl StopContinuousExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopContinuousExportErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `StopContinuousExportErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopContinuousExportErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StopContinuousExportErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `StopContinuousExportErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopContinuousExportErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `StopContinuousExportErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopContinuousExportErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopContinuousExportErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StopContinuousExportErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StopContinuousExportErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopContinuousExportErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StopContinuousExportErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StopContinuousExportErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopContinuousExportErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StopContinuousExportErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StopContinuousExportErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopContinuousExportErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StopContinuousExportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopContinuousExportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopContinuousExportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopContinuousExportErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `StopContinuousExportErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3581,7 +3581,7 @@ pub enum StopDataCollectionByAgentIdsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDataCollectionByAgentIdsError {
@@ -3658,35 +3658,35 @@ impl StopDataCollectionByAgentIdsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopDataCollectionByAgentIdsErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `StopDataCollectionByAgentIdsErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDataCollectionByAgentIdsErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StopDataCollectionByAgentIdsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `StopDataCollectionByAgentIdsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDataCollectionByAgentIdsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `StopDataCollectionByAgentIdsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopDataCollectionByAgentIdsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDataCollectionByAgentIdsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StopDataCollectionByAgentIdsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `StopDataCollectionByAgentIdsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDataCollectionByAgentIdsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `StopDataCollectionByAgentIdsErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `StopDataCollectionByAgentIdsErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3742,7 +3742,7 @@ pub enum UpdateApplicationErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationError {
@@ -3809,35 +3809,35 @@ impl UpdateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::AuthorizationErrorException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::AuthorizationErrorException`.
     pub fn is_authorization_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::AuthorizationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ServerInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ServerInternalErrorException`.
     pub fn is_server_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,

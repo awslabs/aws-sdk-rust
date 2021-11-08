@@ -22,7 +22,7 @@ pub enum ActivateEventSourceErrorKind {
     OperationDisabledException(crate::error::OperationDisabledException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ActivateEventSourceError {
@@ -89,35 +89,35 @@ impl ActivateEventSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ActivateEventSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `ActivateEventSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateEventSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateEventSourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ActivateEventSourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateEventSourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateEventSourceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ActivateEventSourceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateEventSourceErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateEventSourceErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `ActivateEventSourceErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateEventSourceErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateEventSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ActivateEventSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -160,7 +160,7 @@ pub enum CancelReplayErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelReplayError {
@@ -226,22 +226,22 @@ impl CancelReplayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelReplayErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CancelReplayErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelReplayErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CancelReplayErrorKind::IllegalStatusException`.
+    /// Returns `true` if the error kind is `CancelReplayErrorKind::IllegalStatusException`.
     pub fn is_illegal_status_exception(&self) -> bool {
         matches!(&self.kind, CancelReplayErrorKind::IllegalStatusException(_))
     }
-    /// Returns true if the error kind is `CancelReplayErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CancelReplayErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CancelReplayErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CancelReplayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelReplayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -283,7 +283,7 @@ pub enum CreateApiDestinationErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApiDestinationError {
@@ -349,28 +349,28 @@ impl CreateApiDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApiDestinationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateApiDestinationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiDestinationErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiDestinationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateApiDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiDestinationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiDestinationErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateApiDestinationErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApiDestinationErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApiDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateApiDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -416,7 +416,7 @@ pub enum CreateArchiveErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateArchiveError {
@@ -484,39 +484,39 @@ impl CreateArchiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateArchiveErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateArchiveErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateArchiveErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateArchiveErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateArchiveErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateArchiveErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateArchiveErrorKind::InvalidEventPatternException`.
+    /// Returns `true` if the error kind is `CreateArchiveErrorKind::InvalidEventPatternException`.
     pub fn is_invalid_event_pattern_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateArchiveErrorKind::InvalidEventPatternException(_)
         )
     }
-    /// Returns true if the error kind is `CreateArchiveErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateArchiveErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateArchiveErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateArchiveErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateArchiveErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateArchiveErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateArchiveErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateArchiveErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -558,7 +558,7 @@ pub enum CreateConnectionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectionError {
@@ -623,18 +623,18 @@ impl CreateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateConnectionErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -681,7 +681,7 @@ pub enum CreateEventBusErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEventBusError {
@@ -750,46 +750,46 @@ impl CreateEventBusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEventBusErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateEventBusErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventBusErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventBusErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateEventBusErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateEventBusErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateEventBusErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `CreateEventBusErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventBusErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventBusErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateEventBusErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventBusErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventBusErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `CreateEventBusErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventBusErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventBusErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateEventBusErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventBusErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventBusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateEventBusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -836,7 +836,7 @@ pub enum CreatePartnerEventSourceErrorKind {
     OperationDisabledException(crate::error::OperationDisabledException),
     /// <p>The resource you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePartnerEventSourceError {
@@ -907,35 +907,35 @@ impl CreatePartnerEventSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePartnerEventSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreatePartnerEventSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerEventSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerEventSourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreatePartnerEventSourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerEventSourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerEventSourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePartnerEventSourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerEventSourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerEventSourceErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `CreatePartnerEventSourceErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerEventSourceErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerEventSourceErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreatePartnerEventSourceErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -983,7 +983,7 @@ pub enum DeactivateEventSourceErrorKind {
     OperationDisabledException(crate::error::OperationDisabledException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeactivateEventSourceError {
@@ -1052,35 +1052,35 @@ impl DeactivateEventSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeactivateEventSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeactivateEventSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateEventSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateEventSourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeactivateEventSourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateEventSourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateEventSourceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DeactivateEventSourceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateEventSourceErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateEventSourceErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `DeactivateEventSourceErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateEventSourceErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateEventSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeactivateEventSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1120,7 +1120,7 @@ pub enum DeauthorizeConnectionErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeauthorizeConnectionError {
@@ -1187,21 +1187,21 @@ impl DeauthorizeConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeauthorizeConnectionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeauthorizeConnectionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeauthorizeConnectionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeauthorizeConnectionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeauthorizeConnectionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeauthorizeConnectionErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeauthorizeConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeauthorizeConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1239,7 +1239,7 @@ pub enum DeleteApiDestinationErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApiDestinationError {
@@ -1304,21 +1304,21 @@ impl DeleteApiDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApiDestinationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteApiDestinationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApiDestinationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApiDestinationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteApiDestinationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApiDestinationErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApiDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApiDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1356,7 +1356,7 @@ pub enum DeleteArchiveErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteArchiveError {
@@ -1421,18 +1421,18 @@ impl DeleteArchiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteArchiveErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteArchiveErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteArchiveErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteArchiveErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteArchiveErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteArchiveErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteArchiveErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteArchiveErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1470,7 +1470,7 @@ pub enum DeleteConnectionErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionError {
@@ -1535,18 +1535,18 @@ impl DeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteConnectionErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1582,7 +1582,7 @@ pub enum DeleteEventBusErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>This exception occurs due to unexpected causes.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventBusError {
@@ -1646,14 +1646,14 @@ impl DeleteEventBusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEventBusErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteEventBusErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventBusErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventBusErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteEventBusErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteEventBusErrorKind::InternalException(_))
     }
@@ -1687,7 +1687,7 @@ pub enum DeletePartnerEventSourceErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The operation you are attempting is not available in this region.</p>
     OperationDisabledException(crate::error::OperationDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePartnerEventSourceError {
@@ -1754,21 +1754,21 @@ impl DeletePartnerEventSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePartnerEventSourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeletePartnerEventSourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartnerEventSourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartnerEventSourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeletePartnerEventSourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePartnerEventSourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePartnerEventSourceErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `DeletePartnerEventSourceErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1815,7 +1815,7 @@ pub enum DeleteRuleErrorKind {
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRuleError {
@@ -1881,22 +1881,22 @@ impl DeleteRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteRuleErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::ManagedRuleException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::ManagedRuleException`.
     pub fn is_managed_rule_exception(&self) -> bool {
         matches!(&self.kind, DeleteRuleErrorKind::ManagedRuleException(_))
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1933,7 +1933,7 @@ pub enum DescribeApiDestinationErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeApiDestinationError {
@@ -1997,14 +1997,14 @@ impl DescribeApiDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeApiDestinationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeApiDestinationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApiDestinationErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApiDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeApiDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2041,7 +2041,7 @@ pub enum DescribeArchiveErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeArchiveError {
@@ -2106,18 +2106,18 @@ impl DescribeArchiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeArchiveErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeArchiveErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeArchiveErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeArchiveErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `DescribeArchiveErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeArchiveErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeArchiveErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeArchiveErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2153,7 +2153,7 @@ pub enum DescribeConnectionErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectionError {
@@ -2217,14 +2217,14 @@ impl DescribeConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeConnectionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2259,7 +2259,7 @@ pub enum DescribeEventBusErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventBusError {
@@ -2323,11 +2323,11 @@ impl DescribeEventBusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventBusErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeEventBusErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeEventBusErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeEventBusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEventBusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2364,7 +2364,7 @@ pub enum DescribeEventSourceErrorKind {
     OperationDisabledException(crate::error::OperationDisabledException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventSourceError {
@@ -2429,21 +2429,21 @@ impl DescribeEventSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventSourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeEventSourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventSourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventSourceErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `DescribeEventSourceErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventSourceErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEventSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2481,7 +2481,7 @@ pub enum DescribePartnerEventSourceErrorKind {
     OperationDisabledException(crate::error::OperationDisabledException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePartnerEventSourceError {
@@ -2548,21 +2548,21 @@ impl DescribePartnerEventSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePartnerEventSourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribePartnerEventSourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePartnerEventSourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePartnerEventSourceErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `DescribePartnerEventSourceErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePartnerEventSourceErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePartnerEventSourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePartnerEventSourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2598,7 +2598,7 @@ pub enum DescribeReplayErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplayError {
@@ -2662,11 +2662,11 @@ impl DescribeReplayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplayErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeReplayErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeReplayErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeReplayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeReplayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2701,7 +2701,7 @@ pub enum DescribeRuleErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRuleError {
@@ -2765,11 +2765,11 @@ impl DescribeRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRuleErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeRuleErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeRuleErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2813,7 +2813,7 @@ pub enum DisableRuleErrorKind {
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableRuleError {
@@ -2879,22 +2879,22 @@ impl DisableRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableRuleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisableRuleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableRuleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DisableRuleErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisableRuleErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DisableRuleErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DisableRuleErrorKind::ManagedRuleException`.
+    /// Returns `true` if the error kind is `DisableRuleErrorKind::ManagedRuleException`.
     pub fn is_managed_rule_exception(&self) -> bool {
         matches!(&self.kind, DisableRuleErrorKind::ManagedRuleException(_))
     }
-    /// Returns true if the error kind is `DisableRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2940,7 +2940,7 @@ pub enum EnableRuleErrorKind {
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableRuleError {
@@ -3006,22 +3006,22 @@ impl EnableRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableRuleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `EnableRuleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableRuleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `EnableRuleErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `EnableRuleErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, EnableRuleErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `EnableRuleErrorKind::ManagedRuleException`.
+    /// Returns `true` if the error kind is `EnableRuleErrorKind::ManagedRuleException`.
     pub fn is_managed_rule_exception(&self) -> bool {
         matches!(&self.kind, EnableRuleErrorKind::ManagedRuleException(_))
     }
-    /// Returns true if the error kind is `EnableRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `EnableRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3056,7 +3056,7 @@ pub struct ListApiDestinationsError {
 pub enum ListApiDestinationsErrorKind {
     /// <p>This exception occurs due to unexpected causes.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApiDestinationsError {
@@ -3119,7 +3119,7 @@ impl ListApiDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApiDestinationsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListApiDestinationsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3153,7 +3153,7 @@ pub enum ListArchivesErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListArchivesError {
@@ -3217,11 +3217,11 @@ impl ListArchivesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListArchivesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListArchivesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListArchivesErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListArchivesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListArchivesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3254,7 +3254,7 @@ pub struct ListConnectionsError {
 pub enum ListConnectionsErrorKind {
     /// <p>This exception occurs due to unexpected causes.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConnectionsError {
@@ -3317,7 +3317,7 @@ impl ListConnectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConnectionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListConnectionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListConnectionsErrorKind::InternalException(_))
     }
@@ -3346,7 +3346,7 @@ pub struct ListEventBusesError {
 pub enum ListEventBusesErrorKind {
     /// <p>This exception occurs due to unexpected causes.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEventBusesError {
@@ -3409,7 +3409,7 @@ impl ListEventBusesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEventBusesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListEventBusesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListEventBusesErrorKind::InternalException(_))
     }
@@ -3440,7 +3440,7 @@ pub enum ListEventSourcesErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The operation you are attempting is not available in this region.</p>
     OperationDisabledException(crate::error::OperationDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEventSourcesError {
@@ -3504,11 +3504,11 @@ impl ListEventSourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEventSourcesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListEventSourcesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListEventSourcesErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListEventSourcesErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `ListEventSourcesErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3545,7 +3545,7 @@ pub enum ListPartnerEventSourceAccountsErrorKind {
     OperationDisabledException(crate::error::OperationDisabledException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPartnerEventSourceAccountsError {
@@ -3617,21 +3617,21 @@ impl ListPartnerEventSourceAccountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPartnerEventSourceAccountsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListPartnerEventSourceAccountsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPartnerEventSourceAccountsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListPartnerEventSourceAccountsErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `ListPartnerEventSourceAccountsErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPartnerEventSourceAccountsErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListPartnerEventSourceAccountsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPartnerEventSourceAccountsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3671,7 +3671,7 @@ pub enum ListPartnerEventSourcesErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The operation you are attempting is not available in this region.</p>
     OperationDisabledException(crate::error::OperationDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPartnerEventSourcesError {
@@ -3735,14 +3735,14 @@ impl ListPartnerEventSourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPartnerEventSourcesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListPartnerEventSourcesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPartnerEventSourcesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListPartnerEventSourcesErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `ListPartnerEventSourcesErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3775,7 +3775,7 @@ pub struct ListReplaysError {
 pub enum ListReplaysErrorKind {
     /// <p>This exception occurs due to unexpected causes.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReplaysError {
@@ -3838,7 +3838,7 @@ impl ListReplaysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReplaysErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListReplaysErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListReplaysErrorKind::InternalException(_))
     }
@@ -3869,7 +3869,7 @@ pub enum ListRuleNamesByTargetErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRuleNamesByTargetError {
@@ -3933,14 +3933,14 @@ impl ListRuleNamesByTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRuleNamesByTargetErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListRuleNamesByTargetErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRuleNamesByTargetErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListRuleNamesByTargetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRuleNamesByTargetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3975,7 +3975,7 @@ pub enum ListRulesErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRulesError {
@@ -4039,11 +4039,11 @@ impl ListRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRulesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListRulesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListRulesErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListRulesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRulesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListRulesErrorKind::ResourceNotFoundException(_))
     }
@@ -4075,7 +4075,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -4139,14 +4139,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4181,7 +4181,7 @@ pub enum ListTargetsByRuleErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTargetsByRuleError {
@@ -4245,11 +4245,11 @@ impl ListTargetsByRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTargetsByRuleErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListTargetsByRuleErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListTargetsByRuleErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListTargetsByRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTargetsByRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4282,7 +4282,7 @@ pub struct PutEventsError {
 pub enum PutEventsErrorKind {
     /// <p>This exception occurs due to unexpected causes.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEventsError {
@@ -4345,7 +4345,7 @@ impl PutEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, PutEventsErrorKind::InternalException(_))
     }
@@ -4376,7 +4376,7 @@ pub enum PutPartnerEventsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The operation you are attempting is not available in this region.</p>
     OperationDisabledException(crate::error::OperationDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPartnerEventsError {
@@ -4440,11 +4440,11 @@ impl PutPartnerEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutPartnerEventsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `PutPartnerEventsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, PutPartnerEventsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `PutPartnerEventsErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `PutPartnerEventsErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4485,7 +4485,7 @@ pub enum PutPermissionErrorKind {
     PolicyLengthExceededException(crate::error::PolicyLengthExceededException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPermissionError {
@@ -4552,32 +4552,32 @@ impl PutPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutPermissionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutPermissionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPermissionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutPermissionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `PutPermissionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, PutPermissionErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `PutPermissionErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `PutPermissionErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPermissionErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `PutPermissionErrorKind::PolicyLengthExceededException`.
+    /// Returns `true` if the error kind is `PutPermissionErrorKind::PolicyLengthExceededException`.
     pub fn is_policy_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPermissionErrorKind::PolicyLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutPermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutPermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4629,7 +4629,7 @@ pub enum PutRuleErrorKind {
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRuleError {
@@ -4697,33 +4697,33 @@ impl PutRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRuleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutRuleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRuleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutRuleErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `PutRuleErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, PutRuleErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `PutRuleErrorKind::InvalidEventPatternException`.
+    /// Returns `true` if the error kind is `PutRuleErrorKind::InvalidEventPatternException`.
     pub fn is_invalid_event_pattern_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRuleErrorKind::InvalidEventPatternException(_)
         )
     }
-    /// Returns true if the error kind is `PutRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutRuleErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutRuleErrorKind::ManagedRuleException`.
+    /// Returns `true` if the error kind is `PutRuleErrorKind::ManagedRuleException`.
     pub fn is_managed_rule_exception(&self) -> bool {
         matches!(&self.kind, PutRuleErrorKind::ManagedRuleException(_))
     }
-    /// Returns true if the error kind is `PutRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutRuleErrorKind::ResourceNotFoundException(_))
     }
@@ -4771,7 +4771,7 @@ pub enum PutTargetsErrorKind {
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutTargetsError {
@@ -4838,26 +4838,26 @@ impl PutTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutTargetsErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutTargetsErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutTargetsErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutTargetsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `PutTargetsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, PutTargetsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `PutTargetsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutTargetsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutTargetsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutTargetsErrorKind::ManagedRuleException`.
+    /// Returns `true` if the error kind is `PutTargetsErrorKind::ManagedRuleException`.
     pub fn is_managed_rule_exception(&self) -> bool {
         matches!(&self.kind, PutTargetsErrorKind::ManagedRuleException(_))
     }
-    /// Returns true if the error kind is `PutTargetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutTargetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4899,7 +4899,7 @@ pub enum RemovePermissionErrorKind {
     OperationDisabledException(crate::error::OperationDisabledException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemovePermissionError {
@@ -4965,25 +4965,25 @@ impl RemovePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemovePermissionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, RemovePermissionErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::OperationDisabledException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::OperationDisabledException`.
     pub fn is_operation_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemovePermissionErrorKind::OperationDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `RemovePermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemovePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5029,7 +5029,7 @@ pub enum RemoveTargetsErrorKind {
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTargetsError {
@@ -5095,22 +5095,22 @@ impl RemoveTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTargetsErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RemoveTargetsErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTargetsErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTargetsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `RemoveTargetsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, RemoveTargetsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `RemoveTargetsErrorKind::ManagedRuleException`.
+    /// Returns `true` if the error kind is `RemoveTargetsErrorKind::ManagedRuleException`.
     pub fn is_managed_rule_exception(&self) -> bool {
         matches!(&self.kind, RemoveTargetsErrorKind::ManagedRuleException(_))
     }
-    /// Returns true if the error kind is `RemoveTargetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTargetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5154,7 +5154,7 @@ pub enum StartReplayErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartReplayError {
@@ -5221,29 +5221,29 @@ impl StartReplayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartReplayErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `StartReplayErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, StartReplayErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `StartReplayErrorKind::InvalidEventPatternException`.
+    /// Returns `true` if the error kind is `StartReplayErrorKind::InvalidEventPatternException`.
     pub fn is_invalid_event_pattern_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReplayErrorKind::InvalidEventPatternException(_)
         )
     }
-    /// Returns true if the error kind is `StartReplayErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartReplayErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, StartReplayErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `StartReplayErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `StartReplayErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartReplayErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `StartReplayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartReplayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5290,7 +5290,7 @@ pub enum TagResourceErrorKind {
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -5356,22 +5356,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ManagedRuleException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ManagedRuleException`.
     pub fn is_managed_rule_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ManagedRuleException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5408,7 +5408,7 @@ pub enum TestEventPatternErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The event pattern is not valid.</p>
     InvalidEventPatternException(crate::error::InvalidEventPatternException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestEventPatternError {
@@ -5472,11 +5472,11 @@ impl TestEventPatternError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestEventPatternErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `TestEventPatternErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, TestEventPatternErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `TestEventPatternErrorKind::InvalidEventPatternException`.
+    /// Returns `true` if the error kind is `TestEventPatternErrorKind::InvalidEventPatternException`.
     pub fn is_invalid_event_pattern_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5520,7 +5520,7 @@ pub enum UntagResourceErrorKind {
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -5586,22 +5586,22 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ManagedRuleException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ManagedRuleException`.
     pub fn is_managed_rule_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ManagedRuleException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5643,7 +5643,7 @@ pub enum UpdateApiDestinationErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApiDestinationError {
@@ -5709,28 +5709,28 @@ impl UpdateApiDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApiDestinationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateApiDestinationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApiDestinationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApiDestinationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateApiDestinationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApiDestinationErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApiDestinationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateApiDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApiDestinationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApiDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApiDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5774,7 +5774,7 @@ pub enum UpdateArchiveErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateArchiveError {
@@ -5841,32 +5841,32 @@ impl UpdateArchiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateArchiveErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateArchiveErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateArchiveErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateArchiveErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateArchiveErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateArchiveErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateArchiveErrorKind::InvalidEventPatternException`.
+    /// Returns `true` if the error kind is `UpdateArchiveErrorKind::InvalidEventPatternException`.
     pub fn is_invalid_event_pattern_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateArchiveErrorKind::InvalidEventPatternException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateArchiveErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateArchiveErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateArchiveErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateArchiveErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateArchiveErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5909,7 +5909,7 @@ pub enum UpdateConnectionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>An entity that you specified does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectionError {
@@ -5975,25 +5975,25 @@ impl UpdateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateConnectionErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

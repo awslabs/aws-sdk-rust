@@ -4075,19 +4075,19 @@ pub fn parse_describe_input_device_thumbnail(
         );
         output = output.set_content_length(
             crate::http_serde::deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_content_length(response.headers())
-                                        .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ContentLength from header `Content-Length"))?
+                                    .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ContentLength from header `Content-Length"))?
         );
         output = output.set_content_type(
             crate::http_serde::deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_content_type(response.headers())
-                                        .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+                                    .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_e_tag(response.headers())
-                                        .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_last_modified(
             crate::http_serde::deser_header_describe_input_device_thumbnail_describe_input_device_thumbnail_output_last_modified(response.headers())
-                                        .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse LastModified from header `Last-Modified"))?
+                                    .map_err(|_|crate::error::DescribeInputDeviceThumbnailError::unhandled("Failed to parse LastModified from header `Last-Modified"))?
         );
         output.build()
     })

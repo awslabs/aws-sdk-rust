@@ -2045,14 +2045,24 @@ pub fn serialize_operation_crate_operation_modify_db_cluster(
         scope_600.string(var_601);
     }
     #[allow(unused_mut)]
-    let mut scope_602 = writer.prefix("DeletionProtection");
-    if let Some(var_603) = &input.deletion_protection {
-        scope_602.boolean(*var_603);
+    let mut scope_602 = writer.prefix("AllowMajorVersionUpgrade");
+    if input.allow_major_version_upgrade {
+        scope_602.boolean(input.allow_major_version_upgrade);
     }
     #[allow(unused_mut)]
-    let mut scope_604 = writer.prefix("CopyTagsToSnapshot");
-    if let Some(var_605) = &input.copy_tags_to_snapshot {
-        scope_604.boolean(*var_605);
+    let mut scope_603 = writer.prefix("DBInstanceParameterGroupName");
+    if let Some(var_604) = &input.db_instance_parameter_group_name {
+        scope_603.string(var_604);
+    }
+    #[allow(unused_mut)]
+    let mut scope_605 = writer.prefix("DeletionProtection");
+    if let Some(var_606) = &input.deletion_protection {
+        scope_605.boolean(*var_606);
+    }
+    #[allow(unused_mut)]
+    let mut scope_607 = writer.prefix("CopyTagsToSnapshot");
+    if let Some(var_608) = &input.copy_tags_to_snapshot {
+        scope_607.boolean(*var_608);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2066,36 +2076,36 @@ pub fn serialize_operation_crate_operation_modify_db_cluster_endpoint(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyDBClusterEndpoint", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_606 = writer.prefix("DBClusterEndpointIdentifier");
-    if let Some(var_607) = &input.db_cluster_endpoint_identifier {
-        scope_606.string(var_607);
+    let mut scope_609 = writer.prefix("DBClusterEndpointIdentifier");
+    if let Some(var_610) = &input.db_cluster_endpoint_identifier {
+        scope_609.string(var_610);
     }
     #[allow(unused_mut)]
-    let mut scope_608 = writer.prefix("EndpointType");
-    if let Some(var_609) = &input.endpoint_type {
-        scope_608.string(var_609);
+    let mut scope_611 = writer.prefix("EndpointType");
+    if let Some(var_612) = &input.endpoint_type {
+        scope_611.string(var_612);
     }
     #[allow(unused_mut)]
-    let mut scope_610 = writer.prefix("StaticMembers");
-    if let Some(var_611) = &input.static_members {
-        let mut list_613 = scope_610.start_list(false, None);
-        for item_612 in var_611 {
+    let mut scope_613 = writer.prefix("StaticMembers");
+    if let Some(var_614) = &input.static_members {
+        let mut list_616 = scope_613.start_list(false, None);
+        for item_615 in var_614 {
             #[allow(unused_mut)]
-            let mut entry_614 = list_613.entry();
-            entry_614.string(item_612);
+            let mut entry_617 = list_616.entry();
+            entry_617.string(item_615);
         }
-        list_613.finish();
+        list_616.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_615 = writer.prefix("ExcludedMembers");
-    if let Some(var_616) = &input.excluded_members {
-        let mut list_618 = scope_615.start_list(false, None);
-        for item_617 in var_616 {
+    let mut scope_618 = writer.prefix("ExcludedMembers");
+    if let Some(var_619) = &input.excluded_members {
+        let mut list_621 = scope_618.start_list(false, None);
+        for item_620 in var_619 {
             #[allow(unused_mut)]
-            let mut entry_619 = list_618.entry();
-            entry_619.string(item_617);
+            let mut entry_622 = list_621.entry();
+            entry_622.string(item_620);
         }
-        list_618.finish();
+        list_621.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2109,20 +2119,20 @@ pub fn serialize_operation_crate_operation_modify_db_cluster_parameter_group(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyDBClusterParameterGroup", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_620 = writer.prefix("DBClusterParameterGroupName");
-    if let Some(var_621) = &input.db_cluster_parameter_group_name {
-        scope_620.string(var_621);
+    let mut scope_623 = writer.prefix("DBClusterParameterGroupName");
+    if let Some(var_624) = &input.db_cluster_parameter_group_name {
+        scope_623.string(var_624);
     }
     #[allow(unused_mut)]
-    let mut scope_622 = writer.prefix("Parameters");
-    if let Some(var_623) = &input.parameters {
-        let mut list_625 = scope_622.start_list(false, Some("Parameter"));
-        for item_624 in var_623 {
+    let mut scope_625 = writer.prefix("Parameters");
+    if let Some(var_626) = &input.parameters {
+        let mut list_628 = scope_625.start_list(false, Some("Parameter"));
+        for item_627 in var_626 {
             #[allow(unused_mut)]
-            let mut entry_626 = list_625.entry();
-            crate::query_ser::serialize_structure_crate_model_parameter(entry_626, item_624);
+            let mut entry_629 = list_628.entry();
+            crate::query_ser::serialize_structure_crate_model_parameter(entry_629, item_627);
         }
-        list_625.finish();
+        list_628.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2139,36 +2149,36 @@ pub fn serialize_operation_crate_operation_modify_db_cluster_snapshot_attribute(
         "2014-10-31",
     );
     #[allow(unused_mut)]
-    let mut scope_627 = writer.prefix("DBClusterSnapshotIdentifier");
-    if let Some(var_628) = &input.db_cluster_snapshot_identifier {
-        scope_627.string(var_628);
+    let mut scope_630 = writer.prefix("DBClusterSnapshotIdentifier");
+    if let Some(var_631) = &input.db_cluster_snapshot_identifier {
+        scope_630.string(var_631);
     }
     #[allow(unused_mut)]
-    let mut scope_629 = writer.prefix("AttributeName");
-    if let Some(var_630) = &input.attribute_name {
-        scope_629.string(var_630);
+    let mut scope_632 = writer.prefix("AttributeName");
+    if let Some(var_633) = &input.attribute_name {
+        scope_632.string(var_633);
     }
     #[allow(unused_mut)]
-    let mut scope_631 = writer.prefix("ValuesToAdd");
-    if let Some(var_632) = &input.values_to_add {
-        let mut list_634 = scope_631.start_list(false, Some("AttributeValue"));
-        for item_633 in var_632 {
+    let mut scope_634 = writer.prefix("ValuesToAdd");
+    if let Some(var_635) = &input.values_to_add {
+        let mut list_637 = scope_634.start_list(false, Some("AttributeValue"));
+        for item_636 in var_635 {
             #[allow(unused_mut)]
-            let mut entry_635 = list_634.entry();
-            entry_635.string(item_633);
+            let mut entry_638 = list_637.entry();
+            entry_638.string(item_636);
         }
-        list_634.finish();
+        list_637.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_636 = writer.prefix("ValuesToRemove");
-    if let Some(var_637) = &input.values_to_remove {
-        let mut list_639 = scope_636.start_list(false, Some("AttributeValue"));
-        for item_638 in var_637 {
+    let mut scope_639 = writer.prefix("ValuesToRemove");
+    if let Some(var_640) = &input.values_to_remove {
+        let mut list_642 = scope_639.start_list(false, Some("AttributeValue"));
+        for item_641 in var_640 {
             #[allow(unused_mut)]
-            let mut entry_640 = list_639.entry();
-            entry_640.string(item_638);
+            let mut entry_643 = list_642.entry();
+            entry_643.string(item_641);
         }
-        list_639.finish();
+        list_642.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2181,221 +2191,221 @@ pub fn serialize_operation_crate_operation_modify_db_instance(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "ModifyDBInstance", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_641 = writer.prefix("DBInstanceIdentifier");
-    if let Some(var_642) = &input.db_instance_identifier {
-        scope_641.string(var_642);
+    let mut scope_644 = writer.prefix("DBInstanceIdentifier");
+    if let Some(var_645) = &input.db_instance_identifier {
+        scope_644.string(var_645);
     }
     #[allow(unused_mut)]
-    let mut scope_643 = writer.prefix("AllocatedStorage");
-    if let Some(var_644) = &input.allocated_storage {
-        scope_643.number(
+    let mut scope_646 = writer.prefix("AllocatedStorage");
+    if let Some(var_647) = &input.allocated_storage {
+        scope_646.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_644).into()),
+            aws_smithy_types::Number::NegInt((*var_647).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_645 = writer.prefix("DBInstanceClass");
-    if let Some(var_646) = &input.db_instance_class {
-        scope_645.string(var_646);
+    let mut scope_648 = writer.prefix("DBInstanceClass");
+    if let Some(var_649) = &input.db_instance_class {
+        scope_648.string(var_649);
     }
     #[allow(unused_mut)]
-    let mut scope_647 = writer.prefix("DBSubnetGroupName");
-    if let Some(var_648) = &input.db_subnet_group_name {
-        scope_647.string(var_648);
+    let mut scope_650 = writer.prefix("DBSubnetGroupName");
+    if let Some(var_651) = &input.db_subnet_group_name {
+        scope_650.string(var_651);
     }
     #[allow(unused_mut)]
-    let mut scope_649 = writer.prefix("DBSecurityGroups");
-    if let Some(var_650) = &input.db_security_groups {
-        let mut list_652 = scope_649.start_list(false, Some("DBSecurityGroupName"));
-        for item_651 in var_650 {
+    let mut scope_652 = writer.prefix("DBSecurityGroups");
+    if let Some(var_653) = &input.db_security_groups {
+        let mut list_655 = scope_652.start_list(false, Some("DBSecurityGroupName"));
+        for item_654 in var_653 {
             #[allow(unused_mut)]
-            let mut entry_653 = list_652.entry();
-            entry_653.string(item_651);
+            let mut entry_656 = list_655.entry();
+            entry_656.string(item_654);
         }
-        list_652.finish();
+        list_655.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_654 = writer.prefix("VpcSecurityGroupIds");
-    if let Some(var_655) = &input.vpc_security_group_ids {
-        let mut list_657 = scope_654.start_list(false, Some("VpcSecurityGroupId"));
-        for item_656 in var_655 {
+    let mut scope_657 = writer.prefix("VpcSecurityGroupIds");
+    if let Some(var_658) = &input.vpc_security_group_ids {
+        let mut list_660 = scope_657.start_list(false, Some("VpcSecurityGroupId"));
+        for item_659 in var_658 {
             #[allow(unused_mut)]
-            let mut entry_658 = list_657.entry();
-            entry_658.string(item_656);
+            let mut entry_661 = list_660.entry();
+            entry_661.string(item_659);
         }
-        list_657.finish();
+        list_660.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_659 = writer.prefix("ApplyImmediately");
+    let mut scope_662 = writer.prefix("ApplyImmediately");
     if input.apply_immediately {
-        scope_659.boolean(input.apply_immediately);
+        scope_662.boolean(input.apply_immediately);
     }
     #[allow(unused_mut)]
-    let mut scope_660 = writer.prefix("MasterUserPassword");
-    if let Some(var_661) = &input.master_user_password {
-        scope_660.string(var_661);
+    let mut scope_663 = writer.prefix("MasterUserPassword");
+    if let Some(var_664) = &input.master_user_password {
+        scope_663.string(var_664);
     }
     #[allow(unused_mut)]
-    let mut scope_662 = writer.prefix("DBParameterGroupName");
-    if let Some(var_663) = &input.db_parameter_group_name {
-        scope_662.string(var_663);
+    let mut scope_665 = writer.prefix("DBParameterGroupName");
+    if let Some(var_666) = &input.db_parameter_group_name {
+        scope_665.string(var_666);
     }
     #[allow(unused_mut)]
-    let mut scope_664 = writer.prefix("BackupRetentionPeriod");
-    if let Some(var_665) = &input.backup_retention_period {
-        scope_664.number(
+    let mut scope_667 = writer.prefix("BackupRetentionPeriod");
+    if let Some(var_668) = &input.backup_retention_period {
+        scope_667.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_665).into()),
+            aws_smithy_types::Number::NegInt((*var_668).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_666 = writer.prefix("PreferredBackupWindow");
-    if let Some(var_667) = &input.preferred_backup_window {
-        scope_666.string(var_667);
+    let mut scope_669 = writer.prefix("PreferredBackupWindow");
+    if let Some(var_670) = &input.preferred_backup_window {
+        scope_669.string(var_670);
     }
     #[allow(unused_mut)]
-    let mut scope_668 = writer.prefix("PreferredMaintenanceWindow");
-    if let Some(var_669) = &input.preferred_maintenance_window {
-        scope_668.string(var_669);
+    let mut scope_671 = writer.prefix("PreferredMaintenanceWindow");
+    if let Some(var_672) = &input.preferred_maintenance_window {
+        scope_671.string(var_672);
     }
     #[allow(unused_mut)]
-    let mut scope_670 = writer.prefix("MultiAZ");
-    if let Some(var_671) = &input.multi_az {
-        scope_670.boolean(*var_671);
+    let mut scope_673 = writer.prefix("MultiAZ");
+    if let Some(var_674) = &input.multi_az {
+        scope_673.boolean(*var_674);
     }
     #[allow(unused_mut)]
-    let mut scope_672 = writer.prefix("EngineVersion");
-    if let Some(var_673) = &input.engine_version {
-        scope_672.string(var_673);
+    let mut scope_675 = writer.prefix("EngineVersion");
+    if let Some(var_676) = &input.engine_version {
+        scope_675.string(var_676);
     }
     #[allow(unused_mut)]
-    let mut scope_674 = writer.prefix("AllowMajorVersionUpgrade");
+    let mut scope_677 = writer.prefix("AllowMajorVersionUpgrade");
     if input.allow_major_version_upgrade {
-        scope_674.boolean(input.allow_major_version_upgrade);
+        scope_677.boolean(input.allow_major_version_upgrade);
     }
     #[allow(unused_mut)]
-    let mut scope_675 = writer.prefix("AutoMinorVersionUpgrade");
-    if let Some(var_676) = &input.auto_minor_version_upgrade {
-        scope_675.boolean(*var_676);
+    let mut scope_678 = writer.prefix("AutoMinorVersionUpgrade");
+    if let Some(var_679) = &input.auto_minor_version_upgrade {
+        scope_678.boolean(*var_679);
     }
     #[allow(unused_mut)]
-    let mut scope_677 = writer.prefix("LicenseModel");
-    if let Some(var_678) = &input.license_model {
-        scope_677.string(var_678);
+    let mut scope_680 = writer.prefix("LicenseModel");
+    if let Some(var_681) = &input.license_model {
+        scope_680.string(var_681);
     }
     #[allow(unused_mut)]
-    let mut scope_679 = writer.prefix("Iops");
-    if let Some(var_680) = &input.iops {
-        scope_679.number(
+    let mut scope_682 = writer.prefix("Iops");
+    if let Some(var_683) = &input.iops {
+        scope_682.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_680).into()),
+            aws_smithy_types::Number::NegInt((*var_683).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_681 = writer.prefix("OptionGroupName");
-    if let Some(var_682) = &input.option_group_name {
-        scope_681.string(var_682);
+    let mut scope_684 = writer.prefix("OptionGroupName");
+    if let Some(var_685) = &input.option_group_name {
+        scope_684.string(var_685);
     }
     #[allow(unused_mut)]
-    let mut scope_683 = writer.prefix("NewDBInstanceIdentifier");
-    if let Some(var_684) = &input.new_db_instance_identifier {
-        scope_683.string(var_684);
+    let mut scope_686 = writer.prefix("NewDBInstanceIdentifier");
+    if let Some(var_687) = &input.new_db_instance_identifier {
+        scope_686.string(var_687);
     }
     #[allow(unused_mut)]
-    let mut scope_685 = writer.prefix("StorageType");
-    if let Some(var_686) = &input.storage_type {
-        scope_685.string(var_686);
+    let mut scope_688 = writer.prefix("StorageType");
+    if let Some(var_689) = &input.storage_type {
+        scope_688.string(var_689);
     }
     #[allow(unused_mut)]
-    let mut scope_687 = writer.prefix("TdeCredentialArn");
-    if let Some(var_688) = &input.tde_credential_arn {
-        scope_687.string(var_688);
+    let mut scope_690 = writer.prefix("TdeCredentialArn");
+    if let Some(var_691) = &input.tde_credential_arn {
+        scope_690.string(var_691);
     }
     #[allow(unused_mut)]
-    let mut scope_689 = writer.prefix("TdeCredentialPassword");
-    if let Some(var_690) = &input.tde_credential_password {
-        scope_689.string(var_690);
+    let mut scope_692 = writer.prefix("TdeCredentialPassword");
+    if let Some(var_693) = &input.tde_credential_password {
+        scope_692.string(var_693);
     }
     #[allow(unused_mut)]
-    let mut scope_691 = writer.prefix("CACertificateIdentifier");
-    if let Some(var_692) = &input.ca_certificate_identifier {
-        scope_691.string(var_692);
+    let mut scope_694 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_695) = &input.ca_certificate_identifier {
+        scope_694.string(var_695);
     }
     #[allow(unused_mut)]
-    let mut scope_693 = writer.prefix("Domain");
-    if let Some(var_694) = &input.domain {
-        scope_693.string(var_694);
+    let mut scope_696 = writer.prefix("Domain");
+    if let Some(var_697) = &input.domain {
+        scope_696.string(var_697);
     }
     #[allow(unused_mut)]
-    let mut scope_695 = writer.prefix("CopyTagsToSnapshot");
-    if let Some(var_696) = &input.copy_tags_to_snapshot {
-        scope_695.boolean(*var_696);
+    let mut scope_698 = writer.prefix("CopyTagsToSnapshot");
+    if let Some(var_699) = &input.copy_tags_to_snapshot {
+        scope_698.boolean(*var_699);
     }
     #[allow(unused_mut)]
-    let mut scope_697 = writer.prefix("MonitoringInterval");
-    if let Some(var_698) = &input.monitoring_interval {
-        scope_697.number(
+    let mut scope_700 = writer.prefix("MonitoringInterval");
+    if let Some(var_701) = &input.monitoring_interval {
+        scope_700.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_698).into()),
+            aws_smithy_types::Number::NegInt((*var_701).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_699 = writer.prefix("DBPortNumber");
-    if let Some(var_700) = &input.db_port_number {
-        scope_699.number(
+    let mut scope_702 = writer.prefix("DBPortNumber");
+    if let Some(var_703) = &input.db_port_number {
+        scope_702.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_700).into()),
+            aws_smithy_types::Number::NegInt((*var_703).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_701 = writer.prefix("PubliclyAccessible");
-    if let Some(var_702) = &input.publicly_accessible {
-        scope_701.boolean(*var_702);
+    let mut scope_704 = writer.prefix("PubliclyAccessible");
+    if let Some(var_705) = &input.publicly_accessible {
+        scope_704.boolean(*var_705);
     }
     #[allow(unused_mut)]
-    let mut scope_703 = writer.prefix("MonitoringRoleArn");
-    if let Some(var_704) = &input.monitoring_role_arn {
-        scope_703.string(var_704);
+    let mut scope_706 = writer.prefix("MonitoringRoleArn");
+    if let Some(var_707) = &input.monitoring_role_arn {
+        scope_706.string(var_707);
     }
     #[allow(unused_mut)]
-    let mut scope_705 = writer.prefix("DomainIAMRoleName");
-    if let Some(var_706) = &input.domain_iam_role_name {
-        scope_705.string(var_706);
+    let mut scope_708 = writer.prefix("DomainIAMRoleName");
+    if let Some(var_709) = &input.domain_iam_role_name {
+        scope_708.string(var_709);
     }
     #[allow(unused_mut)]
-    let mut scope_707 = writer.prefix("PromotionTier");
-    if let Some(var_708) = &input.promotion_tier {
-        scope_707.number(
+    let mut scope_710 = writer.prefix("PromotionTier");
+    if let Some(var_711) = &input.promotion_tier {
+        scope_710.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_708).into()),
+            aws_smithy_types::Number::NegInt((*var_711).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_709 = writer.prefix("EnableIAMDatabaseAuthentication");
-    if let Some(var_710) = &input.enable_iam_database_authentication {
-        scope_709.boolean(*var_710);
+    let mut scope_712 = writer.prefix("EnableIAMDatabaseAuthentication");
+    if let Some(var_713) = &input.enable_iam_database_authentication {
+        scope_712.boolean(*var_713);
     }
     #[allow(unused_mut)]
-    let mut scope_711 = writer.prefix("EnablePerformanceInsights");
-    if let Some(var_712) = &input.enable_performance_insights {
-        scope_711.boolean(*var_712);
+    let mut scope_714 = writer.prefix("EnablePerformanceInsights");
+    if let Some(var_715) = &input.enable_performance_insights {
+        scope_714.boolean(*var_715);
     }
     #[allow(unused_mut)]
-    let mut scope_713 = writer.prefix("PerformanceInsightsKMSKeyId");
-    if let Some(var_714) = &input.performance_insights_kms_key_id {
-        scope_713.string(var_714);
+    let mut scope_716 = writer.prefix("PerformanceInsightsKMSKeyId");
+    if let Some(var_717) = &input.performance_insights_kms_key_id {
+        scope_716.string(var_717);
     }
     #[allow(unused_mut)]
-    let mut scope_715 = writer.prefix("CloudwatchLogsExportConfiguration");
-    if let Some(var_716) = &input.cloudwatch_logs_export_configuration {
+    let mut scope_718 = writer.prefix("CloudwatchLogsExportConfiguration");
+    if let Some(var_719) = &input.cloudwatch_logs_export_configuration {
         crate::query_ser::serialize_structure_crate_model_cloudwatch_logs_export_configuration(
-            scope_715, var_716,
+            scope_718, var_719,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_717 = writer.prefix("DeletionProtection");
-    if let Some(var_718) = &input.deletion_protection {
-        scope_717.boolean(*var_718);
+    let mut scope_720 = writer.prefix("DeletionProtection");
+    if let Some(var_721) = &input.deletion_protection {
+        scope_720.boolean(*var_721);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2409,20 +2419,20 @@ pub fn serialize_operation_crate_operation_modify_db_parameter_group(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyDBParameterGroup", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_719 = writer.prefix("DBParameterGroupName");
-    if let Some(var_720) = &input.db_parameter_group_name {
-        scope_719.string(var_720);
+    let mut scope_722 = writer.prefix("DBParameterGroupName");
+    if let Some(var_723) = &input.db_parameter_group_name {
+        scope_722.string(var_723);
     }
     #[allow(unused_mut)]
-    let mut scope_721 = writer.prefix("Parameters");
-    if let Some(var_722) = &input.parameters {
-        let mut list_724 = scope_721.start_list(false, Some("Parameter"));
-        for item_723 in var_722 {
+    let mut scope_724 = writer.prefix("Parameters");
+    if let Some(var_725) = &input.parameters {
+        let mut list_727 = scope_724.start_list(false, Some("Parameter"));
+        for item_726 in var_725 {
             #[allow(unused_mut)]
-            let mut entry_725 = list_724.entry();
-            crate::query_ser::serialize_structure_crate_model_parameter(entry_725, item_723);
+            let mut entry_728 = list_727.entry();
+            crate::query_ser::serialize_structure_crate_model_parameter(entry_728, item_726);
         }
-        list_724.finish();
+        list_727.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2436,25 +2446,25 @@ pub fn serialize_operation_crate_operation_modify_db_subnet_group(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyDBSubnetGroup", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_726 = writer.prefix("DBSubnetGroupName");
-    if let Some(var_727) = &input.db_subnet_group_name {
-        scope_726.string(var_727);
+    let mut scope_729 = writer.prefix("DBSubnetGroupName");
+    if let Some(var_730) = &input.db_subnet_group_name {
+        scope_729.string(var_730);
     }
     #[allow(unused_mut)]
-    let mut scope_728 = writer.prefix("DBSubnetGroupDescription");
-    if let Some(var_729) = &input.db_subnet_group_description {
-        scope_728.string(var_729);
+    let mut scope_731 = writer.prefix("DBSubnetGroupDescription");
+    if let Some(var_732) = &input.db_subnet_group_description {
+        scope_731.string(var_732);
     }
     #[allow(unused_mut)]
-    let mut scope_730 = writer.prefix("SubnetIds");
-    if let Some(var_731) = &input.subnet_ids {
-        let mut list_733 = scope_730.start_list(false, Some("SubnetIdentifier"));
-        for item_732 in var_731 {
+    let mut scope_733 = writer.prefix("SubnetIds");
+    if let Some(var_734) = &input.subnet_ids {
+        let mut list_736 = scope_733.start_list(false, Some("SubnetIdentifier"));
+        for item_735 in var_734 {
             #[allow(unused_mut)]
-            let mut entry_734 = list_733.entry();
-            entry_734.string(item_732);
+            let mut entry_737 = list_736.entry();
+            entry_737.string(item_735);
         }
-        list_733.finish();
+        list_736.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2468,35 +2478,35 @@ pub fn serialize_operation_crate_operation_modify_event_subscription(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ModifyEventSubscription", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_735 = writer.prefix("SubscriptionName");
-    if let Some(var_736) = &input.subscription_name {
-        scope_735.string(var_736);
+    let mut scope_738 = writer.prefix("SubscriptionName");
+    if let Some(var_739) = &input.subscription_name {
+        scope_738.string(var_739);
     }
     #[allow(unused_mut)]
-    let mut scope_737 = writer.prefix("SnsTopicArn");
-    if let Some(var_738) = &input.sns_topic_arn {
-        scope_737.string(var_738);
+    let mut scope_740 = writer.prefix("SnsTopicArn");
+    if let Some(var_741) = &input.sns_topic_arn {
+        scope_740.string(var_741);
     }
     #[allow(unused_mut)]
-    let mut scope_739 = writer.prefix("SourceType");
-    if let Some(var_740) = &input.source_type {
-        scope_739.string(var_740);
+    let mut scope_742 = writer.prefix("SourceType");
+    if let Some(var_743) = &input.source_type {
+        scope_742.string(var_743);
     }
     #[allow(unused_mut)]
-    let mut scope_741 = writer.prefix("EventCategories");
-    if let Some(var_742) = &input.event_categories {
-        let mut list_744 = scope_741.start_list(false, Some("EventCategory"));
-        for item_743 in var_742 {
+    let mut scope_744 = writer.prefix("EventCategories");
+    if let Some(var_745) = &input.event_categories {
+        let mut list_747 = scope_744.start_list(false, Some("EventCategory"));
+        for item_746 in var_745 {
             #[allow(unused_mut)]
-            let mut entry_745 = list_744.entry();
-            entry_745.string(item_743);
+            let mut entry_748 = list_747.entry();
+            entry_748.string(item_746);
         }
-        list_744.finish();
+        list_747.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_746 = writer.prefix("Enabled");
-    if let Some(var_747) = &input.enabled {
-        scope_746.boolean(*var_747);
+    let mut scope_749 = writer.prefix("Enabled");
+    if let Some(var_750) = &input.enabled {
+        scope_749.boolean(*var_750);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2510,9 +2520,9 @@ pub fn serialize_operation_crate_operation_promote_read_replica_db_cluster(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "PromoteReadReplicaDBCluster", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_748 = writer.prefix("DBClusterIdentifier");
-    if let Some(var_749) = &input.db_cluster_identifier {
-        scope_748.string(var_749);
+    let mut scope_751 = writer.prefix("DBClusterIdentifier");
+    if let Some(var_752) = &input.db_cluster_identifier {
+        scope_751.string(var_752);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2525,14 +2535,14 @@ pub fn serialize_operation_crate_operation_reboot_db_instance(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "RebootDBInstance", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_750 = writer.prefix("DBInstanceIdentifier");
-    if let Some(var_751) = &input.db_instance_identifier {
-        scope_750.string(var_751);
+    let mut scope_753 = writer.prefix("DBInstanceIdentifier");
+    if let Some(var_754) = &input.db_instance_identifier {
+        scope_753.string(var_754);
     }
     #[allow(unused_mut)]
-    let mut scope_752 = writer.prefix("ForceFailover");
-    if let Some(var_753) = &input.force_failover {
-        scope_752.boolean(*var_753);
+    let mut scope_755 = writer.prefix("ForceFailover");
+    if let Some(var_756) = &input.force_failover {
+        scope_755.boolean(*var_756);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2546,19 +2556,19 @@ pub fn serialize_operation_crate_operation_remove_role_from_db_cluster(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RemoveRoleFromDBCluster", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_754 = writer.prefix("DBClusterIdentifier");
-    if let Some(var_755) = &input.db_cluster_identifier {
-        scope_754.string(var_755);
+    let mut scope_757 = writer.prefix("DBClusterIdentifier");
+    if let Some(var_758) = &input.db_cluster_identifier {
+        scope_757.string(var_758);
     }
     #[allow(unused_mut)]
-    let mut scope_756 = writer.prefix("RoleArn");
-    if let Some(var_757) = &input.role_arn {
-        scope_756.string(var_757);
+    let mut scope_759 = writer.prefix("RoleArn");
+    if let Some(var_760) = &input.role_arn {
+        scope_759.string(var_760);
     }
     #[allow(unused_mut)]
-    let mut scope_758 = writer.prefix("FeatureName");
-    if let Some(var_759) = &input.feature_name {
-        scope_758.string(var_759);
+    let mut scope_761 = writer.prefix("FeatureName");
+    if let Some(var_762) = &input.feature_name {
+        scope_761.string(var_762);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2575,14 +2585,14 @@ pub fn serialize_operation_crate_operation_remove_source_identifier_from_subscri
         "2014-10-31",
     );
     #[allow(unused_mut)]
-    let mut scope_760 = writer.prefix("SubscriptionName");
-    if let Some(var_761) = &input.subscription_name {
-        scope_760.string(var_761);
+    let mut scope_763 = writer.prefix("SubscriptionName");
+    if let Some(var_764) = &input.subscription_name {
+        scope_763.string(var_764);
     }
     #[allow(unused_mut)]
-    let mut scope_762 = writer.prefix("SourceIdentifier");
-    if let Some(var_763) = &input.source_identifier {
-        scope_762.string(var_763);
+    let mut scope_765 = writer.prefix("SourceIdentifier");
+    if let Some(var_766) = &input.source_identifier {
+        scope_765.string(var_766);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2596,20 +2606,20 @@ pub fn serialize_operation_crate_operation_remove_tags_from_resource(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RemoveTagsFromResource", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_764 = writer.prefix("ResourceName");
-    if let Some(var_765) = &input.resource_name {
-        scope_764.string(var_765);
+    let mut scope_767 = writer.prefix("ResourceName");
+    if let Some(var_768) = &input.resource_name {
+        scope_767.string(var_768);
     }
     #[allow(unused_mut)]
-    let mut scope_766 = writer.prefix("TagKeys");
-    if let Some(var_767) = &input.tag_keys {
-        let mut list_769 = scope_766.start_list(false, None);
-        for item_768 in var_767 {
+    let mut scope_769 = writer.prefix("TagKeys");
+    if let Some(var_770) = &input.tag_keys {
+        let mut list_772 = scope_769.start_list(false, None);
+        for item_771 in var_770 {
             #[allow(unused_mut)]
-            let mut entry_770 = list_769.entry();
-            entry_770.string(item_768);
+            let mut entry_773 = list_772.entry();
+            entry_773.string(item_771);
         }
-        list_769.finish();
+        list_772.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2623,25 +2633,25 @@ pub fn serialize_operation_crate_operation_reset_db_cluster_parameter_group(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ResetDBClusterParameterGroup", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_771 = writer.prefix("DBClusterParameterGroupName");
-    if let Some(var_772) = &input.db_cluster_parameter_group_name {
-        scope_771.string(var_772);
+    let mut scope_774 = writer.prefix("DBClusterParameterGroupName");
+    if let Some(var_775) = &input.db_cluster_parameter_group_name {
+        scope_774.string(var_775);
     }
     #[allow(unused_mut)]
-    let mut scope_773 = writer.prefix("ResetAllParameters");
+    let mut scope_776 = writer.prefix("ResetAllParameters");
     if input.reset_all_parameters {
-        scope_773.boolean(input.reset_all_parameters);
+        scope_776.boolean(input.reset_all_parameters);
     }
     #[allow(unused_mut)]
-    let mut scope_774 = writer.prefix("Parameters");
-    if let Some(var_775) = &input.parameters {
-        let mut list_777 = scope_774.start_list(false, Some("Parameter"));
-        for item_776 in var_775 {
+    let mut scope_777 = writer.prefix("Parameters");
+    if let Some(var_778) = &input.parameters {
+        let mut list_780 = scope_777.start_list(false, Some("Parameter"));
+        for item_779 in var_778 {
             #[allow(unused_mut)]
-            let mut entry_778 = list_777.entry();
-            crate::query_ser::serialize_structure_crate_model_parameter(entry_778, item_776);
+            let mut entry_781 = list_780.entry();
+            crate::query_ser::serialize_structure_crate_model_parameter(entry_781, item_779);
         }
-        list_777.finish();
+        list_780.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2655,25 +2665,25 @@ pub fn serialize_operation_crate_operation_reset_db_parameter_group(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "ResetDBParameterGroup", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_779 = writer.prefix("DBParameterGroupName");
-    if let Some(var_780) = &input.db_parameter_group_name {
-        scope_779.string(var_780);
+    let mut scope_782 = writer.prefix("DBParameterGroupName");
+    if let Some(var_783) = &input.db_parameter_group_name {
+        scope_782.string(var_783);
     }
     #[allow(unused_mut)]
-    let mut scope_781 = writer.prefix("ResetAllParameters");
+    let mut scope_784 = writer.prefix("ResetAllParameters");
     if input.reset_all_parameters {
-        scope_781.boolean(input.reset_all_parameters);
+        scope_784.boolean(input.reset_all_parameters);
     }
     #[allow(unused_mut)]
-    let mut scope_782 = writer.prefix("Parameters");
-    if let Some(var_783) = &input.parameters {
-        let mut list_785 = scope_782.start_list(false, Some("Parameter"));
-        for item_784 in var_783 {
+    let mut scope_785 = writer.prefix("Parameters");
+    if let Some(var_786) = &input.parameters {
+        let mut list_788 = scope_785.start_list(false, Some("Parameter"));
+        for item_787 in var_786 {
             #[allow(unused_mut)]
-            let mut entry_786 = list_785.entry();
-            crate::query_ser::serialize_structure_crate_model_parameter(entry_786, item_784);
+            let mut entry_789 = list_788.entry();
+            crate::query_ser::serialize_structure_crate_model_parameter(entry_789, item_787);
         }
-        list_785.finish();
+        list_788.finish();
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2687,116 +2697,116 @@ pub fn serialize_operation_crate_operation_restore_db_cluster_from_snapshot(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RestoreDBClusterFromSnapshot", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_787 = writer.prefix("AvailabilityZones");
-    if let Some(var_788) = &input.availability_zones {
-        let mut list_790 = scope_787.start_list(false, Some("AvailabilityZone"));
-        for item_789 in var_788 {
+    let mut scope_790 = writer.prefix("AvailabilityZones");
+    if let Some(var_791) = &input.availability_zones {
+        let mut list_793 = scope_790.start_list(false, Some("AvailabilityZone"));
+        for item_792 in var_791 {
             #[allow(unused_mut)]
-            let mut entry_791 = list_790.entry();
-            entry_791.string(item_789);
+            let mut entry_794 = list_793.entry();
+            entry_794.string(item_792);
         }
-        list_790.finish();
+        list_793.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_792 = writer.prefix("DBClusterIdentifier");
-    if let Some(var_793) = &input.db_cluster_identifier {
-        scope_792.string(var_793);
+    let mut scope_795 = writer.prefix("DBClusterIdentifier");
+    if let Some(var_796) = &input.db_cluster_identifier {
+        scope_795.string(var_796);
     }
     #[allow(unused_mut)]
-    let mut scope_794 = writer.prefix("SnapshotIdentifier");
-    if let Some(var_795) = &input.snapshot_identifier {
-        scope_794.string(var_795);
+    let mut scope_797 = writer.prefix("SnapshotIdentifier");
+    if let Some(var_798) = &input.snapshot_identifier {
+        scope_797.string(var_798);
     }
     #[allow(unused_mut)]
-    let mut scope_796 = writer.prefix("Engine");
-    if let Some(var_797) = &input.engine {
-        scope_796.string(var_797);
+    let mut scope_799 = writer.prefix("Engine");
+    if let Some(var_800) = &input.engine {
+        scope_799.string(var_800);
     }
     #[allow(unused_mut)]
-    let mut scope_798 = writer.prefix("EngineVersion");
-    if let Some(var_799) = &input.engine_version {
-        scope_798.string(var_799);
+    let mut scope_801 = writer.prefix("EngineVersion");
+    if let Some(var_802) = &input.engine_version {
+        scope_801.string(var_802);
     }
     #[allow(unused_mut)]
-    let mut scope_800 = writer.prefix("Port");
-    if let Some(var_801) = &input.port {
-        scope_800.number(
+    let mut scope_803 = writer.prefix("Port");
+    if let Some(var_804) = &input.port {
+        scope_803.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_801).into()),
+            aws_smithy_types::Number::NegInt((*var_804).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_802 = writer.prefix("DBSubnetGroupName");
-    if let Some(var_803) = &input.db_subnet_group_name {
-        scope_802.string(var_803);
+    let mut scope_805 = writer.prefix("DBSubnetGroupName");
+    if let Some(var_806) = &input.db_subnet_group_name {
+        scope_805.string(var_806);
     }
     #[allow(unused_mut)]
-    let mut scope_804 = writer.prefix("DatabaseName");
-    if let Some(var_805) = &input.database_name {
-        scope_804.string(var_805);
+    let mut scope_807 = writer.prefix("DatabaseName");
+    if let Some(var_808) = &input.database_name {
+        scope_807.string(var_808);
     }
     #[allow(unused_mut)]
-    let mut scope_806 = writer.prefix("OptionGroupName");
-    if let Some(var_807) = &input.option_group_name {
-        scope_806.string(var_807);
+    let mut scope_809 = writer.prefix("OptionGroupName");
+    if let Some(var_810) = &input.option_group_name {
+        scope_809.string(var_810);
     }
     #[allow(unused_mut)]
-    let mut scope_808 = writer.prefix("VpcSecurityGroupIds");
-    if let Some(var_809) = &input.vpc_security_group_ids {
-        let mut list_811 = scope_808.start_list(false, Some("VpcSecurityGroupId"));
-        for item_810 in var_809 {
+    let mut scope_811 = writer.prefix("VpcSecurityGroupIds");
+    if let Some(var_812) = &input.vpc_security_group_ids {
+        let mut list_814 = scope_811.start_list(false, Some("VpcSecurityGroupId"));
+        for item_813 in var_812 {
             #[allow(unused_mut)]
-            let mut entry_812 = list_811.entry();
-            entry_812.string(item_810);
+            let mut entry_815 = list_814.entry();
+            entry_815.string(item_813);
         }
-        list_811.finish();
+        list_814.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_813 = writer.prefix("Tags");
-    if let Some(var_814) = &input.tags {
-        let mut list_816 = scope_813.start_list(false, Some("Tag"));
-        for item_815 in var_814 {
+    let mut scope_816 = writer.prefix("Tags");
+    if let Some(var_817) = &input.tags {
+        let mut list_819 = scope_816.start_list(false, Some("Tag"));
+        for item_818 in var_817 {
             #[allow(unused_mut)]
-            let mut entry_817 = list_816.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_817, item_815);
+            let mut entry_820 = list_819.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_820, item_818);
         }
-        list_816.finish();
+        list_819.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_818 = writer.prefix("KmsKeyId");
-    if let Some(var_819) = &input.kms_key_id {
-        scope_818.string(var_819);
+    let mut scope_821 = writer.prefix("KmsKeyId");
+    if let Some(var_822) = &input.kms_key_id {
+        scope_821.string(var_822);
     }
     #[allow(unused_mut)]
-    let mut scope_820 = writer.prefix("EnableIAMDatabaseAuthentication");
-    if let Some(var_821) = &input.enable_iam_database_authentication {
-        scope_820.boolean(*var_821);
+    let mut scope_823 = writer.prefix("EnableIAMDatabaseAuthentication");
+    if let Some(var_824) = &input.enable_iam_database_authentication {
+        scope_823.boolean(*var_824);
     }
     #[allow(unused_mut)]
-    let mut scope_822 = writer.prefix("EnableCloudwatchLogsExports");
-    if let Some(var_823) = &input.enable_cloudwatch_logs_exports {
-        let mut list_825 = scope_822.start_list(false, None);
-        for item_824 in var_823 {
+    let mut scope_825 = writer.prefix("EnableCloudwatchLogsExports");
+    if let Some(var_826) = &input.enable_cloudwatch_logs_exports {
+        let mut list_828 = scope_825.start_list(false, None);
+        for item_827 in var_826 {
             #[allow(unused_mut)]
-            let mut entry_826 = list_825.entry();
-            entry_826.string(item_824);
+            let mut entry_829 = list_828.entry();
+            entry_829.string(item_827);
         }
-        list_825.finish();
+        list_828.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_827 = writer.prefix("DBClusterParameterGroupName");
-    if let Some(var_828) = &input.db_cluster_parameter_group_name {
-        scope_827.string(var_828);
+    let mut scope_830 = writer.prefix("DBClusterParameterGroupName");
+    if let Some(var_831) = &input.db_cluster_parameter_group_name {
+        scope_830.string(var_831);
     }
     #[allow(unused_mut)]
-    let mut scope_829 = writer.prefix("DeletionProtection");
-    if let Some(var_830) = &input.deletion_protection {
-        scope_829.boolean(*var_830);
+    let mut scope_832 = writer.prefix("DeletionProtection");
+    if let Some(var_833) = &input.deletion_protection {
+        scope_832.boolean(*var_833);
     }
     #[allow(unused_mut)]
-    let mut scope_831 = writer.prefix("CopyTagsToSnapshot");
-    if let Some(var_832) = &input.copy_tags_to_snapshot {
-        scope_831.boolean(*var_832);
+    let mut scope_834 = writer.prefix("CopyTagsToSnapshot");
+    if let Some(var_835) = &input.copy_tags_to_snapshot {
+        scope_834.boolean(*var_835);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2810,100 +2820,100 @@ pub fn serialize_operation_crate_operation_restore_db_cluster_to_point_in_time(
     let mut writer =
         aws_smithy_query::QueryWriter::new(&mut out, "RestoreDBClusterToPointInTime", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_833 = writer.prefix("DBClusterIdentifier");
-    if let Some(var_834) = &input.db_cluster_identifier {
-        scope_833.string(var_834);
+    let mut scope_836 = writer.prefix("DBClusterIdentifier");
+    if let Some(var_837) = &input.db_cluster_identifier {
+        scope_836.string(var_837);
     }
     #[allow(unused_mut)]
-    let mut scope_835 = writer.prefix("RestoreType");
-    if let Some(var_836) = &input.restore_type {
-        scope_835.string(var_836);
+    let mut scope_838 = writer.prefix("RestoreType");
+    if let Some(var_839) = &input.restore_type {
+        scope_838.string(var_839);
     }
     #[allow(unused_mut)]
-    let mut scope_837 = writer.prefix("SourceDBClusterIdentifier");
-    if let Some(var_838) = &input.source_db_cluster_identifier {
-        scope_837.string(var_838);
+    let mut scope_840 = writer.prefix("SourceDBClusterIdentifier");
+    if let Some(var_841) = &input.source_db_cluster_identifier {
+        scope_840.string(var_841);
     }
     #[allow(unused_mut)]
-    let mut scope_839 = writer.prefix("RestoreToTime");
-    if let Some(var_840) = &input.restore_to_time {
-        scope_839.instant(var_840, aws_smithy_types::instant::Format::DateTime);
+    let mut scope_842 = writer.prefix("RestoreToTime");
+    if let Some(var_843) = &input.restore_to_time {
+        scope_842.instant(var_843, aws_smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_841 = writer.prefix("UseLatestRestorableTime");
+    let mut scope_844 = writer.prefix("UseLatestRestorableTime");
     if input.use_latest_restorable_time {
-        scope_841.boolean(input.use_latest_restorable_time);
+        scope_844.boolean(input.use_latest_restorable_time);
     }
     #[allow(unused_mut)]
-    let mut scope_842 = writer.prefix("Port");
-    if let Some(var_843) = &input.port {
-        scope_842.number(
+    let mut scope_845 = writer.prefix("Port");
+    if let Some(var_846) = &input.port {
+        scope_845.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_843).into()),
+            aws_smithy_types::Number::NegInt((*var_846).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_844 = writer.prefix("DBSubnetGroupName");
-    if let Some(var_845) = &input.db_subnet_group_name {
-        scope_844.string(var_845);
+    let mut scope_847 = writer.prefix("DBSubnetGroupName");
+    if let Some(var_848) = &input.db_subnet_group_name {
+        scope_847.string(var_848);
     }
     #[allow(unused_mut)]
-    let mut scope_846 = writer.prefix("OptionGroupName");
-    if let Some(var_847) = &input.option_group_name {
-        scope_846.string(var_847);
+    let mut scope_849 = writer.prefix("OptionGroupName");
+    if let Some(var_850) = &input.option_group_name {
+        scope_849.string(var_850);
     }
     #[allow(unused_mut)]
-    let mut scope_848 = writer.prefix("VpcSecurityGroupIds");
-    if let Some(var_849) = &input.vpc_security_group_ids {
-        let mut list_851 = scope_848.start_list(false, Some("VpcSecurityGroupId"));
-        for item_850 in var_849 {
+    let mut scope_851 = writer.prefix("VpcSecurityGroupIds");
+    if let Some(var_852) = &input.vpc_security_group_ids {
+        let mut list_854 = scope_851.start_list(false, Some("VpcSecurityGroupId"));
+        for item_853 in var_852 {
             #[allow(unused_mut)]
-            let mut entry_852 = list_851.entry();
-            entry_852.string(item_850);
+            let mut entry_855 = list_854.entry();
+            entry_855.string(item_853);
         }
-        list_851.finish();
+        list_854.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_853 = writer.prefix("Tags");
-    if let Some(var_854) = &input.tags {
-        let mut list_856 = scope_853.start_list(false, Some("Tag"));
-        for item_855 in var_854 {
+    let mut scope_856 = writer.prefix("Tags");
+    if let Some(var_857) = &input.tags {
+        let mut list_859 = scope_856.start_list(false, Some("Tag"));
+        for item_858 in var_857 {
             #[allow(unused_mut)]
-            let mut entry_857 = list_856.entry();
-            crate::query_ser::serialize_structure_crate_model_tag(entry_857, item_855);
+            let mut entry_860 = list_859.entry();
+            crate::query_ser::serialize_structure_crate_model_tag(entry_860, item_858);
         }
-        list_856.finish();
+        list_859.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_858 = writer.prefix("KmsKeyId");
-    if let Some(var_859) = &input.kms_key_id {
-        scope_858.string(var_859);
+    let mut scope_861 = writer.prefix("KmsKeyId");
+    if let Some(var_862) = &input.kms_key_id {
+        scope_861.string(var_862);
     }
     #[allow(unused_mut)]
-    let mut scope_860 = writer.prefix("EnableIAMDatabaseAuthentication");
-    if let Some(var_861) = &input.enable_iam_database_authentication {
-        scope_860.boolean(*var_861);
+    let mut scope_863 = writer.prefix("EnableIAMDatabaseAuthentication");
+    if let Some(var_864) = &input.enable_iam_database_authentication {
+        scope_863.boolean(*var_864);
     }
     #[allow(unused_mut)]
-    let mut scope_862 = writer.prefix("EnableCloudwatchLogsExports");
-    if let Some(var_863) = &input.enable_cloudwatch_logs_exports {
-        let mut list_865 = scope_862.start_list(false, None);
-        for item_864 in var_863 {
+    let mut scope_865 = writer.prefix("EnableCloudwatchLogsExports");
+    if let Some(var_866) = &input.enable_cloudwatch_logs_exports {
+        let mut list_868 = scope_865.start_list(false, None);
+        for item_867 in var_866 {
             #[allow(unused_mut)]
-            let mut entry_866 = list_865.entry();
-            entry_866.string(item_864);
+            let mut entry_869 = list_868.entry();
+            entry_869.string(item_867);
         }
-        list_865.finish();
+        list_868.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_867 = writer.prefix("DBClusterParameterGroupName");
-    if let Some(var_868) = &input.db_cluster_parameter_group_name {
-        scope_867.string(var_868);
+    let mut scope_870 = writer.prefix("DBClusterParameterGroupName");
+    if let Some(var_871) = &input.db_cluster_parameter_group_name {
+        scope_870.string(var_871);
     }
     #[allow(unused_mut)]
-    let mut scope_869 = writer.prefix("DeletionProtection");
-    if let Some(var_870) = &input.deletion_protection {
-        scope_869.boolean(*var_870);
+    let mut scope_872 = writer.prefix("DeletionProtection");
+    if let Some(var_873) = &input.deletion_protection {
+        scope_872.boolean(*var_873);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2916,9 +2926,9 @@ pub fn serialize_operation_crate_operation_start_db_cluster(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "StartDBCluster", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_871 = writer.prefix("DBClusterIdentifier");
-    if let Some(var_872) = &input.db_cluster_identifier {
-        scope_871.string(var_872);
+    let mut scope_874 = writer.prefix("DBClusterIdentifier");
+    if let Some(var_875) = &input.db_cluster_identifier {
+        scope_874.string(var_875);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
@@ -2931,9 +2941,9 @@ pub fn serialize_operation_crate_operation_stop_db_cluster(
     #[allow(unused_mut)]
     let mut writer = aws_smithy_query::QueryWriter::new(&mut out, "StopDBCluster", "2014-10-31");
     #[allow(unused_mut)]
-    let mut scope_873 = writer.prefix("DBClusterIdentifier");
-    if let Some(var_874) = &input.db_cluster_identifier {
-        scope_873.string(var_874);
+    let mut scope_876 = writer.prefix("DBClusterIdentifier");
+    if let Some(var_877) = &input.db_cluster_identifier {
+        scope_876.string(var_877);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

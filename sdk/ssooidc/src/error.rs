@@ -38,7 +38,7 @@ pub enum CreateTokenErrorKind {
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// <p>Indicates that the grant type in the request is not supported by the service.</p>
     UnsupportedGrantTypeException(crate::error::UnsupportedGrantTypeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTokenError {
@@ -111,53 +111,53 @@ impl CreateTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::AuthorizationPendingException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::AuthorizationPendingException`.
     pub fn is_authorization_pending_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTokenErrorKind::AuthorizationPendingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::ExpiredTokenException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::ExpiredTokenException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::InvalidClientException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::InvalidClientException`.
     pub fn is_invalid_client_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::InvalidClientException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::InvalidGrantException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::InvalidGrantException`.
     pub fn is_invalid_grant_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::InvalidGrantException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::InvalidScopeException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::InvalidScopeException`.
     pub fn is_invalid_scope_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::InvalidScopeException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::SlowDownException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::SlowDownException`.
     pub fn is_slow_down_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::SlowDownException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTokenErrorKind::UnauthorizedClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::UnsupportedGrantTypeException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::UnsupportedGrantTypeException`.
     pub fn is_unsupported_grant_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -206,7 +206,7 @@ pub enum RegisterClientErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that the scope provided in the request is invalid.</p>
     InvalidScopeException(crate::error::InvalidScopeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterClientError {
@@ -272,28 +272,28 @@ impl RegisterClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterClientErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RegisterClientErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterClientErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterClientErrorKind::InvalidClientMetadataException`.
+    /// Returns `true` if the error kind is `RegisterClientErrorKind::InvalidClientMetadataException`.
     pub fn is_invalid_client_metadata_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterClientErrorKind::InvalidClientMetadataException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterClientErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RegisterClientErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterClientErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterClientErrorKind::InvalidScopeException`.
+    /// Returns `true` if the error kind is `RegisterClientErrorKind::InvalidScopeException`.
     pub fn is_invalid_scope_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -340,7 +340,7 @@ pub enum StartDeviceAuthorizationErrorKind {
     /// <p>Indicates that the client is not currently authorized to make the request. This can happen
     /// when a <code>clientId</code> is not issued for a public client.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDeviceAuthorizationError {
@@ -407,35 +407,35 @@ impl StartDeviceAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDeviceAuthorizationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartDeviceAuthorizationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDeviceAuthorizationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartDeviceAuthorizationErrorKind::InvalidClientException`.
+    /// Returns `true` if the error kind is `StartDeviceAuthorizationErrorKind::InvalidClientException`.
     pub fn is_invalid_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDeviceAuthorizationErrorKind::InvalidClientException(_)
         )
     }
-    /// Returns true if the error kind is `StartDeviceAuthorizationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartDeviceAuthorizationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDeviceAuthorizationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartDeviceAuthorizationErrorKind::SlowDownException`.
+    /// Returns `true` if the error kind is `StartDeviceAuthorizationErrorKind::SlowDownException`.
     pub fn is_slow_down_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDeviceAuthorizationErrorKind::SlowDownException(_)
         )
     }
-    /// Returns true if the error kind is `StartDeviceAuthorizationErrorKind::UnauthorizedClientException`.
+    /// Returns `true` if the error kind is `StartDeviceAuthorizationErrorKind::UnauthorizedClientException`.
     pub fn is_unauthorized_client_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -922,7 +922,7 @@ pub struct DbClusterRole {
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role.
-    /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+    /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.
     /// </p>
     pub feature_name: std::option::Option<std::string::String>,
 }
@@ -1007,14 +1007,14 @@ pub mod db_cluster_role {
             self
         }
         /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.
         /// </p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_name = Some(input.into());
             self
         }
         /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.
         /// </p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature_name = input;
@@ -1295,14 +1295,14 @@ impl DbClusterOptionGroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode
-    /// characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain
-    /// only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
-    /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
+    /// The string can only contain the set of Unicode letters, digits, white-space,
+    /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode
-    /// characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain
-    /// only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
-    /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
+    /// The string can only contain the set of Unicode letters, digits, white-space,
+    /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
@@ -1324,33 +1324,33 @@ pub mod tag {
     }
     impl Builder {
         /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode
-        /// characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain
-        /// only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
-        /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+        /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
+        /// The string can only contain the set of Unicode letters, digits, white-space,
+        /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode
-        /// characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain
-        /// only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
-        /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+        /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
+        /// The string can only contain the set of Unicode letters, digits, white-space,
+        /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
         /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode
-        /// characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain
-        /// only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
-        /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+        /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
+        /// The string can only contain the set of Unicode letters, digits, white-space,
+        /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
         /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode
-        /// characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain
-        /// only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
-        /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+        /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
+        /// The string can only contain the set of Unicode letters, digits, white-space,
+        /// '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self

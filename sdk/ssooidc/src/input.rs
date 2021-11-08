@@ -146,7 +146,7 @@ pub type CreateTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -178,6 +178,7 @@ impl CreateTokenInput {
             input: &crate::input::CreateTokenInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -235,9 +236,10 @@ impl CreateTokenInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -327,7 +329,7 @@ pub type RegisterClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RegisterClientInput {
     /// Consumes the builder and constructs an Operation<[`RegisterClient`](crate::operation::RegisterClient)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -359,6 +361,7 @@ impl RegisterClientInput {
             input: &crate::input::RegisterClientInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -416,9 +419,10 @@ impl RegisterClientInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -509,7 +513,7 @@ pub type StartDeviceAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRe
 impl StartDeviceAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`StartDeviceAuthorization`](crate::operation::StartDeviceAuthorization)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -541,6 +545,7 @@ impl StartDeviceAuthorizationInput {
             input: &crate::input::StartDeviceAuthorizationInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -601,9 +606,10 @@ impl StartDeviceAuthorizationInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

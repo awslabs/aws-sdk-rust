@@ -27,9 +27,9 @@ struct Inner {
 
     /// Credential Expiry
     ///
-    /// A timepoint at which the credentials should no longer
-    /// be used because they have expired. The primary purpose of this value is to allow
-    /// credentials to communicate to the caching provider when they need to be refreshed.
+    /// A SystemTime at which the credentials should no longer be used because they have expired.
+    /// The primary purpose of this value is to allow credentials to communicate to the caching
+    /// provider when they need to be refreshed.
     ///
     /// If these credentials never expire, this value will be set to `None`
     expires_after: Option<SystemTime>,

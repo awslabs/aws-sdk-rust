@@ -20,7 +20,7 @@ pub enum AssociateMemberAccountErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current
     /// AWS account limits. The error code describes the limit exceeded. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateMemberAccountError {
@@ -85,21 +85,21 @@ impl AssociateMemberAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateMemberAccountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `AssociateMemberAccountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberAccountErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AssociateMemberAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberAccountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateMemberAccountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -141,7 +141,7 @@ pub enum AssociateS3ResourcesErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current
     /// AWS account limits. The error code describes the limit exceeded. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateS3ResourcesError {
@@ -207,28 +207,28 @@ impl AssociateS3ResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateS3ResourcesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateS3ResourcesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateS3ResourcesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateS3ResourcesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `AssociateS3ResourcesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateS3ResourcesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateS3ResourcesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AssociateS3ResourcesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateS3ResourcesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateS3ResourcesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateS3ResourcesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -266,7 +266,7 @@ pub enum DisassociateMemberAccountErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateMemberAccountError {
@@ -330,14 +330,14 @@ impl DisassociateMemberAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateMemberAccountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisassociateMemberAccountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMemberAccountErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMemberAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisassociateMemberAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -375,7 +375,7 @@ pub enum DisassociateS3ResourcesErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateS3ResourcesError {
@@ -440,21 +440,21 @@ impl DisassociateS3ResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateS3ResourcesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateS3ResourcesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateS3ResourcesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateS3ResourcesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisassociateS3ResourcesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateS3ResourcesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateS3ResourcesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisassociateS3ResourcesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -491,7 +491,7 @@ pub enum ListMemberAccountsErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMemberAccountsError {
@@ -555,14 +555,14 @@ impl ListMemberAccountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMemberAccountsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListMemberAccountsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMemberAccountsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListMemberAccountsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListMemberAccountsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -600,7 +600,7 @@ pub enum ListS3ResourcesErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListS3ResourcesError {
@@ -665,18 +665,18 @@ impl ListS3ResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListS3ResourcesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListS3ResourcesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListS3ResourcesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListS3ResourcesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListS3ResourcesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListS3ResourcesErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListS3ResourcesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListS3ResourcesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -715,7 +715,7 @@ pub enum UpdateS3ResourcesErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateS3ResourcesError {
@@ -780,18 +780,18 @@ impl UpdateS3ResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateS3ResourcesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateS3ResourcesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateS3ResourcesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateS3ResourcesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateS3ResourcesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateS3ResourcesErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateS3ResourcesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateS3ResourcesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,

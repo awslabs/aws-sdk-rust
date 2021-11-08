@@ -9786,6 +9786,131 @@ pub fn parse_start_contact_recording_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_contact_streaming_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartContactStreamingOutput,
+    crate::error::StartContactStreamingError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartContactStreamingError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StartContactStreamingError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServiceException" => crate::error::StartContactStreamingError {
+            meta: generic,
+            kind: crate::error::StartContactStreamingErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::StartContactStreamingError {
+            meta: generic,
+            kind: crate::error::StartContactStreamingErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::StartContactStreamingError {
+            meta: generic,
+            kind: crate::error::StartContactStreamingErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::StartContactStreamingError {
+            meta: generic,
+            kind: crate::error::StartContactStreamingErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::StartContactStreamingError {
+            meta: generic,
+            kind: crate::error::StartContactStreamingErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StartContactStreamingError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_contact_streaming_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartContactStreamingOutput,
+    crate::error::StartContactStreamingError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_contact_streaming_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_contact_streaming(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartContactStreamingError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_outbound_voice_contact_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10261,6 +10386,109 @@ pub fn parse_stop_contact_recording_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stop_contact_recording_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_contact_streaming_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopContactStreamingOutput,
+    crate::error::StopContactStreamingError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StopContactStreamingError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StopContactStreamingError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServiceException" => crate::error::StopContactStreamingError {
+            meta: generic,
+            kind: crate::error::StopContactStreamingErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::StopContactStreamingError {
+            meta: generic,
+            kind: crate::error::StopContactStreamingErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::StopContactStreamingError {
+            meta: generic,
+            kind: crate::error::StopContactStreamingErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::StopContactStreamingError {
+            meta: generic,
+            kind: crate::error::StopContactStreamingErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContactStreamingError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StopContactStreamingError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_contact_streaming_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopContactStreamingOutput,
+    crate::error::StopContactStreamingError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::stop_contact_streaming_output::Builder::default();
         let _ = response;
         output.build()
     })

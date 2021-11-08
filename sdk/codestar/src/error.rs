@@ -27,7 +27,7 @@ pub enum AssociateTeamMemberErrorKind {
     TeamMemberAlreadyAssociatedException(crate::error::TeamMemberAlreadyAssociatedException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateTeamMemberError {
@@ -98,49 +98,49 @@ impl AssociateTeamMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateTeamMemberErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AssociateTeamMemberErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTeamMemberErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTeamMemberErrorKind::InvalidServiceRoleException`.
+    /// Returns `true` if the error kind is `AssociateTeamMemberErrorKind::InvalidServiceRoleException`.
     pub fn is_invalid_service_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTeamMemberErrorKind::InvalidServiceRoleException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTeamMemberErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateTeamMemberErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTeamMemberErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTeamMemberErrorKind::ProjectConfigurationException`.
+    /// Returns `true` if the error kind is `AssociateTeamMemberErrorKind::ProjectConfigurationException`.
     pub fn is_project_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTeamMemberErrorKind::ProjectConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTeamMemberErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateTeamMemberErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTeamMemberErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTeamMemberErrorKind::TeamMemberAlreadyAssociatedException`.
+    /// Returns `true` if the error kind is `AssociateTeamMemberErrorKind::TeamMemberAlreadyAssociatedException`.
     pub fn is_team_member_already_associated_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateTeamMemberErrorKind::TeamMemberAlreadyAssociatedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateTeamMemberErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateTeamMemberErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -195,7 +195,7 @@ pub enum CreateProjectErrorKind {
     ProjectCreationFailedException(crate::error::ProjectCreationFailedException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -264,49 +264,49 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InvalidServiceRoleException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InvalidServiceRoleException`.
     pub fn is_invalid_service_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InvalidServiceRoleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ProjectAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ProjectAlreadyExistsException`.
     pub fn is_project_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ProjectAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ProjectConfigurationException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ProjectConfigurationException`.
     pub fn is_project_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ProjectConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ProjectCreationFailedException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ProjectCreationFailedException`.
     pub fn is_project_creation_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ProjectCreationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ValidationException(_))
     }
@@ -344,7 +344,7 @@ pub enum CreateUserProfileErrorKind {
     UserProfileAlreadyExistsException(crate::error::UserProfileAlreadyExistsException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserProfileError {
@@ -408,14 +408,14 @@ impl CreateUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserProfileErrorKind::UserProfileAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateUserProfileErrorKind::UserProfileAlreadyExistsException`.
     pub fn is_user_profile_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserProfileErrorKind::UserProfileAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateUserProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -453,7 +453,7 @@ pub enum DeleteProjectErrorKind {
     InvalidServiceRoleException(crate::error::InvalidServiceRoleException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -518,21 +518,21 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InvalidServiceRoleException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InvalidServiceRoleException`.
     pub fn is_invalid_service_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::InvalidServiceRoleException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ValidationException(_))
     }
@@ -563,7 +563,7 @@ pub struct DeleteUserProfileError {
 pub enum DeleteUserProfileErrorKind {
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserProfileError {
@@ -626,7 +626,7 @@ impl DeleteUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteUserProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -667,7 +667,7 @@ pub enum DescribeProjectErrorKind {
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectError {
@@ -734,35 +734,35 @@ impl DescribeProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::InvalidServiceRoleException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::InvalidServiceRoleException`.
     pub fn is_invalid_service_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::InvalidServiceRoleException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ProjectConfigurationException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ProjectConfigurationException`.
     pub fn is_project_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::ProjectConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeProjectErrorKind::ValidationException(_))
     }
@@ -797,7 +797,7 @@ pub enum DescribeUserProfileErrorKind {
     UserProfileNotFoundException(crate::error::UserProfileNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserProfileError {
@@ -861,14 +861,14 @@ impl DescribeUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserProfileErrorKind::UserProfileNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserProfileErrorKind::UserProfileNotFoundException`.
     pub fn is_user_profile_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserProfileErrorKind::UserProfileNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeUserProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -908,7 +908,7 @@ pub enum DisassociateTeamMemberErrorKind {
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateTeamMemberError {
@@ -976,28 +976,28 @@ impl DisassociateTeamMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateTeamMemberErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisassociateTeamMemberErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTeamMemberErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTeamMemberErrorKind::InvalidServiceRoleException`.
+    /// Returns `true` if the error kind is `DisassociateTeamMemberErrorKind::InvalidServiceRoleException`.
     pub fn is_invalid_service_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTeamMemberErrorKind::InvalidServiceRoleException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTeamMemberErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateTeamMemberErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateTeamMemberErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateTeamMemberErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateTeamMemberErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1036,7 +1036,7 @@ pub enum ListProjectsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -1100,14 +1100,14 @@ impl ListProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::ValidationException(_))
     }
@@ -1141,7 +1141,7 @@ pub enum ListResourcesErrorKind {
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourcesError {
@@ -1206,21 +1206,21 @@ impl ListResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListResourcesErrorKind::ValidationException(_))
     }
@@ -1255,7 +1255,7 @@ pub enum ListTagsForProjectErrorKind {
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForProjectError {
@@ -1320,21 +1320,21 @@ impl ListTagsForProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForProjectErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTagsForProjectErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForProjectErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForProjectErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForProjectErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForProjectErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1372,7 +1372,7 @@ pub enum ListTeamMembersErrorKind {
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTeamMembersError {
@@ -1437,21 +1437,21 @@ impl ListTeamMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTeamMembersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTeamMembersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTeamMembersErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTeamMembersErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `ListTeamMembersErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTeamMembersErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTeamMembersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTeamMembersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListTeamMembersErrorKind::ValidationException(_))
     }
@@ -1484,7 +1484,7 @@ pub enum ListUserProfilesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUserProfilesError {
@@ -1548,14 +1548,14 @@ impl ListUserProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUserProfilesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListUserProfilesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUserProfilesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListUserProfilesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListUserProfilesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1595,7 +1595,7 @@ pub enum TagProjectErrorKind {
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagProjectError {
@@ -1661,22 +1661,22 @@ impl TagProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagProjectErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagProjectErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagProjectErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagProjectErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagProjectErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `TagProjectErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagProjectErrorKind::ProjectNotFoundException(_))
     }
-    /// Returns true if the error kind is `TagProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagProjectErrorKind::ValidationException(_))
     }
@@ -1715,7 +1715,7 @@ pub enum UntagProjectErrorKind {
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagProjectError {
@@ -1781,25 +1781,25 @@ impl UntagProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagProjectErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagProjectErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagProjectErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UntagProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UntagProjectErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UntagProjectErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `UntagProjectErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagProjectErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagProjectErrorKind::ValidationException(_))
     }
@@ -1833,7 +1833,7 @@ pub enum UpdateProjectErrorKind {
     ProjectNotFoundException(crate::error::ProjectNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProjectError {
@@ -1897,14 +1897,14 @@ impl UpdateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::ValidationException(_))
     }
@@ -1947,7 +1947,7 @@ pub enum UpdateTeamMemberErrorKind {
     TeamMemberNotFoundException(crate::error::TeamMemberNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTeamMemberError {
@@ -2016,49 +2016,49 @@ impl UpdateTeamMemberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTeamMemberErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateTeamMemberErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTeamMemberErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTeamMemberErrorKind::InvalidServiceRoleException`.
+    /// Returns `true` if the error kind is `UpdateTeamMemberErrorKind::InvalidServiceRoleException`.
     pub fn is_invalid_service_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTeamMemberErrorKind::InvalidServiceRoleException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTeamMemberErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateTeamMemberErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTeamMemberErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTeamMemberErrorKind::ProjectConfigurationException`.
+    /// Returns `true` if the error kind is `UpdateTeamMemberErrorKind::ProjectConfigurationException`.
     pub fn is_project_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTeamMemberErrorKind::ProjectConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTeamMemberErrorKind::ProjectNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTeamMemberErrorKind::ProjectNotFoundException`.
     pub fn is_project_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTeamMemberErrorKind::ProjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTeamMemberErrorKind::TeamMemberNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTeamMemberErrorKind::TeamMemberNotFoundException`.
     pub fn is_team_member_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTeamMemberErrorKind::TeamMemberNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTeamMemberErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateTeamMemberErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2098,7 +2098,7 @@ pub enum UpdateUserProfileErrorKind {
     UserProfileNotFoundException(crate::error::UserProfileNotFoundException),
     /// <p>The specified input is either not valid, or it could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserProfileError {
@@ -2162,14 +2162,14 @@ impl UpdateUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserProfileErrorKind::UserProfileNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserProfileErrorKind::UserProfileNotFoundException`.
     pub fn is_user_profile_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserProfileErrorKind::UserProfileNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateUserProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -2528,8 +2528,8 @@ pub enum DataSourceParameters {
     TwitterParameters(crate::model::TwitterParameters),
 }
 impl DataSourceParameters {
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AmazonElasticsearchParameters`](crate::model::DataSourceParameters::AmazonElasticsearchParameters), extracting the inner [`AmazonElasticsearchParameters`](crate::model::AmazonElasticsearchParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_amazon_elasticsearch_parameters(
         &self,
     ) -> std::result::Result<&crate::model::AmazonElasticsearchParameters, &Self> {
@@ -2539,12 +2539,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`AmazonElasticsearchParameters`](crate::model::DataSourceParameters::AmazonElasticsearchParameters).
     pub fn is_amazon_elasticsearch_parameters(&self) -> bool {
         self.as_amazon_elasticsearch_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AmazonOpenSearchParameters`](crate::model::DataSourceParameters::AmazonOpenSearchParameters), extracting the inner [`AmazonOpenSearchParameters`](crate::model::AmazonOpenSearchParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_amazon_open_search_parameters(
         &self,
     ) -> std::result::Result<&crate::model::AmazonOpenSearchParameters, &Self> {
@@ -2554,12 +2554,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`AmazonOpenSearchParameters`](crate::model::DataSourceParameters::AmazonOpenSearchParameters).
     pub fn is_amazon_open_search_parameters(&self) -> bool {
         self.as_amazon_open_search_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AthenaParameters`](crate::model::DataSourceParameters::AthenaParameters), extracting the inner [`AthenaParameters`](crate::model::AthenaParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_athena_parameters(
         &self,
     ) -> std::result::Result<&crate::model::AthenaParameters, &Self> {
@@ -2569,12 +2569,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`AthenaParameters`](crate::model::DataSourceParameters::AthenaParameters).
     pub fn is_athena_parameters(&self) -> bool {
         self.as_athena_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AuroraParameters`](crate::model::DataSourceParameters::AuroraParameters), extracting the inner [`AuroraParameters`](crate::model::AuroraParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aurora_parameters(
         &self,
     ) -> std::result::Result<&crate::model::AuroraParameters, &Self> {
@@ -2584,12 +2584,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`AuroraParameters`](crate::model::DataSourceParameters::AuroraParameters).
     pub fn is_aurora_parameters(&self) -> bool {
         self.as_aurora_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AuroraPostgreSqlParameters`](crate::model::DataSourceParameters::AuroraPostgreSqlParameters), extracting the inner [`AuroraPostgreSqlParameters`](crate::model::AuroraPostgreSqlParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aurora_postgre_sql_parameters(
         &self,
     ) -> std::result::Result<&crate::model::AuroraPostgreSqlParameters, &Self> {
@@ -2599,12 +2599,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`AuroraPostgreSqlParameters`](crate::model::DataSourceParameters::AuroraPostgreSqlParameters).
     pub fn is_aurora_postgre_sql_parameters(&self) -> bool {
         self.as_aurora_postgre_sql_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AwsIotAnalyticsParameters`](crate::model::DataSourceParameters::AwsIotAnalyticsParameters), extracting the inner [`AwsIotAnalyticsParameters`](crate::model::AwsIotAnalyticsParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_iot_analytics_parameters(
         &self,
     ) -> std::result::Result<&crate::model::AwsIotAnalyticsParameters, &Self> {
@@ -2614,12 +2614,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`AwsIotAnalyticsParameters`](crate::model::DataSourceParameters::AwsIotAnalyticsParameters).
     pub fn is_aws_iot_analytics_parameters(&self) -> bool {
         self.as_aws_iot_analytics_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`JiraParameters`](crate::model::DataSourceParameters::JiraParameters), extracting the inner [`JiraParameters`](crate::model::JiraParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_jira_parameters(&self) -> std::result::Result<&crate::model::JiraParameters, &Self> {
         if let DataSourceParameters::JiraParameters(val) = &self {
             Ok(&val)
@@ -2627,12 +2627,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`JiraParameters`](crate::model::DataSourceParameters::JiraParameters).
     pub fn is_jira_parameters(&self) -> bool {
         self.as_jira_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`MariaDbParameters`](crate::model::DataSourceParameters::MariaDbParameters), extracting the inner [`MariaDbParameters`](crate::model::MariaDbParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_maria_db_parameters(
         &self,
     ) -> std::result::Result<&crate::model::MariaDbParameters, &Self> {
@@ -2642,12 +2642,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`MariaDbParameters`](crate::model::DataSourceParameters::MariaDbParameters).
     pub fn is_maria_db_parameters(&self) -> bool {
         self.as_maria_db_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`MySqlParameters`](crate::model::DataSourceParameters::MySqlParameters), extracting the inner [`MySqlParameters`](crate::model::MySqlParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_my_sql_parameters(
         &self,
     ) -> std::result::Result<&crate::model::MySqlParameters, &Self> {
@@ -2657,12 +2657,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`MySqlParameters`](crate::model::DataSourceParameters::MySqlParameters).
     pub fn is_my_sql_parameters(&self) -> bool {
         self.as_my_sql_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`OracleParameters`](crate::model::DataSourceParameters::OracleParameters), extracting the inner [`OracleParameters`](crate::model::OracleParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_oracle_parameters(
         &self,
     ) -> std::result::Result<&crate::model::OracleParameters, &Self> {
@@ -2672,12 +2672,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`OracleParameters`](crate::model::DataSourceParameters::OracleParameters).
     pub fn is_oracle_parameters(&self) -> bool {
         self.as_oracle_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`PostgreSqlParameters`](crate::model::DataSourceParameters::PostgreSqlParameters), extracting the inner [`PostgreSqlParameters`](crate::model::PostgreSqlParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_postgre_sql_parameters(
         &self,
     ) -> std::result::Result<&crate::model::PostgreSqlParameters, &Self> {
@@ -2687,12 +2687,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`PostgreSqlParameters`](crate::model::DataSourceParameters::PostgreSqlParameters).
     pub fn is_postgre_sql_parameters(&self) -> bool {
         self.as_postgre_sql_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`PrestoParameters`](crate::model::DataSourceParameters::PrestoParameters), extracting the inner [`PrestoParameters`](crate::model::PrestoParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_presto_parameters(
         &self,
     ) -> std::result::Result<&crate::model::PrestoParameters, &Self> {
@@ -2702,12 +2702,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`PrestoParameters`](crate::model::DataSourceParameters::PrestoParameters).
     pub fn is_presto_parameters(&self) -> bool {
         self.as_presto_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`RdsParameters`](crate::model::DataSourceParameters::RdsParameters), extracting the inner [`RdsParameters`](crate::model::RdsParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_rds_parameters(&self) -> std::result::Result<&crate::model::RdsParameters, &Self> {
         if let DataSourceParameters::RdsParameters(val) = &self {
             Ok(&val)
@@ -2715,12 +2715,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`RdsParameters`](crate::model::DataSourceParameters::RdsParameters).
     pub fn is_rds_parameters(&self) -> bool {
         self.as_rds_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`RedshiftParameters`](crate::model::DataSourceParameters::RedshiftParameters), extracting the inner [`RedshiftParameters`](crate::model::RedshiftParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_redshift_parameters(
         &self,
     ) -> std::result::Result<&crate::model::RedshiftParameters, &Self> {
@@ -2730,12 +2730,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`RedshiftParameters`](crate::model::DataSourceParameters::RedshiftParameters).
     pub fn is_redshift_parameters(&self) -> bool {
         self.as_redshift_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S3Parameters`](crate::model::DataSourceParameters::S3Parameters), extracting the inner [`S3Parameters`](crate::model::S3Parameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_parameters(&self) -> std::result::Result<&crate::model::S3Parameters, &Self> {
         if let DataSourceParameters::S3Parameters(val) = &self {
             Ok(&val)
@@ -2743,12 +2743,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`S3Parameters`](crate::model::DataSourceParameters::S3Parameters).
     pub fn is_s3_parameters(&self) -> bool {
         self.as_s3_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ServiceNowParameters`](crate::model::DataSourceParameters::ServiceNowParameters), extracting the inner [`ServiceNowParameters`](crate::model::ServiceNowParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_service_now_parameters(
         &self,
     ) -> std::result::Result<&crate::model::ServiceNowParameters, &Self> {
@@ -2758,12 +2758,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`ServiceNowParameters`](crate::model::DataSourceParameters::ServiceNowParameters).
     pub fn is_service_now_parameters(&self) -> bool {
         self.as_service_now_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SnowflakeParameters`](crate::model::DataSourceParameters::SnowflakeParameters), extracting the inner [`SnowflakeParameters`](crate::model::SnowflakeParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_snowflake_parameters(
         &self,
     ) -> std::result::Result<&crate::model::SnowflakeParameters, &Self> {
@@ -2773,12 +2773,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`SnowflakeParameters`](crate::model::DataSourceParameters::SnowflakeParameters).
     pub fn is_snowflake_parameters(&self) -> bool {
         self.as_snowflake_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SparkParameters`](crate::model::DataSourceParameters::SparkParameters), extracting the inner [`SparkParameters`](crate::model::SparkParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_spark_parameters(
         &self,
     ) -> std::result::Result<&crate::model::SparkParameters, &Self> {
@@ -2788,12 +2788,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`SparkParameters`](crate::model::DataSourceParameters::SparkParameters).
     pub fn is_spark_parameters(&self) -> bool {
         self.as_spark_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SqlServerParameters`](crate::model::DataSourceParameters::SqlServerParameters), extracting the inner [`SqlServerParameters`](crate::model::SqlServerParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sql_server_parameters(
         &self,
     ) -> std::result::Result<&crate::model::SqlServerParameters, &Self> {
@@ -2803,12 +2803,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`SqlServerParameters`](crate::model::DataSourceParameters::SqlServerParameters).
     pub fn is_sql_server_parameters(&self) -> bool {
         self.as_sql_server_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`TeradataParameters`](crate::model::DataSourceParameters::TeradataParameters), extracting the inner [`TeradataParameters`](crate::model::TeradataParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_teradata_parameters(
         &self,
     ) -> std::result::Result<&crate::model::TeradataParameters, &Self> {
@@ -2818,12 +2818,12 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`TeradataParameters`](crate::model::DataSourceParameters::TeradataParameters).
     pub fn is_teradata_parameters(&self) -> bool {
         self.as_teradata_parameters().is_ok()
     }
-    /// Tries to convert the enum instance into its [`DataSourceParameters`](crate::model::DataSourceParameters) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`TwitterParameters`](crate::model::DataSourceParameters::TwitterParameters), extracting the inner [`TwitterParameters`](crate::model::TwitterParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_twitter_parameters(
         &self,
     ) -> std::result::Result<&crate::model::TwitterParameters, &Self> {
@@ -2833,7 +2833,7 @@ impl DataSourceParameters {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `DataSourceParameters` variant.
+    /// Returns true if this is a [`TwitterParameters`](crate::model::DataSourceParameters::TwitterParameters).
     pub fn is_twitter_parameters(&self) -> bool {
         self.as_twitter_parameters().is_ok()
     }
@@ -5730,8 +5730,8 @@ pub enum TransformOperation {
     UntagColumnOperation(crate::model::UntagColumnOperation),
 }
 impl TransformOperation {
-    /// Tries to convert the enum instance into its [`TransformOperation`](crate::model::TransformOperation) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`CastColumnTypeOperation`](crate::model::TransformOperation::CastColumnTypeOperation), extracting the inner [`CastColumnTypeOperation`](crate::model::CastColumnTypeOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cast_column_type_operation(
         &self,
     ) -> std::result::Result<&crate::model::CastColumnTypeOperation, &Self> {
@@ -5741,12 +5741,12 @@ impl TransformOperation {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TransformOperation` variant.
+    /// Returns true if this is a [`CastColumnTypeOperation`](crate::model::TransformOperation::CastColumnTypeOperation).
     pub fn is_cast_column_type_operation(&self) -> bool {
         self.as_cast_column_type_operation().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TransformOperation`](crate::model::TransformOperation) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`CreateColumnsOperation`](crate::model::TransformOperation::CreateColumnsOperation), extracting the inner [`CreateColumnsOperation`](crate::model::CreateColumnsOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_create_columns_operation(
         &self,
     ) -> std::result::Result<&crate::model::CreateColumnsOperation, &Self> {
@@ -5756,12 +5756,12 @@ impl TransformOperation {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TransformOperation` variant.
+    /// Returns true if this is a [`CreateColumnsOperation`](crate::model::TransformOperation::CreateColumnsOperation).
     pub fn is_create_columns_operation(&self) -> bool {
         self.as_create_columns_operation().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TransformOperation`](crate::model::TransformOperation) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`FilterOperation`](crate::model::TransformOperation::FilterOperation), extracting the inner [`FilterOperation`](crate::model::FilterOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_filter_operation(
         &self,
     ) -> std::result::Result<&crate::model::FilterOperation, &Self> {
@@ -5771,12 +5771,12 @@ impl TransformOperation {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TransformOperation` variant.
+    /// Returns true if this is a [`FilterOperation`](crate::model::TransformOperation::FilterOperation).
     pub fn is_filter_operation(&self) -> bool {
         self.as_filter_operation().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TransformOperation`](crate::model::TransformOperation) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ProjectOperation`](crate::model::TransformOperation::ProjectOperation), extracting the inner [`ProjectOperation`](crate::model::ProjectOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_project_operation(
         &self,
     ) -> std::result::Result<&crate::model::ProjectOperation, &Self> {
@@ -5786,12 +5786,12 @@ impl TransformOperation {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TransformOperation` variant.
+    /// Returns true if this is a [`ProjectOperation`](crate::model::TransformOperation::ProjectOperation).
     pub fn is_project_operation(&self) -> bool {
         self.as_project_operation().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TransformOperation`](crate::model::TransformOperation) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`RenameColumnOperation`](crate::model::TransformOperation::RenameColumnOperation), extracting the inner [`RenameColumnOperation`](crate::model::RenameColumnOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_rename_column_operation(
         &self,
     ) -> std::result::Result<&crate::model::RenameColumnOperation, &Self> {
@@ -5801,12 +5801,12 @@ impl TransformOperation {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TransformOperation` variant.
+    /// Returns true if this is a [`RenameColumnOperation`](crate::model::TransformOperation::RenameColumnOperation).
     pub fn is_rename_column_operation(&self) -> bool {
         self.as_rename_column_operation().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TransformOperation`](crate::model::TransformOperation) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`TagColumnOperation`](crate::model::TransformOperation::TagColumnOperation), extracting the inner [`TagColumnOperation`](crate::model::TagColumnOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag_column_operation(
         &self,
     ) -> std::result::Result<&crate::model::TagColumnOperation, &Self> {
@@ -5816,12 +5816,12 @@ impl TransformOperation {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TransformOperation` variant.
+    /// Returns true if this is a [`TagColumnOperation`](crate::model::TransformOperation::TagColumnOperation).
     pub fn is_tag_column_operation(&self) -> bool {
         self.as_tag_column_operation().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TransformOperation`](crate::model::TransformOperation) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`UntagColumnOperation`](crate::model::TransformOperation::UntagColumnOperation), extracting the inner [`UntagColumnOperation`](crate::model::UntagColumnOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_untag_column_operation(
         &self,
     ) -> std::result::Result<&crate::model::UntagColumnOperation, &Self> {
@@ -5831,7 +5831,7 @@ impl TransformOperation {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TransformOperation` variant.
+    /// Returns true if this is a [`UntagColumnOperation`](crate::model::TransformOperation::UntagColumnOperation).
     pub fn is_untag_column_operation(&self) -> bool {
         self.as_untag_column_operation().is_ok()
     }
@@ -6726,8 +6726,8 @@ pub enum PhysicalTable {
     S3Source(crate::model::S3Source),
 }
 impl PhysicalTable {
-    /// Tries to convert the enum instance into its [`PhysicalTable`](crate::model::PhysicalTable) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`CustomSql`](crate::model::PhysicalTable::CustomSql), extracting the inner [`CustomSql`](crate::model::CustomSql).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_custom_sql(&self) -> std::result::Result<&crate::model::CustomSql, &Self> {
         if let PhysicalTable::CustomSql(val) = &self {
             Ok(&val)
@@ -6735,12 +6735,12 @@ impl PhysicalTable {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `PhysicalTable` variant.
+    /// Returns true if this is a [`CustomSql`](crate::model::PhysicalTable::CustomSql).
     pub fn is_custom_sql(&self) -> bool {
         self.as_custom_sql().is_ok()
     }
-    /// Tries to convert the enum instance into its [`PhysicalTable`](crate::model::PhysicalTable) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`RelationalTable`](crate::model::PhysicalTable::RelationalTable), extracting the inner [`RelationalTable`](crate::model::RelationalTable).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_relational_table(
         &self,
     ) -> std::result::Result<&crate::model::RelationalTable, &Self> {
@@ -6750,12 +6750,12 @@ impl PhysicalTable {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `PhysicalTable` variant.
+    /// Returns true if this is a [`RelationalTable`](crate::model::PhysicalTable::RelationalTable).
     pub fn is_relational_table(&self) -> bool {
         self.as_relational_table().is_ok()
     }
-    /// Tries to convert the enum instance into its [`PhysicalTable`](crate::model::PhysicalTable) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S3Source`](crate::model::PhysicalTable::S3Source), extracting the inner [`S3Source`](crate::model::S3Source).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_source(&self) -> std::result::Result<&crate::model::S3Source, &Self> {
         if let PhysicalTable::S3Source(val) = &self {
             Ok(&val)
@@ -6763,7 +6763,7 @@ impl PhysicalTable {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `PhysicalTable` variant.
+    /// Returns true if this is a [`S3Source`](crate::model::PhysicalTable::S3Source).
     pub fn is_s3_source(&self) -> bool {
         self.as_s3_source().is_ok()
     }
@@ -12723,12 +12723,17 @@ pub struct RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
     pub quick_sight_console:
         std::option::Option<crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration>,
+    /// <p>The configuration details for embedding the Q search bar.</p>
+    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+    pub q_search_bar:
+        std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
 }
 impl std::fmt::Debug for RegisteredUserEmbeddingExperienceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegisteredUserEmbeddingExperienceConfiguration");
         formatter.field("dashboard", &self.dashboard);
         formatter.field("quick_sight_console", &self.quick_sight_console);
+        formatter.field("q_search_bar", &self.q_search_bar);
         formatter.finish()
     }
 }
@@ -12743,6 +12748,8 @@ pub mod registered_user_embedding_experience_configuration {
         pub(crate) quick_sight_console: std::option::Option<
             crate::model::RegisteredUserQuickSightConsoleEmbeddingConfiguration,
         >,
+        pub(crate) q_search_bar:
+            std::option::Option<crate::model::RegisteredUserQSearchBarEmbeddingConfiguration>,
     }
     impl Builder {
         /// <p>The configuration details for providing a dashboard embedding experience.</p>
@@ -12831,11 +12838,32 @@ pub mod registered_user_embedding_experience_configuration {
             self.quick_sight_console = input;
             self
         }
+        /// <p>The configuration details for embedding the Q search bar.</p>
+        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+        pub fn q_search_bar(
+            mut self,
+            input: crate::model::RegisteredUserQSearchBarEmbeddingConfiguration,
+        ) -> Self {
+            self.q_search_bar = Some(input);
+            self
+        }
+        /// <p>The configuration details for embedding the Q search bar.</p>
+        /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.</p>
+        pub fn set_q_search_bar(
+            mut self,
+            input: std::option::Option<
+                crate::model::RegisteredUserQSearchBarEmbeddingConfiguration,
+            >,
+        ) -> Self {
+            self.q_search_bar = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration)
         pub fn build(self) -> crate::model::RegisteredUserEmbeddingExperienceConfiguration {
             crate::model::RegisteredUserEmbeddingExperienceConfiguration {
                 dashboard: self.dashboard,
                 quick_sight_console: self.quick_sight_console,
+                q_search_bar: self.q_search_bar,
             }
         }
     }
@@ -12844,6 +12872,61 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
     /// Creates a new builder-style object to manufacture [`RegisteredUserEmbeddingExperienceConfiguration`](crate::model::RegisteredUserEmbeddingExperienceConfiguration)
     pub fn builder() -> crate::model::registered_user_embedding_experience_configuration::Builder {
         crate::model::registered_user_embedding_experience_configuration::Builder::default()
+    }
+}
+
+/// <p>Information about the Q search bar embedding experience.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisteredUserQSearchBarEmbeddingConfiguration {
+    /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
+    /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+    pub initial_topic_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RegisteredUserQSearchBarEmbeddingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisteredUserQSearchBarEmbeddingConfiguration");
+        formatter.field("initial_topic_id", &self.initial_topic_id);
+        formatter.finish()
+    }
+}
+/// See [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::model::RegisteredUserQSearchBarEmbeddingConfiguration)
+pub mod registered_user_q_search_bar_embedding_configuration {
+    /// A builder for [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::model::RegisteredUserQSearchBarEmbeddingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) initial_topic_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
+        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+        pub fn initial_topic_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.initial_topic_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for the topic that you open.</p>
+        /// <p>If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When you select an initial topic, you can specify whether or not readers are allowed to select other topics from the available ones in the list.</p>
+        pub fn set_initial_topic_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.initial_topic_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::model::RegisteredUserQSearchBarEmbeddingConfiguration)
+        pub fn build(self) -> crate::model::RegisteredUserQSearchBarEmbeddingConfiguration {
+            crate::model::RegisteredUserQSearchBarEmbeddingConfiguration {
+                initial_topic_id: self.initial_topic_id,
+            }
+        }
+    }
+}
+impl RegisteredUserQSearchBarEmbeddingConfiguration {
+    /// Creates a new builder-style object to manufacture [`RegisteredUserQSearchBarEmbeddingConfiguration`](crate::model::RegisteredUserQSearchBarEmbeddingConfiguration)
+    pub fn builder() -> crate::model::registered_user_q_search_bar_embedding_configuration::Builder
+    {
+        crate::model::registered_user_q_search_bar_embedding_configuration::Builder::default()
     }
 }
 

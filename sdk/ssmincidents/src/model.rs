@@ -128,14 +128,14 @@ impl AsRef<str> for ResourceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Action {
-    /// <p>The Systems Manager automation document to start as the runbook at the beginning of the
-    /// incident.</p>
+    /// <p>The Systems Manager automation document to start as the runbook at the beginning of
+    /// the incident.</p>
     SsmAutomation(crate::model::SsmAutomation),
 }
 impl Action {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`Action`](crate::model::Action) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SsmAutomation`](crate::model::Action::SsmAutomation), extracting the inner [`SsmAutomation`](crate::model::SsmAutomation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ssm_automation(&self) -> std::result::Result<&crate::model::SsmAutomation, &Self> {
         if let Action::SsmAutomation(val) = &self {
             Ok(&val)
@@ -143,13 +143,14 @@ impl Action {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Action` variant.
+    /// Returns true if this is a [`SsmAutomation`](crate::model::Action::SsmAutomation).
     pub fn is_ssm_automation(&self) -> bool {
         self.as_ssm_automation().is_ok()
     }
 }
 
-/// <p>Details about the Systems Manager automation document that will be used as a runbook during an incident.</p>
+/// <p>Details about the Systems Manager automation document that will be used as a runbook
+/// during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmAutomation {
@@ -340,21 +341,23 @@ impl AsRef<str> for SsmTargetAccount {
     }
 }
 
-/// <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+/// <p>The Chatbot chat channel used for collaboration during an
+/// incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ChatChannel {
-    /// <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an
-    /// incident. You can also make updates to the incident through the chat channel
+    /// <p>The Amazon SNS targets that Chatbot uses to notify the chat channel
+    /// of updates to an incident. You can also make updates to the incident through the chat
+    /// channel
     /// by
-    /// using the SNS topics. </p>
+    /// using the Amazon SNS topics. </p>
     ChatbotSns(std::vec::Vec<std::string::String>),
     /// <p>Used to remove the chat channel from an incident record or response plan.</p>
     Empty(crate::model::EmptyChatChannel),
 }
 impl ChatChannel {
-    /// Tries to convert the enum instance into its [`ChatChannel`](crate::model::ChatChannel) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ChatbotSns`](crate::model::ChatChannel::ChatbotSns), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_chatbot_sns(
         &self,
     ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
@@ -364,12 +367,12 @@ impl ChatChannel {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ChatChannel` variant.
+    /// Returns true if this is a [`ChatbotSns`](crate::model::ChatChannel::ChatbotSns).
     pub fn is_chatbot_sns(&self) -> bool {
         self.as_chatbot_sns().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ChatChannel`](crate::model::ChatChannel) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Empty`](crate::model::ChatChannel::Empty), extracting the inner [`EmptyChatChannel`](crate::model::EmptyChatChannel).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_empty(&self) -> std::result::Result<&crate::model::EmptyChatChannel, &Self> {
         if let ChatChannel::Empty(val) = &self {
             Ok(&val)
@@ -377,7 +380,7 @@ impl ChatChannel {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ChatChannel` variant.
+    /// Returns true if this is a [`Empty`](crate::model::ChatChannel::Empty).
     pub fn is_empty(&self) -> bool {
         self.as_empty().is_ok()
     }
@@ -422,8 +425,8 @@ pub enum NotificationTargetItem {
 }
 impl NotificationTargetItem {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`NotificationTargetItem`](crate::model::NotificationTargetItem) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SnsTopicArn`](crate::model::NotificationTargetItem::SnsTopicArn), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sns_topic_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let NotificationTargetItem::SnsTopicArn(val) = &self {
             Ok(&val)
@@ -431,7 +434,7 @@ impl NotificationTargetItem {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `NotificationTargetItem` variant.
+    /// Returns true if this is a [`SnsTopicArn`](crate::model::NotificationTargetItem::SnsTopicArn).
     pub fn is_sns_topic_arn(&self) -> bool {
         self.as_sns_topic_arn().is_ok()
     }
@@ -441,14 +444,16 @@ impl NotificationTargetItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum UpdateReplicationSetAction {
-    /// <p>Details about the Region that you're adding to the replication set.</p>
+    /// <p>Details about the Amazon Web Services Region that you're adding to the replication
+    /// set.</p>
     AddRegionAction(crate::model::AddRegionAction),
-    /// <p>Details about the Region that you're deleting to the replication set.</p>
+    /// <p>Details about the Amazon Web Services Region that you're deleting to the replication
+    /// set.</p>
     DeleteRegionAction(crate::model::DeleteRegionAction),
 }
 impl UpdateReplicationSetAction {
-    /// Tries to convert the enum instance into its [`UpdateReplicationSetAction`](crate::model::UpdateReplicationSetAction) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AddRegionAction`](crate::model::UpdateReplicationSetAction::AddRegionAction), extracting the inner [`AddRegionAction`](crate::model::AddRegionAction).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_add_region_action(
         &self,
     ) -> std::result::Result<&crate::model::AddRegionAction, &Self> {
@@ -458,12 +463,12 @@ impl UpdateReplicationSetAction {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `UpdateReplicationSetAction` variant.
+    /// Returns true if this is a [`AddRegionAction`](crate::model::UpdateReplicationSetAction::AddRegionAction).
     pub fn is_add_region_action(&self) -> bool {
         self.as_add_region_action().is_ok()
     }
-    /// Tries to convert the enum instance into its [`UpdateReplicationSetAction`](crate::model::UpdateReplicationSetAction) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`DeleteRegionAction`](crate::model::UpdateReplicationSetAction::DeleteRegionAction), extracting the inner [`DeleteRegionAction`](crate::model::DeleteRegionAction).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_delete_region_action(
         &self,
     ) -> std::result::Result<&crate::model::DeleteRegionAction, &Self> {
@@ -473,18 +478,19 @@ impl UpdateReplicationSetAction {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `UpdateReplicationSetAction` variant.
+    /// Returns true if this is a [`DeleteRegionAction`](crate::model::UpdateReplicationSetAction::DeleteRegionAction).
     pub fn is_delete_region_action(&self) -> bool {
         self.as_delete_region_action().is_ok()
     }
 }
 
-/// <p>Defines the information about the Region you're deleting from your replication
-/// set.</p>
+/// <p>Defines the information about the Amazon Web Services Region you're deleting from your
+/// replication set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegionAction {
-    /// <p>The name of the Region you're deleting from the replication set.</p>
+    /// <p>The name of the Amazon Web Services Region you're deleting from the replication
+    /// set.</p>
     pub region_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteRegionAction {
@@ -503,12 +509,14 @@ pub mod delete_region_action {
         pub(crate) region_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Region you're deleting from the replication set.</p>
+        /// <p>The name of the Amazon Web Services Region you're deleting from the replication
+        /// set.</p>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_name = Some(input.into());
             self
         }
-        /// <p>The name of the Region you're deleting from the replication set.</p>
+        /// <p>The name of the Amazon Web Services Region you're deleting from the replication
+        /// set.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region_name = input;
             self
@@ -528,11 +536,12 @@ impl DeleteRegionAction {
     }
 }
 
-/// <p>Defines the Region and KMS key to add to the replication set. </p>
+/// <p>Defines the Amazon Web Services Region and KMS key to add to the
+/// replication set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddRegionAction {
-    /// <p>The Region name to add to the replication set.</p>
+    /// <p>The Amazon Web Services Region name to add to the replication set.</p>
     pub region_name: std::option::Option<std::string::String>,
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub sse_kms_key_id: std::option::Option<std::string::String>,
@@ -555,12 +564,12 @@ pub mod add_region_action {
         pub(crate) sse_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Region name to add to the replication set.</p>
+        /// <p>The Amazon Web Services Region name to add to the replication set.</p>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_name = Some(input.into());
             self
         }
-        /// <p>The Region name to add to the replication set.</p>
+        /// <p>The Amazon Web Services Region name to add to the replication set.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region_name = input;
             self
@@ -604,8 +613,8 @@ pub enum RelatedItemsUpdate {
     ItemToRemove(crate::model::ItemIdentifier),
 }
 impl RelatedItemsUpdate {
-    /// Tries to convert the enum instance into its [`RelatedItemsUpdate`](crate::model::RelatedItemsUpdate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ItemToAdd`](crate::model::RelatedItemsUpdate::ItemToAdd), extracting the inner [`RelatedItem`](crate::model::RelatedItem).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_item_to_add(&self) -> std::result::Result<&crate::model::RelatedItem, &Self> {
         if let RelatedItemsUpdate::ItemToAdd(val) = &self {
             Ok(&val)
@@ -613,12 +622,12 @@ impl RelatedItemsUpdate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `RelatedItemsUpdate` variant.
+    /// Returns true if this is a [`ItemToAdd`](crate::model::RelatedItemsUpdate::ItemToAdd).
     pub fn is_item_to_add(&self) -> bool {
         self.as_item_to_add().is_ok()
     }
-    /// Tries to convert the enum instance into its [`RelatedItemsUpdate`](crate::model::RelatedItemsUpdate) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ItemToRemove`](crate::model::RelatedItemsUpdate::ItemToRemove), extracting the inner [`ItemIdentifier`](crate::model::ItemIdentifier).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_item_to_remove(&self) -> std::result::Result<&crate::model::ItemIdentifier, &Self> {
         if let RelatedItemsUpdate::ItemToRemove(val) = &self {
             Ok(&val)
@@ -626,7 +635,7 @@ impl RelatedItemsUpdate {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `RelatedItemsUpdate` variant.
+    /// Returns true if this is a [`ItemToRemove`](crate::model::RelatedItemsUpdate::ItemToRemove).
     pub fn is_item_to_remove(&self) -> bool {
         self.as_item_to_remove().is_ok()
     }
@@ -876,14 +885,14 @@ pub enum ItemValue {
     /// <p>The Amazon Resource Name (ARN) of the related item, if the related item is an Amazon
     /// resource.</p>
     Arn(std::string::String),
-    /// <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+    /// <p>The metric definition, if the related item is a metric in Amazon CloudWatch.</p>
     MetricDefinition(std::string::String),
-    /// <p>The URL, if the related item is a non-AWS resource.</p>
+    /// <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
     Url(std::string::String),
 }
 impl ItemValue {
-    /// Tries to convert the enum instance into its [`ItemValue`](crate::model::ItemValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Arn`](crate::model::ItemValue::Arn), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::Arn(val) = &self {
             Ok(&val)
@@ -891,12 +900,12 @@ impl ItemValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ItemValue` variant.
+    /// Returns true if this is a [`Arn`](crate::model::ItemValue::Arn).
     pub fn is_arn(&self) -> bool {
         self.as_arn().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ItemValue`](crate::model::ItemValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`MetricDefinition`](crate::model::ItemValue::MetricDefinition), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_metric_definition(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::MetricDefinition(val) = &self {
             Ok(&val)
@@ -904,12 +913,12 @@ impl ItemValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ItemValue` variant.
+    /// Returns true if this is a [`MetricDefinition`](crate::model::ItemValue::MetricDefinition).
     pub fn is_metric_definition(&self) -> bool {
         self.as_metric_definition().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ItemValue`](crate::model::ItemValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Url`](crate::model::ItemValue::Url), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::Url(val) = &self {
             Ok(&val)
@@ -917,7 +926,7 @@ impl ItemValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ItemValue` variant.
+    /// Returns true if this is a [`Url`](crate::model::ItemValue::Url).
     pub fn is_url(&self) -> bool {
         self.as_url().is_ok()
     }
@@ -1048,16 +1057,15 @@ impl AsRef<str> for IncidentRecordStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerDetails {
-    /// <p>Identifies the service that sourced the event. All events sourced from within AWS begin
-    /// with "aws." Customer-generated events can have any value here, as long as it doesn't begin
-    /// with "aws." We recommend the use of Java package-name style reverse domain-name strings. </p>
+    /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value
+    /// here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java
+    /// package-name style reverse domain-name strings. </p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>The ARN of the source that detected the incident.</p>
+    /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
     pub trigger_arn: std::option::Option<std::string::String>,
     /// <p>The time that the incident was detected.</p>
     pub timestamp: std::option::Option<aws_smithy_types::Instant>,
-    /// <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when an
-    /// incident is created.</p>
+    /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
     pub raw_data: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TriggerDetails {
@@ -1082,26 +1090,26 @@ pub mod trigger_details {
         pub(crate) raw_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the service that sourced the event. All events sourced from within AWS begin
-        /// with "aws." Customer-generated events can have any value here, as long as it doesn't begin
-        /// with "aws." We recommend the use of Java package-name style reverse domain-name strings. </p>
+        /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value
+        /// here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java
+        /// package-name style reverse domain-name strings. </p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>Identifies the service that sourced the event. All events sourced from within AWS begin
-        /// with "aws." Customer-generated events can have any value here, as long as it doesn't begin
-        /// with "aws." We recommend the use of Java package-name style reverse domain-name strings. </p>
+        /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value
+        /// here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java
+        /// package-name style reverse domain-name strings. </p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
-        /// <p>The ARN of the source that detected the incident.</p>
+        /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
         pub fn trigger_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.trigger_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the source that detected the incident.</p>
+        /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
         pub fn set_trigger_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trigger_arn = input;
             self
@@ -1119,14 +1127,12 @@ pub mod trigger_details {
             self.timestamp = input;
             self
         }
-        /// <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when an
-        /// incident is created.</p>
+        /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
         pub fn raw_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.raw_data = Some(input.into());
             self
         }
-        /// <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when an
-        /// incident is created.</p>
+        /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
         pub fn set_raw_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_data = input;
             self
@@ -1453,8 +1459,8 @@ pub enum Condition {
     Equals(crate::model::AttributeValueList),
 }
 impl Condition {
-    /// Tries to convert the enum instance into its [`Condition`](crate::model::Condition) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`After`](crate::model::Condition::After), extracting the inner [`Instant`](aws_smithy_types::Instant).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_after(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
         if let Condition::After(val) = &self {
             Ok(&val)
@@ -1462,12 +1468,12 @@ impl Condition {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Condition` variant.
+    /// Returns true if this is a [`After`](crate::model::Condition::After).
     pub fn is_after(&self) -> bool {
         self.as_after().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Condition`](crate::model::Condition) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Before`](crate::model::Condition::Before), extracting the inner [`Instant`](aws_smithy_types::Instant).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_before(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
         if let Condition::Before(val) = &self {
             Ok(&val)
@@ -1475,12 +1481,12 @@ impl Condition {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Condition` variant.
+    /// Returns true if this is a [`Before`](crate::model::Condition::Before).
     pub fn is_before(&self) -> bool {
         self.as_before().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Condition`](crate::model::Condition) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Equals`](crate::model::Condition::Equals), extracting the inner [`AttributeValueList`](crate::model::AttributeValueList).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_equals(&self) -> std::result::Result<&crate::model::AttributeValueList, &Self> {
         if let Condition::Equals(val) = &self {
             Ok(&val)
@@ -1488,7 +1494,7 @@ impl Condition {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Condition` variant.
+    /// Returns true if this is a [`Equals`](crate::model::Condition::Equals).
     pub fn is_equals(&self) -> bool {
         self.as_equals().is_ok()
     }
@@ -1504,8 +1510,8 @@ pub enum AttributeValueList {
     StringValues(std::vec::Vec<std::string::String>),
 }
 impl AttributeValueList {
-    /// Tries to convert the enum instance into its [`AttributeValueList`](crate::model::AttributeValueList) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`IntegerValues`](crate::model::AttributeValueList::IntegerValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_values(&self) -> std::result::Result<&std::vec::Vec<i32>, &Self> {
         if let AttributeValueList::IntegerValues(val) = &self {
             Ok(&val)
@@ -1513,12 +1519,12 @@ impl AttributeValueList {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValueList` variant.
+    /// Returns true if this is a [`IntegerValues`](crate::model::AttributeValueList::IntegerValues).
     pub fn is_integer_values(&self) -> bool {
         self.as_integer_values().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AttributeValueList`](crate::model::AttributeValueList) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValues`](crate::model::AttributeValueList::StringValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_values(
         &self,
     ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
@@ -1528,7 +1534,7 @@ impl AttributeValueList {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AttributeValueList` variant.
+    /// Returns true if this is a [`StringValues`](crate::model::AttributeValueList::StringValues).
     pub fn is_string_values(&self) -> bool {
         self.as_string_values().is_ok()
     }
@@ -1765,7 +1771,7 @@ impl IncidentRecordSummary {
     }
 }
 
-/// <p>Details about how the incident record was created and when.</p>
+/// <p>Details about what created the incident record and when it was created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncidentRecordSource {
@@ -1776,11 +1782,8 @@ pub struct IncidentRecordSource {
     /// <p>The resource that caused the incident to be created.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The service that started the incident. This can be manually created from Incident Manager,
-    /// automatically created using an
-    /// AWS
-    /// CloudWatch alarm, or
-    /// Amazon
-    /// EventBridge event.</p>
+    /// automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
+    /// event.</p>
     pub source: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IncidentRecordSource {
@@ -1836,21 +1839,15 @@ pub mod incident_record_source {
             self
         }
         /// <p>The service that started the incident. This can be manually created from Incident Manager,
-        /// automatically created using an
-        /// AWS
-        /// CloudWatch alarm, or
-        /// Amazon
-        /// EventBridge event.</p>
+        /// automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
+        /// event.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
         /// <p>The service that started the incident. This can be manually created from Incident Manager,
-        /// automatically created using an
-        /// AWS
-        /// CloudWatch alarm, or
-        /// Amazon
-        /// EventBridge event.</p>
+        /// automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
+        /// event.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -2021,7 +2018,8 @@ pub struct IncidentTemplate {
     pub summary: std::option::Option<std::string::String>,
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
     pub dedupe_string: std::option::Option<std::string::String>,
-    /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an
+    /// incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
@@ -2099,7 +2097,8 @@ pub mod incident_template {
         ///
         /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
         ///
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
         pub fn notification_targets(
             mut self,
             input: impl Into<crate::model::NotificationTargetItem>,
@@ -2109,7 +2108,8 @@ pub mod incident_template {
             self.notification_targets = Some(v);
             self
         }
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
         pub fn set_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -2144,7 +2144,7 @@ pub struct ResourcePolicy {
     pub policy_document: std::option::Option<std::string::String>,
     /// <p>The ID of the resource policy.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The Region that policy allows resources to be used in.</p>
+    /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
     pub ram_resource_share_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourcePolicy {
@@ -2190,12 +2190,12 @@ pub mod resource_policy {
             self.policy_id = input;
             self
         }
-        /// <p>The Region that policy allows resources to be used in.</p>
+        /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
         pub fn ram_resource_share_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.ram_resource_share_region = Some(input.into());
             self
         }
-        /// <p>The Region that policy allows resources to be used in.</p>
+        /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
         pub fn set_ram_resource_share_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2220,15 +2220,14 @@ impl ResourcePolicy {
     }
 }
 
-/// <p>The set of Regions that your Incident Manager data will be replicated to and the KMS key used
-/// to encrypt the data. </p>
+/// <p>The set of Amazon Web Services Region that your Incident Manager data will be replicated to
+/// and the KMS key used to encrypt the data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The map between each Region in your replication set and the KMS key that is used to
-    /// encrypt the data in that Region.</p>
+    /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
     pub region_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
     >,
@@ -2236,7 +2235,8 @@ pub struct ReplicationSet {
     /// use Incident Manager functionality.</p>
     pub status: std::option::Option<crate::model::ReplicationSetStatus>,
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion
-    /// protection is enabled, you can't delete the last Region in the replication set. </p>
+    /// protection is enabled, you can't delete the last Amazon Web Services Region in the
+    /// replication set. </p>
     pub deletion_protected: std::option::Option<bool>,
     /// <p>When the replication set was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::Instant>,
@@ -2293,8 +2293,7 @@ pub mod replication_set {
         ///
         /// To override the contents of this collection use [`set_region_map`](Self::set_region_map).
         ///
-        /// <p>The map between each Region in your replication set and the KMS key that is used to
-        /// encrypt the data in that Region.</p>
+        /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
         pub fn region_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -2305,8 +2304,7 @@ pub mod replication_set {
             self.region_map = Some(hash_map);
             self
         }
-        /// <p>The map between each Region in your replication set and the KMS key that is used to
-        /// encrypt the data in that Region.</p>
+        /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
         pub fn set_region_map(
             mut self,
             input: std::option::Option<
@@ -2332,13 +2330,15 @@ pub mod replication_set {
             self
         }
         /// <p>Determines if the replication set deletion protection is enabled or not. If deletion
-        /// protection is enabled, you can't delete the last Region in the replication set. </p>
+        /// protection is enabled, you can't delete the last Amazon Web Services Region in the
+        /// replication set. </p>
         pub fn deletion_protected(mut self, input: bool) -> Self {
             self.deletion_protected = Some(input);
             self
         }
         /// <p>Determines if the replication set deletion protection is enabled or not. If deletion
-        /// protection is enabled, you can't delete the last Region in the replication set. </p>
+        /// protection is enabled, you can't delete the last Amazon Web Services Region in the
+        /// replication set. </p>
         pub fn set_deletion_protected(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protected = input;
             self
@@ -2481,17 +2481,17 @@ impl AsRef<str> for ReplicationSetStatus {
     }
 }
 
-/// <p>Information about a Region in your replication set.</p>
+/// <p>Information about a Amazon Web Services Region in your replication set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionInfo {
-    /// <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+    /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
     pub sse_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The status of the Region in the replication set.</p>
+    /// <p>The status of the Amazon Web Services Region in the replication set.</p>
     pub status: std::option::Option<crate::model::RegionStatus>,
-    /// <p>Information displayed about the status of the Region.</p>
+    /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>The most recent date and time that the Region's status was updated.</p>
+    /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
     pub status_update_date_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for RegionInfo {
@@ -2516,12 +2516,12 @@ pub mod region_info {
         pub(crate) status_update_date_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+        /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
         pub fn sse_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+        /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
         pub fn set_sse_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2529,12 +2529,12 @@ pub mod region_info {
             self.sse_kms_key_id = input;
             self
         }
-        /// <p>The status of the Region in the replication set.</p>
+        /// <p>The status of the Amazon Web Services Region in the replication set.</p>
         pub fn status(mut self, input: crate::model::RegionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the Region in the replication set.</p>
+        /// <p>The status of the Amazon Web Services Region in the replication set.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RegionStatus>,
@@ -2542,12 +2542,12 @@ pub mod region_info {
             self.status = input;
             self
         }
-        /// <p>Information displayed about the status of the Region.</p>
+        /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_message = Some(input.into());
             self
         }
-        /// <p>Information displayed about the status of the Region.</p>
+        /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2555,12 +2555,12 @@ pub mod region_info {
             self.status_message = input;
             self
         }
-        /// <p>The most recent date and time that the Region's status was updated.</p>
+        /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
         pub fn status_update_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.status_update_date_time = Some(input);
             self
         }
-        /// <p>The most recent date and time that the Region's status was updated.</p>
+        /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
         pub fn set_status_update_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::Instant>,
@@ -2657,7 +2657,8 @@ pub struct IncidentRecord {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The title of the incident.</p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what is currently happening, and context.</p>
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
+    /// currently happening, and context of the incident.</p>
     pub summary: std::option::Option<std::string::String>,
     /// <p>The current status of the incident.</p>
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
@@ -2676,11 +2677,12 @@ pub struct IncidentRecord {
         std::option::Option<std::vec::Vec<crate::model::AutomationExecution>>,
     /// <p>Details about the action that started the incident.</p>
     pub incident_record_source: std::option::Option<crate::model::IncidentRecordSource>,
-    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident.</p>
+    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
     pub dedupe_string: std::option::Option<std::string::String>,
     /// <p>The chat channel used for collaboration during an incident.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an
+    /// incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
@@ -2748,12 +2750,14 @@ pub mod incident_record {
             self.title = input;
             self
         }
-        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what is currently happening, and context.</p>
+        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
+        /// currently happening, and context of the incident.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
             self.summary = Some(input.into());
             self
         }
-        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what is currently happening, and context.</p>
+        /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's
+        /// currently happening, and context of the incident.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.summary = input;
             self
@@ -2868,12 +2872,12 @@ pub mod incident_record {
             self.incident_record_source = input;
             self
         }
-        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
         pub fn dedupe_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.dedupe_string = Some(input.into());
             self
         }
-        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
         pub fn set_dedupe_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2898,7 +2902,8 @@ pub mod incident_record {
         ///
         /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
         ///
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
         pub fn notification_targets(
             mut self,
             input: impl Into<crate::model::NotificationTargetItem>,
@@ -2908,7 +2913,8 @@ pub mod incident_record {
             self.notification_targets = Some(v);
             self
         }
-        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an
+        /// incident.</p>
         pub fn set_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -2944,9 +2950,8 @@ impl IncidentRecord {
     }
 }
 
-/// <p>The Systems Manager automation document
-/// process
-/// to start as the runbook at the beginning of the incident.</p>
+/// <p>The Systems Manager automation document process to start as the runbook at the
+/// beginning of the incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AutomationExecution {
@@ -2955,8 +2960,8 @@ pub enum AutomationExecution {
 }
 impl AutomationExecution {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`AutomationExecution`](crate::model::AutomationExecution) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SsmExecutionArn`](crate::model::AutomationExecution::SsmExecutionArn), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ssm_execution_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AutomationExecution::SsmExecutionArn(val) = &self {
             Ok(&val)
@@ -2964,13 +2969,14 @@ impl AutomationExecution {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AutomationExecution` variant.
+    /// Returns true if this is a [`SsmExecutionArn`](crate::model::AutomationExecution::SsmExecutionArn).
     pub fn is_ssm_execution_arn(&self) -> bool {
         self.as_ssm_execution_arn().is_ok()
     }
 }
 
-/// <p>The mapping between a Region and the key that's used to encrypt the data.</p>
+/// <p>The mapping between a Amazon Web Services Region and the key that's used to encrypt the
+/// data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionMapInputValue {

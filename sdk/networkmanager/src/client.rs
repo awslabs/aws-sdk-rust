@@ -240,6 +240,52 @@ where
     pub fn get_links(&self) -> fluent_builders::GetLinks<C, M, R> {
         fluent_builders::GetLinks::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetNetworkResourceCounts` operation.
+    ///
+    /// See [`GetNetworkResourceCounts`](crate::client::fluent_builders::GetNetworkResourceCounts) for more information about the
+    /// operation and its arguments.
+    pub fn get_network_resource_counts(
+        &self,
+    ) -> fluent_builders::GetNetworkResourceCounts<C, M, R> {
+        fluent_builders::GetNetworkResourceCounts::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetNetworkResourceRelationships` operation.
+    ///
+    /// See [`GetNetworkResourceRelationships`](crate::client::fluent_builders::GetNetworkResourceRelationships) for more information about the
+    /// operation and its arguments.
+    pub fn get_network_resource_relationships(
+        &self,
+    ) -> fluent_builders::GetNetworkResourceRelationships<C, M, R> {
+        fluent_builders::GetNetworkResourceRelationships::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetNetworkResources` operation.
+    ///
+    /// See [`GetNetworkResources`](crate::client::fluent_builders::GetNetworkResources) for more information about the
+    /// operation and its arguments.
+    pub fn get_network_resources(&self) -> fluent_builders::GetNetworkResources<C, M, R> {
+        fluent_builders::GetNetworkResources::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetNetworkRoutes` operation.
+    ///
+    /// See [`GetNetworkRoutes`](crate::client::fluent_builders::GetNetworkRoutes) for more information about the
+    /// operation and its arguments.
+    pub fn get_network_routes(&self) -> fluent_builders::GetNetworkRoutes<C, M, R> {
+        fluent_builders::GetNetworkRoutes::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetNetworkTelemetry` operation.
+    ///
+    /// See [`GetNetworkTelemetry`](crate::client::fluent_builders::GetNetworkTelemetry) for more information about the
+    /// operation and its arguments.
+    pub fn get_network_telemetry(&self) -> fluent_builders::GetNetworkTelemetry<C, M, R> {
+        fluent_builders::GetNetworkTelemetry::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetRouteAnalysis` operation.
+    ///
+    /// See [`GetRouteAnalysis`](crate::client::fluent_builders::GetRouteAnalysis) for more information about the
+    /// operation and its arguments.
+    pub fn get_route_analysis(&self) -> fluent_builders::GetRouteAnalysis<C, M, R> {
+        fluent_builders::GetRouteAnalysis::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetSites` operation.
     ///
     /// See [`GetSites`](crate::client::fluent_builders::GetSites) for more information about the
@@ -278,6 +324,13 @@ where
     /// operation and its arguments.
     pub fn register_transit_gateway(&self) -> fluent_builders::RegisterTransitGateway<C, M, R> {
         fluent_builders::RegisterTransitGateway::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StartRouteAnalysis` operation.
+    ///
+    /// See [`StartRouteAnalysis`](crate::client::fluent_builders::StartRouteAnalysis) for more information about the
+    /// operation and its arguments.
+    pub fn start_route_analysis(&self) -> fluent_builders::StartRouteAnalysis<C, M, R> {
+        fluent_builders::StartRouteAnalysis::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `TagResource` operation.
     ///
@@ -320,6 +373,15 @@ where
     /// operation and its arguments.
     pub fn update_link(&self) -> fluent_builders::UpdateLink<C, M, R> {
         fluent_builders::UpdateLink::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateNetworkResourceMetadata` operation.
+    ///
+    /// See [`UpdateNetworkResourceMetadata`](crate::client::fluent_builders::UpdateNetworkResourceMetadata) for more information about the
+    /// operation and its arguments.
+    pub fn update_network_resource_metadata(
+        &self,
+    ) -> fluent_builders::UpdateNetworkResourceMetadata<C, M, R> {
+        fluent_builders::UpdateNetworkResourceMetadata::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateSite` operation.
     ///
@@ -396,19 +458,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn customer_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.customer_gateway_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn set_customer_gateway_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -501,9 +564,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -597,9 +663,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -703,9 +772,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -849,9 +921,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -867,12 +942,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_global_network_id(input);
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
         pub fn aws_location(mut self, inp: crate::model::AwsLocation) -> Self {
             self.inner = self.inner.aws_location(inp);
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
         pub fn set_aws_location(
             mut self,
             input: std::option::Option<crate::model::AwsLocation>,
@@ -881,13 +956,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the device.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
         /// <p>A description of the device.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -903,37 +978,37 @@ pub mod fluent_builders {
             self
         }
         /// <p>The vendor of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn vendor(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vendor(inp);
             self
         }
         /// <p>The vendor of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_vendor(input);
             self
         }
         /// <p>The model of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn model(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model(inp);
             self
         }
         /// <p>The model of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_model(input);
             self
         }
         /// <p>The serial number of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.serial_number(inp);
             self
         }
         /// <p>The serial number of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1030,19 +1105,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A description of the global network.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
         /// <p>A description of the global network.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1116,9 +1194,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1135,27 +1216,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the link.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
         /// <p>A description of the link.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The type of the link.</p>
-        /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
         pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(inp);
             self
         }
         /// <p>The type of the link.</p>
-        /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -1174,15 +1253,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The provider of the link.</p>
-        /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
         pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provider(inp);
             self
         }
         /// <p>The provider of the link.</p>
-        /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_provider(input);
             self
@@ -1266,9 +1343,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1285,13 +1365,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of your site.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
         /// <p>A description of your site.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1403,9 +1483,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1487,9 +1570,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1568,9 +1654,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1639,9 +1728,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1719,9 +1811,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1800,9 +1895,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1886,9 +1984,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `GlobalNetworkIds`.
@@ -1980,9 +2081,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -1998,14 +2102,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_global_network_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn customer_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.customer_gateway_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn set_customer_gateway_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2066,9 +2168,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -2158,9 +2263,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -2244,9 +2352,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -2362,9 +2473,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -2384,14 +2498,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_customer_gateway_arns`](Self::set_customer_gateway_arns).
         ///
-        /// <p>One or more customer gateway Amazon Resource Names (ARNs). For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>. The maximum is 10.</p>
+        /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
         pub fn customer_gateway_arns(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.customer_gateway_arns(inp);
             self
         }
-        /// <p>One or more customer gateway Amazon Resource Names (ARNs). For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>. The maximum is 10.</p>
+        /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
         pub fn set_customer_gateway_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2471,9 +2583,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -2589,9 +2704,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -2700,9 +2818,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -2786,6 +2907,1482 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetNetworkResourceCounts`.
+    ///
+    /// <p>Gets the count of network resources, by resource type, for the specified global network.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetNetworkResourceCounts<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_network_resource_counts_input::Builder,
+    }
+    impl<C, M, R> GetNetworkResourceCounts<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetNetworkResourceCounts`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetNetworkResourceCountsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceCountsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetNetworkResourceCountsInputOperationOutputAlias,
+                crate::output::GetNetworkResourceCountsOutput,
+                crate::error::GetNetworkResourceCountsError,
+                crate::input::GetNetworkResourceCountsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(inp);
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetNetworkResourceRelationships`.
+    ///
+    /// <p>Gets the network resource relationships for the specified global network.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetNetworkResourceRelationships<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_network_resource_relationships_input::Builder,
+    }
+    impl<C, M, R> GetNetworkResourceRelationships<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetNetworkResourceRelationships`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetNetworkResourceRelationshipsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceRelationshipsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetNetworkResourceRelationshipsInputOperationOutputAlias,
+                crate::output::GetNetworkResourceRelationshipsOutput,
+                crate::error::GetNetworkResourceRelationshipsError,
+                crate::input::GetNetworkResourceRelationshipsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(inp);
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The ARN of the registered gateway.</p>
+        pub fn registered_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(inp);
+            self
+        }
+        /// <p>The ARN of the registered gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_registered_gateway_arn(input);
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(inp);
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_aws_region(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetNetworkResources`.
+    ///
+    /// <p>Describes the network resources for the specified global network.</p>
+    /// <p>The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetNetworkResources<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_network_resources_input::Builder,
+    }
+    impl<C, M, R> GetNetworkResources<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetNetworkResources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetNetworkResourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkResourcesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetNetworkResourcesInputOperationOutputAlias,
+                crate::output::GetNetworkResourcesOutput,
+                crate::error::GetNetworkResourcesError,
+                crate::input::GetNetworkResourcesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(inp);
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn registered_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(inp);
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_registered_gateway_arn(input);
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(inp);
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_aws_region(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetNetworkRoutes`.
+    ///
+    /// <p>Gets the network routes of the specified global network.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetNetworkRoutes<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_network_routes_input::Builder,
+    }
+    impl<C, M, R> GetNetworkRoutes<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetNetworkRoutes`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetNetworkRoutesOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkRoutesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetNetworkRoutesInputOperationOutputAlias,
+                crate::output::GetNetworkRoutesOutput,
+                crate::error::GetNetworkRoutesError,
+                crate::input::GetNetworkRoutesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(inp);
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The ID of the route table.</p>
+        pub fn route_table_identifier(mut self, inp: crate::model::RouteTableIdentifier) -> Self {
+            self.inner = self.inner.route_table_identifier(inp);
+            self
+        }
+        /// <p>The ID of the route table.</p>
+        pub fn set_route_table_identifier(
+            mut self,
+            input: std::option::Option<crate::model::RouteTableIdentifier>,
+        ) -> Self {
+            self.inner = self.inner.set_route_table_identifier(input);
+            self
+        }
+        /// Appends an item to `ExactCidrMatches`.
+        ///
+        /// To override the contents of this collection use [`set_exact_cidr_matches`](Self::set_exact_cidr_matches).
+        ///
+        /// <p>An exact CIDR block.</p>
+        pub fn exact_cidr_matches(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exact_cidr_matches(inp);
+            self
+        }
+        /// <p>An exact CIDR block.</p>
+        pub fn set_exact_cidr_matches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_exact_cidr_matches(input);
+            self
+        }
+        /// Appends an item to `LongestPrefixMatches`.
+        ///
+        /// To override the contents of this collection use [`set_longest_prefix_matches`](Self::set_longest_prefix_matches).
+        ///
+        /// <p>The most specific route that matches the traffic (longest prefix match).</p>
+        pub fn longest_prefix_matches(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.longest_prefix_matches(inp);
+            self
+        }
+        /// <p>The most specific route that matches the traffic (longest prefix match).</p>
+        pub fn set_longest_prefix_matches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_longest_prefix_matches(input);
+            self
+        }
+        /// Appends an item to `SubnetOfMatches`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_of_matches`](Self::set_subnet_of_matches).
+        ///
+        /// <p>The routes with a subnet that match the specified CIDR filter.</p>
+        pub fn subnet_of_matches(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_of_matches(inp);
+            self
+        }
+        /// <p>The routes with a subnet that match the specified CIDR filter.</p>
+        pub fn set_subnet_of_matches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_subnet_of_matches(input);
+            self
+        }
+        /// Appends an item to `SupernetOfMatches`.
+        ///
+        /// To override the contents of this collection use [`set_supernet_of_matches`](Self::set_supernet_of_matches).
+        ///
+        /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
+        pub fn supernet_of_matches(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.supernet_of_matches(inp);
+            self
+        }
+        /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
+        pub fn set_supernet_of_matches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_supernet_of_matches(input);
+            self
+        }
+        /// Appends an item to `PrefixListIds`.
+        ///
+        /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
+        ///
+        /// <p>The IDs of the prefix lists.</p>
+        pub fn prefix_list_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix_list_ids(inp);
+            self
+        }
+        /// <p>The IDs of the prefix lists.</p>
+        pub fn set_prefix_list_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_prefix_list_ids(input);
+            self
+        }
+        /// Appends an item to `States`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
+        /// <p>The route states.</p>
+        pub fn states(mut self, inp: impl Into<crate::model::RouteState>) -> Self {
+            self.inner = self.inner.states(inp);
+            self
+        }
+        /// <p>The route states.</p>
+        pub fn set_states(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RouteState>>,
+        ) -> Self {
+            self.inner = self.inner.set_states(input);
+            self
+        }
+        /// Appends an item to `Types`.
+        ///
+        /// To override the contents of this collection use [`set_types`](Self::set_types).
+        ///
+        /// <p>The route types.</p>
+        pub fn types(mut self, inp: impl Into<crate::model::RouteType>) -> Self {
+            self.inner = self.inner.types(inp);
+            self
+        }
+        /// <p>The route types.</p>
+        pub fn set_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RouteType>>,
+        ) -> Self {
+            self.inner = self.inner.set_types(input);
+            self
+        }
+        /// Adds a key-value pair to `DestinationFilters`.
+        ///
+        /// To override the contents of this collection use [`set_destination_filters`](Self::set_destination_filters).
+        ///
+        /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
+        pub fn destination_filters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.destination_filters(k, v);
+            self
+        }
+        /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
+        pub fn set_destination_filters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_destination_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetNetworkTelemetry`.
+    ///
+    /// <p>Gets the network telemetry of the specified global network.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetNetworkTelemetry<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_network_telemetry_input::Builder,
+    }
+    impl<C, M, R> GetNetworkTelemetry<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetNetworkTelemetry`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetNetworkTelemetryOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetNetworkTelemetryError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetNetworkTelemetryInputOperationOutputAlias,
+                crate::output::GetNetworkTelemetryOutput,
+                crate::error::GetNetworkTelemetryError,
+                crate::input::GetNetworkTelemetryInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(inp);
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn registered_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(inp);
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_registered_gateway_arn(input);
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(inp);
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_aws_region(input);
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(inp);
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(inp);
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_type(input);
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetRouteAnalysis`.
+    ///
+    /// <p>Gets information about the specified route analysis.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetRouteAnalysis<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_route_analysis_input::Builder,
+    }
+    impl<C, M, R> GetRouteAnalysis<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetRouteAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetRouteAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetRouteAnalysisError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetRouteAnalysisInputOperationOutputAlias,
+                crate::output::GetRouteAnalysisOutput,
+                crate::error::GetRouteAnalysisError,
+                crate::input::GetRouteAnalysisInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(inp);
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The ID of the route analysis.</p>
+        pub fn route_analysis_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_analysis_id(inp);
+            self
+        }
+        /// <p>The ID of the route analysis.</p>
+        pub fn set_route_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_route_analysis_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetSites`.
     ///
     /// <p>Gets information about one or more of your sites in a global network.</p>
@@ -2837,9 +4434,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -2946,9 +4546,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -3057,9 +4660,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -3166,9 +4772,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -3185,8 +4794,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterTransitGateway`.
     ///
     /// <p>Registers a transit gateway in your global network. The transit gateway can be in any
-    /// AWS Region, but it must be owned by the same AWS account that owns the global network.
-    /// You cannot register a transit gateway in more than one global network.</p>
+    /// Amazon Web Services Region, but it must be owned by the same Amazon Web Services account that owns
+    /// the global network. You cannot register a transit gateway in more than one global network.</p>
     #[derive(std::fmt::Debug)]
     pub struct RegisterTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
@@ -3235,9 +4844,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -3253,19 +4865,145 @@ pub mod fluent_builders {
             self.inner = self.inner.set_global_network_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the transit gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
         pub fn transit_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transit_gateway_arn(inp);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the transit gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
         pub fn set_transit_gateway_arn(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_transit_gateway_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartRouteAnalysis`.
+    ///
+    /// <p>Starts analyzing the routing path between the specified source and destination. For more information,
+    /// see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartRouteAnalysis<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_route_analysis_input::Builder,
+    }
+    impl<C, M, R> StartRouteAnalysis<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartRouteAnalysis`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartRouteAnalysisOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartRouteAnalysisError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartRouteAnalysisInputOperationOutputAlias,
+                crate::output::StartRouteAnalysisOutput,
+                crate::error::StartRouteAnalysisError,
+                crate::input::StartRouteAnalysisInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(inp);
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The source from which traffic originates.</p>
+        pub fn source(
+            mut self,
+            inp: crate::model::RouteAnalysisEndpointOptionsSpecification,
+        ) -> Self {
+            self.inner = self.inner.source(inp);
+            self
+        }
+        /// <p>The source from which traffic originates.</p>
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
+        ) -> Self {
+            self.inner = self.inner.set_source(input);
+            self
+        }
+        /// <p>The destination.</p>
+        pub fn destination(
+            mut self,
+            inp: crate::model::RouteAnalysisEndpointOptionsSpecification,
+        ) -> Self {
+            self.inner = self.inner.destination(inp);
+            self
+        }
+        /// <p>The destination.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
+        ) -> Self {
+            self.inner = self.inner.set_destination(input);
+            self
+        }
+        /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+        pub fn include_return_path(mut self, inp: bool) -> Self {
+            self.inner = self.inner.include_return_path(inp);
+            self
+        }
+        /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+        pub fn set_include_return_path(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_return_path(input);
+            self
+        }
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
+        /// The default is <code>false</code>.</p>
+        pub fn use_middleboxes(mut self, inp: bool) -> Self {
+            self.inner = self.inner.use_middleboxes(inp);
+            self
+        }
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
+        /// The default is <code>false</code>.</p>
+        pub fn set_use_middleboxes(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_use_middleboxes(input);
             self
         }
     }
@@ -3320,9 +5058,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -3404,9 +5145,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -3489,9 +5233,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -3608,9 +5355,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -3636,12 +5386,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_id(input);
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
         pub fn aws_location(mut self, inp: crate::model::AwsLocation) -> Self {
             self.inner = self.inner.aws_location(inp);
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
         pub fn set_aws_location(
             mut self,
             input: std::option::Option<crate::model::AwsLocation>,
@@ -3650,13 +5400,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the device.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
         /// <p>A description of the device.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -3672,37 +5422,37 @@ pub mod fluent_builders {
             self
         }
         /// <p>The vendor of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn vendor(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vendor(inp);
             self
         }
         /// <p>The vendor of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_vendor(input);
             self
         }
         /// <p>The model of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn model(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model(inp);
             self
         }
         /// <p>The model of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_model(input);
             self
         }
         /// <p>The serial number of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.serial_number(inp);
             self
         }
         /// <p>The serial number of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3783,9 +5533,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of your global network.</p>
@@ -3802,13 +5555,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the global network.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
         /// <p>A description of the global network.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -3866,9 +5619,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -3895,25 +5651,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the link.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
         /// <p>A description of the link.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The type of the link.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(inp);
             self
         }
         /// <p>The type of the link.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -3932,15 +5688,121 @@ pub mod fluent_builders {
             self
         }
         /// <p>The provider of the link.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provider(inp);
             self
         }
         /// <p>The provider of the link.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_provider(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateNetworkResourceMetadata`.
+    ///
+    /// <p>Updates the resource metadata for the specified global network.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateNetworkResourceMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_network_resource_metadata_input::Builder,
+    }
+    impl<C, M, R> UpdateNetworkResourceMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateNetworkResourceMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateNetworkResourceMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateNetworkResourceMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateNetworkResourceMetadataInputOperationOutputAlias,
+                crate::output::UpdateNetworkResourceMetadataOutput,
+                crate::error::UpdateNetworkResourceMetadataError,
+                crate::input::UpdateNetworkResourceMetadataInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(inp);
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Adds a key-value pair to `Metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>The resource metadata.</p>
+        pub fn metadata(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.metadata(k, v);
+            self
+        }
+        /// <p>The resource metadata.</p>
+        pub fn set_metadata(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_metadata(input);
             self
         }
     }
@@ -3996,9 +5858,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
@@ -4025,13 +5890,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of your site.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
         /// <p>A description of your site.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self

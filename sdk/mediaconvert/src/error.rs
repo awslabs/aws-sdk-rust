@@ -24,7 +24,7 @@ pub enum AssociateCertificateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateCertificateError {
@@ -92,42 +92,42 @@ impl AssociateCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateCertificateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AssociateCertificateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCertificateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCertificateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateCertificateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCertificateErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCertificateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AssociateCertificateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCertificateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCertificateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AssociateCertificateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCertificateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCertificateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AssociateCertificateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCertificateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCertificateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AssociateCertificateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -174,7 +174,7 @@ pub enum CancelJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelJobError {
@@ -242,30 +242,30 @@ impl CancelJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelJobErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::TooManyRequestsException(_))
     }
@@ -309,7 +309,7 @@ pub enum CreateJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJobError {
@@ -377,30 +377,30 @@ impl CreateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::TooManyRequestsException(_))
     }
@@ -444,7 +444,7 @@ pub enum CreateJobTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJobTemplateError {
@@ -512,36 +512,36 @@ impl CreateJobTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateJobTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateJobTemplateErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateJobTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateJobTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateJobTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateJobTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -588,7 +588,7 @@ pub enum CreatePresetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePresetError {
@@ -656,30 +656,30 @@ impl CreatePresetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreatePresetErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreatePresetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreatePresetErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePresetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreatePresetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -726,7 +726,7 @@ pub enum CreateQueueErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateQueueError {
@@ -794,30 +794,30 @@ impl CreateQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateQueueErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateQueueErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateQueueErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateQueueErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateQueueErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateQueueErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateQueueErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateQueueErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateQueueErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateQueueErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateQueueErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateQueueErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateQueueErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateQueueErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateQueueErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateQueueErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateQueueErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -864,7 +864,7 @@ pub enum DeleteJobTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteJobTemplateError {
@@ -932,36 +932,36 @@ impl DeleteJobTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteJobTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteJobTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteJobTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteJobTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteJobTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobTemplateErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteJobTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteJobTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteJobTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteJobTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteJobTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteJobTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteJobTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteJobTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteJobTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteJobTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1008,7 +1008,7 @@ pub enum DeletePolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePolicyError {
@@ -1076,30 +1076,30 @@ impl DeletePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1146,7 +1146,7 @@ pub enum DeletePresetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePresetError {
@@ -1214,30 +1214,30 @@ impl DeletePresetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeletePresetErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeletePresetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeletePresetErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePresetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeletePresetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1284,7 +1284,7 @@ pub enum DeleteQueueErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteQueueError {
@@ -1352,30 +1352,30 @@ impl DeleteQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteQueueErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteQueueErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteQueueErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteQueueErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteQueueErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteQueueErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteQueueErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteQueueErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteQueueErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteQueueErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteQueueErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteQueueErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteQueueErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteQueueErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteQueueErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteQueueErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteQueueErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1422,7 +1422,7 @@ pub enum DescribeEndpointsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointsError {
@@ -1490,36 +1490,36 @@ impl DescribeEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEndpointsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeEndpointsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEndpointsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEndpointsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeEndpointsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DescribeEndpointsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DescribeEndpointsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeEndpointsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEndpointsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEndpointsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeEndpointsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEndpointsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEndpointsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEndpointsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeEndpointsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeEndpointsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeEndpointsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1566,7 +1566,7 @@ pub enum DisassociateCertificateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateCertificateError {
@@ -1634,42 +1634,42 @@ impl DisassociateCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateCertificateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DisassociateCertificateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCertificateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCertificateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DisassociateCertificateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCertificateErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCertificateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DisassociateCertificateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCertificateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCertificateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DisassociateCertificateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCertificateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCertificateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateCertificateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCertificateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCertificateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DisassociateCertificateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1716,7 +1716,7 @@ pub enum GetJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobError {
@@ -1784,27 +1784,27 @@ impl GetJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::InternalServerErrorException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetJobErrorKind::TooManyRequestsException(_))
     }
@@ -1848,7 +1848,7 @@ pub enum GetJobTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobTemplateError {
@@ -1916,30 +1916,30 @@ impl GetJobTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetJobTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetJobTemplateErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetJobTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetJobTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetJobTemplateErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetJobTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetJobTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetJobTemplateErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetJobTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetJobTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJobTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetJobTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetJobTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetJobTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1986,7 +1986,7 @@ pub enum GetPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPolicyError {
@@ -2054,30 +2054,30 @@ impl GetPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPolicyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetPolicyErrorKind::TooManyRequestsException(_))
     }
@@ -2121,7 +2121,7 @@ pub enum GetPresetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPresetError {
@@ -2189,30 +2189,30 @@ impl GetPresetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPresetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetPresetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetPresetErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetPresetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetPresetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetPresetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetPresetErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetPresetErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetPresetErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetPresetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetPresetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPresetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetPresetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetPresetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetPresetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetPresetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetPresetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetPresetErrorKind::TooManyRequestsException(_))
     }
@@ -2256,7 +2256,7 @@ pub enum GetQueueErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQueueError {
@@ -2324,30 +2324,30 @@ impl GetQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQueueErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetQueueErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetQueueErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetQueueErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `GetQueueErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetQueueErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `GetQueueErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetQueueErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetQueueErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetQueueErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetQueueErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetQueueErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetQueueErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetQueueErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetQueueErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetQueueErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetQueueErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetQueueErrorKind::TooManyRequestsException(_))
     }
@@ -2391,7 +2391,7 @@ pub enum ListJobsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsError {
@@ -2459,30 +2459,30 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::TooManyRequestsException(_))
     }
@@ -2526,7 +2526,7 @@ pub enum ListJobTemplatesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobTemplatesError {
@@ -2594,33 +2594,33 @@ impl ListJobTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobTemplatesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListJobTemplatesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobTemplatesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobTemplatesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListJobTemplatesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListJobTemplatesErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListJobTemplatesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListJobTemplatesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListJobTemplatesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListJobTemplatesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListJobTemplatesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobTemplatesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobTemplatesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListJobTemplatesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListJobTemplatesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListJobTemplatesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListJobTemplatesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2667,7 +2667,7 @@ pub enum ListPresetsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPresetsError {
@@ -2735,30 +2735,30 @@ impl ListPresetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListPresetsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListPresetsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListPresetsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPresetsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListPresetsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2805,7 +2805,7 @@ pub enum ListQueuesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListQueuesError {
@@ -2873,30 +2873,30 @@ impl ListQueuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListQueuesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListQueuesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListQueuesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListQueuesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListQueuesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListQueuesErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListQueuesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListQueuesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListQueuesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListQueuesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListQueuesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListQueuesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListQueuesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListQueuesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListQueuesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListQueuesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListQueuesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListQueuesErrorKind::TooManyRequestsException(_))
     }
@@ -2940,7 +2940,7 @@ pub enum ListTagsForResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3008,42 +3008,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3090,7 +3090,7 @@ pub enum PutPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPolicyError {
@@ -3158,30 +3158,30 @@ impl PutPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPolicyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, PutPolicyErrorKind::TooManyRequestsException(_))
     }
@@ -3225,7 +3225,7 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3293,30 +3293,30 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3363,7 +3363,7 @@ pub enum UntagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3431,30 +3431,30 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3501,7 +3501,7 @@ pub enum UpdateJobTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobTemplateError {
@@ -3569,36 +3569,36 @@ impl UpdateJobTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJobTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateJobTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateJobTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobTemplateErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateJobTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateJobTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateJobTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateJobTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateJobTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateJobTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3645,7 +3645,7 @@ pub enum UpdatePresetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePresetError {
@@ -3713,30 +3713,30 @@ impl UpdatePresetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePresetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdatePresetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdatePresetErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdatePresetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdatePresetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdatePresetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdatePresetErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdatePresetErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdatePresetErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdatePresetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdatePresetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePresetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePresetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePresetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdatePresetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdatePresetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdatePresetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3783,7 +3783,7 @@ pub enum UpdateQueueErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateQueueError {
@@ -3851,30 +3851,30 @@ impl UpdateQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateQueueErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateQueueErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateQueueErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateQueueErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateQueueErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateQueueErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateQueueErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateQueueErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateQueueErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateQueueErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateQueueErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateQueueErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateQueueErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateQueueErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateQueueErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateQueueErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateQueueErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

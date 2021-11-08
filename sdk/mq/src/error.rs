@@ -22,7 +22,7 @@ pub enum CreateBrokerErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBrokerError {
@@ -89,26 +89,26 @@ impl CreateBrokerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBrokerErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateBrokerErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateBrokerErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateBrokerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateBrokerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateBrokerErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateBrokerErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateBrokerErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateBrokerErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateBrokerErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateBrokerErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBrokerErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBrokerErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateBrokerErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateBrokerErrorKind::UnauthorizedException(_))
     }
@@ -147,7 +147,7 @@ pub enum CreateConfigurationErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>Returns information about an error.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationError {
@@ -213,28 +213,28 @@ impl CreateConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -275,7 +275,7 @@ pub enum CreateTagsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagsError {
@@ -341,22 +341,22 @@ impl CreateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::NotFoundException(_))
     }
@@ -396,7 +396,7 @@ pub enum CreateUserErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -463,26 +463,26 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::NotFoundException(_))
     }
@@ -521,7 +521,7 @@ pub enum DeleteBrokerErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBrokerError {
@@ -587,22 +587,22 @@ impl DeleteBrokerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBrokerErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBrokerErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteBrokerErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteBrokerErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteBrokerErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteBrokerErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteBrokerErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteBrokerErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBrokerErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBrokerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBrokerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBrokerErrorKind::NotFoundException(_))
     }
@@ -640,7 +640,7 @@ pub enum DeleteTagsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -706,22 +706,22 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::NotFoundException(_))
     }
@@ -759,7 +759,7 @@ pub enum DeleteUserErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -825,22 +825,22 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::NotFoundException(_))
     }
@@ -878,7 +878,7 @@ pub enum DescribeBrokerErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBrokerError {
@@ -944,22 +944,22 @@ impl DescribeBrokerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBrokerErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeBrokerErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeBrokerErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeBrokerErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeBrokerErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeBrokerErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeBrokerErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeBrokerErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBrokerErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBrokerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBrokerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeBrokerErrorKind::NotFoundException(_))
     }
@@ -995,7 +995,7 @@ pub enum DescribeBrokerEngineTypesErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>Returns information about an error.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBrokerEngineTypesError {
@@ -1062,21 +1062,21 @@ impl DescribeBrokerEngineTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBrokerEngineTypesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeBrokerEngineTypesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBrokerEngineTypesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBrokerEngineTypesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeBrokerEngineTypesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBrokerEngineTypesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBrokerEngineTypesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeBrokerEngineTypesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1116,7 +1116,7 @@ pub enum DescribeBrokerInstanceOptionsErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>Returns information about an error.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBrokerInstanceOptionsError {
@@ -1186,21 +1186,21 @@ impl DescribeBrokerInstanceOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBrokerInstanceOptionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeBrokerInstanceOptionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBrokerInstanceOptionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBrokerInstanceOptionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeBrokerInstanceOptionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBrokerInstanceOptionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBrokerInstanceOptionsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeBrokerInstanceOptionsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1242,7 +1242,7 @@ pub enum DescribeConfigurationErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationError {
@@ -1308,28 +1308,28 @@ impl DescribeConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1370,7 +1370,7 @@ pub enum DescribeConfigurationRevisionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationRevisionError {
@@ -1441,28 +1441,28 @@ impl DescribeConfigurationRevisionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationRevisionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationRevisionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationRevisionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationRevisionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationRevisionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationRevisionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationRevisionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationRevisionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConfigurationRevisionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConfigurationRevisionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationRevisionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1505,7 +1505,7 @@ pub enum DescribeUserErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserError {
@@ -1571,22 +1571,22 @@ impl DescribeUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::NotFoundException(_))
     }
@@ -1622,7 +1622,7 @@ pub enum ListBrokersErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>Returns information about an error.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBrokersError {
@@ -1687,15 +1687,15 @@ impl ListBrokersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBrokersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListBrokersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListBrokersErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListBrokersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListBrokersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListBrokersErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListBrokersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListBrokersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1735,7 +1735,7 @@ pub enum ListConfigurationRevisionsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationRevisionsError {
@@ -1803,28 +1803,28 @@ impl ListConfigurationRevisionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConfigurationRevisionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListConfigurationRevisionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationRevisionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationRevisionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListConfigurationRevisionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationRevisionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationRevisionsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListConfigurationRevisionsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationRevisionsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationRevisionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListConfigurationRevisionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1865,7 +1865,7 @@ pub enum ListConfigurationsErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>Returns information about an error.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationsError {
@@ -1930,21 +1930,21 @@ impl ListConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListConfigurationsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1984,7 +1984,7 @@ pub enum ListTagsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -2050,22 +2050,22 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::NotFoundException(_))
     }
@@ -2103,7 +2103,7 @@ pub enum ListUsersErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
@@ -2169,22 +2169,22 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::NotFoundException(_))
     }
@@ -2222,7 +2222,7 @@ pub enum RebootBrokerErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootBrokerError {
@@ -2288,22 +2288,22 @@ impl RebootBrokerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RebootBrokerErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RebootBrokerErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, RebootBrokerErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `RebootBrokerErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RebootBrokerErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, RebootBrokerErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `RebootBrokerErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RebootBrokerErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootBrokerErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RebootBrokerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RebootBrokerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RebootBrokerErrorKind::NotFoundException(_))
     }
@@ -2343,7 +2343,7 @@ pub enum UpdateBrokerErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBrokerError {
@@ -2410,26 +2410,26 @@ impl UpdateBrokerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBrokerErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateBrokerErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateBrokerErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateBrokerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateBrokerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateBrokerErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateBrokerErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateBrokerErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateBrokerErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateBrokerErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateBrokerErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBrokerErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBrokerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBrokerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBrokerErrorKind::NotFoundException(_))
     }
@@ -2470,7 +2470,7 @@ pub enum UpdateConfigurationErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationError {
@@ -2537,35 +2537,35 @@ impl UpdateConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2609,7 +2609,7 @@ pub enum UpdateUserErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserError {
@@ -2676,26 +2676,26 @@ impl UpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::NotFoundException(_))
     }

@@ -16,7 +16,7 @@ pub enum AcceptQualificationRequestErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptQualificationRequestError {
@@ -80,14 +80,14 @@ impl AcceptQualificationRequestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptQualificationRequestErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `AcceptQualificationRequestErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             AcceptQualificationRequestErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `AcceptQualificationRequestErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `AcceptQualificationRequestErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -122,7 +122,7 @@ pub enum ApproveAssignmentErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ApproveAssignmentError {
@@ -186,11 +186,11 @@ impl ApproveAssignmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ApproveAssignmentErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ApproveAssignmentErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, ApproveAssignmentErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `ApproveAssignmentErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ApproveAssignmentErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, ApproveAssignmentErrorKind::ServiceFault(_))
     }
@@ -222,7 +222,7 @@ pub enum AssociateQualificationWithWorkerErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateQualificationWithWorkerError {
@@ -289,14 +289,14 @@ impl AssociateQualificationWithWorkerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateQualificationWithWorkerErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `AssociateQualificationWithWorkerErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             AssociateQualificationWithWorkerErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `AssociateQualificationWithWorkerErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `AssociateQualificationWithWorkerErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -331,7 +331,7 @@ pub enum CreateAdditionalAssignmentsForHITErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAdditionalAssignmentsForHITError {
@@ -398,14 +398,14 @@ impl CreateAdditionalAssignmentsForHITError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAdditionalAssignmentsForHITErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `CreateAdditionalAssignmentsForHITErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateAdditionalAssignmentsForHITErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `CreateAdditionalAssignmentsForHITErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `CreateAdditionalAssignmentsForHITErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -440,7 +440,7 @@ pub enum CreateHITErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHITError {
@@ -504,11 +504,11 @@ impl CreateHITError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHITErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `CreateHITErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, CreateHITErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `CreateHITErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `CreateHITErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, CreateHITErrorKind::ServiceFault(_))
     }
@@ -540,7 +540,7 @@ pub enum CreateHITTypeErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHITTypeError {
@@ -604,11 +604,11 @@ impl CreateHITTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHITTypeErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `CreateHITTypeErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, CreateHITTypeErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `CreateHITTypeErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `CreateHITTypeErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, CreateHITTypeErrorKind::ServiceFault(_))
     }
@@ -640,7 +640,7 @@ pub enum CreateHITWithHITTypeErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHITWithHITTypeError {
@@ -704,11 +704,11 @@ impl CreateHITWithHITTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHITWithHITTypeErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `CreateHITWithHITTypeErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, CreateHITWithHITTypeErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `CreateHITWithHITTypeErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `CreateHITWithHITTypeErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, CreateHITWithHITTypeErrorKind::ServiceFault(_))
     }
@@ -740,7 +740,7 @@ pub enum CreateQualificationTypeErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateQualificationTypeError {
@@ -804,14 +804,14 @@ impl CreateQualificationTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateQualificationTypeErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `CreateQualificationTypeErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateQualificationTypeErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `CreateQualificationTypeErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `CreateQualificationTypeErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -846,7 +846,7 @@ pub enum CreateWorkerBlockErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkerBlockError {
@@ -910,11 +910,11 @@ impl CreateWorkerBlockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkerBlockErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `CreateWorkerBlockErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, CreateWorkerBlockErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `CreateWorkerBlockErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `CreateWorkerBlockErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, CreateWorkerBlockErrorKind::ServiceFault(_))
     }
@@ -946,7 +946,7 @@ pub enum DeleteHITErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHITError {
@@ -1010,11 +1010,11 @@ impl DeleteHITError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHITErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `DeleteHITErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, DeleteHITErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `DeleteHITErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `DeleteHITErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, DeleteHITErrorKind::ServiceFault(_))
     }
@@ -1046,7 +1046,7 @@ pub enum DeleteQualificationTypeErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteQualificationTypeError {
@@ -1110,14 +1110,14 @@ impl DeleteQualificationTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteQualificationTypeErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `DeleteQualificationTypeErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteQualificationTypeErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteQualificationTypeErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `DeleteQualificationTypeErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1152,7 +1152,7 @@ pub enum DeleteWorkerBlockErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkerBlockError {
@@ -1216,11 +1216,11 @@ impl DeleteWorkerBlockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkerBlockErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `DeleteWorkerBlockErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, DeleteWorkerBlockErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `DeleteWorkerBlockErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `DeleteWorkerBlockErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, DeleteWorkerBlockErrorKind::ServiceFault(_))
     }
@@ -1252,7 +1252,7 @@ pub enum DisassociateQualificationFromWorkerErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateQualificationFromWorkerError {
@@ -1319,14 +1319,14 @@ impl DisassociateQualificationFromWorkerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateQualificationFromWorkerErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `DisassociateQualificationFromWorkerErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateQualificationFromWorkerErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateQualificationFromWorkerErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `DisassociateQualificationFromWorkerErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1363,7 +1363,7 @@ pub enum GetAccountBalanceErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountBalanceError {
@@ -1427,11 +1427,11 @@ impl GetAccountBalanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountBalanceErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `GetAccountBalanceErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, GetAccountBalanceErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `GetAccountBalanceErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `GetAccountBalanceErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, GetAccountBalanceErrorKind::ServiceFault(_))
     }
@@ -1463,7 +1463,7 @@ pub enum GetAssignmentErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssignmentError {
@@ -1527,11 +1527,11 @@ impl GetAssignmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssignmentErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `GetAssignmentErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, GetAssignmentErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `GetAssignmentErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `GetAssignmentErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, GetAssignmentErrorKind::ServiceFault(_))
     }
@@ -1563,7 +1563,7 @@ pub enum GetFileUploadURLErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFileUploadURLError {
@@ -1627,11 +1627,11 @@ impl GetFileUploadURLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFileUploadURLErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `GetFileUploadURLErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, GetFileUploadURLErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `GetFileUploadURLErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `GetFileUploadURLErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, GetFileUploadURLErrorKind::ServiceFault(_))
     }
@@ -1663,7 +1663,7 @@ pub enum GetHITErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHITError {
@@ -1727,11 +1727,11 @@ impl GetHITError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHITErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `GetHITErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, GetHITErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `GetHITErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `GetHITErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, GetHITErrorKind::ServiceFault(_))
     }
@@ -1763,7 +1763,7 @@ pub enum GetQualificationScoreErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQualificationScoreError {
@@ -1827,11 +1827,11 @@ impl GetQualificationScoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQualificationScoreErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `GetQualificationScoreErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, GetQualificationScoreErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `GetQualificationScoreErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `GetQualificationScoreErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, GetQualificationScoreErrorKind::ServiceFault(_))
     }
@@ -1863,7 +1863,7 @@ pub enum GetQualificationTypeErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQualificationTypeError {
@@ -1927,11 +1927,11 @@ impl GetQualificationTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQualificationTypeErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `GetQualificationTypeErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, GetQualificationTypeErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `GetQualificationTypeErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `GetQualificationTypeErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, GetQualificationTypeErrorKind::ServiceFault(_))
     }
@@ -1963,7 +1963,7 @@ pub enum ListAssignmentsForHITErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssignmentsForHITError {
@@ -2027,11 +2027,11 @@ impl ListAssignmentsForHITError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssignmentsForHITErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListAssignmentsForHITErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, ListAssignmentsForHITErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `ListAssignmentsForHITErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListAssignmentsForHITErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, ListAssignmentsForHITErrorKind::ServiceFault(_))
     }
@@ -2063,7 +2063,7 @@ pub enum ListBonusPaymentsErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBonusPaymentsError {
@@ -2127,11 +2127,11 @@ impl ListBonusPaymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBonusPaymentsErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListBonusPaymentsErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, ListBonusPaymentsErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `ListBonusPaymentsErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListBonusPaymentsErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, ListBonusPaymentsErrorKind::ServiceFault(_))
     }
@@ -2163,7 +2163,7 @@ pub enum ListHITsErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHITsError {
@@ -2227,11 +2227,11 @@ impl ListHITsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHITsErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListHITsErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, ListHITsErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `ListHITsErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListHITsErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, ListHITsErrorKind::ServiceFault(_))
     }
@@ -2263,7 +2263,7 @@ pub enum ListHITsForQualificationTypeErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHITsForQualificationTypeError {
@@ -2327,14 +2327,14 @@ impl ListHITsForQualificationTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHITsForQualificationTypeErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListHITsForQualificationTypeErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             ListHITsForQualificationTypeErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `ListHITsForQualificationTypeErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListHITsForQualificationTypeErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2369,7 +2369,7 @@ pub enum ListQualificationRequestsErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListQualificationRequestsError {
@@ -2433,14 +2433,14 @@ impl ListQualificationRequestsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListQualificationRequestsErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListQualificationRequestsErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             ListQualificationRequestsErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `ListQualificationRequestsErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListQualificationRequestsErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2475,7 +2475,7 @@ pub enum ListQualificationTypesErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListQualificationTypesError {
@@ -2539,11 +2539,11 @@ impl ListQualificationTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListQualificationTypesErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListQualificationTypesErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, ListQualificationTypesErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `ListQualificationTypesErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListQualificationTypesErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, ListQualificationTypesErrorKind::ServiceFault(_))
     }
@@ -2575,7 +2575,7 @@ pub enum ListReviewableHITsErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReviewableHITsError {
@@ -2639,11 +2639,11 @@ impl ListReviewableHITsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReviewableHITsErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListReviewableHITsErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, ListReviewableHITsErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `ListReviewableHITsErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListReviewableHITsErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, ListReviewableHITsErrorKind::ServiceFault(_))
     }
@@ -2675,7 +2675,7 @@ pub enum ListReviewPolicyResultsForHITErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReviewPolicyResultsForHITError {
@@ -2742,14 +2742,14 @@ impl ListReviewPolicyResultsForHITError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReviewPolicyResultsForHITErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListReviewPolicyResultsForHITErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             ListReviewPolicyResultsForHITErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `ListReviewPolicyResultsForHITErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListReviewPolicyResultsForHITErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2784,7 +2784,7 @@ pub enum ListWorkerBlocksErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkerBlocksError {
@@ -2848,11 +2848,11 @@ impl ListWorkerBlocksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkerBlocksErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListWorkerBlocksErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, ListWorkerBlocksErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `ListWorkerBlocksErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListWorkerBlocksErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, ListWorkerBlocksErrorKind::ServiceFault(_))
     }
@@ -2884,7 +2884,7 @@ pub enum ListWorkersWithQualificationTypeErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkersWithQualificationTypeError {
@@ -2951,14 +2951,14 @@ impl ListWorkersWithQualificationTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkersWithQualificationTypeErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `ListWorkersWithQualificationTypeErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkersWithQualificationTypeErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkersWithQualificationTypeErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `ListWorkersWithQualificationTypeErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2993,7 +2993,7 @@ pub enum NotifyWorkersErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for NotifyWorkersError {
@@ -3057,11 +3057,11 @@ impl NotifyWorkersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `NotifyWorkersErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `NotifyWorkersErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, NotifyWorkersErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `NotifyWorkersErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `NotifyWorkersErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, NotifyWorkersErrorKind::ServiceFault(_))
     }
@@ -3093,7 +3093,7 @@ pub enum RejectAssignmentErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectAssignmentError {
@@ -3157,11 +3157,11 @@ impl RejectAssignmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectAssignmentErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `RejectAssignmentErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, RejectAssignmentErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `RejectAssignmentErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `RejectAssignmentErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, RejectAssignmentErrorKind::ServiceFault(_))
     }
@@ -3193,7 +3193,7 @@ pub enum RejectQualificationRequestErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectQualificationRequestError {
@@ -3257,14 +3257,14 @@ impl RejectQualificationRequestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectQualificationRequestErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `RejectQualificationRequestErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             RejectQualificationRequestErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `RejectQualificationRequestErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `RejectQualificationRequestErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3299,7 +3299,7 @@ pub enum SendBonusErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendBonusError {
@@ -3363,11 +3363,11 @@ impl SendBonusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendBonusErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `SendBonusErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, SendBonusErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `SendBonusErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `SendBonusErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, SendBonusErrorKind::ServiceFault(_))
     }
@@ -3399,7 +3399,7 @@ pub enum SendTestEventNotificationErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendTestEventNotificationError {
@@ -3463,14 +3463,14 @@ impl SendTestEventNotificationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendTestEventNotificationErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `SendTestEventNotificationErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             SendTestEventNotificationErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `SendTestEventNotificationErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `SendTestEventNotificationErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3505,7 +3505,7 @@ pub enum UpdateExpirationForHITErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateExpirationForHITError {
@@ -3569,11 +3569,11 @@ impl UpdateExpirationForHITError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateExpirationForHITErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `UpdateExpirationForHITErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, UpdateExpirationForHITErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `UpdateExpirationForHITErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `UpdateExpirationForHITErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, UpdateExpirationForHITErrorKind::ServiceFault(_))
     }
@@ -3605,7 +3605,7 @@ pub enum UpdateHITReviewStatusErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateHITReviewStatusError {
@@ -3669,11 +3669,11 @@ impl UpdateHITReviewStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateHITReviewStatusErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `UpdateHITReviewStatusErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, UpdateHITReviewStatusErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `UpdateHITReviewStatusErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `UpdateHITReviewStatusErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, UpdateHITReviewStatusErrorKind::ServiceFault(_))
     }
@@ -3705,7 +3705,7 @@ pub enum UpdateHITTypeOfHITErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateHITTypeOfHITError {
@@ -3769,11 +3769,11 @@ impl UpdateHITTypeOfHITError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateHITTypeOfHITErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `UpdateHITTypeOfHITErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(&self.kind, UpdateHITTypeOfHITErrorKind::RequestError(_))
     }
-    /// Returns true if the error kind is `UpdateHITTypeOfHITErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `UpdateHITTypeOfHITErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(&self.kind, UpdateHITTypeOfHITErrorKind::ServiceFault(_))
     }
@@ -3805,7 +3805,7 @@ pub enum UpdateNotificationSettingsErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNotificationSettingsError {
@@ -3869,14 +3869,14 @@ impl UpdateNotificationSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNotificationSettingsErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `UpdateNotificationSettingsErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNotificationSettingsErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNotificationSettingsErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `UpdateNotificationSettingsErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3911,7 +3911,7 @@ pub enum UpdateQualificationTypeErrorKind {
     RequestError(crate::error::RequestError),
     /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
     ServiceFault(crate::error::ServiceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateQualificationTypeError {
@@ -3975,14 +3975,14 @@ impl UpdateQualificationTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateQualificationTypeErrorKind::RequestError`.
+    /// Returns `true` if the error kind is `UpdateQualificationTypeErrorKind::RequestError`.
     pub fn is_request_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateQualificationTypeErrorKind::RequestError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateQualificationTypeErrorKind::ServiceFault`.
+    /// Returns `true` if the error kind is `UpdateQualificationTypeErrorKind::ServiceFault`.
     pub fn is_service_fault(&self) -> bool {
         matches!(
             &self.kind,

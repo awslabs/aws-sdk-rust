@@ -117,11 +117,11 @@ pub fn parse_invoke_endpoint_response(
         );
         output = output.set_custom_attributes(
             crate::http_serde::deser_header_invoke_endpoint_invoke_endpoint_output_custom_attributes(response.headers())
-                                        .map_err(|_|crate::error::InvokeEndpointError::unhandled("Failed to parse CustomAttributes from header `X-Amzn-SageMaker-Custom-Attributes"))?
+                                    .map_err(|_|crate::error::InvokeEndpointError::unhandled("Failed to parse CustomAttributes from header `X-Amzn-SageMaker-Custom-Attributes"))?
         );
         output = output.set_invoked_production_variant(
             crate::http_serde::deser_header_invoke_endpoint_invoke_endpoint_output_invoked_production_variant(response.headers())
-                                        .map_err(|_|crate::error::InvokeEndpointError::unhandled("Failed to parse InvokedProductionVariant from header `x-Amzn-Invoked-Production-Variant"))?
+                                    .map_err(|_|crate::error::InvokeEndpointError::unhandled("Failed to parse InvokedProductionVariant from header `x-Amzn-Invoked-Production-Variant"))?
         );
         output.build()
     })
@@ -220,7 +220,7 @@ pub fn parse_invoke_endpoint_async_response(
         .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
         output = output.set_output_location(
             crate::http_serde::deser_header_invoke_endpoint_async_invoke_endpoint_async_output_output_location(response.headers())
-                                        .map_err(|_|crate::error::InvokeEndpointAsyncError::unhandled("Failed to parse OutputLocation from header `X-Amzn-SageMaker-OutputLocation"))?
+                                    .map_err(|_|crate::error::InvokeEndpointAsyncError::unhandled("Failed to parse OutputLocation from header `X-Amzn-SageMaker-OutputLocation"))?
         );
         output.build()
     })

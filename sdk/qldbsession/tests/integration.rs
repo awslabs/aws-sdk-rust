@@ -58,6 +58,7 @@ async fn signv4_use_correct_service_name() {
         .build()
         .unwrap()
         .make_operation(&conf)
+        .await
         .expect("valid operation");
     // Fix the request time and user agent so the headers are stable
     op.properties_mut()

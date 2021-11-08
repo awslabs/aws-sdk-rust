@@ -20,7 +20,7 @@ pub enum AssociateDeviceWithPlacementErrorKind {
     ResourceConflictException(crate::error::ResourceConflictException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDeviceWithPlacementError {
@@ -92,28 +92,28 @@ impl AssociateDeviceWithPlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDeviceWithPlacementErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithPlacementErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDeviceWithPlacementErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDeviceWithPlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithPlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDeviceWithPlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDeviceWithPlacementErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithPlacementErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDeviceWithPlacementErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDeviceWithPlacementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateDeviceWithPlacementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -158,7 +158,7 @@ pub enum CreatePlacementErrorKind {
     ResourceConflictException(crate::error::ResourceConflictException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlacementError {
@@ -224,28 +224,28 @@ impl CreatePlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePlacementErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreatePlacementErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlacementErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreatePlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlacementErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreatePlacementErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlacementErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlacementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePlacementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -284,7 +284,7 @@ pub enum CreateProjectErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -349,21 +349,21 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -403,7 +403,7 @@ pub enum DeletePlacementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePlacementError {
@@ -469,28 +469,28 @@ impl DeletePlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePlacementErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeletePlacementErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlacementErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeletePlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlacementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePlacementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlacementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlacementErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeletePlacementErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -531,7 +531,7 @@ pub enum DeleteProjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -597,28 +597,28 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -657,7 +657,7 @@ pub enum DescribePlacementErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePlacementError {
@@ -722,21 +722,21 @@ impl DescribePlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePlacementErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribePlacementErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePlacementErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribePlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePlacementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePlacementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -774,7 +774,7 @@ pub enum DescribeProjectErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectError {
@@ -839,21 +839,21 @@ impl DescribeProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -893,7 +893,7 @@ pub enum DisassociateDeviceFromPlacementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateDeviceFromPlacementError {
@@ -970,28 +970,28 @@ impl DisassociateDeviceFromPlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateDeviceFromPlacementErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DisassociateDeviceFromPlacementErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDeviceFromPlacementErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDeviceFromPlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateDeviceFromPlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDeviceFromPlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDeviceFromPlacementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateDeviceFromPlacementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDeviceFromPlacementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDeviceFromPlacementErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DisassociateDeviceFromPlacementErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1038,7 +1038,7 @@ pub enum GetDevicesInPlacementErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDevicesInPlacementError {
@@ -1103,21 +1103,21 @@ impl GetDevicesInPlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDevicesInPlacementErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetDevicesInPlacementErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevicesInPlacementErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevicesInPlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetDevicesInPlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDevicesInPlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDevicesInPlacementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDevicesInPlacementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1155,7 +1155,7 @@ pub enum ListPlacementsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPlacementsError {
@@ -1220,21 +1220,21 @@ impl ListPlacementsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPlacementsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListPlacementsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPlacementsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListPlacementsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListPlacementsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPlacementsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListPlacementsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPlacementsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1270,7 +1270,7 @@ pub enum ListProjectsErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p></p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -1334,14 +1334,14 @@ impl ListProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1378,7 +1378,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1443,21 +1443,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1495,7 +1495,7 @@ pub enum TagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1560,18 +1560,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1609,7 +1609,7 @@ pub enum UntagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1674,21 +1674,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1728,7 +1728,7 @@ pub enum UpdatePlacementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePlacementError {
@@ -1794,28 +1794,28 @@ impl UpdatePlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePlacementErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdatePlacementErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePlacementErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdatePlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePlacementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePlacementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePlacementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePlacementErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdatePlacementErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1856,7 +1856,7 @@ pub enum UpdateProjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProjectError {
@@ -1922,28 +1922,28 @@ impl UpdateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

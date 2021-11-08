@@ -163,11 +163,11 @@ pub fn parse_get_snapshot_block(
         );
         output = output.set_checksum_algorithm(
             crate::http_serde::deser_header_get_snapshot_block_get_snapshot_block_output_checksum_algorithm(response.headers())
-                                        .map_err(|_|crate::error::GetSnapshotBlockError::unhandled("Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm"))?
+                                    .map_err(|_|crate::error::GetSnapshotBlockError::unhandled("Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm"))?
         );
         output = output.set_data_length(
             crate::http_serde::deser_header_get_snapshot_block_get_snapshot_block_output_data_length(response.headers())
-                                        .map_err(|_|crate::error::GetSnapshotBlockError::unhandled("Failed to parse DataLength from header `x-amz-Data-Length"))?
+                                    .map_err(|_|crate::error::GetSnapshotBlockError::unhandled("Failed to parse DataLength from header `x-amz-Data-Length"))?
         );
         output.build()
     })
@@ -718,7 +718,7 @@ pub fn parse_put_snapshot_block_response(
         );
         output = output.set_checksum_algorithm(
             crate::http_serde::deser_header_put_snapshot_block_put_snapshot_block_output_checksum_algorithm(response.headers())
-                                        .map_err(|_|crate::error::PutSnapshotBlockError::unhandled("Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm"))?
+                                    .map_err(|_|crate::error::PutSnapshotBlockError::unhandled("Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm"))?
         );
         output.build()
     })

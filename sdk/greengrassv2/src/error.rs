@@ -24,7 +24,7 @@ pub enum BatchAssociateClientDeviceWithCoreDeviceErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchAssociateClientDeviceWithCoreDeviceError {
@@ -104,35 +104,35 @@ impl BatchAssociateClientDeviceWithCoreDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateClientDeviceWithCoreDeviceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateClientDeviceWithCoreDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateClientDeviceWithCoreDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateClientDeviceWithCoreDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchAssociateClientDeviceWithCoreDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -190,7 +190,7 @@ pub enum BatchDisassociateClientDeviceFromCoreDeviceErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDisassociateClientDeviceFromCoreDeviceError {
@@ -274,35 +274,35 @@ impl BatchDisassociateClientDeviceFromCoreDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateClientDeviceFromCoreDeviceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateClientDeviceFromCoreDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchDisassociateClientDeviceFromCoreDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -363,7 +363,7 @@ pub enum CancelDeploymentErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelDeploymentError {
@@ -431,39 +431,39 @@ impl CancelDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelDeploymentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CancelDeploymentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelDeploymentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CancelDeploymentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CancelDeploymentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CancelDeploymentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CancelDeploymentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CancelDeploymentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelDeploymentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CancelDeploymentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelDeploymentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelDeploymentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelDeploymentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelDeploymentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelDeploymentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CancelDeploymentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CancelDeploymentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -518,7 +518,7 @@ pub enum CreateComponentVersionErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateComponentVersionError {
@@ -589,49 +589,49 @@ impl CreateComponentVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateComponentVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateComponentVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateComponentVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateComponentVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentVersionErrorKind::RequestAlreadyInProgressException`.
+    /// Returns `true` if the error kind is `CreateComponentVersionErrorKind::RequestAlreadyInProgressException`.
     pub fn is_request_already_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentVersionErrorKind::RequestAlreadyInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentVersionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateComponentVersionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentVersionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateComponentVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentVersionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateComponentVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -685,7 +685,7 @@ pub enum CreateDeploymentErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentError {
@@ -753,42 +753,42 @@ impl CreateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::RequestAlreadyInProgressException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::RequestAlreadyInProgressException`.
     pub fn is_request_already_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::RequestAlreadyInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -838,7 +838,7 @@ pub enum DeleteComponentErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteComponentError {
@@ -906,36 +906,36 @@ impl DeleteComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComponentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteComponentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComponentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteComponentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteComponentErrorKind::ValidationException(_))
     }
@@ -982,7 +982,7 @@ pub enum DeleteCoreDeviceErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCoreDeviceError {
@@ -1050,39 +1050,39 @@ impl DeleteCoreDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCoreDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteCoreDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCoreDeviceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCoreDeviceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteCoreDeviceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteCoreDeviceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteCoreDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteCoreDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCoreDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCoreDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCoreDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCoreDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCoreDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteCoreDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCoreDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCoreDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteCoreDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1129,7 +1129,7 @@ pub enum DescribeComponentErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeComponentError {
@@ -1196,35 +1196,35 @@ impl DescribeComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeComponentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeComponentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeComponentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeComponentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1270,7 +1270,7 @@ pub enum GetComponentErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComponentError {
@@ -1337,29 +1337,29 @@ impl GetComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetComponentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetComponentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetComponentErrorKind::ValidationException(_))
     }
@@ -1402,7 +1402,7 @@ pub enum GetComponentVersionArtifactErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComponentVersionArtifactError {
@@ -1471,35 +1471,35 @@ impl GetComponentVersionArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetComponentVersionArtifactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetComponentVersionArtifactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentVersionArtifactErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentVersionArtifactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetComponentVersionArtifactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentVersionArtifactErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentVersionArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetComponentVersionArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentVersionArtifactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentVersionArtifactErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetComponentVersionArtifactErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentVersionArtifactErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentVersionArtifactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetComponentVersionArtifactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1545,7 +1545,7 @@ pub enum GetCoreDeviceErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCoreDeviceError {
@@ -1612,29 +1612,29 @@ impl GetCoreDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCoreDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCoreDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetCoreDeviceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetCoreDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetCoreDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCoreDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetCoreDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCoreDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCoreDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCoreDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetCoreDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetCoreDeviceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetCoreDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetCoreDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetCoreDeviceErrorKind::ValidationException(_))
     }
@@ -1677,7 +1677,7 @@ pub enum GetDeploymentErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentError {
@@ -1744,29 +1744,29 @@ impl GetDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDeploymentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetDeploymentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetDeploymentErrorKind::ValidationException(_))
     }
@@ -1809,7 +1809,7 @@ pub enum ListClientDevicesAssociatedWithCoreDeviceErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClientDevicesAssociatedWithCoreDeviceError {
@@ -1889,35 +1889,35 @@ impl ListClientDevicesAssociatedWithCoreDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClientDevicesAssociatedWithCoreDeviceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClientDevicesAssociatedWithCoreDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClientDevicesAssociatedWithCoreDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListClientDevicesAssociatedWithCoreDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListClientDevicesAssociatedWithCoreDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1973,7 +1973,7 @@ pub enum ListComponentsErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListComponentsError {
@@ -2039,25 +2039,25 @@ impl ListComponentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListComponentsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListComponentsErrorKind::ValidationException(_))
     }
@@ -2099,7 +2099,7 @@ pub enum ListComponentVersionsErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListComponentVersionsError {
@@ -2166,35 +2166,35 @@ impl ListComponentVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListComponentVersionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListComponentVersionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentVersionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentVersionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListComponentVersionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentVersionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListComponentVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentVersionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListComponentVersionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentVersionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentVersionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListComponentVersionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2238,7 +2238,7 @@ pub enum ListCoreDevicesErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCoreDevicesError {
@@ -2304,25 +2304,25 @@ impl ListCoreDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCoreDevicesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListCoreDevicesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCoreDevicesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListCoreDevicesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListCoreDevicesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCoreDevicesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListCoreDevicesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListCoreDevicesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListCoreDevicesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListCoreDevicesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListCoreDevicesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListCoreDevicesErrorKind::ValidationException(_))
     }
@@ -2362,7 +2362,7 @@ pub enum ListDeploymentsErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentsError {
@@ -2428,25 +2428,25 @@ impl ListDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListDeploymentsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListDeploymentsErrorKind::ValidationException(_))
     }
@@ -2488,7 +2488,7 @@ pub enum ListEffectiveDeploymentsErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEffectiveDeploymentsError {
@@ -2555,35 +2555,35 @@ impl ListEffectiveDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEffectiveDeploymentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEffectiveDeploymentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEffectiveDeploymentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListEffectiveDeploymentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListEffectiveDeploymentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEffectiveDeploymentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListEffectiveDeploymentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListEffectiveDeploymentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEffectiveDeploymentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListEffectiveDeploymentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListEffectiveDeploymentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEffectiveDeploymentsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListEffectiveDeploymentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEffectiveDeploymentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2629,7 +2629,7 @@ pub enum ListInstalledComponentsErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInstalledComponentsError {
@@ -2696,35 +2696,35 @@ impl ListInstalledComponentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInstalledComponentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListInstalledComponentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstalledComponentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstalledComponentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListInstalledComponentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstalledComponentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstalledComponentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListInstalledComponentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstalledComponentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstalledComponentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListInstalledComponentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInstalledComponentsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListInstalledComponentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListInstalledComponentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2765,7 +2765,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2830,21 +2830,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2891,7 +2891,7 @@ pub enum ResolveComponentCandidatesErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResolveComponentCandidatesError {
@@ -2959,42 +2959,42 @@ impl ResolveComponentCandidatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResolveComponentCandidatesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ResolveComponentCandidatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveComponentCandidatesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveComponentCandidatesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ResolveComponentCandidatesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveComponentCandidatesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveComponentCandidatesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ResolveComponentCandidatesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveComponentCandidatesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveComponentCandidatesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ResolveComponentCandidatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveComponentCandidatesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveComponentCandidatesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ResolveComponentCandidatesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveComponentCandidatesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveComponentCandidatesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ResolveComponentCandidatesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3036,7 +3036,7 @@ pub enum TagResourceErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3101,18 +3101,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -3148,7 +3148,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
     /// unsupported characters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3213,21 +3213,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }

@@ -249,7 +249,7 @@ pub type StartMedicalStreamTranscriptionInputOperationRetryAlias = aws_http::Aws
 impl StartMedicalStreamTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartMedicalStreamTranscription`](crate::operation::StartMedicalStreamTranscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -478,6 +478,7 @@ impl StartMedicalStreamTranscriptionInput {
             input: &crate::input::StartMedicalStreamTranscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -543,9 +544,10 @@ impl StartMedicalStreamTranscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -588,6 +590,7 @@ pub mod start_stream_transcription_input {
             std::option::Option<crate::model::ContentIdentificationType>,
         pub(crate) content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
         pub(crate) pii_entity_types: std::option::Option<std::string::String>,
+        pub(crate) language_model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Indicates the source language used in the input audio stream.</p>
@@ -834,14 +837,7 @@ pub mod start_stream_transcription_input {
             self
         }
         /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have
-        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
-        /// <p>
-        /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-        /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-        /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
-        /// <code>SSN</code>, and <code>ALL</code>.</p>
+        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>    
         /// <p>
         /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
@@ -849,14 +845,7 @@ pub mod start_stream_transcription_input {
             self
         }
         /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have
-        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
-        /// <p>
-        /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-        /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-        /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
-        /// <code>SSN</code>, and <code>ALL</code>.</p>
+        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>    
         /// <p>
         /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn set_pii_entity_types(
@@ -864,6 +853,19 @@ pub mod start_stream_transcription_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.pii_entity_types = input;
+            self
+        }
+        /// <p>The name of the language model you want to use.</p>
+        pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_model_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the language model you want to use.</p>
+        pub fn set_language_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_model_name = input;
             self
         }
         /// Consumes the builder and constructs a [`StartStreamTranscriptionInput`](crate::input::StartStreamTranscriptionInput)
@@ -913,6 +915,8 @@ pub mod start_stream_transcription_input {
                     ,
                     pii_entity_types: self.pii_entity_types
                     ,
+                    language_model_name: self.language_model_name
+                    ,
                 }
             )
         }
@@ -926,7 +930,7 @@ pub type StartStreamTranscriptionInputOperationRetryAlias = aws_http::AwsErrorRe
 impl StartStreamTranscriptionInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamTranscription`](crate::operation::StartStreamTranscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1211,6 +1215,22 @@ impl StartStreamTranscriptionInput {
                     builder = builder.header("x-amzn-transcribe-pii-entity-types", header_value);
                 }
             }
+            if let Some(inner_48) = &_input.language_model_name {
+                let formatted_49 = AsRef::<str>::as_ref(inner_48);
+                if !formatted_49.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_49;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "language_model_name",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        })?;
+                    builder = builder.header("x-amzn-transcribe-language-model-name", header_value);
+                }
+            }
             Ok(builder)
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1229,6 +1249,7 @@ impl StartStreamTranscriptionInput {
             input: &crate::input::StartStreamTranscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1294,9 +1315,10 @@ impl StartStreamTranscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1369,17 +1391,12 @@ pub struct StartStreamTranscriptionInput {
     /// <p>You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     pub content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
     /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have
-    /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
-    /// <p>
-    /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
-    /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-    /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-    /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-    /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
-    /// <code>SSN</code>, and <code>ALL</code>.</p>
+    /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>    
     /// <p>
     /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub pii_entity_types: std::option::Option<std::string::String>,
+    /// <p>The name of the language model you want to use.</p>
+    pub language_model_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartStreamTranscriptionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1409,6 +1426,7 @@ impl std::fmt::Debug for StartStreamTranscriptionInput {
         );
         formatter.field("content_redaction_type", &self.content_redaction_type);
         formatter.field("pii_entity_types", &self.pii_entity_types);
+        formatter.field("language_model_name", &self.language_model_name);
         formatter.finish()
     }
 }

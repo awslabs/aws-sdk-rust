@@ -30,7 +30,7 @@ pub enum AcceptInputDeviceTransferErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptInputDeviceTransferError {
@@ -105,63 +105,63 @@ impl AcceptInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInputDeviceTransferErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInputDeviceTransferErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInputDeviceTransferErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInputDeviceTransferErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInputDeviceTransferErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInputDeviceTransferErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInputDeviceTransferErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInputDeviceTransferErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInputDeviceTransferErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `AcceptInputDeviceTransferErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -219,7 +219,7 @@ pub enum BatchDeleteErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteError {
@@ -289,38 +289,38 @@ impl BatchDeleteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `BatchDeleteErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, BatchDeleteErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `BatchDeleteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchDeleteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, BatchDeleteErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `BatchDeleteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `BatchDeleteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, BatchDeleteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `BatchDeleteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchDeleteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, BatchDeleteErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `BatchDeleteErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `BatchDeleteErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, BatchDeleteErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `BatchDeleteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `BatchDeleteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeleteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, BatchDeleteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `BatchDeleteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `BatchDeleteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -373,7 +373,7 @@ pub enum BatchStartErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchStartError {
@@ -443,38 +443,38 @@ impl BatchStartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchStartErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `BatchStartErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, BatchStartErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `BatchStartErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchStartErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, BatchStartErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `BatchStartErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `BatchStartErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, BatchStartErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `BatchStartErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchStartErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, BatchStartErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `BatchStartErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `BatchStartErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, BatchStartErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `BatchStartErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `BatchStartErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchStartErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `BatchStartErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchStartErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, BatchStartErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `BatchStartErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `BatchStartErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, BatchStartErrorKind::TooManyRequestsException(_))
     }
@@ -524,7 +524,7 @@ pub enum BatchStopErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchStopError {
@@ -594,38 +594,38 @@ impl BatchStopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchStopErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `BatchStopErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, BatchStopErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `BatchStopErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchStopErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, BatchStopErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `BatchStopErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `BatchStopErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, BatchStopErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `BatchStopErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchStopErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, BatchStopErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `BatchStopErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `BatchStopErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, BatchStopErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `BatchStopErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `BatchStopErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchStopErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `BatchStopErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchStopErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, BatchStopErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `BatchStopErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `BatchStopErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, BatchStopErrorKind::TooManyRequestsException(_))
     }
@@ -675,7 +675,7 @@ pub enum BatchUpdateScheduleErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdateScheduleError {
@@ -745,56 +745,56 @@ impl BatchUpdateScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpdateScheduleErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `BatchUpdateScheduleErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateScheduleErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateScheduleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchUpdateScheduleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateScheduleErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateScheduleErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchUpdateScheduleErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateScheduleErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateScheduleErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `BatchUpdateScheduleErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateScheduleErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateScheduleErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `BatchUpdateScheduleErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateScheduleErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateScheduleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `BatchUpdateScheduleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateScheduleErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateScheduleErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `BatchUpdateScheduleErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateScheduleErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateScheduleErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `BatchUpdateScheduleErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -849,7 +849,7 @@ pub enum CancelInputDeviceTransferErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelInputDeviceTransferError {
@@ -924,63 +924,63 @@ impl CancelInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelInputDeviceTransferErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelInputDeviceTransferErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelInputDeviceTransferErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelInputDeviceTransferErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelInputDeviceTransferErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelInputDeviceTransferErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelInputDeviceTransferErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelInputDeviceTransferErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CancelInputDeviceTransferErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CancelInputDeviceTransferErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1038,7 +1038,7 @@ pub enum ClaimDeviceErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ClaimDeviceError {
@@ -1108,41 +1108,41 @@ impl ClaimDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ClaimDeviceErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ClaimDeviceErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, ClaimDeviceErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `ClaimDeviceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ClaimDeviceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ClaimDeviceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ClaimDeviceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ClaimDeviceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ClaimDeviceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ClaimDeviceErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ClaimDeviceErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, ClaimDeviceErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `ClaimDeviceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ClaimDeviceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ClaimDeviceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ClaimDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ClaimDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ClaimDeviceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ClaimDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ClaimDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ClaimDeviceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ClaimDeviceErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ClaimDeviceErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1195,7 +1195,7 @@ pub enum CreateChannelErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelError {
@@ -1265,44 +1265,44 @@ impl CreateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateChannelErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateChannelErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreateChannelErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1351,7 +1351,7 @@ pub enum CreateInputErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInputError {
@@ -1419,30 +1419,30 @@ impl CreateInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, CreateInputErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateInputErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateInputErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, CreateInputErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateInputErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1489,7 +1489,7 @@ pub enum CreateInputSecurityGroupErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInputSecurityGroupError {
@@ -1559,42 +1559,42 @@ impl CreateInputSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInputSecurityGroupErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `CreateInputSecurityGroupErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputSecurityGroupErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputSecurityGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateInputSecurityGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputSecurityGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputSecurityGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateInputSecurityGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputSecurityGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputSecurityGroupErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateInputSecurityGroupErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputSecurityGroupErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputSecurityGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateInputSecurityGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInputSecurityGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInputSecurityGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateInputSecurityGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1645,7 +1645,7 @@ pub enum CreateMultiplexErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMultiplexError {
@@ -1715,44 +1715,44 @@ impl CreateMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMultiplexErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `CreateMultiplexErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, CreateMultiplexErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `CreateMultiplexErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateMultiplexErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateMultiplexErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateMultiplexErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateMultiplexErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateMultiplexErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateMultiplexErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateMultiplexErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateMultiplexErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateMultiplexErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateMultiplexErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateMultiplexErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateMultiplexErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreateMultiplexErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1805,7 +1805,7 @@ pub enum CreateMultiplexProgramErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMultiplexProgramError {
@@ -1875,56 +1875,56 @@ impl CreateMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMultiplexProgramErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `CreateMultiplexProgramErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexProgramErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexProgramErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateMultiplexProgramErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexProgramErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexProgramErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateMultiplexProgramErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexProgramErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexProgramErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateMultiplexProgramErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexProgramErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexProgramErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateMultiplexProgramErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexProgramErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexProgramErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateMultiplexProgramErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexProgramErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexProgramErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateMultiplexProgramErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMultiplexProgramErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMultiplexProgramErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `CreateMultiplexProgramErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1973,7 +1973,7 @@ pub enum CreatePartnerInputErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePartnerInputError {
@@ -2041,42 +2041,42 @@ impl CreatePartnerInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePartnerInputErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `CreatePartnerInputErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerInputErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerInputErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreatePartnerInputErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerInputErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerInputErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreatePartnerInputErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerInputErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerInputErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreatePartnerInputErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerInputErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerInputErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreatePartnerInputErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePartnerInputErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePartnerInputErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreatePartnerInputErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2119,7 +2119,7 @@ pub enum CreateTagsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for NotFoundException
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagsError {
@@ -2185,22 +2185,22 @@ impl CreateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::NotFoundException(_))
     }
@@ -2246,7 +2246,7 @@ pub enum DeleteChannelErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelError {
@@ -2316,41 +2316,41 @@ impl DeleteChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2403,7 +2403,7 @@ pub enum DeleteInputErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInputError {
@@ -2473,38 +2473,38 @@ impl DeleteInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteInputErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteInputErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteInputErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2555,7 +2555,7 @@ pub enum DeleteInputSecurityGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInputSecurityGroupError {
@@ -2626,49 +2626,49 @@ impl DeleteInputSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInputSecurityGroupErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DeleteInputSecurityGroupErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputSecurityGroupErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputSecurityGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteInputSecurityGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputSecurityGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputSecurityGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteInputSecurityGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputSecurityGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputSecurityGroupErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteInputSecurityGroupErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputSecurityGroupErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputSecurityGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteInputSecurityGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputSecurityGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputSecurityGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInputSecurityGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInputSecurityGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInputSecurityGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteInputSecurityGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2720,7 +2720,7 @@ pub enum DeleteMultiplexErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMultiplexError {
@@ -2790,41 +2790,41 @@ impl DeleteMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMultiplexErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, DeleteMultiplexErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `DeleteMultiplexErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteMultiplexErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteMultiplexErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteMultiplexErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteMultiplexErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteMultiplexErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteMultiplexErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteMultiplexErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteMultiplexErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2877,7 +2877,7 @@ pub enum DeleteMultiplexProgramErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMultiplexProgramError {
@@ -2947,56 +2947,56 @@ impl DeleteMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMultiplexProgramErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexProgramErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexProgramErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexProgramErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexProgramErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexProgramErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexProgramErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexProgramErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexProgramErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexProgramErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexProgramErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexProgramErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexProgramErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexProgramErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexProgramErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexProgramErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexProgramErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexProgramErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexProgramErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexProgramErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMultiplexProgramErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMultiplexProgramErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteMultiplexProgramErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3049,7 +3049,7 @@ pub enum DeleteReservationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReservationError {
@@ -3119,50 +3119,50 @@ impl DeleteReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReservationErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DeleteReservationErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReservationErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReservationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteReservationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReservationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReservationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteReservationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteReservationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteReservationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteReservationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReservationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReservationErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteReservationErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReservationErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReservationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteReservationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReservationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReservationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteReservationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteReservationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteReservationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteReservationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3213,7 +3213,7 @@ pub enum DeleteScheduleErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScheduleError {
@@ -3282,37 +3282,37 @@ impl DeleteScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, DeleteScheduleErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteScheduleErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteScheduleErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScheduleErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScheduleErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteScheduleErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteScheduleErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteScheduleErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3356,7 +3356,7 @@ pub enum DeleteTagsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for NotFoundException
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -3422,22 +3422,22 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::NotFoundException(_))
     }
@@ -3481,7 +3481,7 @@ pub enum DescribeChannelErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelError {
@@ -3550,37 +3550,37 @@ impl DescribeChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, DescribeChannelErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3630,7 +3630,7 @@ pub enum DescribeInputErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputError {
@@ -3699,37 +3699,37 @@ impl DescribeInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, DescribeInputErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeInputErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeInputErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeInputErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeInputErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeInputErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3779,7 +3779,7 @@ pub enum DescribeInputDeviceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputDeviceError {
@@ -3848,49 +3848,49 @@ impl DescribeInputDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInputDeviceErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3940,7 +3940,7 @@ pub enum DescribeInputDeviceThumbnailErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputDeviceThumbnailError {
@@ -4013,49 +4013,49 @@ impl DescribeInputDeviceThumbnailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInputDeviceThumbnailErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceThumbnailErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceThumbnailErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceThumbnailErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceThumbnailErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceThumbnailErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceThumbnailErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceThumbnailErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceThumbnailErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceThumbnailErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceThumbnailErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputDeviceThumbnailErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputDeviceThumbnailErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeInputDeviceThumbnailErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4107,7 +4107,7 @@ pub enum DescribeInputSecurityGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInputSecurityGroupError {
@@ -4178,49 +4178,49 @@ impl DescribeInputSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInputSecurityGroupErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeInputSecurityGroupErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputSecurityGroupErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputSecurityGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeInputSecurityGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputSecurityGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputSecurityGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeInputSecurityGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputSecurityGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputSecurityGroupErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeInputSecurityGroupErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputSecurityGroupErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputSecurityGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeInputSecurityGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputSecurityGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputSecurityGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInputSecurityGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInputSecurityGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInputSecurityGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeInputSecurityGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4272,7 +4272,7 @@ pub enum DescribeMultiplexErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMultiplexError {
@@ -4341,46 +4341,46 @@ impl DescribeMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMultiplexErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeMultiplexErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeMultiplexErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4430,7 +4430,7 @@ pub enum DescribeMultiplexProgramErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMultiplexProgramError {
@@ -4501,49 +4501,49 @@ impl DescribeMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMultiplexProgramErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexProgramErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexProgramErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexProgramErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexProgramErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexProgramErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexProgramErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexProgramErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexProgramErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexProgramErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexProgramErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexProgramErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexProgramErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexProgramErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexProgramErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexProgramErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexProgramErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMultiplexProgramErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMultiplexProgramErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeMultiplexProgramErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4593,7 +4593,7 @@ pub enum DescribeOfferingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOfferingError {
@@ -4662,43 +4662,43 @@ impl DescribeOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOfferingErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOfferingErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeOfferingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOfferingErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOfferingErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeOfferingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeOfferingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeOfferingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4748,7 +4748,7 @@ pub enum DescribeReservationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservationError {
@@ -4817,49 +4817,49 @@ impl DescribeReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeReservationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4909,7 +4909,7 @@ pub enum DescribeScheduleErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScheduleError {
@@ -4978,43 +4978,43 @@ impl DescribeScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduleErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduleErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeScheduleErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduleErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduleErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeScheduleErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeScheduleErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeScheduleErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5062,7 +5062,7 @@ pub enum ListChannelsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelsError {
@@ -5130,33 +5130,33 @@ impl ListChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListChannelsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChannelsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListChannelsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListChannelsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5203,7 +5203,7 @@ pub enum ListInputDevicesErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputDevicesError {
@@ -5271,39 +5271,39 @@ impl ListInputDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInputDevicesErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListInputDevicesErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDevicesErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDevicesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListInputDevicesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDevicesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDevicesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListInputDevicesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListInputDevicesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListInputDevicesErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListInputDevicesErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDevicesErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDevicesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListInputDevicesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDevicesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDevicesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListInputDevicesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5352,7 +5352,7 @@ pub enum ListInputDeviceTransfersErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputDeviceTransfersError {
@@ -5425,49 +5425,49 @@ impl ListInputDeviceTransfersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInputDeviceTransfersErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListInputDeviceTransfersErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDeviceTransfersErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDeviceTransfersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListInputDeviceTransfersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDeviceTransfersErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDeviceTransfersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListInputDeviceTransfersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDeviceTransfersErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDeviceTransfersErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListInputDeviceTransfersErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDeviceTransfersErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDeviceTransfersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListInputDeviceTransfersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDeviceTransfersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDeviceTransfersErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListInputDeviceTransfersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputDeviceTransfersErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputDeviceTransfersErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `ListInputDeviceTransfersErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5515,7 +5515,7 @@ pub enum ListInputsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputsError {
@@ -5583,30 +5583,30 @@ impl ListInputsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, ListInputsErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListInputsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListInputsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, ListInputsErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListInputsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListInputsErrorKind::TooManyRequestsException(_))
     }
@@ -5650,7 +5650,7 @@ pub enum ListInputSecurityGroupsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInputSecurityGroupsError {
@@ -5718,42 +5718,42 @@ impl ListInputSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInputSecurityGroupsErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListInputSecurityGroupsErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputSecurityGroupsErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputSecurityGroupsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListInputSecurityGroupsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputSecurityGroupsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputSecurityGroupsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListInputSecurityGroupsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputSecurityGroupsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputSecurityGroupsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListInputSecurityGroupsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputSecurityGroupsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputSecurityGroupsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListInputSecurityGroupsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInputSecurityGroupsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListInputSecurityGroupsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListInputSecurityGroupsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5800,7 +5800,7 @@ pub enum ListMultiplexesErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMultiplexesError {
@@ -5868,33 +5868,33 @@ impl ListMultiplexesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMultiplexesErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListMultiplexesErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, ListMultiplexesErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `ListMultiplexesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListMultiplexesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListMultiplexesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListMultiplexesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListMultiplexesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListMultiplexesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListMultiplexesErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListMultiplexesErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMultiplexesErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListMultiplexesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListMultiplexesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMultiplexesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListMultiplexesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListMultiplexesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5943,7 +5943,7 @@ pub enum ListMultiplexProgramsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMultiplexProgramsError {
@@ -6012,49 +6012,49 @@ impl ListMultiplexProgramsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMultiplexProgramsErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListMultiplexProgramsErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMultiplexProgramsErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `ListMultiplexProgramsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListMultiplexProgramsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMultiplexProgramsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListMultiplexProgramsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListMultiplexProgramsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMultiplexProgramsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListMultiplexProgramsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListMultiplexProgramsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMultiplexProgramsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListMultiplexProgramsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListMultiplexProgramsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMultiplexProgramsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListMultiplexProgramsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListMultiplexProgramsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMultiplexProgramsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMultiplexProgramsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListMultiplexProgramsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6102,7 +6102,7 @@ pub enum ListOfferingsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOfferingsError {
@@ -6170,33 +6170,33 @@ impl ListOfferingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, ListOfferingsErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListOfferingsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListOfferingsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOfferingsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListOfferingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListOfferingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6243,7 +6243,7 @@ pub enum ListReservationsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReservationsError {
@@ -6311,39 +6311,39 @@ impl ListReservationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReservationsErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReservationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListReservationsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReservationsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReservationsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListReservationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListReservationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6386,7 +6386,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for NotFoundException
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6452,28 +6452,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6522,7 +6522,7 @@ pub enum PurchaseOfferingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseOfferingError {
@@ -6592,47 +6592,47 @@ impl PurchaseOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PurchaseOfferingErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, PurchaseOfferingErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseOfferingErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PurchaseOfferingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PurchaseOfferingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PurchaseOfferingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6687,7 +6687,7 @@ pub enum RejectInputDeviceTransferErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectInputDeviceTransferError {
@@ -6762,63 +6762,63 @@ impl RejectInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectInputDeviceTransferErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectInputDeviceTransferErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectInputDeviceTransferErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectInputDeviceTransferErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectInputDeviceTransferErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectInputDeviceTransferErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectInputDeviceTransferErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectInputDeviceTransferErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RejectInputDeviceTransferErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `RejectInputDeviceTransferErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6876,7 +6876,7 @@ pub enum StartChannelErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartChannelError {
@@ -6946,41 +6946,41 @@ impl StartChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartChannelErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `StartChannelErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, StartChannelErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `StartChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StartChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StartChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StartChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, StartChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `StartChannelErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `StartChannelErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StartChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StartChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StartChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7033,7 +7033,7 @@ pub enum StartMultiplexErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMultiplexError {
@@ -7103,41 +7103,41 @@ impl StartMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMultiplexErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `StartMultiplexErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, StartMultiplexErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `StartMultiplexErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartMultiplexErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StartMultiplexErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StartMultiplexErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartMultiplexErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartMultiplexErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartMultiplexErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StartMultiplexErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, StartMultiplexErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `StartMultiplexErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `StartMultiplexErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StartMultiplexErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StartMultiplexErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMultiplexErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartMultiplexErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartMultiplexErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartMultiplexErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StartMultiplexErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartMultiplexErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7190,7 +7190,7 @@ pub enum StopChannelErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopChannelError {
@@ -7260,38 +7260,38 @@ impl StopChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopChannelErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `StopChannelErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, StopChannelErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `StopChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StopChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StopChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StopChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StopChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StopChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StopChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StopChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, StopChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `StopChannelErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `StopChannelErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, StopChannelErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `StopChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StopChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StopChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StopChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7344,7 +7344,7 @@ pub enum StopMultiplexErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopMultiplexError {
@@ -7414,41 +7414,41 @@ impl StopMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopMultiplexErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `StopMultiplexErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, StopMultiplexErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `StopMultiplexErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StopMultiplexErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, StopMultiplexErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `StopMultiplexErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StopMultiplexErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StopMultiplexErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StopMultiplexErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StopMultiplexErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, StopMultiplexErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `StopMultiplexErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `StopMultiplexErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `StopMultiplexErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `StopMultiplexErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMultiplexErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StopMultiplexErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopMultiplexErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopMultiplexErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopMultiplexErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StopMultiplexErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7503,7 +7503,7 @@ pub enum TransferInputDeviceErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TransferInputDeviceError {
@@ -7574,63 +7574,63 @@ impl TransferInputDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransferInputDeviceErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransferInputDeviceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransferInputDeviceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransferInputDeviceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransferInputDeviceErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransferInputDeviceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransferInputDeviceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransferInputDeviceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `TransferInputDeviceErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `TransferInputDeviceErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7682,7 +7682,7 @@ pub enum UpdateChannelErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelError {
@@ -7751,37 +7751,37 @@ impl UpdateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `UpdateChannelErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7835,7 +7835,7 @@ pub enum UpdateChannelClassErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelClassError {
@@ -7906,63 +7906,63 @@ impl UpdateChannelClassError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelClassErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelClassErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelClassErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelClassErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelClassErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelClassErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelClassErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateChannelClassErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateChannelClassErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `UpdateChannelClassErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8014,7 +8014,7 @@ pub enum UpdateInputErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for NotFoundException
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInputError {
@@ -8083,34 +8083,34 @@ impl UpdateInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInputErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputErrorKind::NotFoundException(_))
     }
@@ -8159,7 +8159,7 @@ pub enum UpdateInputDeviceErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInputDeviceError {
@@ -8229,53 +8229,53 @@ impl UpdateInputDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInputDeviceErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `UpdateInputDeviceErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputDeviceErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputDeviceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateInputDeviceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputDeviceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputDeviceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateInputDeviceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputDeviceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputDeviceErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateInputDeviceErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputDeviceErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputDeviceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateInputDeviceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputDeviceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputDeviceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInputDeviceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateInputDeviceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateInputDeviceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateInputDeviceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputDeviceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputDeviceErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `UpdateInputDeviceErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8326,7 +8326,7 @@ pub enum UpdateInputSecurityGroupErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// Placeholder documentation for NotFoundException
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInputSecurityGroupError {
@@ -8397,49 +8397,49 @@ impl UpdateInputSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInputSecurityGroupErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `UpdateInputSecurityGroupErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputSecurityGroupErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputSecurityGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateInputSecurityGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputSecurityGroupErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputSecurityGroupErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateInputSecurityGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputSecurityGroupErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputSecurityGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateInputSecurityGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputSecurityGroupErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputSecurityGroupErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateInputSecurityGroupErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputSecurityGroupErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputSecurityGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateInputSecurityGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInputSecurityGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInputSecurityGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInputSecurityGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8491,7 +8491,7 @@ pub enum UpdateMultiplexErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMultiplexError {
@@ -8561,41 +8561,41 @@ impl UpdateMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMultiplexErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(&self.kind, UpdateMultiplexErrorKind::BadGatewayException(_))
     }
-    /// Returns true if the error kind is `UpdateMultiplexErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateMultiplexErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateMultiplexErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateMultiplexErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateMultiplexErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateMultiplexErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateMultiplexErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateMultiplexErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateMultiplexErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8648,7 +8648,7 @@ pub enum UpdateMultiplexProgramErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMultiplexProgramError {
@@ -8718,56 +8718,56 @@ impl UpdateMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMultiplexProgramErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexProgramErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexProgramErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexProgramErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexProgramErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexProgramErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexProgramErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexProgramErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexProgramErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexProgramErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexProgramErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexProgramErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexProgramErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexProgramErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexProgramErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexProgramErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexProgramErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexProgramErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexProgramErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexProgramErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMultiplexProgramErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMultiplexProgramErrorKind::UnprocessableEntityException`.
+    /// Returns `true` if the error kind is `UpdateMultiplexProgramErrorKind::UnprocessableEntityException`.
     pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8820,7 +8820,7 @@ pub enum UpdateReservationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// Placeholder documentation for TooManyRequestsException
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReservationError {
@@ -8890,50 +8890,50 @@ impl UpdateReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReservationErrorKind::BadGatewayException`.
+    /// Returns `true` if the error kind is `UpdateReservationErrorKind::BadGatewayException`.
     pub fn is_bad_gateway_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReservationErrorKind::BadGatewayException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReservationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateReservationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReservationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReservationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateReservationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateReservationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateReservationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateReservationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReservationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReservationErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateReservationErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReservationErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReservationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateReservationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReservationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReservationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateReservationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateReservationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateReservationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateReservationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

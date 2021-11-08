@@ -155,6 +155,57 @@ impl UpdateResolverDnssecConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateResolverConfigOutput {
+    /// <p>An array that contains settings for the specified Resolver configuration.</p>
+    pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
+}
+impl std::fmt::Debug for UpdateResolverConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateResolverConfigOutput");
+        formatter.field("resolver_config", &self.resolver_config);
+        formatter.finish()
+    }
+}
+/// See [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput)
+pub mod update_resolver_config_output {
+    /// A builder for [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resolver_config: std::option::Option<crate::model::ResolverConfig>,
+    }
+    impl Builder {
+        /// <p>An array that contains settings for the specified Resolver configuration.</p>
+        pub fn resolver_config(mut self, input: crate::model::ResolverConfig) -> Self {
+            self.resolver_config = Some(input);
+            self
+        }
+        /// <p>An array that contains settings for the specified Resolver configuration.</p>
+        pub fn set_resolver_config(
+            mut self,
+            input: std::option::Option<crate::model::ResolverConfig>,
+        ) -> Self {
+            self.resolver_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput)
+        pub fn build(self) -> crate::output::UpdateResolverConfigOutput {
+            crate::output::UpdateResolverConfigOutput {
+                resolver_config: self.resolver_config,
+            }
+        }
+    }
+}
+impl UpdateResolverConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput)
+    pub fn builder() -> crate::output::update_resolver_config_output::Builder {
+        crate::output::update_resolver_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFirewallRuleGroupAssociationOutput {
     /// <p>The association that you just updated. </p>
     pub firewall_rule_group_association:
@@ -1443,6 +1494,100 @@ impl ListResolverDnssecConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListResolverConfigsOutput {
+    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account,
+    /// <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
+    /// <code>ListResolverConfigs</code> request.
+    /// Get the value of <code>NextToken</code> that Amazon Route 53
+    /// returned in the previous response and include it in
+    /// <code>NextToken</code> in the next request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
+    /// with the current Amazon Web Services account.</p>
+    pub resolver_configs: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
+}
+impl std::fmt::Debug for ListResolverConfigsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListResolverConfigsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("resolver_configs", &self.resolver_configs);
+        formatter.finish()
+    }
+}
+/// See [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput)
+pub mod list_resolver_configs_output {
+    /// A builder for [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) resolver_configs:
+            std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
+    }
+    impl Builder {
+        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account,
+        /// <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
+        /// <code>ListResolverConfigs</code> request.
+        /// Get the value of <code>NextToken</code> that Amazon Route 53
+        /// returned in the previous response and include it in
+        /// <code>NextToken</code> in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account,
+        /// <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
+        /// <code>ListResolverConfigs</code> request.
+        /// Get the value of <code>NextToken</code> that Amazon Route 53
+        /// returned in the previous response and include it in
+        /// <code>NextToken</code> in the next request.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `resolver_configs`.
+        ///
+        /// To override the contents of this collection use [`set_resolver_configs`](Self::set_resolver_configs).
+        ///
+        /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
+        /// with the current Amazon Web Services account.</p>
+        pub fn resolver_configs(mut self, input: impl Into<crate::model::ResolverConfig>) -> Self {
+            let mut v = self.resolver_configs.unwrap_or_default();
+            v.push(input.into());
+            self.resolver_configs = Some(v);
+            self
+        }
+        /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
+        /// with the current Amazon Web Services account.</p>
+        pub fn set_resolver_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
+        ) -> Self {
+            self.resolver_configs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput)
+        pub fn build(self) -> crate::output::ListResolverConfigsOutput {
+            crate::output::ListResolverConfigsOutput {
+                next_token: self.next_token,
+                resolver_configs: self.resolver_configs,
+            }
+        }
+    }
+}
+impl ListResolverConfigsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput)
+    pub fn builder() -> crate::output::list_resolver_configs_output::Builder {
+        crate::output::list_resolver_configs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRulesOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
     /// To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -2465,6 +2610,60 @@ impl GetResolverDnssecConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput)
     pub fn builder() -> crate::output::get_resolver_dnssec_config_output::Builder {
         crate::output::get_resolver_dnssec_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResolverConfigOutput {
+    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
+    /// specified in the <code>GetResolverConfig</code> request.</p>
+    pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
+}
+impl std::fmt::Debug for GetResolverConfigOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResolverConfigOutput");
+        formatter.field("resolver_config", &self.resolver_config);
+        formatter.finish()
+    }
+}
+/// See [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput)
+pub mod get_resolver_config_output {
+    /// A builder for [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resolver_config: std::option::Option<crate::model::ResolverConfig>,
+    }
+    impl Builder {
+        /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
+        /// specified in the <code>GetResolverConfig</code> request.</p>
+        pub fn resolver_config(mut self, input: crate::model::ResolverConfig) -> Self {
+            self.resolver_config = Some(input);
+            self
+        }
+        /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
+        /// specified in the <code>GetResolverConfig</code> request.</p>
+        pub fn set_resolver_config(
+            mut self,
+            input: std::option::Option<crate::model::ResolverConfig>,
+        ) -> Self {
+            self.resolver_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput)
+        pub fn build(self) -> crate::output::GetResolverConfigOutput {
+            crate::output::GetResolverConfigOutput {
+                resolver_config: self.resolver_config,
+            }
+        }
+    }
+}
+impl GetResolverConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput)
+    pub fn builder() -> crate::output::get_resolver_config_output::Builder {
+        crate::output::get_resolver_config_output::Builder::default()
     }
 }
 

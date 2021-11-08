@@ -96,6 +96,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTrialComponent 
     }
 }
 
+/// Operation shape for `BatchDescribeModelPackage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_describe_model_package`](crate::client::Client::batch_describe_model_package).
+///
+/// See [`crate::client::fluent_builders::BatchDescribeModelPackage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchDescribeModelPackage {
+    _private: (),
+}
+impl BatchDescribeModelPackage {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeModelPackageInput`](crate::input::BatchDescribeModelPackageInput)
+    pub fn builder() -> crate::input::batch_describe_model_package_input::Builder {
+        crate::input::batch_describe_model_package_input::Builder::default()
+    }
+    /// Creates a new `BatchDescribeModelPackage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeModelPackage {
+    type Output = std::result::Result<
+        crate::output::BatchDescribeModelPackageOutput,
+        crate::error::BatchDescribeModelPackageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_describe_model_package_error(response)
+        } else {
+            crate::operation_deser::parse_batch_describe_model_package_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateAction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -7860,6 +7894,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePipelineExecution 
             crate::operation_deser::parse_update_pipeline_execution_error(response)
         } else {
             crate::operation_deser::parse_update_pipeline_execution_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateProject`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_project`](crate::client::Client::update_project).
+///
+/// See [`crate::client::fluent_builders::UpdateProject`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateProject {
+    _private: (),
+}
+impl UpdateProject {
+    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput)
+    pub fn builder() -> crate::input::update_project_input::Builder {
+        crate::input::update_project_input::Builder::default()
+    }
+    /// Creates a new `UpdateProject` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateProject {
+    type Output =
+        std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_project_error(response)
+        } else {
+            crate::operation_deser::parse_update_project_response(response)
         }
     }
 }

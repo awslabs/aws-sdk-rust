@@ -12,7 +12,7 @@ pub struct CreateReplicationSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReplicationSetErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -23,9 +23,10 @@ pub enum CreateReplicationSetErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReplicationSetError {
@@ -93,42 +94,42 @@ impl CreateReplicationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReplicationSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateReplicationSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateReplicationSetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSetErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateReplicationSetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSetErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateReplicationSetErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSetErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateReplicationSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSetErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateReplicationSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -163,20 +164,21 @@ pub struct CreateResponsePlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResponsePlanErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResponsePlanError {
@@ -244,42 +246,42 @@ impl CreateResponsePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResponsePlanErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateResponsePlanErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResponsePlanErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResponsePlanErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateResponsePlanErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResponsePlanErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResponsePlanErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateResponsePlanErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResponsePlanErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResponsePlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResponsePlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResponsePlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResponsePlanErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateResponsePlanErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResponsePlanErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResponsePlanErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateResponsePlanErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -314,20 +316,21 @@ pub struct CreateTimelineEventError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTimelineEventErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTimelineEventError {
@@ -395,42 +398,42 @@ impl CreateTimelineEventError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTimelineEventErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateTimelineEventErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTimelineEventErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTimelineEventErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateTimelineEventErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTimelineEventErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTimelineEventErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateTimelineEventErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTimelineEventErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTimelineEventErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTimelineEventErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTimelineEventErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTimelineEventErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateTimelineEventErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTimelineEventErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTimelineEventErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateTimelineEventErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -465,16 +468,17 @@ pub struct DeleteIncidentRecordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIncidentRecordErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIncidentRecordError {
@@ -540,28 +544,28 @@ impl DeleteIncidentRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIncidentRecordErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteIncidentRecordErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIncidentRecordErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIncidentRecordErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteIncidentRecordErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIncidentRecordErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIncidentRecordErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteIncidentRecordErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIncidentRecordErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIncidentRecordErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteIncidentRecordErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -594,18 +598,19 @@ pub struct DeleteReplicationSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteReplicationSetErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReplicationSetError {
@@ -672,35 +677,35 @@ impl DeleteReplicationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReplicationSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteReplicationSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationSetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteReplicationSetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationSetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteReplicationSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteReplicationSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationSetErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteReplicationSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -734,18 +739,19 @@ pub struct DeleteResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePolicyErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
@@ -812,35 +818,35 @@ impl DeleteResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -874,16 +880,17 @@ pub struct DeleteResponsePlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResponsePlanErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResponsePlanError {
@@ -949,28 +956,28 @@ impl DeleteResponsePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResponsePlanErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteResponsePlanErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResponsePlanErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResponsePlanErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteResponsePlanErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResponsePlanErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResponsePlanErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteResponsePlanErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResponsePlanErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResponsePlanErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteResponsePlanErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1003,16 +1010,17 @@ pub struct DeleteTimelineEventError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTimelineEventErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTimelineEventError {
@@ -1078,28 +1086,28 @@ impl DeleteTimelineEventError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTimelineEventErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteTimelineEventErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTimelineEventErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTimelineEventErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteTimelineEventErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTimelineEventErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTimelineEventErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteTimelineEventErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTimelineEventErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTimelineEventErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteTimelineEventErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1132,18 +1140,19 @@ pub struct GetIncidentRecordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIncidentRecordErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIncidentRecordError {
@@ -1210,35 +1219,35 @@ impl GetIncidentRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIncidentRecordErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetIncidentRecordErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIncidentRecordErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetIncidentRecordErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetIncidentRecordErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIncidentRecordErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetIncidentRecordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetIncidentRecordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIncidentRecordErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetIncidentRecordErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetIncidentRecordErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIncidentRecordErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetIncidentRecordErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetIncidentRecordErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1272,18 +1281,19 @@ pub struct GetReplicationSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetReplicationSetErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReplicationSetError {
@@ -1350,35 +1360,35 @@ impl GetReplicationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReplicationSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetReplicationSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationSetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetReplicationSetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationSetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetReplicationSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetReplicationSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationSetErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetReplicationSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1412,18 +1422,19 @@ pub struct GetResourcePoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourcePoliciesErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcePoliciesError {
@@ -1490,35 +1501,35 @@ impl GetResourcePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1552,18 +1563,19 @@ pub struct GetResponsePlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResponsePlanErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResponsePlanError {
@@ -1630,32 +1642,32 @@ impl GetResponsePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResponsePlanErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetResponsePlanErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResponsePlanErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetResponsePlanErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetResponsePlanErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResponsePlanErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetResponsePlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResponsePlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResponsePlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResponsePlanErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResponsePlanErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetResponsePlanErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetResponsePlanErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetResponsePlanErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetResponsePlanErrorKind::ValidationException(_))
     }
@@ -1686,18 +1698,19 @@ pub struct GetTimelineEventError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTimelineEventErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTimelineEventError {
@@ -1764,35 +1777,35 @@ impl GetTimelineEventError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTimelineEventErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetTimelineEventErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTimelineEventErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetTimelineEventErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetTimelineEventErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTimelineEventErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetTimelineEventErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetTimelineEventErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTimelineEventErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTimelineEventErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetTimelineEventErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTimelineEventErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetTimelineEventErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetTimelineEventErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1826,16 +1839,17 @@ pub struct ListIncidentRecordsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIncidentRecordsErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIncidentRecordsError {
@@ -1901,28 +1915,28 @@ impl ListIncidentRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIncidentRecordsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListIncidentRecordsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncidentRecordsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncidentRecordsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListIncidentRecordsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncidentRecordsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncidentRecordsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListIncidentRecordsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncidentRecordsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncidentRecordsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListIncidentRecordsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1955,16 +1969,17 @@ pub struct ListRelatedItemsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRelatedItemsErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRelatedItemsError {
@@ -2030,28 +2045,28 @@ impl ListRelatedItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRelatedItemsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRelatedItemsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRelatedItemsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRelatedItemsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListRelatedItemsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRelatedItemsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListRelatedItemsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListRelatedItemsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRelatedItemsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListRelatedItemsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListRelatedItemsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2084,16 +2099,17 @@ pub struct ListReplicationSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListReplicationSetsErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReplicationSetsError {
@@ -2159,28 +2175,28 @@ impl ListReplicationSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReplicationSetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListReplicationSetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReplicationSetsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListReplicationSetsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListReplicationSetsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReplicationSetsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListReplicationSetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListReplicationSetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReplicationSetsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListReplicationSetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListReplicationSetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2213,16 +2229,17 @@ pub struct ListResponsePlansError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResponsePlansErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResponsePlansError {
@@ -2288,28 +2305,28 @@ impl ListResponsePlansError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResponsePlansErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListResponsePlansErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResponsePlansErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListResponsePlansErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListResponsePlansErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResponsePlansErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListResponsePlansErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResponsePlansErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResponsePlansErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListResponsePlansErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListResponsePlansErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2342,18 +2359,19 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2420,35 +2438,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2482,16 +2500,17 @@ pub struct ListTimelineEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTimelineEventsErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTimelineEventsError {
@@ -2557,28 +2576,28 @@ impl ListTimelineEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTimelineEventsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTimelineEventsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTimelineEventsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTimelineEventsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTimelineEventsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTimelineEventsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTimelineEventsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTimelineEventsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTimelineEventsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTimelineEventsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTimelineEventsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2611,18 +2630,19 @@ pub struct PutResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutResourcePolicyErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourcePolicyError {
@@ -2689,35 +2709,35 @@ impl PutResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2751,20 +2771,21 @@ pub struct StartIncidentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartIncidentErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartIncidentError {
@@ -2832,33 +2853,33 @@ impl StartIncidentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartIncidentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartIncidentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StartIncidentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `StartIncidentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartIncidentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartIncidentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartIncidentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartIncidentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartIncidentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartIncidentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartIncidentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartIncidentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartIncidentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartIncidentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartIncidentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StartIncidentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartIncidentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartIncidentErrorKind::ValidationException(_))
     }
@@ -2890,22 +2911,23 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Request would cause a service quota to be exceeded.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2974,37 +2996,37 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -3037,20 +3059,21 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3118,33 +3141,33 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -3176,18 +3199,19 @@ pub struct UpdateDeletionProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDeletionProtectionErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeletionProtectionError {
@@ -3254,35 +3278,35 @@ impl UpdateDeletionProtectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeletionProtectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDeletionProtectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeletionProtectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeletionProtectionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateDeletionProtectionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeletionProtectionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeletionProtectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeletionProtectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeletionProtectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeletionProtectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDeletionProtectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeletionProtectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeletionProtectionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateDeletionProtectionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3316,20 +3340,21 @@ pub struct UpdateIncidentRecordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIncidentRecordErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIncidentRecordError {
@@ -3397,42 +3422,42 @@ impl UpdateIncidentRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIncidentRecordErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateIncidentRecordErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIncidentRecordErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIncidentRecordErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateIncidentRecordErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIncidentRecordErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIncidentRecordErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateIncidentRecordErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIncidentRecordErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIncidentRecordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateIncidentRecordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIncidentRecordErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIncidentRecordErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateIncidentRecordErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIncidentRecordErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIncidentRecordErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateIncidentRecordErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3467,20 +3492,21 @@ pub struct UpdateRelatedItemsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRelatedItemsErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRelatedItemsError {
@@ -3548,42 +3574,42 @@ impl UpdateRelatedItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRelatedItemsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRelatedItemsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelatedItemsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelatedItemsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateRelatedItemsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelatedItemsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelatedItemsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateRelatedItemsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelatedItemsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelatedItemsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRelatedItemsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelatedItemsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelatedItemsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateRelatedItemsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelatedItemsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelatedItemsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateRelatedItemsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3618,18 +3644,19 @@ pub struct UpdateReplicationSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateReplicationSetErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReplicationSetError {
@@ -3696,35 +3723,35 @@ impl UpdateReplicationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReplicationSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateReplicationSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationSetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateReplicationSetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationSetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateReplicationSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateReplicationSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationSetErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateReplicationSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3758,20 +3785,21 @@ pub struct UpdateResponsePlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResponsePlanErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResponsePlanError {
@@ -3839,42 +3867,42 @@ impl UpdateResponsePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResponsePlanErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateResponsePlanErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResponsePlanErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResponsePlanErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateResponsePlanErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResponsePlanErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResponsePlanErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateResponsePlanErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResponsePlanErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResponsePlanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResponsePlanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResponsePlanErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResponsePlanErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateResponsePlanErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResponsePlanErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResponsePlanErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateResponsePlanErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3909,20 +3937,21 @@ pub struct UpdateTimelineEventError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTimelineEventErrorKind {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTimelineEventError {
@@ -3990,42 +4019,42 @@ impl UpdateTimelineEventError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTimelineEventErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateTimelineEventErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimelineEventErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimelineEventErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateTimelineEventErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimelineEventErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimelineEventErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateTimelineEventErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimelineEventErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimelineEventErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTimelineEventErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimelineEventErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimelineEventErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateTimelineEventErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimelineEventErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimelineEventErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateTimelineEventErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4047,7 +4076,8 @@ impl std::error::Error for UpdateTimelineEventError {
     }
 }
 
-/// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+/// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+/// service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -4208,7 +4238,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>Request references a resource which does not exist. </p>
+/// <p>Request references a resource which doesn't exist. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -4383,6 +4413,8 @@ pub struct ConflictException {
     pub resource_identifier: std::option::Option<std::string::String>,
     /// The resource type
     pub resource_type: std::option::Option<crate::model::ResourceType>,
+    /// If present in the output, the operation can be retried after this time
+    pub retry_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4390,6 +4422,7 @@ impl std::fmt::Debug for ConflictException {
         formatter.field("message", &self.message);
         formatter.field("resource_identifier", &self.resource_identifier);
         formatter.field("resource_type", &self.resource_type);
+        formatter.field("retry_after", &self.retry_after);
         formatter.finish()
     }
 }
@@ -4418,6 +4451,7 @@ pub mod conflict_exception {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
+        pub(crate) retry_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -4456,12 +4490,26 @@ pub mod conflict_exception {
             self.resource_type = input;
             self
         }
+        /// If present in the output, the operation can be retried after this time
+        pub fn retry_after(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.retry_after = Some(input);
+            self
+        }
+        /// If present in the output, the operation can be retried after this time
+        pub fn set_retry_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.retry_after = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
                 message: self.message,
                 resource_identifier: self.resource_identifier,
                 resource_type: self.resource_type,
+                retry_after: self.retry_after,
             }
         }
     }
@@ -4473,7 +4521,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You don't have sufficient access to perform this action.</p>
+/// <p>You don't have sufficient access to perform this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

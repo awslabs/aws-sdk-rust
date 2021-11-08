@@ -24,7 +24,7 @@ pub enum AssociateFleetErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateFleetError {
@@ -92,42 +92,42 @@ impl AssociateFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateFleetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AssociateFleetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFleetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFleetErrorKind::IncompatibleImageException`.
+    /// Returns `true` if the error kind is `AssociateFleetErrorKind::IncompatibleImageException`.
     pub fn is_incompatible_image_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFleetErrorKind::IncompatibleImageException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFleetErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `AssociateFleetErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFleetErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFleetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateFleetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFleetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFleetErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `AssociateFleetErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFleetErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -166,7 +166,7 @@ pub enum BatchAssociateUserStackErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The attempted operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchAssociateUserStackError {
@@ -234,14 +234,14 @@ impl BatchAssociateUserStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchAssociateUserStackErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `BatchAssociateUserStackErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateUserStackErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateUserStackErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `BatchAssociateUserStackErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -280,7 +280,7 @@ pub enum BatchDisassociateUserStackErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The attempted operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDisassociateUserStackError {
@@ -348,14 +348,14 @@ impl BatchDisassociateUserStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDisassociateUserStackErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `BatchDisassociateUserStackErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateUserStackErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateUserStackErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `BatchDisassociateUserStackErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -402,7 +402,7 @@ pub enum CopyImageErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyImageError {
@@ -470,39 +470,39 @@ impl CopyImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyImageErrorKind::IncompatibleImageException`.
+    /// Returns `true` if the error kind is `CopyImageErrorKind::IncompatibleImageException`.
     pub fn is_incompatible_image_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyImageErrorKind::IncompatibleImageException(_)
         )
     }
-    /// Returns true if the error kind is `CopyImageErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `CopyImageErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyImageErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CopyImageErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CopyImageErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CopyImageErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CopyImageErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CopyImageErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyImageErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CopyImageErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `CopyImageErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyImageErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `CopyImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CopyImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, CopyImageErrorKind::ResourceNotFoundException(_))
     }
@@ -546,7 +546,7 @@ pub enum CreateDirectoryConfigErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDirectoryConfigError {
@@ -614,42 +614,42 @@ impl CreateDirectoryConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDirectoryConfigErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `CreateDirectoryConfigErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryConfigErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryConfigErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `CreateDirectoryConfigErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryConfigErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryConfigErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDirectoryConfigErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryConfigErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryConfigErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateDirectoryConfigErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryConfigErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryConfigErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDirectoryConfigErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryConfigErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDirectoryConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -706,7 +706,7 @@ pub enum CreateFleetErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFleetError {
@@ -779,71 +779,71 @@ impl CreateFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::IncompatibleImageException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::IncompatibleImageException`.
     pub fn is_incompatible_image_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::IncompatibleImageException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::InvalidRoleException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::RequestLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::RequestLimitExceededException`.
     pub fn is_request_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::RequestLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -905,7 +905,7 @@ pub enum CreateImageBuilderErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImageBuilderError {
@@ -980,77 +980,77 @@ impl CreateImageBuilderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::IncompatibleImageException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::IncompatibleImageException`.
     pub fn is_incompatible_image_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::IncompatibleImageException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::RequestLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::RequestLimitExceededException`.
     pub fn is_request_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::RequestLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1096,7 +1096,7 @@ pub enum CreateImageBuilderStreamingURLErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImageBuilderStreamingURLError {
@@ -1167,14 +1167,14 @@ impl CreateImageBuilderStreamingURLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImageBuilderStreamingURLErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderStreamingURLErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageBuilderStreamingURLErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageBuilderStreamingURLErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateImageBuilderStreamingURLErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1223,7 +1223,7 @@ pub enum CreateStackErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStackError {
@@ -1292,43 +1292,43 @@ impl CreateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(&self.kind, CreateStackErrorKind::InvalidRoleException(_))
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateStackErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStackErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1372,7 +1372,7 @@ pub enum CreateStreamingURLErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamingURLError {
@@ -1440,28 +1440,28 @@ impl CreateStreamingURLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamingURLErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateStreamingURLErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingURLErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingURLErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateStreamingURLErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingURLErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingURLErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `CreateStreamingURLErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamingURLErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamingURLErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateStreamingURLErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1510,7 +1510,7 @@ pub enum CreateUpdatedImageErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUpdatedImageError {
@@ -1579,49 +1579,49 @@ impl CreateUpdatedImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUpdatedImageErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateUpdatedImageErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedImageErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedImageErrorKind::IncompatibleImageException`.
+    /// Returns `true` if the error kind is `CreateUpdatedImageErrorKind::IncompatibleImageException`.
     pub fn is_incompatible_image_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedImageErrorKind::IncompatibleImageException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedImageErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `CreateUpdatedImageErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedImageErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedImageErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUpdatedImageErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedImageErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedImageErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateUpdatedImageErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedImageErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedImageErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateUpdatedImageErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedImageErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUpdatedImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1663,7 +1663,7 @@ pub enum CreateUsageReportSubscriptionErrorKind {
     InvalidRoleException(crate::error::InvalidRoleException),
     /// <p>The requested limit exceeds the permitted limit for an account.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUsageReportSubscriptionError {
@@ -1733,21 +1733,21 @@ impl CreateUsageReportSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUsageReportSubscriptionErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `CreateUsageReportSubscriptionErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUsageReportSubscriptionErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUsageReportSubscriptionErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `CreateUsageReportSubscriptionErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUsageReportSubscriptionErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUsageReportSubscriptionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUsageReportSubscriptionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1791,7 +1791,7 @@ pub enum CreateUserErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -1858,32 +1858,32 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1921,7 +1921,7 @@ pub enum DeleteDirectoryConfigErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDirectoryConfigError {
@@ -1985,14 +1985,14 @@ impl DeleteDirectoryConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDirectoryConfigErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryConfigErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryConfigErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2029,7 +2029,7 @@ pub enum DeleteFleetErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFleetError {
@@ -2094,18 +2094,18 @@ impl DeleteFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2145,7 +2145,7 @@ pub enum DeleteImageErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImageError {
@@ -2211,25 +2211,25 @@ impl DeleteImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteImageErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2268,7 +2268,7 @@ pub enum DeleteImageBuilderErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImageBuilderError {
@@ -2333,21 +2333,21 @@ impl DeleteImageBuilderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImageBuilderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteImageBuilderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageBuilderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageBuilderErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteImageBuilderErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageBuilderErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageBuilderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteImageBuilderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2383,7 +2383,7 @@ pub enum DeleteImagePermissionsErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImagePermissionsError {
@@ -2447,14 +2447,14 @@ impl DeleteImagePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImagePermissionsErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `DeleteImagePermissionsErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImagePermissionsErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImagePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteImagePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2491,7 +2491,7 @@ pub enum DeleteStackErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStackError {
@@ -2556,18 +2556,18 @@ impl DeleteStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStackErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteStackErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStackErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStackErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteStackErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteStackErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteStackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2603,7 +2603,7 @@ pub enum DeleteUsageReportSubscriptionErrorKind {
     InvalidAccountStatusException(crate::error::InvalidAccountStatusException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUsageReportSubscriptionError {
@@ -2674,14 +2674,14 @@ impl DeleteUsageReportSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUsageReportSubscriptionErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `DeleteUsageReportSubscriptionErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUsageReportSubscriptionErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUsageReportSubscriptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUsageReportSubscriptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2718,7 +2718,7 @@ pub struct DeleteUserError {
 pub enum DeleteUserErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -2781,7 +2781,7 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2813,7 +2813,7 @@ pub struct DescribeDirectoryConfigsError {
 pub enum DescribeDirectoryConfigsErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDirectoryConfigsError {
@@ -2876,7 +2876,7 @@ impl DescribeDirectoryConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDirectoryConfigsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDirectoryConfigsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2908,7 +2908,7 @@ pub struct DescribeFleetsError {
 pub enum DescribeFleetsErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetsError {
@@ -2971,7 +2971,7 @@ impl DescribeFleetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3003,7 +3003,7 @@ pub struct DescribeImageBuildersError {
 pub enum DescribeImageBuildersErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImageBuildersError {
@@ -3066,7 +3066,7 @@ impl DescribeImageBuildersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImageBuildersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImageBuildersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3098,7 +3098,7 @@ pub struct DescribeImagePermissionsError {
 pub enum DescribeImagePermissionsErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImagePermissionsError {
@@ -3161,7 +3161,7 @@ impl DescribeImagePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImagePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImagePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3195,7 +3195,7 @@ pub enum DescribeImagesErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeImagesError {
@@ -3259,14 +3259,14 @@ impl DescribeImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeImagesErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeImagesErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeImagesErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeImagesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeImagesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3299,7 +3299,7 @@ pub struct DescribeSessionsError {
 pub enum DescribeSessionsErrorKind {
     /// <p>Indicates an incorrect combination of parameters, or a missing parameter.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSessionsError {
@@ -3364,7 +3364,7 @@ impl DescribeSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSessionsErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeSessionsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3396,7 +3396,7 @@ pub struct DescribeStacksError {
 pub enum DescribeStacksErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStacksError {
@@ -3459,7 +3459,7 @@ impl DescribeStacksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStacksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStacksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3493,7 +3493,7 @@ pub enum DescribeUsageReportSubscriptionsErrorKind {
     InvalidAccountStatusException(crate::error::InvalidAccountStatusException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUsageReportSubscriptionsError {
@@ -3564,14 +3564,14 @@ impl DescribeUsageReportSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUsageReportSubscriptionsErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `DescribeUsageReportSubscriptionsErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsageReportSubscriptionsErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsageReportSubscriptionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUsageReportSubscriptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3610,7 +3610,7 @@ pub enum DescribeUsersErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUsersError {
@@ -3674,14 +3674,14 @@ impl DescribeUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsersErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3716,7 +3716,7 @@ pub enum DescribeUserStackAssociationsErrorKind {
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>The attempted operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserStackAssociationsError {
@@ -3787,14 +3787,14 @@ impl DescribeUserStackAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserStackAssociationsErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `DescribeUserStackAssociationsErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserStackAssociationsErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserStackAssociationsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DescribeUserStackAssociationsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3831,7 +3831,7 @@ pub struct DisableUserError {
 pub enum DisableUserErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableUserError {
@@ -3894,7 +3894,7 @@ impl DisableUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3932,7 +3932,7 @@ pub enum DisassociateFleetErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateFleetError {
@@ -3998,28 +3998,28 @@ impl DisassociateFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateFleetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisassociateFleetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFleetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFleetErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DisassociateFleetErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFleetErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFleetErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DisassociateFleetErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFleetErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4056,7 +4056,7 @@ pub enum EnableUserErrorKind {
     InvalidAccountStatusException(crate::error::InvalidAccountStatusException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableUserError {
@@ -4120,14 +4120,14 @@ impl EnableUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableUserErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `EnableUserErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableUserErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `EnableUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `EnableUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4158,7 +4158,7 @@ pub struct ExpireSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExpireSessionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExpireSessionError {
@@ -4242,7 +4242,7 @@ pub struct ListAssociatedFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssociatedFleetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociatedFleetsError {
@@ -4326,7 +4326,7 @@ pub struct ListAssociatedStacksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssociatedStacksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociatedStacksError {
@@ -4412,7 +4412,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -4475,7 +4475,7 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4521,7 +4521,7 @@ pub enum StartFleetErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartFleetError {
@@ -4591,50 +4591,50 @@ impl StartFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartFleetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `StartFleetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFleetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `StartFleetErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `StartFleetErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFleetErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `StartFleetErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `StartFleetErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(&self.kind, StartFleetErrorKind::InvalidRoleException(_))
     }
-    /// Returns true if the error kind is `StartFleetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartFleetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, StartFleetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `StartFleetErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StartFleetErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFleetErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StartFleetErrorKind::RequestLimitExceededException`.
+    /// Returns `true` if the error kind is `StartFleetErrorKind::RequestLimitExceededException`.
     pub fn is_request_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFleetErrorKind::RequestLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartFleetErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `StartFleetErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFleetErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4681,7 +4681,7 @@ pub enum StartImageBuilderErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartImageBuilderError {
@@ -4748,35 +4748,35 @@ impl StartImageBuilderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartImageBuilderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `StartImageBuilderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImageBuilderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `StartImageBuilderErrorKind::IncompatibleImageException`.
+    /// Returns `true` if the error kind is `StartImageBuilderErrorKind::IncompatibleImageException`.
     pub fn is_incompatible_image_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImageBuilderErrorKind::IncompatibleImageException(_)
         )
     }
-    /// Returns true if the error kind is `StartImageBuilderErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `StartImageBuilderErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImageBuilderErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `StartImageBuilderErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `StartImageBuilderErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImageBuilderErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartImageBuilderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartImageBuilderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4814,7 +4814,7 @@ pub enum StopFleetErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopFleetError {
@@ -4878,14 +4878,14 @@ impl StopFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopFleetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `StopFleetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopFleetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `StopFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopFleetErrorKind::ResourceNotFoundException(_))
     }
@@ -4919,7 +4919,7 @@ pub enum StopImageBuilderErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopImageBuilderError {
@@ -4984,21 +4984,21 @@ impl StopImageBuilderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopImageBuilderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `StopImageBuilderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopImageBuilderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `StopImageBuilderErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StopImageBuilderErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopImageBuilderErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StopImageBuilderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopImageBuilderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5036,7 +5036,7 @@ pub enum TagResourceErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -5101,18 +5101,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5146,7 +5146,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -5209,7 +5209,7 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5249,7 +5249,7 @@ pub enum UpdateDirectoryConfigErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDirectoryConfigError {
@@ -5318,35 +5318,35 @@ impl UpdateDirectoryConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDirectoryConfigErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateDirectoryConfigErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDirectoryConfigErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDirectoryConfigErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `UpdateDirectoryConfigErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDirectoryConfigErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDirectoryConfigErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `UpdateDirectoryConfigErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDirectoryConfigErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDirectoryConfigErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateDirectoryConfigErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDirectoryConfigErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDirectoryConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDirectoryConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5402,7 +5402,7 @@ pub enum UpdateFleetErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFleetError {
@@ -5475,68 +5475,68 @@ impl UpdateFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::IncompatibleImageException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::IncompatibleImageException`.
     pub fn is_incompatible_image_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetErrorKind::IncompatibleImageException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(&self.kind, UpdateFleetErrorKind::InvalidRoleException(_))
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateFleetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::RequestLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::RequestLimitExceededException`.
     pub fn is_request_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetErrorKind::RequestLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateFleetErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5582,7 +5582,7 @@ pub enum UpdateImagePermissionsErrorKind {
     ResourceNotAvailableException(crate::error::ResourceNotAvailableException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateImagePermissionsError {
@@ -5647,21 +5647,21 @@ impl UpdateImagePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateImagePermissionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateImagePermissionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateImagePermissionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateImagePermissionsErrorKind::ResourceNotAvailableException`.
+    /// Returns `true` if the error kind is `UpdateImagePermissionsErrorKind::ResourceNotAvailableException`.
     pub fn is_resource_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateImagePermissionsErrorKind::ResourceNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateImagePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateImagePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5711,7 +5711,7 @@ pub enum UpdateStackErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStackError {
@@ -5782,54 +5782,54 @@ impl UpdateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::IncompatibleImageException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::IncompatibleImageException`.
     pub fn is_incompatible_image_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackErrorKind::IncompatibleImageException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::InvalidAccountStatusException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackErrorKind::InvalidAccountStatusException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(&self.kind, UpdateStackErrorKind::InvalidRoleException(_))
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateStackErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateStackErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

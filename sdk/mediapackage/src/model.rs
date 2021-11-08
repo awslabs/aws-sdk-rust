@@ -723,6 +723,8 @@ pub struct HlsPackage {
     pub ads_on_delivery_restrictions: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
     /// An HTTP Live Streaming (HLS) encryption configuration.
     pub encryption: std::option::Option<crate::model::HlsEncryption>,
+    /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+    pub include_dvb_subtitles: bool,
     /// When enabled, an I-Frame only stream will be included in the output.
     pub include_iframe_only_stream: bool,
     /// The HTTP Live Streaming (HLS) playlist type.
@@ -759,6 +761,7 @@ impl std::fmt::Debug for HlsPackage {
             &self.ads_on_delivery_restrictions,
         );
         formatter.field("encryption", &self.encryption);
+        formatter.field("include_dvb_subtitles", &self.include_dvb_subtitles);
         formatter.field(
             "include_iframe_only_stream",
             &self.include_iframe_only_stream,
@@ -786,6 +789,7 @@ pub mod hls_package {
         pub(crate) ads_on_delivery_restrictions:
             std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
         pub(crate) encryption: std::option::Option<crate::model::HlsEncryption>,
+        pub(crate) include_dvb_subtitles: std::option::Option<bool>,
         pub(crate) include_iframe_only_stream: std::option::Option<bool>,
         pub(crate) playlist_type: std::option::Option<crate::model::PlaylistType>,
         pub(crate) playlist_window_seconds: std::option::Option<i32>,
@@ -888,6 +892,16 @@ pub mod hls_package {
             input: std::option::Option<crate::model::HlsEncryption>,
         ) -> Self {
             self.encryption = input;
+            self
+        }
+        /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+        pub fn include_dvb_subtitles(mut self, input: bool) -> Self {
+            self.include_dvb_subtitles = Some(input);
+            self
+        }
+        /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+        pub fn set_include_dvb_subtitles(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_dvb_subtitles = input;
             self
         }
         /// When enabled, an I-Frame only stream will be included in the output.
@@ -998,6 +1012,7 @@ pub mod hls_package {
                 ad_triggers: self.ad_triggers,
                 ads_on_delivery_restrictions: self.ads_on_delivery_restrictions,
                 encryption: self.encryption,
+                include_dvb_subtitles: self.include_dvb_subtitles.unwrap_or_default(),
                 include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
                 playlist_type: self.playlist_type,
                 playlist_window_seconds: self.playlist_window_seconds.unwrap_or_default(),

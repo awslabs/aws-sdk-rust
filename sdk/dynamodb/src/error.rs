@@ -16,7 +16,7 @@ pub enum BatchExecuteStatementErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchExecuteStatementError {
@@ -80,14 +80,14 @@ impl BatchExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             BatchExecuteStatementErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -133,7 +133,7 @@ pub enum BatchGetItemErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetItemError {
@@ -200,29 +200,29 @@ impl BatchGetItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `BatchGetItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, BatchGetItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `BatchGetItemErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `BatchGetItemErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetItemErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetItemErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `BatchGetItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetItemErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `BatchGetItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, BatchGetItemErrorKind::RequestLimitExceeded(_))
     }
-    /// Returns true if the error kind is `BatchGetItemErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchGetItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -275,7 +275,7 @@ pub enum BatchWriteItemErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchWriteItemError {
@@ -347,36 +347,36 @@ impl BatchWriteItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchWriteItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `BatchWriteItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, BatchWriteItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `BatchWriteItemErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `BatchWriteItemErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchWriteItemErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchWriteItemErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `BatchWriteItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchWriteItemErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `BatchWriteItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, BatchWriteItemErrorKind::RequestLimitExceeded(_))
     }
-    /// Returns true if the error kind is `BatchWriteItemErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchWriteItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -435,7 +435,7 @@ pub enum CreateBackupErrorKind {
     TableInUseException(crate::error::TableInUseException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackupError {
@@ -504,37 +504,37 @@ impl CreateBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::BackupInUseException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::BackupInUseException`.
     pub fn is_backup_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::BackupInUseException(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::ContinuousBackupsUnavailableException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::ContinuousBackupsUnavailableException`.
     pub fn is_continuous_backups_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupErrorKind::ContinuousBackupsUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::TableInUseException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::TableInUseException`.
     pub fn is_table_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::TableInUseException(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::TableNotFoundException`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::TableNotFoundException(_))
     }
@@ -585,7 +585,7 @@ pub enum CreateGlobalTableErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGlobalTableError {
@@ -652,35 +652,35 @@ impl CreateGlobalTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException`.
     pub fn is_global_table_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalTableErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalTableErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalTableErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalTableErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalTableErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalTableErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalTableErrorKind::TableNotFoundException`.
+    /// Returns `true` if the error kind is `CreateGlobalTableErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -732,7 +732,7 @@ pub enum CreateTableErrorKind {
     /// recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
     /// state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTableError {
@@ -798,22 +798,22 @@ impl CreateTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTableErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateTableErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateTableErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::ResourceInUseException(_))
     }
@@ -861,7 +861,7 @@ pub enum DeleteBackupErrorKind {
     /// reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupError {
@@ -928,29 +928,29 @@ impl DeleteBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::BackupInUseException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::BackupInUseException`.
     pub fn is_backup_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::BackupInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::BackupNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::BackupNotFoundException`.
     pub fn is_backup_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupErrorKind::BackupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::LimitExceededException(_))
     }
@@ -1004,7 +1004,7 @@ pub enum DeleteItemErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteItemError {
@@ -1074,47 +1074,47 @@ impl DeleteItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteItemErrorKind::ConditionalCheckFailedException`.
+    /// Returns `true` if the error kind is `DeleteItemErrorKind::ConditionalCheckFailedException`.
     pub fn is_conditional_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteItemErrorKind::ConditionalCheckFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteItemErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DeleteItemErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(&self.kind, DeleteItemErrorKind::InvalidEndpointException(_))
     }
-    /// Returns true if the error kind is `DeleteItemErrorKind::ItemCollectionSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteItemErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteItemErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DeleteItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteItemErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `DeleteItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, DeleteItemErrorKind::RequestLimitExceeded(_))
     }
-    /// Returns true if the error kind is `DeleteItemErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteItemErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteItemErrorKind::TransactionConflictException`.
+    /// Returns `true` if the error kind is `DeleteItemErrorKind::TransactionConflictException`.
     pub fn is_transaction_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1172,7 +1172,7 @@ pub enum DeleteTableErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTableError {
@@ -1239,26 +1239,26 @@ impl DeleteTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteTableErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTableErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteTableErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteTableErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteTableErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTableErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1298,7 +1298,7 @@ pub enum DescribeBackupErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBackupError {
@@ -1363,18 +1363,18 @@ impl DescribeBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBackupErrorKind::BackupNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBackupErrorKind::BackupNotFoundException`.
     pub fn is_backup_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupErrorKind::BackupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeBackupErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeBackupErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DescribeBackupErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1412,7 +1412,7 @@ pub enum DescribeContinuousBackupsErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeContinuousBackupsError {
@@ -1477,21 +1477,21 @@ impl DescribeContinuousBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeContinuousBackupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeContinuousBackupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContinuousBackupsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContinuousBackupsErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DescribeContinuousBackupsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContinuousBackupsErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContinuousBackupsErrorKind::TableNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeContinuousBackupsErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1528,7 +1528,7 @@ pub enum DescribeContributorInsightsErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeContributorInsightsError {
@@ -1594,14 +1594,14 @@ impl DescribeContributorInsightsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeContributorInsightsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeContributorInsightsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeContributorInsightsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeContributorInsightsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeContributorInsightsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1632,7 +1632,7 @@ pub struct DescribeEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointsError {
@@ -1730,7 +1730,7 @@ pub enum DescribeExportErrorKind {
     /// reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportError {
@@ -1795,18 +1795,18 @@ impl DescribeExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExportErrorKind::ExportNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeExportErrorKind::ExportNotFoundException`.
     pub fn is_export_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportErrorKind::ExportNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeExportErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeExportErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeExportErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeExportErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1844,7 +1844,7 @@ pub enum DescribeGlobalTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGlobalTableError {
@@ -1909,21 +1909,21 @@ impl DescribeGlobalTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGlobalTableErrorKind::GlobalTableNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGlobalTableErrorKind::GlobalTableNotFoundException`.
     pub fn is_global_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalTableErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeGlobalTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalTableErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalTableErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DescribeGlobalTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1961,7 +1961,7 @@ pub enum DescribeGlobalTableSettingsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGlobalTableSettingsError {
@@ -2028,21 +2028,21 @@ impl DescribeGlobalTableSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException`.
     pub fn is_global_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalTableSettingsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeGlobalTableSettingsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGlobalTableSettingsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGlobalTableSettingsErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DescribeGlobalTableSettingsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2083,7 +2083,7 @@ pub enum DescribeKinesisStreamingDestinationErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeKinesisStreamingDestinationError {
@@ -2157,21 +2157,21 @@ impl DescribeKinesisStreamingDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeKinesisStreamingDestinationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeKinesisStreamingDestinationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2215,7 +2215,7 @@ pub enum DescribeLimitsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLimitsError {
@@ -2279,11 +2279,11 @@ impl DescribeLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLimitsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeLimitsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeLimitsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeLimitsErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DescribeLimitsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2321,7 +2321,7 @@ pub enum DescribeTableErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTableError {
@@ -2386,18 +2386,18 @@ impl DescribeTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTableErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeTableErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeTableErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DescribeTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTableErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2434,7 +2434,7 @@ pub enum DescribeTableReplicaAutoScalingErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTableReplicaAutoScalingError {
@@ -2503,14 +2503,14 @@ impl DescribeTableReplicaAutoScalingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTableReplicaAutoScalingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTableReplicaAutoScalingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2550,7 +2550,7 @@ pub enum DescribeTimeToLiveErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTimeToLiveError {
@@ -2615,21 +2615,21 @@ impl DescribeTimeToLiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTimeToLiveErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTimeToLiveErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTimeToLiveErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTimeToLiveErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DescribeTimeToLiveErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTimeToLiveErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTimeToLiveErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTimeToLiveErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2682,7 +2682,7 @@ pub enum DisableKinesisStreamingDestinationErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableKinesisStreamingDestinationError {
@@ -2762,35 +2762,35 @@ impl DisableKinesisStreamingDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableKinesisStreamingDestinationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DisableKinesisStreamingDestinationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKinesisStreamingDestinationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKinesisStreamingDestinationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2855,7 +2855,7 @@ pub enum EnableKinesisStreamingDestinationErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableKinesisStreamingDestinationError {
@@ -2935,35 +2935,35 @@ impl EnableKinesisStreamingDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableKinesisStreamingDestinationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             EnableKinesisStreamingDestinationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `EnableKinesisStreamingDestinationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `EnableKinesisStreamingDestinationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3030,7 +3030,7 @@ pub enum ExecuteStatementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteStatementError {
@@ -3104,56 +3104,56 @@ impl ExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ConditionalCheckFailedException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ConditionalCheckFailedException`.
     pub fn is_conditional_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::ConditionalCheckFailedException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::DuplicateItemException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::DuplicateItemException`.
     pub fn is_duplicate_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::DuplicateItemException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::RequestLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::TransactionConflictException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::TransactionConflictException`.
     pub fn is_transaction_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3416,7 +3416,7 @@ pub enum ExecuteTransactionErrorKind {
     TransactionCanceledException(crate::error::TransactionCanceledException),
     /// <p>The transaction with the given request token is already in progress.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteTransactionError {
@@ -3489,49 +3489,49 @@ impl ExecuteTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteTransactionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteTransactionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteTransactionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteTransactionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteTransactionErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteTransactionErrorKind::RequestLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteTransactionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteTransactionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteTransactionErrorKind::TransactionCanceledException`.
+    /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::TransactionCanceledException`.
     pub fn is_transaction_canceled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteTransactionErrorKind::TransactionCanceledException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteTransactionErrorKind::TransactionInProgressException`.
+    /// Returns `true` if the error kind is `ExecuteTransactionErrorKind::TransactionInProgressException`.
     pub fn is_transaction_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3592,7 +3592,7 @@ pub enum ExportTableToPointInTimeErrorKind {
     PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportTableToPointInTimeError {
@@ -3662,42 +3662,42 @@ impl ExportTableToPointInTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportTableToPointInTimeErrorKind::ExportConflictException`.
+    /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::ExportConflictException`.
     pub fn is_export_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportTableToPointInTimeErrorKind::ExportConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ExportTableToPointInTimeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ExportTableToPointInTimeErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ExportTableToPointInTimeErrorKind::InvalidExportTimeException`.
+    /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::InvalidExportTimeException`.
     pub fn is_invalid_export_time_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_)
         )
     }
-    /// Returns true if the error kind is `ExportTableToPointInTimeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportTableToPointInTimeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException`.
+    /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException`.
     pub fn is_point_in_time_recovery_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ExportTableToPointInTimeErrorKind::TableNotFoundException`.
+    /// Returns `true` if the error kind is `ExportTableToPointInTimeErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3749,7 +3749,7 @@ pub enum GetItemErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetItemError {
@@ -3816,26 +3816,26 @@ impl GetItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetItemErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `GetItemErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(&self.kind, GetItemErrorKind::InvalidEndpointException(_))
     }
-    /// Returns true if the error kind is `GetItemErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetItemErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `GetItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, GetItemErrorKind::RequestLimitExceeded(_))
     }
-    /// Returns true if the error kind is `GetItemErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetItemErrorKind::ResourceNotFoundException(_))
     }
@@ -3870,7 +3870,7 @@ pub enum ListBackupsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBackupsError {
@@ -3934,11 +3934,11 @@ impl ListBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBackupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListBackupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListBackupsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListBackupsErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `ListBackupsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3974,7 +3974,7 @@ pub enum ListContributorInsightsErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContributorInsightsError {
@@ -4038,14 +4038,14 @@ impl ListContributorInsightsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContributorInsightsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListContributorInsightsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListContributorInsightsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListContributorInsightsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListContributorInsightsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4088,7 +4088,7 @@ pub enum ListExportsErrorKind {
     /// reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExportsError {
@@ -4152,11 +4152,11 @@ impl ListExportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListExportsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListExportsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListExportsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListExportsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListExportsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListExportsErrorKind::LimitExceededException(_))
     }
@@ -4188,7 +4188,7 @@ pub enum ListGlobalTablesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGlobalTablesError {
@@ -4252,14 +4252,14 @@ impl ListGlobalTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGlobalTablesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListGlobalTablesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListGlobalTablesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListGlobalTablesErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `ListGlobalTablesErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4294,7 +4294,7 @@ pub enum ListTablesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTablesError {
@@ -4358,11 +4358,11 @@ impl ListTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::InvalidEndpointException(_))
     }
@@ -4397,7 +4397,7 @@ pub enum ListTagsOfResourceErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsOfResourceError {
@@ -4462,21 +4462,21 @@ impl ListTagsOfResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsOfResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTagsOfResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsOfResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsOfResourceErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `ListTagsOfResourceErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsOfResourceErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsOfResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsOfResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4531,7 +4531,7 @@ pub enum PutItemErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutItemError {
@@ -4601,44 +4601,44 @@ impl PutItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutItemErrorKind::ConditionalCheckFailedException`.
+    /// Returns `true` if the error kind is `PutItemErrorKind::ConditionalCheckFailedException`.
     pub fn is_conditional_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutItemErrorKind::ConditionalCheckFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PutItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, PutItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `PutItemErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `PutItemErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(&self.kind, PutItemErrorKind::InvalidEndpointException(_))
     }
-    /// Returns true if the error kind is `PutItemErrorKind::ItemCollectionSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PutItemErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutItemErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutItemErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `PutItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutItemErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `PutItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, PutItemErrorKind::RequestLimitExceeded(_))
     }
-    /// Returns true if the error kind is `PutItemErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutItemErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `PutItemErrorKind::TransactionConflictException`.
+    /// Returns `true` if the error kind is `PutItemErrorKind::TransactionConflictException`.
     pub fn is_transaction_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4690,7 +4690,7 @@ pub enum QueryErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for QueryError {
@@ -4757,26 +4757,26 @@ impl QueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `QueryErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `QueryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, QueryErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `QueryErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `QueryErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(&self.kind, QueryErrorKind::InvalidEndpointException(_))
     }
-    /// Returns true if the error kind is `QueryErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `QueryErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             QueryErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `QueryErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `QueryErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, QueryErrorKind::RequestLimitExceeded(_))
     }
-    /// Returns true if the error kind is `QueryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `QueryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, QueryErrorKind::ResourceNotFoundException(_))
     }
@@ -4829,7 +4829,7 @@ pub enum RestoreTableFromBackupErrorKind {
     TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
     /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreTableFromBackupError {
@@ -4898,49 +4898,49 @@ impl RestoreTableFromBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreTableFromBackupErrorKind::BackupInUseException`.
+    /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::BackupInUseException`.
     pub fn is_backup_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromBackupErrorKind::BackupInUseException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromBackupErrorKind::BackupNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::BackupNotFoundException`.
     pub fn is_backup_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromBackupErrorKind::BackupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromBackupErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromBackupErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromBackupErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromBackupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromBackupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromBackupErrorKind::TableAlreadyExistsException`.
+    /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::TableAlreadyExistsException`.
     pub fn is_table_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromBackupErrorKind::TableInUseException`.
+    /// Returns `true` if the error kind is `RestoreTableFromBackupErrorKind::TableInUseException`.
     pub fn is_table_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5000,7 +5000,7 @@ pub enum RestoreTableToPointInTimeErrorKind {
     TableInUseException(crate::error::TableInUseException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreTableToPointInTimeError {
@@ -5076,56 +5076,56 @@ impl RestoreTableToPointInTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreTableToPointInTimeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableToPointInTimeErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableToPointInTimeErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException`.
+    /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException`.
     pub fn is_invalid_restore_time_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableToPointInTimeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableToPointInTimeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException`.
+    /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException`.
     pub fn is_point_in_time_recovery_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException`.
+    /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException`.
     pub fn is_table_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableToPointInTimeErrorKind::TableInUseException`.
+    /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::TableInUseException`.
     pub fn is_table_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableToPointInTimeErrorKind::TableInUseException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableToPointInTimeErrorKind::TableNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreTableToPointInTimeErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5179,7 +5179,7 @@ pub enum ScanErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ScanError {
@@ -5246,26 +5246,26 @@ impl ScanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ScanErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ScanErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ScanErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ScanErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `ScanErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(&self.kind, ScanErrorKind::InvalidEndpointException(_))
     }
-    /// Returns true if the error kind is `ScanErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `ScanErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ScanErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ScanErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `ScanErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, ScanErrorKind::RequestLimitExceeded(_))
     }
-    /// Returns true if the error kind is `ScanErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ScanErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ScanErrorKind::ResourceNotFoundException(_))
     }
@@ -5317,7 +5317,7 @@ pub enum TagResourceErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -5384,26 +5384,26 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5656,7 +5656,7 @@ pub enum TransactGetItemsErrorKind {
     /// </li>
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TransactGetItemsError {
@@ -5726,42 +5726,42 @@ impl TransactGetItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TransactGetItemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TransactGetItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             TransactGetItemsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `TransactGetItemsErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `TransactGetItemsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransactGetItemsErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `TransactGetItemsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `TransactGetItemsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TransactGetItemsErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `TransactGetItemsErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             TransactGetItemsErrorKind::RequestLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `TransactGetItemsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TransactGetItemsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransactGetItemsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TransactGetItemsErrorKind::TransactionCanceledException`.
+    /// Returns `true` if the error kind is `TransactGetItemsErrorKind::TransactionCanceledException`.
     pub fn is_transaction_canceled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6022,7 +6022,7 @@ pub enum TransactWriteItemsErrorKind {
     TransactionCanceledException(crate::error::TransactionCanceledException),
     /// <p>The transaction with the given request token is already in progress.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TransactWriteItemsError {
@@ -6096,56 +6096,56 @@ impl TransactWriteItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TransactWriteItemsErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `TransactWriteItemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             TransactWriteItemsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `TransactWriteItemsErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransactWriteItemsErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `TransactWriteItemsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TransactWriteItemsErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             TransactWriteItemsErrorKind::RequestLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `TransactWriteItemsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransactWriteItemsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TransactWriteItemsErrorKind::TransactionCanceledException`.
+    /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::TransactionCanceledException`.
     pub fn is_transaction_canceled_exception(&self) -> bool {
         matches!(
             &self.kind,
             TransactWriteItemsErrorKind::TransactionCanceledException(_)
         )
     }
-    /// Returns true if the error kind is `TransactWriteItemsErrorKind::TransactionInProgressException`.
+    /// Returns `true` if the error kind is `TransactWriteItemsErrorKind::TransactionInProgressException`.
     pub fn is_transaction_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6207,7 +6207,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -6274,32 +6274,32 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6341,7 +6341,7 @@ pub enum UpdateContinuousBackupsErrorKind {
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContinuousBackupsError {
@@ -6409,28 +6409,28 @@ impl UpdateContinuousBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException`.
     pub fn is_continuous_backups_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContinuousBackupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateContinuousBackupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContinuousBackupsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContinuousBackupsErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `UpdateContinuousBackupsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContinuousBackupsErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContinuousBackupsErrorKind::TableNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContinuousBackupsErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6470,7 +6470,7 @@ pub enum UpdateContributorInsightsErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContributorInsightsError {
@@ -6534,14 +6534,14 @@ impl UpdateContributorInsightsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContributorInsightsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateContributorInsightsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContributorInsightsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContributorInsightsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContributorInsightsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6584,7 +6584,7 @@ pub enum UpdateGlobalTableErrorKind {
     ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGlobalTableError {
@@ -6652,42 +6652,42 @@ impl UpdateGlobalTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGlobalTableErrorKind::GlobalTableNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::GlobalTableNotFoundException`.
     pub fn is_global_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException`.
     pub fn is_replica_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableErrorKind::ReplicaNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::ReplicaNotFoundException`.
     pub fn is_replica_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableErrorKind::ReplicaNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableErrorKind::TableNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableErrorKind::TableNotFoundException`.
     pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6746,7 +6746,7 @@ pub enum UpdateGlobalTableSettingsErrorKind {
     /// recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
     /// state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGlobalTableSettingsError {
@@ -6817,49 +6817,49 @@ impl UpdateGlobalTableSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException`.
     pub fn is_global_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableSettingsErrorKind::IndexNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::IndexNotFoundException`.
     pub fn is_index_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableSettingsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableSettingsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableSettingsErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableSettingsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableSettingsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException`.
     pub fn is_replica_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGlobalTableSettingsErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateGlobalTableSettingsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6920,7 +6920,7 @@ pub enum UpdateItemErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateItemError {
@@ -6990,47 +6990,47 @@ impl UpdateItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateItemErrorKind::ConditionalCheckFailedException`.
+    /// Returns `true` if the error kind is `UpdateItemErrorKind::ConditionalCheckFailedException`.
     pub fn is_conditional_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateItemErrorKind::ConditionalCheckFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `UpdateItemErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `UpdateItemErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(&self.kind, UpdateItemErrorKind::InvalidEndpointException(_))
     }
-    /// Returns true if the error kind is `UpdateItemErrorKind::ItemCollectionSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateItemErrorKind::ItemCollectionSizeLimitExceededException`.
     pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateItemErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `UpdateItemErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateItemErrorKind::RequestLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateItemErrorKind::RequestLimitExceeded`.
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, UpdateItemErrorKind::RequestLimitExceeded(_))
     }
-    /// Returns true if the error kind is `UpdateItemErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateItemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateItemErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateItemErrorKind::TransactionConflictException`.
+    /// Returns `true` if the error kind is `UpdateItemErrorKind::TransactionConflictException`.
     pub fn is_transaction_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7088,7 +7088,7 @@ pub enum UpdateTableErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTableError {
@@ -7155,26 +7155,26 @@ impl UpdateTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateTableErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTableErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateTableErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, UpdateTableErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `UpdateTableErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTableErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7227,7 +7227,7 @@ pub enum UpdateTableReplicaAutoScalingErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTableReplicaAutoScalingError {
@@ -7298,28 +7298,28 @@ impl UpdateTableReplicaAutoScalingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTableReplicaAutoScalingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateTableReplicaAutoScalingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTableReplicaAutoScalingErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateTableReplicaAutoScalingErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7375,7 +7375,7 @@ pub enum UpdateTimeToLiveErrorKind {
     /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
     /// correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTimeToLiveError {
@@ -7442,35 +7442,35 @@ impl UpdateTimeToLiveError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTimeToLiveErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimeToLiveErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimeToLiveErrorKind::InvalidEndpointException`.
+    /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::InvalidEndpointException`.
     pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimeToLiveErrorKind::InvalidEndpointException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimeToLiveErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimeToLiveErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimeToLiveErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTimeToLiveErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTimeToLiveErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTimeToLiveErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

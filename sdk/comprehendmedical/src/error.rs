@@ -24,7 +24,7 @@ pub enum DescribeEntitiesDetectionV2JobErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEntitiesDetectionV2JobError {
@@ -101,28 +101,28 @@ impl DescribeEntitiesDetectionV2JobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEntitiesDetectionV2JobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeEntitiesDetectionV2JobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEntitiesDetectionV2JobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEntitiesDetectionV2JobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeEntitiesDetectionV2JobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEntitiesDetectionV2JobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEntitiesDetectionV2JobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEntitiesDetectionV2JobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEntitiesDetectionV2JobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEntitiesDetectionV2JobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeEntitiesDetectionV2JobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -175,7 +175,7 @@ pub enum DescribeICD10CMInferenceJobErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeICD10CMInferenceJobError {
@@ -243,28 +243,28 @@ impl DescribeICD10CMInferenceJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeICD10CMInferenceJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeICD10CMInferenceJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeICD10CMInferenceJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeICD10CMInferenceJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeICD10CMInferenceJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeICD10CMInferenceJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeICD10CMInferenceJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeICD10CMInferenceJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeICD10CMInferenceJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeICD10CMInferenceJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeICD10CMInferenceJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -309,7 +309,7 @@ pub enum DescribePHIDetectionJobErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePHIDetectionJobError {
@@ -375,28 +375,28 @@ impl DescribePHIDetectionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePHIDetectionJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribePHIDetectionJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePHIDetectionJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePHIDetectionJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribePHIDetectionJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePHIDetectionJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePHIDetectionJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePHIDetectionJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePHIDetectionJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePHIDetectionJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribePHIDetectionJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -441,7 +441,7 @@ pub enum DescribeRxNormInferenceJobErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRxNormInferenceJobError {
@@ -507,28 +507,28 @@ impl DescribeRxNormInferenceJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRxNormInferenceJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeRxNormInferenceJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRxNormInferenceJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRxNormInferenceJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeRxNormInferenceJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRxNormInferenceJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRxNormInferenceJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRxNormInferenceJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRxNormInferenceJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRxNormInferenceJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeRxNormInferenceJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -579,7 +579,7 @@ pub enum DetectEntitiesErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectEntitiesError {
@@ -647,42 +647,42 @@ impl DetectEntitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectEntitiesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DetectEntitiesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesErrorKind::InvalidEncodingException`.
+    /// Returns `true` if the error kind is `DetectEntitiesErrorKind::InvalidEncodingException`.
     pub fn is_invalid_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesErrorKind::InvalidEncodingException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DetectEntitiesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DetectEntitiesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesErrorKind::TextSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `DetectEntitiesErrorKind::TextSizeLimitExceededException`.
     pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesErrorKind::TextSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DetectEntitiesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -735,7 +735,7 @@ pub enum DetectEntitiesV2ErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectEntitiesV2Error {
@@ -803,42 +803,42 @@ impl DetectEntitiesV2Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectEntitiesV2ErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DetectEntitiesV2ErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesV2ErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesV2ErrorKind::InvalidEncodingException`.
+    /// Returns `true` if the error kind is `DetectEntitiesV2ErrorKind::InvalidEncodingException`.
     pub fn is_invalid_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesV2ErrorKind::InvalidEncodingException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesV2ErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DetectEntitiesV2ErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesV2ErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesV2ErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DetectEntitiesV2ErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesV2ErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesV2ErrorKind::TextSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `DetectEntitiesV2ErrorKind::TextSizeLimitExceededException`.
     pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectEntitiesV2ErrorKind::TextSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectEntitiesV2ErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DetectEntitiesV2ErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -891,7 +891,7 @@ pub enum DetectPHIErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectPHIError {
@@ -959,33 +959,33 @@ impl DetectPHIError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectPHIErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DetectPHIErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DetectPHIErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DetectPHIErrorKind::InvalidEncodingException`.
+    /// Returns `true` if the error kind is `DetectPHIErrorKind::InvalidEncodingException`.
     pub fn is_invalid_encoding_exception(&self) -> bool {
         matches!(&self.kind, DetectPHIErrorKind::InvalidEncodingException(_))
     }
-    /// Returns true if the error kind is `DetectPHIErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DetectPHIErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DetectPHIErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DetectPHIErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DetectPHIErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectPHIErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DetectPHIErrorKind::TextSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `DetectPHIErrorKind::TextSizeLimitExceededException`.
     pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectPHIErrorKind::TextSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectPHIErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DetectPHIErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, DetectPHIErrorKind::TooManyRequestsException(_))
     }
@@ -1035,7 +1035,7 @@ pub enum InferICD10CMErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InferICD10CMError {
@@ -1103,42 +1103,42 @@ impl InferICD10CMError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InferICD10CMErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `InferICD10CMErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             InferICD10CMErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `InferICD10CMErrorKind::InvalidEncodingException`.
+    /// Returns `true` if the error kind is `InferICD10CMErrorKind::InvalidEncodingException`.
     pub fn is_invalid_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,
             InferICD10CMErrorKind::InvalidEncodingException(_)
         )
     }
-    /// Returns true if the error kind is `InferICD10CMErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `InferICD10CMErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             InferICD10CMErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `InferICD10CMErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `InferICD10CMErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             InferICD10CMErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `InferICD10CMErrorKind::TextSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `InferICD10CMErrorKind::TextSizeLimitExceededException`.
     pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             InferICD10CMErrorKind::TextSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `InferICD10CMErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `InferICD10CMErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1191,7 +1191,7 @@ pub enum InferRxNormErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InferRxNormError {
@@ -1259,36 +1259,36 @@ impl InferRxNormError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InferRxNormErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `InferRxNormErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, InferRxNormErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `InferRxNormErrorKind::InvalidEncodingException`.
+    /// Returns `true` if the error kind is `InferRxNormErrorKind::InvalidEncodingException`.
     pub fn is_invalid_encoding_exception(&self) -> bool {
         matches!(
             &self.kind,
             InferRxNormErrorKind::InvalidEncodingException(_)
         )
     }
-    /// Returns true if the error kind is `InferRxNormErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `InferRxNormErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, InferRxNormErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `InferRxNormErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `InferRxNormErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             InferRxNormErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `InferRxNormErrorKind::TextSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `InferRxNormErrorKind::TextSizeLimitExceededException`.
     pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             InferRxNormErrorKind::TextSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `InferRxNormErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `InferRxNormErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1335,7 +1335,7 @@ pub enum ListEntitiesDetectionV2JobsErrorKind {
     /// <p>The filter that you specified for the operation is invalid. Check the filter values that
     /// you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEntitiesDetectionV2JobsError {
@@ -1401,28 +1401,28 @@ impl ListEntitiesDetectionV2JobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEntitiesDetectionV2JobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListEntitiesDetectionV2JobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitiesDetectionV2JobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitiesDetectionV2JobsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListEntitiesDetectionV2JobsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitiesDetectionV2JobsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitiesDetectionV2JobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListEntitiesDetectionV2JobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitiesDetectionV2JobsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitiesDetectionV2JobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEntitiesDetectionV2JobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1467,7 +1467,7 @@ pub enum ListICD10CMInferenceJobsErrorKind {
     /// <p>The filter that you specified for the operation is invalid. Check the filter values that
     /// you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListICD10CMInferenceJobsError {
@@ -1533,28 +1533,28 @@ impl ListICD10CMInferenceJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListICD10CMInferenceJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListICD10CMInferenceJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListICD10CMInferenceJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListICD10CMInferenceJobsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListICD10CMInferenceJobsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListICD10CMInferenceJobsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListICD10CMInferenceJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListICD10CMInferenceJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListICD10CMInferenceJobsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListICD10CMInferenceJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListICD10CMInferenceJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1599,7 +1599,7 @@ pub enum ListPHIDetectionJobsErrorKind {
     /// <p>The filter that you specified for the operation is invalid. Check the filter values that
     /// you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPHIDetectionJobsError {
@@ -1665,28 +1665,28 @@ impl ListPHIDetectionJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPHIDetectionJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListPHIDetectionJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPHIDetectionJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListPHIDetectionJobsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListPHIDetectionJobsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPHIDetectionJobsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListPHIDetectionJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListPHIDetectionJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPHIDetectionJobsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListPHIDetectionJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPHIDetectionJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1731,7 +1731,7 @@ pub enum ListRxNormInferenceJobsErrorKind {
     /// <p>The filter that you specified for the operation is invalid. Check the filter values that
     /// you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRxNormInferenceJobsError {
@@ -1797,28 +1797,28 @@ impl ListRxNormInferenceJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRxNormInferenceJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListRxNormInferenceJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRxNormInferenceJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListRxNormInferenceJobsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListRxNormInferenceJobsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRxNormInferenceJobsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListRxNormInferenceJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListRxNormInferenceJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRxNormInferenceJobsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListRxNormInferenceJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListRxNormInferenceJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1863,7 +1863,7 @@ pub enum StartEntitiesDetectionV2JobErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartEntitiesDetectionV2JobError {
@@ -1931,28 +1931,28 @@ impl StartEntitiesDetectionV2JobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartEntitiesDetectionV2JobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartEntitiesDetectionV2JobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartEntitiesDetectionV2JobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartEntitiesDetectionV2JobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartEntitiesDetectionV2JobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartEntitiesDetectionV2JobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartEntitiesDetectionV2JobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartEntitiesDetectionV2JobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartEntitiesDetectionV2JobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartEntitiesDetectionV2JobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartEntitiesDetectionV2JobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1997,7 +1997,7 @@ pub enum StartICD10CMInferenceJobErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartICD10CMInferenceJobError {
@@ -2063,28 +2063,28 @@ impl StartICD10CMInferenceJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartICD10CMInferenceJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartICD10CMInferenceJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartICD10CMInferenceJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartICD10CMInferenceJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartICD10CMInferenceJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartICD10CMInferenceJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartICD10CMInferenceJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartICD10CMInferenceJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartICD10CMInferenceJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartICD10CMInferenceJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartICD10CMInferenceJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2129,7 +2129,7 @@ pub enum StartPHIDetectionJobErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartPHIDetectionJobError {
@@ -2195,28 +2195,28 @@ impl StartPHIDetectionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartPHIDetectionJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartPHIDetectionJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPHIDetectionJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartPHIDetectionJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartPHIDetectionJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPHIDetectionJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartPHIDetectionJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartPHIDetectionJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPHIDetectionJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartPHIDetectionJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartPHIDetectionJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2261,7 +2261,7 @@ pub enum StartRxNormInferenceJobErrorKind {
     /// then try your request again. Contact customer support for more information about a service
     /// limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartRxNormInferenceJobError {
@@ -2327,28 +2327,28 @@ impl StartRxNormInferenceJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartRxNormInferenceJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartRxNormInferenceJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRxNormInferenceJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartRxNormInferenceJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartRxNormInferenceJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRxNormInferenceJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartRxNormInferenceJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartRxNormInferenceJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRxNormInferenceJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartRxNormInferenceJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartRxNormInferenceJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2389,7 +2389,7 @@ pub enum StopEntitiesDetectionV2JobErrorKind {
     /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
     /// the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopEntitiesDetectionV2JobError {
@@ -2454,21 +2454,21 @@ impl StopEntitiesDetectionV2JobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopEntitiesDetectionV2JobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopEntitiesDetectionV2JobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopEntitiesDetectionV2JobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopEntitiesDetectionV2JobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopEntitiesDetectionV2JobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopEntitiesDetectionV2JobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopEntitiesDetectionV2JobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopEntitiesDetectionV2JobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2508,7 +2508,7 @@ pub enum StopICD10CMInferenceJobErrorKind {
     /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
     /// the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopICD10CMInferenceJobError {
@@ -2573,21 +2573,21 @@ impl StopICD10CMInferenceJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopICD10CMInferenceJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopICD10CMInferenceJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopICD10CMInferenceJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopICD10CMInferenceJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopICD10CMInferenceJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopICD10CMInferenceJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopICD10CMInferenceJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopICD10CMInferenceJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2627,7 +2627,7 @@ pub enum StopPHIDetectionJobErrorKind {
     /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
     /// the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopPHIDetectionJobError {
@@ -2692,21 +2692,21 @@ impl StopPHIDetectionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopPHIDetectionJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopPHIDetectionJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopPHIDetectionJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopPHIDetectionJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopPHIDetectionJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopPHIDetectionJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopPHIDetectionJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopPHIDetectionJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2746,7 +2746,7 @@ pub enum StopRxNormInferenceJobErrorKind {
     /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
     /// the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopRxNormInferenceJobError {
@@ -2811,21 +2811,21 @@ impl StopRxNormInferenceJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopRxNormInferenceJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopRxNormInferenceJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRxNormInferenceJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopRxNormInferenceJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopRxNormInferenceJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRxNormInferenceJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopRxNormInferenceJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopRxNormInferenceJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

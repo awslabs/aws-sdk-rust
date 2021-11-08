@@ -18,7 +18,7 @@ pub enum AddTagsToResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToResourceError {
@@ -83,21 +83,21 @@ impl AddTagsToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -135,7 +135,7 @@ pub enum CreateHapgErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHapgError {
@@ -200,18 +200,18 @@ impl CreateHapgError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHapgErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `CreateHapgErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHapgErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHapgErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `CreateHapgErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, CreateHapgErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `CreateHapgErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateHapgErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateHapgErrorKind::InvalidRequestException(_))
     }
@@ -246,7 +246,7 @@ pub enum CreateHsmErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHsmError {
@@ -311,15 +311,15 @@ impl CreateHsmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHsmErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateHsmErrorKind::CloudHsmInternalException(_))
     }
-    /// Returns true if the error kind is `CreateHsmErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, CreateHsmErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `CreateHsmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateHsmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateHsmErrorKind::InvalidRequestException(_))
     }
@@ -354,7 +354,7 @@ pub enum CreateLunaClientErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLunaClientError {
@@ -419,21 +419,21 @@ impl CreateLunaClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLunaClientErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `CreateLunaClientErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLunaClientErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLunaClientErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `CreateLunaClientErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLunaClientErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLunaClientErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateLunaClientErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -471,7 +471,7 @@ pub enum DeleteHapgErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHapgError {
@@ -536,18 +536,18 @@ impl DeleteHapgError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHapgErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `DeleteHapgErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHapgErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHapgErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DeleteHapgErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteHapgErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteHapgErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteHapgErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteHapgErrorKind::InvalidRequestException(_))
     }
@@ -582,7 +582,7 @@ pub enum DeleteHsmErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHsmError {
@@ -647,15 +647,15 @@ impl DeleteHsmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHsmErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteHsmErrorKind::CloudHsmInternalException(_))
     }
-    /// Returns true if the error kind is `DeleteHsmErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteHsmErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteHsmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteHsmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteHsmErrorKind::InvalidRequestException(_))
     }
@@ -690,7 +690,7 @@ pub enum DeleteLunaClientErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLunaClientError {
@@ -755,21 +755,21 @@ impl DeleteLunaClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLunaClientErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `DeleteLunaClientErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLunaClientErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLunaClientErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DeleteLunaClientErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLunaClientErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLunaClientErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteLunaClientErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -807,7 +807,7 @@ pub enum DescribeHapgErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHapgError {
@@ -872,21 +872,21 @@ impl DescribeHapgError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHapgErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `DescribeHapgErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHapgErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHapgErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DescribeHapgErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHapgErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHapgErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeHapgErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -924,7 +924,7 @@ pub enum DescribeHsmErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHsmError {
@@ -989,21 +989,21 @@ impl DescribeHsmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHsmErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `DescribeHsmErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHsmErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHsmErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DescribeHsmErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHsmErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHsmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeHsmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeHsmErrorKind::InvalidRequestException(_))
     }
@@ -1038,7 +1038,7 @@ pub enum DescribeLunaClientErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLunaClientError {
@@ -1103,21 +1103,21 @@ impl DescribeLunaClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLunaClientErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `DescribeLunaClientErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLunaClientErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLunaClientErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `DescribeLunaClientErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLunaClientErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLunaClientErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLunaClientErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1155,7 +1155,7 @@ pub enum GetConfigErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigError {
@@ -1220,15 +1220,15 @@ impl GetConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConfigErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `GetConfigErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(&self.kind, GetConfigErrorKind::CloudHsmInternalException(_))
     }
-    /// Returns true if the error kind is `GetConfigErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `GetConfigErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, GetConfigErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `GetConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, GetConfigErrorKind::InvalidRequestException(_))
     }
@@ -1263,7 +1263,7 @@ pub enum ListAvailableZonesErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAvailableZonesError {
@@ -1328,21 +1328,21 @@ impl ListAvailableZonesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAvailableZonesErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `ListAvailableZonesErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAvailableZonesErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListAvailableZonesErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ListAvailableZonesErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAvailableZonesErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListAvailableZonesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAvailableZonesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1380,7 +1380,7 @@ pub enum ListHapgsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHapgsError {
@@ -1445,15 +1445,15 @@ impl ListHapgsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHapgsErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `ListHapgsErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(&self.kind, ListHapgsErrorKind::CloudHsmInternalException(_))
     }
-    /// Returns true if the error kind is `ListHapgsErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ListHapgsErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, ListHapgsErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `ListHapgsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListHapgsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListHapgsErrorKind::InvalidRequestException(_))
     }
@@ -1488,7 +1488,7 @@ pub enum ListHsmsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHsmsError {
@@ -1553,15 +1553,15 @@ impl ListHsmsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHsmsErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `ListHsmsErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(&self.kind, ListHsmsErrorKind::CloudHsmInternalException(_))
     }
-    /// Returns true if the error kind is `ListHsmsErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ListHsmsErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, ListHsmsErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `ListHsmsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListHsmsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListHsmsErrorKind::InvalidRequestException(_))
     }
@@ -1596,7 +1596,7 @@ pub enum ListLunaClientsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLunaClientsError {
@@ -1661,21 +1661,21 @@ impl ListLunaClientsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLunaClientsErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `ListLunaClientsErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLunaClientsErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListLunaClientsErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ListLunaClientsErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLunaClientsErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListLunaClientsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListLunaClientsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1713,7 +1713,7 @@ pub enum ListTagsForResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1778,21 +1778,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1830,7 +1830,7 @@ pub enum ModifyHapgErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyHapgError {
@@ -1895,18 +1895,18 @@ impl ModifyHapgError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyHapgErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `ModifyHapgErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyHapgErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyHapgErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ModifyHapgErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, ModifyHapgErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `ModifyHapgErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ModifyHapgErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ModifyHapgErrorKind::InvalidRequestException(_))
     }
@@ -1941,7 +1941,7 @@ pub enum ModifyHsmErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyHsmError {
@@ -2006,15 +2006,15 @@ impl ModifyHsmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyHsmErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `ModifyHsmErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(&self.kind, ModifyHsmErrorKind::CloudHsmInternalException(_))
     }
-    /// Returns true if the error kind is `ModifyHsmErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ModifyHsmErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(&self.kind, ModifyHsmErrorKind::CloudHsmServiceException(_))
     }
-    /// Returns true if the error kind is `ModifyHsmErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ModifyHsmErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ModifyHsmErrorKind::InvalidRequestException(_))
     }
@@ -2045,7 +2045,7 @@ pub struct ModifyLunaClientError {
 pub enum ModifyLunaClientErrorKind {
     /// <p>Indicates that an exception occurred in the AWS CloudHSM service.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyLunaClientError {
@@ -2108,7 +2108,7 @@ impl ModifyLunaClientError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyLunaClientErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `ModifyLunaClientErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2144,7 +2144,7 @@ pub enum RemoveTagsFromResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>Indicates that one or more of the request parameters are not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
@@ -2209,21 +2209,21 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::CloudHsmInternalException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::CloudHsmInternalException`.
     pub fn is_cloud_hsm_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::CloudHsmInternalException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::CloudHsmServiceException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::CloudHsmServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,

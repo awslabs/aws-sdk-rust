@@ -13,7 +13,7 @@ CloudFormation makes use of other Amazon Web Services products. If you need addi
 
 ## Getting Started
 
-> Examples are availble for many services and operations, check out the
+> Examples are available for many services and operations, check out the
 > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples).
 
 The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.0.22-alpha"
-aws-sdk-cloudformation = "0.0.22-alpha"
+aws-config = "0.0.23-alpha"
+aws-sdk-cloudformation = "0.0.23-alpha"
 tokio = { version = "1", features = ["full"] }
 ```
 

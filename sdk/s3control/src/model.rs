@@ -3070,8 +3070,8 @@ pub enum ObjectLambdaContentTransformation {
 }
 impl ObjectLambdaContentTransformation {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`ObjectLambdaContentTransformation`](crate::model::ObjectLambdaContentTransformation) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AwsLambda`](crate::model::ObjectLambdaContentTransformation::AwsLambda), extracting the inner [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_lambda(
         &self,
     ) -> std::result::Result<&crate::model::AwsLambdaTransformation, &Self> {
@@ -3081,7 +3081,7 @@ impl ObjectLambdaContentTransformation {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ObjectLambdaContentTransformation` variant.
+    /// Returns true if this is a [`AwsLambda`](crate::model::ObjectLambdaContentTransformation::AwsLambda).
     pub fn is_aws_lambda(&self) -> bool {
         self.as_aws_lambda().is_ok()
     }

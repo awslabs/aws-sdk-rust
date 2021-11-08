@@ -20,7 +20,7 @@ pub enum ChangeServerLifeCycleStateErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ChangeServerLifeCycleStateError {
@@ -88,28 +88,28 @@ impl ChangeServerLifeCycleStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ChangeServerLifeCycleStateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ChangeServerLifeCycleStateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangeServerLifeCycleStateErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ChangeServerLifeCycleStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ChangeServerLifeCycleStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangeServerLifeCycleStateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ChangeServerLifeCycleStateErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `ChangeServerLifeCycleStateErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             ChangeServerLifeCycleStateErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `ChangeServerLifeCycleStateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ChangeServerLifeCycleStateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -150,7 +150,7 @@ pub enum CreateReplicationConfigurationTemplateErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReplicationConfigurationTemplateError {
@@ -224,21 +224,21 @@ impl CreateReplicationConfigurationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationConfigurationTemplateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationTemplateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -284,7 +284,7 @@ pub enum DeleteJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Unitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteJobError {
@@ -349,15 +349,15 @@ impl DeleteJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteJobErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `DeleteJobErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -395,7 +395,7 @@ pub enum DeleteReplicationConfigurationTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Unitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReplicationConfigurationTemplateError {
@@ -469,21 +469,21 @@ impl DeleteReplicationConfigurationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReplicationConfigurationTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteReplicationConfigurationTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationConfigurationTemplateErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationConfigurationTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteReplicationConfigurationTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationConfigurationTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationConfigurationTemplateErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `DeleteReplicationConfigurationTemplateErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -529,7 +529,7 @@ pub enum DeleteSourceServerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Unitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSourceServerError {
@@ -594,21 +594,21 @@ impl DeleteSourceServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSourceServerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSourceServerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSourceServerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSourceServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSourceServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSourceServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSourceServerErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `DeleteSourceServerErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -644,7 +644,7 @@ pub enum DescribeJobLogItemsErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobLogItemsError {
@@ -708,14 +708,14 @@ impl DescribeJobLogItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobLogItemsErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `DescribeJobLogItemsErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobLogItemsErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobLogItemsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeJobLogItemsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -750,7 +750,7 @@ pub enum DescribeJobsErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobsError {
@@ -814,14 +814,14 @@ impl DescribeJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobsErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `DescribeJobsErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobsErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobsErrorKind::ValidationException(_))
     }
@@ -855,7 +855,7 @@ pub enum DescribeReplicationConfigurationTemplatesErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplicationConfigurationTemplatesError {
@@ -929,21 +929,21 @@ impl DescribeReplicationConfigurationTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplicationConfigurationTemplatesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeReplicationConfigurationTemplatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReplicationConfigurationTemplatesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReplicationConfigurationTemplatesErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `DescribeReplicationConfigurationTemplatesErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReplicationConfigurationTemplatesErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReplicationConfigurationTemplatesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeReplicationConfigurationTemplatesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -987,7 +987,7 @@ pub enum DescribeSourceServersErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSourceServersError {
@@ -1051,14 +1051,14 @@ impl DescribeSourceServersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSourceServersErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `DescribeSourceServersErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSourceServersErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSourceServersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeSourceServersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1095,7 +1095,7 @@ pub enum DisconnectFromServiceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Unitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisconnectFromServiceError {
@@ -1160,21 +1160,21 @@ impl DisconnectFromServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisconnectFromServiceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DisconnectFromServiceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisconnectFromServiceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DisconnectFromServiceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisconnectFromServiceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisconnectFromServiceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisconnectFromServiceErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `DisconnectFromServiceErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1214,7 +1214,7 @@ pub enum FinalizeCutoverErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FinalizeCutoverError {
@@ -1280,25 +1280,25 @@ impl FinalizeCutoverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `FinalizeCutoverErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `FinalizeCutoverErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, FinalizeCutoverErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `FinalizeCutoverErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `FinalizeCutoverErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             FinalizeCutoverErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `FinalizeCutoverErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `FinalizeCutoverErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             FinalizeCutoverErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `FinalizeCutoverErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `FinalizeCutoverErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, FinalizeCutoverErrorKind::ValidationException(_))
     }
@@ -1332,7 +1332,7 @@ pub enum GetLaunchConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Unitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLaunchConfigurationError {
@@ -1396,14 +1396,14 @@ impl GetLaunchConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLaunchConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLaunchConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLaunchConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLaunchConfigurationErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `GetLaunchConfigurationErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1438,7 +1438,7 @@ pub enum GetReplicationConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Unitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReplicationConfigurationError {
@@ -1506,14 +1506,14 @@ impl GetReplicationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReplicationConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetReplicationConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationConfigurationErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `GetReplicationConfigurationErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1550,7 +1550,7 @@ pub enum InitializeServiceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InitializeServiceError {
@@ -1614,14 +1614,14 @@ impl InitializeServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InitializeServiceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `InitializeServiceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitializeServiceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `InitializeServiceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `InitializeServiceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1662,7 +1662,7 @@ pub enum ListTagsForResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1729,35 +1729,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1797,7 +1797,7 @@ pub enum MarkAsArchivedErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Unitialized account exception.</p>
     UninitializedAccountException(crate::error::UninitializedAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MarkAsArchivedError {
@@ -1862,18 +1862,18 @@ impl MarkAsArchivedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MarkAsArchivedErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `MarkAsArchivedErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, MarkAsArchivedErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `MarkAsArchivedErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `MarkAsArchivedErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MarkAsArchivedErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MarkAsArchivedErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `MarkAsArchivedErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1911,7 +1911,7 @@ pub enum RetryDataReplicationErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetryDataReplicationError {
@@ -1976,21 +1976,21 @@ impl RetryDataReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetryDataReplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RetryDataReplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryDataReplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RetryDataReplicationErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `RetryDataReplicationErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryDataReplicationErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `RetryDataReplicationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RetryDataReplicationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2028,7 +2028,7 @@ pub enum StartCutoverErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartCutoverError {
@@ -2093,18 +2093,18 @@ impl StartCutoverError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartCutoverErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartCutoverErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartCutoverErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartCutoverErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `StartCutoverErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCutoverErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `StartCutoverErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartCutoverErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartCutoverErrorKind::ValidationException(_))
     }
@@ -2139,7 +2139,7 @@ pub enum StartTestErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTestError {
@@ -2204,18 +2204,18 @@ impl StartTestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartTestErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartTestErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartTestErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartTestErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `StartTestErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTestErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `StartTestErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartTestErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartTestErrorKind::ValidationException(_))
     }
@@ -2254,7 +2254,7 @@ pub enum TagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2321,26 +2321,26 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -2377,7 +2377,7 @@ pub enum TerminateTargetInstancesErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateTargetInstancesError {
@@ -2444,21 +2444,21 @@ impl TerminateTargetInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateTargetInstancesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TerminateTargetInstancesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             TerminateTargetInstancesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `TerminateTargetInstancesErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `TerminateTargetInstancesErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             TerminateTargetInstancesErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `TerminateTargetInstancesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TerminateTargetInstancesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2502,7 +2502,7 @@ pub enum UntagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2569,29 +2569,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -2630,7 +2630,7 @@ pub enum UpdateLaunchConfigurationErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLaunchConfigurationError {
@@ -2698,28 +2698,28 @@ impl UpdateLaunchConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLaunchConfigurationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateLaunchConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchConfigurationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLaunchConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchConfigurationErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `UpdateLaunchConfigurationErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLaunchConfigurationErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLaunchConfigurationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLaunchConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2764,7 +2764,7 @@ pub enum UpdateReplicationConfigurationErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReplicationConfigurationError {
@@ -2838,35 +2838,35 @@ impl UpdateReplicationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationConfigurationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationConfigurationErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2912,7 +2912,7 @@ pub enum UpdateReplicationConfigurationTemplateErrorKind {
     UninitializedAccountException(crate::error::UninitializedAccountException),
     /// <p>Validate exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReplicationConfigurationTemplateError {
@@ -2989,28 +2989,28 @@ impl UpdateReplicationConfigurationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationConfigurationTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationTemplateErrorKind::UninitializedAccountException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationTemplateErrorKind::UninitializedAccountException`.
     pub fn is_uninitialized_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationConfigurationTemplateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateReplicationConfigurationTemplateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -3,7 +3,8 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadMetadata {
-    /// <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the API caller.</p>
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
+    /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub url_expiry: std::option::Option<std::string::String>,
@@ -33,12 +34,14 @@ pub mod upload_metadata {
         >,
     }
     impl Builder {
-        /// <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the API caller.</p>
+        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
+        /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the API caller.</p>
+        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
+        /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -531,6 +534,14 @@ pub enum ChatItemType {
     #[allow(missing_docs)] // documentation missing in model
     Message,
     #[allow(missing_docs)] // documentation missing in model
+    ParticipantActive,
+    #[allow(missing_docs)] // documentation missing in model
+    ParticipantDisengaged,
+    #[allow(missing_docs)] // documentation missing in model
+    ParticipantEngaged,
+    #[allow(missing_docs)] // documentation missing in model
+    ParticipantInactive,
+    #[allow(missing_docs)] // documentation missing in model
     ParticipantJoined,
     #[allow(missing_docs)] // documentation missing in model
     ParticipantLeft,
@@ -551,6 +562,10 @@ impl std::convert::From<&str> for ChatItemType {
             "CONNECTION_ACK" => ChatItemType::ConnectionAck,
             "EVENT" => ChatItemType::Event,
             "MESSAGE" => ChatItemType::Message,
+            "PARTICIPANT_ACTIVE" => ChatItemType::ParticipantActive,
+            "PARTICIPANT_DISENGAGED" => ChatItemType::ParticipantDisengaged,
+            "PARTICIPANT_ENGAGED" => ChatItemType::ParticipantEngaged,
+            "PARTICIPANT_INACTIVE" => ChatItemType::ParticipantInactive,
             "PARTICIPANT_JOINED" => ChatItemType::ParticipantJoined,
             "PARTICIPANT_LEFT" => ChatItemType::ParticipantLeft,
             "TRANSFER_FAILED" => ChatItemType::TransferFailed,
@@ -576,6 +591,10 @@ impl ChatItemType {
             ChatItemType::ConnectionAck => "CONNECTION_ACK",
             ChatItemType::Event => "EVENT",
             ChatItemType::Message => "MESSAGE",
+            ChatItemType::ParticipantActive => "PARTICIPANT_ACTIVE",
+            ChatItemType::ParticipantDisengaged => "PARTICIPANT_DISENGAGED",
+            ChatItemType::ParticipantEngaged => "PARTICIPANT_ENGAGED",
+            ChatItemType::ParticipantInactive => "PARTICIPANT_INACTIVE",
             ChatItemType::ParticipantJoined => "PARTICIPANT_JOINED",
             ChatItemType::ParticipantLeft => "PARTICIPANT_LEFT",
             ChatItemType::TransferFailed => "TRANSFER_FAILED",
@@ -592,6 +611,10 @@ impl ChatItemType {
             "CONNECTION_ACK",
             "EVENT",
             "MESSAGE",
+            "PARTICIPANT_ACTIVE",
+            "PARTICIPANT_DISENGAGED",
+            "PARTICIPANT_ENGAGED",
+            "PARTICIPANT_INACTIVE",
             "PARTICIPANT_JOINED",
             "PARTICIPANT_LEFT",
             "TRANSFER_FAILED",

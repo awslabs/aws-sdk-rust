@@ -48,6 +48,87 @@ impl UpdateSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateNetworkResourceMetadataOutput {
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The updated resource metadata.</p>
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for UpdateNetworkResourceMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateNetworkResourceMetadataOutput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("metadata", &self.metadata);
+        formatter.finish()
+    }
+}
+/// See [`UpdateNetworkResourceMetadataOutput`](crate::output::UpdateNetworkResourceMetadataOutput)
+pub mod update_network_resource_metadata_output {
+    /// A builder for [`UpdateNetworkResourceMetadataOutput`](crate::output::UpdateNetworkResourceMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) metadata: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>The updated resource metadata.</p>
+        pub fn metadata(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.metadata.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.metadata = Some(hash_map);
+            self
+        }
+        /// <p>The updated resource metadata.</p>
+        pub fn set_metadata(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.metadata = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateNetworkResourceMetadataOutput`](crate::output::UpdateNetworkResourceMetadataOutput)
+        pub fn build(self) -> crate::output::UpdateNetworkResourceMetadataOutput {
+            crate::output::UpdateNetworkResourceMetadataOutput {
+                resource_arn: self.resource_arn,
+                metadata: self.metadata,
+            }
+        }
+    }
+}
+impl UpdateNetworkResourceMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkResourceMetadataOutput`](crate::output::UpdateNetworkResourceMetadataOutput)
+    pub fn builder() -> crate::output::update_network_resource_metadata_output::Builder {
+        crate::output::update_network_resource_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLinkOutput {
     /// <p>Information about the link.</p>
     pub link: std::option::Option<crate::model::Link>,
@@ -298,6 +379,57 @@ impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartRouteAnalysisOutput {
+    /// <p>The route analysis.</p>
+    pub route_analysis: std::option::Option<crate::model::RouteAnalysis>,
+}
+impl std::fmt::Debug for StartRouteAnalysisOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartRouteAnalysisOutput");
+        formatter.field("route_analysis", &self.route_analysis);
+        formatter.finish()
+    }
+}
+/// See [`StartRouteAnalysisOutput`](crate::output::StartRouteAnalysisOutput)
+pub mod start_route_analysis_output {
+    /// A builder for [`StartRouteAnalysisOutput`](crate::output::StartRouteAnalysisOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) route_analysis: std::option::Option<crate::model::RouteAnalysis>,
+    }
+    impl Builder {
+        /// <p>The route analysis.</p>
+        pub fn route_analysis(mut self, input: crate::model::RouteAnalysis) -> Self {
+            self.route_analysis = Some(input);
+            self
+        }
+        /// <p>The route analysis.</p>
+        pub fn set_route_analysis(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysis>,
+        ) -> Self {
+            self.route_analysis = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartRouteAnalysisOutput`](crate::output::StartRouteAnalysisOutput)
+        pub fn build(self) -> crate::output::StartRouteAnalysisOutput {
+            crate::output::StartRouteAnalysisOutput {
+                route_analysis: self.route_analysis,
+            }
+        }
+    }
+}
+impl StartRouteAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`StartRouteAnalysisOutput`](crate::output::StartRouteAnalysisOutput)
+    pub fn builder() -> crate::output::start_route_analysis_output::Builder {
+        crate::output::start_route_analysis_output::Builder::default()
     }
 }
 
@@ -651,6 +783,469 @@ impl GetSitesOutput {
     /// Creates a new builder-style object to manufacture [`GetSitesOutput`](crate::output::GetSitesOutput)
     pub fn builder() -> crate::output::get_sites_output::Builder {
         crate::output::get_sites_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRouteAnalysisOutput {
+    /// <p>The route analysis.</p>
+    pub route_analysis: std::option::Option<crate::model::RouteAnalysis>,
+}
+impl std::fmt::Debug for GetRouteAnalysisOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetRouteAnalysisOutput");
+        formatter.field("route_analysis", &self.route_analysis);
+        formatter.finish()
+    }
+}
+/// See [`GetRouteAnalysisOutput`](crate::output::GetRouteAnalysisOutput)
+pub mod get_route_analysis_output {
+    /// A builder for [`GetRouteAnalysisOutput`](crate::output::GetRouteAnalysisOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) route_analysis: std::option::Option<crate::model::RouteAnalysis>,
+    }
+    impl Builder {
+        /// <p>The route analysis.</p>
+        pub fn route_analysis(mut self, input: crate::model::RouteAnalysis) -> Self {
+            self.route_analysis = Some(input);
+            self
+        }
+        /// <p>The route analysis.</p>
+        pub fn set_route_analysis(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysis>,
+        ) -> Self {
+            self.route_analysis = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRouteAnalysisOutput`](crate::output::GetRouteAnalysisOutput)
+        pub fn build(self) -> crate::output::GetRouteAnalysisOutput {
+            crate::output::GetRouteAnalysisOutput {
+                route_analysis: self.route_analysis,
+            }
+        }
+    }
+}
+impl GetRouteAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`GetRouteAnalysisOutput`](crate::output::GetRouteAnalysisOutput)
+    pub fn builder() -> crate::output::get_route_analysis_output::Builder {
+        crate::output::get_route_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkTelemetryOutput {
+    /// <p>The network telemetry.</p>
+    pub network_telemetry: std::option::Option<std::vec::Vec<crate::model::NetworkTelemetry>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetNetworkTelemetryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkTelemetryOutput");
+        formatter.field("network_telemetry", &self.network_telemetry);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetNetworkTelemetryOutput`](crate::output::GetNetworkTelemetryOutput)
+pub mod get_network_telemetry_output {
+    /// A builder for [`GetNetworkTelemetryOutput`](crate::output::GetNetworkTelemetryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_telemetry:
+            std::option::Option<std::vec::Vec<crate::model::NetworkTelemetry>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `network_telemetry`.
+        ///
+        /// To override the contents of this collection use [`set_network_telemetry`](Self::set_network_telemetry).
+        ///
+        /// <p>The network telemetry.</p>
+        pub fn network_telemetry(
+            mut self,
+            input: impl Into<crate::model::NetworkTelemetry>,
+        ) -> Self {
+            let mut v = self.network_telemetry.unwrap_or_default();
+            v.push(input.into());
+            self.network_telemetry = Some(v);
+            self
+        }
+        /// <p>The network telemetry.</p>
+        pub fn set_network_telemetry(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkTelemetry>>,
+        ) -> Self {
+            self.network_telemetry = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkTelemetryOutput`](crate::output::GetNetworkTelemetryOutput)
+        pub fn build(self) -> crate::output::GetNetworkTelemetryOutput {
+            crate::output::GetNetworkTelemetryOutput {
+                network_telemetry: self.network_telemetry,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetNetworkTelemetryOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkTelemetryOutput`](crate::output::GetNetworkTelemetryOutput)
+    pub fn builder() -> crate::output::get_network_telemetry_output::Builder {
+        crate::output::get_network_telemetry_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkRoutesOutput {
+    /// <p>The ARN of the route table.</p>
+    pub route_table_arn: std::option::Option<std::string::String>,
+    /// <p>The route table type.</p>
+    pub route_table_type: std::option::Option<crate::model::RouteTableType>,
+    /// <p>The route table creation time.</p>
+    pub route_table_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The network routes.</p>
+    pub network_routes: std::option::Option<std::vec::Vec<crate::model::NetworkRoute>>,
+}
+impl std::fmt::Debug for GetNetworkRoutesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkRoutesOutput");
+        formatter.field("route_table_arn", &self.route_table_arn);
+        formatter.field("route_table_type", &self.route_table_type);
+        formatter.field("route_table_timestamp", &self.route_table_timestamp);
+        formatter.field("network_routes", &self.network_routes);
+        formatter.finish()
+    }
+}
+/// See [`GetNetworkRoutesOutput`](crate::output::GetNetworkRoutesOutput)
+pub mod get_network_routes_output {
+    /// A builder for [`GetNetworkRoutesOutput`](crate::output::GetNetworkRoutesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) route_table_arn: std::option::Option<std::string::String>,
+        pub(crate) route_table_type: std::option::Option<crate::model::RouteTableType>,
+        pub(crate) route_table_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) network_routes: std::option::Option<std::vec::Vec<crate::model::NetworkRoute>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the route table.</p>
+        pub fn route_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.route_table_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the route table.</p>
+        pub fn set_route_table_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.route_table_arn = input;
+            self
+        }
+        /// <p>The route table type.</p>
+        pub fn route_table_type(mut self, input: crate::model::RouteTableType) -> Self {
+            self.route_table_type = Some(input);
+            self
+        }
+        /// <p>The route table type.</p>
+        pub fn set_route_table_type(
+            mut self,
+            input: std::option::Option<crate::model::RouteTableType>,
+        ) -> Self {
+            self.route_table_type = input;
+            self
+        }
+        /// <p>The route table creation time.</p>
+        pub fn route_table_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.route_table_timestamp = Some(input);
+            self
+        }
+        /// <p>The route table creation time.</p>
+        pub fn set_route_table_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.route_table_timestamp = input;
+            self
+        }
+        /// Appends an item to `network_routes`.
+        ///
+        /// To override the contents of this collection use [`set_network_routes`](Self::set_network_routes).
+        ///
+        /// <p>The network routes.</p>
+        pub fn network_routes(mut self, input: impl Into<crate::model::NetworkRoute>) -> Self {
+            let mut v = self.network_routes.unwrap_or_default();
+            v.push(input.into());
+            self.network_routes = Some(v);
+            self
+        }
+        /// <p>The network routes.</p>
+        pub fn set_network_routes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkRoute>>,
+        ) -> Self {
+            self.network_routes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkRoutesOutput`](crate::output::GetNetworkRoutesOutput)
+        pub fn build(self) -> crate::output::GetNetworkRoutesOutput {
+            crate::output::GetNetworkRoutesOutput {
+                route_table_arn: self.route_table_arn,
+                route_table_type: self.route_table_type,
+                route_table_timestamp: self.route_table_timestamp,
+                network_routes: self.network_routes,
+            }
+        }
+    }
+}
+impl GetNetworkRoutesOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkRoutesOutput`](crate::output::GetNetworkRoutesOutput)
+    pub fn builder() -> crate::output::get_network_routes_output::Builder {
+        crate::output::get_network_routes_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkResourcesOutput {
+    /// <p>The network resources.</p>
+    pub network_resources: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetNetworkResourcesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkResourcesOutput");
+        formatter.field("network_resources", &self.network_resources);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetNetworkResourcesOutput`](crate::output::GetNetworkResourcesOutput)
+pub mod get_network_resources_output {
+    /// A builder for [`GetNetworkResourcesOutput`](crate::output::GetNetworkResourcesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_resources:
+            std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `network_resources`.
+        ///
+        /// To override the contents of this collection use [`set_network_resources`](Self::set_network_resources).
+        ///
+        /// <p>The network resources.</p>
+        pub fn network_resources(
+            mut self,
+            input: impl Into<crate::model::NetworkResource>,
+        ) -> Self {
+            let mut v = self.network_resources.unwrap_or_default();
+            v.push(input.into());
+            self.network_resources = Some(v);
+            self
+        }
+        /// <p>The network resources.</p>
+        pub fn set_network_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
+        ) -> Self {
+            self.network_resources = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkResourcesOutput`](crate::output::GetNetworkResourcesOutput)
+        pub fn build(self) -> crate::output::GetNetworkResourcesOutput {
+            crate::output::GetNetworkResourcesOutput {
+                network_resources: self.network_resources,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetNetworkResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourcesOutput`](crate::output::GetNetworkResourcesOutput)
+    pub fn builder() -> crate::output::get_network_resources_output::Builder {
+        crate::output::get_network_resources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkResourceRelationshipsOutput {
+    /// <p>The resource relationships.</p>
+    pub relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetNetworkResourceRelationshipsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkResourceRelationshipsOutput");
+        formatter.field("relationships", &self.relationships);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetNetworkResourceRelationshipsOutput`](crate::output::GetNetworkResourceRelationshipsOutput)
+pub mod get_network_resource_relationships_output {
+    /// A builder for [`GetNetworkResourceRelationshipsOutput`](crate::output::GetNetworkResourceRelationshipsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `relationships`.
+        ///
+        /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
+        ///
+        /// <p>The resource relationships.</p>
+        pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
+            let mut v = self.relationships.unwrap_or_default();
+            v.push(input.into());
+            self.relationships = Some(v);
+            self
+        }
+        /// <p>The resource relationships.</p>
+        pub fn set_relationships(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
+        ) -> Self {
+            self.relationships = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkResourceRelationshipsOutput`](crate::output::GetNetworkResourceRelationshipsOutput)
+        pub fn build(self) -> crate::output::GetNetworkResourceRelationshipsOutput {
+            crate::output::GetNetworkResourceRelationshipsOutput {
+                relationships: self.relationships,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetNetworkResourceRelationshipsOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceRelationshipsOutput`](crate::output::GetNetworkResourceRelationshipsOutput)
+    pub fn builder() -> crate::output::get_network_resource_relationships_output::Builder {
+        crate::output::get_network_resource_relationships_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkResourceCountsOutput {
+    /// <p>The count of resources.</p>
+    pub network_resource_counts:
+        std::option::Option<std::vec::Vec<crate::model::NetworkResourceCount>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetNetworkResourceCountsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkResourceCountsOutput");
+        formatter.field("network_resource_counts", &self.network_resource_counts);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetNetworkResourceCountsOutput`](crate::output::GetNetworkResourceCountsOutput)
+pub mod get_network_resource_counts_output {
+    /// A builder for [`GetNetworkResourceCountsOutput`](crate::output::GetNetworkResourceCountsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) network_resource_counts:
+            std::option::Option<std::vec::Vec<crate::model::NetworkResourceCount>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `network_resource_counts`.
+        ///
+        /// To override the contents of this collection use [`set_network_resource_counts`](Self::set_network_resource_counts).
+        ///
+        /// <p>The count of resources.</p>
+        pub fn network_resource_counts(
+            mut self,
+            input: impl Into<crate::model::NetworkResourceCount>,
+        ) -> Self {
+            let mut v = self.network_resource_counts.unwrap_or_default();
+            v.push(input.into());
+            self.network_resource_counts = Some(v);
+            self
+        }
+        /// <p>The count of resources.</p>
+        pub fn set_network_resource_counts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkResourceCount>>,
+        ) -> Self {
+            self.network_resource_counts = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkResourceCountsOutput`](crate::output::GetNetworkResourceCountsOutput)
+        pub fn build(self) -> crate::output::GetNetworkResourceCountsOutput {
+            crate::output::GetNetworkResourceCountsOutput {
+                network_resource_counts: self.network_resource_counts,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetNetworkResourceCountsOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceCountsOutput`](crate::output::GetNetworkResourceCountsOutput)
+    pub fn builder() -> crate::output::get_network_resource_counts_output::Builder {
+        crate::output::get_network_resource_counts_output::Builder::default()
     }
 }
 

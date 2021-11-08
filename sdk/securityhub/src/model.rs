@@ -4451,6 +4451,57 @@ impl Invitation {
     }
 }
 
+/// <p>A finding aggregator. A finding aggregator contains the configuration for finding aggregation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FindingAggregator {
+    /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
+    pub finding_aggregator_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for FindingAggregator {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FindingAggregator");
+        formatter.field("finding_aggregator_arn", &self.finding_aggregator_arn);
+        formatter.finish()
+    }
+}
+/// See [`FindingAggregator`](crate::model::FindingAggregator)
+pub mod finding_aggregator {
+    /// A builder for [`FindingAggregator`](crate::model::FindingAggregator)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
+        pub fn finding_aggregator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_aggregator_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
+        pub fn set_finding_aggregator_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.finding_aggregator_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FindingAggregator`](crate::model::FindingAggregator)
+        pub fn build(self) -> crate::model::FindingAggregator {
+            crate::model::FindingAggregator {
+                finding_aggregator_arn: self.finding_aggregator_arn,
+            }
+        }
+    }
+}
+impl FindingAggregator {
+    /// Creates a new builder-style object to manufacture [`FindingAggregator`](crate::model::FindingAggregator)
+    pub fn builder() -> crate::model::finding_aggregator::Builder {
+        crate::model::finding_aggregator::Builder::default()
+    }
+}
+
 /// <p>Details about the account that was not processed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

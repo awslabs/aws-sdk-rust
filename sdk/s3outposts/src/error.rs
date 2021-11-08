@@ -22,7 +22,7 @@ pub enum CreateEndpointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEndpointError {
@@ -89,32 +89,32 @@ impl CreateEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateEndpointErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateEndpointErrorKind::ValidationException(_))
     }
@@ -153,7 +153,7 @@ pub enum DeleteEndpointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointError {
@@ -219,28 +219,28 @@ impl DeleteEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteEndpointErrorKind::ValidationException(_))
     }
@@ -278,7 +278,7 @@ pub enum ListEndpointsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There was an exception validating this data.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEndpointsError {
@@ -344,25 +344,25 @@ impl ListEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEndpointsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEndpointsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListEndpointsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListEndpointsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListEndpointsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEndpointsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListEndpointsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListEndpointsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEndpointsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListEndpointsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEndpointsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListEndpointsErrorKind::ValidationException(_))
     }

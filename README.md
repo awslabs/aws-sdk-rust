@@ -1,4 +1,4 @@
-# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.22--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.53-red)
+# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.0.23--alpha-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.53-red)
 
 This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1)
 
@@ -11,15 +11,15 @@ The SDK is code generated from [Smithy models](https://awslabs.github.io/smithy/
 > Examples are availble for many services and operations, check out the [examples folder](https://github.com/awslabs/aws-sdk-rust/tree/main/sdk/examples).
 
 
-The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio) as a dependency within your Rust project to execute asynchronous code. We will not push the SDK to **crates.io** during Alpha; you must use it via a Git dependency.
+The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio) as a dependency within your Rust project to execute asynchronous code.
 
 1. Create a new Rust project: `cargo new sdk-example`
 2. Add dependencies to DynamoDB and Tokio to your **Cargo.toml** file:
 
     ```toml
     [dependencies]
-    aws-config = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.22-alpha", package = "aws-config" }
-    aws-sdk-dynamodb = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.22-alpha", package = "aws-sdk-dynamodb" }
+    aws-config = "0.0.23-alpha"
+    aws-sdk-dynamodb = "0.0.23-alpha"
     tokio = { version = "1", features = ["full"] }
     ```
 
@@ -27,8 +27,9 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
    - Environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`
    - Web Identity Token credentials from the environment or container (including EKS)
    - The default credentials files located in `~/.aws/config` and `~/.aws/credentials` (location can vary per platform)
+   - ECS Container Credentials (IAM roles for tasks)
    - EC2 Instance Metadata Service (IAM Roles attached to instance)
-**Note:** SSO, and ECS credential sources are not supported yet.
+**Note:** SSO is not supported yet.
 
 4. Make a request using DynamoDB
 

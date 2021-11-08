@@ -883,7 +883,7 @@ impl ListTranscriptionJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+    /// <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Lists all tags associated with the given transcription job, vocabulary, or resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -906,12 +906,12 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+        /// <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+        /// <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self

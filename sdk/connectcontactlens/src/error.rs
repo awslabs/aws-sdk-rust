@@ -22,7 +22,7 @@ pub enum ListRealtimeContactAnalysisSegmentsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRealtimeContactAnalysisSegmentsError {
@@ -102,35 +102,35 @@ impl ListRealtimeContactAnalysisSegmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRealtimeContactAnalysisSegmentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRealtimeContactAnalysisSegmentsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRealtimeContactAnalysisSegmentsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRealtimeContactAnalysisSegmentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListRealtimeContactAnalysisSegmentsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,

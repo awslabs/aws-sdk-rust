@@ -66,7 +66,7 @@ pub type BatchMeterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl BatchMeterUsageInput {
     /// Consumes the builder and constructs an Operation<[`BatchMeterUsage`](crate::operation::BatchMeterUsage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -98,6 +98,7 @@ impl BatchMeterUsageInput {
             input: &crate::input::BatchMeterUsageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -160,9 +161,10 @@ impl BatchMeterUsageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -320,7 +322,7 @@ pub type MeterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl MeterUsageInput {
     /// Consumes the builder and constructs an Operation<[`MeterUsage`](crate::operation::MeterUsage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -352,6 +354,7 @@ impl MeterUsageInput {
             input: &crate::input::MeterUsageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -413,9 +416,10 @@ impl MeterUsageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -500,7 +504,7 @@ pub type RegisterUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl RegisterUsageInput {
     /// Consumes the builder and constructs an Operation<[`RegisterUsage`](crate::operation::RegisterUsage)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -532,6 +536,7 @@ impl RegisterUsageInput {
             input: &crate::input::RegisterUsageInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -593,9 +598,10 @@ impl RegisterUsageInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -657,7 +663,7 @@ pub type ResolveCustomerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl ResolveCustomerInput {
     /// Consumes the builder and constructs an Operation<[`ResolveCustomer`](crate::operation::ResolveCustomer)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -689,6 +695,7 @@ impl ResolveCustomerInput {
             input: &crate::input::ResolveCustomerInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -751,9 +758,10 @@ impl ResolveCustomerInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

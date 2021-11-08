@@ -25,7 +25,7 @@ pub enum ActivateAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ActivateAnomalyDetectorError {
@@ -93,42 +93,42 @@ impl ActivateAnomalyDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ActivateAnomalyDetectorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ActivateAnomalyDetectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateAnomalyDetectorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateAnomalyDetectorErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ActivateAnomalyDetectorErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateAnomalyDetectorErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateAnomalyDetectorErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ActivateAnomalyDetectorErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateAnomalyDetectorErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateAnomalyDetectorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ActivateAnomalyDetectorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateAnomalyDetectorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateAnomalyDetectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ActivateAnomalyDetectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateAnomalyDetectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateAnomalyDetectorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ActivateAnomalyDetectorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -174,7 +174,7 @@ pub enum BackTestAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BackTestAnomalyDetectorError {
@@ -241,35 +241,35 @@ impl BackTestAnomalyDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BackTestAnomalyDetectorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BackTestAnomalyDetectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BackTestAnomalyDetectorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BackTestAnomalyDetectorErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BackTestAnomalyDetectorErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BackTestAnomalyDetectorErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BackTestAnomalyDetectorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BackTestAnomalyDetectorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BackTestAnomalyDetectorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BackTestAnomalyDetectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `BackTestAnomalyDetectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             BackTestAnomalyDetectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `BackTestAnomalyDetectorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BackTestAnomalyDetectorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -318,7 +318,7 @@ pub enum CreateAlertErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAlertError {
@@ -387,40 +387,40 @@ impl CreateAlertError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAlertErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAlertErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateAlertErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateAlertErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAlertErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateAlertErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateAlertErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateAlertErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateAlertErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateAlertErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAlertErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateAlertErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateAlertErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAlertErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAlertErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAlertErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateAlertErrorKind::ValidationException(_))
     }
@@ -466,7 +466,7 @@ pub enum CreateAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAnomalyDetectorError {
@@ -534,42 +534,42 @@ impl CreateAnomalyDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAnomalyDetectorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAnomalyDetectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnomalyDetectorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnomalyDetectorErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAnomalyDetectorErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnomalyDetectorErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnomalyDetectorErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateAnomalyDetectorErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnomalyDetectorErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnomalyDetectorErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateAnomalyDetectorErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnomalyDetectorErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnomalyDetectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateAnomalyDetectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAnomalyDetectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAnomalyDetectorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAnomalyDetectorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -619,7 +619,7 @@ pub enum CreateMetricSetErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMetricSetError {
@@ -688,46 +688,46 @@ impl CreateMetricSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMetricSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateMetricSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMetricSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMetricSetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateMetricSetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateMetricSetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateMetricSetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateMetricSetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMetricSetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMetricSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateMetricSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMetricSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMetricSetErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateMetricSetErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMetricSetErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMetricSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateMetricSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMetricSetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMetricSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateMetricSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateMetricSetErrorKind::ValidationException(_))
     }
@@ -771,7 +771,7 @@ pub enum DeleteAlertErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAlertError {
@@ -838,29 +838,29 @@ impl DeleteAlertError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAlertErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAlertErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteAlertErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteAlertErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteAlertErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteAlertErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteAlertErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAlertErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlertErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlertErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAlertErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlertErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlertErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAlertErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteAlertErrorKind::ValidationException(_))
     }
@@ -904,7 +904,7 @@ pub enum DeleteAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAnomalyDetectorError {
@@ -972,42 +972,42 @@ impl DeleteAnomalyDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyDetectorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyDetectorErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyDetectorErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyDetectorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnomalyDetectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnomalyDetectorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAnomalyDetectorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1053,7 +1053,7 @@ pub enum DescribeAlertErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAlertError {
@@ -1120,32 +1120,32 @@ impl DescribeAlertError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAlertErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAlertErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribeAlertErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribeAlertErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeAlertErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlertErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlertErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAlertErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlertErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlertErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeAlertErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAlertErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAlertErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeAlertErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeAlertErrorKind::ValidationException(_))
     }
@@ -1187,7 +1187,7 @@ pub enum DescribeAnomalyDetectionExecutionsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAnomalyDetectionExecutionsError {
@@ -1267,35 +1267,35 @@ impl DescribeAnomalyDetectionExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectionExecutionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectionExecutionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectionExecutionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectionExecutionsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectionExecutionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1350,7 +1350,7 @@ pub enum DescribeAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAnomalyDetectorError {
@@ -1417,35 +1417,35 @@ impl DescribeAnomalyDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectorErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectorErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnomalyDetectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnomalyDetectorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeAnomalyDetectorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1490,7 +1490,7 @@ pub enum DescribeMetricSetErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMetricSetError {
@@ -1557,35 +1557,35 @@ impl DescribeMetricSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMetricSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeMetricSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMetricSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMetricSetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeMetricSetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMetricSetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMetricSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMetricSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMetricSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMetricSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeMetricSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMetricSetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMetricSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeMetricSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1630,7 +1630,7 @@ pub enum GetAnomalyGroupErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAnomalyGroupError {
@@ -1697,35 +1697,35 @@ impl GetAnomalyGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAnomalyGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAnomalyGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomalyGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomalyGroupErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetAnomalyGroupErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomalyGroupErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomalyGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAnomalyGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomalyGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomalyGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAnomalyGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAnomalyGroupErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `GetAnomalyGroupErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAnomalyGroupErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetAnomalyGroupErrorKind::ValidationException(_))
     }
@@ -1767,7 +1767,7 @@ pub enum GetFeedbackErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFeedbackError {
@@ -1834,29 +1834,29 @@ impl GetFeedbackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFeedbackErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFeedbackErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetFeedbackErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetFeedbackErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetFeedbackErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetFeedbackErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetFeedbackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFeedbackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFeedbackErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFeedbackErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetFeedbackErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFeedbackErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `GetFeedbackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetFeedbackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetFeedbackErrorKind::ValidationException(_))
     }
@@ -1898,7 +1898,7 @@ pub enum GetSampleDataErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSampleDataError {
@@ -1965,32 +1965,32 @@ impl GetSampleDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSampleDataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSampleDataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetSampleDataErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetSampleDataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetSampleDataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSampleDataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetSampleDataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSampleDataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSampleDataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSampleDataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSampleDataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSampleDataErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `GetSampleDataErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSampleDataErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetSampleDataErrorKind::ValidationException(_))
     }
@@ -2032,7 +2032,7 @@ pub enum ListAlertsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAlertsError {
@@ -2099,26 +2099,26 @@ impl ListAlertsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAlertsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAlertsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListAlertsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListAlertsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAlertsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListAlertsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListAlertsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAlertsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAlertsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAlertsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAlertsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListAlertsErrorKind::TooManyRequestsException(_))
     }
-    /// Returns true if the error kind is `ListAlertsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAlertsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListAlertsErrorKind::ValidationException(_))
     }
@@ -2160,7 +2160,7 @@ pub enum ListAnomalyDetectorsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAnomalyDetectorsError {
@@ -2227,35 +2227,35 @@ impl ListAnomalyDetectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAnomalyDetectorsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAnomalyDetectorsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyDetectorsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyDetectorsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAnomalyDetectorsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyDetectorsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyDetectorsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAnomalyDetectorsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyDetectorsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyDetectorsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAnomalyDetectorsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyDetectorsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyDetectorsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAnomalyDetectorsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2300,7 +2300,7 @@ pub enum ListAnomalyGroupSummariesErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAnomalyGroupSummariesError {
@@ -2367,35 +2367,35 @@ impl ListAnomalyGroupSummariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAnomalyGroupSummariesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupSummariesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyGroupSummariesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyGroupSummariesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupSummariesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyGroupSummariesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyGroupSummariesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupSummariesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyGroupSummariesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyGroupSummariesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupSummariesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyGroupSummariesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyGroupSummariesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupSummariesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2440,7 +2440,7 @@ pub enum ListAnomalyGroupTimeSeriesErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAnomalyGroupTimeSeriesError {
@@ -2507,35 +2507,35 @@ impl ListAnomalyGroupTimeSeriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyGroupTimeSeriesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyGroupTimeSeriesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyGroupTimeSeriesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAnomalyGroupTimeSeriesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAnomalyGroupTimeSeriesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2580,7 +2580,7 @@ pub enum ListMetricSetsErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMetricSetsError {
@@ -2647,35 +2647,35 @@ impl ListMetricSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMetricSetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListMetricSetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMetricSetsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListMetricSetsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListMetricSetsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMetricSetsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListMetricSetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListMetricSetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMetricSetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMetricSetsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListMetricSetsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMetricSetsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListMetricSetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListMetricSetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListMetricSetsErrorKind::ValidationException(_))
     }
@@ -2713,7 +2713,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2778,21 +2778,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2835,7 +2835,7 @@ pub enum PutFeedbackErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFeedbackError {
@@ -2902,29 +2902,29 @@ impl PutFeedbackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutFeedbackErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutFeedbackErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutFeedbackErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PutFeedbackErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutFeedbackErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, PutFeedbackErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `PutFeedbackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutFeedbackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFeedbackErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutFeedbackErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutFeedbackErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFeedbackErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `PutFeedbackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutFeedbackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutFeedbackErrorKind::ValidationException(_))
     }
@@ -2962,7 +2962,7 @@ pub enum TagResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3027,18 +3027,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -3074,7 +3074,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3139,21 +3139,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -3193,7 +3193,7 @@ pub enum UpdateAnomalyDetectorErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAnomalyDetectorError {
@@ -3260,35 +3260,35 @@ impl UpdateAnomalyDetectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAnomalyDetectorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAnomalyDetectorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnomalyDetectorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnomalyDetectorErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateAnomalyDetectorErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnomalyDetectorErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnomalyDetectorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAnomalyDetectorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnomalyDetectorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnomalyDetectorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateAnomalyDetectorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAnomalyDetectorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAnomalyDetectorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateAnomalyDetectorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3333,7 +3333,7 @@ pub enum UpdateMetricSetErrorKind {
     /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
     /// again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMetricSetError {
@@ -3400,35 +3400,35 @@ impl UpdateMetricSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMetricSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateMetricSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMetricSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMetricSetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateMetricSetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMetricSetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMetricSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMetricSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMetricSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMetricSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateMetricSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMetricSetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMetricSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateMetricSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateMetricSetErrorKind::ValidationException(_))
     }

@@ -14,7 +14,7 @@ pub struct GenerateDataSetError {
 pub enum GenerateDataSetErrorKind {
     /// This exception is thrown when an internal service error occurs.
     MarketplaceCommerceAnalyticsException(crate::error::MarketplaceCommerceAnalyticsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataSetError {
@@ -79,7 +79,7 @@ impl GenerateDataSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateDataSetErrorKind::MarketplaceCommerceAnalyticsException`.
+    /// Returns `true` if the error kind is `GenerateDataSetErrorKind::MarketplaceCommerceAnalyticsException`.
     pub fn is_marketplace_commerce_analytics_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -111,7 +111,7 @@ pub struct StartSupportDataExportError {
 pub enum StartSupportDataExportErrorKind {
     /// This exception is thrown when an internal service error occurs.
     MarketplaceCommerceAnalyticsException(crate::error::MarketplaceCommerceAnalyticsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSupportDataExportError {
@@ -176,7 +176,7 @@ impl StartSupportDataExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSupportDataExportErrorKind::MarketplaceCommerceAnalyticsException`.
+    /// Returns `true` if the error kind is `StartSupportDataExportErrorKind::MarketplaceCommerceAnalyticsException`.
     pub fn is_marketplace_commerce_analytics_exception(&self) -> bool {
         matches!(
             &self.kind,

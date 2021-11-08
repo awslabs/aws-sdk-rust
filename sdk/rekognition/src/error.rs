@@ -32,7 +32,7 @@ pub enum CompareFacesErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CompareFacesError {
@@ -102,47 +102,47 @@ impl CompareFacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CompareFacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CompareFacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CompareFacesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CompareFacesErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `CompareFacesErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(&self.kind, CompareFacesErrorKind::ImageTooLargeException(_))
     }
-    /// Returns true if the error kind is `CompareFacesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CompareFacesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CompareFacesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CompareFacesErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `CompareFacesErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompareFacesErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `CompareFacesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CompareFacesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompareFacesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CompareFacesErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `CompareFacesErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompareFacesErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `CompareFacesErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `CompareFacesErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompareFacesErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CompareFacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CompareFacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CompareFacesErrorKind::ThrottlingException(_))
     }
@@ -196,7 +196,7 @@ pub enum CreateCollectionErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCollectionError {
@@ -267,49 +267,49 @@ impl CreateCollectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCollectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateCollectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCollectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCollectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateCollectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateCollectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateCollectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateCollectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCollectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCollectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `CreateCollectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCollectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCollectionErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateCollectionErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCollectionErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCollectionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateCollectionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCollectionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCollectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateCollectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -330,6 +330,184 @@ impl std::error::Error for CreateCollectionError {
             CreateCollectionErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateDatasetError {
+    /// Kind of error that occurred.
+    pub kind: CreateDatasetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateDatasetErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
+    /// operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
+    InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
+    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
+    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
+    /// limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>A resource with the specified ID already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateDatasetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateDatasetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::InvalidS3ObjectException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateDatasetError {
+    fn code(&self) -> Option<&str> {
+        CreateDatasetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateDatasetError {
+    /// Creates a new `CreateDatasetError`.
+    pub fn new(kind: CreateDatasetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateDatasetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateDatasetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateDatasetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateDatasetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, CreateDatasetErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, CreateDatasetErrorKind::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::InvalidS3ObjectException`.
+    pub fn is_invalid_s3_object_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::InvalidS3ObjectException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatasetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, CreateDatasetErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for CreateDatasetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateDatasetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateDatasetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::InvalidS3ObjectException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -365,7 +543,7 @@ pub enum CreateProjectErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -434,43 +612,43 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ThrottlingException(_))
     }
@@ -529,7 +707,7 @@ pub enum CreateProjectVersionErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectVersionError {
@@ -602,63 +780,63 @@ impl CreateProjectVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectVersionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectVersionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectVersionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectVersionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectVersionErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateProjectVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -722,7 +900,7 @@ pub enum CreateStreamProcessorErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStreamProcessorError {
@@ -794,56 +972,56 @@ impl CreateStreamProcessorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStreamProcessorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateStreamProcessorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamProcessorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamProcessorErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateStreamProcessorErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamProcessorErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamProcessorErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateStreamProcessorErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamProcessorErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamProcessorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamProcessorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamProcessorErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamProcessorErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamProcessorErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateStreamProcessorErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamProcessorErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamProcessorErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateStreamProcessorErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStreamProcessorErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStreamProcessorErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateStreamProcessorErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -896,7 +1074,7 @@ pub enum DeleteCollectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCollectionError {
@@ -966,42 +1144,42 @@ impl DeleteCollectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCollectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteCollectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCollectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCollectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteCollectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCollectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCollectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteCollectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCollectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCollectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DeleteCollectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCollectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCollectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCollectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCollectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCollectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteCollectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1021,6 +1199,173 @@ impl std::error::Error for DeleteCollectionError {
             DeleteCollectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteDatasetError {
+    /// Kind of error that occurred.
+    pub kind: DeleteDatasetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteDatasetErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
+    /// operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
+    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
+    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
+    /// limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The specified resource is already being used.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteDatasetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteDatasetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteDatasetError {
+    fn code(&self) -> Option<&str> {
+        DeleteDatasetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteDatasetError {
+    /// Creates a new `DeleteDatasetError`.
+    pub fn new(kind: DeleteDatasetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteDatasetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteDatasetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteDatasetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteDatasetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDatasetErrorKind::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteDatasetErrorKind::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatasetErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatasetErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatasetErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatasetErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatasetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDatasetErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for DeleteDatasetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteDatasetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::InternalServerError(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1052,7 +1397,7 @@ pub enum DeleteFacesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFacesError {
@@ -1120,36 +1465,36 @@ impl DeleteFacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteFacesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteFacesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteFacesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteFacesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteFacesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteFacesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFacesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFacesErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DeleteFacesErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFacesErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFacesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFacesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFacesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteFacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteFacesErrorKind::ThrottlingException(_))
     }
@@ -1197,7 +1542,7 @@ pub enum DeleteProjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -1266,43 +1611,43 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ThrottlingException(_))
     }
@@ -1351,7 +1696,7 @@ pub enum DeleteProjectVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectVersionError {
@@ -1422,49 +1767,49 @@ impl DeleteProjectVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteProjectVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectVersionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteProjectVersionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectVersionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectVersionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteProjectVersionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectVersionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectVersionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DeleteProjectVersionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectVersionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteProjectVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectVersionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProjectVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProjectVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1518,7 +1863,7 @@ pub enum DeleteStreamProcessorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStreamProcessorError {
@@ -1589,49 +1934,49 @@ impl DeleteStreamProcessorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStreamProcessorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteStreamProcessorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamProcessorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamProcessorErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteStreamProcessorErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamProcessorErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamProcessorErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteStreamProcessorErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamProcessorErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DeleteStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamProcessorErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamProcessorErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteStreamProcessorErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamProcessorErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamProcessorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStreamProcessorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStreamProcessorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStreamProcessorErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteStreamProcessorErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1683,7 +2028,7 @@ pub enum DescribeCollectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCollectionError {
@@ -1753,42 +2098,42 @@ impl DescribeCollectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCollectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeCollectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCollectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCollectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeCollectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCollectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCollectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeCollectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCollectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCollectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DescribeCollectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCollectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCollectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCollectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCollectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCollectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeCollectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1808,6 +2153,156 @@ impl std::error::Error for DescribeCollectionError {
             DescribeCollectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeDatasetError {
+    /// Kind of error that occurred.
+    pub kind: DescribeDatasetErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeDataset` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeDatasetErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
+    /// operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
+    /// limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeDatasetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeDatasetErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeDatasetErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DescribeDatasetErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeDatasetErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeDatasetErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeDatasetErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeDatasetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeDatasetError {
+    fn code(&self) -> Option<&str> {
+        DescribeDatasetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeDatasetError {
+    /// Creates a new `DescribeDatasetError`.
+    pub fn new(kind: DescribeDatasetErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeDatasetError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeDatasetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeDatasetError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeDatasetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDatasetErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeDatasetErrorKind::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDatasetErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDatasetErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDatasetErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, DescribeDatasetErrorKind::ThrottlingException(_))
+    }
+}
+impl std::error::Error for DescribeDatasetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeDatasetErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeDatasetErrorKind::InternalServerError(_inner) => Some(_inner),
+            DescribeDatasetErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeDatasetErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            DescribeDatasetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeDatasetErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeDatasetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1839,7 +2334,7 @@ pub enum DescribeProjectsErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectsError {
@@ -1909,42 +2404,42 @@ impl DescribeProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProjectsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeProjectsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeProjectsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `DescribeProjectsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeProjectsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DescribeProjectsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeProjectsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1997,7 +2492,7 @@ pub enum DescribeProjectVersionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectVersionsError {
@@ -2070,49 +2565,49 @@ impl DescribeProjectVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProjectVersionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeProjectVersionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectVersionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectVersionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeProjectVersionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectVersionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectVersionsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `DescribeProjectVersionsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectVersionsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectVersionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeProjectVersionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectVersionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectVersionsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DescribeProjectVersionsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectVersionsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProjectVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectVersionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeProjectVersionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2166,7 +2661,7 @@ pub enum DescribeStreamProcessorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStreamProcessorError {
@@ -2236,42 +2731,42 @@ impl DescribeStreamProcessorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStreamProcessorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeStreamProcessorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamProcessorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamProcessorErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeStreamProcessorErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamProcessorErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamProcessorErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeStreamProcessorErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamProcessorErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DescribeStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamProcessorErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamProcessorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStreamProcessorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStreamProcessorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStreamProcessorErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeStreamProcessorErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2338,7 +2833,7 @@ pub enum DetectCustomLabelsErrorKind {
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectCustomLabelsError {
@@ -2413,77 +2908,77 @@ impl DetectCustomLabelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::ImageTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::ResourceNotReadyException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::ResourceNotReadyException`.
     pub fn is_resource_not_ready_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectCustomLabelsErrorKind::ResourceNotReadyException(_)
         )
     }
-    /// Returns true if the error kind is `DetectCustomLabelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DetectCustomLabelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2545,7 +3040,7 @@ pub enum DetectFacesErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectFacesError {
@@ -2615,47 +3110,47 @@ impl DetectFacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectFacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetectFacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DetectFacesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DetectFacesErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `DetectFacesErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(&self.kind, DetectFacesErrorKind::ImageTooLargeException(_))
     }
-    /// Returns true if the error kind is `DetectFacesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DetectFacesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DetectFacesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DetectFacesErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `DetectFacesErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectFacesErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `DetectFacesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DetectFacesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectFacesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DetectFacesErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `DetectFacesErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectFacesErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `DetectFacesErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DetectFacesErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectFacesErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectFacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DetectFacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DetectFacesErrorKind::ThrottlingException(_))
     }
@@ -2709,7 +3204,7 @@ pub enum DetectLabelsErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectLabelsError {
@@ -2779,47 +3274,47 @@ impl DetectLabelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectLabelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetectLabelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DetectLabelsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DetectLabelsErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `DetectLabelsErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(&self.kind, DetectLabelsErrorKind::ImageTooLargeException(_))
     }
-    /// Returns true if the error kind is `DetectLabelsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DetectLabelsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DetectLabelsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DetectLabelsErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `DetectLabelsErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectLabelsErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `DetectLabelsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DetectLabelsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectLabelsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DetectLabelsErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `DetectLabelsErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectLabelsErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `DetectLabelsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DetectLabelsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectLabelsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectLabelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DetectLabelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DetectLabelsErrorKind::ThrottlingException(_))
     }
@@ -2875,7 +3370,7 @@ pub enum DetectModerationLabelsErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectModerationLabelsError {
@@ -2950,63 +3445,63 @@ impl DetectModerationLabelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectModerationLabelsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::HumanLoopQuotaExceededException`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::HumanLoopQuotaExceededException`.
     pub fn is_human_loop_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectModerationLabelsErrorKind::HumanLoopQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectModerationLabelsErrorKind::ImageTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DetectModerationLabelsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectModerationLabelsErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectModerationLabelsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectModerationLabelsErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectModerationLabelsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectModerationLabelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DetectModerationLabelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3068,7 +3563,7 @@ pub enum DetectProtectiveEquipmentErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectProtectiveEquipmentError {
@@ -3142,56 +3637,56 @@ impl DetectProtectiveEquipmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectProtectiveEquipmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetectProtectiveEquipmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectProtectiveEquipmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetectProtectiveEquipmentErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `DetectProtectiveEquipmentErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectProtectiveEquipmentErrorKind::ImageTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DetectProtectiveEquipmentErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DetectProtectiveEquipmentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DetectProtectiveEquipmentErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DetectProtectiveEquipmentErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `DetectProtectiveEquipmentErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectProtectiveEquipmentErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `DetectProtectiveEquipmentErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DetectProtectiveEquipmentErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectProtectiveEquipmentErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DetectProtectiveEquipmentErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `DetectProtectiveEquipmentErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectProtectiveEquipmentErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `DetectProtectiveEquipmentErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DetectProtectiveEquipmentErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectProtectiveEquipmentErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectProtectiveEquipmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DetectProtectiveEquipmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3250,7 +3745,7 @@ pub enum DetectTextErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectTextError {
@@ -3320,44 +3815,44 @@ impl DetectTextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetectTextErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetectTextErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DetectTextErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DetectTextErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `DetectTextErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(&self.kind, DetectTextErrorKind::ImageTooLargeException(_))
     }
-    /// Returns true if the error kind is `DetectTextErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DetectTextErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DetectTextErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DetectTextErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `DetectTextErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectTextErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `DetectTextErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DetectTextErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectTextErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DetectTextErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `DetectTextErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(&self.kind, DetectTextErrorKind::InvalidS3ObjectException(_))
     }
-    /// Returns true if the error kind is `DetectTextErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `DetectTextErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetectTextErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetectTextErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DetectTextErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DetectTextErrorKind::ThrottlingException(_))
     }
@@ -3374,6 +3869,175 @@ impl std::error::Error for DetectTextError {
             DetectTextErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             DetectTextErrorKind::ThrottlingException(_inner) => Some(_inner),
             DetectTextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DistributeDatasetEntries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DistributeDatasetEntriesError {
+    /// Kind of error that occurred.
+    pub kind: DistributeDatasetEntriesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DistributeDatasetEntries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DistributeDatasetEntriesErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
+    /// operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
+    /// limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The requested resource isn't ready. For example,  
+    /// this exception occurs when you call <code>DetectCustomLabels</code> with a
+    /// model version that isn't deployed. </p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DistributeDatasetEntriesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DistributeDatasetEntriesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DistributeDatasetEntriesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DistributeDatasetEntriesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DistributeDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            DistributeDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DistributeDatasetEntriesErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            DistributeDatasetEntriesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DistributeDatasetEntriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DistributeDatasetEntriesError {
+    fn code(&self) -> Option<&str> {
+        DistributeDatasetEntriesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DistributeDatasetEntriesError {
+    /// Creates a new `DistributeDatasetEntriesError`.
+    pub fn new(kind: DistributeDatasetEntriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DistributeDatasetEntriesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DistributeDatasetEntriesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DistributeDatasetEntriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DistributeDatasetEntriesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DistributeDatasetEntriesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DistributeDatasetEntriesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DistributeDatasetEntriesErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DistributeDatasetEntriesErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DistributeDatasetEntriesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DistributeDatasetEntriesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DistributeDatasetEntriesErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DistributeDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DistributeDatasetEntriesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DistributeDatasetEntriesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DistributeDatasetEntriesErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DistributeDatasetEntriesErrorKind::ResourceNotReadyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DistributeDatasetEntriesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DistributeDatasetEntriesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DistributeDatasetEntriesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DistributeDatasetEntriesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DistributeDatasetEntriesErrorKind::InternalServerError(_inner) => Some(_inner),
+            DistributeDatasetEntriesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DistributeDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            DistributeDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DistributeDatasetEntriesErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
+            DistributeDatasetEntriesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DistributeDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3405,7 +4069,7 @@ pub enum GetCelebrityInfoErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCelebrityInfoError {
@@ -3475,42 +4139,42 @@ impl GetCelebrityInfoError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCelebrityInfoErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCelebrityInfoErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityInfoErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityInfoErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetCelebrityInfoErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityInfoErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityInfoErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetCelebrityInfoErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityInfoErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityInfoErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetCelebrityInfoErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityInfoErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityInfoErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCelebrityInfoErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityInfoErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityInfoErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetCelebrityInfoErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3563,7 +4227,7 @@ pub enum GetCelebrityRecognitionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCelebrityRecognitionError {
@@ -3636,49 +4300,49 @@ impl GetCelebrityRecognitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCelebrityRecognitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCelebrityRecognitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityRecognitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityRecognitionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetCelebrityRecognitionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityRecognitionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityRecognitionErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `GetCelebrityRecognitionErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityRecognitionErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityRecognitionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetCelebrityRecognitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityRecognitionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityRecognitionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetCelebrityRecognitionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityRecognitionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityRecognitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetCelebrityRecognitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCelebrityRecognitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCelebrityRecognitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetCelebrityRecognitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3734,7 +4398,7 @@ pub enum GetContentModerationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContentModerationError {
@@ -3805,49 +4469,49 @@ impl GetContentModerationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContentModerationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContentModerationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContentModerationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContentModerationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetContentModerationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetContentModerationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetContentModerationErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `GetContentModerationErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContentModerationErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetContentModerationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetContentModerationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContentModerationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetContentModerationErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetContentModerationErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContentModerationErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetContentModerationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetContentModerationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContentModerationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContentModerationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetContentModerationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3901,7 +4565,7 @@ pub enum GetFaceDetectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFaceDetectionError {
@@ -3972,49 +4636,49 @@ impl GetFaceDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFaceDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFaceDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetFaceDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceDetectionErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `GetFaceDetectionErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceDetectionErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetFaceDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetFaceDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceDetectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFaceDetectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceDetectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetFaceDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4068,7 +4732,7 @@ pub enum GetFaceSearchErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFaceSearchError {
@@ -4137,43 +4801,43 @@ impl GetFaceSearchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFaceSearchErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFaceSearchErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetFaceSearchErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetFaceSearchErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetFaceSearchErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetFaceSearchErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetFaceSearchErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `GetFaceSearchErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceSearchErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceSearchErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetFaceSearchErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceSearchErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceSearchErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetFaceSearchErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceSearchErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceSearchErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFaceSearchErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFaceSearchErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFaceSearchErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetFaceSearchErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetFaceSearchErrorKind::ThrottlingException(_))
     }
@@ -4222,7 +4886,7 @@ pub enum GetLabelDetectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLabelDetectionError {
@@ -4293,49 +4957,49 @@ impl GetLabelDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLabelDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLabelDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLabelDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLabelDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetLabelDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetLabelDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetLabelDetectionErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `GetLabelDetectionErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLabelDetectionErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetLabelDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetLabelDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLabelDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetLabelDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetLabelDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLabelDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLabelDetectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLabelDetectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLabelDetectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLabelDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLabelDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4389,7 +5053,7 @@ pub enum GetPersonTrackingErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPersonTrackingError {
@@ -4460,49 +5124,49 @@ impl GetPersonTrackingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPersonTrackingErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetPersonTrackingErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPersonTrackingErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPersonTrackingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetPersonTrackingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetPersonTrackingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetPersonTrackingErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `GetPersonTrackingErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPersonTrackingErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetPersonTrackingErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetPersonTrackingErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPersonTrackingErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetPersonTrackingErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetPersonTrackingErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPersonTrackingErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetPersonTrackingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPersonTrackingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPersonTrackingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPersonTrackingErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetPersonTrackingErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4556,7 +5220,7 @@ pub enum GetSegmentDetectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSegmentDetectionError {
@@ -4627,49 +5291,49 @@ impl GetSegmentDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSegmentDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSegmentDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetSegmentDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentDetectionErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `GetSegmentDetectionErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentDetectionErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetSegmentDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetSegmentDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentDetectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSegmentDetectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentDetectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetSegmentDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4723,7 +5387,7 @@ pub enum GetTextDetectionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTextDetectionError {
@@ -4794,49 +5458,49 @@ impl GetTextDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTextDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetTextDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTextDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetTextDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetTextDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetTextDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetTextDetectionErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `GetTextDetectionErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTextDetectionErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetTextDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetTextDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTextDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetTextDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `GetTextDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTextDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetTextDetectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetTextDetectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTextDetectionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTextDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetTextDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4902,7 +5566,7 @@ pub enum IndexFacesErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for IndexFacesError {
@@ -4974,58 +5638,58 @@ impl IndexFacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, IndexFacesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(&self.kind, IndexFacesErrorKind::ImageTooLargeException(_))
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, IndexFacesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             IndexFacesErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             IndexFacesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(&self.kind, IndexFacesErrorKind::InvalidS3ObjectException(_))
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             IndexFacesErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             IndexFacesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             IndexFacesErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `IndexFacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `IndexFacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, IndexFacesErrorKind::ThrottlingException(_))
     }
@@ -5077,7 +5741,7 @@ pub enum ListCollectionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCollectionsError {
@@ -5148,46 +5812,46 @@ impl ListCollectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCollectionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListCollectionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCollectionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListCollectionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListCollectionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListCollectionsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListCollectionsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListCollectionsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCollectionsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListCollectionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListCollectionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCollectionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListCollectionsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `ListCollectionsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCollectionsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListCollectionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListCollectionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCollectionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListCollectionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListCollectionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListCollectionsErrorKind::ThrottlingException(_))
     }
@@ -5205,6 +5869,388 @@ impl std::error::Error for ListCollectionsError {
             ListCollectionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListCollectionsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListCollectionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListDatasetEntries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDatasetEntriesError {
+    /// Kind of error that occurred.
+    pub kind: ListDatasetEntriesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListDatasetEntries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDatasetEntriesErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Pagination token in the request is not valid.</p>
+    InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
+    /// operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
+    /// limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The specified resource is already being used.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The requested resource isn't ready. For example,  
+    /// this exception occurs when you call <code>DetectCustomLabels</code> with a
+    /// model version that isn't deployed. </p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDatasetEntriesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDatasetEntriesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListDatasetEntriesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            ListDatasetEntriesErrorKind::InvalidPaginationTokenException(_inner) => _inner.fmt(f),
+            ListDatasetEntriesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDatasetEntriesErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            ListDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListDatasetEntriesErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            ListDatasetEntriesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListDatasetEntriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDatasetEntriesError {
+    fn code(&self) -> Option<&str> {
+        ListDatasetEntriesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDatasetEntriesError {
+    /// Creates a new `ListDatasetEntriesError`.
+    pub fn new(kind: ListDatasetEntriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDatasetEntriesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDatasetEntriesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDatasetEntriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDatasetEntriesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::InvalidPaginationTokenException`.
+    pub fn is_invalid_pagination_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::InvalidPaginationTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::ResourceNotReadyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetEntriesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetEntriesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListDatasetEntriesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDatasetEntriesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListDatasetEntriesErrorKind::InternalServerError(_inner) => Some(_inner),
+            ListDatasetEntriesErrorKind::InvalidPaginationTokenException(_inner) => Some(_inner),
+            ListDatasetEntriesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            ListDatasetEntriesErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            ListDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListDatasetEntriesErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
+            ListDatasetEntriesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListDatasetLabels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDatasetLabelsError {
+    /// Kind of error that occurred.
+    pub kind: ListDatasetLabelsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListDatasetLabels` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDatasetLabelsErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Pagination token in the request is not valid.</p>
+    InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
+    /// operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
+    /// limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The specified resource is already being used.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The requested resource isn't ready. For example,  
+    /// this exception occurs when you call <code>DetectCustomLabels</code> with a
+    /// model version that isn't deployed. </p>
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDatasetLabelsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDatasetLabelsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListDatasetLabelsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            ListDatasetLabelsErrorKind::InvalidPaginationTokenException(_inner) => _inner.fmt(f),
+            ListDatasetLabelsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListDatasetLabelsErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListDatasetLabelsErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            ListDatasetLabelsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListDatasetLabelsErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            ListDatasetLabelsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListDatasetLabelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDatasetLabelsError {
+    fn code(&self) -> Option<&str> {
+        ListDatasetLabelsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDatasetLabelsError {
+    /// Creates a new `ListDatasetLabelsError`.
+    pub fn new(kind: ListDatasetLabelsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDatasetLabelsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDatasetLabelsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDatasetLabelsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDatasetLabelsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::InvalidPaginationTokenException`.
+    pub fn is_invalid_pagination_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::InvalidPaginationTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::ResourceNotReadyException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasetLabelsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasetLabelsErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListDatasetLabelsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDatasetLabelsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListDatasetLabelsErrorKind::InternalServerError(_inner) => Some(_inner),
+            ListDatasetLabelsErrorKind::InvalidPaginationTokenException(_inner) => Some(_inner),
+            ListDatasetLabelsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListDatasetLabelsErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            ListDatasetLabelsErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            ListDatasetLabelsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListDatasetLabelsErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
+            ListDatasetLabelsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListDatasetLabelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5238,7 +6284,7 @@ pub enum ListFacesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFacesError {
@@ -5307,37 +6353,37 @@ impl ListFacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListFacesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListFacesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListFacesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListFacesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListFacesErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListFacesErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacesErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListFacesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, ListFacesErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `ListFacesErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `ListFacesErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacesErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFacesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListFacesErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListFacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListFacesErrorKind::ThrottlingException(_))
     }
@@ -5384,7 +6430,7 @@ pub enum ListStreamProcessorsErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStreamProcessorsError {
@@ -5454,42 +6500,42 @@ impl ListStreamProcessorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStreamProcessorsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListStreamProcessorsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamProcessorsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamProcessorsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListStreamProcessorsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamProcessorsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamProcessorsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListStreamProcessorsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamProcessorsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamProcessorsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListStreamProcessorsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamProcessorsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamProcessorsErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `ListStreamProcessorsErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStreamProcessorsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListStreamProcessorsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListStreamProcessorsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5540,7 +6586,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -5610,42 +6656,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5702,7 +6748,7 @@ pub enum RecognizeCelebritiesErrorKind {
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RecognizeCelebritiesError {
@@ -5774,56 +6820,56 @@ impl RecognizeCelebritiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RecognizeCelebritiesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RecognizeCelebritiesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeCelebritiesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeCelebritiesErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `RecognizeCelebritiesErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeCelebritiesErrorKind::ImageTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeCelebritiesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RecognizeCelebritiesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeCelebritiesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeCelebritiesErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `RecognizeCelebritiesErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeCelebritiesErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeCelebritiesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RecognizeCelebritiesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeCelebritiesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeCelebritiesErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `RecognizeCelebritiesErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeCelebritiesErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeCelebritiesErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `RecognizeCelebritiesErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RecognizeCelebritiesErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RecognizeCelebritiesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RecognizeCelebritiesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5876,7 +6922,7 @@ pub enum SearchFacesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchFacesError {
@@ -5944,36 +6990,36 @@ impl SearchFacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchFacesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchFacesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, SearchFacesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `SearchFacesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `SearchFacesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, SearchFacesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `SearchFacesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SearchFacesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `SearchFacesErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchFacesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SearchFacesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, SearchFacesErrorKind::ThrottlingException(_))
     }
@@ -6027,7 +7073,7 @@ pub enum SearchFacesByImageErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchFacesByImageError {
@@ -6100,63 +7146,63 @@ impl SearchFacesByImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesByImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::ImageTooLargeException`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::ImageTooLargeException`.
     pub fn is_image_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesByImageErrorKind::ImageTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesByImageErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::InvalidImageFormatException`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::InvalidImageFormatException`.
     pub fn is_invalid_image_format_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesByImageErrorKind::InvalidImageFormatException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesByImageErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesByImageErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesByImageErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchFacesByImageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchFacesByImageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SearchFacesByImageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6220,7 +7266,7 @@ pub enum StartCelebrityRecognitionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
     /// The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartCelebrityRecognitionError {
@@ -6295,63 +7341,63 @@ impl StartCelebrityRecognitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCelebrityRecognitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCelebrityRecognitionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartCelebrityRecognitionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCelebrityRecognitionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCelebrityRecognitionErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCelebrityRecognitionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCelebrityRecognitionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCelebrityRecognitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartCelebrityRecognitionErrorKind::VideoTooLargeException`.
+    /// Returns `true` if the error kind is `StartCelebrityRecognitionErrorKind::VideoTooLargeException`.
     pub fn is_video_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6417,7 +7463,7 @@ pub enum StartContentModerationErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
     /// The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartContentModerationError {
@@ -6492,63 +7538,63 @@ impl StartContentModerationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentModerationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentModerationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartContentModerationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentModerationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentModerationErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentModerationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentModerationErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartContentModerationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartContentModerationErrorKind::VideoTooLargeException`.
+    /// Returns `true` if the error kind is `StartContentModerationErrorKind::VideoTooLargeException`.
     pub fn is_video_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6614,7 +7660,7 @@ pub enum StartFaceDetectionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
     /// The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartFaceDetectionError {
@@ -6689,63 +7735,63 @@ impl StartFaceDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceDetectionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceDetectionErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceDetectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceDetectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceDetectionErrorKind::VideoTooLargeException`.
+    /// Returns `true` if the error kind is `StartFaceDetectionErrorKind::VideoTooLargeException`.
     pub fn is_video_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6813,7 +7859,7 @@ pub enum StartFaceSearchErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
     /// The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartFaceSearchError {
@@ -6887,64 +7933,64 @@ impl StartFaceSearchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceSearchErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceSearchErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, StartFaceSearchErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceSearchErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceSearchErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceSearchErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceSearchErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFaceSearchErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartFaceSearchErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StartFaceSearchErrorKind::VideoTooLargeException`.
+    /// Returns `true` if the error kind is `StartFaceSearchErrorKind::VideoTooLargeException`.
     pub fn is_video_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7009,7 +8055,7 @@ pub enum StartLabelDetectionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
     /// The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartLabelDetectionError {
@@ -7084,63 +8130,63 @@ impl StartLabelDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLabelDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLabelDetectionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartLabelDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLabelDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLabelDetectionErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLabelDetectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLabelDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartLabelDetectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartLabelDetectionErrorKind::VideoTooLargeException`.
+    /// Returns `true` if the error kind is `StartLabelDetectionErrorKind::VideoTooLargeException`.
     pub fn is_video_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7206,7 +8252,7 @@ pub enum StartPersonTrackingErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
     /// The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartPersonTrackingError {
@@ -7281,63 +8327,63 @@ impl StartPersonTrackingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPersonTrackingErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPersonTrackingErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartPersonTrackingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPersonTrackingErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPersonTrackingErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPersonTrackingErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPersonTrackingErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPersonTrackingErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartPersonTrackingErrorKind::VideoTooLargeException`.
+    /// Returns `true` if the error kind is `StartPersonTrackingErrorKind::VideoTooLargeException`.
     pub fn is_video_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7399,7 +8445,7 @@ pub enum StartProjectVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartProjectVersionError {
@@ -7471,56 +8517,56 @@ impl StartProjectVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartProjectVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartProjectVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectVersionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartProjectVersionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectVersionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectVersionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartProjectVersionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectVersionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartProjectVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectVersionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartProjectVersionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectVersionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartProjectVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectVersionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartProjectVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartProjectVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartProjectVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartProjectVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7583,7 +8629,7 @@ pub enum StartSegmentDetectionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
     /// The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSegmentDetectionError {
@@ -7658,63 +8704,63 @@ impl StartSegmentDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSegmentDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSegmentDetectionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartSegmentDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSegmentDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSegmentDetectionErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSegmentDetectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSegmentDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSegmentDetectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartSegmentDetectionErrorKind::VideoTooLargeException`.
+    /// Returns `true` if the error kind is `StartSegmentDetectionErrorKind::VideoTooLargeException`.
     pub fn is_video_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7772,7 +8818,7 @@ pub enum StartStreamProcessorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartStreamProcessorError {
@@ -7843,49 +8889,49 @@ impl StartStreamProcessorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartStreamProcessorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartStreamProcessorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamProcessorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamProcessorErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartStreamProcessorErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamProcessorErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamProcessorErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartStreamProcessorErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamProcessorErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamProcessorErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamProcessorErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartStreamProcessorErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamProcessorErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamProcessorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartStreamProcessorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStreamProcessorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartStreamProcessorErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartStreamProcessorErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7947,7 +8993,7 @@ pub enum StartTextDetectionErrorKind {
     /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
     /// The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTextDetectionError {
@@ -8022,63 +9068,63 @@ impl StartTextDetectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextDetectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextDetectionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartTextDetectionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextDetectionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::InvalidS3ObjectException`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::InvalidS3ObjectException`.
     pub fn is_invalid_s3_object_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextDetectionErrorKind::InvalidS3ObjectException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextDetectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextDetectionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextDetectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextDetectionErrorKind::VideoTooLargeException`.
+    /// Returns `true` if the error kind is `StartTextDetectionErrorKind::VideoTooLargeException`.
     pub fn is_video_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8136,7 +9182,7 @@ pub enum StopProjectVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopProjectVersionError {
@@ -8207,49 +9253,49 @@ impl StopProjectVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopProjectVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopProjectVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopProjectVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StopProjectVersionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StopProjectVersionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StopProjectVersionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StopProjectVersionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopProjectVersionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopProjectVersionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StopProjectVersionErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StopProjectVersionErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopProjectVersionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StopProjectVersionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StopProjectVersionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopProjectVersionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StopProjectVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopProjectVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopProjectVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopProjectVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StopProjectVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8303,7 +9349,7 @@ pub enum StopStreamProcessorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopStreamProcessorError {
@@ -8374,49 +9420,49 @@ impl StopStreamProcessorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopStreamProcessorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopStreamProcessorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamProcessorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamProcessorErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StopStreamProcessorErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamProcessorErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamProcessorErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopStreamProcessorErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamProcessorErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `StopStreamProcessorErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamProcessorErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamProcessorErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StopStreamProcessorErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamProcessorErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamProcessorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopStreamProcessorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopStreamProcessorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopStreamProcessorErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StopStreamProcessorErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8474,7 +9520,7 @@ pub enum TagResourceErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -8543,43 +9589,43 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
@@ -8626,7 +9672,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -8694,36 +9740,36 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ProvisionedThroughputExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ProvisionedThroughputExceededException`.
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
@@ -8738,6 +9784,186 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateDatasetEntries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateDatasetEntriesError {
+    /// Kind of error that occurred.
+    pub kind: UpdateDatasetEntriesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateDatasetEntries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateDatasetEntriesErrorKind {
+    /// <p>You are not authorized to perform the action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
+    /// operation again.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
+    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
+    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
+    /// limit, contact Amazon Rekognition.</p>
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
+    /// <p>The specified resource is already being used.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateDatasetEntriesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateDatasetEntriesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateDatasetEntriesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            UpdateDatasetEntriesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateDatasetEntriesErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateDatasetEntriesErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdateDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateDatasetEntriesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateDatasetEntriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateDatasetEntriesError {
+    fn code(&self) -> Option<&str> {
+        UpdateDatasetEntriesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateDatasetEntriesError {
+    /// Creates a new `UpdateDatasetEntriesError`.
+    pub fn new(kind: UpdateDatasetEntriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateDatasetEntriesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateDatasetEntriesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateDatasetEntriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateDatasetEntriesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetEntriesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetEntriesErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetEntriesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetEntriesErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::ProvisionedThroughputExceededException`.
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetEntriesErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetEntriesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasetEntriesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasetEntriesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateDatasetEntriesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateDatasetEntriesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateDatasetEntriesErrorKind::InternalServerError(_inner) => Some(_inner),
+            UpdateDatasetEntriesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateDatasetEntriesErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateDatasetEntriesErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
+            UpdateDatasetEntriesErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdateDatasetEntriesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateDatasetEntriesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateDatasetEntriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -8930,6 +10156,100 @@ impl ResourceNotFoundException {
     }
 }
 
+/// <p>The specified resource is already being used.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceInUseException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub logref: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceInUseException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.field("logref", &self.logref);
+        formatter.finish()
+    }
+}
+impl ResourceInUseException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceInUseException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceInUseException {}
+/// See [`ResourceInUseException`](crate::error::ResourceInUseException)
+pub mod resource_in_use_exception {
+    /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) logref: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logref = Some(input.into());
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logref = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException)
+        pub fn build(self) -> crate::error::ResourceInUseException {
+            crate::error::ResourceInUseException {
+                message: self.message,
+                code: self.code,
+                logref: self.logref,
+            }
+        }
+    }
+}
+impl ResourceInUseException {
+    /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException)
+    pub fn builder() -> crate::error::resource_in_use_exception::Builder {
+        crate::error::resource_in_use_exception::Builder::default()
+    }
+}
+
 /// <p>The number of requests exceeded your throughput limit. If you want to increase this
 /// limit, contact Amazon Rekognition.</p>
 #[non_exhaustive]
@@ -8960,8 +10280,8 @@ impl ProvisionedThroughputExceededException {
 impl std::fmt::Display for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ProvisionedThroughputExceededException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -9025,6 +10345,102 @@ impl ProvisionedThroughputExceededException {
     }
 }
 
+/// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
+/// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
+/// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub logref: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LimitExceededException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.field("logref", &self.logref);
+        formatter.finish()
+    }
+}
+impl LimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) logref: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logref = Some(input.into());
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logref = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
+                message: self.message,
+                code: self.code,
+                logref: self.logref,
+            }
+        }
+    }
+}
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
 /// operation again.</p>
 #[non_exhaustive]
@@ -9055,8 +10471,8 @@ impl InvalidParameterException {
 impl std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -9149,8 +10565,8 @@ impl InternalServerError {
 impl std::fmt::Display for InternalServerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerError")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -9243,8 +10659,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
@@ -9341,8 +10757,8 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -9406,100 +10822,6 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>The specified resource is already being used.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceInUseException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<std::string::String>,
-    /// <p>A universally unique identifier (UUID) for the request.</p>
-    pub logref: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
-    }
-}
-impl ResourceInUseException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceInUseException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceInUseException {}
-/// See [`ResourceInUseException`](crate::error::ResourceInUseException)
-pub mod resource_in_use_exception {
-    /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) logref: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// <p>A universally unique identifier (UUID) for the request.</p>
-        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
-            self.logref = Some(input.into());
-            self
-        }
-        /// <p>A universally unique identifier (UUID) for the request.</p>
-        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.logref = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException)
-        pub fn build(self) -> crate::error::ResourceInUseException {
-            crate::error::ResourceInUseException {
-                message: self.message,
-                code: self.code,
-                logref: self.logref,
-            }
-        }
-    }
-}
-impl ResourceInUseException {
-    /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException)
-    pub fn builder() -> crate::error::resource_in_use_exception::Builder {
-        crate::error::resource_in_use_exception::Builder::default()
-    }
-}
-
 /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
 /// The maximum duration is 6 hours. </p>
 #[non_exhaustive]
@@ -9530,8 +10852,8 @@ impl VideoTooLargeException {
 impl std::fmt::Display for VideoTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "VideoTooLargeException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -9592,102 +10914,6 @@ impl VideoTooLargeException {
     /// Creates a new builder-style object to manufacture [`VideoTooLargeException`](crate::error::VideoTooLargeException)
     pub fn builder() -> crate::error::video_too_large_exception::Builder {
         crate::error::video_too_large_exception::Builder::default()
-    }
-}
-
-/// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-/// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-/// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<std::string::String>,
-    /// <p>A universally unique identifier (UUID) for the request.</p>
-    pub logref: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
-    }
-}
-impl LimitExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
-pub mod limit_exceeded_exception {
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) logref: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// <p>A universally unique identifier (UUID) for the request.</p>
-        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
-            self.logref = Some(input.into());
-            self
-        }
-        /// <p>A universally unique identifier (UUID) for the request.</p>
-        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.logref = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
-        pub fn build(self) -> crate::error::LimitExceededException {
-            crate::error::LimitExceededException {
-                message: self.message,
-                code: self.code,
-                logref: self.logref,
-            }
-        }
-    }
-}
-impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
-    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
-        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
@@ -10164,6 +11390,102 @@ impl InvalidPaginationTokenException {
     }
 }
 
+/// <p>The requested resource isn't ready. For example,  
+/// this exception occurs when you call <code>DetectCustomLabels</code> with a
+/// model version that isn't deployed. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotReadyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub logref: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNotReadyException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.field("logref", &self.logref);
+        formatter.finish()
+    }
+}
+impl ResourceNotReadyException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotReadyException")?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotReadyException {}
+/// See [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+pub mod resource_not_ready_exception {
+    /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) logref: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logref = Some(input.into());
+            self
+        }
+        /// <p>A universally unique identifier (UUID) for the request.</p>
+        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logref = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+        pub fn build(self) -> crate::error::ResourceNotReadyException {
+            crate::error::ResourceNotReadyException {
+                message: self.message,
+                code: self.code,
+                logref: self.logref,
+            }
+        }
+    }
+}
+impl ResourceNotReadyException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+    pub fn builder() -> crate::error::resource_not_ready_exception::Builder {
+        crate::error::resource_not_ready_exception::Builder::default()
+    }
+}
+
 /// <p>The number of in-progress human reviews you have has exceeded the number allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10202,8 +11524,8 @@ impl HumanLoopQuotaExceededException {
 impl std::fmt::Display for HumanLoopQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HumanLoopQuotaExceededException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -10303,102 +11625,6 @@ impl HumanLoopQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`HumanLoopQuotaExceededException`](crate::error::HumanLoopQuotaExceededException)
     pub fn builder() -> crate::error::human_loop_quota_exceeded_exception::Builder {
         crate::error::human_loop_quota_exceeded_exception::Builder::default()
-    }
-}
-
-/// <p>The requested resource isn't ready. For example,  
-/// this exception occurs when you call <code>DetectCustomLabels</code> with a
-/// model version that isn't deployed. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotReadyException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<std::string::String>,
-    /// <p>A universally unique identifier (UUID) for the request.</p>
-    pub logref: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotReadyException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.field("logref", &self.logref);
-        formatter.finish()
-    }
-}
-impl ResourceNotReadyException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotReadyException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceNotReadyException {}
-/// See [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
-pub mod resource_not_ready_exception {
-    /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) logref: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// <p>A universally unique identifier (UUID) for the request.</p>
-        pub fn logref(mut self, input: impl Into<std::string::String>) -> Self {
-            self.logref = Some(input.into());
-            self
-        }
-        /// <p>A universally unique identifier (UUID) for the request.</p>
-        pub fn set_logref(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.logref = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
-        pub fn build(self) -> crate::error::ResourceNotReadyException {
-            crate::error::ResourceNotReadyException {
-                message: self.message,
-                code: self.code,
-                logref: self.logref,
-            }
-        }
-    }
-}
-impl ResourceNotReadyException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
-    pub fn builder() -> crate::error::resource_not_ready_exception::Builder {
-        crate::error::resource_not_ready_exception::Builder::default()
     }
 }
 

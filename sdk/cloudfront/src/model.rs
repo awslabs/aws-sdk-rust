@@ -9,7 +9,7 @@ pub struct StreamingDistribution {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
     /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-    /// <code>123456789012</code> is your account ID.</p>
+    /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the RTMP distribution. When the status is <code>Deployed</code>,
     /// the distribution's information is propagated to all CloudFront edge locations.</p>
@@ -18,13 +18,13 @@ pub struct StreamingDistribution {
     pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>A complex type that lists the accounts, if any, that you included in the
+    /// <p>A complex type that lists the Amazon Web Services accounts, if any, that you included in the
     /// <code>TrustedSigners</code> complex type for this distribution. These are the accounts that
     /// you want to allow to create signed URLs for private content.</p>
-    /// <p>The <code>Signer</code> complex type lists the account number of the trusted
-    /// signer or <code>self</code> if the signer is the account that created the distribution.
+    /// <p>The <code>Signer</code> complex type lists the Amazon Web Services account number of the trusted
+    /// signer or <code>self</code> if the signer is the Amazon Web Services account that created the distribution.
     /// The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are
-    /// associated with the trusted signer's account. If no <code>KeyPairId</code> element
+    /// associated with the trusted signer's Amazon Web Services account. If no <code>KeyPairId</code> element
     /// appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
     /// Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
@@ -79,14 +79,14 @@ pub mod streaming_distribution {
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your account ID.</p>
+        /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your account ID.</p>
+        /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -126,13 +126,13 @@ pub mod streaming_distribution {
             self.domain_name = input;
             self
         }
-        /// <p>A complex type that lists the accounts, if any, that you included in the
+        /// <p>A complex type that lists the Amazon Web Services accounts, if any, that you included in the
         /// <code>TrustedSigners</code> complex type for this distribution. These are the accounts that
         /// you want to allow to create signed URLs for private content.</p>
-        /// <p>The <code>Signer</code> complex type lists the account number of the trusted
-        /// signer or <code>self</code> if the signer is the account that created the distribution.
+        /// <p>The <code>Signer</code> complex type lists the Amazon Web Services account number of the trusted
+        /// signer or <code>self</code> if the signer is the Amazon Web Services account that created the distribution.
         /// The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are
-        /// associated with the trusted signer's account. If no <code>KeyPairId</code> element
+        /// associated with the trusted signer's Amazon Web Services account. If no <code>KeyPairId</code> element
         /// appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
         /// Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
@@ -140,13 +140,13 @@ pub mod streaming_distribution {
             self.active_trusted_signers = Some(input);
             self
         }
-        /// <p>A complex type that lists the accounts, if any, that you included in the
+        /// <p>A complex type that lists the Amazon Web Services accounts, if any, that you included in the
         /// <code>TrustedSigners</code> complex type for this distribution. These are the accounts that
         /// you want to allow to create signed URLs for private content.</p>
-        /// <p>The <code>Signer</code> complex type lists the account number of the trusted
-        /// signer or <code>self</code> if the signer is the account that created the distribution.
+        /// <p>The <code>Signer</code> complex type lists the Amazon Web Services account number of the trusted
+        /// signer or <code>self</code> if the signer is the Amazon Web Services account that created the distribution.
         /// The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are
-        /// associated with the trusted signer's account. If no <code>KeyPairId</code> element
+        /// associated with the trusted signer's Amazon Web Services account. If no <code>KeyPairId</code> element
         /// appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
         /// Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
@@ -216,7 +216,7 @@ pub struct StreamingDistributionConfig {
     /// <p>A complex type that controls whether access logs are written for the streaming
     /// distribution. </p>
     pub logging: std::option::Option<crate::model::StreamingLoggingConfig>,
-    /// <p>A complex type that specifies any accounts that you want to permit to create signed
+    /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed
     /// URLs for private content. If you want the distribution to use signed URLs, include this
     /// element; if you want the distribution to use public URLs, remove this element. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through
@@ -331,7 +331,7 @@ pub mod streaming_distribution_config {
             self.logging = input;
             self
         }
-        /// <p>A complex type that specifies any accounts that you want to permit to create signed
+        /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed
         /// URLs for private content. If you want the distribution to use signed URLs, include this
         /// element; if you want the distribution to use public URLs, remove this element. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through
@@ -340,7 +340,7 @@ pub mod streaming_distribution_config {
             self.trusted_signers = Some(input);
             self
         }
-        /// <p>A complex type that specifies any accounts that you want to permit to create signed
+        /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed
         /// URLs for private content. If you want the distribution to use signed URLs, include this
         /// element; if you want the distribution to use public URLs, remove this element. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through
@@ -460,18 +460,18 @@ impl AsRef<str> for PriceClass {
     }
 }
 
-/// <p>A list of accounts whose public keys CloudFront can use to verify the signatures of signed
+/// <p>A list of Amazon Web Services accounts whose public keys CloudFront can use to verify the signatures of signed
 /// URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedSigners {
-    /// <p>This field is <code>true</code> if any of the accounts have public keys that CloudFront can
+    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can
     /// use to verify the signatures of signed URLs and signed cookies. If not, this field is
     /// <code>false</code>.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The number of accounts in the list.</p>
+    /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub quantity: std::option::Option<i32>,
-    /// <p>A list of account identifiers.</p>
+    /// <p>A list of Amazon Web Services account identifiers.</p>
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for TrustedSigners {
@@ -494,26 +494,26 @@ pub mod trusted_signers {
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>This field is <code>true</code> if any of the accounts have public keys that CloudFront can
+        /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can
         /// use to verify the signatures of signed URLs and signed cookies. If not, this field is
         /// <code>false</code>.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>This field is <code>true</code> if any of the accounts have public keys that CloudFront can
+        /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can
         /// use to verify the signatures of signed URLs and signed cookies. If not, this field is
         /// <code>false</code>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
-        /// <p>The number of accounts in the list.</p>
+        /// <p>The number of Amazon Web Services accounts in the list.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
         }
-        /// <p>The number of accounts in the list.</p>
+        /// <p>The number of Amazon Web Services accounts in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
@@ -522,14 +522,14 @@ pub mod trusted_signers {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>A list of account identifiers.</p>
+        /// <p>A list of Amazon Web Services account identifiers.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
-        /// <p>A list of account identifiers.</p>
+        /// <p>A list of Amazon Web Services account identifiers.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -838,18 +838,18 @@ impl S3Origin {
     }
 }
 
-/// <p>A list of accounts and the active CloudFront key pairs in each account that CloudFront can use
+/// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use
 /// to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveTrustedSigners {
-    /// <p>This field is <code>true</code> if any of the accounts in the list have active CloudFront
+    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront
     /// key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
     /// If not, this field is <code>false</code>.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The number of accounts in the list.</p>
+    /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub quantity: std::option::Option<i32>,
-    /// <p>A list of accounts and the identifiers of active CloudFront key pairs in each account that
+    /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that
     /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::Signer>>,
 }
@@ -873,26 +873,26 @@ pub mod active_trusted_signers {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Signer>>,
     }
     impl Builder {
-        /// <p>This field is <code>true</code> if any of the accounts in the list have active CloudFront
+        /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront
         /// key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
         /// If not, this field is <code>false</code>.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>This field is <code>true</code> if any of the accounts in the list have active CloudFront
+        /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront
         /// key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
         /// If not, this field is <code>false</code>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
-        /// <p>The number of accounts in the list.</p>
+        /// <p>The number of Amazon Web Services accounts in the list.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
         }
-        /// <p>The number of accounts in the list.</p>
+        /// <p>The number of Amazon Web Services accounts in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
@@ -901,7 +901,7 @@ pub mod active_trusted_signers {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>A list of accounts and the identifiers of active CloudFront key pairs in each account that
+        /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that
         /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
         pub fn items(mut self, input: impl Into<crate::model::Signer>) -> Self {
             let mut v = self.items.unwrap_or_default();
@@ -909,7 +909,7 @@ pub mod active_trusted_signers {
             self.items = Some(v);
             self
         }
-        /// <p>A list of accounts and the identifiers of active CloudFront key pairs in each account that
+        /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that
         /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
         pub fn set_items(
             mut self,
@@ -935,13 +935,13 @@ impl ActiveTrustedSigners {
     }
 }
 
-/// <p>A list of accounts and the active CloudFront key pairs in each account that CloudFront can use to
+/// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to
 /// verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Signer {
-    /// <p>An account number that contains active CloudFront key pairs that CloudFront can use to verify the
-    /// signatures of signed URLs and signed cookies. If the account that owns the key pairs
+    /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the
+    /// signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs
     /// is the same account that owns the CloudFront distribution, the value of this field is
     /// <code>self</code>.</p>
     pub aws_account_number: std::option::Option<std::string::String>,
@@ -966,16 +966,16 @@ pub mod signer {
         pub(crate) key_pair_ids: std::option::Option<crate::model::KeyPairIds>,
     }
     impl Builder {
-        /// <p>An account number that contains active CloudFront key pairs that CloudFront can use to verify the
-        /// signatures of signed URLs and signed cookies. If the account that owns the key pairs
+        /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the
+        /// signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs
         /// is the same account that owns the CloudFront distribution, the value of this field is
         /// <code>self</code>.</p>
         pub fn aws_account_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_number = Some(input.into());
             self
         }
-        /// <p>An account number that contains active CloudFront key pairs that CloudFront can use to verify the
-        /// signatures of signed URLs and signed cookies. If the account that owns the key pairs
+        /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the
+        /// signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs
         /// is the same account that owns the CloudFront distribution, the value of this field is
         /// <code>self</code>.</p>
         pub fn set_aws_account_number(
@@ -1083,6 +1083,2254 @@ impl KeyPairIds {
     /// Creates a new builder-style object to manufacture [`KeyPairIds`](crate::model::KeyPairIds)
     pub fn builder() -> crate::model::key_pair_ids::Builder {
         crate::model::key_pair_ids::Builder::default()
+    }
+}
+
+/// <p>A response headers policy.</p>
+/// <p>A response headers policy contains information about a set of HTTP response headers
+/// and their values.</p>
+/// <p>After you create a response headers policy, you can use its ID to attach it to one or more
+/// cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront
+/// adds the headers in the policy to HTTP responses that it sends for requests that match
+/// the cache behavior.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-response-headers.html">Adding HTTP headers to CloudFront responses</a> in the
+/// <i>Amazon CloudFront Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicy {
+    /// <p>The identifier for the response headers policy.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The date and time when the response headers policy was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>A response headers policy configuration.</p>
+    /// <p>A response headers policy contains information about a set of HTTP response headers and
+    /// their values. CloudFront adds the headers in the policy to HTTP responses that it sends for
+    /// requests that match a cache behavior that’s associated with the policy.</p>
+    pub response_headers_policy_config:
+        std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicy");
+        formatter.field("id", &self.id);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field(
+            "response_headers_policy_config",
+            &self.response_headers_policy_config,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy)
+pub mod response_headers_policy {
+    /// A builder for [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) response_headers_policy_config:
+            std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+    }
+    impl Builder {
+        /// <p>The identifier for the response headers policy.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the response headers policy.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The date and time when the response headers policy was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The date and time when the response headers policy was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>A response headers policy configuration.</p>
+        /// <p>A response headers policy contains information about a set of HTTP response headers and
+        /// their values. CloudFront adds the headers in the policy to HTTP responses that it sends for
+        /// requests that match a cache behavior that’s associated with the policy.</p>
+        pub fn response_headers_policy_config(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyConfig,
+        ) -> Self {
+            self.response_headers_policy_config = Some(input);
+            self
+        }
+        /// <p>A response headers policy configuration.</p>
+        /// <p>A response headers policy contains information about a set of HTTP response headers and
+        /// their values. CloudFront adds the headers in the policy to HTTP responses that it sends for
+        /// requests that match a cache behavior that’s associated with the policy.</p>
+        pub fn set_response_headers_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+        ) -> Self {
+            self.response_headers_policy_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicy {
+            crate::model::ResponseHeadersPolicy {
+                id: self.id,
+                last_modified_time: self.last_modified_time,
+                response_headers_policy_config: self.response_headers_policy_config,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy)
+    pub fn builder() -> crate::model::response_headers_policy::Builder {
+        crate::model::response_headers_policy::Builder::default()
+    }
+}
+
+/// <p>A response headers policy configuration.</p>
+/// <p>A response headers policy configuration contains metadata about the response headers policy,
+/// and configurations for sets of HTTP response headers and their values. CloudFront adds the
+/// headers in the policy to HTTP responses that it sends for requests that match a cache
+/// behavior associated with the policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyConfig {
+    /// <p>A comment to describe the response headers policy.</p>
+    /// <p>The comment cannot be longer than 128 characters.</p>
+    pub comment: std::option::Option<std::string::String>,
+    /// <p>A name to identify the response headers policy.</p>
+    /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>A configuration for a set of HTTP response headers that are used for cross-origin
+    /// resource sharing (CORS).</p>
+    pub cors_config: std::option::Option<crate::model::ResponseHeadersPolicyCorsConfig>,
+    /// <p>A configuration for a set of security-related HTTP response headers.</p>
+    pub security_headers_config:
+        std::option::Option<crate::model::ResponseHeadersPolicySecurityHeadersConfig>,
+    /// <p>A configuration for a set of custom HTTP response headers.</p>
+    pub custom_headers_config:
+        std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyConfig");
+        formatter.field("comment", &self.comment);
+        formatter.field("name", &self.name);
+        formatter.field("cors_config", &self.cors_config);
+        formatter.field("security_headers_config", &self.security_headers_config);
+        formatter.field("custom_headers_config", &self.custom_headers_config);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig)
+pub mod response_headers_policy_config {
+    /// A builder for [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) comment: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) cors_config: std::option::Option<crate::model::ResponseHeadersPolicyCorsConfig>,
+        pub(crate) security_headers_config:
+            std::option::Option<crate::model::ResponseHeadersPolicySecurityHeadersConfig>,
+        pub(crate) custom_headers_config:
+            std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
+    }
+    impl Builder {
+        /// <p>A comment to describe the response headers policy.</p>
+        /// <p>The comment cannot be longer than 128 characters.</p>
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
+            self
+        }
+        /// <p>A comment to describe the response headers policy.</p>
+        /// <p>The comment cannot be longer than 128 characters.</p>
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
+            self
+        }
+        /// <p>A name to identify the response headers policy.</p>
+        /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A name to identify the response headers policy.</p>
+        /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>A configuration for a set of HTTP response headers that are used for cross-origin
+        /// resource sharing (CORS).</p>
+        pub fn cors_config(mut self, input: crate::model::ResponseHeadersPolicyCorsConfig) -> Self {
+            self.cors_config = Some(input);
+            self
+        }
+        /// <p>A configuration for a set of HTTP response headers that are used for cross-origin
+        /// resource sharing (CORS).</p>
+        pub fn set_cors_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyCorsConfig>,
+        ) -> Self {
+            self.cors_config = input;
+            self
+        }
+        /// <p>A configuration for a set of security-related HTTP response headers.</p>
+        pub fn security_headers_config(
+            mut self,
+            input: crate::model::ResponseHeadersPolicySecurityHeadersConfig,
+        ) -> Self {
+            self.security_headers_config = Some(input);
+            self
+        }
+        /// <p>A configuration for a set of security-related HTTP response headers.</p>
+        pub fn set_security_headers_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicySecurityHeadersConfig>,
+        ) -> Self {
+            self.security_headers_config = input;
+            self
+        }
+        /// <p>A configuration for a set of custom HTTP response headers.</p>
+        pub fn custom_headers_config(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyCustomHeadersConfig,
+        ) -> Self {
+            self.custom_headers_config = Some(input);
+            self
+        }
+        /// <p>A configuration for a set of custom HTTP response headers.</p>
+        pub fn set_custom_headers_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyCustomHeadersConfig>,
+        ) -> Self {
+            self.custom_headers_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyConfig {
+            crate::model::ResponseHeadersPolicyConfig {
+                comment: self.comment,
+                name: self.name,
+                cors_config: self.cors_config,
+                security_headers_config: self.security_headers_config,
+                custom_headers_config: self.custom_headers_config,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig)
+    pub fn builder() -> crate::model::response_headers_policy_config::Builder {
+        crate::model::response_headers_policy_config::Builder::default()
+    }
+}
+
+/// <p>A list of HTTP response header names and their values. CloudFront includes these headers in HTTP
+/// responses that it sends for requests that match a cache behavior that’s associated with
+/// this response headers policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyCustomHeadersConfig {
+    /// <p>The number of HTTP response headers in the list.</p>
+    pub quantity: std::option::Option<i32>,
+    /// <p>The list of HTTP response headers and their values.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::ResponseHeadersPolicyCustomHeader>>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyCustomHeadersConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyCustomHeadersConfig");
+        formatter.field("quantity", &self.quantity);
+        formatter.field("items", &self.items);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig)
+pub mod response_headers_policy_custom_headers_config {
+    /// A builder for [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) items:
+            std::option::Option<std::vec::Vec<crate::model::ResponseHeadersPolicyCustomHeader>>,
+    }
+    impl Builder {
+        /// <p>The number of HTTP response headers in the list.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        /// <p>The number of HTTP response headers in the list.</p>
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The list of HTTP response headers and their values.</p>
+        pub fn items(
+            mut self,
+            input: impl Into<crate::model::ResponseHeadersPolicyCustomHeader>,
+        ) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        /// <p>The list of HTTP response headers and their values.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ResponseHeadersPolicyCustomHeader>,
+            >,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyCustomHeadersConfig {
+            crate::model::ResponseHeadersPolicyCustomHeadersConfig {
+                quantity: self.quantity,
+                items: self.items,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyCustomHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig)
+    pub fn builder() -> crate::model::response_headers_policy_custom_headers_config::Builder {
+        crate::model::response_headers_policy_custom_headers_config::Builder::default()
+    }
+}
+
+/// <p>An HTTP response header name and its value. CloudFront includes this header in HTTP responses that
+/// it sends for requests that match a cache behavior that’s associated with this response
+/// headers policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyCustomHeader {
+    /// <p>The HTTP response header name.</p>
+    pub header: std::option::Option<std::string::String>,
+    /// <p>The value for the HTTP response header.</p>
+    pub value: std::option::Option<std::string::String>,
+    /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name
+    /// received from the origin with the header specified here.</p>
+    pub r#override: std::option::Option<bool>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyCustomHeader {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyCustomHeader");
+        formatter.field("header", &self.header);
+        formatter.field("value", &self.value);
+        formatter.field("r#override", &self.r#override);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader)
+pub mod response_headers_policy_custom_header {
+    /// A builder for [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) header: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) r#override: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The HTTP response header name.</p>
+        pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
+            self.header = Some(input.into());
+            self
+        }
+        /// <p>The HTTP response header name.</p>
+        pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.header = input;
+            self
+        }
+        /// <p>The value for the HTTP response header.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value for the HTTP response header.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name
+        /// received from the origin with the header specified here.</p>
+        pub fn r#override(mut self, input: bool) -> Self {
+            self.r#override = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name
+        /// received from the origin with the header specified here.</p>
+        pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#override = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyCustomHeader {
+            crate::model::ResponseHeadersPolicyCustomHeader {
+                header: self.header,
+                value: self.value,
+                r#override: self.r#override,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyCustomHeader {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader)
+    pub fn builder() -> crate::model::response_headers_policy_custom_header::Builder {
+        crate::model::response_headers_policy_custom_header::Builder::default()
+    }
+}
+
+/// <p>A configuration for a set of security-related HTTP response headers. CloudFront adds these headers
+/// to HTTP responses that it sends for requests that match a cache behavior associated with
+/// this response headers policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicySecurityHeadersConfig {
+    /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and
+    /// the header’s value.</p>
+    /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see
+    /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    pub xss_protection: std::option::Option<crate::model::ResponseHeadersPolicyXssProtection>,
+    /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and
+    /// the header’s value.</p>
+    /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see
+    /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    pub frame_options: std::option::Option<crate::model::ResponseHeadersPolicyFrameOptions>,
+    /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and
+    /// the header’s value.</p>
+    /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see
+    /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+    pub referrer_policy: std::option::Option<crate::model::ResponseHeadersPolicyReferrerPolicy>,
+    /// <p>The policy directives and their values that CloudFront includes as values for the
+    /// <code>Content-Security-Policy</code> HTTP response header.</p>
+    /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response
+    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+    pub content_security_policy:
+        std::option::Option<crate::model::ResponseHeadersPolicyContentSecurityPolicy>,
+    /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response
+    /// header with its value set to <code>nosniff</code>.</p>
+    /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response
+    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+    pub content_type_options:
+        std::option::Option<crate::model::ResponseHeadersPolicyContentTypeOptions>,
+    /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response
+    /// header and the header’s value.</p>
+    /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response
+    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+    pub strict_transport_security:
+        std::option::Option<crate::model::ResponseHeadersPolicyStrictTransportSecurity>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicySecurityHeadersConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicySecurityHeadersConfig");
+        formatter.field("xss_protection", &self.xss_protection);
+        formatter.field("frame_options", &self.frame_options);
+        formatter.field("referrer_policy", &self.referrer_policy);
+        formatter.field("content_security_policy", &self.content_security_policy);
+        formatter.field("content_type_options", &self.content_type_options);
+        formatter.field("strict_transport_security", &self.strict_transport_security);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig)
+pub mod response_headers_policy_security_headers_config {
+    /// A builder for [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) xss_protection:
+            std::option::Option<crate::model::ResponseHeadersPolicyXssProtection>,
+        pub(crate) frame_options:
+            std::option::Option<crate::model::ResponseHeadersPolicyFrameOptions>,
+        pub(crate) referrer_policy:
+            std::option::Option<crate::model::ResponseHeadersPolicyReferrerPolicy>,
+        pub(crate) content_security_policy:
+            std::option::Option<crate::model::ResponseHeadersPolicyContentSecurityPolicy>,
+        pub(crate) content_type_options:
+            std::option::Option<crate::model::ResponseHeadersPolicyContentTypeOptions>,
+        pub(crate) strict_transport_security:
+            std::option::Option<crate::model::ResponseHeadersPolicyStrictTransportSecurity>,
+    }
+    impl Builder {
+        /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and
+        /// the header’s value.</p>
+        /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see
+        /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+        pub fn xss_protection(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyXssProtection,
+        ) -> Self {
+            self.xss_protection = Some(input);
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and
+        /// the header’s value.</p>
+        /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see
+        /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+        pub fn set_xss_protection(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyXssProtection>,
+        ) -> Self {
+            self.xss_protection = input;
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and
+        /// the header’s value.</p>
+        /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see
+        /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+        pub fn frame_options(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyFrameOptions,
+        ) -> Self {
+            self.frame_options = Some(input);
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and
+        /// the header’s value.</p>
+        /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see
+        /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+        pub fn set_frame_options(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyFrameOptions>,
+        ) -> Self {
+            self.frame_options = input;
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and
+        /// the header’s value.</p>
+        /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see
+        /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+        pub fn referrer_policy(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyReferrerPolicy,
+        ) -> Self {
+            self.referrer_policy = Some(input);
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and
+        /// the header’s value.</p>
+        /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see
+        /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+        pub fn set_referrer_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyReferrerPolicy>,
+        ) -> Self {
+            self.referrer_policy = input;
+            self
+        }
+        /// <p>The policy directives and their values that CloudFront includes as values for the
+        /// <code>Content-Security-Policy</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+        pub fn content_security_policy(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyContentSecurityPolicy,
+        ) -> Self {
+            self.content_security_policy = Some(input);
+            self
+        }
+        /// <p>The policy directives and their values that CloudFront includes as values for the
+        /// <code>Content-Security-Policy</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+        pub fn set_content_security_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyContentSecurityPolicy>,
+        ) -> Self {
+            self.content_security_policy = input;
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response
+        /// header with its value set to <code>nosniff</code>.</p>
+        /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+        pub fn content_type_options(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyContentTypeOptions,
+        ) -> Self {
+            self.content_type_options = Some(input);
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response
+        /// header with its value set to <code>nosniff</code>.</p>
+        /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+        pub fn set_content_type_options(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyContentTypeOptions>,
+        ) -> Self {
+            self.content_type_options = input;
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response
+        /// header and the header’s value.</p>
+        /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+        pub fn strict_transport_security(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyStrictTransportSecurity,
+        ) -> Self {
+            self.strict_transport_security = Some(input);
+            self
+        }
+        /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response
+        /// header and the header’s value.</p>
+        /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+        pub fn set_strict_transport_security(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyStrictTransportSecurity>,
+        ) -> Self {
+            self.strict_transport_security = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicySecurityHeadersConfig {
+            crate::model::ResponseHeadersPolicySecurityHeadersConfig {
+                xss_protection: self.xss_protection,
+                frame_options: self.frame_options,
+                referrer_policy: self.referrer_policy,
+                content_security_policy: self.content_security_policy,
+                content_type_options: self.content_type_options,
+                strict_transport_security: self.strict_transport_security,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicySecurityHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig)
+    pub fn builder() -> crate::model::response_headers_policy_security_headers_config::Builder {
+        crate::model::response_headers_policy_security_headers_config::Builder::default()
+    }
+}
+
+/// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response
+/// header and the header’s value.</p>
+/// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response
+/// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyStrictTransportSecurity {
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code>
+    /// HTTP response header received from the origin with the one specified in this response
+    /// headers policy.</p>
+    pub r#override: std::option::Option<bool>,
+    /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive
+    /// in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+    pub include_subdomains: std::option::Option<bool>,
+    /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the
+    /// <code>Strict-Transport-Security</code> HTTP response header.</p>
+    pub preload: std::option::Option<bool>,
+    /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the
+    /// <code>Strict-Transport-Security</code> HTTP response header.</p>
+    pub access_control_max_age_sec: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyStrictTransportSecurity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyStrictTransportSecurity");
+        formatter.field("r#override", &self.r#override);
+        formatter.field("include_subdomains", &self.include_subdomains);
+        formatter.field("preload", &self.preload);
+        formatter.field(
+            "access_control_max_age_sec",
+            &self.access_control_max_age_sec,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity)
+pub mod response_headers_policy_strict_transport_security {
+    /// A builder for [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#override: std::option::Option<bool>,
+        pub(crate) include_subdomains: std::option::Option<bool>,
+        pub(crate) preload: std::option::Option<bool>,
+        pub(crate) access_control_max_age_sec: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code>
+        /// HTTP response header received from the origin with the one specified in this response
+        /// headers policy.</p>
+        pub fn r#override(mut self, input: bool) -> Self {
+            self.r#override = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code>
+        /// HTTP response header received from the origin with the one specified in this response
+        /// headers policy.</p>
+        pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#override = input;
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive
+        /// in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+        pub fn include_subdomains(mut self, input: bool) -> Self {
+            self.include_subdomains = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive
+        /// in the <code>Strict-Transport-Security</code> HTTP response header.</p>
+        pub fn set_include_subdomains(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_subdomains = input;
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the
+        /// <code>Strict-Transport-Security</code> HTTP response header.</p>
+        pub fn preload(mut self, input: bool) -> Self {
+            self.preload = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the
+        /// <code>Strict-Transport-Security</code> HTTP response header.</p>
+        pub fn set_preload(mut self, input: std::option::Option<bool>) -> Self {
+            self.preload = input;
+            self
+        }
+        /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the
+        /// <code>Strict-Transport-Security</code> HTTP response header.</p>
+        pub fn access_control_max_age_sec(mut self, input: i32) -> Self {
+            self.access_control_max_age_sec = Some(input);
+            self
+        }
+        /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the
+        /// <code>Strict-Transport-Security</code> HTTP response header.</p>
+        pub fn set_access_control_max_age_sec(mut self, input: std::option::Option<i32>) -> Self {
+            self.access_control_max_age_sec = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyStrictTransportSecurity {
+            crate::model::ResponseHeadersPolicyStrictTransportSecurity {
+                r#override: self.r#override,
+                include_subdomains: self.include_subdomains,
+                preload: self.preload,
+                access_control_max_age_sec: self.access_control_max_age_sec,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyStrictTransportSecurity {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity)
+    pub fn builder() -> crate::model::response_headers_policy_strict_transport_security::Builder {
+        crate::model::response_headers_policy_strict_transport_security::Builder::default()
+    }
+}
+
+/// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response
+/// header with its value set to <code>nosniff</code>.</p>
+/// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response
+/// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyContentTypeOptions {
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code>
+    /// HTTP response header received from the origin with the one specified in this response
+    /// headers policy.</p>
+    pub r#override: std::option::Option<bool>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyContentTypeOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyContentTypeOptions");
+        formatter.field("r#override", &self.r#override);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions)
+pub mod response_headers_policy_content_type_options {
+    /// A builder for [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#override: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code>
+        /// HTTP response header received from the origin with the one specified in this response
+        /// headers policy.</p>
+        pub fn r#override(mut self, input: bool) -> Self {
+            self.r#override = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code>
+        /// HTTP response header received from the origin with the one specified in this response
+        /// headers policy.</p>
+        pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#override = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyContentTypeOptions {
+            crate::model::ResponseHeadersPolicyContentTypeOptions {
+                r#override: self.r#override,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyContentTypeOptions {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions)
+    pub fn builder() -> crate::model::response_headers_policy_content_type_options::Builder {
+        crate::model::response_headers_policy_content_type_options::Builder::default()
+    }
+}
+
+/// <p>The policy directives and their values that CloudFront includes as values for the
+/// <code>Content-Security-Policy</code> HTTP response header.</p>
+/// <p>For more information about the <code>Content-Security-Policy</code> HTTP response
+/// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyContentSecurityPolicy {
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code>
+    /// HTTP response header received from the origin with the one specified in this response
+    /// headers policy.</p>
+    pub r#override: std::option::Option<bool>,
+    /// <p>The policy directives and their values that CloudFront includes as values for the
+    /// <code>Content-Security-Policy</code> HTTP response header.</p>
+    pub content_security_policy: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyContentSecurityPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyContentSecurityPolicy");
+        formatter.field("r#override", &self.r#override);
+        formatter.field("content_security_policy", &self.content_security_policy);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy)
+pub mod response_headers_policy_content_security_policy {
+    /// A builder for [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#override: std::option::Option<bool>,
+        pub(crate) content_security_policy: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code>
+        /// HTTP response header received from the origin with the one specified in this response
+        /// headers policy.</p>
+        pub fn r#override(mut self, input: bool) -> Self {
+            self.r#override = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code>
+        /// HTTP response header received from the origin with the one specified in this response
+        /// headers policy.</p>
+        pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#override = input;
+            self
+        }
+        /// <p>The policy directives and their values that CloudFront includes as values for the
+        /// <code>Content-Security-Policy</code> HTTP response header.</p>
+        pub fn content_security_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_security_policy = Some(input.into());
+            self
+        }
+        /// <p>The policy directives and their values that CloudFront includes as values for the
+        /// <code>Content-Security-Policy</code> HTTP response header.</p>
+        pub fn set_content_security_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.content_security_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyContentSecurityPolicy {
+            crate::model::ResponseHeadersPolicyContentSecurityPolicy {
+                r#override: self.r#override,
+                content_security_policy: self.content_security_policy,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyContentSecurityPolicy {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy)
+    pub fn builder() -> crate::model::response_headers_policy_content_security_policy::Builder {
+        crate::model::response_headers_policy_content_security_policy::Builder::default()
+    }
+}
+
+/// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and
+/// the header’s value.</p>
+/// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see
+/// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyReferrerPolicy {
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP
+    /// response header received from the origin with the one specified in this response headers
+    /// policy.</p>
+    pub r#override: std::option::Option<bool>,
+    /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values
+    /// are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>no-referrer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>no-referrer-when-downgrade</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>origin</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>origin-when-cross-origin</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>same-origin</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>strict-origin</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>strict-origin-when-cross-origin</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>unsafe-url</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+    pub referrer_policy: std::option::Option<crate::model::ReferrerPolicyList>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyReferrerPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyReferrerPolicy");
+        formatter.field("r#override", &self.r#override);
+        formatter.field("referrer_policy", &self.referrer_policy);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy)
+pub mod response_headers_policy_referrer_policy {
+    /// A builder for [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#override: std::option::Option<bool>,
+        pub(crate) referrer_policy: std::option::Option<crate::model::ReferrerPolicyList>,
+    }
+    impl Builder {
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP
+        /// response header received from the origin with the one specified in this response headers
+        /// policy.</p>
+        pub fn r#override(mut self, input: bool) -> Self {
+            self.r#override = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP
+        /// response header received from the origin with the one specified in this response headers
+        /// policy.</p>
+        pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#override = input;
+            self
+        }
+        /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>no-referrer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>no-referrer-when-downgrade</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>origin-when-cross-origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>same-origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>strict-origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>strict-origin-when-cross-origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>unsafe-url</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+        pub fn referrer_policy(mut self, input: crate::model::ReferrerPolicyList) -> Self {
+            self.referrer_policy = Some(input);
+            self
+        }
+        /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>no-referrer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>no-referrer-when-downgrade</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>origin-when-cross-origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>same-origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>strict-origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>strict-origin-when-cross-origin</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>unsafe-url</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+        pub fn set_referrer_policy(
+            mut self,
+            input: std::option::Option<crate::model::ReferrerPolicyList>,
+        ) -> Self {
+            self.referrer_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyReferrerPolicy {
+            crate::model::ResponseHeadersPolicyReferrerPolicy {
+                r#override: self.r#override,
+                referrer_policy: self.referrer_policy,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyReferrerPolicy {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy)
+    pub fn builder() -> crate::model::response_headers_policy_referrer_policy::Builder {
+        crate::model::response_headers_policy_referrer_policy::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReferrerPolicyList {
+    #[allow(missing_docs)] // documentation missing in model
+    NoReferrer,
+    #[allow(missing_docs)] // documentation missing in model
+    NoReferrerWhenDowngrade,
+    #[allow(missing_docs)] // documentation missing in model
+    Origin,
+    #[allow(missing_docs)] // documentation missing in model
+    OriginWhenCrossOrigin,
+    #[allow(missing_docs)] // documentation missing in model
+    SameOrigin,
+    #[allow(missing_docs)] // documentation missing in model
+    StrictOrigin,
+    #[allow(missing_docs)] // documentation missing in model
+    StrictOriginWhenCrossOrigin,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsafeUrl,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReferrerPolicyList {
+    fn from(s: &str) -> Self {
+        match s {
+            "no-referrer" => ReferrerPolicyList::NoReferrer,
+            "no-referrer-when-downgrade" => ReferrerPolicyList::NoReferrerWhenDowngrade,
+            "origin" => ReferrerPolicyList::Origin,
+            "origin-when-cross-origin" => ReferrerPolicyList::OriginWhenCrossOrigin,
+            "same-origin" => ReferrerPolicyList::SameOrigin,
+            "strict-origin" => ReferrerPolicyList::StrictOrigin,
+            "strict-origin-when-cross-origin" => ReferrerPolicyList::StrictOriginWhenCrossOrigin,
+            "unsafe-url" => ReferrerPolicyList::UnsafeUrl,
+            other => ReferrerPolicyList::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReferrerPolicyList {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReferrerPolicyList::from(s))
+    }
+}
+impl ReferrerPolicyList {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReferrerPolicyList::NoReferrer => "no-referrer",
+            ReferrerPolicyList::NoReferrerWhenDowngrade => "no-referrer-when-downgrade",
+            ReferrerPolicyList::Origin => "origin",
+            ReferrerPolicyList::OriginWhenCrossOrigin => "origin-when-cross-origin",
+            ReferrerPolicyList::SameOrigin => "same-origin",
+            ReferrerPolicyList::StrictOrigin => "strict-origin",
+            ReferrerPolicyList::StrictOriginWhenCrossOrigin => "strict-origin-when-cross-origin",
+            ReferrerPolicyList::UnsafeUrl => "unsafe-url",
+            ReferrerPolicyList::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "no-referrer",
+            "no-referrer-when-downgrade",
+            "origin",
+            "origin-when-cross-origin",
+            "same-origin",
+            "strict-origin",
+            "strict-origin-when-cross-origin",
+            "unsafe-url",
+        ]
+    }
+}
+impl AsRef<str> for ReferrerPolicyList {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and
+/// the header’s value.</p>
+/// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see
+/// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyFrameOptions {
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP
+    /// response header received from the origin with the one specified in this response headers
+    /// policy.</p>
+    pub r#override: std::option::Option<bool>,
+    /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are
+    /// <code>DENY</code> and <code>SAMEORIGIN</code>. </p>
+    /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    pub frame_option: std::option::Option<crate::model::FrameOptionsList>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyFrameOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyFrameOptions");
+        formatter.field("r#override", &self.r#override);
+        formatter.field("frame_option", &self.frame_option);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions)
+pub mod response_headers_policy_frame_options {
+    /// A builder for [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#override: std::option::Option<bool>,
+        pub(crate) frame_option: std::option::Option<crate::model::FrameOptionsList>,
+    }
+    impl Builder {
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP
+        /// response header received from the origin with the one specified in this response headers
+        /// policy.</p>
+        pub fn r#override(mut self, input: bool) -> Self {
+            self.r#override = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP
+        /// response header received from the origin with the one specified in this response headers
+        /// policy.</p>
+        pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#override = input;
+            self
+        }
+        /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are
+        /// <code>DENY</code> and <code>SAMEORIGIN</code>. </p>
+        /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+        pub fn frame_option(mut self, input: crate::model::FrameOptionsList) -> Self {
+            self.frame_option = Some(input);
+            self
+        }
+        /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are
+        /// <code>DENY</code> and <code>SAMEORIGIN</code>. </p>
+        /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+        pub fn set_frame_option(
+            mut self,
+            input: std::option::Option<crate::model::FrameOptionsList>,
+        ) -> Self {
+            self.frame_option = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyFrameOptions {
+            crate::model::ResponseHeadersPolicyFrameOptions {
+                r#override: self.r#override,
+                frame_option: self.frame_option,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyFrameOptions {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions)
+    pub fn builder() -> crate::model::response_headers_policy_frame_options::Builder {
+        crate::model::response_headers_policy_frame_options::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FrameOptionsList {
+    #[allow(missing_docs)] // documentation missing in model
+    Deny,
+    #[allow(missing_docs)] // documentation missing in model
+    Sameorigin,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FrameOptionsList {
+    fn from(s: &str) -> Self {
+        match s {
+            "DENY" => FrameOptionsList::Deny,
+            "SAMEORIGIN" => FrameOptionsList::Sameorigin,
+            other => FrameOptionsList::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FrameOptionsList {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FrameOptionsList::from(s))
+    }
+}
+impl FrameOptionsList {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FrameOptionsList::Deny => "DENY",
+            FrameOptionsList::Sameorigin => "SAMEORIGIN",
+            FrameOptionsList::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DENY", "SAMEORIGIN"]
+    }
+}
+impl AsRef<str> for FrameOptionsList {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and
+/// the header’s value.</p>
+/// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see
+/// <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyXssProtection {
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP
+    /// response header received from the origin with the one specified in this response headers
+    /// policy.</p>
+    pub r#override: std::option::Option<bool>,
+    /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response
+    /// header. When this setting is <code>true</code>, the value of the
+    /// <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is
+    /// <code>false</code>, the value of the <code>X-XSS-Protection</code> header is
+    /// <code>0</code>.</p>
+    /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    pub protection: std::option::Option<bool>,
+    /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the
+    /// <code>X-XSS-Protection</code> header.</p>
+    /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    pub mode_block: std::option::Option<bool>,
+    /// <p>A reporting URI, which CloudFront uses as the value of the <code>report</code> directive in the
+    /// <code>X-XSS-Protection</code> header.</p>
+    /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is
+    /// <code>true</code>.</p>
+    /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+    pub report_uri: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyXssProtection {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyXssProtection");
+        formatter.field("r#override", &self.r#override);
+        formatter.field("protection", &self.protection);
+        formatter.field("mode_block", &self.mode_block);
+        formatter.field("report_uri", &self.report_uri);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection)
+pub mod response_headers_policy_xss_protection {
+    /// A builder for [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#override: std::option::Option<bool>,
+        pub(crate) protection: std::option::Option<bool>,
+        pub(crate) mode_block: std::option::Option<bool>,
+        pub(crate) report_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP
+        /// response header received from the origin with the one specified in this response headers
+        /// policy.</p>
+        pub fn r#override(mut self, input: bool) -> Self {
+            self.r#override = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code> HTTP
+        /// response header received from the origin with the one specified in this response headers
+        /// policy.</p>
+        pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#override = input;
+            self
+        }
+        /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response
+        /// header. When this setting is <code>true</code>, the value of the
+        /// <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is
+        /// <code>false</code>, the value of the <code>X-XSS-Protection</code> header is
+        /// <code>0</code>.</p>
+        /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+        pub fn protection(mut self, input: bool) -> Self {
+            self.protection = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response
+        /// header. When this setting is <code>true</code>, the value of the
+        /// <code>X-XSS-Protection</code> header is <code>1</code>. When this setting is
+        /// <code>false</code>, the value of the <code>X-XSS-Protection</code> header is
+        /// <code>0</code>.</p>
+        /// <p>For more information about these settings, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+        pub fn set_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.protection = input;
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the
+        /// <code>X-XSS-Protection</code> header.</p>
+        /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+        pub fn mode_block(mut self, input: bool) -> Self {
+            self.mode_block = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront includes the <code>mode=block</code> directive in the
+        /// <code>X-XSS-Protection</code> header.</p>
+        /// <p>For more information about this directive, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+        pub fn set_mode_block(mut self, input: std::option::Option<bool>) -> Self {
+            self.mode_block = input;
+            self
+        }
+        /// <p>A reporting URI, which CloudFront uses as the value of the <code>report</code> directive in the
+        /// <code>X-XSS-Protection</code> header.</p>
+        /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is
+        /// <code>true</code>.</p>
+        /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+        pub fn report_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.report_uri = Some(input.into());
+            self
+        }
+        /// <p>A reporting URI, which CloudFront uses as the value of the <code>report</code> directive in the
+        /// <code>X-XSS-Protection</code> header.</p>
+        /// <p>You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is
+        /// <code>true</code>.</p>
+        /// <p>For more information about using a reporting URL, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
+        pub fn set_report_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyXssProtection {
+            crate::model::ResponseHeadersPolicyXssProtection {
+                r#override: self.r#override,
+                protection: self.protection,
+                mode_block: self.mode_block,
+                report_uri: self.report_uri,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyXssProtection {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection)
+    pub fn builder() -> crate::model::response_headers_policy_xss_protection::Builder {
+        crate::model::response_headers_policy_xss_protection::Builder::default()
+    }
+}
+
+/// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource
+/// sharing (CORS). CloudFront adds these headers to HTTP responses that it sends for CORS
+/// requests that match a cache behavior associated with this response headers
+/// policy.</p>
+/// <p>For more information about CORS, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource
+/// Sharing (CORS)</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyCorsConfig {
+    /// <p>A list of origins (domain names) that CloudFront can use as the value for the
+    /// <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
+    /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response
+    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+    pub access_control_allow_origins:
+        std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowOrigins>,
+    /// <p>A list of HTTP header names that CloudFront includes as values for the
+    /// <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
+    /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response
+    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
+    pub access_control_allow_headers:
+        std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowHeaders>,
+    /// <p>A list of HTTP methods that CloudFront includes as values for the
+    /// <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
+    /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response
+    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
+    pub access_control_allow_methods:
+        std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowMethods>,
+    /// <p>A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code>
+    /// HTTP response header.</p>
+    /// <p>For more information about the <code>Access-Control-Allow-Credentials</code> HTTP
+    /// response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a> in the MDN Web Docs.</p>
+    pub access_control_allow_credentials: std::option::Option<bool>,
+    /// <p>A list of HTTP headers that CloudFront includes as values for the
+    /// <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
+    /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP
+    /// response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+    pub access_control_expose_headers:
+        std::option::Option<crate::model::ResponseHeadersPolicyAccessControlExposeHeaders>,
+    /// <p>A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code> HTTP
+    /// response header.</p>
+    /// <p>For more information about the <code>Access-Control-Max-Age</code> HTTP response
+    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a> in the MDN Web Docs.</p>
+    pub access_control_max_age_sec: std::option::Option<i32>,
+    /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the
+    /// origin with the ones specified in this response headers policy.</p>
+    pub origin_override: std::option::Option<bool>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyCorsConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyCorsConfig");
+        formatter.field(
+            "access_control_allow_origins",
+            &self.access_control_allow_origins,
+        );
+        formatter.field(
+            "access_control_allow_headers",
+            &self.access_control_allow_headers,
+        );
+        formatter.field(
+            "access_control_allow_methods",
+            &self.access_control_allow_methods,
+        );
+        formatter.field(
+            "access_control_allow_credentials",
+            &self.access_control_allow_credentials,
+        );
+        formatter.field(
+            "access_control_expose_headers",
+            &self.access_control_expose_headers,
+        );
+        formatter.field(
+            "access_control_max_age_sec",
+            &self.access_control_max_age_sec,
+        );
+        formatter.field("origin_override", &self.origin_override);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig)
+pub mod response_headers_policy_cors_config {
+    /// A builder for [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_control_allow_origins:
+            std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowOrigins>,
+        pub(crate) access_control_allow_headers:
+            std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowHeaders>,
+        pub(crate) access_control_allow_methods:
+            std::option::Option<crate::model::ResponseHeadersPolicyAccessControlAllowMethods>,
+        pub(crate) access_control_allow_credentials: std::option::Option<bool>,
+        pub(crate) access_control_expose_headers:
+            std::option::Option<crate::model::ResponseHeadersPolicyAccessControlExposeHeaders>,
+        pub(crate) access_control_max_age_sec: std::option::Option<i32>,
+        pub(crate) origin_override: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>A list of origins (domain names) that CloudFront can use as the value for the
+        /// <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+        pub fn access_control_allow_origins(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyAccessControlAllowOrigins,
+        ) -> Self {
+            self.access_control_allow_origins = Some(input);
+            self
+        }
+        /// <p>A list of origins (domain names) that CloudFront can use as the value for the
+        /// <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+        pub fn set_access_control_allow_origins(
+            mut self,
+            input: std::option::Option<
+                crate::model::ResponseHeadersPolicyAccessControlAllowOrigins,
+            >,
+        ) -> Self {
+            self.access_control_allow_origins = input;
+            self
+        }
+        /// <p>A list of HTTP header names that CloudFront includes as values for the
+        /// <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
+        pub fn access_control_allow_headers(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyAccessControlAllowHeaders,
+        ) -> Self {
+            self.access_control_allow_headers = Some(input);
+            self
+        }
+        /// <p>A list of HTTP header names that CloudFront includes as values for the
+        /// <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
+        pub fn set_access_control_allow_headers(
+            mut self,
+            input: std::option::Option<
+                crate::model::ResponseHeadersPolicyAccessControlAllowHeaders,
+            >,
+        ) -> Self {
+            self.access_control_allow_headers = input;
+            self
+        }
+        /// <p>A list of HTTP methods that CloudFront includes as values for the
+        /// <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
+        pub fn access_control_allow_methods(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyAccessControlAllowMethods,
+        ) -> Self {
+            self.access_control_allow_methods = Some(input);
+            self
+        }
+        /// <p>A list of HTTP methods that CloudFront includes as values for the
+        /// <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
+        pub fn set_access_control_allow_methods(
+            mut self,
+            input: std::option::Option<
+                crate::model::ResponseHeadersPolicyAccessControlAllowMethods,
+            >,
+        ) -> Self {
+            self.access_control_allow_methods = input;
+            self
+        }
+        /// <p>A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code>
+        /// HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Allow-Credentials</code> HTTP
+        /// response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a> in the MDN Web Docs.</p>
+        pub fn access_control_allow_credentials(mut self, input: bool) -> Self {
+            self.access_control_allow_credentials = Some(input);
+            self
+        }
+        /// <p>A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code>
+        /// HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Allow-Credentials</code> HTTP
+        /// response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a> in the MDN Web Docs.</p>
+        pub fn set_access_control_allow_credentials(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.access_control_allow_credentials = input;
+            self
+        }
+        /// <p>A list of HTTP headers that CloudFront includes as values for the
+        /// <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP
+        /// response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+        pub fn access_control_expose_headers(
+            mut self,
+            input: crate::model::ResponseHeadersPolicyAccessControlExposeHeaders,
+        ) -> Self {
+            self.access_control_expose_headers = Some(input);
+            self
+        }
+        /// <p>A list of HTTP headers that CloudFront includes as values for the
+        /// <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
+        /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP
+        /// response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+        pub fn set_access_control_expose_headers(
+            mut self,
+            input: std::option::Option<
+                crate::model::ResponseHeadersPolicyAccessControlExposeHeaders,
+            >,
+        ) -> Self {
+            self.access_control_expose_headers = input;
+            self
+        }
+        /// <p>A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code> HTTP
+        /// response header.</p>
+        /// <p>For more information about the <code>Access-Control-Max-Age</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a> in the MDN Web Docs.</p>
+        pub fn access_control_max_age_sec(mut self, input: i32) -> Self {
+            self.access_control_max_age_sec = Some(input);
+            self
+        }
+        /// <p>A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code> HTTP
+        /// response header.</p>
+        /// <p>For more information about the <code>Access-Control-Max-Age</code> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a> in the MDN Web Docs.</p>
+        pub fn set_access_control_max_age_sec(mut self, input: std::option::Option<i32>) -> Self {
+            self.access_control_max_age_sec = input;
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the
+        /// origin with the ones specified in this response headers policy.</p>
+        pub fn origin_override(mut self, input: bool) -> Self {
+            self.origin_override = Some(input);
+            self
+        }
+        /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the
+        /// origin with the ones specified in this response headers policy.</p>
+        pub fn set_origin_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.origin_override = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyCorsConfig {
+            crate::model::ResponseHeadersPolicyCorsConfig {
+                access_control_allow_origins: self.access_control_allow_origins,
+                access_control_allow_headers: self.access_control_allow_headers,
+                access_control_allow_methods: self.access_control_allow_methods,
+                access_control_allow_credentials: self.access_control_allow_credentials,
+                access_control_expose_headers: self.access_control_expose_headers,
+                access_control_max_age_sec: self.access_control_max_age_sec,
+                origin_override: self.origin_override,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyCorsConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig)
+    pub fn builder() -> crate::model::response_headers_policy_cors_config::Builder {
+        crate::model::response_headers_policy_cors_config::Builder::default()
+    }
+}
+
+/// <p>A list of HTTP headers that CloudFront includes as values for the
+/// <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
+/// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP
+/// response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyAccessControlExposeHeaders {
+    /// <p>The number of HTTP headers in the list.</p>
+    pub quantity: std::option::Option<i32>,
+    /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
+    pub items: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyAccessControlExposeHeaders {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlExposeHeaders");
+        formatter.field("quantity", &self.quantity);
+        formatter.field("items", &self.items);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders)
+pub mod response_headers_policy_access_control_expose_headers {
+    /// A builder for [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The number of HTTP headers in the list.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        /// <p>The number of HTTP headers in the list.</p>
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
+        pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyAccessControlExposeHeaders {
+            crate::model::ResponseHeadersPolicyAccessControlExposeHeaders {
+                quantity: self.quantity,
+                items: self.items,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyAccessControlExposeHeaders {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders)
+    pub fn builder() -> crate::model::response_headers_policy_access_control_expose_headers::Builder
+    {
+        crate::model::response_headers_policy_access_control_expose_headers::Builder::default()
+    }
+}
+
+/// <p>A list of HTTP methods that CloudFront includes as values for the
+/// <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
+/// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response
+/// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyAccessControlAllowMethods {
+    /// <p>The number of HTTP methods in the list.</p>
+    pub quantity: std::option::Option<i32>,
+    /// <p>The list of HTTP methods. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>GET</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DELETE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>HEAD</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>OPTIONS</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PATCH</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>POST</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PUT</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ALL</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <code>ALL</code> is a special value that includes all of the listed HTTP
+    /// methods.</p>
+    pub items: std::option::Option<
+        std::vec::Vec<crate::model::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+    >,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowMethods {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowMethods");
+        formatter.field("quantity", &self.quantity);
+        formatter.field("items", &self.items);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods)
+pub mod response_headers_policy_access_control_allow_methods {
+    /// A builder for [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) items: std::option::Option<
+            std::vec::Vec<crate::model::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+        >,
+    }
+    impl Builder {
+        /// <p>The number of HTTP methods in the list.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        /// <p>The number of HTTP methods in the list.</p>
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The list of HTTP methods. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GET</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HEAD</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIONS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PATCH</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>POST</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>ALL</code> is a special value that includes all of the listed HTTP
+        /// methods.</p>
+        pub fn items(
+            mut self,
+            input: impl Into<crate::model::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+        ) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        /// <p>The list of HTTP methods. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GET</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HEAD</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIONS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PATCH</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>POST</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>ALL</code> is a special value that includes all of the listed HTTP
+        /// methods.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+            >,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyAccessControlAllowMethods {
+            crate::model::ResponseHeadersPolicyAccessControlAllowMethods {
+                quantity: self.quantity,
+                items: self.items,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyAccessControlAllowMethods {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods)
+    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_methods::Builder
+    {
+        crate::model::response_headers_policy_access_control_allow_methods::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResponseHeadersPolicyAccessControlAllowMethodsValues {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Delete,
+    #[allow(missing_docs)] // documentation missing in model
+    Get,
+    #[allow(missing_docs)] // documentation missing in model
+    Head,
+    #[allow(missing_docs)] // documentation missing in model
+    Options,
+    #[allow(missing_docs)] // documentation missing in model
+    Patch,
+    #[allow(missing_docs)] // documentation missing in model
+    Post,
+    #[allow(missing_docs)] // documentation missing in model
+    Put,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ResponseHeadersPolicyAccessControlAllowMethodsValues {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => ResponseHeadersPolicyAccessControlAllowMethodsValues::All,
+            "DELETE" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Delete,
+            "GET" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Get,
+            "HEAD" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Head,
+            "OPTIONS" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Options,
+            "PATCH" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Patch,
+            "POST" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Post,
+            "PUT" => ResponseHeadersPolicyAccessControlAllowMethodsValues::Put,
+            other => {
+                ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(other.to_owned())
+            }
+        }
+    }
+}
+impl std::str::FromStr for ResponseHeadersPolicyAccessControlAllowMethodsValues {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResponseHeadersPolicyAccessControlAllowMethodsValues::from(
+            s,
+        ))
+    }
+}
+impl ResponseHeadersPolicyAccessControlAllowMethodsValues {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::All => "ALL",
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Delete => "DELETE",
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Get => "GET",
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Head => "HEAD",
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Options => "OPTIONS",
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Patch => "PATCH",
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Post => "POST",
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Put => "PUT",
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ALL", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT",
+        ]
+    }
+}
+impl AsRef<str> for ResponseHeadersPolicyAccessControlAllowMethodsValues {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A list of HTTP header names that CloudFront includes as values for the
+/// <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
+/// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response
+/// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyAccessControlAllowHeaders {
+    /// <p>The number of HTTP header names in the list.</p>
+    pub quantity: std::option::Option<i32>,
+    /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
+    pub items: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowHeaders {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowHeaders");
+        formatter.field("quantity", &self.quantity);
+        formatter.field("items", &self.items);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders)
+pub mod response_headers_policy_access_control_allow_headers {
+    /// A builder for [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The number of HTTP header names in the list.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        /// <p>The number of HTTP header names in the list.</p>
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
+        pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyAccessControlAllowHeaders {
+            crate::model::ResponseHeadersPolicyAccessControlAllowHeaders {
+                quantity: self.quantity,
+                items: self.items,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyAccessControlAllowHeaders {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders)
+    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_headers::Builder
+    {
+        crate::model::response_headers_policy_access_control_allow_headers::Builder::default()
+    }
+}
+
+/// <p>A list of origins (domain names) that CloudFront can use as the value for the
+/// <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
+/// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response
+/// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyAccessControlAllowOrigins {
+    /// <p>The number of origins in the list.</p>
+    pub quantity: std::option::Option<i32>,
+    /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all
+    /// origins.</p>
+    pub items: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyAccessControlAllowOrigins {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyAccessControlAllowOrigins");
+        formatter.field("quantity", &self.quantity);
+        formatter.field("items", &self.items);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins)
+pub mod response_headers_policy_access_control_allow_origins {
+    /// A builder for [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The number of origins in the list.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        /// <p>The number of origins in the list.</p>
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all
+        /// origins.</p>
+        pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        /// <p>The list of origins (domain names). You can specify <code>*</code> to allow all
+        /// origins.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyAccessControlAllowOrigins {
+            crate::model::ResponseHeadersPolicyAccessControlAllowOrigins {
+                quantity: self.quantity,
+                items: self.items,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyAccessControlAllowOrigins {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins)
+    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_origins::Builder
+    {
+        crate::model::response_headers_policy_access_control_allow_origins::Builder::default()
     }
 }
 
@@ -4410,7 +6658,7 @@ pub struct Distribution {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
     /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-    /// <code>123456789012</code> is your account ID.</p>
+    /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>This response element indicates the current status of the distribution. When the status
     /// is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge
@@ -4428,7 +6676,7 @@ pub struct Distribution {
     /// </important>
     /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache behavior in
     /// this distribution to serve private content using trusted signers. This field contains a
-    /// list of account IDs and the active CloudFront key pairs in each account that CloudFront can use
+    /// list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use
     /// to verify the signatures of signed URLs or signed cookies.</p>
     pub active_trusted_signers: std::option::Option<crate::model::ActiveTrustedSigners>,
     /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache
@@ -4500,14 +6748,14 @@ pub mod distribution {
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your account ID.</p>
+        /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your account ID.</p>
+        /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4568,7 +6816,7 @@ pub mod distribution {
         /// </important>
         /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache behavior in
         /// this distribution to serve private content using trusted signers. This field contains a
-        /// list of account IDs and the active CloudFront key pairs in each account that CloudFront can use
+        /// list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use
         /// to verify the signatures of signed URLs or signed cookies.</p>
         pub fn active_trusted_signers(mut self, input: crate::model::ActiveTrustedSigners) -> Self {
             self.active_trusted_signers = Some(input);
@@ -4580,7 +6828,7 @@ pub mod distribution {
         /// </important>
         /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache behavior in
         /// this distribution to serve private content using trusted signers. This field contains a
-        /// list of account IDs and the active CloudFront key pairs in each account that CloudFront can use
+        /// list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use
         /// to verify the signatures of signed URLs or signed cookies.</p>
         pub fn set_active_trusted_signers(
             mut self,
@@ -4997,7 +7245,7 @@ pub struct DistributionConfig {
     /// content (or restrict access but not by IP address), you can create two distributions. For more
     /// information, see  
     /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
+    /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
     /// distribution, you need to create a second alias resource record set when both of the following
     /// are true:</p>
     /// <ul>
@@ -5009,9 +7257,9 @@ pub struct DistributionConfig {
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic
-    /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
+    /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
     /// Developer Guide</i>.</p>
-    /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
+    /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
     /// service, you don't need to make any changes. A CNAME record will route traffic to your
     /// distribution regardless of the IP address format of the viewer request.</p>
     pub is_ipv6_enabled: std::option::Option<bool>,
@@ -5417,7 +7665,7 @@ pub mod distribution_config {
         /// content (or restrict access but not by IP address), you can create two distributions. For more
         /// information, see  
         /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
+        /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
         /// distribution, you need to create a second alias resource record set when both of the following
         /// are true:</p>
         /// <ul>
@@ -5429,9 +7677,9 @@ pub mod distribution_config {
         /// </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic
-        /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
+        /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
         /// Developer Guide</i>.</p>
-        /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
+        /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
         /// service, you don't need to make any changes. A CNAME record will route traffic to your
         /// distribution regardless of the IP address format of the viewer request.</p>
         pub fn is_ipv6_enabled(mut self, input: bool) -> Self {
@@ -5450,7 +7698,7 @@ pub mod distribution_config {
         /// content (or restrict access but not by IP address), you can create two distributions. For more
         /// information, see  
         /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
+        /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
         /// distribution, you need to create a second alias resource record set when both of the following
         /// are true:</p>
         /// <ul>
@@ -5462,9 +7710,9 @@ pub mod distribution_config {
         /// </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic
-        /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
+        /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
         /// Developer Guide</i>.</p>
-        /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
+        /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
         /// service, you don't need to make any changes. A CNAME record will route traffic to your
         /// distribution regardless of the IP address format of the viewer request.</p>
         pub fn set_is_ipv6_enabled(mut self, input: std::option::Option<bool>) -> Self {
@@ -7219,11 +9467,11 @@ pub struct CacheBehavior {
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
     /// <code>TrustedSigners</code>.</p>
     /// </important>
-    /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
+    /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
     /// cookies.</p>
     /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
     /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-    /// the private key of a CloudFront key pair in the trusted signer’s account. The signed URL
+    /// the private key of a CloudFront key pair in the trusted signer’s Amazon Web Services account. The signed URL
     /// or cookie contains information about which public key CloudFront should use to verify the
     /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub trusted_signers: std::option::Option<crate::model::TrustedSigners>,
@@ -7320,6 +9568,8 @@ pub struct CacheBehavior {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_request_policy_id: std::option::Option<std::string::String>,
+    /// <p>The identifier for a response headers policy.</p>
+    pub response_headers_policy_id: std::option::Option<std::string::String>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
     /// request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -7387,6 +9637,10 @@ impl std::fmt::Debug for CacheBehavior {
         formatter.field("realtime_log_config_arn", &self.realtime_log_config_arn);
         formatter.field("cache_policy_id", &self.cache_policy_id);
         formatter.field("origin_request_policy_id", &self.origin_request_policy_id);
+        formatter.field(
+            "response_headers_policy_id",
+            &self.response_headers_policy_id,
+        );
         formatter.field("forwarded_values", &self.forwarded_values);
         formatter.field("min_ttl", &self.min_ttl);
         formatter.field("default_ttl", &self.default_ttl);
@@ -7415,6 +9669,7 @@ pub mod cache_behavior {
         pub(crate) realtime_log_config_arn: std::option::Option<std::string::String>,
         pub(crate) cache_policy_id: std::option::Option<std::string::String>,
         pub(crate) origin_request_policy_id: std::option::Option<std::string::String>,
+        pub(crate) response_headers_policy_id: std::option::Option<std::string::String>,
         pub(crate) forwarded_values: std::option::Option<crate::model::ForwardedValues>,
         pub(crate) min_ttl: std::option::Option<i64>,
         pub(crate) default_ttl: std::option::Option<i64>,
@@ -7476,11 +9731,11 @@ pub mod cache_behavior {
         /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
         /// <code>TrustedSigners</code>.</p>
         /// </important>
-        /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
+        /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
         /// cookies.</p>
         /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
         /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-        /// the private key of a CloudFront key pair in the trusted signer’s account. The signed URL
+        /// the private key of a CloudFront key pair in the trusted signer’s Amazon Web Services account. The signed URL
         /// or cookie contains information about which public key CloudFront should use to verify the
         /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn trusted_signers(mut self, input: crate::model::TrustedSigners) -> Self {
@@ -7491,11 +9746,11 @@ pub mod cache_behavior {
         /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
         /// <code>TrustedSigners</code>.</p>
         /// </important>
-        /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
+        /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
         /// cookies.</p>
         /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
         /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-        /// the private key of a CloudFront key pair in the trusted signer’s account. The signed URL
+        /// the private key of a CloudFront key pair in the trusted signer’s Amazon Web Services account. The signed URL
         /// or cookie contains information about which public key CloudFront should use to verify the
         /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_trusted_signers(
@@ -7787,6 +10042,19 @@ pub mod cache_behavior {
             self.origin_request_policy_id = input;
             self
         }
+        /// <p>The identifier for a response headers policy.</p>
+        pub fn response_headers_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_headers_policy_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for a response headers policy.</p>
+        pub fn set_response_headers_policy_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.response_headers_policy_id = input;
+            self
+        }
         /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
         /// request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the
         /// <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -7923,6 +10191,7 @@ pub mod cache_behavior {
                 realtime_log_config_arn: self.realtime_log_config_arn,
                 cache_policy_id: self.cache_policy_id,
                 origin_request_policy_id: self.origin_request_policy_id,
+                response_headers_policy_id: self.response_headers_policy_id,
                 forwarded_values: self.forwarded_values,
                 min_ttl: self.min_ttl,
                 default_ttl: self.default_ttl,
@@ -9487,11 +11756,11 @@ pub struct DefaultCacheBehavior {
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
     /// <code>TrustedSigners</code>.</p>
     /// </important>
-    /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
+    /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
     /// cookies.</p>
     /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
     /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-    /// the private key of a CloudFront key pair in a trusted signer’s account. The signed URL or
+    /// the private key of a CloudFront key pair in a trusted signer’s Amazon Web Services account. The signed URL or
     /// cookie contains information about which public key CloudFront should use to verify the
     /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub trusted_signers: std::option::Option<crate::model::TrustedSigners>,
@@ -9590,6 +11859,8 @@ pub struct DefaultCacheBehavior {
     /// behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_request_policy_id: std::option::Option<std::string::String>,
+    /// <p>The identifier for a response headers policy.</p>
+    pub response_headers_policy_id: std::option::Option<std::string::String>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request
     /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -9655,6 +11926,10 @@ impl std::fmt::Debug for DefaultCacheBehavior {
         formatter.field("realtime_log_config_arn", &self.realtime_log_config_arn);
         formatter.field("cache_policy_id", &self.cache_policy_id);
         formatter.field("origin_request_policy_id", &self.origin_request_policy_id);
+        formatter.field(
+            "response_headers_policy_id",
+            &self.response_headers_policy_id,
+        );
         formatter.field("forwarded_values", &self.forwarded_values);
         formatter.field("min_ttl", &self.min_ttl);
         formatter.field("default_ttl", &self.default_ttl);
@@ -9682,6 +11957,7 @@ pub mod default_cache_behavior {
         pub(crate) realtime_log_config_arn: std::option::Option<std::string::String>,
         pub(crate) cache_policy_id: std::option::Option<std::string::String>,
         pub(crate) origin_request_policy_id: std::option::Option<std::string::String>,
+        pub(crate) response_headers_policy_id: std::option::Option<std::string::String>,
         pub(crate) forwarded_values: std::option::Option<crate::model::ForwardedValues>,
         pub(crate) min_ttl: std::option::Option<i64>,
         pub(crate) default_ttl: std::option::Option<i64>,
@@ -9707,11 +11983,11 @@ pub mod default_cache_behavior {
         /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
         /// <code>TrustedSigners</code>.</p>
         /// </important>
-        /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
+        /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
         /// cookies.</p>
         /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
         /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-        /// the private key of a CloudFront key pair in a trusted signer’s account. The signed URL or
+        /// the private key of a CloudFront key pair in a trusted signer’s Amazon Web Services account. The signed URL or
         /// cookie contains information about which public key CloudFront should use to verify the
         /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn trusted_signers(mut self, input: crate::model::TrustedSigners) -> Self {
@@ -9722,11 +11998,11 @@ pub mod default_cache_behavior {
         /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
         /// <code>TrustedSigners</code>.</p>
         /// </important>
-        /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
+        /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed
         /// cookies.</p>
         /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
         /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-        /// the private key of a CloudFront key pair in a trusted signer’s account. The signed URL or
+        /// the private key of a CloudFront key pair in a trusted signer’s Amazon Web Services account. The signed URL or
         /// cookie contains information about which public key CloudFront should use to verify the
         /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_trusted_signers(
@@ -10022,6 +12298,19 @@ pub mod default_cache_behavior {
             self.origin_request_policy_id = input;
             self
         }
+        /// <p>The identifier for a response headers policy.</p>
+        pub fn response_headers_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_headers_policy_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for a response headers policy.</p>
+        pub fn set_response_headers_policy_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.response_headers_policy_id = input;
+            self
+        }
         /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request
         /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the
         /// <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -10155,6 +12444,7 @@ pub mod default_cache_behavior {
                 realtime_log_config_arn: self.realtime_log_config_arn,
                 cache_policy_id: self.cache_policy_id,
                 origin_request_policy_id: self.origin_request_policy_id,
+                response_headers_policy_id: self.response_headers_policy_id,
                 forwarded_values: self.forwarded_values,
                 min_ttl: self.min_ttl,
                 default_ttl: self.default_ttl,
@@ -10957,13 +13247,13 @@ pub struct OriginShield {
     /// help protect your origin. When it’s disabled, CloudFront might send requests directly to
     /// your origin from multiple edge locations or regional edge caches.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The Region for Origin Shield.</p>
-    /// <p>Specify the Region that has the lowest latency to your origin.
+    /// <p>The Amazon Web Services Region for Origin Shield.</p>
+    /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin.
     /// To specify a region, use the region code, not the region name.
     /// For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
-    /// <p>When you enable CloudFront Origin Shield, you must specify the Region for Origin
-    /// Shield. For the list of Regions that you can specify, and for help choosing the best
-    /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Region for Origin Shield</a> in the
+    /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin
+    /// Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best
+    /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_shield_region: std::option::Option<std::string::String>,
 }
@@ -11001,25 +13291,25 @@ pub mod origin_shield {
             self.enabled = input;
             self
         }
-        /// <p>The Region for Origin Shield.</p>
-        /// <p>Specify the Region that has the lowest latency to your origin.
+        /// <p>The Amazon Web Services Region for Origin Shield.</p>
+        /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin.
         /// To specify a region, use the region code, not the region name.
         /// For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
-        /// <p>When you enable CloudFront Origin Shield, you must specify the Region for Origin
-        /// Shield. For the list of Regions that you can specify, and for help choosing the best
-        /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Region for Origin Shield</a> in the
+        /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin
+        /// Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best
+        /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the
         /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn origin_shield_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.origin_shield_region = Some(input.into());
             self
         }
-        /// <p>The Region for Origin Shield.</p>
-        /// <p>Specify the Region that has the lowest latency to your origin.
+        /// <p>The Amazon Web Services Region for Origin Shield.</p>
+        /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin.
         /// To specify a region, use the region code, not the region name.
         /// For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
-        /// <p>When you enable CloudFront Origin Shield, you must specify the Region for Origin
-        /// Shield. For the list of Regions that you can specify, and for help choosing the best
-        /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Region for Origin Shield</a> in the
+        /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin
+        /// Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best
+        /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the
         /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_shield_region(
             mut self,
@@ -11678,7 +13968,7 @@ impl std::fmt::Debug for OriginCustomHeader {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OriginCustomHeader");
         formatter.field("header_name", &self.header_name);
-        formatter.field("header_value", &self.header_value);
+        formatter.field("header_value", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -13511,9 +15801,12 @@ impl std::fmt::Debug for TestResult {
         let mut formatter = f.debug_struct("TestResult");
         formatter.field("function_summary", &self.function_summary);
         formatter.field("compute_utilization", &self.compute_utilization);
-        formatter.field("function_execution_logs", &self.function_execution_logs);
-        formatter.field("function_error_message", &self.function_error_message);
-        formatter.field("function_output", &self.function_output);
+        formatter.field(
+            "function_execution_logs",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.field("function_error_message", &"*** Sensitive Data Redacted ***");
+        formatter.field("function_output", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -13784,11 +16077,11 @@ pub struct StreamingDistributionList {
     /// results were truncated, you can make a follow-up pagination request using the
     /// <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
     pub is_truncated: std::option::Option<bool>,
-    /// <p>The number of streaming distributions that were created by the current account.
+    /// <p>The number of streaming distributions that were created by the current Amazon Web Services account.
     /// </p>
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for
-    /// each distribution that was created by the current account.</p>
+    /// each distribution that was created by the current Amazon Web Services account.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::StreamingDistributionSummary>>,
 }
 impl std::fmt::Debug for StreamingDistributionList {
@@ -13866,13 +16159,13 @@ pub mod streaming_distribution_list {
             self.is_truncated = input;
             self
         }
-        /// <p>The number of streaming distributions that were created by the current account.
+        /// <p>The number of streaming distributions that were created by the current Amazon Web Services account.
         /// </p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
         }
-        /// <p>The number of streaming distributions that were created by the current account.
+        /// <p>The number of streaming distributions that were created by the current Amazon Web Services account.
         /// </p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
@@ -13883,7 +16176,7 @@ pub mod streaming_distribution_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for
-        /// each distribution that was created by the current account.</p>
+        /// each distribution that was created by the current Amazon Web Services account.</p>
         pub fn items(
             mut self,
             input: impl Into<crate::model::StreamingDistributionSummary>,
@@ -13894,7 +16187,7 @@ pub mod streaming_distribution_list {
             self
         }
         /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for
-        /// each distribution that was created by the current account.</p>
+        /// each distribution that was created by the current Amazon Web Services account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StreamingDistributionSummary>>,
@@ -13930,7 +16223,7 @@ pub struct StreamingDistributionSummary {
     pub id: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
     /// <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-    /// <code>123456789012</code> is your account ID.</p>
+    /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the distribution. When the status is
     /// <code>Deployed</code>, the distribution's information is fully propagated throughout the
@@ -13946,7 +16239,7 @@ pub struct StreamingDistributionSummary {
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any,
     /// for this streaming distribution.</p>
     pub aliases: std::option::Option<crate::model::Aliases>,
-    /// <p>A complex type that specifies the accounts, if any, that you want to allow to
+    /// <p>A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to
     /// create signed URLs for private content. If you want to require signed URLs in requests for
     /// objects in the target origin that match the <code>PathPattern</code> for this cache behavior,
     /// specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for
@@ -14016,14 +16309,14 @@ pub mod streaming_distribution_summary {
         }
         /// <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your account ID.</p>
+        /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your account ID.</p>
+        /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -14089,7 +16382,7 @@ pub mod streaming_distribution_summary {
             self.aliases = input;
             self
         }
-        /// <p>A complex type that specifies the accounts, if any, that you want to allow to
+        /// <p>A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to
         /// create signed URLs for private content. If you want to require signed URLs in requests for
         /// objects in the target origin that match the <code>PathPattern</code> for this cache behavior,
         /// specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for
@@ -14106,7 +16399,7 @@ pub mod streaming_distribution_summary {
             self.trusted_signers = Some(input);
             self
         }
-        /// <p>A complex type that specifies the accounts, if any, that you want to allow to
+        /// <p>A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to
         /// create signed URLs for private content. If you want to require signed URLs in requests for
         /// objects in the target origin that match the <code>PathPattern</code> for this cache behavior,
         /// specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for
@@ -14183,6 +16476,249 @@ impl StreamingDistributionSummary {
     /// Creates a new builder-style object to manufacture [`StreamingDistributionSummary`](crate::model::StreamingDistributionSummary)
     pub fn builder() -> crate::model::streaming_distribution_summary::Builder {
         crate::model::streaming_distribution_summary::Builder::default()
+    }
+}
+
+/// <p>A list of response headers policies.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicyList {
+    /// <p>If there are more items in the list than are in this response, this element is present. It
+    /// contains the value that you should use in the <code>Marker</code> field of a subsequent
+    /// request to continue listing response headers policies where you left off.</p>
+    pub next_marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of response headers policies requested.</p>
+    pub max_items: std::option::Option<i32>,
+    /// <p>The number of response headers policies returned.</p>
+    pub quantity: std::option::Option<i32>,
+    /// <p>The response headers policies in the list.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::ResponseHeadersPolicySummary>>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicyList {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicyList");
+        formatter.field("next_marker", &self.next_marker);
+        formatter.field("max_items", &self.max_items);
+        formatter.field("quantity", &self.quantity);
+        formatter.field("items", &self.items);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList)
+pub mod response_headers_policy_list {
+    /// A builder for [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) max_items: std::option::Option<i32>,
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) items:
+            std::option::Option<std::vec::Vec<crate::model::ResponseHeadersPolicySummary>>,
+    }
+    impl Builder {
+        /// <p>If there are more items in the list than are in this response, this element is present. It
+        /// contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// request to continue listing response headers policies where you left off.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
+            self
+        }
+        /// <p>If there are more items in the list than are in this response, this element is present. It
+        /// contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// request to continue listing response headers policies where you left off.</p>
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
+            self
+        }
+        /// <p>The maximum number of response headers policies requested.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
+            self
+        }
+        /// <p>The maximum number of response headers policies requested.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
+            self
+        }
+        /// <p>The number of response headers policies returned.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        /// <p>The number of response headers policies returned.</p>
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The response headers policies in the list.</p>
+        pub fn items(
+            mut self,
+            input: impl Into<crate::model::ResponseHeadersPolicySummary>,
+        ) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        /// <p>The response headers policies in the list.</p>
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ResponseHeadersPolicySummary>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicyList {
+            crate::model::ResponseHeadersPolicyList {
+                next_marker: self.next_marker,
+                max_items: self.max_items,
+                quantity: self.quantity,
+                items: self.items,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicyList {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList)
+    pub fn builder() -> crate::model::response_headers_policy_list::Builder {
+        crate::model::response_headers_policy_list::Builder::default()
+    }
+}
+
+/// <p>Contains a response headers policy.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResponseHeadersPolicySummary {
+    /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or
+    /// <code>custom</code> (created in this Amazon Web Services account).</p>
+    pub r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
+    /// <p>The response headers policy.</p>
+    pub response_headers_policy: std::option::Option<crate::model::ResponseHeadersPolicy>,
+}
+impl std::fmt::Debug for ResponseHeadersPolicySummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResponseHeadersPolicySummary");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("response_headers_policy", &self.response_headers_policy);
+        formatter.finish()
+    }
+}
+/// See [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary)
+pub mod response_headers_policy_summary {
+    /// A builder for [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
+        pub(crate) response_headers_policy:
+            std::option::Option<crate::model::ResponseHeadersPolicy>,
+    }
+    impl Builder {
+        /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or
+        /// <code>custom</code> (created in this Amazon Web Services account).</p>
+        pub fn r#type(mut self, input: crate::model::ResponseHeadersPolicyType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or
+        /// <code>custom</code> (created in this Amazon Web Services account).</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The response headers policy.</p>
+        pub fn response_headers_policy(
+            mut self,
+            input: crate::model::ResponseHeadersPolicy,
+        ) -> Self {
+            self.response_headers_policy = Some(input);
+            self
+        }
+        /// <p>The response headers policy.</p>
+        pub fn set_response_headers_policy(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicy>,
+        ) -> Self {
+            self.response_headers_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary)
+        pub fn build(self) -> crate::model::ResponseHeadersPolicySummary {
+            crate::model::ResponseHeadersPolicySummary {
+                r#type: self.r#type,
+                response_headers_policy: self.response_headers_policy,
+            }
+        }
+    }
+}
+impl ResponseHeadersPolicySummary {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary)
+    pub fn builder() -> crate::model::response_headers_policy_summary::Builder {
+        crate::model::response_headers_policy_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ResponseHeadersPolicyType {
+    #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
+    Managed,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ResponseHeadersPolicyType {
+    fn from(s: &str) -> Self {
+        match s {
+            "custom" => ResponseHeadersPolicyType::Custom,
+            "managed" => ResponseHeadersPolicyType::Managed,
+            other => ResponseHeadersPolicyType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ResponseHeadersPolicyType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResponseHeadersPolicyType::from(s))
+    }
+}
+impl ResponseHeadersPolicyType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResponseHeadersPolicyType::Custom => "custom",
+            ResponseHeadersPolicyType::Managed => "managed",
+            ResponseHeadersPolicyType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["custom", "managed"]
+    }
+}
+impl AsRef<str> for ResponseHeadersPolicyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -14654,7 +17190,7 @@ impl OriginRequestPolicyList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-    /// <code>custom</code> (created in this account).</p>
+    /// <code>custom</code> (created in this Amazon Web Services account).</p>
     pub r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
     /// <p>The origin request policy.</p>
     pub origin_request_policy: std::option::Option<crate::model::OriginRequestPolicy>,
@@ -14678,13 +17214,13 @@ pub mod origin_request_policy_summary {
     }
     impl Builder {
         /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-        /// <code>custom</code> (created in this account).</p>
+        /// <code>custom</code> (created in this Amazon Web Services account).</p>
         pub fn r#type(mut self, input: crate::model::OriginRequestPolicyType) -> Self {
             self.r#type = Some(input);
             self
         }
         /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
-        /// <code>custom</code> (created in this account).</p>
+        /// <code>custom</code> (created in this Amazon Web Services account).</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyType>,
@@ -14951,11 +17487,11 @@ pub struct InvalidationList {
     /// <code>Marker</code> request parameter to retrieve more invalidation batches in the
     /// list.</p>
     pub is_truncated: std::option::Option<bool>,
-    /// <p>The number of invalidation batches that were created by the current account.
+    /// <p>The number of invalidation batches that were created by the current Amazon Web Services account.
     /// </p>
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each
-    /// invalidation batch created by the current account.</p>
+    /// invalidation batch created by the current Amazon Web Services account.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::InvalidationSummary>>,
 }
 impl std::fmt::Debug for InvalidationList {
@@ -15034,13 +17570,13 @@ pub mod invalidation_list {
             self.is_truncated = input;
             self
         }
-        /// <p>The number of invalidation batches that were created by the current account.
+        /// <p>The number of invalidation batches that were created by the current Amazon Web Services account.
         /// </p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
         }
-        /// <p>The number of invalidation batches that were created by the current account.
+        /// <p>The number of invalidation batches that were created by the current Amazon Web Services account.
         /// </p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
@@ -15051,7 +17587,7 @@ pub mod invalidation_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each
-        /// invalidation batch created by the current account.</p>
+        /// invalidation batch created by the current Amazon Web Services account.</p>
         pub fn items(mut self, input: impl Into<crate::model::InvalidationSummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
@@ -15059,7 +17595,7 @@ pub mod invalidation_list {
             self
         }
         /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each
-        /// invalidation batch created by the current account.</p>
+        /// invalidation batch created by the current Amazon Web Services account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InvalidationSummary>>,
@@ -15781,10 +18317,10 @@ pub struct DistributionList {
     /// were truncated, you can make a follow-up pagination request using the <code>Marker</code>
     /// request parameter to retrieve more distributions in the list.</p>
     pub is_truncated: std::option::Option<bool>,
-    /// <p>The number of distributions that were created by the current account.</p>
+    /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each
-    /// distribution that was created by the current account.</p>
+    /// distribution that was created by the current Amazon Web Services account.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::DistributionSummary>>,
 }
 impl std::fmt::Debug for DistributionList {
@@ -15861,12 +18397,12 @@ pub mod distribution_list {
             self.is_truncated = input;
             self
         }
-        /// <p>The number of distributions that were created by the current account.</p>
+        /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
         }
-        /// <p>The number of distributions that were created by the current account.</p>
+        /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
@@ -15876,7 +18412,7 @@ pub mod distribution_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A complex type that contains one <code>DistributionSummary</code> element for each
-        /// distribution that was created by the current account.</p>
+        /// distribution that was created by the current Amazon Web Services account.</p>
         pub fn items(mut self, input: impl Into<crate::model::DistributionSummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
@@ -15884,7 +18420,7 @@ pub mod distribution_list {
             self
         }
         /// <p>A complex type that contains one <code>DistributionSummary</code> element for each
-        /// distribution that was created by the current account.</p>
+        /// distribution that was created by the current Amazon Web Services account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DistributionSummary>>,
@@ -15921,7 +18457,7 @@ pub struct DistributionSummary {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
     /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-    /// <code>123456789012</code> is your account ID.</p>
+    /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the
     /// distribution's information is propagated to all CloudFront edge locations.</p>
@@ -16047,14 +18583,14 @@ pub mod distribution_summary {
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your account ID.</p>
+        /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your account ID.</p>
+        /// <code>123456789012</code> is your Amazon Web Services account ID.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -16714,10 +19250,10 @@ pub struct CloudFrontOriginAccessIdentityList {
     /// your results were truncated, you can make a follow-up pagination request using the
     /// <code>Marker</code> request parameter to retrieve more items in the list.</p>
     pub is_truncated: std::option::Option<bool>,
-    /// <p>The number of CloudFront origin access identities that were created by the current account.</p>
+    /// <p>The number of CloudFront origin access identities that were created by the current Amazon Web Services account.</p>
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
-    /// element for each origin access identity that was created by the current account.</p>
+    /// element for each origin access identity that was created by the current Amazon Web Services account.</p>
     pub items:
         std::option::Option<std::vec::Vec<crate::model::CloudFrontOriginAccessIdentitySummary>>,
 }
@@ -16806,12 +19342,12 @@ pub mod cloud_front_origin_access_identity_list {
             self.is_truncated = input;
             self
         }
-        /// <p>The number of CloudFront origin access identities that were created by the current account.</p>
+        /// <p>The number of CloudFront origin access identities that were created by the current Amazon Web Services account.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
         }
-        /// <p>The number of CloudFront origin access identities that were created by the current account.</p>
+        /// <p>The number of CloudFront origin access identities that were created by the current Amazon Web Services account.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
@@ -16821,7 +19357,7 @@ pub mod cloud_front_origin_access_identity_list {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
-        /// element for each origin access identity that was created by the current account.</p>
+        /// element for each origin access identity that was created by the current Amazon Web Services account.</p>
         pub fn items(
             mut self,
             input: impl Into<crate::model::CloudFrontOriginAccessIdentitySummary>,
@@ -16832,7 +19368,7 @@ pub mod cloud_front_origin_access_identity_list {
             self
         }
         /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
-        /// element for each origin access identity that was created by the current account.</p>
+        /// element for each origin access identity that was created by the current Amazon Web Services account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<
@@ -17065,7 +19601,7 @@ impl CachePolicyList {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachePolicySummary {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
-    /// <code>custom</code> (created in this account).</p>
+    /// <code>custom</code> (created in this Amazon Web Services account).</p>
     pub r#type: std::option::Option<crate::model::CachePolicyType>,
     /// <p>The cache policy.</p>
     pub cache_policy: std::option::Option<crate::model::CachePolicy>,
@@ -17089,13 +19625,13 @@ pub mod cache_policy_summary {
     }
     impl Builder {
         /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
-        /// <code>custom</code> (created in this account).</p>
+        /// <code>custom</code> (created in this Amazon Web Services account).</p>
         pub fn r#type(mut self, input: crate::model::CachePolicyType) -> Self {
             self.r#type = Some(input);
             self
         }
         /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
-        /// <code>custom</code> (created in this account).</p>
+        /// <code>custom</code> (created in this Amazon Web Services account).</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::CachePolicyType>,

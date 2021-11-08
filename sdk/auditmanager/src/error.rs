@@ -12,23 +12,17 @@ pub struct AssociateAssessmentReportEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateAssessmentReportEvidenceFolderErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateAssessmentReportEvidenceFolderError {
@@ -105,28 +99,28 @@ impl AssociateAssessmentReportEvidenceFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateAssessmentReportEvidenceFolderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateAssessmentReportEvidenceFolderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAssessmentReportEvidenceFolderErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAssessmentReportEvidenceFolderErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateAssessmentReportEvidenceFolderErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAssessmentReportEvidenceFolderErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAssessmentReportEvidenceFolderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateAssessmentReportEvidenceFolderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAssessmentReportEvidenceFolderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAssessmentReportEvidenceFolderErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateAssessmentReportEvidenceFolderErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -169,23 +163,17 @@ pub struct BatchAssociateAssessmentReportEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchAssociateAssessmentReportEvidenceErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchAssociateAssessmentReportEvidenceError {
@@ -262,28 +250,28 @@ impl BatchAssociateAssessmentReportEvidenceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchAssociateAssessmentReportEvidenceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchAssociateAssessmentReportEvidenceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateAssessmentReportEvidenceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateAssessmentReportEvidenceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchAssociateAssessmentReportEvidenceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateAssessmentReportEvidenceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateAssessmentReportEvidenceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchAssociateAssessmentReportEvidenceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateAssessmentReportEvidenceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateAssessmentReportEvidenceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchAssociateAssessmentReportEvidenceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -326,23 +314,17 @@ pub struct BatchCreateDelegationByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchCreateDelegationByAssessmentErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchCreateDelegationByAssessmentError {
@@ -419,28 +401,28 @@ impl BatchCreateDelegationByAssessmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchCreateDelegationByAssessmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchCreateDelegationByAssessmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateDelegationByAssessmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateDelegationByAssessmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchCreateDelegationByAssessmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateDelegationByAssessmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateDelegationByAssessmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchCreateDelegationByAssessmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchCreateDelegationByAssessmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchCreateDelegationByAssessmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchCreateDelegationByAssessmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -479,23 +461,17 @@ pub struct BatchDeleteDelegationByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteDelegationByAssessmentErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteDelegationByAssessmentError {
@@ -572,28 +548,28 @@ impl BatchDeleteDelegationByAssessmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteDelegationByAssessmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchDeleteDelegationByAssessmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteDelegationByAssessmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteDelegationByAssessmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchDeleteDelegationByAssessmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteDelegationByAssessmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteDelegationByAssessmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDeleteDelegationByAssessmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteDelegationByAssessmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteDelegationByAssessmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchDeleteDelegationByAssessmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -632,23 +608,17 @@ pub struct BatchDisassociateAssessmentReportEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDisassociateAssessmentReportEvidenceErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDisassociateAssessmentReportEvidenceError {
@@ -725,28 +695,28 @@ impl BatchDisassociateAssessmentReportEvidenceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDisassociateAssessmentReportEvidenceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchDisassociateAssessmentReportEvidenceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateAssessmentReportEvidenceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateAssessmentReportEvidenceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchDisassociateAssessmentReportEvidenceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateAssessmentReportEvidenceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateAssessmentReportEvidenceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDisassociateAssessmentReportEvidenceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateAssessmentReportEvidenceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateAssessmentReportEvidenceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchDisassociateAssessmentReportEvidenceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -789,23 +759,17 @@ pub struct BatchImportEvidenceToAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchImportEvidenceToAssessmentControlErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchImportEvidenceToAssessmentControlError {
@@ -882,28 +846,28 @@ impl BatchImportEvidenceToAssessmentControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchImportEvidenceToAssessmentControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchImportEvidenceToAssessmentControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchImportEvidenceToAssessmentControlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchImportEvidenceToAssessmentControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchImportEvidenceToAssessmentControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchImportEvidenceToAssessmentControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchImportEvidenceToAssessmentControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchImportEvidenceToAssessmentControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchImportEvidenceToAssessmentControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchImportEvidenceToAssessmentControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchImportEvidenceToAssessmentControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -946,23 +910,17 @@ pub struct CreateAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssessmentError {
@@ -1028,28 +986,28 @@ impl CreateAssessmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssessmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAssessmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateAssessmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAssessmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAssessmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1082,23 +1040,17 @@ pub struct CreateAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentFrameworkErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssessmentFrameworkError {
@@ -1164,28 +1116,28 @@ impl CreateAssessmentFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssessmentFrameworkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAssessmentFrameworkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentFrameworkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentFrameworkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateAssessmentFrameworkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentFrameworkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentFrameworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAssessmentFrameworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentFrameworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentFrameworkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAssessmentFrameworkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1218,23 +1170,17 @@ pub struct CreateAssessmentReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentReportErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssessmentReportError {
@@ -1300,28 +1246,28 @@ impl CreateAssessmentReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssessmentReportErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAssessmentReportErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentReportErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentReportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateAssessmentReportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentReportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentReportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAssessmentReportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentReportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentReportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAssessmentReportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1354,23 +1300,17 @@ pub struct CreateControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateControlErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateControlError {
@@ -1436,25 +1376,25 @@ impl CreateControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateControlErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateControlErrorKind::ValidationException(_))
     }
@@ -1484,23 +1424,17 @@ pub struct DeleteAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssessmentError {
@@ -1566,28 +1500,28 @@ impl DeleteAssessmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssessmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1620,23 +1554,17 @@ pub struct DeleteAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentFrameworkErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssessmentFrameworkError {
@@ -1702,28 +1630,28 @@ impl DeleteAssessmentFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssessmentFrameworkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentFrameworkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentFrameworkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentFrameworkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentFrameworkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentFrameworkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentFrameworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentFrameworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentFrameworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentFrameworkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentFrameworkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1743,6 +1671,147 @@ impl std::error::Error for DeleteAssessmentFrameworkError {
     }
 }
 
+/// Error type for the `DeleteAssessmentFrameworkShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteAssessmentFrameworkShareError {
+    /// Kind of error that occurred.
+    pub kind: DeleteAssessmentFrameworkShareErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteAssessmentFrameworkShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteAssessmentFrameworkShareErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource that's specified in the request can't be found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteAssessmentFrameworkShareError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteAssessmentFrameworkShareErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteAssessmentFrameworkShareErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteAssessmentFrameworkShareErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteAssessmentFrameworkShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteAssessmentFrameworkShareError {
+    fn code(&self) -> Option<&str> {
+        DeleteAssessmentFrameworkShareError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteAssessmentFrameworkShareError {
+    /// Creates a new `DeleteAssessmentFrameworkShareError`.
+    pub fn new(
+        kind: DeleteAssessmentFrameworkShareErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteAssessmentFrameworkShareError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteAssessmentFrameworkShareError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteAssessmentFrameworkShareErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAssessmentFrameworkShareErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAssessmentFrameworkShareErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAssessmentFrameworkShareErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAssessmentFrameworkShareErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAssessmentFrameworkShareErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAssessmentFrameworkShareErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteAssessmentFrameworkShareError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteAssessmentFrameworkShareErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteAssessmentFrameworkShareErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DeleteAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteAssessmentFrameworkShareErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteAssessmentReport` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1756,23 +1825,17 @@ pub struct DeleteAssessmentReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentReportErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssessmentReportError {
@@ -1838,28 +1901,28 @@ impl DeleteAssessmentReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssessmentReportErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentReportErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentReportErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentReportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentReportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentReportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentReportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentReportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentReportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentReportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentReportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1892,23 +1955,17 @@ pub struct DeleteControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteControlErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteControlError {
@@ -1974,25 +2031,25 @@ impl DeleteControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteControlErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteControlErrorKind::ValidationException(_))
     }
@@ -2022,23 +2079,17 @@ pub struct DeregisterAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterAccountErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterAccountError {
@@ -2104,28 +2155,28 @@ impl DeregisterAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeregisterAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeregisterAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2158,23 +2209,17 @@ pub struct DeregisterOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterOrganizationAdminAccountErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterOrganizationAdminAccountError {
@@ -2251,28 +2296,28 @@ impl DeregisterOrganizationAdminAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterOrganizationAdminAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeregisterOrganizationAdminAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterOrganizationAdminAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterOrganizationAdminAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeregisterOrganizationAdminAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterOrganizationAdminAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterOrganizationAdminAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterOrganizationAdminAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterOrganizationAdminAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterOrganizationAdminAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterOrganizationAdminAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2313,23 +2358,17 @@ pub struct DisassociateAssessmentReportEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateAssessmentReportEvidenceFolderErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateAssessmentReportEvidenceFolderError {
@@ -2406,28 +2445,28 @@ impl DisassociateAssessmentReportEvidenceFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateAssessmentReportEvidenceFolderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateAssessmentReportEvidenceFolderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAssessmentReportEvidenceFolderErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAssessmentReportEvidenceFolderErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateAssessmentReportEvidenceFolderErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAssessmentReportEvidenceFolderErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAssessmentReportEvidenceFolderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateAssessmentReportEvidenceFolderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAssessmentReportEvidenceFolderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAssessmentReportEvidenceFolderErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateAssessmentReportEvidenceFolderErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2470,11 +2509,10 @@ pub struct GetAccountStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountStatusErrorKind {
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountStatusError {
@@ -2537,7 +2575,7 @@ impl GetAccountStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountStatusErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetAccountStatusErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2567,23 +2605,17 @@ pub struct GetAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssessmentError {
@@ -2649,25 +2681,25 @@ impl GetAssessmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssessmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAssessmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetAssessmentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetAssessmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetAssessmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAssessmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAssessmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetAssessmentErrorKind::ValidationException(_))
     }
@@ -2697,23 +2729,17 @@ pub struct GetAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentFrameworkErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssessmentFrameworkError {
@@ -2779,28 +2805,28 @@ impl GetAssessmentFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssessmentFrameworkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAssessmentFrameworkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentFrameworkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentFrameworkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetAssessmentFrameworkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentFrameworkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentFrameworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAssessmentFrameworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentFrameworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentFrameworkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAssessmentFrameworkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2833,23 +2859,17 @@ pub struct GetAssessmentReportUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentReportUrlErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssessmentReportUrlError {
@@ -2915,28 +2935,28 @@ impl GetAssessmentReportUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssessmentReportUrlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportUrlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportUrlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportUrlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportUrlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportUrlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportUrlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportUrlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportUrlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportUrlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportUrlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2969,23 +2989,17 @@ pub struct GetChangeLogsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetChangeLogsErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChangeLogsError {
@@ -3051,25 +3065,25 @@ impl GetChangeLogsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetChangeLogsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetChangeLogsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetChangeLogsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetChangeLogsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetChangeLogsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChangeLogsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetChangeLogsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetChangeLogsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChangeLogsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetChangeLogsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetChangeLogsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetChangeLogsErrorKind::ValidationException(_))
     }
@@ -3099,23 +3113,17 @@ pub struct GetControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetControlErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetControlError {
@@ -3181,22 +3189,22 @@ impl GetControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetControlErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetControlErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetControlErrorKind::ValidationException(_))
     }
@@ -3226,19 +3234,15 @@ pub struct GetDelegationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDelegationsErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDelegationsError {
@@ -3303,21 +3307,21 @@ impl GetDelegationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDelegationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDelegationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDelegationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDelegationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDelegationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDelegationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetDelegationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetDelegationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetDelegationsErrorKind::ValidationException(_))
     }
@@ -3346,23 +3350,17 @@ pub struct GetEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEvidenceError {
@@ -3428,22 +3426,22 @@ impl GetEvidenceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEvidenceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEvidenceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetEvidenceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetEvidenceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEvidenceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetEvidenceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetEvidenceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEvidenceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetEvidenceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetEvidenceErrorKind::ValidationException(_))
     }
@@ -3473,23 +3471,17 @@ pub struct GetEvidenceByEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceByEvidenceFolderErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEvidenceByEvidenceFolderError {
@@ -3557,28 +3549,28 @@ impl GetEvidenceByEvidenceFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEvidenceByEvidenceFolderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEvidenceByEvidenceFolderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceByEvidenceFolderErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceByEvidenceFolderErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEvidenceByEvidenceFolderErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceByEvidenceFolderErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceByEvidenceFolderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEvidenceByEvidenceFolderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceByEvidenceFolderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceByEvidenceFolderErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetEvidenceByEvidenceFolderErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3611,23 +3603,17 @@ pub struct GetEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFolderErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEvidenceFolderError {
@@ -3693,28 +3679,28 @@ impl GetEvidenceFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEvidenceFolderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEvidenceFolderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFolderErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFolderErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEvidenceFolderErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFolderErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFolderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEvidenceFolderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFolderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFolderErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetEvidenceFolderErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3747,23 +3733,17 @@ pub struct GetEvidenceFoldersByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFoldersByAssessmentErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEvidenceFoldersByAssessmentError {
@@ -3836,28 +3816,28 @@ impl GetEvidenceFoldersByAssessmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEvidenceFoldersByAssessmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEvidenceFoldersByAssessmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFoldersByAssessmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFoldersByAssessmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEvidenceFoldersByAssessmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFoldersByAssessmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFoldersByAssessmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEvidenceFoldersByAssessmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFoldersByAssessmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFoldersByAssessmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetEvidenceFoldersByAssessmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3894,23 +3874,17 @@ pub struct GetEvidenceFoldersByAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFoldersByAssessmentControlErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEvidenceFoldersByAssessmentControlError {
@@ -3987,28 +3961,28 @@ impl GetEvidenceFoldersByAssessmentControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEvidenceFoldersByAssessmentControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetEvidenceFoldersByAssessmentControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFoldersByAssessmentControlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFoldersByAssessmentControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetEvidenceFoldersByAssessmentControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFoldersByAssessmentControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFoldersByAssessmentControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetEvidenceFoldersByAssessmentControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEvidenceFoldersByAssessmentControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetEvidenceFoldersByAssessmentControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetEvidenceFoldersByAssessmentControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4051,23 +4025,17 @@ pub struct GetOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOrganizationAdminAccountErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOrganizationAdminAccountError {
@@ -4135,28 +4103,28 @@ impl GetOrganizationAdminAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOrganizationAdminAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetOrganizationAdminAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOrganizationAdminAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetOrganizationAdminAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetOrganizationAdminAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOrganizationAdminAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetOrganizationAdminAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetOrganizationAdminAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOrganizationAdminAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetOrganizationAdminAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetOrganizationAdminAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4189,19 +4157,15 @@ pub struct GetServicesInScopeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServicesInScopeErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServicesInScopeError {
@@ -4266,21 +4230,21 @@ impl GetServicesInScopeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServicesInScopeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetServicesInScopeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServicesInScopeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetServicesInScopeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetServicesInScopeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServicesInScopeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetServicesInScopeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetServicesInScopeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4312,15 +4276,13 @@ pub struct GetSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSettingsErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSettingsError {
@@ -4384,11 +4346,11 @@ impl GetSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSettingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetSettingsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetSettingsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetSettingsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetSettingsErrorKind::InternalServerException(_))
     }
@@ -4416,19 +4378,15 @@ pub struct ListAssessmentFrameworksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentFrameworksErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssessmentFrameworksError {
@@ -4493,21 +4451,21 @@ impl ListAssessmentFrameworksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssessmentFrameworksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssessmentFrameworksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentFrameworksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentFrameworksErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAssessmentFrameworksErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentFrameworksErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentFrameworksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAssessmentFrameworksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4526,6 +4484,142 @@ impl std::error::Error for ListAssessmentFrameworksError {
     }
 }
 
+/// Error type for the `ListAssessmentFrameworkShareRequests` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAssessmentFrameworkShareRequestsError {
+    /// Kind of error that occurred.
+    pub kind: ListAssessmentFrameworkShareRequestsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAssessmentFrameworkShareRequests` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAssessmentFrameworkShareRequestsErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAssessmentFrameworkShareRequestsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAssessmentFrameworkShareRequestsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAssessmentFrameworkShareRequestsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAssessmentFrameworkShareRequestsErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAssessmentFrameworkShareRequestsError {
+    fn code(&self) -> Option<&str> {
+        ListAssessmentFrameworkShareRequestsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAssessmentFrameworkShareRequestsError {
+    /// Creates a new `ListAssessmentFrameworkShareRequestsError`.
+    pub fn new(
+        kind: ListAssessmentFrameworkShareRequestsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAssessmentFrameworkShareRequestsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAssessmentFrameworkShareRequestsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAssessmentFrameworkShareRequestsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssessmentFrameworkShareRequestsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAssessmentFrameworkShareRequestsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssessmentFrameworkShareRequestsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAssessmentFrameworkShareRequestsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAssessmentFrameworkShareRequestsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListAssessmentFrameworkShareRequestsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAssessmentFrameworkShareRequestsErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            ListAssessmentFrameworkShareRequestsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            ListAssessmentFrameworkShareRequestsErrorKind::ValidationException(_inner) => {
+                Some(_inner)
+            }
+            ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `ListAssessmentReports` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4539,19 +4633,15 @@ pub struct ListAssessmentReportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentReportsErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssessmentReportsError {
@@ -4616,21 +4706,21 @@ impl ListAssessmentReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssessmentReportsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssessmentReportsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentReportsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentReportsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAssessmentReportsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentReportsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentReportsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAssessmentReportsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4662,19 +4752,15 @@ pub struct ListAssessmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentsErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssessmentsError {
@@ -4739,21 +4825,21 @@ impl ListAssessmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssessmentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssessmentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAssessmentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAssessmentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListAssessmentsErrorKind::ValidationException(_))
     }
@@ -4782,19 +4868,15 @@ pub struct ListControlsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlsErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListControlsError {
@@ -4859,18 +4941,18 @@ impl ListControlsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListControlsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListControlsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListControlsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListControlsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListControlsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListControlsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListControlsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListControlsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListControlsErrorKind::ValidationException(_))
     }
@@ -4899,19 +4981,15 @@ pub struct ListKeywordsForDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeywordsForDataSourceErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListKeywordsForDataSourceError {
@@ -4976,21 +5054,21 @@ impl ListKeywordsForDataSourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListKeywordsForDataSourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListKeywordsForDataSourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListKeywordsForDataSourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListKeywordsForDataSourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListKeywordsForDataSourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListKeywordsForDataSourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListKeywordsForDataSourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListKeywordsForDataSourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5022,19 +5100,15 @@ pub struct ListNotificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotificationsErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNotificationsError {
@@ -5099,21 +5173,21 @@ impl ListNotificationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNotificationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListNotificationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNotificationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListNotificationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListNotificationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNotificationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListNotificationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListNotificationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5145,19 +5219,14 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -5222,21 +5291,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5268,23 +5337,17 @@ pub struct RegisterAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterAccountErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterAccountError {
@@ -5350,28 +5413,28 @@ impl RegisterAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RegisterAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, RegisterAccountErrorKind::ValidationException(_))
     }
@@ -5401,23 +5464,17 @@ pub struct RegisterOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterOrganizationAdminAccountErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterOrganizationAdminAccountError {
@@ -5492,28 +5549,28 @@ impl RegisterOrganizationAdminAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterOrganizationAdminAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterOrganizationAdminAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOrganizationAdminAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOrganizationAdminAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RegisterOrganizationAdminAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOrganizationAdminAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOrganizationAdminAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterOrganizationAdminAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOrganizationAdminAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOrganizationAdminAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterOrganizationAdminAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5539,6 +5596,145 @@ impl std::error::Error for RegisterOrganizationAdminAccountError {
     }
 }
 
+/// Error type for the `StartAssessmentFrameworkShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartAssessmentFrameworkShareError {
+    /// Kind of error that occurred.
+    pub kind: StartAssessmentFrameworkShareErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartAssessmentFrameworkShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartAssessmentFrameworkShareErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource that's specified in the request can't be found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartAssessmentFrameworkShareError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartAssessmentFrameworkShareErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartAssessmentFrameworkShareErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartAssessmentFrameworkShareErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            StartAssessmentFrameworkShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartAssessmentFrameworkShareError {
+    fn code(&self) -> Option<&str> {
+        StartAssessmentFrameworkShareError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartAssessmentFrameworkShareError {
+    /// Creates a new `StartAssessmentFrameworkShareError`.
+    pub fn new(
+        kind: StartAssessmentFrameworkShareErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartAssessmentFrameworkShareError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartAssessmentFrameworkShareError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartAssessmentFrameworkShareErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAssessmentFrameworkShareErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartAssessmentFrameworkShareErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAssessmentFrameworkShareErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartAssessmentFrameworkShareErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartAssessmentFrameworkShareErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartAssessmentFrameworkShareErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for StartAssessmentFrameworkShareError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartAssessmentFrameworkShareErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartAssessmentFrameworkShareErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            StartAssessmentFrameworkShareErrorKind::ValidationException(_inner) => Some(_inner),
+            StartAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5552,19 +5748,14 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -5629,18 +5820,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -5669,19 +5860,14 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -5746,21 +5932,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -5789,23 +5975,17 @@ pub struct UpdateAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssessmentError {
@@ -5871,28 +6051,28 @@ impl UpdateAssessmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssessmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5925,23 +6105,17 @@ pub struct UpdateAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentControlErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssessmentControlError {
@@ -6007,28 +6181,28 @@ impl UpdateAssessmentControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssessmentControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentControlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6061,23 +6235,17 @@ pub struct UpdateAssessmentControlSetStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentControlSetStatusErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssessmentControlSetStatusError {
@@ -6152,28 +6320,28 @@ impl UpdateAssessmentControlSetStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssessmentControlSetStatusErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentControlSetStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentControlSetStatusErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentControlSetStatusErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentControlSetStatusErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentControlSetStatusErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentControlSetStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentControlSetStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentControlSetStatusErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentControlSetStatusErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentControlSetStatusErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6212,23 +6380,17 @@ pub struct UpdateAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentFrameworkErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssessmentFrameworkError {
@@ -6294,28 +6456,28 @@ impl UpdateAssessmentFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssessmentFrameworkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentFrameworkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentFrameworkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentFrameworkErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentFrameworkErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentFrameworkErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentFrameworkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentFrameworkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentFrameworkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentFrameworkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentFrameworkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6335,6 +6497,147 @@ impl std::error::Error for UpdateAssessmentFrameworkError {
     }
 }
 
+/// Error type for the `UpdateAssessmentFrameworkShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateAssessmentFrameworkShareError {
+    /// Kind of error that occurred.
+    pub kind: UpdateAssessmentFrameworkShareErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateAssessmentFrameworkShare` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateAssessmentFrameworkShareErrorKind {
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The resource that's specified in the request can't be found. </p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> The request has invalid or missing parameters. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateAssessmentFrameworkShareError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateAssessmentFrameworkShareErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateAssessmentFrameworkShareErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateAssessmentFrameworkShareErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateAssessmentFrameworkShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateAssessmentFrameworkShareError {
+    fn code(&self) -> Option<&str> {
+        UpdateAssessmentFrameworkShareError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateAssessmentFrameworkShareError {
+    /// Creates a new `UpdateAssessmentFrameworkShareError`.
+    pub fn new(
+        kind: UpdateAssessmentFrameworkShareErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateAssessmentFrameworkShareError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateAssessmentFrameworkShareError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateAssessmentFrameworkShareErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateAssessmentFrameworkShareErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssessmentFrameworkShareErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAssessmentFrameworkShareErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssessmentFrameworkShareErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAssessmentFrameworkShareErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAssessmentFrameworkShareErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssessmentFrameworkShareErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateAssessmentFrameworkShareError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateAssessmentFrameworkShareErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateAssessmentFrameworkShareErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            UpdateAssessmentFrameworkShareErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateAssessmentFrameworkShareErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateAssessmentFrameworkShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateAssessmentStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6348,23 +6651,17 @@ pub struct UpdateAssessmentStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentStatusErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssessmentStatusError {
@@ -6430,28 +6727,28 @@ impl UpdateAssessmentStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssessmentStatusErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentStatusErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentStatusErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentStatusErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentStatusErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentStatusErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentStatusErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentStatusErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6484,23 +6781,17 @@ pub struct UpdateControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateControlErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateControlError {
@@ -6566,25 +6857,25 @@ impl UpdateControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateControlErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateControlErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateControlErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateControlErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateControlErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateControlErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateControlErrorKind::ValidationException(_))
     }
@@ -6614,19 +6905,15 @@ pub struct UpdateSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSettingsErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSettingsError {
@@ -6691,21 +6978,21 @@ impl UpdateSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSettingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSettingsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSettingsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateSettingsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSettingsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSettingsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateSettingsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateSettingsErrorKind::ValidationException(_))
     }
@@ -6734,23 +7021,17 @@ pub struct ValidateAssessmentReportIntegrityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ValidateAssessmentReportIntegrityErrorKind {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ValidateAssessmentReportIntegrityError {
@@ -6827,28 +7108,28 @@ impl ValidateAssessmentReportIntegrityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ValidateAssessmentReportIntegrityErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ValidateAssessmentReportIntegrityErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateAssessmentReportIntegrityErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateAssessmentReportIntegrityErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ValidateAssessmentReportIntegrityErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateAssessmentReportIntegrityErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateAssessmentReportIntegrityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ValidateAssessmentReportIntegrityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateAssessmentReportIntegrityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateAssessmentReportIntegrityErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ValidateAssessmentReportIntegrityErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6874,21 +7155,15 @@ impl std::error::Error for ValidateAssessmentReportIntegrityError {
     }
 }
 
-/// <p>
-/// The request has invalid or missing parameters.
-/// </p>
+/// <p> The request has invalid or missing parameters. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The reason the request failed validation.
-    /// </p>
+    /// <p> The reason the request failed validation. </p>
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
-    /// <p>
-    /// The fields that caused the error, if applicable.
-    /// </p>
+    /// <p> The fields that caused the error, if applicable. </p>
     pub fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -6938,16 +7213,12 @@ pub mod validation_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The reason the request failed validation.
-        /// </p>
+        /// <p> The reason the request failed validation. </p>
         pub fn reason(mut self, input: crate::model::ValidationExceptionReason) -> Self {
             self.reason = Some(input);
             self
         }
-        /// <p>
-        /// The reason the request failed validation.
-        /// </p>
+        /// <p> The reason the request failed validation. </p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::ValidationExceptionReason>,
@@ -6959,18 +7230,14 @@ pub mod validation_exception {
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
-        /// <p>
-        /// The fields that caused the error, if applicable.
-        /// </p>
+        /// <p> The fields that caused the error, if applicable. </p>
         pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
             let mut v = self.fields.unwrap_or_default();
             v.push(input.into());
             self.fields = Some(v);
             self
         }
-        /// <p>
-        /// The fields that caused the error, if applicable.
-        /// </p>
+        /// <p> The fields that caused the error, if applicable. </p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
@@ -6995,21 +7262,15 @@ impl ValidationException {
     }
 }
 
-/// <p>
-/// The resource specified in the request cannot be found.
-/// </p>
+/// <p> The resource that's specified in the request can't be found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier for the specified resource.
-    /// </p>
+    /// <p> The unique identifier for the resource. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of resource affected by the error.
-    /// </p>
+    /// <p> The type of resource that's affected by the error. </p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -7058,30 +7319,22 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The unique identifier for the specified resource.
-        /// </p>
+        /// <p> The unique identifier for the resource. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier for the specified resource.
-        /// </p>
+        /// <p> The unique identifier for the resource. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>
-        /// The type of resource affected by the error.
-        /// </p>
+        /// <p> The type of resource that's affected by the error. </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>
-        /// The type of resource affected by the error.
-        /// </p>
+        /// <p> The type of resource that's affected by the error. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7106,9 +7359,8 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>
-/// An internal service error occurred during the processing of your request. Try again later.
-/// </p>
+/// <p> An internal service error occurred during the processing of your request. Try again
+/// later. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -7172,9 +7424,8 @@ impl InternalServerException {
     }
 }
 
-/// <p>
-/// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-/// </p>
+/// <p> Your account isn't registered with Audit Manager. Check the delegated
+/// administrator setup on the Audit Manager settings page, and try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

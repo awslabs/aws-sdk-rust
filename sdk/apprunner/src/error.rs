@@ -18,7 +18,7 @@ pub enum AssociateCustomDomainErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>You can't perform this action when the resource is in its current state.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateCustomDomainError {
@@ -83,21 +83,21 @@ impl AssociateCustomDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateCustomDomainErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AssociateCustomDomainErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCustomDomainErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCustomDomainErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateCustomDomainErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCustomDomainErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCustomDomainErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `AssociateCustomDomainErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -137,7 +137,7 @@ pub enum CreateAutoScalingConfigurationErrorKind {
     /// <p>For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner endpoints and quotas</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAutoScalingConfigurationError {
@@ -211,21 +211,21 @@ impl CreateAutoScalingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAutoScalingConfigurationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateAutoScalingConfigurationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAutoScalingConfigurationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAutoScalingConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAutoScalingConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAutoScalingConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAutoScalingConfigurationErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateAutoScalingConfigurationErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -271,7 +271,7 @@ pub enum CreateConnectionErrorKind {
     /// <p>For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner endpoints and quotas</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectionError {
@@ -336,21 +336,21 @@ impl CreateConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateConnectionErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -390,7 +390,7 @@ pub enum CreateServiceErrorKind {
     /// <p>For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App Runner endpoints and quotas</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceError {
@@ -455,21 +455,21 @@ impl CreateServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateServiceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -507,7 +507,7 @@ pub enum DeleteAutoScalingConfigurationErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAutoScalingConfigurationError {
@@ -581,21 +581,21 @@ impl DeleteAutoScalingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAutoScalingConfigurationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteAutoScalingConfigurationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutoScalingConfigurationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutoScalingConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAutoScalingConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutoScalingConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutoScalingConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAutoScalingConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -639,7 +639,7 @@ pub enum DeleteConnectionErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionError {
@@ -704,21 +704,21 @@ impl DeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -758,7 +758,7 @@ pub enum DeleteServiceErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceError {
@@ -824,25 +824,25 @@ impl DeleteServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, DeleteServiceErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `DeleteServiceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteServiceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -881,7 +881,7 @@ pub enum DescribeAutoScalingConfigurationErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAutoScalingConfigurationError {
@@ -955,21 +955,21 @@ impl DescribeAutoScalingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAutoScalingConfigurationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeAutoScalingConfigurationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutoScalingConfigurationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutoScalingConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAutoScalingConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutoScalingConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutoScalingConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAutoScalingConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1013,7 +1013,7 @@ pub enum DescribeCustomDomainsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomDomainsError {
@@ -1078,21 +1078,21 @@ impl DescribeCustomDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCustomDomainsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeCustomDomainsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomDomainsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomDomainsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeCustomDomainsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomDomainsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomDomainsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCustomDomainsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1130,7 +1130,7 @@ pub enum DescribeServiceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServiceError {
@@ -1195,21 +1195,21 @@ impl DescribeServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServiceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeServiceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServiceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServiceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeServiceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServiceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServiceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServiceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1249,7 +1249,7 @@ pub enum DisassociateCustomDomainErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateCustomDomainError {
@@ -1317,28 +1317,28 @@ impl DisassociateCustomDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateCustomDomainErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DisassociateCustomDomainErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCustomDomainErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCustomDomainErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateCustomDomainErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCustomDomainErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCustomDomainErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `DisassociateCustomDomainErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCustomDomainErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCustomDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateCustomDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1377,7 +1377,7 @@ pub enum ListAutoScalingConfigurationsErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAutoScalingConfigurationsError {
@@ -1448,14 +1448,14 @@ impl ListAutoScalingConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAutoScalingConfigurationsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListAutoScalingConfigurationsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAutoScalingConfigurationsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListAutoScalingConfigurationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAutoScalingConfigurationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1492,7 +1492,7 @@ pub enum ListConnectionsErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConnectionsError {
@@ -1556,14 +1556,14 @@ impl ListConnectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConnectionsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListConnectionsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConnectionsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListConnectionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListConnectionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1600,7 +1600,7 @@ pub enum ListOperationsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOperationsError {
@@ -1665,21 +1665,21 @@ impl ListOperationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOperationsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListOperationsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOperationsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListOperationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListOperationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOperationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListOperationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListOperationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1715,7 +1715,7 @@ pub enum ListServicesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>One or more input parameters aren't valid. Refer to the API action's document page, correct the input parameters, and try the action again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServicesError {
@@ -1779,14 +1779,14 @@ impl ListServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServicesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListServicesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListServicesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1825,7 +1825,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1891,28 +1891,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1953,7 +1953,7 @@ pub enum PauseServiceErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PauseServiceError {
@@ -2019,25 +2019,25 @@ impl PauseServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PauseServiceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `PauseServiceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PauseServiceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PauseServiceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PauseServiceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PauseServiceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PauseServiceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `PauseServiceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, PauseServiceErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `PauseServiceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PauseServiceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2078,7 +2078,7 @@ pub enum ResumeServiceErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResumeServiceError {
@@ -2144,25 +2144,25 @@ impl ResumeServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResumeServiceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ResumeServiceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeServiceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeServiceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ResumeServiceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeServiceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeServiceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `ResumeServiceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, ResumeServiceErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `ResumeServiceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ResumeServiceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2201,7 +2201,7 @@ pub enum StartDeploymentErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDeploymentError {
@@ -2266,21 +2266,21 @@ impl StartDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDeploymentErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `StartDeploymentErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDeploymentErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartDeploymentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartDeploymentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDeploymentErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartDeploymentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartDeploymentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2320,7 +2320,7 @@ pub enum TagResourceErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2386,22 +2386,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2442,7 +2442,7 @@ pub enum UntagResourceErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2508,25 +2508,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2567,7 +2567,7 @@ pub enum UpdateServiceErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceError {
@@ -2633,25 +2633,25 @@ impl UpdateServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::InvalidStateException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, UpdateServiceErrorKind::InvalidStateException(_))
     }
-    /// Returns true if the error kind is `UpdateServiceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServiceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

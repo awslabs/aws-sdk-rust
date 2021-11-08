@@ -63,7 +63,7 @@ pub enum CreateByteMatchSetErrorKind {
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateByteMatchSetError {
@@ -131,42 +131,42 @@ impl CreateByteMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateByteMatchSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateByteMatchSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateByteMatchSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateByteMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateByteMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateByteMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateByteMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `CreateByteMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateByteMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateByteMatchSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateByteMatchSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateByteMatchSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateByteMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateByteMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateByteMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateByteMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateByteMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -252,7 +252,7 @@ pub enum CreateGeoMatchSetErrorKind {
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGeoMatchSetError {
@@ -320,42 +320,42 @@ impl CreateGeoMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGeoMatchSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateGeoMatchSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGeoMatchSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGeoMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateGeoMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGeoMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGeoMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `CreateGeoMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGeoMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGeoMatchSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateGeoMatchSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGeoMatchSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGeoMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateGeoMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGeoMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGeoMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateGeoMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -441,7 +441,7 @@ pub enum CreateIPSetErrorKind {
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIPSetError {
@@ -509,42 +509,42 @@ impl CreateIPSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIPSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIPSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIPSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIPSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIPSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIPSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIPSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIPSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIPSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIPSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIPSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateIPSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, CreateIPSetErrorKind::WafStaleDataException(_))
     }
@@ -631,7 +631,7 @@ pub enum CreateRateBasedRuleErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRateBasedRuleError {
@@ -703,56 +703,56 @@ impl CreateRateBasedRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRateBasedRuleErrorKind::WafBadRequestException`.
+    /// Returns `true` if the error kind is `CreateRateBasedRuleErrorKind::WafBadRequestException`.
     pub fn is_waf_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRateBasedRuleErrorKind::WafBadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRateBasedRuleErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateRateBasedRuleErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRateBasedRuleErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRateBasedRuleErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateRateBasedRuleErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRateBasedRuleErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRateBasedRuleErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateRateBasedRuleErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRateBasedRuleErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRateBasedRuleErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateRateBasedRuleErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRateBasedRuleErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRateBasedRuleErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateRateBasedRuleErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRateBasedRuleErrorKind::WafStaleDataException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRateBasedRuleErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `CreateRateBasedRuleErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRateBasedRuleErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRateBasedRuleErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateRateBasedRuleErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -801,7 +801,7 @@ pub enum CreateRegexMatchSetErrorKind {
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRegexMatchSetError {
@@ -867,28 +867,28 @@ impl CreateRegexMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRegexMatchSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateRegexMatchSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegexMatchSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegexMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateRegexMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegexMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegexMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateRegexMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegexMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegexMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateRegexMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -931,7 +931,7 @@ pub enum CreateRegexPatternSetErrorKind {
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRegexPatternSetError {
@@ -997,28 +997,28 @@ impl CreateRegexPatternSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRegexPatternSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegexPatternSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegexPatternSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegexPatternSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegexPatternSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRegexPatternSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRegexPatternSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateRegexPatternSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1106,7 +1106,7 @@ pub enum CreateRuleErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRuleError {
@@ -1176,47 +1176,47 @@ impl CreateRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::WafBadRequestException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::WafBadRequestException`.
     pub fn is_waf_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateRuleErrorKind::WafBadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, CreateRuleErrorKind::WafStaleDataException(_))
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(&self.kind, CreateRuleErrorKind::WafTagOperationException(_))
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1269,7 +1269,7 @@ pub enum CreateRuleGroupErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRuleGroupError {
@@ -1340,49 +1340,49 @@ impl CreateRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRuleGroupErrorKind::WafBadRequestException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafBadRequestException`.
     pub fn is_waf_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupErrorKind::WafBadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupErrorKind::WafStaleDataException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleGroupErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleGroupErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateRuleGroupErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1469,7 +1469,7 @@ pub enum CreateSizeConstraintSetErrorKind {
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSizeConstraintSetError {
@@ -1537,42 +1537,42 @@ impl CreateSizeConstraintSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSizeConstraintSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateSizeConstraintSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSizeConstraintSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSizeConstraintSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateSizeConstraintSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSizeConstraintSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSizeConstraintSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `CreateSizeConstraintSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSizeConstraintSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSizeConstraintSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSizeConstraintSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSizeConstraintSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSizeConstraintSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateSizeConstraintSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSizeConstraintSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSizeConstraintSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateSizeConstraintSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1658,7 +1658,7 @@ pub enum CreateSqlInjectionMatchSetErrorKind {
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSqlInjectionMatchSetError {
@@ -1734,42 +1734,42 @@ impl CreateSqlInjectionMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSqlInjectionMatchSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSqlInjectionMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSqlInjectionMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSqlInjectionMatchSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSqlInjectionMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateSqlInjectionMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1863,7 +1863,7 @@ pub enum CreateWebACLErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWebACLError {
@@ -1934,57 +1934,57 @@ impl CreateWebACLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafBadRequestException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafBadRequestException`.
     pub fn is_waf_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateWebACLErrorKind::WafBadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, CreateWebACLErrorKind::WafStaleDataException(_))
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateWebACLErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2119,7 +2119,7 @@ pub enum CreateWebACLMigrationStackErrorKind {
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWebACLMigrationStackError {
@@ -2194,35 +2194,35 @@ impl CreateWebACLMigrationStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWebACLMigrationStackErrorKind::WafEntityMigrationException`.
+    /// Returns `true` if the error kind is `CreateWebACLMigrationStackErrorKind::WafEntityMigrationException`.
     pub fn is_waf_entity_migration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLMigrationStackErrorKind::WafEntityMigrationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLMigrationStackErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateWebACLMigrationStackErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLMigrationStackErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLMigrationStackErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `CreateWebACLMigrationStackErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLMigrationStackErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLMigrationStackErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateWebACLMigrationStackErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebACLMigrationStackErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebACLMigrationStackErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `CreateWebACLMigrationStackErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2315,7 +2315,7 @@ pub enum CreateXssMatchSetErrorKind {
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateXssMatchSetError {
@@ -2383,42 +2383,42 @@ impl CreateXssMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateXssMatchSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `CreateXssMatchSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateXssMatchSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateXssMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateXssMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateXssMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateXssMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `CreateXssMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateXssMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `CreateXssMatchSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateXssMatchSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateXssMatchSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateXssMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `CreateXssMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateXssMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateXssMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `CreateXssMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2488,7 +2488,7 @@ pub enum DeleteByteMatchSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteByteMatchSetError {
@@ -2556,42 +2556,42 @@ impl DeleteByteMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteByteMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteByteMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteByteMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteByteMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteByteMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteByteMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteByteMatchSetErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteByteMatchSetErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteByteMatchSetErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteByteMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteByteMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteByteMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteByteMatchSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteByteMatchSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteByteMatchSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteByteMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteByteMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2661,7 +2661,7 @@ pub enum DeleteGeoMatchSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGeoMatchSetError {
@@ -2729,42 +2729,42 @@ impl DeleteGeoMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGeoMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteGeoMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGeoMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGeoMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteGeoMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGeoMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGeoMatchSetErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteGeoMatchSetErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGeoMatchSetErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGeoMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteGeoMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGeoMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGeoMatchSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteGeoMatchSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGeoMatchSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGeoMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteGeoMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2834,7 +2834,7 @@ pub enum DeleteIPSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIPSetError {
@@ -2902,42 +2902,42 @@ impl DeleteIPSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIPSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIPSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIPSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIPSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIPSetErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIPSetErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIPSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIPSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIPSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIPSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIPSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteIPSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, DeleteIPSetErrorKind::WafStaleDataException(_))
     }
@@ -2975,7 +2975,7 @@ pub enum DeleteLoggingConfigurationErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoggingConfigurationError {
@@ -3042,21 +3042,21 @@ impl DeleteLoggingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLoggingConfigurationErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoggingConfigurationErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoggingConfigurationErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoggingConfigurationErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteLoggingConfigurationErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3096,7 +3096,7 @@ pub enum DeletePermissionPolicyErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePermissionPolicyError {
@@ -3161,21 +3161,21 @@ impl DeletePermissionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePermissionPolicyErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeletePermissionPolicyErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePermissionPolicyErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePermissionPolicyErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeletePermissionPolicyErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePermissionPolicyErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePermissionPolicyErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeletePermissionPolicyErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3246,7 +3246,7 @@ pub enum DeleteRateBasedRuleErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRateBasedRuleError {
@@ -3318,56 +3318,56 @@ impl DeleteRateBasedRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRateBasedRuleErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteRateBasedRuleErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRateBasedRuleErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRateBasedRuleErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteRateBasedRuleErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRateBasedRuleErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRateBasedRuleErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteRateBasedRuleErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRateBasedRuleErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRateBasedRuleErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteRateBasedRuleErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRateBasedRuleErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRateBasedRuleErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteRateBasedRuleErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRateBasedRuleErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRateBasedRuleErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteRateBasedRuleErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRateBasedRuleErrorKind::WafStaleDataException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRateBasedRuleErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `DeleteRateBasedRuleErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRateBasedRuleErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRateBasedRuleErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteRateBasedRuleErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3441,7 +3441,7 @@ pub enum DeleteRegexMatchSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRegexMatchSetError {
@@ -3509,42 +3509,42 @@ impl DeleteRegexMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRegexMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteRegexMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteRegexMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexMatchSetErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteRegexMatchSetErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexMatchSetErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteRegexMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexMatchSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteRegexMatchSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexMatchSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteRegexMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3614,7 +3614,7 @@ pub enum DeleteRegexPatternSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRegexPatternSetError {
@@ -3682,42 +3682,42 @@ impl DeleteRegexPatternSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRegexPatternSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexPatternSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexPatternSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexPatternSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexPatternSetErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexPatternSetErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexPatternSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexPatternSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexPatternSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRegexPatternSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRegexPatternSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteRegexPatternSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3791,7 +3791,7 @@ pub enum DeleteRuleErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRuleError {
@@ -3861,50 +3861,50 @@ impl DeleteRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, DeleteRuleErrorKind::WafStaleDataException(_))
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(&self.kind, DeleteRuleErrorKind::WafTagOperationException(_))
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4000,7 +4000,7 @@ pub enum DeleteRuleGroupErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRuleGroupError {
@@ -4072,56 +4072,56 @@ impl DeleteRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRuleGroupErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupErrorKind::WafStaleDataException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleGroupErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4193,7 +4193,7 @@ pub enum DeleteSizeConstraintSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSizeConstraintSetError {
@@ -4261,42 +4261,42 @@ impl DeleteSizeConstraintSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSizeConstraintSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteSizeConstraintSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSizeConstraintSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSizeConstraintSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteSizeConstraintSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSizeConstraintSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSizeConstraintSetErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteSizeConstraintSetErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSizeConstraintSetErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSizeConstraintSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteSizeConstraintSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSizeConstraintSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSizeConstraintSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteSizeConstraintSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSizeConstraintSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSizeConstraintSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteSizeConstraintSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4366,7 +4366,7 @@ pub enum DeleteSqlInjectionMatchSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSqlInjectionMatchSetError {
@@ -4442,42 +4442,42 @@ impl DeleteSqlInjectionMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSqlInjectionMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSqlInjectionMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSqlInjectionMatchSetErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSqlInjectionMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSqlInjectionMatchSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteSqlInjectionMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4553,7 +4553,7 @@ pub enum DeleteWebACLErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWebACLError {
@@ -4623,53 +4623,53 @@ impl DeleteWebACLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWebACLErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWebACLErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWebACLErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWebACLErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWebACLErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWebACLErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWebACLErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWebACLErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWebACLErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWebACLErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWebACLErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, DeleteWebACLErrorKind::WafStaleDataException(_))
     }
-    /// Returns true if the error kind is `DeleteWebACLErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWebACLErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWebACLErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteWebACLErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4741,7 +4741,7 @@ pub enum DeleteXssMatchSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteXssMatchSetError {
@@ -4809,42 +4809,42 @@ impl DeleteXssMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteXssMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteXssMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteXssMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteXssMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `DeleteXssMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteXssMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteXssMatchSetErrorKind::WafNonEmptyEntityException`.
+    /// Returns `true` if the error kind is `DeleteXssMatchSetErrorKind::WafNonEmptyEntityException`.
     pub fn is_waf_non_empty_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteXssMatchSetErrorKind::WafNonEmptyEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteXssMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `DeleteXssMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteXssMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteXssMatchSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `DeleteXssMatchSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteXssMatchSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteXssMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `DeleteXssMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4885,7 +4885,7 @@ pub enum GetByteMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetByteMatchSetError {
@@ -4950,21 +4950,21 @@ impl GetByteMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetByteMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetByteMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetByteMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetByteMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetByteMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetByteMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetByteMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetByteMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4998,7 +4998,7 @@ pub struct GetChangeTokenError {
 pub enum GetChangeTokenErrorKind {
     /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChangeTokenError {
@@ -5061,7 +5061,7 @@ impl GetChangeTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetChangeTokenErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetChangeTokenErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5095,7 +5095,7 @@ pub enum GetChangeTokenStatusErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChangeTokenStatusError {
@@ -5159,14 +5159,14 @@ impl GetChangeTokenStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetChangeTokenStatusErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetChangeTokenStatusErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChangeTokenStatusErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetChangeTokenStatusErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetChangeTokenStatusErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5203,7 +5203,7 @@ pub enum GetGeoMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGeoMatchSetError {
@@ -5268,21 +5268,21 @@ impl GetGeoMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGeoMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetGeoMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGeoMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetGeoMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetGeoMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGeoMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetGeoMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetGeoMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5320,7 +5320,7 @@ pub enum GetIPSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIPSetError {
@@ -5385,15 +5385,15 @@ impl GetIPSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIPSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetIPSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetIPSetErrorKind::WafInternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetIPSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetIPSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(&self.kind, GetIPSetErrorKind::WafInvalidAccountException(_))
     }
-    /// Returns true if the error kind is `GetIPSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetIPSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5429,7 +5429,7 @@ pub enum GetLoggingConfigurationErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoggingConfigurationError {
@@ -5493,14 +5493,14 @@ impl GetLoggingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLoggingConfigurationErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoggingConfigurationErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoggingConfigurationErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetLoggingConfigurationErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5535,7 +5535,7 @@ pub enum GetPermissionPolicyErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPermissionPolicyError {
@@ -5599,14 +5599,14 @@ impl GetPermissionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPermissionPolicyErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetPermissionPolicyErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPermissionPolicyErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetPermissionPolicyErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetPermissionPolicyErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5643,7 +5643,7 @@ pub enum GetRateBasedRuleErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRateBasedRuleError {
@@ -5708,21 +5708,21 @@ impl GetRateBasedRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRateBasedRuleErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetRateBasedRuleErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRateBasedRuleErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetRateBasedRuleErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetRateBasedRuleErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRateBasedRuleErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetRateBasedRuleErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetRateBasedRuleErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5799,7 +5799,7 @@ pub enum GetRateBasedRuleManagedKeysErrorKind {
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRateBasedRuleManagedKeysError {
@@ -5873,28 +5873,28 @@ impl GetRateBasedRuleManagedKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRateBasedRuleManagedKeysErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetRateBasedRuleManagedKeysErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRateBasedRuleManagedKeysErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetRateBasedRuleManagedKeysErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetRateBasedRuleManagedKeysErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRateBasedRuleManagedKeysErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetRateBasedRuleManagedKeysErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `GetRateBasedRuleManagedKeysErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRateBasedRuleManagedKeysErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetRateBasedRuleManagedKeysErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetRateBasedRuleManagedKeysErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5939,7 +5939,7 @@ pub enum GetRegexMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRegexMatchSetError {
@@ -6004,21 +6004,21 @@ impl GetRegexMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRegexMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetRegexMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegexMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegexMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetRegexMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegexMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegexMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetRegexMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6056,7 +6056,7 @@ pub enum GetRegexPatternSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRegexPatternSetError {
@@ -6121,21 +6121,21 @@ impl GetRegexPatternSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRegexPatternSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetRegexPatternSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegexPatternSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegexPatternSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetRegexPatternSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegexPatternSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegexPatternSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetRegexPatternSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6173,7 +6173,7 @@ pub enum GetRuleErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRuleError {
@@ -6238,15 +6238,15 @@ impl GetRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRuleErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetRuleErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetRuleErrorKind::WafInternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetRuleErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetRuleErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(&self.kind, GetRuleErrorKind::WafInvalidAccountException(_))
     }
-    /// Returns true if the error kind is `GetRuleErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetRuleErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(&self.kind, GetRuleErrorKind::WafNonexistentItemException(_))
     }
@@ -6279,7 +6279,7 @@ pub enum GetRuleGroupErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRuleGroupError {
@@ -6343,14 +6343,14 @@ impl GetRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRuleGroupErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRuleGroupErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetRuleGroupErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6385,7 +6385,7 @@ pub enum GetSampledRequestsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSampledRequestsError {
@@ -6449,14 +6449,14 @@ impl GetSampledRequestsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSampledRequestsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetSampledRequestsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSampledRequestsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSampledRequestsErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetSampledRequestsErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6493,7 +6493,7 @@ pub enum GetSizeConstraintSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSizeConstraintSetError {
@@ -6558,21 +6558,21 @@ impl GetSizeConstraintSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSizeConstraintSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetSizeConstraintSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSizeConstraintSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSizeConstraintSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetSizeConstraintSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSizeConstraintSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetSizeConstraintSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetSizeConstraintSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6610,7 +6610,7 @@ pub enum GetSqlInjectionMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSqlInjectionMatchSetError {
@@ -6675,21 +6675,21 @@ impl GetSqlInjectionMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSqlInjectionMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetSqlInjectionMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSqlInjectionMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSqlInjectionMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetSqlInjectionMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSqlInjectionMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetSqlInjectionMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetSqlInjectionMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6727,7 +6727,7 @@ pub enum GetWebACLErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWebACLError {
@@ -6792,18 +6792,18 @@ impl GetWebACLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWebACLErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetWebACLErrorKind::WafInternalErrorException(_))
     }
-    /// Returns true if the error kind is `GetWebACLErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetWebACLErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWebACLErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetWebACLErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6841,7 +6841,7 @@ pub enum GetXssMatchSetErrorKind {
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetXssMatchSetError {
@@ -6906,21 +6906,21 @@ impl GetXssMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetXssMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `GetXssMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetXssMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetXssMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `GetXssMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetXssMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `GetXssMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `GetXssMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6995,7 +6995,7 @@ pub enum ListActivatedRulesInRuleGroupErrorKind {
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListActivatedRulesInRuleGroupError {
@@ -7069,21 +7069,21 @@ impl ListActivatedRulesInRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListActivatedRulesInRuleGroupErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListActivatedRulesInRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListActivatedRulesInRuleGroupErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListActivatedRulesInRuleGroupErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `ListActivatedRulesInRuleGroupErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListActivatedRulesInRuleGroupErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListActivatedRulesInRuleGroupErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `ListActivatedRulesInRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7125,7 +7125,7 @@ pub enum ListByteMatchSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListByteMatchSetsError {
@@ -7189,14 +7189,14 @@ impl ListByteMatchSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListByteMatchSetsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListByteMatchSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListByteMatchSetsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListByteMatchSetsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListByteMatchSetsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7231,7 +7231,7 @@ pub enum ListGeoMatchSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGeoMatchSetsError {
@@ -7295,14 +7295,14 @@ impl ListGeoMatchSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGeoMatchSetsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListGeoMatchSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGeoMatchSetsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListGeoMatchSetsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListGeoMatchSetsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7337,7 +7337,7 @@ pub enum ListIPSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIPSetsError {
@@ -7401,14 +7401,14 @@ impl ListIPSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIPSetsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListIPSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIPSetsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListIPSetsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListIPSetsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7482,7 +7482,7 @@ pub enum ListLoggingConfigurationsErrorKind {
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLoggingConfigurationsError {
@@ -7551,21 +7551,21 @@ impl ListLoggingConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLoggingConfigurationsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListLoggingConfigurationsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLoggingConfigurationsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListLoggingConfigurationsErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `ListLoggingConfigurationsErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLoggingConfigurationsErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListLoggingConfigurationsErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `ListLoggingConfigurationsErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7603,7 +7603,7 @@ pub enum ListRateBasedRulesErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRateBasedRulesError {
@@ -7667,14 +7667,14 @@ impl ListRateBasedRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRateBasedRulesErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListRateBasedRulesErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRateBasedRulesErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListRateBasedRulesErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListRateBasedRulesErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7709,7 +7709,7 @@ pub enum ListRegexMatchSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRegexMatchSetsError {
@@ -7773,14 +7773,14 @@ impl ListRegexMatchSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRegexMatchSetsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListRegexMatchSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRegexMatchSetsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListRegexMatchSetsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListRegexMatchSetsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7815,7 +7815,7 @@ pub enum ListRegexPatternSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRegexPatternSetsError {
@@ -7879,14 +7879,14 @@ impl ListRegexPatternSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRegexPatternSetsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListRegexPatternSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRegexPatternSetsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListRegexPatternSetsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListRegexPatternSetsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7919,7 +7919,7 @@ pub struct ListRuleGroupsError {
 pub enum ListRuleGroupsErrorKind {
     /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRuleGroupsError {
@@ -7982,7 +7982,7 @@ impl ListRuleGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRuleGroupsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListRuleGroupsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8016,7 +8016,7 @@ pub enum ListRulesErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRulesError {
@@ -8080,11 +8080,11 @@ impl ListRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRulesErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListRulesErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ListRulesErrorKind::WafInternalErrorException(_))
     }
-    /// Returns true if the error kind is `ListRulesErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListRulesErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8119,7 +8119,7 @@ pub enum ListSizeConstraintSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSizeConstraintSetsError {
@@ -8183,14 +8183,14 @@ impl ListSizeConstraintSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSizeConstraintSetsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListSizeConstraintSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSizeConstraintSetsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSizeConstraintSetsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListSizeConstraintSetsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8225,7 +8225,7 @@ pub enum ListSqlInjectionMatchSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSqlInjectionMatchSetsError {
@@ -8289,14 +8289,14 @@ impl ListSqlInjectionMatchSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSqlInjectionMatchSetsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListSqlInjectionMatchSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSqlInjectionMatchSetsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSqlInjectionMatchSetsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListSqlInjectionMatchSetsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8331,7 +8331,7 @@ pub enum ListSubscribedRuleGroupsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSubscribedRuleGroupsError {
@@ -8395,14 +8395,14 @@ impl ListSubscribedRuleGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSubscribedRuleGroupsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListSubscribedRuleGroupsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSubscribedRuleGroupsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSubscribedRuleGroupsErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `ListSubscribedRuleGroupsErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8482,7 +8482,7 @@ pub enum ListTagsForResourceErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -8552,42 +8552,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::WafBadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafBadRequestException`.
     pub fn is_waf_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::WafBadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8628,7 +8628,7 @@ pub enum ListWebACLsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWebACLsError {
@@ -8692,14 +8692,14 @@ impl ListWebACLsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWebACLsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListWebACLsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebACLsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebACLsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListWebACLsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8734,7 +8734,7 @@ pub enum ListXssMatchSetsErrorKind {
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>
     WafInvalidAccountException(crate::error::WafInvalidAccountException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListXssMatchSetsError {
@@ -8798,14 +8798,14 @@ impl ListXssMatchSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListXssMatchSetsErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `ListXssMatchSetsErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListXssMatchSetsErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListXssMatchSetsErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `ListXssMatchSetsErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8844,7 +8844,7 @@ pub enum PutLoggingConfigurationErrorKind {
     WafServiceLinkedRoleErrorException(crate::error::WafServiceLinkedRoleErrorException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLoggingConfigurationError {
@@ -8912,28 +8912,28 @@ impl PutLoggingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLoggingConfigurationErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingConfigurationErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingConfigurationErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingConfigurationErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException`.
+    /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException`.
     pub fn is_waf_service_linked_role_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingConfigurationErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `PutLoggingConfigurationErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9005,7 +9005,7 @@ pub enum PutPermissionPolicyErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPermissionPolicyError {
@@ -9073,28 +9073,28 @@ impl PutPermissionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutPermissionPolicyErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `PutPermissionPolicyErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPermissionPolicyErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException`.
+    /// Returns `true` if the error kind is `PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException`.
     pub fn is_waf_invalid_permission_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `PutPermissionPolicyErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `PutPermissionPolicyErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutPermissionPolicyErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `PutPermissionPolicyErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `PutPermissionPolicyErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9182,7 +9182,7 @@ pub enum TagResourceErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -9251,46 +9251,46 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::WafBadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::WafBadRequestException`.
     pub fn is_waf_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::WafBadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9375,7 +9375,7 @@ pub enum UntagResourceErrorKind {
     WafTagOperationException(crate::error::WafTagOperationException),
     /// <p></p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -9443,42 +9443,42 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::WafBadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::WafBadRequestException`.
     pub fn is_waf_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::WafBadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::WafTagOperationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::WafTagOperationException`.
     pub fn is_waf_tag_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::WafTagOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::WafTagOperationInternalErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::WafTagOperationInternalErrorException`.
     pub fn is_waf_tag_operation_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9603,7 +9603,7 @@ pub enum UpdateByteMatchSetErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateByteMatchSetError {
@@ -9673,56 +9673,56 @@ impl UpdateByteMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateByteMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateByteMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateByteMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateByteMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateByteMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateByteMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateByteMatchSetErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateByteMatchSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateByteMatchSetErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateByteMatchSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateByteMatchSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateByteMatchSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateByteMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateByteMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateByteMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateByteMatchSetErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateByteMatchSetErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateByteMatchSetErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateByteMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateByteMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateByteMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateByteMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateByteMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9859,7 +9859,7 @@ pub enum UpdateGeoMatchSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGeoMatchSetError {
@@ -9930,63 +9930,63 @@ impl UpdateGeoMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGeoMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGeoMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGeoMatchSetErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGeoMatchSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGeoMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGeoMatchSetErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGeoMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGeoMatchSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGeoMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateGeoMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10124,7 +10124,7 @@ pub enum UpdateIPSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIPSetError {
@@ -10195,63 +10195,63 @@ impl UpdateIPSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIPSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIPSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIPSetErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIPSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIPSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIPSetErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIPSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateIPSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateIPSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateIPSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, UpdateIPSetErrorKind::WafStaleDataException(_))
     }
@@ -10386,7 +10386,7 @@ pub enum UpdateRateBasedRuleErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRateBasedRuleError {
@@ -10457,63 +10457,63 @@ impl UpdateRateBasedRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRateBasedRuleErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRateBasedRuleErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRateBasedRuleErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRateBasedRuleErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRateBasedRuleErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRateBasedRuleErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRateBasedRuleErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRateBasedRuleErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRateBasedRuleErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateRateBasedRuleErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10604,7 +10604,7 @@ pub enum UpdateRegexMatchSetErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRegexMatchSetError {
@@ -10674,56 +10674,56 @@ impl UpdateRegexMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRegexMatchSetErrorKind::WafDisallowedNameException`.
+    /// Returns `true` if the error kind is `UpdateRegexMatchSetErrorKind::WafDisallowedNameException`.
     pub fn is_waf_disallowed_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexMatchSetErrorKind::WafDisallowedNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateRegexMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateRegexMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexMatchSetErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateRegexMatchSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexMatchSetErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateRegexMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexMatchSetErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateRegexMatchSetErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexMatchSetErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateRegexMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateRegexMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10813,7 +10813,7 @@ pub enum UpdateRegexPatternSetErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRegexPatternSetError {
@@ -10887,56 +10887,56 @@ impl UpdateRegexPatternSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRegexPatternSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexPatternSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexPatternSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexPatternSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexPatternSetErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexPatternSetErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexPatternSetErrorKind::WafInvalidRegexPatternException`.
+    /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafInvalidRegexPatternException`.
     pub fn is_waf_invalid_regex_pattern_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexPatternSetErrorKind::WafInvalidRegexPatternException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexPatternSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexPatternSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexPatternSetErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexPatternSetErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexPatternSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRegexPatternSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRegexPatternSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateRegexPatternSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11075,7 +11075,7 @@ pub enum UpdateRuleErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRuleError {
@@ -11146,63 +11146,63 @@ impl UpdateRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateRuleErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, UpdateRuleErrorKind::WafStaleDataException(_))
     }
@@ -11325,7 +11325,7 @@ pub enum UpdateRuleGroupErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRuleGroupError {
@@ -11394,49 +11394,49 @@ impl UpdateRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRuleGroupErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleGroupErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleGroupErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleGroupErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleGroupErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleGroupErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleGroupErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleGroupErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleGroupErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleGroupErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleGroupErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuleGroupErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuleGroupErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateRuleGroupErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11572,7 +11572,7 @@ pub enum UpdateSizeConstraintSetErrorKind {
     WafReferencedItemException(crate::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSizeConstraintSetError {
@@ -11645,63 +11645,63 @@ impl UpdateSizeConstraintSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSizeConstraintSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSizeConstraintSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSizeConstraintSetErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSizeConstraintSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSizeConstraintSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSizeConstraintSetErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSizeConstraintSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSizeConstraintSetErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSizeConstraintSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateSizeConstraintSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11831,7 +11831,7 @@ pub enum UpdateSqlInjectionMatchSetErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSqlInjectionMatchSetError {
@@ -11913,56 +11913,56 @@ impl UpdateSqlInjectionMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSqlInjectionMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSqlInjectionMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSqlInjectionMatchSetErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSqlInjectionMatchSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSqlInjectionMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSqlInjectionMatchSetErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSqlInjectionMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateSqlInjectionMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12109,7 +12109,7 @@ pub enum UpdateWebACLErrorKind {
     WafStaleDataException(crate::error::WafStaleDataException),
     /// <p>The specified subscription does not exist.</p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWebACLError {
@@ -12181,67 +12181,67 @@ impl UpdateWebACLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebACLErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebACLErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebACLErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebACLErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebACLErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebACLErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebACLErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafReferencedItemException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafReferencedItemException`.
     pub fn is_waf_referenced_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebACLErrorKind::WafReferencedItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(&self.kind, UpdateWebACLErrorKind::WafStaleDataException(_))
     }
-    /// Returns true if the error kind is `UpdateWebACLErrorKind::WafSubscriptionNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWebACLErrorKind::WafSubscriptionNotFoundException`.
     pub fn is_waf_subscription_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12370,7 +12370,7 @@ pub enum UpdateXssMatchSetErrorKind {
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>
     WafStaleDataException(crate::error::WafStaleDataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateXssMatchSetError {
@@ -12440,56 +12440,56 @@ impl UpdateXssMatchSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateXssMatchSetErrorKind::WafInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateXssMatchSetErrorKind::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateXssMatchSetErrorKind::WafInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateXssMatchSetErrorKind::WafInvalidAccountException`.
+    /// Returns `true` if the error kind is `UpdateXssMatchSetErrorKind::WafInvalidAccountException`.
     pub fn is_waf_invalid_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateXssMatchSetErrorKind::WafInvalidAccountException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateXssMatchSetErrorKind::WafInvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateXssMatchSetErrorKind::WafInvalidOperationException`.
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateXssMatchSetErrorKind::WafInvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateXssMatchSetErrorKind::WafInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateXssMatchSetErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateXssMatchSetErrorKind::WafInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateXssMatchSetErrorKind::WafLimitsExceededException`.
+    /// Returns `true` if the error kind is `UpdateXssMatchSetErrorKind::WafLimitsExceededException`.
     pub fn is_waf_limits_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateXssMatchSetErrorKind::WafLimitsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateXssMatchSetErrorKind::WafNonexistentContainerException`.
+    /// Returns `true` if the error kind is `UpdateXssMatchSetErrorKind::WafNonexistentContainerException`.
     pub fn is_waf_nonexistent_container_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateXssMatchSetErrorKind::WafNonexistentContainerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateXssMatchSetErrorKind::WafNonexistentItemException`.
+    /// Returns `true` if the error kind is `UpdateXssMatchSetErrorKind::WafNonexistentItemException`.
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateXssMatchSetErrorKind::WafNonexistentItemException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateXssMatchSetErrorKind::WafStaleDataException`.
+    /// Returns `true` if the error kind is `UpdateXssMatchSetErrorKind::WafStaleDataException`.
     pub fn is_waf_stale_data_exception(&self) -> bool {
         matches!(
             &self.kind,

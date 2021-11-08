@@ -164,6 +164,13 @@ where
     pub fn confirm_connection(&self) -> fluent_builders::ConfirmConnection<C, M, R> {
         fluent_builders::ConfirmConnection::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ConfirmCustomerAgreement` operation.
+    ///
+    /// See [`ConfirmCustomerAgreement`](crate::client::fluent_builders::ConfirmCustomerAgreement) for more information about the
+    /// operation and its arguments.
+    pub fn confirm_customer_agreement(&self) -> fluent_builders::ConfirmCustomerAgreement<C, M, R> {
+        fluent_builders::ConfirmCustomerAgreement::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ConfirmPrivateVirtualInterface` operation.
     ///
     /// See [`ConfirmPrivateVirtualInterface`](crate::client::fluent_builders::ConfirmPrivateVirtualInterface) for more information about the
@@ -358,6 +365,13 @@ where
     ) -> fluent_builders::DescribeConnectionsOnInterconnect<C, M, R> {
         fluent_builders::DescribeConnectionsOnInterconnect::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeCustomerMetadata` operation.
+    ///
+    /// See [`DescribeCustomerMetadata`](crate::client::fluent_builders::DescribeCustomerMetadata) for more information about the
+    /// operation and its arguments.
+    pub fn describe_customer_metadata(&self) -> fluent_builders::DescribeCustomerMetadata<C, M, R> {
+        fluent_builders::DescribeCustomerMetadata::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeDirectConnectGatewayAssociationProposals` operation.
     ///
     /// See [`DescribeDirectConnectGatewayAssociationProposals`](crate::client::fluent_builders::DescribeDirectConnectGatewayAssociationProposals) for more information about the
@@ -437,6 +451,15 @@ where
     /// operation and its arguments.
     pub fn describe_locations(&self) -> fluent_builders::DescribeLocations<C, M, R> {
         fluent_builders::DescribeLocations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeRouterConfiguration` operation.
+    ///
+    /// See [`DescribeRouterConfiguration`](crate::client::fluent_builders::DescribeRouterConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn describe_router_configuration(
+        &self,
+    ) -> fluent_builders::DescribeRouterConfiguration<C, M, R> {
+        fluent_builders::DescribeRouterConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeTags` operation.
     ///
@@ -521,6 +544,15 @@ where
     pub fn update_connection(&self) -> fluent_builders::UpdateConnection<C, M, R> {
         fluent_builders::UpdateConnection::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateDirectConnectGateway` operation.
+    ///
+    /// See [`UpdateDirectConnectGateway`](crate::client::fluent_builders::UpdateDirectConnectGateway) for more information about the
+    /// operation and its arguments.
+    pub fn update_direct_connect_gateway(
+        &self,
+    ) -> fluent_builders::UpdateDirectConnectGateway<C, M, R> {
+        fluent_builders::UpdateDirectConnectGateway::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateDirectConnectGatewayAssociation` operation.
     ///
     /// See [`UpdateDirectConnectGatewayAssociation`](crate::client::fluent_builders::UpdateDirectConnectGatewayAssociation) for more information about the
@@ -599,9 +631,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -627,7 +662,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_proposal_id(input);
             self
         }
-        /// <p>The ID of the account that owns the virtual private gateway or transit gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
         pub fn associated_gateway_owner_account(
             mut self,
             inp: impl Into<std::string::String>,
@@ -635,7 +670,7 @@ pub mod fluent_builders {
             self.inner = self.inner.associated_gateway_owner_account(inp);
             self
         }
-        /// <p>The ID of the account that owns the virtual private gateway or transit gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
         pub fn set_associated_gateway_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -726,9 +761,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
@@ -760,12 +798,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_name(input);
             self
         }
-        /// <p>The ID of the account of the customer for whom the connection will be provisioned.</p>
+        /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
         pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(inp);
             self
         }
-        /// <p>The ID of the account of the customer for whom the connection will be provisioned.</p>
+        /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -853,9 +891,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect or LAG.</p>
@@ -871,12 +912,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_id(input);
             self
         }
-        /// <p>The ID of the account ID of the customer for the connection.</p>
+        /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
         pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(inp);
             self
         }
-        /// <p>The ID of the account ID of the customer for the connection.</p>
+        /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -937,7 +978,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AllocatePrivateVirtualInterface`.
     ///
-    /// <p>Provisions a private virtual interface to be owned by the specified account.</p>
+    /// <p>Provisions a private virtual interface to be owned by the specified Amazon Web Services account.</p>
     /// <p>Virtual interfaces created using this action must be confirmed by the owner using <a>ConfirmPrivateVirtualInterface</a>.
     /// Until then, the virtual interface is in the <code>Confirming</code> state and is not available to handle traffic.</p>
     #[derive(std::fmt::Debug)]
@@ -988,9 +1029,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
@@ -1006,12 +1050,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_id(input);
             self
         }
-        /// <p>The ID of the account that owns the virtual private interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
         pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(inp);
             self
         }
-        /// <p>The ID of the account that owns the virtual private interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1040,8 +1084,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AllocatePublicVirtualInterface`.
     ///
-    /// <p>Provisions a public virtual interface to be owned by the specified account.</p>
-    /// <p>The owner of a connection calls this function to provision a public virtual interface to be owned by the specified account.</p>
+    /// <p>Provisions a public virtual interface to be owned by the specified Amazon Web Services account.</p>
+    /// <p>The owner of a connection calls this function to provision a public virtual interface to be owned by the specified Amazon Web Services account.</p>
     /// <p>Virtual interfaces created using this function must be confirmed by the owner using <a>ConfirmPublicVirtualInterface</a>.
     /// Until this step has been completed, the virtual interface is in the <code>confirming</code> state and is not available to handle traffic.</p>
     /// <p>When creating an IPv6 public virtual interface, omit the Amazon address and customer address. IPv6 addresses are automatically assigned from
@@ -1094,9 +1138,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
@@ -1112,12 +1159,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_id(input);
             self
         }
-        /// <p>The ID of the account that owns the public virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
         pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(inp);
             self
         }
-        /// <p>The ID of the account that owns the public virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1146,8 +1193,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AllocateTransitVirtualInterface`.
     ///
-    /// <p>Provisions a transit virtual interface to be owned by the specified account. Use this type of interface to connect a transit gateway to your Direct Connect gateway.</p>
-    /// <p>The owner of a connection provisions a transit virtual interface to be owned by the specified account.</p>
+    /// <p>Provisions a transit virtual interface to be owned by the specified Amazon Web Services account. Use this type of interface to connect a transit gateway to your Direct Connect gateway.</p>
+    /// <p>The owner of a connection provisions a transit virtual interface to be owned by the specified Amazon Web Services account.</p>
     /// <p>After you create a transit virtual interface, it must be confirmed by the owner using <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit virtual interface is in the <code>requested</code> state and is not available to handle traffic.</p>
     #[derive(std::fmt::Debug)]
     pub struct AllocateTransitVirtualInterface<
@@ -1197,9 +1244,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
@@ -1215,12 +1265,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_id(input);
             self
         }
-        /// <p>The ID of the account that owns the transit virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
         pub fn owner_account(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_account(inp);
             self
         }
-        /// <p>The ID of the account that owns the transit virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1311,9 +1361,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -1398,9 +1451,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted connection.</p>
@@ -1483,9 +1539,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
@@ -1610,9 +1669,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
@@ -1695,9 +1757,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted connection.</p>
@@ -1714,9 +1779,88 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ConfirmCustomerAgreement`.
+    ///
+    /// <p>
+    /// The confirmation of the terms of agreement when creating the connection/link aggregation group (LAG).
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ConfirmCustomerAgreement<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::confirm_customer_agreement_input::Builder,
+    }
+    impl<C, M, R> ConfirmCustomerAgreement<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ConfirmCustomerAgreement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ConfirmCustomerAgreementOutput,
+            aws_smithy_http::result::SdkError<crate::error::ConfirmCustomerAgreementError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ConfirmCustomerAgreementInputOperationOutputAlias,
+                crate::output::ConfirmCustomerAgreementOutput,
+                crate::error::ConfirmCustomerAgreementError,
+                crate::input::ConfirmCustomerAgreementInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The name of the customer agreement.
+        /// </p>
+        pub fn agreement_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agreement_name(inp);
+            self
+        }
+        /// <p>
+        /// The name of the customer agreement.
+        /// </p>
+        pub fn set_agreement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_agreement_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ConfirmPrivateVirtualInterface`.
     ///
-    /// <p>Accepts ownership of a private virtual interface created by another account.</p>
+    /// <p>Accepts ownership of a private virtual interface created by another Amazon Web Services account.</p>
     /// <p>After the virtual interface owner makes this call, the virtual interface is
     /// created and attached to the specified virtual private gateway or Direct Connect gateway, and is
     /// made available to handle traffic.</p>
@@ -1768,9 +1912,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
@@ -1815,7 +1962,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ConfirmPublicVirtualInterface`.
     ///
-    /// <p>Accepts ownership of a public virtual interface created by another account.</p>
+    /// <p>Accepts ownership of a public virtual interface created by another Amazon Web Services account.</p>
     /// <p>After the virtual interface owner makes this call, the specified virtual interface is
     /// created and made available to handle traffic.</p>
     #[derive(std::fmt::Debug)]
@@ -1866,9 +2013,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
@@ -1887,7 +2037,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ConfirmTransitVirtualInterface`.
     ///
-    /// <p>Accepts ownership of a transit virtual interface created by another account.</p>
+    /// <p>Accepts ownership of a transit virtual interface created by another Amazon Web Services account.</p>
     ///
     /// <p> After the owner of the transit virtual interface makes this call, the specified transit virtual interface is created and made available to handle traffic.</p>
     #[derive(std::fmt::Debug)]
@@ -1938,9 +2088,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
@@ -2027,9 +2180,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
@@ -2118,9 +2274,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The location of the connection.</p>
@@ -2213,8 +2372,8 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a Direct Connect gateway, which is an intermediate object that enables you to connect a set
     /// of virtual interfaces and virtual private gateways. A Direct Connect gateway is global and visible in any
-    /// Region after it is created. The virtual interfaces and virtual private gateways that
-    /// are connected through a Direct Connect gateway can be in different Regions. This enables you to
+    /// Amazon Web Services Region after it is created. The virtual interfaces and virtual private gateways that
+    /// are connected through a Direct Connect gateway can be in different Amazon Web Services Regions. This enables you to
     /// connect to a VPC in any Region, regardless of the Region in which the virtual interfaces
     /// are located, and pass traffic between them.</p>
     #[derive(std::fmt::Debug)]
@@ -2265,9 +2424,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the Direct Connect gateway.</p>
@@ -2352,9 +2514,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -2425,7 +2590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDirectConnectGatewayAssociationProposal`.
     ///
     /// <p>Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified Direct Connect gateway.</p>
-    /// <p>You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any account. </p>
+    /// <p>You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any Amazon Web Services account. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateDirectConnectGatewayAssociationProposal<
         C = aws_smithy_client::erase::DynConnector,
@@ -2467,9 +2632,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -2485,7 +2653,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_direct_connect_gateway_id(input);
             self
         }
-        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_owner_account(
             mut self,
             inp: impl Into<std::string::String>,
@@ -2493,7 +2661,7 @@ pub mod fluent_builders {
             self.inner = self.inner.direct_connect_gateway_owner_account(inp);
             self
         }
-        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2626,9 +2794,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the interconnect.</p>
@@ -2722,7 +2893,7 @@ pub mod fluent_builders {
     /// will be created on the same Direct Connect endpoint to which the dedicated connection terminates. Any
     /// virtual interfaces associated with the dedicated connection are automatically disassociated
     /// and re-associated with the LAG. The connection ID does not change.</p>
-    /// <p>If the account used to create a LAG is a registered Direct Connect Partner, the LAG is
+    /// <p>If the Amazon Web Services account used to create a LAG is a registered Direct Connect Partner, the LAG is
     /// automatically enabled to host sub-connections. For a LAG owned by a partner, any associated virtual
     /// interfaces cannot be directly configured.</p>
     #[derive(std::fmt::Debug)]
@@ -2773,9 +2944,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The number of physical dedicated connections initially provisioned and bundled by the
@@ -2907,7 +3081,7 @@ pub mod fluent_builders {
     /// <p>Creates a private virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic.
     /// A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway (VGW).
     /// Connecting the private virtual interface to a Direct Connect gateway enables the possibility for connecting to multiple
-    /// VPCs, including VPCs in different Regions. Connecting the private virtual interface
+    /// VPCs, including VPCs in different Amazon Web Services Regions. Connecting the private virtual interface
     /// to a VGW only provides access to a single VPC within the same Region.</p>
     /// <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to
     /// the underlying physical connection if it wasn't updated to support jumbo frames. Updating
@@ -2963,9 +3137,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -3052,9 +3229,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -3147,9 +3327,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -3234,9 +3417,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
@@ -3340,9 +3526,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -3412,9 +3601,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -3485,9 +3677,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
@@ -3574,9 +3769,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the proposal.</p>
@@ -3645,9 +3843,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect.</p>
@@ -3716,9 +3917,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the LAG.</p>
@@ -3783,9 +3987,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
@@ -3858,9 +4065,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -3956,9 +4166,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -4030,9 +4243,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect.</p>
@@ -4047,6 +4263,66 @@ pub mod fluent_builders {
         ) -> Self {
             self.inner = self.inner.set_interconnect_id(input);
             self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeCustomerMetadata`.
+    ///
+    /// <p>Get and view a list of customer agreements, along with their signed status and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeCustomerMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_customer_metadata_input::Builder,
+    }
+    impl<C, M, R> DescribeCustomerMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeCustomerMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeCustomerMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeCustomerMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeCustomerMetadataInputOperationOutputAlias,
+                crate::output::DescribeCustomerMetadataOutput,
+                crate::error::DescribeCustomerMetadataError,
+                crate::input::DescribeCustomerMetadataInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `DescribeDirectConnectGatewayAssociationProposals`.
@@ -4093,9 +4369,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -4236,9 +4515,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
@@ -4377,9 +4659,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -4486,9 +4771,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -4586,9 +4874,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect or LAG.</p>
@@ -4660,9 +4951,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect.</p>
@@ -4707,7 +5001,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInterconnects`.
     ///
-    /// <p>Lists the interconnects owned by the account or only the specified interconnect.</p>
+    /// <p>Lists the interconnects owned by the Amazon Web Services account or only the specified interconnect.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeInterconnects<
         C = aws_smithy_client::erase::DynConnector,
@@ -4756,9 +5050,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect.</p>
@@ -4826,9 +5123,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the LAG.</p>
@@ -4896,9 +5196,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of a connection, LAG, or interconnect.</p>
@@ -4945,7 +5248,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLocations`.
     ///
-    /// <p>Lists the Direct Connect locations in the current Region. These are the locations that can be selected when calling
+    /// <p>Lists the Direct Connect locations in the current Amazon Web Services Region. These are the locations that can be selected when calling
     /// <a>CreateConnection</a> or <a>CreateInterconnect</a>.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeLocations<
@@ -4995,10 +5298,101 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeRouterConfiguration`.
+    ///
+    /// <p>
+    /// Details about the router.
+    /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeRouterConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_router_configuration_input::Builder,
+    }
+    impl<C, M, R> DescribeRouterConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeRouterConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeRouterConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeRouterConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeRouterConfigurationInputOperationOutputAlias,
+                crate::output::DescribeRouterConfigurationOutput,
+                crate::error::DescribeRouterConfigurationError,
+                crate::input::DescribeRouterConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>The ID of the virtual interface.</p>
+        pub fn virtual_interface_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(inp);
+            self
+        }
+        /// <p>The ID of the virtual interface.</p>
+        pub fn set_virtual_interface_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_virtual_interface_id(input);
+            self
+        }
+        /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+        pub fn router_type_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.router_type_identifier(inp);
+            self
+        }
+        /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+        pub fn set_router_type_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_router_type_identifier(input);
+            self
         }
     }
     /// Fluent builder constructing a request to `DescribeTags`.
@@ -5052,9 +5446,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `resourceArns`.
@@ -5077,7 +5474,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeVirtualGateways`.
     ///
-    /// <p>Lists the virtual private gateways owned by the account.</p>
+    /// <p>Lists the virtual private gateways owned by the Amazon Web Services account.</p>
     /// <p>You can create one or more Direct Connect private virtual interfaces linked to a virtual private gateway.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeVirtualGateways<
@@ -5127,15 +5524,18 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `DescribeVirtualInterfaces`.
     ///
-    /// <p>Displays all virtual interfaces for an account. Virtual interfaces deleted fewer
+    /// <p>Displays all virtual interfaces for an Amazon Web Services account. Virtual interfaces deleted fewer
     /// than 15 minutes before you make the request are also returned. If you specify a
     /// connection ID, only the virtual interfaces associated with the connection are returned.
     /// If you specify a virtual interface ID, then only a single virtual interface is returned.</p>
@@ -5188,9 +5588,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -5280,9 +5683,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
@@ -5360,9 +5766,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
@@ -5444,9 +5853,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface failover test.</p>
@@ -5580,9 +5992,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface you want to test.</p>
@@ -5681,9 +6096,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface you no longer want to test.</p>
@@ -5752,9 +6170,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5836,9 +6257,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5929,9 +6353,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dedicated connection.</p>
@@ -5975,6 +6402,95 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_encryption_mode(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateDirectConnectGateway`.
+    ///
+    /// <p>Updates the name of a current Direct Connect gateway.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateDirectConnectGateway<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_direct_connect_gateway_input::Builder,
+    }
+    impl<C, M, R> UpdateDirectConnectGateway<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateDirectConnectGateway`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDirectConnectGatewayOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateDirectConnectGatewayError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateDirectConnectGatewayInputOperationOutputAlias,
+                crate::output::UpdateDirectConnectGatewayOutput,
+                crate::error::UpdateDirectConnectGatewayError,
+                crate::input::UpdateDirectConnectGatewayInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Direct Connect gateway to update.</p>
+        pub fn direct_connect_gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(inp);
+            self
+        }
+        /// <p>The ID of the Direct Connect gateway to update.</p>
+        pub fn set_direct_connect_gateway_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_direct_connect_gateway_id(input);
+            self
+        }
+        /// <p>The new name for the Direct Connect gateway.</p>
+        pub fn new_direct_connect_gateway_name(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.new_direct_connect_gateway_name(inp);
+            self
+        }
+        /// <p>The new name for the Direct Connect gateway.</p>
+        pub fn set_new_direct_connect_gateway_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_new_direct_connect_gateway_name(input);
             self
         }
     }
@@ -6032,9 +6548,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
@@ -6172,9 +6691,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the LAG.</p>
@@ -6280,9 +6802,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual private interface.</p>

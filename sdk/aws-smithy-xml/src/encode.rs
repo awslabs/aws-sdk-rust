@@ -23,7 +23,7 @@ impl Display for Error {
 ///
 /// XmlWriter (and friends) make generating an invalid XML document a type error. Nested branches
 /// of the Xml document mutable borrow from the root. You cannot continue writing to the root
-/// until the nested branch is dropped and dropping the nested branch writes the terminator (eg.
+/// until the nested branch is dropped and dropping the nested branch writes the terminator (e.g.
 /// closing element).
 ///
 /// The one exception to this rule is names—it is possible to construct an invalid Xml Name. However,

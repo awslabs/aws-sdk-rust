@@ -3,20 +3,21 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or
     /// failure.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Request references a resource which does not exist. </p>
+    /// <p>Request references a resource which doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Request would cause a service quota to be exceeded.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
+    /// service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

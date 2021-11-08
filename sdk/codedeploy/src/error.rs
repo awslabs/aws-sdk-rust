@@ -27,7 +27,7 @@ pub enum AddTagsToOnPremisesInstancesErrorKind {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToOnPremisesInstancesError {
@@ -106,49 +106,49 @@ impl AddTagsToOnPremisesInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException`.
+    /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException`.
     pub fn is_instance_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
+    /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException`.
+    /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException`.
     pub fn is_instance_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException`.
+    /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToOnPremisesInstancesErrorKind::TagRequiredException`.
+    /// Returns `true` if the error kind is `AddTagsToOnPremisesInstancesErrorKind::TagRequiredException`.
     pub fn is_tag_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -206,7 +206,7 @@ pub enum BatchGetApplicationRevisionsErrorKind {
     InvalidRevisionException(crate::error::InvalidRevisionException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetApplicationRevisionsError {
@@ -286,42 +286,42 @@ impl BatchGetApplicationRevisionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetApplicationRevisionsErrorKind::InvalidRevisionException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::InvalidRevisionException`.
     pub fn is_invalid_revision_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetApplicationRevisionsErrorKind::RevisionRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationRevisionsErrorKind::RevisionRequiredException`.
     pub fn is_revision_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -374,7 +374,7 @@ pub enum BatchGetApplicationsErrorKind {
     BatchLimitExceededException(crate::error::BatchLimitExceededException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetApplicationsError {
@@ -444,28 +444,28 @@ impl BatchGetApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetApplicationsErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetApplicationsErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetApplicationsErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetApplicationsErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetApplicationsErrorKind::BatchLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationsErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetApplicationsErrorKind::BatchLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetApplicationsErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `BatchGetApplicationsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -512,7 +512,7 @@ pub enum BatchGetDeploymentGroupsErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetDeploymentGroupsError {
@@ -593,49 +593,49 @@ impl BatchGetDeploymentGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -698,7 +698,7 @@ pub enum BatchGetDeploymentInstancesErrorKind {
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetDeploymentInstancesError {
@@ -781,49 +781,49 @@ impl BatchGetDeploymentInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException`.
     pub fn is_instance_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -879,7 +879,7 @@ pub enum BatchGetDeploymentsErrorKind {
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetDeploymentsError {
@@ -944,21 +944,21 @@ impl BatchGetDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetDeploymentsErrorKind::BatchLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentsErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentsErrorKind::BatchLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentsErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentsErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentsErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentsErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentsErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1012,7 +1012,7 @@ pub enum BatchGetDeploymentTargetsErrorKind {
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p> The target ID provided was not valid. </p>
     InvalidDeploymentTargetIdException(crate::error::InvalidDeploymentTargetIdException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetDeploymentTargetsError {
@@ -1101,63 +1101,63 @@ impl BatchGetDeploymentTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException`.
     pub fn is_deployment_target_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException`.
     pub fn is_deployment_target_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException`.
     pub fn is_deployment_target_list_size_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException`.
     pub fn is_instance_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException`.
+    /// Returns `true` if the error kind is `BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException`.
     pub fn is_invalid_deployment_target_id_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1219,7 +1219,7 @@ pub enum BatchGetOnPremisesInstancesErrorKind {
     InstanceNameRequiredException(crate::error::InstanceNameRequiredException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetOnPremisesInstancesError {
@@ -1290,21 +1290,21 @@ impl BatchGetOnPremisesInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException`.
     pub fn is_batch_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1360,7 +1360,7 @@ pub enum ContinueDeploymentErrorKind {
     UnsupportedActionForDeploymentTypeException(
         crate::error::UnsupportedActionForDeploymentTypeException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ContinueDeploymentError {
@@ -1438,56 +1438,56 @@ impl ContinueDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException`.
+    /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException`.
     pub fn is_deployment_already_completed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException(_)
         )
     }
-    /// Returns true if the error kind is `ContinueDeploymentErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ContinueDeploymentErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ContinueDeploymentErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ContinueDeploymentErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException`.
+    /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException`.
     pub fn is_deployment_is_not_in_ready_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException(_)
         )
     }
-    /// Returns true if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             ContinueDeploymentErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentStatusException`.
+    /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentStatusException`.
     pub fn is_invalid_deployment_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             ContinueDeploymentErrorKind::InvalidDeploymentStatusException(_)
         )
     }
-    /// Returns true if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException`.
+    /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException`.
     pub fn is_invalid_deployment_wait_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(_)
         )
     }
-    /// Returns true if the error kind is `ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException`.
+    /// Returns `true` if the error kind is `ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException`.
     pub fn is_unsupported_action_for_deployment_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1544,7 +1544,7 @@ pub enum CreateApplicationErrorKind {
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p> The specified tags are not valid. </p>
     InvalidTagsToAddException(crate::error::InvalidTagsToAddException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationError {
@@ -1612,42 +1612,42 @@ impl CreateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ApplicationAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ApplicationAlreadyExistsException`.
     pub fn is_application_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::ApplicationAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ApplicationLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ApplicationLimitExceededException`.
     pub fn is_application_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::ApplicationLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InvalidComputePlatformException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::InvalidComputePlatformException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InvalidTagsToAddException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InvalidTagsToAddException`.
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1763,7 +1763,7 @@ pub enum CreateDeploymentErrorKind {
     RevisionRequiredException(crate::error::RevisionRequiredException),
     /// <p>An API function was called too frequently.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentError {
@@ -1863,168 +1863,168 @@ impl CreateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::DeploymentGroupNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::DeploymentLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DeploymentLimitExceededException`.
     pub fn is_deployment_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::DeploymentLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::DescriptionTooLongException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::DescriptionTooLongException`.
     pub fn is_description_too_long_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::DescriptionTooLongException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidAutoRollbackConfigException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidAutoRollbackConfigException`.
     pub fn is_invalid_auto_rollback_config_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidAutoScalingGroupException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidAutoScalingGroupException`.
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidAutoScalingGroupException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidDeploymentConfigNameException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidDeploymentConfigNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidDeploymentGroupNameException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidDeploymentGroupNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidFileExistsBehaviorException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidFileExistsBehaviorException`.
     pub fn is_invalid_file_exists_behavior_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidFileExistsBehaviorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidGitHubAccountTokenException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidGitHubAccountTokenException`.
     pub fn is_invalid_git_hub_account_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidGitHubAccountTokenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException`.
     pub fn is_invalid_ignore_application_stop_failures_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidLoadBalancerInfoException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidLoadBalancerInfoException`.
     pub fn is_invalid_load_balancer_info_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidLoadBalancerInfoException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidRevisionException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidRevisionException`.
     pub fn is_invalid_revision_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidRevisionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidTargetInstancesException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidTargetInstancesException`.
     pub fn is_invalid_target_instances_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidTargetInstancesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException`.
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException`.
     pub fn is_invalid_update_outdated_instances_only_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::RevisionDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::RevisionDoesNotExistException`.
     pub fn is_revision_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::RevisionDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::RevisionRequiredException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::RevisionRequiredException`.
     pub fn is_revision_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::RevisionRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2104,7 +2104,7 @@ pub enum CreateDeploymentConfigErrorKind {
     InvalidTrafficRoutingConfigurationException(
         crate::error::InvalidTrafficRoutingConfigurationException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentConfigError {
@@ -2187,49 +2187,49 @@ impl CreateDeploymentConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException`.
     pub fn is_deployment_config_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException`.
     pub fn is_deployment_config_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
     pub fn is_deployment_config_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentConfigErrorKind::InvalidComputePlatformException`.
+    /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentConfigErrorKind::InvalidComputePlatformException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
+    /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException`.
+    /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException`.
     pub fn is_invalid_minimum_healthy_host_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException`.
+    /// Returns `true` if the error kind is `CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException`.
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2381,7 +2381,7 @@ pub enum CreateDeploymentGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The maximum allowed number of triggers was exceeded.</p>
     TriggerTargetsLimitExceededException(crate::error::TriggerTargetsLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentGroupError {
@@ -2520,231 +2520,231 @@ impl CreateDeploymentGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::AlarmsLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::AlarmsLimitExceededException`.
     pub fn is_alarms_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::AlarmsLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException`.
     pub fn is_deployment_group_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException`.
     pub fn is_deployment_group_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException`.
     pub fn is_ecs_service_mapping_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidAlarmConfigException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidAlarmConfigException`.
     pub fn is_invalid_alarm_config_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidAlarmConfigException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException`.
     pub fn is_invalid_auto_rollback_config_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException`.
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException`.
     pub fn is_invalid_blue_green_deployment_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException`.
     pub fn is_invalid_deployment_style_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException`.
     pub fn is_invalid_ec2_tag_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidEc2TagException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidEc2TagException`.
     pub fn is_invalid_ec2_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidEc2TagException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidEcsServiceException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidEcsServiceException`.
     pub fn is_invalid_ecs_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidEcsServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException`.
     pub fn is_invalid_load_balancer_info_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException`.
     pub fn is_invalid_on_premises_tag_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidTagException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidTagsToAddException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTagsToAddException`.
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidTagsToAddException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException`.
     pub fn is_invalid_target_group_pair_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException`.
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::InvalidTriggerConfigException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::InvalidTriggerConfigException`.
     pub fn is_invalid_trigger_config_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::InvalidTriggerConfigException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException`.
     pub fn is_lifecycle_hook_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::RoleRequiredException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::RoleRequiredException`.
     pub fn is_role_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::RoleRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::TagSetListLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::TagSetListLimitExceededException`.
     pub fn is_tag_set_list_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentGroupErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException`.
     pub fn is_trigger_targets_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2852,7 +2852,7 @@ pub enum DeleteApplicationErrorKind {
     /// was specified, the specified service role does not grant the appropriate permissions to
     /// Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationError {
@@ -2917,21 +2917,21 @@ impl DeleteApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2971,7 +2971,7 @@ pub enum DeleteDeploymentConfigErrorKind {
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>An invalid operation was detected.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeploymentConfigError {
@@ -3043,28 +3043,28 @@ impl DeleteDeploymentConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException`.
     pub fn is_deployment_config_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
     pub fn is_deployment_config_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentConfigErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentConfigErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3113,7 +3113,7 @@ pub enum DeleteDeploymentGroupErrorKind {
     /// was specified, the specified service role does not grant the appropriate permissions to
     /// Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeploymentGroupError {
@@ -3188,35 +3188,35 @@ impl DeleteDeploymentGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentGroupErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeploymentGroupErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `DeleteDeploymentGroupErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3266,7 +3266,7 @@ pub enum DeleteGitHubAccountTokenErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource could not be validated.</p>
     ResourceValidationException(crate::error::ResourceValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGitHubAccountTokenError {
@@ -3341,35 +3341,35 @@ impl DeleteGitHubAccountTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException`.
     pub fn is_git_hub_account_token_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException`.
     pub fn is_git_hub_account_token_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException`.
+    /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException`.
     pub fn is_invalid_git_hub_account_token_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGitHubAccountTokenErrorKind::ResourceValidationException`.
+    /// Returns `true` if the error kind is `DeleteGitHubAccountTokenErrorKind::ResourceValidationException`.
     pub fn is_resource_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3411,7 +3411,7 @@ pub struct DeleteResourcesByExternalIdError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcesByExternalIdErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcesByExternalIdError {
@@ -3499,7 +3499,7 @@ pub enum DeregisterOnPremisesInstanceErrorKind {
     InstanceNameRequiredException(crate::error::InstanceNameRequiredException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterOnPremisesInstanceError {
@@ -3567,14 +3567,14 @@ impl DeregisterOnPremisesInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
+    /// Returns `true` if the error kind is `DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3615,7 +3615,7 @@ pub enum GetApplicationErrorKind {
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApplicationError {
@@ -3680,21 +3680,21 @@ impl GetApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3738,7 +3738,7 @@ pub enum GetApplicationRevisionErrorKind {
     RevisionDoesNotExistException(crate::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApplicationRevisionError {
@@ -3812,42 +3812,42 @@ impl GetApplicationRevisionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApplicationRevisionErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationRevisionErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationRevisionErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationRevisionErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationRevisionErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationRevisionErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationRevisionErrorKind::InvalidRevisionException`.
+    /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::InvalidRevisionException`.
     pub fn is_invalid_revision_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationRevisionErrorKind::InvalidRevisionException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationRevisionErrorKind::RevisionDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::RevisionDoesNotExistException`.
     pub fn is_revision_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationRevisionErrorKind::RevisionDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationRevisionErrorKind::RevisionRequiredException`.
+    /// Returns `true` if the error kind is `GetApplicationRevisionErrorKind::RevisionRequiredException`.
     pub fn is_revision_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3894,7 +3894,7 @@ pub enum GetDeploymentErrorKind {
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentError {
@@ -3959,21 +3959,21 @@ impl GetDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `GetDeploymentErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4014,7 +4014,7 @@ pub enum GetDeploymentConfigErrorKind {
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentConfigError {
@@ -4086,28 +4086,28 @@ impl GetDeploymentConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
+    /// Returns `true` if the error kind is `GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException`.
     pub fn is_deployment_config_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentConfigErrorKind::InvalidComputePlatformException`.
+    /// Returns `true` if the error kind is `GetDeploymentConfigErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentConfigErrorKind::InvalidComputePlatformException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
+    /// Returns `true` if the error kind is `GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4160,7 +4160,7 @@ pub enum GetDeploymentGroupErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentGroupError {
@@ -4237,49 +4237,49 @@ impl GetDeploymentGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentGroupErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentGroupErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentGroupErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
+    /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentGroupErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentGroupErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
+    /// Returns `true` if the error kind is `GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4338,7 +4338,7 @@ pub enum GetDeploymentInstanceErrorKind {
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentInstanceError {
@@ -4411,49 +4411,49 @@ impl GetDeploymentInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentInstanceErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentInstanceErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentInstanceErrorKind::InstanceDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InstanceDoesNotExistException`.
     pub fn is_instance_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentInstanceErrorKind::InstanceDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentInstanceErrorKind::InstanceIdRequiredException`.
+    /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InstanceIdRequiredException`.
     pub fn is_instance_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentInstanceErrorKind::InstanceIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentInstanceErrorKind::InvalidComputePlatformException`.
+    /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentInstanceErrorKind::InvalidComputePlatformException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentInstanceErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentInstanceErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentInstanceErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `GetDeploymentInstanceErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4505,7 +4505,7 @@ pub enum GetDeploymentTargetErrorKind {
     InvalidDeploymentTargetIdException(crate::error::InvalidDeploymentTargetIdException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentTargetError {
@@ -4581,56 +4581,56 @@ impl GetDeploymentTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeploymentTargetErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentTargetErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentTargetErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentTargetErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentTargetErrorKind::DeploymentNotStartedException`.
+    /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentTargetErrorKind::DeploymentNotStartedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException`.
     pub fn is_deployment_target_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException`.
+    /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException`.
     pub fn is_deployment_target_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentTargetErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentTargetErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException`.
+    /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException`.
     pub fn is_invalid_deployment_target_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeploymentTargetErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `GetDeploymentTargetErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4679,7 +4679,7 @@ pub enum GetOnPremisesInstanceErrorKind {
     InstanceNotRegisteredException(crate::error::InstanceNotRegisteredException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOnPremisesInstanceError {
@@ -4744,21 +4744,21 @@ impl GetOnPremisesInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
+    /// Returns `true` if the error kind is `GetOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOnPremisesInstanceErrorKind::InstanceNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException`.
+    /// Returns `true` if the error kind is `GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException`.
     pub fn is_instance_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `GetOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `GetOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4811,7 +4811,7 @@ pub enum ListApplicationRevisionsErrorKind {
     InvalidSortByException(crate::error::InvalidSortByException),
     /// <p>The sort order was specified in an invalid format.</p>
     InvalidSortOrderException(crate::error::InvalidSortOrderException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationRevisionsError {
@@ -4897,70 +4897,70 @@ impl ListApplicationRevisionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException`.
     pub fn is_bucket_name_filter_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException`.
     pub fn is_invalid_bucket_name_filter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException`.
     pub fn is_invalid_deployed_state_filter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException`.
     pub fn is_invalid_key_prefix_filter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::InvalidSortByException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidSortByException`.
     pub fn is_invalid_sort_by_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationRevisionsErrorKind::InvalidSortByException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationRevisionsErrorKind::InvalidSortOrderException`.
+    /// Returns `true` if the error kind is `ListApplicationRevisionsErrorKind::InvalidSortOrderException`.
     pub fn is_invalid_sort_order_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5015,7 +5015,7 @@ pub struct ListApplicationsError {
 pub enum ListApplicationsErrorKind {
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationsError {
@@ -5078,7 +5078,7 @@ impl ListApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5110,7 +5110,7 @@ pub struct ListDeploymentConfigsError {
 pub enum ListDeploymentConfigsErrorKind {
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentConfigsError {
@@ -5173,7 +5173,7 @@ impl ListDeploymentConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentConfigsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDeploymentConfigsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5211,7 +5211,7 @@ pub enum ListDeploymentGroupsErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentGroupsError {
@@ -5281,28 +5281,28 @@ impl ListDeploymentGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentGroupsErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `ListDeploymentGroupsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentGroupsErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentGroupsErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `ListDeploymentGroupsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentGroupsErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentGroupsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDeploymentGroupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5359,7 +5359,7 @@ pub enum ListDeploymentInstancesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p> The target filter name is invalid. </p>
     InvalidTargetFilterNameException(crate::error::InvalidTargetFilterNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentInstancesError {
@@ -5445,70 +5445,70 @@ impl ListDeploymentInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::DeploymentNotStartedException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::DeploymentNotStartedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::InvalidComputePlatformException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::InvalidComputePlatformException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException`.
     pub fn is_invalid_deployment_instance_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::InvalidInstanceStatusException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidInstanceStatusException`.
     pub fn is_invalid_instance_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::InvalidInstanceStatusException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::InvalidInstanceTypeException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidInstanceTypeException`.
     pub fn is_invalid_instance_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentInstancesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException`.
+    /// Returns `true` if the error kind is `ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException`.
     pub fn is_invalid_target_filter_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5579,7 +5579,7 @@ pub enum ListDeploymentsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The specified time range was specified in an invalid format.</p>
     InvalidTimeRangeException(crate::error::InvalidTimeRangeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentsError {
@@ -5652,77 +5652,77 @@ impl ListDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::DeploymentGroupNameRequiredException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::DeploymentGroupNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InvalidDeploymentGroupNameException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::InvalidDeploymentGroupNameException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InvalidDeploymentStatusException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidDeploymentStatusException`.
     pub fn is_invalid_deployment_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::InvalidDeploymentStatusException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InvalidExternalIdException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidExternalIdException`.
     pub fn is_invalid_external_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::InvalidExternalIdException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentsErrorKind::InvalidTimeRangeException`.
+    /// Returns `true` if the error kind is `ListDeploymentsErrorKind::InvalidTimeRangeException`.
     pub fn is_invalid_time_range_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5781,7 +5781,7 @@ pub enum ListDeploymentTargetsErrorKind {
     InvalidInstanceTypeException(crate::error::InvalidInstanceTypeException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentTargetsError {
@@ -5855,56 +5855,56 @@ impl ListDeploymentTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentTargetsErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentTargetsErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentTargetsErrorKind::DeploymentNotStartedException`.
+    /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentTargetsErrorKind::DeploymentNotStartedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentTargetsErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentTargetsErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException`.
+    /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException`.
     pub fn is_invalid_deployment_instance_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentTargetsErrorKind::InvalidInstanceStatusException`.
+    /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidInstanceStatusException`.
     pub fn is_invalid_instance_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentTargetsErrorKind::InvalidInstanceTypeException`.
+    /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidInstanceTypeException`.
     pub fn is_invalid_instance_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentTargetsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDeploymentTargetsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5949,7 +5949,7 @@ pub enum ListGitHubAccountTokenNamesErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The specified resource could not be validated.</p>
     ResourceValidationException(crate::error::ResourceValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGitHubAccountTokenNamesError {
@@ -6020,21 +6020,21 @@ impl ListGitHubAccountTokenNamesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `ListGitHubAccountTokenNamesErrorKind::ResourceValidationException`.
+    /// Returns `true` if the error kind is `ListGitHubAccountTokenNamesErrorKind::ResourceValidationException`.
     pub fn is_resource_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6076,7 +6076,7 @@ pub enum ListOnPremisesInstancesErrorKind {
     InvalidRegistrationStatusException(crate::error::InvalidRegistrationStatusException),
     /// <p>The tag filter was specified in an invalid format.</p>
     InvalidTagFilterException(crate::error::InvalidTagFilterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOnPremisesInstancesError {
@@ -6143,21 +6143,21 @@ impl ListOnPremisesInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOnPremisesInstancesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListOnPremisesInstancesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOnPremisesInstancesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException`.
+    /// Returns `true` if the error kind is `ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException`.
     pub fn is_invalid_registration_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(_)
         )
     }
-    /// Returns true if the error kind is `ListOnPremisesInstancesErrorKind::InvalidTagFilterException`.
+    /// Returns `true` if the error kind is `ListOnPremisesInstancesErrorKind::InvalidTagFilterException`.
     pub fn is_invalid_tag_filter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6198,7 +6198,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p> The ARN of a resource is required, but was not found. </p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6263,21 +6263,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ArnNotSupportedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ArnNotSupportedException`.
     pub fn is_arn_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ArnNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceArnRequiredException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6333,7 +6333,7 @@ pub enum PutLifecycleEventHookExecutionStatusErrorKind {
     UnsupportedActionForDeploymentTypeException(
         crate::error::UnsupportedActionForDeploymentTypeException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLifecycleEventHookExecutionStatusError {
@@ -6421,36 +6421,36 @@ impl PutLifecycleEventHookExecutionStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecycleEventHookExecutionStatusErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecycleEventHookExecutionStatusErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecycleEventHookExecutionStatusErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionIdException`.
+    /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionIdException`.
     pub fn is_invalid_lifecycle_event_hook_execution_id_exception(&self) -> bool {
         matches!(&self.kind, PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionIdException(_))
     }
-    /// Returns true if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionStatusException`.
+    /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionStatusException`.
     pub fn is_invalid_lifecycle_event_hook_execution_status_exception(&self) -> bool {
         matches!(&self.kind, PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionStatusException(_))
     }
-    /// Returns true if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::LifecycleEventAlreadyCompletedException`.
+    /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::LifecycleEventAlreadyCompletedException`.
     pub fn is_lifecycle_event_already_completed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6459,7 +6459,7 @@ impl PutLifecycleEventHookExecutionStatusError {
             )
         )
     }
-    /// Returns true if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::UnsupportedActionForDeploymentTypeException`.
+    /// Returns `true` if the error kind is `PutLifecycleEventHookExecutionStatusErrorKind::UnsupportedActionForDeploymentTypeException`.
     pub fn is_unsupported_action_for_deployment_type_exception(&self) -> bool {
         matches!(&self.kind, PutLifecycleEventHookExecutionStatusErrorKind::UnsupportedActionForDeploymentTypeException(_))
     }
@@ -6520,7 +6520,7 @@ pub enum RegisterApplicationRevisionErrorKind {
     InvalidRevisionException(crate::error::InvalidRevisionException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::error::RevisionRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterApplicationRevisionError {
@@ -6598,42 +6598,42 @@ impl RegisterApplicationRevisionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterApplicationRevisionErrorKind::DescriptionTooLongException`.
+    /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::DescriptionTooLongException`.
     pub fn is_description_too_long_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterApplicationRevisionErrorKind::DescriptionTooLongException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterApplicationRevisionErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterApplicationRevisionErrorKind::InvalidRevisionException`.
+    /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::InvalidRevisionException`.
     pub fn is_invalid_revision_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterApplicationRevisionErrorKind::InvalidRevisionException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterApplicationRevisionErrorKind::RevisionRequiredException`.
+    /// Returns `true` if the error kind is `RegisterApplicationRevisionErrorKind::RevisionRequiredException`.
     pub fn is_revision_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6699,7 +6699,7 @@ pub enum RegisterOnPremisesInstanceErrorKind {
     /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one
     /// ARN type.</p>
     MultipleIamArnsProvidedException(crate::error::MultipleIamArnsProvidedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterOnPremisesInstanceError {
@@ -6789,70 +6789,70 @@ impl RegisterOnPremisesInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::IamArnRequiredException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::IamArnRequiredException`.
     pub fn is_iam_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::IamArnRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException`.
     pub fn is_iam_session_arn_already_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException`.
     pub fn is_iam_user_arn_already_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException`.
     pub fn is_iam_user_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException`.
     pub fn is_instance_name_already_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException`.
     pub fn is_invalid_iam_session_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException`.
     pub fn is_invalid_iam_user_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException`.
+    /// Returns `true` if the error kind is `RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException`.
     pub fn is_multiple_iam_arns_provided_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6922,7 +6922,7 @@ pub enum RemoveTagsFromOnPremisesInstancesErrorKind {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromOnPremisesInstancesError {
@@ -7008,49 +7008,49 @@ impl RemoveTagsFromOnPremisesInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException`.
     pub fn is_instance_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException`.
     pub fn is_instance_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException`.
     pub fn is_instance_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException`.
     pub fn is_invalid_instance_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException`.
+    /// Returns `true` if the error kind is `RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException`.
     pub fn is_tag_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7112,7 +7112,7 @@ pub enum SkipWaitTimeForInstanceTerminationErrorKind {
     UnsupportedActionForDeploymentTypeException(
         crate::error::UnsupportedActionForDeploymentTypeException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SkipWaitTimeForInstanceTerminationError {
@@ -7197,42 +7197,42 @@ impl SkipWaitTimeForInstanceTerminationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentAlreadyCompletedException`.
+    /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentAlreadyCompletedException`.
     pub fn is_deployment_already_completed_exception(&self) -> bool {
         matches!(
             &self.kind,
             SkipWaitTimeForInstanceTerminationErrorKind::DeploymentAlreadyCompletedException(_)
         )
     }
-    /// Returns true if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             SkipWaitTimeForInstanceTerminationErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             SkipWaitTimeForInstanceTerminationErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentNotStartedException`.
+    /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::DeploymentNotStartedException`.
     pub fn is_deployment_not_started_exception(&self) -> bool {
         matches!(
             &self.kind,
             SkipWaitTimeForInstanceTerminationErrorKind::DeploymentNotStartedException(_)
         )
     }
-    /// Returns true if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             SkipWaitTimeForInstanceTerminationErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::UnsupportedActionForDeploymentTypeException`.
+    /// Returns `true` if the error kind is `SkipWaitTimeForInstanceTerminationErrorKind::UnsupportedActionForDeploymentTypeException`.
     pub fn is_unsupported_action_for_deployment_type_exception(&self) -> bool {
         matches!(&self.kind, SkipWaitTimeForInstanceTerminationErrorKind::UnsupportedActionForDeploymentTypeException(_))
     }
@@ -7292,7 +7292,7 @@ pub enum StopDeploymentErrorKind {
     UnsupportedActionForDeploymentTypeException(
         crate::error::UnsupportedActionForDeploymentTypeException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDeploymentError {
@@ -7362,42 +7362,42 @@ impl StopDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::DeploymentAlreadyCompletedException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::DeploymentAlreadyCompletedException`.
     pub fn is_deployment_already_completed_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDeploymentErrorKind::DeploymentAlreadyCompletedException(_)
         )
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::DeploymentDoesNotExistException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDeploymentErrorKind::DeploymentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::DeploymentGroupDoesNotExistException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDeploymentErrorKind::DeploymentGroupDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::DeploymentIdRequiredException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDeploymentErrorKind::DeploymentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::InvalidDeploymentIdException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::InvalidDeploymentIdException`.
     pub fn is_invalid_deployment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopDeploymentErrorKind::InvalidDeploymentIdException(_)
         )
     }
-    /// Returns true if the error kind is `StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException`.
+    /// Returns `true` if the error kind is `StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException`.
     pub fn is_unsupported_action_for_deployment_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7451,7 +7451,7 @@ pub enum TagResourceErrorKind {
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -7521,53 +7521,53 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ArnNotSupportedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ArnNotSupportedException`.
     pub fn is_arn_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ArnNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::DeploymentConfigDoesNotExistException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::DeploymentConfigDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::DeploymentGroupDoesNotExistException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::DeploymentGroupDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidTagsToAddException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidTagsToAddException`.
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidTagsToAddException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceArnRequiredException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceArnRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagRequiredException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagRequiredException`.
     pub fn is_tag_required_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TagRequiredException(_))
     }
@@ -7618,7 +7618,7 @@ pub enum UntagResourceErrorKind {
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7688,53 +7688,53 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ArnNotSupportedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ArnNotSupportedException`.
     pub fn is_arn_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ArnNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::DeploymentConfigDoesNotExistException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::DeploymentConfigDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::DeploymentGroupDoesNotExistException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::DeploymentGroupDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidTagsToAddException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidTagsToAddException`.
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidTagsToAddException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceArnRequiredException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceArnRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TagRequiredException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TagRequiredException`.
     pub fn is_tag_required_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TagRequiredException(_))
     }
@@ -7777,7 +7777,7 @@ pub enum UpdateApplicationErrorKind {
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationError {
@@ -7843,28 +7843,28 @@ impl UpdateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ApplicationAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ApplicationAlreadyExistsException`.
     pub fn is_application_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::ApplicationAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7995,7 +7995,7 @@ pub enum UpdateDeploymentGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The maximum allowed number of triggers was exceeded.</p>
     TriggerTargetsLimitExceededException(crate::error::TriggerTargetsLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeploymentGroupError {
@@ -8132,217 +8132,217 @@ impl UpdateDeploymentGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException`.
     pub fn is_alarms_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException`.
     pub fn is_application_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException`.
     pub fn is_application_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException`.
     pub fn is_deployment_config_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException`.
     pub fn is_deployment_group_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException`.
     pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException`.
     pub fn is_deployment_group_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException`.
     pub fn is_ecs_service_mapping_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException`.
     pub fn is_invalid_alarm_config_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidApplicationNameException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidApplicationNameException`.
     pub fn is_invalid_application_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidApplicationNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException`.
     pub fn is_invalid_auto_rollback_config_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException`.
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException`.
     pub fn is_invalid_blue_green_deployment_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException`.
     pub fn is_invalid_deployment_style_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException`.
     pub fn is_invalid_ec2_tag_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEc2TagException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEc2TagException`.
     pub fn is_invalid_ec2_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidEc2TagException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEcsServiceException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidEcsServiceException`.
     pub fn is_invalid_ecs_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidEcsServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException`.
     pub fn is_invalid_load_balancer_info_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException`.
     pub fn is_invalid_on_premises_tag_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidRoleException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidRoleException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidTagException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException`.
     pub fn is_invalid_target_group_pair_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException`.
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException`.
     pub fn is_invalid_trigger_config_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException`.
     pub fn is_lifecycle_hook_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException`.
     pub fn is_tag_set_list_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeploymentGroupErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException`.
     pub fn is_trigger_targets_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,

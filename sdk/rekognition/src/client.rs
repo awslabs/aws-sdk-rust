@@ -85,6 +85,13 @@ where
     pub fn create_collection(&self) -> fluent_builders::CreateCollection<C, M, R> {
         fluent_builders::CreateCollection::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateDataset` operation.
+    ///
+    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
+    /// operation and its arguments.
+    pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
+        fluent_builders::CreateDataset::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateProject` operation.
     ///
     /// See [`CreateProject`](crate::client::fluent_builders::CreateProject) for more information about the
@@ -112,6 +119,13 @@ where
     /// operation and its arguments.
     pub fn delete_collection(&self) -> fluent_builders::DeleteCollection<C, M, R> {
         fluent_builders::DeleteCollection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    ///
+    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
+    /// operation and its arguments.
+    pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
+        fluent_builders::DeleteDataset::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteFaces` operation.
     ///
@@ -147,6 +161,13 @@ where
     /// operation and its arguments.
     pub fn describe_collection(&self) -> fluent_builders::DescribeCollection<C, M, R> {
         fluent_builders::DescribeCollection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeDataset` operation.
+    ///
+    /// See [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) for more information about the
+    /// operation and its arguments.
+    pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset<C, M, R> {
+        fluent_builders::DescribeDataset::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeProjects` operation.
     ///
@@ -212,6 +233,13 @@ where
     /// operation and its arguments.
     pub fn detect_text(&self) -> fluent_builders::DetectText<C, M, R> {
         fluent_builders::DetectText::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DistributeDatasetEntries` operation.
+    ///
+    /// See [`DistributeDatasetEntries`](crate::client::fluent_builders::DistributeDatasetEntries) for more information about the
+    /// operation and its arguments.
+    pub fn distribute_dataset_entries(&self) -> fluent_builders::DistributeDatasetEntries<C, M, R> {
+        fluent_builders::DistributeDatasetEntries::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetCelebrityInfo` operation.
     ///
@@ -289,6 +317,20 @@ where
     /// operation and its arguments.
     pub fn list_collections(&self) -> fluent_builders::ListCollections<C, M, R> {
         fluent_builders::ListCollections::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListDatasetEntries` operation.
+    ///
+    /// See [`ListDatasetEntries`](crate::client::fluent_builders::ListDatasetEntries) for more information about the
+    /// operation and its arguments.
+    pub fn list_dataset_entries(&self) -> fluent_builders::ListDatasetEntries<C, M, R> {
+        fluent_builders::ListDatasetEntries::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListDatasetLabels` operation.
+    ///
+    /// See [`ListDatasetLabels`](crate::client::fluent_builders::ListDatasetLabels) for more information about the
+    /// operation and its arguments.
+    pub fn list_dataset_labels(&self) -> fluent_builders::ListDatasetLabels<C, M, R> {
+        fluent_builders::ListDatasetLabels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListFaces` operation.
     ///
@@ -432,6 +474,13 @@ where
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateDatasetEntries` operation.
+    ///
+    /// See [`UpdateDatasetEntries`](crate::client::fluent_builders::UpdateDatasetEntries) for more information about the
+    /// operation and its arguments.
+    pub fn update_dataset_entries(&self) -> fluent_builders::UpdateDatasetEntries<C, M, R> {
+        fluent_builders::UpdateDatasetEntries::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     //!
@@ -554,9 +603,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input image as base64-encoded bytes or an S3 object.
@@ -712,9 +764,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>ID for the collection that you are creating.</p>
@@ -758,10 +813,150 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateDataset`.
+    ///
+    /// <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a dataset by using
+    /// an Amazon Sagemaker format manifest file or by copying an existing Amazon Rekognition Custom Labels dataset.</p>
+    ///
+    /// <p>To create a training dataset for a project, specify <code>train</code> for the value of
+    /// <code>DatasetType</code>. To create the test dataset for a project,
+    /// specify <code>test</code> for the value of <code>DatasetType</code>.
+    /// </p>
+    ///
+    ///
+    /// <p>The response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for the dataset.
+    /// Creating a dataset takes a while to complete. Use <a>DescribeDataset</a> to check the
+    /// current status. The dataset created successfully if the value of <code>Status</code> is
+    /// <code>CREATE_COMPLETE</code>. </p>
+    /// <p>To check if any non-terminal errors occurred, call <a>ListDatasetEntries</a>
+    /// and check for the presence of <code>errors</code> lists in the JSON Lines.</p>
+    /// <p>Dataset creation fails if a terminal error occurs (<code>Status</code> = <code>CREATE_FAILED</code>).
+    /// Currently, you can't access the terminal error information.
+    ///
+    /// </p>
+    ///
+    ///
+    /// <p>For more information, see Creating dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
+    ///
+    /// <p>This operation requires permissions to perform the <code>rekognition:CreateDataset</code> action.
+    /// If you want to copy an existing dataset, you also require permission to perform the <code>rekognition:ListDatasetEntries</code> action.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateDataset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_dataset_input::Builder,
+    }
+    impl<C, M, R> CreateDataset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateDataset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateDatasetOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateDatasetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateDatasetInputOperationOutputAlias,
+                crate::output::CreateDatasetOutput,
+                crate::error::CreateDatasetError,
+                crate::input::CreateDatasetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
+        /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
+        /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
+        ///
+        /// </p>
+        pub fn dataset_source(mut self, inp: crate::model::DatasetSource) -> Self {
+            self.inner = self.inner.dataset_source(inp);
+            self
+        }
+        /// <p>
+        /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
+        /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
+        /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
+        ///
+        /// </p>
+        pub fn set_dataset_source(
+            mut self,
+            input: std::option::Option<crate::model::DatasetSource>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_source(input);
+            self
+        }
+        /// <p>
+        /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
+        /// to create a test dataset.
+        /// </p>
+        pub fn dataset_type(mut self, inp: crate::model::DatasetType) -> Self {
+            self.inner = self.inner.dataset_type(inp);
+            self
+        }
+        /// <p>
+        /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
+        /// to create a test dataset.
+        /// </p>
+        pub fn set_dataset_type(
+            mut self,
+            input: std::option::Option<crate::model::DatasetType>,
+        ) -> Self {
+            self.inner = self.inner.set_dataset_type(input);
+            self
+        }
+        /// <p>
+        /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
+        /// </p>
+        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(inp);
+            self
+        }
+        /// <p>
+        /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
+        /// </p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates a new Amazon Rekognition Custom Labels project. A project is a logical grouping of resources (images, Labels, models)
-    /// and operations (training, evaluation and detection).  </p>
+    /// <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group of resources (datasets, model versions)
+    /// that you use to create and manage Amazon Rekognition Custom Labels models.  </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateProject<
@@ -811,9 +1006,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to create.</p>
@@ -830,14 +1028,42 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProjectVersion`.
     ///
     /// <p>Creates a new version of a model and begins training.
-    /// Models are managed as part of an Amazon Rekognition Custom Labels project.  You can specify
-    /// one training dataset and one testing dataset. The response from <code>CreateProjectVersion</code>
+    /// Models are managed as part of an Amazon Rekognition Custom Labels project.
+    /// The response from <code>CreateProjectVersion</code>
     /// is an Amazon Resource Name (ARN) for the version of the model. </p>
-    /// <p>Training takes a while to complete. You can get the current status by calling
-    /// <a>DescribeProjectVersions</a>.</p>
-    /// <p>Once training has successfully completed, call <a>DescribeProjectVersions</a> to
-    /// get the training results and evaluate the model.                 
+    ///
+    ///
+    /// <p>Training uses the training and test datasets associated with the project.
+    /// For more information, see Creating training and test dataset in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
     /// </p>
+    ///
+    ///
+    /// <note>
+    /// <p>You can train a modelin a project that doesn't have associated datasets by specifying manifest files in the
+    /// <code>TrainingData</code> and <code>TestingData</code> fields.
+    /// </p>
+    /// <p>If you open the console after training a model with manifest files, Amazon Rekognition Custom Labels creates
+    /// the datasets for you using the most recent manifest files. You can no longer train
+    /// a model version for the project by specifying manifest files. </p>
+    /// <p>Instead of training with a project without associated datasets,
+    /// we recommend that you use the manifest
+    /// files to create training and test datasets for the project.</p>
+    /// </note>
+    ///
+    ///
+    /// <p>Training takes a while to complete. You can get the current status by calling
+    /// <a>DescribeProjectVersions</a>. Training completed successfully if
+    /// the value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.</p>
+    ///
+    /// <p>If training
+    /// fails, see Debugging a failed model training in the <i>Amazon Rekognition Custom Labels</i> developer guide. </p>
+    ///
+    ///
+    /// <p>Once training has successfully completed, call <a>DescribeProjectVersions</a> to
+    /// get the training results and evaluate the model.  For more information, see Improving a trained Amazon Rekognition Custom Labels model
+    /// in the <i>Amazon Rekognition Custom Labels</i> developers guide.
+    /// </p>
+    ///
     /// <p>After evaluating the model, you start the model
     /// by calling <a>StartProjectVersion</a>.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.</p>
@@ -889,9 +1115,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Amazon Rekognition Custom Labels project that
@@ -933,12 +1162,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_config(input);
             self
         }
-        /// <p>The dataset to use for training. </p>
+        /// <p>Specifies an external manifest that the services uses to train the model.
+        /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
+        /// The project must not have any associated datasets.
+        /// </p>
         pub fn training_data(mut self, inp: crate::model::TrainingData) -> Self {
             self.inner = self.inner.training_data(inp);
             self
         }
-        /// <p>The dataset to use for training. </p>
+        /// <p>Specifies an external manifest that the services uses to train the model.
+        /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
+        /// The project must not have any associated datasets.
+        /// </p>
         pub fn set_training_data(
             mut self,
             input: std::option::Option<crate::model::TrainingData>,
@@ -946,12 +1181,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_data(input);
             self
         }
-        /// <p>The dataset to use for testing.</p>
+        /// <p>Specifies an external manifest that the service uses to test the model.
+        /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
+        /// The project must not have any associated datasets.</p>
         pub fn testing_data(mut self, inp: crate::model::TestingData) -> Self {
             self.inner = self.inner.testing_data(inp);
             self
         }
-        /// <p>The dataset to use for testing.</p>
+        /// <p>Specifies an external manifest that the service uses to test the model.
+        /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
+        /// The project must not have any associated datasets.</p>
         pub fn set_testing_data(
             mut self,
             input: std::option::Option<crate::model::TestingData>,
@@ -986,13 +1225,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-        /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK,
-        /// an alias for your CMK, or an alias ARN.
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
+        /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
+        /// an alias for your KMS key, or an alias ARN.
         /// The key is used to encrypt training and test images copied into the service for model training.
         /// Your source images are unaffected. The key is also used to encrypt training results
         /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-        /// <p>If you choose to use your own CMK, you need the following permissions on the CMK.</p>
+        /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
         /// <ul>
         /// <li>
         /// <p>kms:CreateGrant</p>
@@ -1013,13 +1252,13 @@ pub mod fluent_builders {
             self.inner = self.inner.kms_key_id(inp);
             self
         }
-        /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-        /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK,
-        /// an alias for your CMK, or an alias ARN.
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
+        /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
+        /// an alias for your KMS key, or an alias ARN.
         /// The key is used to encrypt training and test images copied into the service for model training.
         /// Your source images are unaffected. The key is also used to encrypt training results
         /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-        /// <p>If you choose to use your own CMK, you need the following permissions on the CMK.</p>
+        /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
         /// <ul>
         /// <li>
         /// <p>kms:CreateGrant</p>
@@ -1102,9 +1341,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
@@ -1257,9 +1499,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>ID of the collection to delete.</p>
@@ -1273,6 +1518,89 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_collection_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteDataset`.
+    ///
+    /// <p>Deletes an existing Amazon Rekognition Custom Labels dataset.
+    /// Deleting a dataset might take while. Use <a>DescribeDataset</a> to check the
+    /// current status. The dataset is still deleting if the value of <code>Status</code> is
+    /// <code>DELETE_IN_PROGRESS</code>. If you try to access the dataset after it is deleted, you get
+    /// a <code>ResourceNotFoundException</code> exception.
+    ///
+    /// </p>
+    /// <p>You can't delete a dataset while it is creating (<code>Status</code> =  <code>CREATE_IN_PROGRESS</code>)
+    /// or if the dataset is updating (<code>Status</code> =  <code>UPDATE_IN_PROGRESS</code>).</p>
+    /// <p>This operation requires permissions to perform the <code>rekognition:DeleteDataset</code> action.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteDataset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_dataset_input::Builder,
+    }
+    impl<C, M, R> DeleteDataset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteDataset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteDatasetOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteDatasetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteDatasetInputOperationOutputAlias,
+                crate::output::DeleteDatasetOutput,
+                crate::error::DeleteDatasetError,
+                crate::input::DeleteDatasetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
+        /// </p>
+        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(inp);
+            self
+        }
+        /// <p>
+        /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_arn(input);
             self
         }
     }
@@ -1330,9 +1658,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Collection from which to remove the specific faces.</p>
@@ -1370,6 +1701,10 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Amazon Rekognition Custom Labels project.  To delete a project you must first delete all models associated
     /// with the project. To delete a model, see <a>DeleteProjectVersion</a>.</p>
+    /// <p>
+    /// <code>DeleteProject</code> is an asynchronous operation. To check if the project is deleted,
+    /// call <a>DescribeProjects</a>. The project is deleted when the project no longer appears in the
+    /// response.</p>
     /// <p>This operation requires permissions to perform the
     /// <code>rekognition:DeleteProject</code> action. </p>
     #[derive(std::fmt::Debug)]
@@ -1420,9 +1755,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
@@ -1494,9 +1832,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
@@ -1565,9 +1906,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream processor you want to delete.</p>
@@ -1637,9 +1981,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the collection to describe.</p>
@@ -1656,9 +2003,87 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeDataset`.
+    ///
+    /// <p>
+    /// Describes an Amazon Rekognition Custom Labels dataset. You can get information such as the current status of a dataset and
+    /// statistics about the images and labels in a dataset.  
+    /// </p>
+    /// <p>This operation requires permissions to perform the <code>rekognition:DescribeDataset</code> action.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeDataset<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_dataset_input::Builder,
+    }
+    impl<C, M, R> DescribeDataset<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeDataset`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeDatasetOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeDatasetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeDatasetInputOperationOutputAlias,
+                crate::output::DescribeDatasetOutput,
+                crate::error::DescribeDatasetError,
+                crate::input::DescribeDatasetInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
+        /// </p>
+        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(inp);
+            self
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeProjects`.
     ///
-    /// <p>Lists and gets information about your Amazon Rekognition Custom Labels projects.</p>
+    /// <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.</p>
     #[derive(std::fmt::Debug)]
     pub struct DescribeProjects<
@@ -1708,9 +2133,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>If the previous response was incomplete (because there is more
@@ -1741,12 +2169,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// Appends an item to `ProjectNames`.
+        ///
+        /// To override the contents of this collection use [`set_project_names`](Self::set_project_names).
+        ///
+        /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
+        /// the response includes descriptions for all the projects in your AWS account.</p>
+        pub fn project_names(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_names(inp);
+            self
+        }
+        /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
+        /// the response includes descriptions for all the projects in your AWS account.</p>
+        pub fn set_project_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_project_names(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DescribeProjectVersions`.
     ///
-    /// <p>Lists and describes the models in an Amazon Rekognition Custom Labels project. You
+    /// <p>Lists and describes the versions of a model in an Amazon Rekognition Custom Labels project. You
     /// can specify up to 10 model versions in <code>ProjectVersionArns</code>. If
-    /// you don't specify a value, descriptions for all models are returned.</p>
+    /// you don't specify a value, descriptions for all model versions in the project are returned.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:DescribeProjectVersions</code>
     /// action.</p>
     #[derive(std::fmt::Debug)]
@@ -1797,9 +2244,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
@@ -1916,9 +2366,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Name of the stream processor for which you want information.</p>
@@ -2033,9 +2486,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the model version that you want to use.</p>
@@ -2215,9 +2671,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
@@ -2393,9 +2852,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
@@ -2511,9 +2973,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input image as base64-encoded bytes or an S3 object.
@@ -2658,9 +3123,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
@@ -2764,9 +3232,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
@@ -2798,6 +3269,98 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DetectTextFilters>,
         ) -> Self {
             self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DistributeDatasetEntries`.
+    ///
+    /// <p>Distributes the entries (images) in a training dataset across the training dataset and the test dataset for a project.
+    /// <code>DistributeDatasetEntries</code> moves 20% of the training dataset images to the test dataset.
+    /// An entry is a JSON Line that describes an image.
+    /// </p>
+    /// <p>You supply the Amazon Resource Names (ARN) of a project's training dataset and test dataset.
+    /// The training dataset must contain the images that you want to split. The test dataset
+    /// must be empty. The datasets must belong to the same project. To create training and test datasets for a project, call <a>CreateDataset</a>.</p>
+    /// <p>Distributing a dataset takes a while to complete. To check the status call <code>DescribeDataset</code>. The operation
+    /// is complete when the <code>Status</code> field for the training dataset and the test dataset is <code>UPDATE_COMPLETE</code>.
+    /// If the dataset split fails, the value of <code>Status</code> is <code>UPDATE_FAILED</code>.</p>
+    ///
+    /// <p>This operation requires permissions to perform the <code>rekognition:DistributeDatasetEntries</code> action.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DistributeDatasetEntries<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::distribute_dataset_entries_input::Builder,
+    }
+    impl<C, M, R> DistributeDatasetEntries<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DistributeDatasetEntries`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DistributeDatasetEntriesOutput,
+            aws_smithy_http::result::SdkError<crate::error::DistributeDatasetEntriesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DistributeDatasetEntriesInputOperationOutputAlias,
+                crate::output::DistributeDatasetEntriesOutput,
+                crate::error::DistributeDatasetEntriesError,
+                crate::input::DistributeDatasetEntriesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `Datasets`.
+        ///
+        /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
+        ///
+        /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
+        /// the same project. The test dataset must be empty.
+        /// </p>
+        pub fn datasets(mut self, inp: impl Into<crate::model::DistributeDataset>) -> Self {
+            self.inner = self.inner.datasets(inp);
+            self
+        }
+        /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
+        /// the same project. The test dataset must be empty.
+        /// </p>
+        pub fn set_datasets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
+        ) -> Self {
+            self.inner = self.inner.set_datasets(input);
             self
         }
     }
@@ -2859,9 +3422,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
@@ -2881,28 +3447,33 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the celebrity recognition results for a Amazon Rekognition Video analysis started by
     /// <a>StartCelebrityRecognition</a>.</p>
-    /// <p>Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call
-    /// to <a>StartCelebrityRecognition</a>  which returns a job identifier (<code>JobId</code>).
-    /// When the celebrity recognition operation finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service
-    /// topic registered in the initial call to <code>StartCelebrityRecognition</code>.
-    /// To get the results of the celebrity recognition analysis, first check that the status value published to the Amazon SNS
-    /// topic is <code>SUCCEEDED</code>. If so, call  <code>GetCelebrityDetection</code> and pass the job identifier
-    /// (<code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>. </p>
+    /// <p>Celebrity recognition in a video is an asynchronous operation. Analysis is started by a
+    /// call to <a>StartCelebrityRecognition</a> which returns a job identifier
+    /// (<code>JobId</code>). </p>
+    /// <p>When the celebrity recognition operation finishes, Amazon Rekognition Video publishes a completion
+    /// status to the Amazon Simple Notification Service topic registered in the initial call to
+    /// <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition
+    /// analysis, first check that the status value published to the Amazon SNS topic is
+    /// <code>SUCCEEDED</code>. If so, call <code>GetCelebrityDetection</code> and pass the job
+    /// identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>. </p>
     ///
     /// <p>For more information, see Working With Stored Videos in the Amazon Rekognition Developer Guide.</p>
     /// <p>
-    /// <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s) they are detected in an array
-    /// (<code>Celebrities</code>) of <a>CelebrityRecognition</a>
-    /// objects. Each <code>CelebrityRecognition</code> contains information about the celebrity in a <a>CelebrityDetail</a>
-    /// object and the time, <code>Timestamp</code>, the celebrity was detected.
-    /// </p>
+    /// <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s) they
+    /// are detected in an array (<code>Celebrities</code>) of <a>CelebrityRecognition</a>
+    /// objects. Each <code>CelebrityRecognition</code>
+    /// contains information about the celebrity in a <a>CelebrityDetail</a> object and the
+    /// time, <code>Timestamp</code>, the celebrity was detected.  This <a>CelebrityDetail</a> object stores information about the detected celebrity's face
+    /// attributes, a face bounding box, known gender, the celebrity's name, and a confidence
+    /// estimate.</p>
     /// <note>
     /// <p>
-    /// <code>GetCelebrityRecognition</code> only returns the default  
-    /// facial attributes (<code>BoundingBox</code>, <code>Confidence</code>,
-    /// <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
-    /// in the <code>Face</code> object of the following response syntax are not returned. For more information,
-    /// see FaceDetail in the Amazon Rekognition Developer Guide. </p>
+    /// <code>GetCelebrityRecognition</code> only returns the default facial
+    /// attributes (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
+    /// <code>Pose</code>, and <code>Quality</code>). The <code>BoundingBox</code> field only
+    /// applies to the detected face instance. The other facial attributes listed in the
+    /// <code>Face</code> object of the following response syntax are not returned. For more
+    /// information, see FaceDetail in the Amazon Rekognition Developer Guide. </p>
     /// </note>
     /// <p>By default, the <code>Celebrities</code> array is sorted by time (milliseconds from the start of the video).
     /// You can also sort the array by celebrity by specifying the value <code>ID</code> in the <code>SortBy</code> input parameter.</p>
@@ -2962,9 +3533,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
@@ -3101,9 +3675,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
@@ -3231,9 +3808,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
@@ -3354,9 +3934,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
@@ -3482,9 +4065,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
@@ -3627,9 +4213,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
@@ -3763,9 +4352,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Job identifier for the text detection operation for which you want results returned.
@@ -3872,9 +4464,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Job identifier for the text detection operation for which you want results returned.
@@ -4062,9 +4657,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of an existing collection to which you want to add the faces that are detected
@@ -4272,9 +4870,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Pagination token from the previous response.</p>
@@ -4293,6 +4894,297 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of collection IDs to return. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListDatasetEntries`.
+    ///
+    /// <p>
+    /// Lists the entries (images) within a dataset. An entry is a
+    /// JSON Line that contains the information for a single image, including
+    /// the image location, assigned labels, and object location bounding boxes. For
+    /// more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating a manifest file</a>.</p>
+    /// <p>JSON Lines in the response include information about non-terminal
+    /// errors found in the dataset.
+    /// Non terminal errors are reported in <code>errors</code> lists within each JSON Line. The
+    /// same information is reported in the training and testing validation result manifests that
+    /// Amazon Rekognition Custom Labels creates during model training.
+    /// </p>
+    ///
+    /// <p>You can filter the response in variety of ways, such as choosing which labels to return and returning JSON Lines created after a specific date.
+    /// </p>
+    /// <p>This operation requires permissions to perform the <code>rekognition:ListDatasetEntries</code> action.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListDatasetEntries<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_dataset_entries_input::Builder,
+    }
+    impl<C, M, R> ListDatasetEntries<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListDatasetEntries`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDatasetEntriesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDatasetEntriesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDatasetEntriesInputOperationOutputAlias,
+                crate::output::ListDatasetEntriesOutput,
+                crate::error::ListDatasetEntriesError,
+                crate::input::ListDatasetEntriesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) for the dataset that you want to use.
+        /// </p>
+        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(inp);
+            self
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) for the dataset that you want to use.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_arn(input);
+            self
+        }
+        /// Appends an item to `ContainsLabels`.
+        ///
+        /// To override the contents of this collection use [`set_contains_labels`](Self::set_contains_labels).
+        ///
+        /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
+        /// </p>
+        pub fn contains_labels(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contains_labels(inp);
+            self
+        }
+        /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
+        /// </p>
+        pub fn set_contains_labels(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_contains_labels(input);
+            self
+        }
+        /// <p>
+        /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
+        /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
+        /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
+        /// images.
+        /// </p>
+        pub fn labeled(mut self, inp: bool) -> Self {
+            self.inner = self.inner.labeled(inp);
+            self
+        }
+        /// <p>
+        /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
+        /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
+        /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
+        /// images.
+        /// </p>
+        pub fn set_labeled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_labeled(input);
+            self
+        }
+        /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
+        /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
+        /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+        pub fn source_ref_contains(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ref_contains(inp);
+            self
+        }
+        /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
+        /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
+        /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+        pub fn set_source_ref_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_ref_contains(input);
+            self
+        }
+        /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
+        /// </p>
+        pub fn has_errors(mut self, inp: bool) -> Self {
+            self.inner = self.inner.has_errors(inp);
+            self
+        }
+        /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
+        /// </p>
+        pub fn set_has_errors(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_has_errors(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListDatasetLabels`.
+    ///
+    /// <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe images. For more information, see
+    /// <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling images</a>.
+    /// </p>   
+    /// <p>
+    /// Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe images. For more information, see Labeling images
+    /// in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListDatasetLabels<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_dataset_labels_input::Builder,
+    }
+    impl<C, M, R> ListDatasetLabels<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListDatasetLabels`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDatasetLabelsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDatasetLabelsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDatasetLabelsInputOperationOutputAlias,
+                crate::output::ListDatasetLabelsOutput,
+                crate::error::ListDatasetLabelsError,
+                crate::input::ListDatasetLabelsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to use.
+        /// </p>
+        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(inp);
+            self
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to use.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_arn(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4356,9 +5248,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>ID of the collection from which to list the faces.</p>
@@ -4450,9 +5345,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
@@ -4533,9 +5431,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -4558,9 +5459,9 @@ pub mod fluent_builders {
     /// <p>Returns an array of celebrities recognized in the input image.  For more information, see Recognizing Celebrities
     /// in the Amazon Rekognition Developer Guide. </p>
     /// <p>
-    /// <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists
-    /// recognized celebrities in the <code>CelebrityFaces</code> array and unrecognized faces in the
-    /// <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't return
+    /// <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists the
+    /// recognized celebrities in the <code>CelebrityFaces</code> array and any unrecognized faces in
+    /// the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't return
     /// celebrities whose faces aren't among the largest 64 faces in the image.</p>
     ///
     /// <p>For each celebrity recognized, <code>RecognizeCelebrities</code> returns a
@@ -4634,9 +5535,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
@@ -4729,9 +5633,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>ID of the collection the face belongs to.</p>
@@ -4883,9 +5790,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>ID of the collection to search.</p>
@@ -5047,9 +5957,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The video in which you want to recognize celebrities. The video must be stored
@@ -5171,9 +6084,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
@@ -5314,9 +6230,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The video in which you want to detect faces. The video must be stored
@@ -5457,9 +6376,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
@@ -5605,9 +6527,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The video in which you want to detect labels. The video must be stored
@@ -5746,9 +6671,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The video in which you want to detect people. The video must be stored
@@ -5868,9 +6796,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
@@ -5971,9 +6902,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
@@ -6116,9 +7050,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream processor to start processing.</p>
@@ -6190,9 +7127,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
@@ -6319,9 +7259,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
@@ -6391,9 +7334,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
@@ -6462,9 +7408,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -6564,9 +7513,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>
@@ -6602,6 +7554,124 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateDatasetEntries`.
+    ///
+    /// <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON Line which contains the
+    /// information for a single image,  including
+    /// the image location, assigned labels, and object location bounding boxes.  For more information,
+    /// see Image-Level labels in manifest files and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+    /// </p>
+    ///
+    ///
+    ///
+    /// <p>If the <code>source-ref</code> field in the JSON line references an existing image, the existing image in the dataset
+    /// is updated.
+    /// If <code>source-ref</code> field doesn't reference an existing image, the image is added as a new image to the dataset. </p>
+    ///
+    /// <p>You specify the changes that you want to make in the <code>Changes</code> input parameter.
+    /// There isn't a limit to the number JSON Lines that you can change, but the size of <code>Changes</code> must be less
+    /// than 5MB.</p>
+    ///
+    ///
+    /// <p>
+    /// <code>UpdateDatasetEntries</code> returns immediatly, but the dataset update might take a while to complete.
+    /// Use <a>DescribeDataset</a> to check the
+    /// current status. The dataset updated successfully if the value of <code>Status</code> is
+    /// <code>UPDATE_COMPLETE</code>. </p>
+    /// <p>To check if any non-terminal errors occured, call <a>ListDatasetEntries</a>
+    /// and check for the presence of <code>errors</code> lists in the JSON Lines.</p>
+    /// <p>Dataset update fails if a terminal error occurs (<code>Status</code> = <code>UPDATE_FAILED</code>).
+    /// Currently, you can't access the terminal error information from the Amazon Rekognition Custom Labels SDK.
+    /// </p>
+    /// <p>This operation requires permissions to perform the <code>rekognition:UpdateDatasetEntries</code> action.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateDatasetEntries<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_dataset_entries_input::Builder,
+    }
+    impl<C, M, R> UpdateDatasetEntries<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateDatasetEntries`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDatasetEntriesOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateDatasetEntriesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateDatasetEntriesInputOperationOutputAlias,
+                crate::output::UpdateDatasetEntriesOutput,
+                crate::error::UpdateDatasetEntriesError,
+                crate::input::UpdateDatasetEntriesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to update.
+        /// </p>
+        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(inp);
+            self
+        }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the dataset that you want to update.
+        /// </p>
+        pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_dataset_arn(input);
+            self
+        }
+        /// <p>
+        /// The changes that you want to make to the dataset.
+        /// </p>
+        pub fn changes(mut self, inp: crate::model::DatasetChanges) -> Self {
+            self.inner = self.inner.changes(inp);
+            self
+        }
+        /// <p>
+        /// The changes that you want to make to the dataset.
+        /// </p>
+        pub fn set_changes(
+            mut self,
+            input: std::option::Option<crate::model::DatasetChanges>,
+        ) -> Self {
+            self.inner = self.inner.set_changes(input);
             self
         }
     }

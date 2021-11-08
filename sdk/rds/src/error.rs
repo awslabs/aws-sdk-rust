@@ -22,7 +22,7 @@ pub enum AddRoleToDBClusterErrorKind {
     DbClusterRoleQuotaExceededFault(crate::error::DbClusterRoleQuotaExceededFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddRoleToDBClusterError {
@@ -88,28 +88,28 @@ impl AddRoleToDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddRoleToDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `AddRoleToDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToDBClusterErrorKind::DbClusterRoleAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `AddRoleToDBClusterErrorKind::DbClusterRoleAlreadyExistsFault`.
     pub fn is_db_cluster_role_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToDBClusterErrorKind::DbClusterRoleAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToDBClusterErrorKind::DbClusterRoleQuotaExceededFault`.
+    /// Returns `true` if the error kind is `AddRoleToDBClusterErrorKind::DbClusterRoleQuotaExceededFault`.
     pub fn is_db_cluster_role_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToDBClusterErrorKind::DbClusterRoleQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `AddRoleToDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -152,7 +152,7 @@ pub enum AddRoleToDBInstanceErrorKind {
     DbInstanceRoleQuotaExceededFault(crate::error::DbInstanceRoleQuotaExceededFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddRoleToDBInstanceError {
@@ -218,28 +218,28 @@ impl AddRoleToDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddRoleToDBInstanceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `AddRoleToDBInstanceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToDBInstanceErrorKind::DbInstanceRoleAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `AddRoleToDBInstanceErrorKind::DbInstanceRoleAlreadyExistsFault`.
     pub fn is_db_instance_role_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToDBInstanceErrorKind::DbInstanceRoleAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToDBInstanceErrorKind::DbInstanceRoleQuotaExceededFault`.
+    /// Returns `true` if the error kind is `AddRoleToDBInstanceErrorKind::DbInstanceRoleQuotaExceededFault`.
     pub fn is_db_instance_role_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddRoleToDBInstanceErrorKind::DbInstanceRoleQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `AddRoleToDBInstanceErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `AddRoleToDBInstanceErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -276,7 +276,7 @@ pub enum AddSourceIdentifierToSubscriptionErrorKind {
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
     /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddSourceIdentifierToSubscriptionError {
@@ -347,14 +347,14 @@ impl AddSourceIdentifierToSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddSourceIdentifierToSubscriptionErrorKind::SourceNotFoundFault`.
+    /// Returns `true` if the error kind is `AddSourceIdentifierToSubscriptionErrorKind::SourceNotFoundFault`.
     pub fn is_source_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddSourceIdentifierToSubscriptionErrorKind::SourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AddSourceIdentifierToSubscriptionErrorKind::SubscriptionNotFoundFault`.
+    /// Returns `true` if the error kind is `AddSourceIdentifierToSubscriptionErrorKind::SubscriptionNotFoundFault`.
     pub fn is_subscription_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -403,7 +403,7 @@ pub enum AddTagsToResourceErrorKind {
     /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
     /// </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToResourceError {
@@ -470,35 +470,35 @@ impl AddTagsToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::DbProxyTargetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -538,7 +538,7 @@ pub enum ApplyPendingMaintenanceActionErrorKind {
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ApplyPendingMaintenanceActionError {
@@ -610,21 +610,21 @@ impl ApplyPendingMaintenanceActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ApplyPendingMaintenanceActionErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `ApplyPendingMaintenanceActionErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ApplyPendingMaintenanceActionErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ApplyPendingMaintenanceActionErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `ApplyPendingMaintenanceActionErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ApplyPendingMaintenanceActionErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -671,7 +671,7 @@ pub enum AuthorizeDBSecurityGroupIngressErrorKind {
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeDBSecurityGroupIngressError {
@@ -748,28 +748,28 @@ impl AuthorizeDBSecurityGroupIngressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault`.
     pub fn is_authorization_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault`.
+    /// Returns `true` if the error kind is `AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault`.
     pub fn is_authorization_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `AuthorizeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `AuthorizeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault`.
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -816,7 +816,7 @@ pub enum BacktrackDBClusterErrorKind {
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BacktrackDBClusterError {
@@ -880,14 +880,14 @@ impl BacktrackDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BacktrackDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `BacktrackDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             BacktrackDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `BacktrackDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `BacktrackDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -922,7 +922,7 @@ pub enum CancelExportTaskErrorKind {
     ExportTaskNotFoundFault(crate::error::ExportTaskNotFoundFault),
     /// <p>You can't cancel an export task that has completed.</p>
     InvalidExportTaskStateFault(crate::error::InvalidExportTaskStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelExportTaskError {
@@ -986,14 +986,14 @@ impl CancelExportTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelExportTaskErrorKind::ExportTaskNotFoundFault`.
+    /// Returns `true` if the error kind is `CancelExportTaskErrorKind::ExportTaskNotFoundFault`.
     pub fn is_export_task_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CancelExportTaskErrorKind::ExportTaskNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CancelExportTaskErrorKind::InvalidExportTaskStateFault`.
+    /// Returns `true` if the error kind is `CancelExportTaskErrorKind::InvalidExportTaskStateFault`.
     pub fn is_invalid_export_task_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1034,7 +1034,7 @@ pub enum CopyDBClusterParameterGroupErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB parameter
     /// groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyDBClusterParameterGroupError {
@@ -1105,21 +1105,21 @@ impl CopyDBClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault`.
     pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault`.
     pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1172,7 +1172,7 @@ pub enum CopyDBClusterSnapshotErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB
     /// snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyDBClusterSnapshotError {
@@ -1244,42 +1244,42 @@ impl CopyDBClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault`.
     pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault`.
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CopyDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1328,7 +1328,7 @@ pub enum CopyDBParameterGroupErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB parameter
     /// groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyDBParameterGroupError {
@@ -1397,21 +1397,21 @@ impl CopyDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CopyDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault`.
     pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CopyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CopyDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault`.
     pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1466,7 +1466,7 @@ pub enum CopyDBSnapshotErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB
     /// snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyDBSnapshotError {
@@ -1534,42 +1534,42 @@ impl CopyDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyDBSnapshotErrorKind::CustomAvailabilityZoneNotFoundFault`.
+    /// Returns `true` if the error kind is `CopyDBSnapshotErrorKind::CustomAvailabilityZoneNotFoundFault`.
     pub fn is_custom_availability_zone_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBSnapshotErrorKind::CustomAvailabilityZoneNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CopyDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault`.
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBSnapshotErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `CopyDBSnapshotErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBSnapshotErrorKind::InvalidDbSnapshotStateFault`.
+    /// Returns `true` if the error kind is `CopyDBSnapshotErrorKind::InvalidDbSnapshotStateFault`.
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBSnapshotErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CopyDBSnapshotErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyDBSnapshotErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CopyDBSnapshotErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1610,7 +1610,7 @@ pub enum CopyOptionGroupErrorKind {
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>The quota of 20 option groups was exceeded for this Amazon Web Services account.</p>
     OptionGroupQuotaExceededFault(crate::error::OptionGroupQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyOptionGroupError {
@@ -1675,21 +1675,21 @@ impl CopyOptionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyOptionGroupErrorKind::OptionGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CopyOptionGroupErrorKind::OptionGroupAlreadyExistsFault`.
     pub fn is_option_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyOptionGroupErrorKind::OptionGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyOptionGroupErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CopyOptionGroupErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyOptionGroupErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyOptionGroupErrorKind::OptionGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CopyOptionGroupErrorKind::OptionGroupQuotaExceededFault`.
     pub fn is_option_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1733,7 +1733,7 @@ pub enum CreateCustomAvailabilityZoneErrorKind {
     ),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomAvailabilityZoneError {
@@ -1804,21 +1804,21 @@ impl CreateCustomAvailabilityZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneAlreadyExistsFault`.
     pub fn is_custom_availability_zone_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneQuotaExceededFault`.
     pub fn is_custom_availability_zone_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CreateCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1837,6 +1837,131 @@ impl std::error::Error for CreateCustomAvailabilityZoneError {
             ) => Some(_inner),
             CreateCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CreateCustomAvailabilityZoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateCustomDBEngineVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateCustomDBEngineVersionError {
+    /// Kind of error that occurred.
+    pub kind: CreateCustomDBEngineVersionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateCustomDBEngineVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateCustomDBEngineVersionErrorKind {
+    /// <p>A CEV with the specified name already exists.</p>
+    CustomDbEngineVersionAlreadyExistsFault(crate::error::CustomDbEngineVersionAlreadyExistsFault),
+    /// <p>You have exceeded your CEV quota.</p>
+    CustomDbEngineVersionQuotaExceededFault(crate::error::CustomDbEngineVersionQuotaExceededFault),
+    /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateCustomDBEngineVersionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionAlreadyExistsFault(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            CreateCustomDBEngineVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateCustomDBEngineVersionError {
+    fn code(&self) -> Option<&str> {
+        CreateCustomDBEngineVersionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateCustomDBEngineVersionError {
+    /// Creates a new `CreateCustomDBEngineVersionError`.
+    pub fn new(kind: CreateCustomDBEngineVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateCustomDBEngineVersionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateCustomDBEngineVersionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateCustomDBEngineVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateCustomDBEngineVersionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionAlreadyExistsFault`.
+    pub fn is_custom_db_engine_version_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionAlreadyExistsFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault`.
+    pub fn is_custom_db_engine_version_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault`.
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault(_)
+        )
+    }
+}
+impl std::error::Error for CreateCustomDBEngineVersionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionAlreadyExistsFault(
+                _inner,
+            ) => Some(_inner),
+            CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault(
+                _inner,
+            ) => Some(_inner),
+            CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
+            CreateCustomDBEngineVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1905,7 +2030,7 @@ pub enum CreateDBClusterErrorKind {
     /// <p>The request would result in the user exceeding the allowed amount of storage
     /// available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBClusterError {
@@ -1987,120 +2112,120 @@ impl CreateDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::DbClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::DbClusterAlreadyExistsFault`.
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::DbClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::DbClusterParameterGroupNotFoundFault`.
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::DbClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::DbClusterQuotaExceededFault`.
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::DbClusterQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(&self.kind, CreateDBClusterErrorKind::DomainNotFoundFault(_))
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::GlobalClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::GlobalClusterNotFoundFault`.
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::GlobalClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault`.
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault`.
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::InvalidGlobalClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InvalidGlobalClusterStateFault`.
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::InvalidGlobalClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, CreateDBClusterErrorKind::InvalidSubnet(_))
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2165,7 +2290,7 @@ pub enum CreateDBClusterEndpointErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBClusterEndpointError {
@@ -2237,42 +2362,42 @@ impl CreateDBClusterEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBClusterEndpointErrorKind::DbClusterEndpointAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterEndpointErrorKind::DbClusterEndpointAlreadyExistsFault`.
     pub fn is_db_cluster_endpoint_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterEndpointErrorKind::DbClusterEndpointAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterEndpointErrorKind::DbClusterEndpointQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterEndpointErrorKind::DbClusterEndpointQuotaExceededFault`.
     pub fn is_db_cluster_endpoint_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterEndpointErrorKind::DbClusterEndpointQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterEndpointErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterEndpointErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterEndpointErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterEndpointErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterEndpointErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2316,7 +2441,7 @@ pub enum CreateDBClusterParameterGroupErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB parameter
     /// groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBClusterParameterGroupError {
@@ -2387,14 +2512,14 @@ impl CreateDBClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault`.
     pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault`.
     pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2442,7 +2567,7 @@ pub enum CreateDBClusterSnapshotErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB
     /// snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBClusterSnapshotError {
@@ -2513,35 +2638,35 @@ impl CreateDBClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBClusterSnapshotErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterSnapshotErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterSnapshotErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault`.
     pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault`.
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2636,7 +2761,7 @@ pub enum CreateDBInstanceErrorKind {
     /// <p>Storage of the <code>StorageType</code> specified can't be associated
     /// with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBInstanceError {
@@ -2719,130 +2844,130 @@ impl CreateDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::BackupPolicyNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::BackupPolicyNotFoundFault`.
     pub fn is_backup_policy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::BackupPolicyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::DomainNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::InstanceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::InstanceQuotaExceededFault`.
     pub fn is_instance_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::InstanceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::InsufficientDbInstanceCapacityFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, CreateDBInstanceErrorKind::InvalidSubnet(_))
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault`.
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceErrorKind::StorageQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceErrorKind::StorageTypeNotSupportedFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceErrorKind::StorageTypeNotSupportedFault`.
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2946,7 +3071,7 @@ pub enum CreateDBInstanceReadReplicaErrorKind {
     /// <p>Storage of the <code>StorageType</code> specified can't be associated
     /// with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBInstanceReadReplicaError {
@@ -3055,133 +3180,133 @@ impl CreateDBInstanceReadReplicaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbInstanceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotAllowedFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotAllowedFault`.
     pub fn is_db_subnet_group_not_allowed_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotAllowedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::DomainNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::InstanceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::InstanceQuotaExceededFault`.
     pub fn is_instance_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::InstanceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::InsufficientDbInstanceCapacityFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::InvalidDbSubnetGroupFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::InvalidDbSubnetGroupFault`.
     pub fn is_invalid_db_subnet_group_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::InvalidDbSubnetGroupFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault`.
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBInstanceReadReplicaErrorKind::StorageQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBInstanceReadReplicaErrorKind::StorageTypeNotSupportedFault`.
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaErrorKind::StorageTypeNotSupportedFault`.
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3258,7 +3383,7 @@ pub enum CreateDBParameterGroupErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB parameter
     /// groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBParameterGroupError {
@@ -3326,14 +3451,14 @@ impl CreateDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault`.
     pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault`.
     pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3374,7 +3499,7 @@ pub enum CreateDBProxyErrorKind {
     DbProxyQuotaExceededFault(crate::error::DbProxyQuotaExceededFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBProxyError {
@@ -3439,21 +3564,21 @@ impl CreateDBProxyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBProxyErrorKind::DbProxyAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBProxyErrorKind::DbProxyAlreadyExistsFault`.
     pub fn is_db_proxy_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBProxyErrorKind::DbProxyAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBProxyErrorKind::DbProxyQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBProxyErrorKind::DbProxyQuotaExceededFault`.
     pub fn is_db_proxy_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBProxyErrorKind::DbProxyQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBProxyErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateDBProxyErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, CreateDBProxyErrorKind::InvalidSubnet(_))
     }
@@ -3492,7 +3617,7 @@ pub enum CreateDBProxyEndpointErrorKind {
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBProxyEndpointError {
@@ -3563,35 +3688,35 @@ impl CreateDBProxyEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault`.
     pub fn is_db_proxy_endpoint_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBProxyEndpointErrorKind::DbProxyEndpointQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBProxyEndpointErrorKind::DbProxyEndpointQuotaExceededFault`.
     pub fn is_db_proxy_endpoint_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBProxyEndpointErrorKind::DbProxyEndpointQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBProxyEndpointErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBProxyEndpointErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBProxyEndpointErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBProxyEndpointErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `CreateDBProxyEndpointErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBProxyEndpointErrorKind::InvalidDbProxyStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBProxyEndpointErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateDBProxyEndpointErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, CreateDBProxyEndpointErrorKind::InvalidSubnet(_))
     }
@@ -3636,7 +3761,7 @@ pub enum CreateDBSecurityGroupErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB security
     /// groups.</p>
     DbSecurityGroupQuotaExceededFault(crate::error::DbSecurityGroupQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBSecurityGroupError {
@@ -3707,21 +3832,21 @@ impl CreateDBSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBSecurityGroupErrorKind::DbSecurityGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBSecurityGroupErrorKind::DbSecurityGroupAlreadyExistsFault`.
     pub fn is_db_security_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSecurityGroupErrorKind::DbSecurityGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSecurityGroupErrorKind::DbSecurityGroupNotSupportedFault`.
+    /// Returns `true` if the error kind is `CreateDBSecurityGroupErrorKind::DbSecurityGroupNotSupportedFault`.
     pub fn is_db_security_group_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSecurityGroupErrorKind::DbSecurityGroupNotSupportedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSecurityGroupErrorKind::DbSecurityGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBSecurityGroupErrorKind::DbSecurityGroupQuotaExceededFault`.
     pub fn is_db_security_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3772,7 +3897,7 @@ pub enum CreateDBSnapshotErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB
     /// snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBSnapshotError {
@@ -3838,28 +3963,28 @@ impl CreateDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBSnapshotErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateDBSnapshotErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSnapshotErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault`.
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSnapshotErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `CreateDBSnapshotErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSnapshotErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSnapshotErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBSnapshotErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3906,7 +4031,7 @@ pub enum CreateDBSubnetGroupErrorKind {
     DbSubnetQuotaExceededFault(crate::error::DbSubnetQuotaExceededFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBSubnetGroupError {
@@ -3975,35 +4100,35 @@ impl CreateDBSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDBSubnetGroupErrorKind::DbSubnetGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateDBSubnetGroupErrorKind::DbSubnetGroupAlreadyExistsFault`.
     pub fn is_db_subnet_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSubnetGroupErrorKind::DbSubnetGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `CreateDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSubnetGroupErrorKind::DbSubnetGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBSubnetGroupErrorKind::DbSubnetGroupQuotaExceededFault`.
     pub fn is_db_subnet_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSubnetGroupErrorKind::DbSubnetGroupQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault`.
     pub fn is_db_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateDBSubnetGroupErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateDBSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, CreateDBSubnetGroupErrorKind::InvalidSubnet(_))
     }
@@ -4050,7 +4175,7 @@ pub enum CreateEventSubscriptionErrorKind {
     SubscriptionAlreadyExistFault(crate::error::SubscriptionAlreadyExistFault),
     /// <p>The supplied category does not exist.</p>
     SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEventSubscriptionError {
@@ -4125,49 +4250,49 @@ impl CreateEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault`.
     pub fn is_event_subscription_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SnsInvalidTopicFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SnsInvalidTopicFault`.
     pub fn is_sns_invalid_topic_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SnsInvalidTopicFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
     pub fn is_sns_no_authorization_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault`.
     pub fn is_sns_topic_arn_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SourceNotFoundFault`.
     pub fn is_source_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault`.
     pub fn is_subscription_already_exist_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault`.
     pub fn is_subscription_category_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4217,7 +4342,7 @@ pub enum CreateGlobalClusterErrorKind {
     GlobalClusterQuotaExceededFault(crate::error::GlobalClusterQuotaExceededFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGlobalClusterError {
@@ -4283,28 +4408,28 @@ impl CreateGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGlobalClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateGlobalClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault`.
     pub fn is_global_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault`.
     pub fn is_global_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateGlobalClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateGlobalClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4341,7 +4466,7 @@ pub enum CreateOptionGroupErrorKind {
     OptionGroupAlreadyExistsFault(crate::error::OptionGroupAlreadyExistsFault),
     /// <p>The quota of 20 option groups was exceeded for this Amazon Web Services account.</p>
     OptionGroupQuotaExceededFault(crate::error::OptionGroupQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOptionGroupError {
@@ -4405,14 +4530,14 @@ impl CreateOptionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOptionGroupErrorKind::OptionGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateOptionGroupErrorKind::OptionGroupAlreadyExistsFault`.
     pub fn is_option_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateOptionGroupErrorKind::OptionGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateOptionGroupErrorKind::OptionGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateOptionGroupErrorKind::OptionGroupQuotaExceededFault`.
     pub fn is_option_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4449,7 +4574,7 @@ pub enum DeleteCustomAvailabilityZoneErrorKind {
     CustomAvailabilityZoneNotFoundFault(crate::error::CustomAvailabilityZoneNotFoundFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomAvailabilityZoneError {
@@ -4517,14 +4642,14 @@ impl DeleteCustomAvailabilityZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneNotFoundFault`.
     pub fn is_custom_availability_zone_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `DeleteCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4540,6 +4665,120 @@ impl std::error::Error for DeleteCustomAvailabilityZoneError {
             }
             DeleteCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             DeleteCustomAvailabilityZoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteCustomDBEngineVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteCustomDBEngineVersionError {
+    /// Kind of error that occurred.
+    pub kind: DeleteCustomDBEngineVersionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteCustomDBEngineVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteCustomDBEngineVersionErrorKind {
+    /// <p>The specified CEV was not found.</p>
+    CustomDbEngineVersionNotFoundFault(crate::error::CustomDbEngineVersionNotFoundFault),
+    /// <p>You can't delete the CEV.</p>
+    InvalidCustomDbEngineVersionStateFault(crate::error::InvalidCustomDbEngineVersionStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteCustomDBEngineVersionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault(
+                _inner,
+            ) => _inner.fmt(f),
+            DeleteCustomDBEngineVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteCustomDBEngineVersionError {
+    fn code(&self) -> Option<&str> {
+        DeleteCustomDBEngineVersionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteCustomDBEngineVersionError {
+    /// Creates a new `DeleteCustomDBEngineVersionError`.
+    pub fn new(kind: DeleteCustomDBEngineVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteCustomDBEngineVersionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteCustomDBEngineVersionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteCustomDBEngineVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteCustomDBEngineVersionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault`.
+    pub fn is_custom_db_engine_version_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault`.
+    pub fn is_invalid_custom_db_engine_version_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault(_)
+        )
+    }
+}
+impl std::error::Error for DeleteCustomDBEngineVersionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            DeleteCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault(
+                _inner,
+            ) => Some(_inner),
+            DeleteCustomDBEngineVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4570,7 +4809,7 @@ pub enum DeleteDBClusterErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB
     /// snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBClusterError {
@@ -4637,35 +4876,35 @@ impl DeleteDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBClusterErrorKind::DbClusterSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterErrorKind::DbClusterSnapshotAlreadyExistsFault`.
     pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBClusterErrorKind::DbClusterSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBClusterErrorKind::InvalidDbClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterErrorKind::InvalidDbClusterSnapshotStateFault`.
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBClusterErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBClusterErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4705,7 +4944,7 @@ pub enum DeleteDBClusterEndpointErrorKind {
     InvalidDbClusterEndpointStateFault(crate::error::InvalidDbClusterEndpointStateFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBClusterEndpointError {
@@ -4774,21 +5013,21 @@ impl DeleteDBClusterEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault`.
     pub fn is_db_cluster_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault`.
     pub fn is_invalid_db_cluster_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBClusterEndpointErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterEndpointErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4833,7 +5072,7 @@ pub enum DeleteDBClusterParameterGroupErrorKind {
     /// to delete the parameter group, you can't delete it when the parameter group is in
     /// this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBClusterParameterGroupError {
@@ -4904,14 +5143,14 @@ impl DeleteDBClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4952,7 +5191,7 @@ pub enum DeleteDBClusterSnapshotErrorKind {
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The supplied value isn't a valid DB cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBClusterSnapshotError {
@@ -5020,14 +5259,14 @@ impl DeleteDBClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault`.
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5083,7 +5322,7 @@ pub enum DeleteDBInstanceErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB
     /// snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBInstanceError {
@@ -5153,42 +5392,42 @@ impl DeleteDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBInstanceErrorKind::DbInstanceAutomatedBackupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `DeleteDBInstanceErrorKind::DbInstanceAutomatedBackupQuotaExceededFault`.
     pub fn is_db_instance_automated_backup_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBInstanceErrorKind::DbInstanceAutomatedBackupQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBInstanceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBInstanceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBInstanceErrorKind::DbSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `DeleteDBInstanceErrorKind::DbSnapshotAlreadyExistsFault`.
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBInstanceErrorKind::DbSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBInstanceErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBInstanceErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBInstanceErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBInstanceErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBInstanceErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `DeleteDBInstanceErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5232,7 +5471,7 @@ pub enum DeleteDBInstanceAutomatedBackupErrorKind {
     InvalidDbInstanceAutomatedBackupStateFault(
         crate::error::InvalidDbInstanceAutomatedBackupStateFault,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBInstanceAutomatedBackupError {
@@ -5305,14 +5544,14 @@ impl DeleteDBInstanceAutomatedBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBInstanceAutomatedBackupErrorKind::DbInstanceAutomatedBackupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBInstanceAutomatedBackupErrorKind::DbInstanceAutomatedBackupNotFoundFault`.
     pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBInstanceAutomatedBackupErrorKind::DbInstanceAutomatedBackupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBInstanceAutomatedBackupErrorKind::InvalidDbInstanceAutomatedBackupStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBInstanceAutomatedBackupErrorKind::InvalidDbInstanceAutomatedBackupStateFault`.
     pub fn is_invalid_db_instance_automated_backup_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5358,7 +5597,7 @@ pub enum DeleteDBParameterGroupErrorKind {
     /// to delete the parameter group, you can't delete it when the parameter group is in
     /// this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBParameterGroupError {
@@ -5424,14 +5663,14 @@ impl DeleteDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5468,7 +5707,7 @@ pub enum DeleteDBProxyErrorKind {
     DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
     /// <p>The requested operation can't be performed while the proxy is in this state.</p>
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBProxyError {
@@ -5532,11 +5771,11 @@ impl DeleteDBProxyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBProxyErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBProxyErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeleteDBProxyErrorKind::DbProxyNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DeleteDBProxyErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBProxyErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5571,7 +5810,7 @@ pub enum DeleteDBProxyEndpointErrorKind {
     DbProxyEndpointNotFoundFault(crate::error::DbProxyEndpointNotFoundFault),
     /// <p>You can't perform this operation while the DB proxy endpoint is in a particular state.</p>
     InvalidDbProxyEndpointStateFault(crate::error::InvalidDbProxyEndpointStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBProxyEndpointError {
@@ -5637,14 +5876,14 @@ impl DeleteDBProxyEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault`.
     pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault`.
     pub fn is_invalid_db_proxy_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5683,7 +5922,7 @@ pub enum DeleteDBSecurityGroupErrorKind {
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBSecurityGroupError {
@@ -5749,14 +5988,14 @@ impl DeleteDBSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBSecurityGroupErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBSecurityGroupErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBSecurityGroupErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBSecurityGroupErrorKind::InvalidDbSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBSecurityGroupErrorKind::InvalidDbSecurityGroupStateFault`.
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5795,7 +6034,7 @@ pub enum DeleteDBSnapshotErrorKind {
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBSnapshotError {
@@ -5859,14 +6098,14 @@ impl DeleteDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBSnapshotErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBSnapshotErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBSnapshotErrorKind::InvalidDbSnapshotStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBSnapshotErrorKind::InvalidDbSnapshotStateFault`.
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5907,7 +6146,7 @@ pub enum DeleteDBSubnetGroupErrorKind {
     /// The DB subnet isn't in the <i>available</i> state.
     /// </p>
     InvalidDbSubnetStateFault(crate::error::InvalidDbSubnetStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBSubnetGroupError {
@@ -5972,21 +6211,21 @@ impl DeleteDBSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBSubnetGroupErrorKind::InvalidDbSubnetGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBSubnetGroupErrorKind::InvalidDbSubnetGroupStateFault`.
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDBSubnetGroupErrorKind::InvalidDbSubnetGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDBSubnetGroupErrorKind::InvalidDbSubnetStateFault`.
+    /// Returns `true` if the error kind is `DeleteDBSubnetGroupErrorKind::InvalidDbSubnetStateFault`.
     pub fn is_invalid_db_subnet_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6022,7 +6261,7 @@ pub enum DeleteEventSubscriptionErrorKind {
     InvalidEventSubscriptionStateFault(crate::error::InvalidEventSubscriptionStateFault),
     /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventSubscriptionError {
@@ -6088,14 +6327,14 @@ impl DeleteEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEventSubscriptionErrorKind::InvalidEventSubscriptionStateFault`.
+    /// Returns `true` if the error kind is `DeleteEventSubscriptionErrorKind::InvalidEventSubscriptionStateFault`.
     pub fn is_invalid_event_subscription_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventSubscriptionErrorKind::InvalidEventSubscriptionStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault`.
     pub fn is_subscription_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6132,7 +6371,7 @@ pub enum DeleteGlobalClusterErrorKind {
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGlobalClusterError {
@@ -6196,14 +6435,14 @@ impl DeleteGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
+    /// Returns `true` if the error kind is `DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6237,7 +6476,7 @@ pub enum DeleteInstallationMediaErrorKind {
     /// <p>
     /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.</p>
     InstallationMediaNotFoundFault(crate::error::InstallationMediaNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInstallationMediaError {
@@ -6302,7 +6541,7 @@ impl DeleteInstallationMediaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInstallationMediaErrorKind::InstallationMediaNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteInstallationMediaErrorKind::InstallationMediaNotFoundFault`.
     pub fn is_installation_media_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6340,7 +6579,7 @@ pub enum DeleteOptionGroupErrorKind {
     InvalidOptionGroupStateFault(crate::error::InvalidOptionGroupStateFault),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOptionGroupError {
@@ -6404,14 +6643,14 @@ impl DeleteOptionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOptionGroupErrorKind::InvalidOptionGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteOptionGroupErrorKind::InvalidOptionGroupStateFault`.
     pub fn is_invalid_option_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOptionGroupErrorKind::InvalidOptionGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOptionGroupErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteOptionGroupErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6450,7 +6689,7 @@ pub enum DeregisterDBProxyTargetsErrorKind {
     DbProxyTargetNotFoundFault(crate::error::DbProxyTargetNotFoundFault),
     /// <p>The requested operation can't be performed while the proxy is in this state.</p>
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterDBProxyTargetsError {
@@ -6518,28 +6757,28 @@ impl DeregisterDBProxyTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterDBProxyTargetsErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `DeregisterDBProxyTargetsErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDBProxyTargetsErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeregisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault`.
+    /// Returns `true` if the error kind is `DeregisterDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault`.
     pub fn is_db_proxy_target_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `DeregisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6574,7 +6813,7 @@ pub struct DescribeAccountAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountAttributesError {
@@ -6663,7 +6902,7 @@ pub enum DescribeCertificatesErrorKind {
     /// existing certificate.
     /// </p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCertificatesError {
@@ -6726,7 +6965,7 @@ impl DescribeCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCertificatesErrorKind::CertificateNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeCertificatesErrorKind::CertificateNotFoundFault`.
     pub fn is_certificate_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6760,7 +6999,7 @@ pub enum DescribeCustomAvailabilityZonesErrorKind {
     /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom
     /// Availability Zone identifier.</p>
     CustomAvailabilityZoneNotFoundFault(crate::error::CustomAvailabilityZoneNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomAvailabilityZonesError {
@@ -6828,7 +7067,7 @@ impl DescribeCustomAvailabilityZonesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCustomAvailabilityZonesErrorKind::CustomAvailabilityZoneNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeCustomAvailabilityZonesErrorKind::CustomAvailabilityZoneNotFoundFault`.
     pub fn is_custom_availability_zone_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6867,7 +7106,7 @@ pub enum DescribeDBClusterBacktracksErrorKind {
     /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
     /// </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterBacktracksError {
@@ -6933,14 +7172,14 @@ impl DescribeDBClusterBacktracksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBClusterBacktracksErrorKind::DbClusterBacktrackNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBClusterBacktracksErrorKind::DbClusterBacktrackNotFoundFault`.
     pub fn is_db_cluster_backtrack_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDBClusterBacktracksErrorKind::DbClusterBacktrackNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDBClusterBacktracksErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBClusterBacktracksErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6977,7 +7216,7 @@ pub enum DescribeDBClusterEndpointsErrorKind {
     /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
     /// </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterEndpointsError {
@@ -7040,7 +7279,7 @@ impl DescribeDBClusterEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBClusterEndpointsErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBClusterEndpointsErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7075,7 +7314,7 @@ pub enum DescribeDBClusterParameterGroupsErrorKind {
     /// existing DB parameter group.
     /// </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterParameterGroupsError {
@@ -7143,7 +7382,7 @@ impl DescribeDBClusterParameterGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBClusterParameterGroupsErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBClusterParameterGroupsErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7180,7 +7419,7 @@ pub enum DescribeDBClusterParametersErrorKind {
     /// existing DB parameter group.
     /// </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterParametersError {
@@ -7245,7 +7484,7 @@ impl DescribeDBClusterParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBClusterParametersErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBClusterParametersErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7281,7 +7520,7 @@ pub enum DescribeDBClustersErrorKind {
     /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
     /// </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClustersError {
@@ -7344,7 +7583,7 @@ impl DescribeDBClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBClustersErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBClustersErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7378,7 +7617,7 @@ pub enum DescribeDBClusterSnapshotAttributesErrorKind {
     /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
     /// </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterSnapshotAttributesError {
@@ -7446,7 +7685,7 @@ impl DescribeDBClusterSnapshotAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBClusterSnapshotAttributesErrorKind::DbClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBClusterSnapshotAttributesErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7484,7 +7723,7 @@ pub enum DescribeDBClusterSnapshotsErrorKind {
     /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
     /// </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterSnapshotsError {
@@ -7549,7 +7788,7 @@ impl DescribeDBClusterSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBClusterSnapshotsErrorKind::DbClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBClusterSnapshotsErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7581,7 +7820,7 @@ pub struct DescribeDBEngineVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBEngineVersionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBEngineVersionsError {
@@ -7667,7 +7906,7 @@ pub struct DescribeDBInstanceAutomatedBackupsError {
 pub enum DescribeDBInstanceAutomatedBackupsErrorKind {
     /// <p>No automated backup for this DB instance was found.</p>
     DbInstanceAutomatedBackupNotFoundFault(crate::error::DbInstanceAutomatedBackupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBInstanceAutomatedBackupsError {
@@ -7735,7 +7974,7 @@ impl DescribeDBInstanceAutomatedBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBInstanceAutomatedBackupsErrorKind::DbInstanceAutomatedBackupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBInstanceAutomatedBackupsErrorKind::DbInstanceAutomatedBackupNotFoundFault`.
     pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7771,7 +8010,7 @@ pub enum DescribeDBInstancesErrorKind {
     /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
     /// </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBInstancesError {
@@ -7834,7 +8073,7 @@ impl DescribeDBInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBInstancesErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBInstancesErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7868,7 +8107,7 @@ pub enum DescribeDBLogFilesErrorKind {
     /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
     /// </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBLogFilesError {
@@ -7931,7 +8170,7 @@ impl DescribeDBLogFilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBLogFilesErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBLogFilesErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7966,7 +8205,7 @@ pub enum DescribeDBParameterGroupsErrorKind {
     /// existing DB parameter group.
     /// </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBParameterGroupsError {
@@ -8031,7 +8270,7 @@ impl DescribeDBParameterGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBParameterGroupsErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBParameterGroupsErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8068,7 +8307,7 @@ pub enum DescribeDBParametersErrorKind {
     /// existing DB parameter group.
     /// </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBParametersError {
@@ -8131,7 +8370,7 @@ impl DescribeDBParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBParametersErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBParametersErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8163,7 +8402,7 @@ pub struct DescribeDBProxiesError {
 pub enum DescribeDBProxiesErrorKind {
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBProxiesError {
@@ -8226,7 +8465,7 @@ impl DescribeDBProxiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBProxiesErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxiesErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8260,7 +8499,7 @@ pub enum DescribeDBProxyEndpointsErrorKind {
     DbProxyEndpointNotFoundFault(crate::error::DbProxyEndpointNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBProxyEndpointsError {
@@ -8326,14 +8565,14 @@ impl DescribeDBProxyEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBProxyEndpointsErrorKind::DbProxyEndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyEndpointsErrorKind::DbProxyEndpointNotFoundFault`.
     pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDBProxyEndpointsErrorKind::DbProxyEndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDBProxyEndpointsErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyEndpointsErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8370,7 +8609,7 @@ pub enum DescribeDBProxyTargetGroupsErrorKind {
     DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
     /// <p>The requested operation can't be performed while the proxy is in this state.</p>
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBProxyTargetGroupsError {
@@ -8437,21 +8676,21 @@ impl DescribeDBProxyTargetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBProxyTargetGroupsErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyTargetGroupsErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDBProxyTargetGroupsErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDBProxyTargetGroupsErrorKind::DbProxyTargetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyTargetGroupsErrorKind::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDBProxyTargetGroupsErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDBProxyTargetGroupsErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyTargetGroupsErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8493,7 +8732,7 @@ pub enum DescribeDBProxyTargetsErrorKind {
     DbProxyTargetNotFoundFault(crate::error::DbProxyTargetNotFoundFault),
     /// <p>The requested operation can't be performed while the proxy is in this state.</p>
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBProxyTargetsError {
@@ -8561,28 +8800,28 @@ impl DescribeDBProxyTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBProxyTargetsErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyTargetsErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDBProxyTargetsErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault`.
     pub fn is_db_proxy_target_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDBProxyTargetsErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `DescribeDBProxyTargetsErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8621,7 +8860,7 @@ pub enum DescribeDBSecurityGroupsErrorKind {
     /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
     /// </p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBSecurityGroupsError {
@@ -8686,7 +8925,7 @@ impl DescribeDBSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBSecurityGroupsErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBSecurityGroupsErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8720,7 +8959,7 @@ pub enum DescribeDBSnapshotAttributesErrorKind {
     /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
     /// </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBSnapshotAttributesError {
@@ -8783,7 +9022,7 @@ impl DescribeDBSnapshotAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBSnapshotAttributesErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBSnapshotAttributesErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8817,7 +9056,7 @@ pub enum DescribeDBSnapshotsErrorKind {
     /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
     /// </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBSnapshotsError {
@@ -8880,7 +9119,7 @@ impl DescribeDBSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBSnapshotsErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBSnapshotsErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8914,7 +9153,7 @@ pub enum DescribeDBSubnetGroupsErrorKind {
     /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
     /// </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBSubnetGroupsError {
@@ -8977,7 +9216,7 @@ impl DescribeDBSubnetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDBSubnetGroupsErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeDBSubnetGroupsErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9007,7 +9246,7 @@ pub struct DescribeEngineDefaultClusterParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEngineDefaultClusterParametersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEngineDefaultClusterParametersError {
@@ -9096,7 +9335,7 @@ pub struct DescribeEngineDefaultParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEngineDefaultParametersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEngineDefaultParametersError {
@@ -9183,7 +9422,7 @@ pub struct DescribeEventCategoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventCategoriesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventCategoriesError {
@@ -9267,7 +9506,7 @@ pub struct DescribeEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventsError {
@@ -9353,7 +9592,7 @@ pub struct DescribeEventSubscriptionsError {
 pub enum DescribeEventSubscriptionsErrorKind {
     /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventSubscriptionsError {
@@ -9416,7 +9655,7 @@ impl DescribeEventSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventSubscriptionsErrorKind::SubscriptionNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEventSubscriptionsErrorKind::SubscriptionNotFoundFault`.
     pub fn is_subscription_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9448,7 +9687,7 @@ pub struct DescribeExportTasksError {
 pub enum DescribeExportTasksErrorKind {
     /// <p>The export task doesn't exist.</p>
     ExportTaskNotFoundFault(crate::error::ExportTaskNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportTasksError {
@@ -9511,7 +9750,7 @@ impl DescribeExportTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExportTasksErrorKind::ExportTaskNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeExportTasksErrorKind::ExportTaskNotFoundFault`.
     pub fn is_export_task_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9543,7 +9782,7 @@ pub struct DescribeGlobalClustersError {
 pub enum DescribeGlobalClustersErrorKind {
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster. </p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGlobalClustersError {
@@ -9606,7 +9845,7 @@ impl DescribeGlobalClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault`.
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9639,7 +9878,7 @@ pub enum DescribeInstallationMediaErrorKind {
     /// <p>
     /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.</p>
     InstallationMediaNotFoundFault(crate::error::InstallationMediaNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstallationMediaError {
@@ -9704,7 +9943,7 @@ impl DescribeInstallationMediaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstallationMediaErrorKind::InstallationMediaNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeInstallationMediaErrorKind::InstallationMediaNotFoundFault`.
     pub fn is_installation_media_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9736,7 +9975,7 @@ pub struct DescribeOptionGroupOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOptionGroupOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOptionGroupOptionsError {
@@ -9822,7 +10061,7 @@ pub struct DescribeOptionGroupsError {
 pub enum DescribeOptionGroupsErrorKind {
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOptionGroupsError {
@@ -9885,7 +10124,7 @@ impl DescribeOptionGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOptionGroupsErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeOptionGroupsErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9915,7 +10154,7 @@ pub struct DescribeOrderableDBInstanceOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOrderableDBInstanceOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrderableDBInstanceOptionsError {
@@ -10004,7 +10243,7 @@ pub struct DescribePendingMaintenanceActionsError {
 pub enum DescribePendingMaintenanceActionsErrorKind {
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePendingMaintenanceActionsError {
@@ -10072,7 +10311,7 @@ impl DescribePendingMaintenanceActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePendingMaintenanceActionsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribePendingMaintenanceActionsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10106,7 +10345,7 @@ pub struct DescribeReservedDBInstancesError {
 pub enum DescribeReservedDBInstancesErrorKind {
     /// <p>The specified reserved DB Instance not found.</p>
     ReservedDbInstanceNotFoundFault(crate::error::ReservedDbInstanceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedDBInstancesError {
@@ -10171,7 +10410,7 @@ impl DescribeReservedDBInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReservedDBInstancesErrorKind::ReservedDbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReservedDBInstancesErrorKind::ReservedDbInstanceNotFoundFault`.
     pub fn is_reserved_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10207,7 +10446,7 @@ pub enum DescribeReservedDBInstancesOfferingsErrorKind {
     ReservedDbInstancesOfferingNotFoundFault(
         crate::error::ReservedDbInstancesOfferingNotFoundFault,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedDBInstancesOfferingsError {
@@ -10277,7 +10516,7 @@ impl DescribeReservedDBInstancesOfferingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReservedDBInstancesOfferingsErrorKind::ReservedDbInstancesOfferingNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReservedDBInstancesOfferingsErrorKind::ReservedDbInstancesOfferingNotFoundFault`.
     pub fn is_reserved_db_instances_offering_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10313,7 +10552,7 @@ pub struct DescribeSourceRegionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSourceRegionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSourceRegionsError {
@@ -10403,7 +10642,7 @@ pub enum DescribeValidDBInstanceModificationsErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeValidDBInstanceModificationsError {
@@ -10474,14 +10713,14 @@ impl DescribeValidDBInstanceModificationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeValidDBInstanceModificationsErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeValidDBInstanceModificationsErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeValidDBInstanceModificationsErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeValidDBInstanceModificationsErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `DescribeValidDBInstanceModificationsErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10525,7 +10764,7 @@ pub enum DownloadDBLogFilePortionErrorKind {
     /// <p>
     /// <code>LogFileName</code> doesn't refer to an existing DB log file.</p>
     DbLogFileNotFoundFault(crate::error::DbLogFileNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DownloadDBLogFilePortionError {
@@ -10589,14 +10828,14 @@ impl DownloadDBLogFilePortionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DownloadDBLogFilePortionErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `DownloadDBLogFilePortionErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DownloadDBLogFilePortionErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DownloadDBLogFilePortionErrorKind::DbLogFileNotFoundFault`.
+    /// Returns `true` if the error kind is `DownloadDBLogFilePortionErrorKind::DbLogFileNotFoundFault`.
     pub fn is_db_log_file_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10635,7 +10874,7 @@ pub enum FailoverDBClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FailoverDBClusterError {
@@ -10700,21 +10939,21 @@ impl FailoverDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `FailoverDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `FailoverDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             FailoverDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `FailoverDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `FailoverDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             FailoverDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `FailoverDBClusterErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `FailoverDBClusterErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10756,7 +10995,7 @@ pub enum FailoverGlobalClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FailoverGlobalClusterError {
@@ -10822,28 +11061,28 @@ impl FailoverGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `FailoverGlobalClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `FailoverGlobalClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             FailoverGlobalClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
+    /// Returns `true` if the error kind is `FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10882,7 +11121,7 @@ pub enum ImportInstallationMediaErrorKind {
     CustomAvailabilityZoneNotFoundFault(crate::error::CustomAvailabilityZoneNotFoundFault),
     /// <p>The specified installation medium has already been imported.</p>
     InstallationMediaAlreadyExistsFault(crate::error::InstallationMediaAlreadyExistsFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportInstallationMediaError {
@@ -10950,14 +11189,14 @@ impl ImportInstallationMediaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportInstallationMediaErrorKind::CustomAvailabilityZoneNotFoundFault`.
+    /// Returns `true` if the error kind is `ImportInstallationMediaErrorKind::CustomAvailabilityZoneNotFoundFault`.
     pub fn is_custom_availability_zone_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ImportInstallationMediaErrorKind::CustomAvailabilityZoneNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ImportInstallationMediaErrorKind::InstallationMediaAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ImportInstallationMediaErrorKind::InstallationMediaAlreadyExistsFault`.
     pub fn is_installation_media_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11008,7 +11247,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
     /// </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -11075,35 +11314,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::DbProxyTargetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11142,7 +11381,7 @@ pub enum ModifyCertificatesErrorKind {
     /// existing certificate.
     /// </p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyCertificatesError {
@@ -11205,7 +11444,7 @@ impl ModifyCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyCertificatesErrorKind::CertificateNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyCertificatesErrorKind::CertificateNotFoundFault`.
     pub fn is_certificate_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11246,7 +11485,7 @@ pub enum ModifyCurrentDBClusterCapacityErrorKind {
     InvalidDbClusterCapacityFault(crate::error::InvalidDbClusterCapacityFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyCurrentDBClusterCapacityError {
@@ -11320,21 +11559,21 @@ impl ModifyCurrentDBClusterCapacityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyCurrentDBClusterCapacityErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyCurrentDBClusterCapacityErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyCurrentDBClusterCapacityErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterCapacityFault`.
+    /// Returns `true` if the error kind is `ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterCapacityFault`.
     pub fn is_invalid_db_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11353,6 +11592,120 @@ impl std::error::Error for ModifyCurrentDBClusterCapacityError {
                 Some(_inner)
             }
             ModifyCurrentDBClusterCapacityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ModifyCustomDBEngineVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ModifyCustomDBEngineVersionError {
+    /// Kind of error that occurred.
+    pub kind: ModifyCustomDBEngineVersionErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ModifyCustomDBEngineVersion` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ModifyCustomDBEngineVersionErrorKind {
+    /// <p>The specified CEV was not found.</p>
+    CustomDbEngineVersionNotFoundFault(crate::error::CustomDbEngineVersionNotFoundFault),
+    /// <p>You can't delete the CEV.</p>
+    InvalidCustomDbEngineVersionStateFault(crate::error::InvalidCustomDbEngineVersionStateFault),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ModifyCustomDBEngineVersionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ModifyCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            ModifyCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault(
+                _inner,
+            ) => _inner.fmt(f),
+            ModifyCustomDBEngineVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ModifyCustomDBEngineVersionError {
+    fn code(&self) -> Option<&str> {
+        ModifyCustomDBEngineVersionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ModifyCustomDBEngineVersionError {
+    /// Creates a new `ModifyCustomDBEngineVersionError`.
+    pub fn new(kind: ModifyCustomDBEngineVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ModifyCustomDBEngineVersionError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ModifyCustomDBEngineVersionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ModifyCustomDBEngineVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ModifyCustomDBEngineVersionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ModifyCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault`.
+    pub fn is_custom_db_engine_version_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ModifyCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault`.
+    pub fn is_invalid_custom_db_engine_version_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault(_)
+        )
+    }
+}
+impl std::error::Error for ModifyCustomDBEngineVersionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ModifyCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            ModifyCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault(
+                _inner,
+            ) => Some(_inner),
+            ModifyCustomDBEngineVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -11404,7 +11757,7 @@ pub enum ModifyDBClusterErrorKind {
     /// <p>The request would result in the user exceeding the allowed amount of storage
     /// available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBClusterError {
@@ -11478,78 +11831,78 @@ impl ModifyDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::DbClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::DbClusterAlreadyExistsFault`.
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::DbClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::DbClusterParameterGroupNotFoundFault`.
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(&self.kind, ModifyDBClusterErrorKind::DomainNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::InvalidDbSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::InvalidDbSecurityGroupStateFault`.
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::InvalidDbSecurityGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::InvalidDbSubnetGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::InvalidDbSubnetGroupStateFault`.
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, ModifyDBClusterErrorKind::InvalidSubnet(_))
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11602,7 +11955,7 @@ pub enum ModifyDBClusterEndpointErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBClusterEndpointError {
@@ -11673,35 +12026,35 @@ impl ModifyDBClusterEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault`.
     pub fn is_db_cluster_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterEndpointErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterEndpointErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault`.
     pub fn is_invalid_db_cluster_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterEndpointErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterEndpointErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11748,7 +12101,7 @@ pub enum ModifyDBClusterParameterGroupErrorKind {
     /// to delete the parameter group, you can't delete it when the parameter group is in
     /// this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBClusterParameterGroupError {
@@ -11819,14 +12172,14 @@ impl ModifyDBClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11869,7 +12222,7 @@ pub enum ModifyDBClusterSnapshotAttributeErrorKind {
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
     /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
     SharedSnapshotQuotaExceededFault(crate::error::SharedSnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBClusterSnapshotAttributeError {
@@ -11943,21 +12296,21 @@ impl ModifyDBClusterSnapshotAttributeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBClusterSnapshotAttributeErrorKind::DbClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterSnapshotAttributeErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterSnapshotAttributeErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterSnapshotAttributeErrorKind::InvalidDbClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterSnapshotAttributeErrorKind::InvalidDbClusterSnapshotStateFault`.
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBClusterSnapshotAttributeErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBClusterSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyDBClusterSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault`.
     pub fn is_shared_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12053,7 +12406,7 @@ pub enum ModifyDBInstanceErrorKind {
     /// <p>Storage of the <code>StorageType</code> specified can't be associated
     /// with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBInstanceError {
@@ -12136,133 +12489,133 @@ impl ModifyDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::BackupPolicyNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::BackupPolicyNotFoundFault`.
     pub fn is_backup_policy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::BackupPolicyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::CertificateNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::CertificateNotFoundFault`.
     pub fn is_certificate_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::CertificateNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::DbInstanceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::DbUpgradeDependencyFailureFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::DbUpgradeDependencyFailureFault`.
     pub fn is_db_upgrade_dependency_failure_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::DbUpgradeDependencyFailureFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::DomainNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::InsufficientDbInstanceCapacityFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault`.
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault`.
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBInstanceErrorKind::StorageQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBInstanceErrorKind::StorageTypeNotSupportedFault`.
+    /// Returns `true` if the error kind is `ModifyDBInstanceErrorKind::StorageTypeNotSupportedFault`.
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12319,7 +12672,7 @@ pub enum ModifyDBParameterGroupErrorKind {
     /// to delete the parameter group, you can't delete it when the parameter group is in
     /// this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBParameterGroupError {
@@ -12385,14 +12738,14 @@ impl ModifyDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12431,7 +12784,7 @@ pub enum ModifyDBProxyErrorKind {
     DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
     /// <p>The requested operation can't be performed while the proxy is in this state.</p>
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBProxyError {
@@ -12496,18 +12849,18 @@ impl ModifyDBProxyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBProxyErrorKind::DbProxyAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyErrorKind::DbProxyAlreadyExistsFault`.
     pub fn is_db_proxy_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBProxyErrorKind::DbProxyAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBProxyErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(&self.kind, ModifyDBProxyErrorKind::DbProxyNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ModifyDBProxyErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12547,7 +12900,7 @@ pub enum ModifyDBProxyEndpointErrorKind {
     InvalidDbProxyEndpointStateFault(crate::error::InvalidDbProxyEndpointStateFault),
     /// <p>The requested operation can't be performed while the proxy is in this state.</p>
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBProxyEndpointError {
@@ -12617,28 +12970,28 @@ impl ModifyDBProxyEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault`.
     pub fn is_db_proxy_endpoint_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault`.
     pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault`.
     pub fn is_invalid_db_proxy_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBProxyEndpointErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyEndpointErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12681,7 +13034,7 @@ pub enum ModifyDBProxyTargetGroupErrorKind {
     DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
     /// <p>The requested operation can't be performed while the proxy is in this state.</p>
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBProxyTargetGroupError {
@@ -12748,21 +13101,21 @@ impl ModifyDBProxyTargetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBProxyTargetGroupErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyTargetGroupErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBProxyTargetGroupErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBProxyTargetGroupErrorKind::DbProxyTargetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyTargetGroupErrorKind::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBProxyTargetGroupErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBProxyTargetGroupErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBProxyTargetGroupErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12800,7 +13153,7 @@ pub enum ModifyDBSnapshotErrorKind {
     /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
     /// </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBSnapshotError {
@@ -12863,7 +13216,7 @@ impl ModifyDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBSnapshotErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBSnapshotErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12901,7 +13254,7 @@ pub enum ModifyDBSnapshotAttributeErrorKind {
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
     /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
     SharedSnapshotQuotaExceededFault(crate::error::SharedSnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBSnapshotAttributeError {
@@ -12970,21 +13323,21 @@ impl ModifyDBSnapshotAttributeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBSnapshotAttributeErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBSnapshotAttributeErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBSnapshotAttributeErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBSnapshotAttributeErrorKind::InvalidDbSnapshotStateFault`.
+    /// Returns `true` if the error kind is `ModifyDBSnapshotAttributeErrorKind::InvalidDbSnapshotStateFault`.
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBSnapshotAttributeErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyDBSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault`.
     pub fn is_shared_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13031,7 +13384,7 @@ pub enum ModifyDBSubnetGroupErrorKind {
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The DB subnet is already in use in the Availability Zone.</p>
     SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBSubnetGroupError {
@@ -13100,32 +13453,32 @@ impl ModifyDBSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `ModifyDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault`.
     pub fn is_db_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDBSubnetGroupErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `ModifyDBSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, ModifyDBSubnetGroupErrorKind::InvalidSubnet(_))
     }
-    /// Returns true if the error kind is `ModifyDBSubnetGroupErrorKind::SubnetAlreadyInUse`.
+    /// Returns `true` if the error kind is `ModifyDBSubnetGroupErrorKind::SubnetAlreadyInUse`.
     pub fn is_subnet_already_in_use(&self) -> bool {
         matches!(
             &self.kind,
@@ -13173,7 +13526,7 @@ pub enum ModifyEventSubscriptionErrorKind {
     SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
     /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyEventSubscriptionError {
@@ -13245,42 +13598,42 @@ impl ModifyEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault`.
     pub fn is_event_subscription_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault`.
     pub fn is_sns_invalid_topic_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
     pub fn is_sns_no_authorization_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault`.
     pub fn is_sns_topic_arn_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault`.
     pub fn is_subscription_category_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault`.
     pub fn is_subscription_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13327,7 +13680,7 @@ pub enum ModifyGlobalClusterErrorKind {
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyGlobalClusterError {
@@ -13393,28 +13746,28 @@ impl ModifyGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyGlobalClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyGlobalClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyGlobalClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyGlobalClusterErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `ModifyGlobalClusterErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyGlobalClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13453,7 +13806,7 @@ pub enum ModifyOptionGroupErrorKind {
     InvalidOptionGroupStateFault(crate::error::InvalidOptionGroupStateFault),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyOptionGroupError {
@@ -13517,14 +13870,14 @@ impl ModifyOptionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyOptionGroupErrorKind::InvalidOptionGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyOptionGroupErrorKind::InvalidOptionGroupStateFault`.
     pub fn is_invalid_option_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyOptionGroupErrorKind::InvalidOptionGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyOptionGroupErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyOptionGroupErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13561,7 +13914,7 @@ pub enum PromoteReadReplicaErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PromoteReadReplicaError {
@@ -13625,14 +13978,14 @@ impl PromoteReadReplicaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PromoteReadReplicaErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `PromoteReadReplicaErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             PromoteReadReplicaErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `PromoteReadReplicaErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `PromoteReadReplicaErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13669,7 +14022,7 @@ pub enum PromoteReadReplicaDBClusterErrorKind {
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PromoteReadReplicaDBClusterError {
@@ -13735,14 +14088,14 @@ impl PromoteReadReplicaDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PromoteReadReplicaDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `PromoteReadReplicaDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             PromoteReadReplicaDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `PromoteReadReplicaDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `PromoteReadReplicaDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13783,7 +14136,7 @@ pub enum PurchaseReservedDBInstancesOfferingErrorKind {
     ReservedDbInstancesOfferingNotFoundFault(
         crate::error::ReservedDbInstancesOfferingNotFoundFault,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseReservedDBInstancesOfferingError {
@@ -13859,21 +14212,21 @@ impl PurchaseReservedDBInstancesOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceAlreadyExistsFault`.
     pub fn is_reserved_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceQuotaExceededFault`.
     pub fn is_reserved_db_instance_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstancesOfferingNotFoundFault`.
+    /// Returns `true` if the error kind is `PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstancesOfferingNotFoundFault`.
     pub fn is_reserved_db_instances_offering_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13921,7 +14274,7 @@ pub enum RebootDBInstanceErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootDBInstanceError {
@@ -13985,14 +14338,14 @@ impl RebootDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RebootDBInstanceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `RebootDBInstanceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RebootDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RebootDBInstanceErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `RebootDBInstanceErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14047,7 +14400,7 @@ pub enum RegisterDBProxyTargetsErrorKind {
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The requested operation can't be performed while the proxy is in this state.</p>
     InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterDBProxyTargetsError {
@@ -14124,63 +14477,63 @@ impl RegisterDBProxyTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDBProxyTargetsErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDBProxyTargetsErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDBProxyTargetsErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::DbProxyTargetAlreadyRegisteredFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::DbProxyTargetAlreadyRegisteredFault`.
     pub fn is_db_proxy_target_already_registered_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDBProxyTargetsErrorKind::DbProxyTargetAlreadyRegisteredFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::InsufficientAvailableIPsInSubnetFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::InsufficientAvailableIPsInSubnetFault`.
     pub fn is_insufficient_available_i_ps_in_subnet_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDBProxyTargetsErrorKind::InsufficientAvailableIPsInSubnetFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDBProxyTargetsErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDBProxyTargetsErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault`.
+    /// Returns `true` if the error kind is `RegisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault`.
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14232,7 +14585,7 @@ pub enum RemoveFromGlobalClusterErrorKind {
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveFromGlobalClusterError {
@@ -14299,21 +14652,21 @@ impl RemoveFromGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault`.
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
+    /// Returns `true` if the error kind is `RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault`.
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14355,7 +14708,7 @@ pub enum RemoveRoleFromDBClusterErrorKind {
     DbClusterRoleNotFoundFault(crate::error::DbClusterRoleNotFoundFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveRoleFromDBClusterError {
@@ -14420,21 +14773,21 @@ impl RemoveRoleFromDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveRoleFromDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveRoleFromDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRoleFromDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRoleFromDBClusterErrorKind::DbClusterRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveRoleFromDBClusterErrorKind::DbClusterRoleNotFoundFault`.
     pub fn is_db_cluster_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRoleFromDBClusterErrorKind::DbClusterRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRoleFromDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `RemoveRoleFromDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14475,7 +14828,7 @@ pub enum RemoveRoleFromDBInstanceErrorKind {
     DbInstanceRoleNotFoundFault(crate::error::DbInstanceRoleNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveRoleFromDBInstanceError {
@@ -14540,21 +14893,21 @@ impl RemoveRoleFromDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveRoleFromDBInstanceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveRoleFromDBInstanceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRoleFromDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRoleFromDBInstanceErrorKind::DbInstanceRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveRoleFromDBInstanceErrorKind::DbInstanceRoleNotFoundFault`.
     pub fn is_db_instance_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRoleFromDBInstanceErrorKind::DbInstanceRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRoleFromDBInstanceErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `RemoveRoleFromDBInstanceErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14590,7 +14943,7 @@ pub enum RemoveSourceIdentifierFromSubscriptionErrorKind {
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
     /// <p>The subscription name does not exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveSourceIdentifierFromSubscriptionError {
@@ -14661,14 +15014,14 @@ impl RemoveSourceIdentifierFromSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveSourceIdentifierFromSubscriptionErrorKind::SourceNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveSourceIdentifierFromSubscriptionErrorKind::SourceNotFoundFault`.
     pub fn is_source_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveSourceIdentifierFromSubscriptionErrorKind::SourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveSourceIdentifierFromSubscriptionErrorKind::SubscriptionNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveSourceIdentifierFromSubscriptionErrorKind::SubscriptionNotFoundFault`.
     pub fn is_subscription_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14721,7 +15074,7 @@ pub enum RemoveTagsFromResourceErrorKind {
     /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
     /// </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
@@ -14790,35 +15143,35 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::DbProxyNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::DbProxyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::DbProxyTargetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14863,7 +15216,7 @@ pub enum ResetDBClusterParameterGroupErrorKind {
     /// to delete the parameter group, you can't delete it when the parameter group is in
     /// this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetDBClusterParameterGroupError {
@@ -14931,14 +15284,14 @@ impl ResetDBClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ResetDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResetDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ResetDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `ResetDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14982,7 +15335,7 @@ pub enum ResetDBParameterGroupErrorKind {
     /// to delete the parameter group, you can't delete it when the parameter group is in
     /// this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetDBParameterGroupError {
@@ -15048,14 +15401,14 @@ impl ResetDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetDBParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ResetDBParameterGroupErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResetDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ResetDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `ResetDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault`.
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -15130,7 +15483,7 @@ pub enum RestoreDBClusterFromS3ErrorKind {
     /// <p>The request would result in the user exceeding the allowed amount of storage
     /// available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreDBClusterFromS3Error {
@@ -15212,98 +15565,98 @@ impl RestoreDBClusterFromS3Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::DbClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::DbClusterAlreadyExistsFault`.
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::DbClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::DbClusterParameterGroupNotFoundFault`.
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::DbClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::DbClusterQuotaExceededFault`.
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::DbClusterQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::DomainNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::InsufficientStorageClusterCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::InsufficientStorageClusterCapacityFault`.
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::InsufficientStorageClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidDbSubnetGroupStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidDbSubnetGroupStateFault`.
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::InvalidDbSubnetGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidS3BucketFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidS3BucketFault`.
     pub fn is_invalid_s3_bucket_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::InvalidS3BucketFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromS3ErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromS3ErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3ErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -15399,7 +15752,7 @@ pub enum RestoreDBClusterFromSnapshotErrorKind {
     /// <p>The request would result in the user exceeding the allowed amount of storage
     /// available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreDBClusterFromSnapshotError {
@@ -15504,119 +15857,119 @@ impl RestoreDBClusterFromSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbClusterAlreadyExistsFault`.
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbClusterParameterGroupNotFoundFault`.
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbClusterQuotaExceededFault`.
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::DbClusterQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::DomainNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InsufficientDbClusterCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InsufficientDbClusterCapacityFault`.
     pub fn is_insufficient_db_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::InsufficientDbClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InsufficientStorageClusterCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InsufficientStorageClusterCapacityFault`.
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::InsufficientStorageClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault`.
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault`.
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidRestoreFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidRestoreFault`.
     pub fn is_invalid_restore_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::InvalidRestoreFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterFromSnapshotErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterFromSnapshotErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -15735,7 +16088,7 @@ pub enum RestoreDBClusterToPointInTimeErrorKind {
     /// <p>The request would result in the user exceeding the allowed amount of storage
     /// available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreDBClusterToPointInTimeError {
@@ -15846,126 +16199,126 @@ impl RestoreDBClusterToPointInTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterAlreadyExistsFault`.
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterParameterGroupNotFoundFault`.
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterQuotaExceededFault`.
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::DbClusterQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::DomainNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InsufficientDbClusterCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InsufficientDbClusterCapacityFault`.
     pub fn is_insufficient_db_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::InsufficientDbClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InsufficientStorageClusterCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InsufficientStorageClusterCapacityFault`.
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::InsufficientStorageClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterSnapshotStateFault`.
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidDbSnapshotStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidDbSnapshotStateFault`.
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidRestoreFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidRestoreFault`.
     pub fn is_invalid_restore_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::InvalidRestoreFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBClusterToPointInTimeErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBClusterToPointInTimeErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -16099,7 +16452,7 @@ pub enum RestoreDBInstanceFromDBSnapshotErrorKind {
     /// <p>Storage of the <code>StorageType</code> specified can't be associated
     /// with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreDBInstanceFromDBSnapshotError {
@@ -16218,140 +16571,140 @@ impl RestoreDBInstanceFromDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault`.
     pub fn is_backup_policy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::DomainNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InstanceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InstanceQuotaExceededFault`.
     pub fn is_instance_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::InstanceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDbInstanceCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDbSnapshotStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDbSnapshotStateFault`.
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InvalidRestoreFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InvalidRestoreFault`.
     pub fn is_invalid_restore_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::InvalidRestoreFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAzFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAzFault`.
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromDBSnapshotErrorKind::StorageQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::StorageTypeNotSupportedFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromDBSnapshotErrorKind::StorageTypeNotSupportedFault`.
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -16484,7 +16837,7 @@ pub enum RestoreDBInstanceFromS3ErrorKind {
     /// <p>Storage of the <code>StorageType</code> specified can't be associated
     /// with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreDBInstanceFromS3Error {
@@ -16571,119 +16924,119 @@ impl RestoreDBInstanceFromS3Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::BackupPolicyNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::BackupPolicyNotFoundFault`.
     pub fn is_backup_policy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::BackupPolicyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbInstanceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::InstanceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::InstanceQuotaExceededFault`.
     pub fn is_instance_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::InstanceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::InsufficientDbInstanceCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::InvalidS3BucketFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::InvalidS3BucketFault`.
     pub fn is_invalid_s3_bucket_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::InvalidS3BucketFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault`.
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceFromS3ErrorKind::StorageQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceFromS3ErrorKind::StorageTypeNotSupportedFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3ErrorKind::StorageTypeNotSupportedFault`.
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -16802,7 +17155,7 @@ pub enum RestoreDBInstanceToPointInTimeErrorKind {
     /// <p>Storage of the <code>StorageType</code> specified can't be associated
     /// with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreDBInstanceToPointInTimeError {
@@ -16927,154 +17280,154 @@ impl RestoreDBInstanceToPointInTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::BackupPolicyNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::BackupPolicyNotFoundFault`.
     pub fn is_backup_policy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::BackupPolicyNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAutomatedBackupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAutomatedBackupNotFoundFault`.
     pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAutomatedBackupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbParameterGroupNotFoundFault`.
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DomainNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::DomainNotFoundFault`.
     pub fn is_domain_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::DomainNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InstanceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InstanceQuotaExceededFault`.
     pub fn is_instance_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::InstanceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InsufficientDbInstanceCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InvalidRestoreFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InvalidRestoreFault`.
     pub fn is_invalid_restore_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::InvalidRestoreFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::PointInTimeRestoreNotEnabledFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::PointInTimeRestoreNotEnabledFault`.
     pub fn is_point_in_time_restore_not_enabled_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::PointInTimeRestoreNotEnabledFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAzFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAzFault`.
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreDBInstanceToPointInTimeErrorKind::StorageQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::StorageTypeNotSupportedFault`.
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeErrorKind::StorageTypeNotSupportedFault`.
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -17174,7 +17527,7 @@ pub enum RevokeDBSecurityGroupIngressErrorKind {
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeDBSecurityGroupIngressError {
@@ -17245,21 +17598,21 @@ impl RevokeDBSecurityGroupIngressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeDBSecurityGroupIngressErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeDBSecurityGroupIngressErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeDBSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault`.
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `RevokeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault`.
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -17313,7 +17666,7 @@ pub enum StartActivityStreamErrorKind {
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartActivityStreamError {
@@ -17381,42 +17734,42 @@ impl StartActivityStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartActivityStreamErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `StartActivityStreamErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartActivityStreamErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartActivityStreamErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `StartActivityStreamErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartActivityStreamErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartActivityStreamErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `StartActivityStreamErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartActivityStreamErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartActivityStreamErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `StartActivityStreamErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartActivityStreamErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartActivityStreamErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `StartActivityStreamErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartActivityStreamErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `StartActivityStreamErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `StartActivityStreamErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -17459,7 +17812,7 @@ pub enum StartDBClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDBClusterError {
@@ -17524,21 +17877,21 @@ impl StartDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `StartDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `StartDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBClusterErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `StartDBClusterErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -17603,7 +17956,7 @@ pub enum StartDBInstanceErrorKind {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDBInstanceError {
@@ -17676,74 +18029,74 @@ impl StartDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::DbSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::InsufficientDbInstanceCapacityFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, StartDBInstanceErrorKind::InvalidSubnet(_))
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -17800,7 +18153,7 @@ pub enum StartDBInstanceAutomatedBackupsReplicationErrorKind {
     /// <p>Storage of the <code>StorageType</code> specified can't be associated
     /// with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDBInstanceAutomatedBackupsReplicationError {
@@ -17882,32 +18235,32 @@ impl StartDBInstanceAutomatedBackupsReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceAutomatedBackupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceAutomatedBackupQuotaExceededFault`.
     pub fn is_db_instance_automated_backup_quota_exceeded_fault(&self) -> bool {
         matches!(&self.kind, StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceAutomatedBackupQuotaExceededFault(_))
     }
-    /// Returns true if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartDBInstanceAutomatedBackupsReplicationErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::StorageTypeNotSupportedFault`.
+    /// Returns `true` if the error kind is `StartDBInstanceAutomatedBackupsReplicationErrorKind::StorageTypeNotSupportedFault`.
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -17976,7 +18329,7 @@ pub enum StartExportTaskErrorKind {
     InvalidS3BucketFault(crate::error::InvalidS3BucketFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartExportTaskError {
@@ -18047,63 +18400,63 @@ impl StartExportTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::DbSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::ExportTaskAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::ExportTaskAlreadyExistsFault`.
     pub fn is_export_task_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::ExportTaskAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::IamRoleMissingPermissionsFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::IamRoleMissingPermissionsFault`.
     pub fn is_iam_role_missing_permissions_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::IamRoleMissingPermissionsFault(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::IamRoleNotFoundFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::IamRoleNotFoundFault`.
     pub fn is_iam_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::IamRoleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::InvalidExportOnlyFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::InvalidExportOnlyFault`.
     pub fn is_invalid_export_only_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::InvalidExportOnlyFault(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::InvalidExportSourceStateFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::InvalidExportSourceStateFault`.
     pub fn is_invalid_export_source_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::InvalidExportSourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::InvalidS3BucketFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::InvalidS3BucketFault`.
     pub fn is_invalid_s3_bucket_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartExportTaskErrorKind::InvalidS3BucketFault(_)
         )
     }
-    /// Returns true if the error kind is `StartExportTaskErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `StartExportTaskErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -18155,7 +18508,7 @@ pub enum StopActivityStreamErrorKind {
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopActivityStreamError {
@@ -18222,35 +18575,35 @@ impl StopActivityStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopActivityStreamErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `StopActivityStreamErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopActivityStreamErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StopActivityStreamErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `StopActivityStreamErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopActivityStreamErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StopActivityStreamErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `StopActivityStreamErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopActivityStreamErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StopActivityStreamErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `StopActivityStreamErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopActivityStreamErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StopActivityStreamErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `StopActivityStreamErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -18292,7 +18645,7 @@ pub enum StopDBClusterErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDBClusterError {
@@ -18357,21 +18710,21 @@ impl StopDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopDBClusterErrorKind::DbClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `StopDBClusterErrorKind::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StopDBClusterErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `StopDBClusterErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StopDBClusterErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `StopDBClusterErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -18418,7 +18771,7 @@ pub enum StopDBInstanceErrorKind {
     /// <p>The request would result in the user exceeding the allowed number of DB
     /// snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDBInstanceError {
@@ -18485,35 +18838,35 @@ impl StopDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopDBInstanceErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `StopDBInstanceErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StopDBInstanceErrorKind::DbSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `StopDBInstanceErrorKind::DbSnapshotAlreadyExistsFault`.
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopDBInstanceErrorKind::DbSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `StopDBInstanceErrorKind::InvalidDbClusterStateFault`.
+    /// Returns `true` if the error kind is `StopDBInstanceErrorKind::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StopDBInstanceErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `StopDBInstanceErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StopDBInstanceErrorKind::SnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `StopDBInstanceErrorKind::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -18553,7 +18906,7 @@ pub enum StopDBInstanceAutomatedBackupsReplicationErrorKind {
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDBInstanceAutomatedBackupsReplicationError {
@@ -18624,14 +18977,14 @@ impl StopDBInstanceAutomatedBackupsReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault`.
+    /// Returns `true` if the error kind is `StopDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault`.
+    /// Returns `true` if the error kind is `StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -23731,6 +24084,140 @@ impl DbClusterEndpointNotFoundFault {
     }
 }
 
+/// <p>You can't delete the CEV.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidCustomDbEngineVersionStateFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidCustomDbEngineVersionStateFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidCustomDbEngineVersionStateFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidCustomDbEngineVersionStateFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidCustomDbEngineVersionStateFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "InvalidCustomDbEngineVersionStateFault [InvalidCustomDBEngineVersionStateFault]"
+        )?;
+        if let Some(inner_78) = &self.message {
+            write!(f, ": {}", inner_78)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidCustomDbEngineVersionStateFault {}
+/// See [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault)
+pub mod invalid_custom_db_engine_version_state_fault {
+    /// A builder for [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault)
+        pub fn build(self) -> crate::error::InvalidCustomDbEngineVersionStateFault {
+            crate::error::InvalidCustomDbEngineVersionStateFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidCustomDbEngineVersionStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault)
+    pub fn builder() -> crate::error::invalid_custom_db_engine_version_state_fault::Builder {
+        crate::error::invalid_custom_db_engine_version_state_fault::Builder::default()
+    }
+}
+
+/// <p>The specified CEV was not found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomDbEngineVersionNotFoundFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CustomDbEngineVersionNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomDbEngineVersionNotFoundFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl CustomDbEngineVersionNotFoundFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CustomDbEngineVersionNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "CustomDbEngineVersionNotFoundFault [CustomDBEngineVersionNotFoundFault]"
+        )?;
+        if let Some(inner_79) = &self.message {
+            write!(f, ": {}", inner_79)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CustomDbEngineVersionNotFoundFault {}
+/// See [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault)
+pub mod custom_db_engine_version_not_found_fault {
+    /// A builder for [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault)
+        pub fn build(self) -> crate::error::CustomDbEngineVersionNotFoundFault {
+            crate::error::CustomDbEngineVersionNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CustomDbEngineVersionNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault)
+    pub fn builder() -> crate::error::custom_db_engine_version_not_found_fault::Builder {
+        crate::error::custom_db_engine_version_not_found_fault::Builder::default()
+    }
+}
+
 /// <p>
 /// <code>Capacity</code> isn't a valid Aurora Serverless DB cluster
 /// capacity. Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
@@ -23760,8 +24247,8 @@ impl std::fmt::Display for InvalidDbClusterCapacityFault {
             f,
             "InvalidDbClusterCapacityFault [InvalidDBClusterCapacityFault]"
         )?;
-        if let Some(inner_78) = &self.message {
-            write!(f, ": {}", inner_78)?;
+        if let Some(inner_80) = &self.message {
+            write!(f, ": {}", inner_80)?;
         }
         Ok(())
     }
@@ -23824,8 +24311,8 @@ impl InstallationMediaAlreadyExistsFault {
 impl std::fmt::Display for InstallationMediaAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstallationMediaAlreadyExistsFault")?;
-        if let Some(inner_79) = &self.message {
-            write!(f, ": {}", inner_79)?;
+        if let Some(inner_81) = &self.message {
+            write!(f, ": {}", inner_81)?;
         }
         Ok(())
     }
@@ -23890,8 +24377,8 @@ impl CustomAvailabilityZoneNotFoundFault {
 impl std::fmt::Display for CustomAvailabilityZoneNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomAvailabilityZoneNotFoundFault")?;
-        if let Some(inner_80) = &self.message {
-            write!(f, ": {}", inner_80)?;
+        if let Some(inner_82) = &self.message {
+            write!(f, ": {}", inner_82)?;
         }
         Ok(())
     }
@@ -23955,8 +24442,8 @@ impl DbLogFileNotFoundFault {
 impl std::fmt::Display for DbLogFileNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbLogFileNotFoundFault [DBLogFileNotFoundFault]")?;
-        if let Some(inner_81) = &self.message {
-            write!(f, ": {}", inner_81)?;
+        if let Some(inner_83) = &self.message {
+            write!(f, ": {}", inner_83)?;
         }
         Ok(())
     }
@@ -24022,8 +24509,8 @@ impl std::fmt::Display for ReservedDbInstanceNotFoundFault {
             f,
             "ReservedDbInstanceNotFoundFault [ReservedDBInstanceNotFoundFault]"
         )?;
-        if let Some(inner_82) = &self.message {
-            write!(f, ": {}", inner_82)?;
+        if let Some(inner_84) = &self.message {
+            write!(f, ": {}", inner_84)?;
         }
         Ok(())
     }
@@ -24087,8 +24574,8 @@ impl InstallationMediaNotFoundFault {
 impl std::fmt::Display for InstallationMediaNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InstallationMediaNotFoundFault")?;
-        if let Some(inner_83) = &self.message {
-            write!(f, ": {}", inner_83)?;
+        if let Some(inner_85) = &self.message {
+            write!(f, ": {}", inner_85)?;
         }
         Ok(())
     }
@@ -24151,8 +24638,8 @@ impl ExportTaskNotFoundFault {
 impl std::fmt::Display for ExportTaskNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExportTaskNotFoundFault")?;
-        if let Some(inner_84) = &self.message {
-            write!(f, ": {}", inner_84)?;
+        if let Some(inner_86) = &self.message {
+            write!(f, ": {}", inner_86)?;
         }
         Ok(())
     }
@@ -24215,8 +24702,8 @@ impl DbProxyTargetNotFoundFault {
 impl std::fmt::Display for DbProxyTargetNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyTargetNotFoundFault [DBProxyTargetNotFoundFault]")?;
-        if let Some(inner_85) = &self.message {
-            write!(f, ": {}", inner_85)?;
+        if let Some(inner_87) = &self.message {
+            write!(f, ": {}", inner_87)?;
         }
         Ok(())
     }
@@ -24283,8 +24770,8 @@ impl std::fmt::Display for DbClusterBacktrackNotFoundFault {
             f,
             "DbClusterBacktrackNotFoundFault [DBClusterBacktrackNotFoundFault]"
         )?;
-        if let Some(inner_86) = &self.message {
-            write!(f, ": {}", inner_86)?;
+        if let Some(inner_88) = &self.message {
+            write!(f, ": {}", inner_88)?;
         }
         Ok(())
     }
@@ -24347,8 +24834,8 @@ impl InvalidEventSubscriptionStateFault {
 impl std::fmt::Display for InvalidEventSubscriptionStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventSubscriptionStateFault")?;
-        if let Some(inner_87) = &self.message {
-            write!(f, ": {}", inner_87)?;
+        if let Some(inner_89) = &self.message {
+            write!(f, ": {}", inner_89)?;
         }
         Ok(())
     }
@@ -24413,8 +24900,8 @@ impl InvalidDbSubnetStateFault {
 impl std::fmt::Display for InvalidDbSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbSubnetStateFault [InvalidDBSubnetStateFault]")?;
-        if let Some(inner_88) = &self.message {
-            write!(f, ": {}", inner_88)?;
+        if let Some(inner_90) = &self.message {
+            write!(f, ": {}", inner_90)?;
         }
         Ok(())
     }
@@ -24478,8 +24965,8 @@ impl InvalidDbInstanceAutomatedBackupStateFault {
 impl std::fmt::Display for InvalidDbInstanceAutomatedBackupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbInstanceAutomatedBackupStateFault [InvalidDBInstanceAutomatedBackupStateFault]")?;
-        if let Some(inner_89) = &self.message {
-            write!(f, ": {}", inner_89)?;
+        if let Some(inner_91) = &self.message {
+            write!(f, ": {}", inner_91)?;
         }
         Ok(())
     }
@@ -24545,8 +25032,8 @@ impl std::fmt::Display for DbClusterSnapshotAlreadyExistsFault {
             f,
             "DbClusterSnapshotAlreadyExistsFault [DBClusterSnapshotAlreadyExistsFault]"
         )?;
-        if let Some(inner_90) = &self.message {
-            write!(f, ": {}", inner_90)?;
+        if let Some(inner_92) = &self.message {
+            write!(f, ": {}", inner_92)?;
         }
         Ok(())
     }
@@ -24609,8 +25096,8 @@ impl OptionGroupQuotaExceededFault {
 impl std::fmt::Display for OptionGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptionGroupQuotaExceededFault")?;
-        if let Some(inner_91) = &self.message {
-            write!(f, ": {}", inner_91)?;
+        if let Some(inner_93) = &self.message {
+            write!(f, ": {}", inner_93)?;
         }
         Ok(())
     }
@@ -24673,8 +25160,8 @@ impl OptionGroupAlreadyExistsFault {
 impl std::fmt::Display for OptionGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptionGroupAlreadyExistsFault")?;
-        if let Some(inner_92) = &self.message {
-            write!(f, ": {}", inner_92)?;
+        if let Some(inner_94) = &self.message {
+            write!(f, ": {}", inner_94)?;
         }
         Ok(())
     }
@@ -24737,8 +25224,8 @@ impl GlobalClusterQuotaExceededFault {
 impl std::fmt::Display for GlobalClusterQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterQuotaExceededFault")?;
-        if let Some(inner_93) = &self.message {
-            write!(f, ": {}", inner_93)?;
+        if let Some(inner_95) = &self.message {
+            write!(f, ": {}", inner_95)?;
         }
         Ok(())
     }
@@ -24801,8 +25288,8 @@ impl GlobalClusterAlreadyExistsFault {
 impl std::fmt::Display for GlobalClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GlobalClusterAlreadyExistsFault")?;
-        if let Some(inner_94) = &self.message {
-            write!(f, ": {}", inner_94)?;
+        if let Some(inner_96) = &self.message {
+            write!(f, ": {}", inner_96)?;
         }
         Ok(())
     }
@@ -24865,8 +25352,8 @@ impl SubscriptionAlreadyExistFault {
 impl std::fmt::Display for SubscriptionAlreadyExistFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionAlreadyExistFault")?;
-        if let Some(inner_95) = &self.message {
-            write!(f, ": {}", inner_95)?;
+        if let Some(inner_97) = &self.message {
+            write!(f, ": {}", inner_97)?;
         }
         Ok(())
     }
@@ -24933,8 +25420,8 @@ impl std::fmt::Display for DbSubnetGroupQuotaExceededFault {
             f,
             "DbSubnetGroupQuotaExceededFault [DBSubnetGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_96) = &self.message {
-            write!(f, ": {}", inner_96)?;
+        if let Some(inner_98) = &self.message {
+            write!(f, ": {}", inner_98)?;
         }
         Ok(())
     }
@@ -25002,8 +25489,8 @@ impl std::fmt::Display for DbSubnetGroupAlreadyExistsFault {
             f,
             "DbSubnetGroupAlreadyExistsFault [DBSubnetGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_97) = &self.message {
-            write!(f, ": {}", inner_97)?;
+        if let Some(inner_99) = &self.message {
+            write!(f, ": {}", inner_99)?;
         }
         Ok(())
     }
@@ -25070,8 +25557,8 @@ impl std::fmt::Display for DbSecurityGroupQuotaExceededFault {
             f,
             "DbSecurityGroupQuotaExceededFault [DBSecurityGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_98) = &self.message {
-            write!(f, ": {}", inner_98)?;
+        if let Some(inner_100) = &self.message {
+            write!(f, ": {}", inner_100)?;
         }
         Ok(())
     }
@@ -25137,8 +25624,8 @@ impl std::fmt::Display for DbSecurityGroupNotSupportedFault {
             f,
             "DbSecurityGroupNotSupportedFault [DBSecurityGroupNotSupportedFault]"
         )?;
-        if let Some(inner_99) = &self.message {
-            write!(f, ": {}", inner_99)?;
+        if let Some(inner_101) = &self.message {
+            write!(f, ": {}", inner_101)?;
         }
         Ok(())
     }
@@ -25207,8 +25694,8 @@ impl std::fmt::Display for DbSecurityGroupAlreadyExistsFault {
             f,
             "DbSecurityGroupAlreadyExistsFault [DBSecurityGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_100) = &self.message {
-            write!(f, ": {}", inner_100)?;
+        if let Some(inner_102) = &self.message {
+            write!(f, ": {}", inner_102)?;
         }
         Ok(())
     }
@@ -25274,8 +25761,8 @@ impl std::fmt::Display for DbProxyEndpointQuotaExceededFault {
             f,
             "DbProxyEndpointQuotaExceededFault [DBProxyEndpointQuotaExceededFault]"
         )?;
-        if let Some(inner_101) = &self.message {
-            write!(f, ": {}", inner_101)?;
+        if let Some(inner_103) = &self.message {
+            write!(f, ": {}", inner_103)?;
         }
         Ok(())
     }
@@ -25338,8 +25825,8 @@ impl DbProxyQuotaExceededFault {
 impl std::fmt::Display for DbProxyQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DbProxyQuotaExceededFault [DBProxyQuotaExceededFault]")?;
-        if let Some(inner_102) = &self.message {
-            write!(f, ": {}", inner_102)?;
+        if let Some(inner_104) = &self.message {
+            write!(f, ": {}", inner_104)?;
         }
         Ok(())
     }
@@ -25406,8 +25893,8 @@ impl std::fmt::Display for DbParameterGroupQuotaExceededFault {
             f,
             "DbParameterGroupQuotaExceededFault [DBParameterGroupQuotaExceededFault]"
         )?;
-        if let Some(inner_103) = &self.message {
-            write!(f, ": {}", inner_103)?;
+        if let Some(inner_105) = &self.message {
+            write!(f, ": {}", inner_105)?;
         }
         Ok(())
     }
@@ -25473,8 +25960,8 @@ impl std::fmt::Display for DbParameterGroupAlreadyExistsFault {
             f,
             "DbParameterGroupAlreadyExistsFault [DBParameterGroupAlreadyExistsFault]"
         )?;
-        if let Some(inner_104) = &self.message {
-            write!(f, ": {}", inner_104)?;
+        if let Some(inner_106) = &self.message {
+            write!(f, ": {}", inner_106)?;
         }
         Ok(())
     }
@@ -25538,8 +26025,8 @@ impl InvalidDbSubnetGroupFault {
 impl std::fmt::Display for InvalidDbSubnetGroupFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidDbSubnetGroupFault [InvalidDBSubnetGroupFault]")?;
-        if let Some(inner_105) = &self.message {
-            write!(f, ": {}", inner_105)?;
+        if let Some(inner_107) = &self.message {
+            write!(f, ": {}", inner_107)?;
         }
         Ok(())
     }
@@ -25606,8 +26093,8 @@ impl std::fmt::Display for DbSubnetGroupNotAllowedFault {
             f,
             "DbSubnetGroupNotAllowedFault [DBSubnetGroupNotAllowedFault]"
         )?;
-        if let Some(inner_106) = &self.message {
-            write!(f, ": {}", inner_106)?;
+        if let Some(inner_108) = &self.message {
+            write!(f, ": {}", inner_108)?;
         }
         Ok(())
     }
@@ -25673,8 +26160,8 @@ impl std::fmt::Display for DbClusterEndpointQuotaExceededFault {
             f,
             "DbClusterEndpointQuotaExceededFault [DBClusterEndpointQuotaExceededFault]"
         )?;
-        if let Some(inner_107) = &self.message {
-            write!(f, ": {}", inner_107)?;
+        if let Some(inner_109) = &self.message {
+            write!(f, ": {}", inner_109)?;
         }
         Ok(())
     }
@@ -25740,8 +26227,8 @@ impl std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
             f,
             "DbClusterEndpointAlreadyExistsFault [DBClusterEndpointAlreadyExistsFault]"
         )?;
-        if let Some(inner_108) = &self.message {
-            write!(f, ": {}", inner_108)?;
+        if let Some(inner_110) = &self.message {
+            write!(f, ": {}", inner_110)?;
         }
         Ok(())
     }
@@ -25781,6 +26268,140 @@ impl DbClusterEndpointAlreadyExistsFault {
     }
 }
 
+/// <p>You have exceeded your CEV quota.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomDbEngineVersionQuotaExceededFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CustomDbEngineVersionQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomDbEngineVersionQuotaExceededFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl CustomDbEngineVersionQuotaExceededFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CustomDbEngineVersionQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "CustomDbEngineVersionQuotaExceededFault [CustomDBEngineVersionQuotaExceededFault]"
+        )?;
+        if let Some(inner_111) = &self.message {
+            write!(f, ": {}", inner_111)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CustomDbEngineVersionQuotaExceededFault {}
+/// See [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault)
+pub mod custom_db_engine_version_quota_exceeded_fault {
+    /// A builder for [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault)
+        pub fn build(self) -> crate::error::CustomDbEngineVersionQuotaExceededFault {
+            crate::error::CustomDbEngineVersionQuotaExceededFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CustomDbEngineVersionQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault)
+    pub fn builder() -> crate::error::custom_db_engine_version_quota_exceeded_fault::Builder {
+        crate::error::custom_db_engine_version_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// <p>A CEV with the specified name already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CustomDbEngineVersionAlreadyExistsFault {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CustomDbEngineVersionAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomDbEngineVersionAlreadyExistsFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl CustomDbEngineVersionAlreadyExistsFault {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CustomDbEngineVersionAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "CustomDbEngineVersionAlreadyExistsFault [CustomDBEngineVersionAlreadyExistsFault]"
+        )?;
+        if let Some(inner_112) = &self.message {
+            write!(f, ": {}", inner_112)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CustomDbEngineVersionAlreadyExistsFault {}
+/// See [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault)
+pub mod custom_db_engine_version_already_exists_fault {
+    /// A builder for [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault)
+        pub fn build(self) -> crate::error::CustomDbEngineVersionAlreadyExistsFault {
+            crate::error::CustomDbEngineVersionAlreadyExistsFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl CustomDbEngineVersionAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault)
+    pub fn builder() -> crate::error::custom_db_engine_version_already_exists_fault::Builder {
+        crate::error::custom_db_engine_version_already_exists_fault::Builder::default()
+    }
+}
+
 /// <p>You have exceeded the maximum number of custom Availability Zones.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -25804,8 +26425,8 @@ impl CustomAvailabilityZoneQuotaExceededFault {
 impl std::fmt::Display for CustomAvailabilityZoneQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomAvailabilityZoneQuotaExceededFault")?;
-        if let Some(inner_109) = &self.message {
-            write!(f, ": {}", inner_109)?;
+        if let Some(inner_113) = &self.message {
+            write!(f, ": {}", inner_113)?;
         }
         Ok(())
     }
@@ -25870,8 +26491,8 @@ impl CustomAvailabilityZoneAlreadyExistsFault {
 impl std::fmt::Display for CustomAvailabilityZoneAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomAvailabilityZoneAlreadyExistsFault")?;
-        if let Some(inner_110) = &self.message {
-            write!(f, ": {}", inner_110)?;
+        if let Some(inner_114) = &self.message {
+            write!(f, ": {}", inner_114)?;
         }
         Ok(())
     }
@@ -25934,8 +26555,8 @@ impl InvalidExportTaskStateFault {
 impl std::fmt::Display for InvalidExportTaskStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidExportTaskStateFault")?;
-        if let Some(inner_111) = &self.message {
-            write!(f, ": {}", inner_111)?;
+        if let Some(inner_115) = &self.message {
+            write!(f, ": {}", inner_115)?;
         }
         Ok(())
     }
@@ -25998,8 +26619,8 @@ impl AuthorizationQuotaExceededFault {
 impl std::fmt::Display for AuthorizationQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationQuotaExceededFault")?;
-        if let Some(inner_112) = &self.message {
-            write!(f, ": {}", inner_112)?;
+        if let Some(inner_116) = &self.message {
+            write!(f, ": {}", inner_116)?;
         }
         Ok(())
     }
@@ -26063,8 +26684,8 @@ impl AuthorizationAlreadyExistsFault {
 impl std::fmt::Display for AuthorizationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationAlreadyExistsFault")?;
-        if let Some(inner_113) = &self.message {
-            write!(f, ": {}", inner_113)?;
+        if let Some(inner_117) = &self.message {
+            write!(f, ": {}", inner_117)?;
         }
         Ok(())
     }
@@ -26130,8 +26751,8 @@ impl std::fmt::Display for DbInstanceRoleQuotaExceededFault {
             f,
             "DbInstanceRoleQuotaExceededFault [DBInstanceRoleQuotaExceededFault]"
         )?;
-        if let Some(inner_114) = &self.message {
-            write!(f, ": {}", inner_114)?;
+        if let Some(inner_118) = &self.message {
+            write!(f, ": {}", inner_118)?;
         }
         Ok(())
     }
@@ -26197,8 +26818,8 @@ impl std::fmt::Display for DbInstanceRoleAlreadyExistsFault {
             f,
             "DbInstanceRoleAlreadyExistsFault [DBInstanceRoleAlreadyExistsFault]"
         )?;
-        if let Some(inner_115) = &self.message {
-            write!(f, ": {}", inner_115)?;
+        if let Some(inner_119) = &self.message {
+            write!(f, ": {}", inner_119)?;
         }
         Ok(())
     }
@@ -26264,8 +26885,8 @@ impl std::fmt::Display for DbClusterRoleQuotaExceededFault {
             f,
             "DbClusterRoleQuotaExceededFault [DBClusterRoleQuotaExceededFault]"
         )?;
-        if let Some(inner_116) = &self.message {
-            write!(f, ": {}", inner_116)?;
+        if let Some(inner_120) = &self.message {
+            write!(f, ": {}", inner_120)?;
         }
         Ok(())
     }
@@ -26331,8 +26952,8 @@ impl std::fmt::Display for DbClusterRoleAlreadyExistsFault {
             f,
             "DbClusterRoleAlreadyExistsFault [DBClusterRoleAlreadyExistsFault]"
         )?;
-        if let Some(inner_117) = &self.message {
-            write!(f, ": {}", inner_117)?;
+        if let Some(inner_121) = &self.message {
+            write!(f, ": {}", inner_121)?;
         }
         Ok(())
     }

@@ -24,7 +24,7 @@ pub enum AddTagsToResourceErrorKind {
     TooManyTagsError(crate::error::TooManyTagsError),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToResourceError {
@@ -91,29 +91,29 @@ impl AddTagsToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(&self.kind, AddTagsToResourceErrorKind::InvalidResourceId(_))
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::InvalidResourceType`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::InvalidResourceType`.
     pub fn is_invalid_resource_type(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsToResourceErrorKind::InvalidResourceType(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::TooManyTagsError`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::TooManyTagsError`.
     pub fn is_too_many_tags_error(&self) -> bool {
         matches!(&self.kind, AddTagsToResourceErrorKind::TooManyTagsError(_))
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(&self.kind, AddTagsToResourceErrorKind::TooManyUpdates(_))
     }
@@ -158,7 +158,7 @@ pub enum AssociateOpsItemRelatedItemErrorKind {
     OpsItemRelatedItemAlreadyExistsException(
         crate::error::OpsItemRelatedItemAlreadyExistsException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateOpsItemRelatedItemError {
@@ -231,35 +231,35 @@ impl AssociateOpsItemRelatedItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateOpsItemRelatedItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AssociateOpsItemRelatedItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             AssociateOpsItemRelatedItemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `AssociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterException`.
     pub fn is_ops_item_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateOpsItemRelatedItemErrorKind::OpsItemLimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateOpsItemRelatedItemErrorKind::OpsItemLimitExceededException`.
     pub fn is_ops_item_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateOpsItemRelatedItemErrorKind::OpsItemLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateOpsItemRelatedItemErrorKind::OpsItemNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateOpsItemRelatedItemErrorKind::OpsItemNotFoundException`.
     pub fn is_ops_item_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateOpsItemRelatedItemErrorKind::OpsItemNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAlreadyExistsException`.
+    /// Returns `true` if the error kind is `AssociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAlreadyExistsException`.
     pub fn is_ops_item_related_item_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -324,7 +324,7 @@ pub enum CancelCommandErrorKind {
     /// </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelCommandError {
@@ -390,19 +390,19 @@ impl CancelCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelCommandErrorKind::DuplicateInstanceId`.
+    /// Returns `true` if the error kind is `CancelCommandErrorKind::DuplicateInstanceId`.
     pub fn is_duplicate_instance_id(&self) -> bool {
         matches!(&self.kind, CancelCommandErrorKind::DuplicateInstanceId(_))
     }
-    /// Returns true if the error kind is `CancelCommandErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CancelCommandErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CancelCommandErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CancelCommandErrorKind::InvalidCommandId`.
+    /// Returns `true` if the error kind is `CancelCommandErrorKind::InvalidCommandId`.
     pub fn is_invalid_command_id(&self) -> bool {
         matches!(&self.kind, CancelCommandErrorKind::InvalidCommandId(_))
     }
-    /// Returns true if the error kind is `CancelCommandErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `CancelCommandErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(&self.kind, CancelCommandErrorKind::InvalidInstanceId(_))
     }
@@ -439,7 +439,7 @@ pub enum CancelMaintenanceWindowExecutionErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelMaintenanceWindowExecutionError {
@@ -508,14 +508,14 @@ impl CancelMaintenanceWindowExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelMaintenanceWindowExecutionErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `CancelMaintenanceWindowExecutionErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelMaintenanceWindowExecutionErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CancelMaintenanceWindowExecutionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CancelMaintenanceWindowExecutionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -550,7 +550,7 @@ pub struct CreateActivationError {
 pub enum CreateActivationErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateActivationError {
@@ -613,7 +613,7 @@ impl CreateActivationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateActivationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateActivationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -685,7 +685,7 @@ pub enum CreateAssociationErrorKind {
     /// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
     /// sent an document for a Windows instance to a Linux instance.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssociationError {
@@ -758,62 +758,62 @@ impl CreateAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::AssociationAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::AssociationAlreadyExists`.
     pub fn is_association_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationErrorKind::AssociationAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::AssociationLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::AssociationLimitExceeded`.
     pub fn is_association_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationErrorKind::AssociationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, CreateAssociationErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationErrorKind::InvalidDocumentVersion(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(&self.kind, CreateAssociationErrorKind::InvalidInstanceId(_))
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::InvalidOutputLocation`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidOutputLocation`.
     pub fn is_invalid_output_location(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationErrorKind::InvalidOutputLocation(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::InvalidParameters`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidParameters`.
     pub fn is_invalid_parameters(&self) -> bool {
         matches!(&self.kind, CreateAssociationErrorKind::InvalidParameters(_))
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::InvalidSchedule`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidSchedule`.
     pub fn is_invalid_schedule(&self) -> bool {
         matches!(&self.kind, CreateAssociationErrorKind::InvalidSchedule(_))
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::InvalidTarget`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::InvalidTarget`.
     pub fn is_invalid_target(&self) -> bool {
         matches!(&self.kind, CreateAssociationErrorKind::InvalidTarget(_))
     }
-    /// Returns true if the error kind is `CreateAssociationErrorKind::UnsupportedPlatformType`.
+    /// Returns `true` if the error kind is `CreateAssociationErrorKind::UnsupportedPlatformType`.
     pub fn is_unsupported_platform_type(&self) -> bool {
         matches!(
             &self.kind,
@@ -895,7 +895,7 @@ pub enum CreateAssociationBatchErrorKind {
     /// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
     /// sent an document for a Windows instance to a Linux instance.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssociationBatchError {
@@ -968,77 +968,77 @@ impl CreateAssociationBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::AssociationLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::AssociationLimitExceeded`.
     pub fn is_association_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::AssociationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::DuplicateInstanceId`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::DuplicateInstanceId`.
     pub fn is_duplicate_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::DuplicateInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::InvalidDocument(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::InvalidDocumentVersion(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::InvalidOutputLocation`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::InvalidOutputLocation`.
     pub fn is_invalid_output_location(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::InvalidOutputLocation(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::InvalidParameters`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::InvalidParameters`.
     pub fn is_invalid_parameters(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::InvalidParameters(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::InvalidSchedule`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::InvalidSchedule`.
     pub fn is_invalid_schedule(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::InvalidSchedule(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::InvalidTarget`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::InvalidTarget`.
     pub fn is_invalid_target(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssociationBatchErrorKind::InvalidTarget(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssociationBatchErrorKind::UnsupportedPlatformType`.
+    /// Returns `true` if the error kind is `CreateAssociationBatchErrorKind::UnsupportedPlatformType`.
     pub fn is_unsupported_platform_type(&self) -> bool {
         matches!(
             &self.kind,
@@ -1090,7 +1090,7 @@ pub enum CreateDocumentErrorKind {
     InvalidDocumentSchemaVersion(crate::error::InvalidDocumentSchemaVersion),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::error::MaxDocumentSizeExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDocumentError {
@@ -1158,39 +1158,39 @@ impl CreateDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDocumentErrorKind::DocumentAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateDocumentErrorKind::DocumentAlreadyExists`.
     pub fn is_document_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateDocumentErrorKind::DocumentAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateDocumentErrorKind::DocumentLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateDocumentErrorKind::DocumentLimitExceeded`.
     pub fn is_document_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateDocumentErrorKind::DocumentLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateDocumentErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateDocumentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateDocumentErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateDocumentErrorKind::InvalidDocumentContent`.
+    /// Returns `true` if the error kind is `CreateDocumentErrorKind::InvalidDocumentContent`.
     pub fn is_invalid_document_content(&self) -> bool {
         matches!(
             &self.kind,
             CreateDocumentErrorKind::InvalidDocumentContent(_)
         )
     }
-    /// Returns true if the error kind is `CreateDocumentErrorKind::InvalidDocumentSchemaVersion`.
+    /// Returns `true` if the error kind is `CreateDocumentErrorKind::InvalidDocumentSchemaVersion`.
     pub fn is_invalid_document_schema_version(&self) -> bool {
         matches!(
             &self.kind,
             CreateDocumentErrorKind::InvalidDocumentSchemaVersion(_)
         )
     }
-    /// Returns true if the error kind is `CreateDocumentErrorKind::MaxDocumentSizeExceeded`.
+    /// Returns `true` if the error kind is `CreateDocumentErrorKind::MaxDocumentSizeExceeded`.
     pub fn is_max_document_size_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1235,7 +1235,7 @@ pub enum CreateMaintenanceWindowErrorKind {
     /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMaintenanceWindowError {
@@ -1302,21 +1302,21 @@ impl CreateMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMaintenanceWindowErrorKind::IdempotentParameterMismatch`.
+    /// Returns `true` if the error kind is `CreateMaintenanceWindowErrorKind::IdempotentParameterMismatch`.
     pub fn is_idempotent_parameter_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             CreateMaintenanceWindowErrorKind::IdempotentParameterMismatch(_)
         )
     }
-    /// Returns true if the error kind is `CreateMaintenanceWindowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateMaintenanceWindowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateMaintenanceWindowErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateMaintenanceWindowErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMaintenanceWindowErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1360,7 +1360,7 @@ pub enum CreateOpsItemErrorKind {
     /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem
     /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
     OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOpsItemError {
@@ -1426,25 +1426,25 @@ impl CreateOpsItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOpsItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateOpsItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateOpsItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateOpsItemErrorKind::OpsItemAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateOpsItemErrorKind::OpsItemAlreadyExistsException`.
     pub fn is_ops_item_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpsItemErrorKind::OpsItemAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpsItemErrorKind::OpsItemInvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateOpsItemErrorKind::OpsItemInvalidParameterException`.
     pub fn is_ops_item_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpsItemErrorKind::OpsItemInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpsItemErrorKind::OpsItemLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateOpsItemErrorKind::OpsItemLimitExceededException`.
     pub fn is_ops_item_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1489,7 +1489,7 @@ pub enum CreateOpsMetadataErrorKind {
     /// <p>The system is processing too many concurrent updates. Wait a few moments and try
     /// again.</p>
     OpsMetadataTooManyUpdatesException(crate::error::OpsMetadataTooManyUpdatesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOpsMetadataError {
@@ -1558,35 +1558,35 @@ impl CreateOpsMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOpsMetadataErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateOpsMetadataErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpsMetadataErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpsMetadataErrorKind::OpsMetadataAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateOpsMetadataErrorKind::OpsMetadataAlreadyExistsException`.
     pub fn is_ops_metadata_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpsMetadataErrorKind::OpsMetadataAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
     pub fn is_ops_metadata_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpsMetadataErrorKind::OpsMetadataLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateOpsMetadataErrorKind::OpsMetadataLimitExceededException`.
     pub fn is_ops_metadata_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOpsMetadataErrorKind::OpsMetadataLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesException`.
+    /// Returns `true` if the error kind is `CreateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesException`.
     pub fn is_ops_metadata_too_many_updates_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1630,7 +1630,7 @@ pub enum CreatePatchBaselineErrorKind {
     /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePatchBaselineError {
@@ -1695,21 +1695,21 @@ impl CreatePatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePatchBaselineErrorKind::IdempotentParameterMismatch`.
+    /// Returns `true` if the error kind is `CreatePatchBaselineErrorKind::IdempotentParameterMismatch`.
     pub fn is_idempotent_parameter_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             CreatePatchBaselineErrorKind::IdempotentParameterMismatch(_)
         )
     }
-    /// Returns true if the error kind is `CreatePatchBaselineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreatePatchBaselineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreatePatchBaselineErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreatePatchBaselineErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePatchBaselineErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1751,7 +1751,7 @@ pub enum CreateResourceDataSyncErrorKind {
     ResourceDataSyncInvalidConfigurationException(
         crate::error::ResourceDataSyncInvalidConfigurationException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceDataSyncError {
@@ -1823,28 +1823,28 @@ impl CreateResourceDataSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourceDataSyncErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateResourceDataSyncErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceDataSyncErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceDataSyncErrorKind::ResourceDataSyncAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateResourceDataSyncErrorKind::ResourceDataSyncAlreadyExistsException`.
     pub fn is_resource_data_sync_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceDataSyncErrorKind::ResourceDataSyncAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceDataSyncErrorKind::ResourceDataSyncCountExceededException`.
+    /// Returns `true` if the error kind is `CreateResourceDataSyncErrorKind::ResourceDataSyncCountExceededException`.
     pub fn is_resource_data_sync_count_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceDataSyncErrorKind::ResourceDataSyncCountExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException`.
+    /// Returns `true` if the error kind is `CreateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException`.
     pub fn is_resource_data_sync_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1893,7 +1893,7 @@ pub enum DeleteActivationErrorKind {
     InvalidActivationId(crate::error::InvalidActivationId),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteActivationError {
@@ -1959,25 +1959,25 @@ impl DeleteActivationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteActivationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteActivationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteActivationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteActivationErrorKind::InvalidActivation`.
+    /// Returns `true` if the error kind is `DeleteActivationErrorKind::InvalidActivation`.
     pub fn is_invalid_activation(&self) -> bool {
         matches!(&self.kind, DeleteActivationErrorKind::InvalidActivation(_))
     }
-    /// Returns true if the error kind is `DeleteActivationErrorKind::InvalidActivationId`.
+    /// Returns `true` if the error kind is `DeleteActivationErrorKind::InvalidActivationId`.
     pub fn is_invalid_activation_id(&self) -> bool {
         matches!(
             &self.kind,
             DeleteActivationErrorKind::InvalidActivationId(_)
         )
     }
-    /// Returns true if the error kind is `DeleteActivationErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `DeleteActivationErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(&self.kind, DeleteActivationErrorKind::TooManyUpdates(_))
     }
@@ -2034,7 +2034,7 @@ pub enum DeleteAssociationErrorKind {
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssociationError {
@@ -2101,29 +2101,29 @@ impl DeleteAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssociationErrorKind::AssociationDoesNotExist`.
+    /// Returns `true` if the error kind is `DeleteAssociationErrorKind::AssociationDoesNotExist`.
     pub fn is_association_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssociationErrorKind::AssociationDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssociationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteAssociationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssociationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssociationErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `DeleteAssociationErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, DeleteAssociationErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `DeleteAssociationErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `DeleteAssociationErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(&self.kind, DeleteAssociationErrorKind::InvalidInstanceId(_))
     }
-    /// Returns true if the error kind is `DeleteAssociationErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `DeleteAssociationErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(&self.kind, DeleteAssociationErrorKind::TooManyUpdates(_))
     }
@@ -2163,7 +2163,7 @@ pub enum DeleteDocumentErrorKind {
     /// <p>You attempted to delete a document while it is still shared. You must stop sharing the
     /// document before you can delete it.</p>
     InvalidDocumentOperation(crate::error::InvalidDocumentOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDocumentError {
@@ -2229,19 +2229,19 @@ impl DeleteDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::AssociatedInstances`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::AssociatedInstances`.
     pub fn is_associated_instances(&self) -> bool {
         matches!(&self.kind, DeleteDocumentErrorKind::AssociatedInstances(_))
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteDocumentErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, DeleteDocumentErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::InvalidDocumentOperation`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::InvalidDocumentOperation`.
     pub fn is_invalid_document_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -2287,7 +2287,7 @@ pub enum DeleteInventoryErrorKind {
     InvalidOptionException(crate::error::InvalidOptionException),
     /// <p>The parameter type name isn't valid.</p>
     InvalidTypeNameException(crate::error::InvalidTypeNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInventoryError {
@@ -2356,32 +2356,32 @@ impl DeleteInventoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInventoryErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteInventoryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteInventoryErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteInventoryErrorKind::InvalidDeleteInventoryParametersException`.
+    /// Returns `true` if the error kind is `DeleteInventoryErrorKind::InvalidDeleteInventoryParametersException`.
     pub fn is_invalid_delete_inventory_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInventoryErrorKind::InvalidDeleteInventoryParametersException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInventoryErrorKind::InvalidInventoryRequestException`.
+    /// Returns `true` if the error kind is `DeleteInventoryErrorKind::InvalidInventoryRequestException`.
     pub fn is_invalid_inventory_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInventoryErrorKind::InvalidInventoryRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInventoryErrorKind::InvalidOptionException`.
+    /// Returns `true` if the error kind is `DeleteInventoryErrorKind::InvalidOptionException`.
     pub fn is_invalid_option_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInventoryErrorKind::InvalidOptionException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInventoryErrorKind::InvalidTypeNameException`.
+    /// Returns `true` if the error kind is `DeleteInventoryErrorKind::InvalidTypeNameException`.
     pub fn is_invalid_type_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2419,7 +2419,7 @@ pub struct DeleteMaintenanceWindowError {
 pub enum DeleteMaintenanceWindowErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMaintenanceWindowError {
@@ -2482,7 +2482,7 @@ impl DeleteMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMaintenanceWindowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteMaintenanceWindowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2518,7 +2518,7 @@ pub enum DeleteOpsMetadataErrorKind {
     OpsMetadataInvalidArgumentException(crate::error::OpsMetadataInvalidArgumentException),
     /// <p>The OpsMetadata object doesn't exist. </p>
     OpsMetadataNotFoundException(crate::error::OpsMetadataNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOpsMetadataError {
@@ -2585,21 +2585,21 @@ impl DeleteOpsMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOpsMetadataErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteOpsMetadataErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOpsMetadataErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
     pub fn is_ops_metadata_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOpsMetadataErrorKind::OpsMetadataNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteOpsMetadataErrorKind::OpsMetadataNotFoundException`.
     pub fn is_ops_metadata_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2635,7 +2635,7 @@ pub enum DeleteParameterErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The parameter couldn't be found. Verify the name and try again.</p>
     ParameterNotFound(crate::error::ParameterNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteParameterError {
@@ -2699,11 +2699,11 @@ impl DeleteParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteParameterErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteParameterErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteParameterErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteParameterErrorKind::ParameterNotFound`.
+    /// Returns `true` if the error kind is `DeleteParameterErrorKind::ParameterNotFound`.
     pub fn is_parameter_not_found(&self) -> bool {
         matches!(&self.kind, DeleteParameterErrorKind::ParameterNotFound(_))
     }
@@ -2733,7 +2733,7 @@ pub struct DeleteParametersError {
 pub enum DeleteParametersErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteParametersError {
@@ -2796,7 +2796,7 @@ impl DeleteParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteParametersErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteParametersErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2831,7 +2831,7 @@ pub enum DeletePatchBaselineErrorKind {
     /// <p>Error returned if an attempt is made to delete a patch baseline that is registered for a
     /// patch group.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePatchBaselineError {
@@ -2895,14 +2895,14 @@ impl DeletePatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePatchBaselineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeletePatchBaselineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeletePatchBaselineErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeletePatchBaselineErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeletePatchBaselineErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2941,7 +2941,7 @@ pub enum DeleteResourceDataSyncErrorKind {
     ),
     /// <p>The specified sync name wasn't found.</p>
     ResourceDataSyncNotFoundException(crate::error::ResourceDataSyncNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceDataSyncError {
@@ -3010,21 +3010,21 @@ impl DeleteResourceDataSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourceDataSyncErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteResourceDataSyncErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceDataSyncErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException`.
+    /// Returns `true` if the error kind is `DeleteResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException`.
     pub fn is_resource_data_sync_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceDataSyncErrorKind::ResourceDataSyncNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourceDataSyncErrorKind::ResourceDataSyncNotFoundException`.
     pub fn is_resource_data_sync_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3081,7 +3081,7 @@ pub enum DeregisterManagedInstanceErrorKind {
     /// </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterManagedInstanceError {
@@ -3145,14 +3145,14 @@ impl DeregisterManagedInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterManagedInstanceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeregisterManagedInstanceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterManagedInstanceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterManagedInstanceErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `DeregisterManagedInstanceErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
@@ -3187,7 +3187,7 @@ pub enum DeregisterPatchBaselineForPatchGroupErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterPatchBaselineForPatchGroupError {
@@ -3258,14 +3258,14 @@ impl DeregisterPatchBaselineForPatchGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterPatchBaselineForPatchGroupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeregisterPatchBaselineForPatchGroupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterPatchBaselineForPatchGroupErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterPatchBaselineForPatchGroupErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `DeregisterPatchBaselineForPatchGroupErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(
             &self.kind,
@@ -3312,7 +3312,7 @@ pub enum DeregisterTargetFromMaintenanceWindowErrorKind {
     /// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow
     /// operation, but the target is still referenced in a task.</p>
     TargetInUseException(crate::error::TargetInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTargetFromMaintenanceWindowError {
@@ -3386,21 +3386,21 @@ impl DeregisterTargetFromMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterTargetFromMaintenanceWindowErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `DeregisterTargetFromMaintenanceWindowErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTargetFromMaintenanceWindowErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTargetFromMaintenanceWindowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeregisterTargetFromMaintenanceWindowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTargetFromMaintenanceWindowErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTargetFromMaintenanceWindowErrorKind::TargetInUseException`.
+    /// Returns `true` if the error kind is `DeregisterTargetFromMaintenanceWindowErrorKind::TargetInUseException`.
     pub fn is_target_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3447,7 +3447,7 @@ pub enum DeregisterTaskFromMaintenanceWindowErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTaskFromMaintenanceWindowError {
@@ -3518,14 +3518,14 @@ impl DeregisterTaskFromMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterTaskFromMaintenanceWindowErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `DeregisterTaskFromMaintenanceWindowErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTaskFromMaintenanceWindowErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTaskFromMaintenanceWindowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeregisterTaskFromMaintenanceWindowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -3568,7 +3568,7 @@ pub enum DescribeActivationsErrorKind {
     InvalidFilter(crate::error::InvalidFilter),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeActivationsError {
@@ -3633,18 +3633,18 @@ impl DescribeActivationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeActivationsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeActivationsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActivationsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActivationsErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `DescribeActivationsErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(&self.kind, DescribeActivationsErrorKind::InvalidFilter(_))
     }
-    /// Returns true if the error kind is `DescribeActivationsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeActivationsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -3705,7 +3705,7 @@ pub enum DescribeAssociationErrorKind {
     /// </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssociationError {
@@ -3772,32 +3772,32 @@ impl DescribeAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssociationErrorKind::AssociationDoesNotExist`.
+    /// Returns `true` if the error kind is `DescribeAssociationErrorKind::AssociationDoesNotExist`.
     pub fn is_association_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssociationErrorKind::AssociationDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssociationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAssociationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssociationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssociationErrorKind::InvalidAssociationVersion`.
+    /// Returns `true` if the error kind is `DescribeAssociationErrorKind::InvalidAssociationVersion`.
     pub fn is_invalid_association_version(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssociationErrorKind::InvalidAssociationVersion(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssociationErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `DescribeAssociationErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, DescribeAssociationErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `DescribeAssociationErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `DescribeAssociationErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
@@ -3837,7 +3837,7 @@ pub enum DescribeAssociationExecutionsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssociationExecutionsError {
@@ -3907,21 +3907,21 @@ impl DescribeAssociationExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssociationExecutionsErrorKind::AssociationDoesNotExist`.
+    /// Returns `true` if the error kind is `DescribeAssociationExecutionsErrorKind::AssociationDoesNotExist`.
     pub fn is_association_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssociationExecutionsErrorKind::AssociationDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssociationExecutionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAssociationExecutionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssociationExecutionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssociationExecutionsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAssociationExecutionsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -3961,7 +3961,7 @@ pub enum DescribeAssociationExecutionTargetsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssociationExecutionTargetsError {
@@ -4036,28 +4036,28 @@ impl DescribeAssociationExecutionTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssociationExecutionTargetsErrorKind::AssociationDoesNotExist`.
+    /// Returns `true` if the error kind is `DescribeAssociationExecutionTargetsErrorKind::AssociationDoesNotExist`.
     pub fn is_association_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssociationExecutionTargetsErrorKind::AssociationDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssociationExecutionTargetsErrorKind::AssociationExecutionDoesNotExist`.
+    /// Returns `true` if the error kind is `DescribeAssociationExecutionTargetsErrorKind::AssociationExecutionDoesNotExist`.
     pub fn is_association_execution_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssociationExecutionTargetsErrorKind::AssociationExecutionDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssociationExecutionTargetsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAssociationExecutionTargetsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssociationExecutionTargetsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssociationExecutionTargetsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAssociationExecutionTargetsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -4106,7 +4106,7 @@ pub enum DescribeAutomationExecutionsErrorKind {
     InvalidFilterValue(crate::error::InvalidFilterValue),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAutomationExecutionsError {
@@ -4172,28 +4172,28 @@ impl DescribeAutomationExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAutomationExecutionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAutomationExecutionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutomationExecutionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutomationExecutionsErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `DescribeAutomationExecutionsErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutomationExecutionsErrorKind::InvalidFilterKey(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutomationExecutionsErrorKind::InvalidFilterValue`.
+    /// Returns `true` if the error kind is `DescribeAutomationExecutionsErrorKind::InvalidFilterValue`.
     pub fn is_invalid_filter_value(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutomationExecutionsErrorKind::InvalidFilterValue(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutomationExecutionsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAutomationExecutionsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -4237,7 +4237,7 @@ pub enum DescribeAutomationStepExecutionsErrorKind {
     InvalidFilterValue(crate::error::InvalidFilterValue),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAutomationStepExecutionsError {
@@ -4309,35 +4309,35 @@ impl DescribeAutomationStepExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAutomationStepExecutionsErrorKind::AutomationExecutionNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAutomationStepExecutionsErrorKind::AutomationExecutionNotFoundException`.
     pub fn is_automation_execution_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutomationStepExecutionsErrorKind::AutomationExecutionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutomationStepExecutionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAutomationStepExecutionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutomationStepExecutionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutomationStepExecutionsErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `DescribeAutomationStepExecutionsErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutomationStepExecutionsErrorKind::InvalidFilterKey(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutomationStepExecutionsErrorKind::InvalidFilterValue`.
+    /// Returns `true` if the error kind is `DescribeAutomationStepExecutionsErrorKind::InvalidFilterValue`.
     pub fn is_invalid_filter_value(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAutomationStepExecutionsErrorKind::InvalidFilterValue(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAutomationStepExecutionsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeAutomationStepExecutionsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -4375,7 +4375,7 @@ pub struct DescribeAvailablePatchesError {
 pub enum DescribeAvailablePatchesErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAvailablePatchesError {
@@ -4438,7 +4438,7 @@ impl DescribeAvailablePatchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAvailablePatchesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAvailablePatchesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -4474,7 +4474,7 @@ pub enum DescribeDocumentErrorKind {
     InvalidDocument(crate::error::InvalidDocument),
     /// <p>The document version isn't valid or doesn't exist.</p>
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDocumentError {
@@ -4539,18 +4539,18 @@ impl DescribeDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDocumentErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeDocumentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `DescribeDocumentErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, DescribeDocumentErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `DescribeDocumentErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `DescribeDocumentErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(
             &self.kind,
@@ -4594,7 +4594,7 @@ pub enum DescribeDocumentPermissionErrorKind {
     /// <p>The permission type isn't supported. <i>Share</i> is the only supported
     /// permission type.</p>
     InvalidPermissionType(crate::error::InvalidPermissionType),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDocumentPermissionError {
@@ -4661,35 +4661,35 @@ impl DescribeDocumentPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDocumentPermissionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeDocumentPermissionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentPermissionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentPermissionErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `DescribeDocumentPermissionErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentPermissionErrorKind::InvalidDocument(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentPermissionErrorKind::InvalidDocumentOperation`.
+    /// Returns `true` if the error kind is `DescribeDocumentPermissionErrorKind::InvalidDocumentOperation`.
     pub fn is_invalid_document_operation(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentPermissionErrorKind::InvalidDocumentOperation(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentPermissionErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeDocumentPermissionErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentPermissionErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentPermissionErrorKind::InvalidPermissionType`.
+    /// Returns `true` if the error kind is `DescribeDocumentPermissionErrorKind::InvalidPermissionType`.
     pub fn is_invalid_permission_type(&self) -> bool {
         matches!(
             &self.kind,
@@ -4746,7 +4746,7 @@ pub enum DescribeEffectiveInstanceAssociationsErrorKind {
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEffectiveInstanceAssociationsError {
@@ -4820,21 +4820,21 @@ impl DescribeEffectiveInstanceAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEffectiveInstanceAssociationsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeEffectiveInstanceAssociationsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectiveInstanceAssociationsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectiveInstanceAssociationsErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `DescribeEffectiveInstanceAssociationsErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectiveInstanceAssociationsErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectiveInstanceAssociationsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeEffectiveInstanceAssociationsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -4886,7 +4886,7 @@ pub enum DescribeEffectivePatchesForPatchBaselineErrorKind {
     /// <p>The operating systems you specified isn't supported, or the operation isn't supported for
     /// the operating system.</p>
     UnsupportedOperatingSystem(crate::error::UnsupportedOperatingSystem),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEffectivePatchesForPatchBaselineError {
@@ -4963,28 +4963,28 @@ impl DescribeEffectivePatchesForPatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEffectivePatchesForPatchBaselineErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePatchesForPatchBaselineErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePatchesForPatchBaselineErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePatchesForPatchBaselineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeEffectivePatchesForPatchBaselineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePatchesForPatchBaselineErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePatchesForPatchBaselineErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `DescribeEffectivePatchesForPatchBaselineErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePatchesForPatchBaselineErrorKind::InvalidResourceId(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePatchesForPatchBaselineErrorKind::UnsupportedOperatingSystem`.
+    /// Returns `true` if the error kind is `DescribeEffectivePatchesForPatchBaselineErrorKind::UnsupportedOperatingSystem`.
     pub fn is_unsupported_operating_system(&self) -> bool {
         matches!(
             &self.kind,
@@ -5050,7 +5050,7 @@ pub enum DescribeInstanceAssociationsStatusErrorKind {
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceAssociationsStatusError {
@@ -5120,21 +5120,21 @@ impl DescribeInstanceAssociationsStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstanceAssociationsStatusErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeInstanceAssociationsStatusErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstanceAssociationsStatusErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstanceAssociationsStatusErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `DescribeInstanceAssociationsStatusErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstanceAssociationsStatusErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstanceAssociationsStatusErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeInstanceAssociationsStatusErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -5195,7 +5195,7 @@ pub enum DescribeInstanceInformationErrorKind {
     InvalidInstanceInformationFilterValue(crate::error::InvalidInstanceInformationFilterValue),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceInformationError {
@@ -5264,35 +5264,35 @@ impl DescribeInstanceInformationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstanceInformationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeInstanceInformationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstanceInformationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstanceInformationErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `DescribeInstanceInformationErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstanceInformationErrorKind::InvalidFilterKey(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstanceInformationErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `DescribeInstanceInformationErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstanceInformationErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstanceInformationErrorKind::InvalidInstanceInformationFilterValue`.
+    /// Returns `true` if the error kind is `DescribeInstanceInformationErrorKind::InvalidInstanceInformationFilterValue`.
     pub fn is_invalid_instance_information_filter_value(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstanceInformationErrorKind::InvalidInstanceInformationFilterValue(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstanceInformationErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeInstanceInformationErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -5353,7 +5353,7 @@ pub enum DescribeInstancePatchesErrorKind {
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstancePatchesError {
@@ -5419,28 +5419,28 @@ impl DescribeInstancePatchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstancePatchesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancePatchesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancePatchesErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchesErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancePatchesErrorKind::InvalidFilter(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancePatchesErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchesErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancePatchesErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancePatchesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -5477,7 +5477,7 @@ pub enum DescribeInstancePatchStatesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstancePatchStatesError {
@@ -5541,14 +5541,14 @@ impl DescribeInstancePatchStatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstancePatchStatesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchStatesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancePatchStatesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancePatchStatesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchStatesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -5585,7 +5585,7 @@ pub enum DescribeInstancePatchStatesForPatchGroupErrorKind {
     InvalidFilter(crate::error::InvalidFilter),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstancePatchStatesForPatchGroupError {
@@ -5659,21 +5659,21 @@ impl DescribeInstancePatchStatesForPatchGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstancePatchStatesForPatchGroupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchStatesForPatchGroupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancePatchStatesForPatchGroupErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancePatchStatesForPatchGroupErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchStatesForPatchGroupErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancePatchStatesForPatchGroupErrorKind::InvalidFilter(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancePatchStatesForPatchGroupErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeInstancePatchStatesForPatchGroupErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -5720,7 +5720,7 @@ pub enum DescribeInventoryDeletionsErrorKind {
     InvalidDeletionIdException(crate::error::InvalidDeletionIdException),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInventoryDeletionsError {
@@ -5787,21 +5787,21 @@ impl DescribeInventoryDeletionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInventoryDeletionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeInventoryDeletionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInventoryDeletionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInventoryDeletionsErrorKind::InvalidDeletionIdException`.
+    /// Returns `true` if the error kind is `DescribeInventoryDeletionsErrorKind::InvalidDeletionIdException`.
     pub fn is_invalid_deletion_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInventoryDeletionsErrorKind::InvalidDeletionIdException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInventoryDeletionsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeInventoryDeletionsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -5835,7 +5835,7 @@ pub struct DescribeMaintenanceWindowExecutionsError {
 pub enum DescribeMaintenanceWindowExecutionsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceWindowExecutionsError {
@@ -5903,7 +5903,7 @@ impl DescribeMaintenanceWindowExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowExecutionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowExecutionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -5944,7 +5944,7 @@ pub enum DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceWindowExecutionTaskInvocationsError {
@@ -6019,14 +6019,14 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -6070,7 +6070,7 @@ pub enum DescribeMaintenanceWindowExecutionTasksErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceWindowExecutionTasksError {
@@ -6141,14 +6141,14 @@ impl DescribeMaintenanceWindowExecutionTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowExecutionTasksErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowExecutionTasksErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMaintenanceWindowExecutionTasksErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowExecutionTasksErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowExecutionTasksErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -6187,7 +6187,7 @@ pub struct DescribeMaintenanceWindowsError {
 pub enum DescribeMaintenanceWindowsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceWindowsError {
@@ -6250,7 +6250,7 @@ impl DescribeMaintenanceWindowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -6287,7 +6287,7 @@ pub enum DescribeMaintenanceWindowScheduleErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceWindowScheduleError {
@@ -6358,14 +6358,14 @@ impl DescribeMaintenanceWindowScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowScheduleErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowScheduleErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMaintenanceWindowScheduleErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowScheduleErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowScheduleErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -6400,7 +6400,7 @@ pub struct DescribeMaintenanceWindowsForTargetError {
 pub enum DescribeMaintenanceWindowsForTargetErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceWindowsForTargetError {
@@ -6468,7 +6468,7 @@ impl DescribeMaintenanceWindowsForTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowsForTargetErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowsForTargetErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -6509,7 +6509,7 @@ pub enum DescribeMaintenanceWindowTargetsErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceWindowTargetsError {
@@ -6578,14 +6578,14 @@ impl DescribeMaintenanceWindowTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowTargetsErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowTargetsErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMaintenanceWindowTargetsErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowTargetsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowTargetsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -6625,7 +6625,7 @@ pub enum DescribeMaintenanceWindowTasksErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMaintenanceWindowTasksError {
@@ -6692,14 +6692,14 @@ impl DescribeMaintenanceWindowTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowTasksErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowTasksErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMaintenanceWindowTasksErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMaintenanceWindowTasksErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMaintenanceWindowTasksErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -6732,7 +6732,7 @@ pub struct DescribeOpsItemsError {
 pub enum DescribeOpsItemsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOpsItemsError {
@@ -6795,7 +6795,7 @@ impl DescribeOpsItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOpsItemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeOpsItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -6836,7 +6836,7 @@ pub enum DescribeParametersErrorKind {
     InvalidFilterValue(crate::error::InvalidFilterValue),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeParametersError {
@@ -6903,32 +6903,32 @@ impl DescribeParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParametersErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(&self.kind, DescribeParametersErrorKind::InvalidFilterKey(_))
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::InvalidFilterOption`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::InvalidFilterOption`.
     pub fn is_invalid_filter_option(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParametersErrorKind::InvalidFilterOption(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::InvalidFilterValue`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::InvalidFilterValue`.
     pub fn is_invalid_filter_value(&self) -> bool {
         matches!(
             &self.kind,
             DescribeParametersErrorKind::InvalidFilterValue(_)
         )
     }
-    /// Returns true if the error kind is `DescribeParametersErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeParametersErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, DescribeParametersErrorKind::InvalidNextToken(_))
     }
@@ -6961,7 +6961,7 @@ pub struct DescribePatchBaselinesError {
 pub enum DescribePatchBaselinesErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePatchBaselinesError {
@@ -7024,7 +7024,7 @@ impl DescribePatchBaselinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePatchBaselinesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribePatchBaselinesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -7056,7 +7056,7 @@ pub struct DescribePatchGroupsError {
 pub enum DescribePatchGroupsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePatchGroupsError {
@@ -7119,7 +7119,7 @@ impl DescribePatchGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePatchGroupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribePatchGroupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -7153,7 +7153,7 @@ pub enum DescribePatchGroupStateErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePatchGroupStateError {
@@ -7217,14 +7217,14 @@ impl DescribePatchGroupStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePatchGroupStateErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribePatchGroupStateErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribePatchGroupStateErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribePatchGroupStateErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribePatchGroupStateErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -7257,7 +7257,7 @@ pub struct DescribePatchPropertiesError {
 pub enum DescribePatchPropertiesErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePatchPropertiesError {
@@ -7320,7 +7320,7 @@ impl DescribePatchPropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePatchPropertiesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribePatchPropertiesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -7356,7 +7356,7 @@ pub enum DescribeSessionsErrorKind {
     InvalidFilterKey(crate::error::InvalidFilterKey),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSessionsError {
@@ -7421,18 +7421,18 @@ impl DescribeSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSessionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeSessionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSessionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSessionsErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `DescribeSessionsErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(&self.kind, DescribeSessionsErrorKind::InvalidFilterKey(_))
     }
-    /// Returns true if the error kind is `DescribeSessionsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `DescribeSessionsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, DescribeSessionsErrorKind::InvalidNextToken(_))
     }
@@ -7473,7 +7473,7 @@ pub enum DisassociateOpsItemRelatedItemErrorKind {
     OpsItemRelatedItemAssociationNotFoundException(
         crate::error::OpsItemRelatedItemAssociationNotFoundException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateOpsItemRelatedItemError {
@@ -7552,28 +7552,28 @@ impl DisassociateOpsItemRelatedItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateOpsItemRelatedItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DisassociateOpsItemRelatedItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateOpsItemRelatedItemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterException`.
     pub fn is_ops_item_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateOpsItemRelatedItemErrorKind::OpsItemInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateOpsItemRelatedItemErrorKind::OpsItemNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateOpsItemRelatedItemErrorKind::OpsItemNotFoundException`.
     pub fn is_ops_item_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateOpsItemRelatedItemErrorKind::OpsItemNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAssociationNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateOpsItemRelatedItemErrorKind::OpsItemRelatedItemAssociationNotFoundException`.
     pub fn is_ops_item_related_item_association_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7623,7 +7623,7 @@ pub enum GetAutomationExecutionErrorKind {
     AutomationExecutionNotFoundException(crate::error::AutomationExecutionNotFoundException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAutomationExecutionError {
@@ -7689,14 +7689,14 @@ impl GetAutomationExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAutomationExecutionErrorKind::AutomationExecutionNotFoundException`.
+    /// Returns `true` if the error kind is `GetAutomationExecutionErrorKind::AutomationExecutionNotFoundException`.
     pub fn is_automation_execution_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutomationExecutionErrorKind::AutomationExecutionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutomationExecutionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetAutomationExecutionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -7738,7 +7738,7 @@ pub enum GetCalendarStateErrorKind {
     InvalidDocumentType(crate::error::InvalidDocumentType),
     /// <p>The calendar entry contained in the specified SSM document isn't supported.</p>
     UnsupportedCalendarException(crate::error::UnsupportedCalendarException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCalendarStateError {
@@ -7804,25 +7804,25 @@ impl GetCalendarStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCalendarStateErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetCalendarStateErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetCalendarStateErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetCalendarStateErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `GetCalendarStateErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, GetCalendarStateErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `GetCalendarStateErrorKind::InvalidDocumentType`.
+    /// Returns `true` if the error kind is `GetCalendarStateErrorKind::InvalidDocumentType`.
     pub fn is_invalid_document_type(&self) -> bool {
         matches!(
             &self.kind,
             GetCalendarStateErrorKind::InvalidDocumentType(_)
         )
     }
-    /// Returns true if the error kind is `GetCalendarStateErrorKind::UnsupportedCalendarException`.
+    /// Returns `true` if the error kind is `GetCalendarStateErrorKind::UnsupportedCalendarException`.
     pub fn is_unsupported_calendar_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7883,7 +7883,7 @@ pub enum GetCommandInvocationErrorKind {
     /// <p>The command ID and instance ID you specified didn't match any invocations. Verify the
     /// command ID and the instance ID and try again. </p>
     InvocationDoesNotExist(crate::error::InvocationDoesNotExist),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCommandInvocationError {
@@ -7950,35 +7950,35 @@ impl GetCommandInvocationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCommandInvocationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetCommandInvocationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetCommandInvocationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetCommandInvocationErrorKind::InvalidCommandId`.
+    /// Returns `true` if the error kind is `GetCommandInvocationErrorKind::InvalidCommandId`.
     pub fn is_invalid_command_id(&self) -> bool {
         matches!(
             &self.kind,
             GetCommandInvocationErrorKind::InvalidCommandId(_)
         )
     }
-    /// Returns true if the error kind is `GetCommandInvocationErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `GetCommandInvocationErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             GetCommandInvocationErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `GetCommandInvocationErrorKind::InvalidPluginName`.
+    /// Returns `true` if the error kind is `GetCommandInvocationErrorKind::InvalidPluginName`.
     pub fn is_invalid_plugin_name(&self) -> bool {
         matches!(
             &self.kind,
             GetCommandInvocationErrorKind::InvalidPluginName(_)
         )
     }
-    /// Returns true if the error kind is `GetCommandInvocationErrorKind::InvocationDoesNotExist`.
+    /// Returns `true` if the error kind is `GetCommandInvocationErrorKind::InvocationDoesNotExist`.
     pub fn is_invocation_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
@@ -8014,7 +8014,7 @@ pub struct GetConnectionStatusError {
 pub enum GetConnectionStatusErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectionStatusError {
@@ -8077,7 +8077,7 @@ impl GetConnectionStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectionStatusErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetConnectionStatusErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -8109,7 +8109,7 @@ pub struct GetDefaultPatchBaselineError {
 pub enum GetDefaultPatchBaselineErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDefaultPatchBaselineError {
@@ -8172,7 +8172,7 @@ impl GetDefaultPatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDefaultPatchBaselineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetDefaultPatchBaselineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -8212,7 +8212,7 @@ pub enum GetDeployablePatchSnapshotForInstanceErrorKind {
     /// <p>The operating systems you specified isn't supported, or the operation isn't supported for
     /// the operating system.</p>
     UnsupportedOperatingSystem(crate::error::UnsupportedOperatingSystem),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeployablePatchSnapshotForInstanceError {
@@ -8286,21 +8286,21 @@ impl GetDeployablePatchSnapshotForInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeployablePatchSnapshotForInstanceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetDeployablePatchSnapshotForInstanceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetDeployablePatchSnapshotForInstanceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedFeatureRequiredException`.
+    /// Returns `true` if the error kind is `GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedFeatureRequiredException`.
     pub fn is_unsupported_feature_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedFeatureRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedOperatingSystem`.
+    /// Returns `true` if the error kind is `GetDeployablePatchSnapshotForInstanceErrorKind::UnsupportedOperatingSystem`.
     pub fn is_unsupported_operating_system(&self) -> bool {
         matches!(
             &self.kind,
@@ -8346,7 +8346,7 @@ pub enum GetDocumentErrorKind {
     InvalidDocument(crate::error::InvalidDocument),
     /// <p>The document version isn't valid or doesn't exist.</p>
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentError {
@@ -8411,15 +8411,15 @@ impl GetDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetDocumentErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, GetDocumentErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(&self.kind, GetDocumentErrorKind::InvalidDocumentVersion(_))
     }
@@ -8464,7 +8464,7 @@ pub enum GetInventoryErrorKind {
     InvalidResultAttributeException(crate::error::InvalidResultAttributeException),
     /// <p>The parameter type name isn't valid.</p>
     InvalidTypeNameException(crate::error::InvalidTypeNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInventoryError {
@@ -8533,40 +8533,40 @@ impl GetInventoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInventoryErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetInventoryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetInventoryErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetInventoryErrorKind::InvalidAggregatorException`.
+    /// Returns `true` if the error kind is `GetInventoryErrorKind::InvalidAggregatorException`.
     pub fn is_invalid_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInventoryErrorKind::InvalidAggregatorException(_)
         )
     }
-    /// Returns true if the error kind is `GetInventoryErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `GetInventoryErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(&self.kind, GetInventoryErrorKind::InvalidFilter(_))
     }
-    /// Returns true if the error kind is `GetInventoryErrorKind::InvalidInventoryGroupException`.
+    /// Returns `true` if the error kind is `GetInventoryErrorKind::InvalidInventoryGroupException`.
     pub fn is_invalid_inventory_group_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInventoryErrorKind::InvalidInventoryGroupException(_)
         )
     }
-    /// Returns true if the error kind is `GetInventoryErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `GetInventoryErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, GetInventoryErrorKind::InvalidNextToken(_))
     }
-    /// Returns true if the error kind is `GetInventoryErrorKind::InvalidResultAttributeException`.
+    /// Returns `true` if the error kind is `GetInventoryErrorKind::InvalidResultAttributeException`.
     pub fn is_invalid_result_attribute_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInventoryErrorKind::InvalidResultAttributeException(_)
         )
     }
-    /// Returns true if the error kind is `GetInventoryErrorKind::InvalidTypeNameException`.
+    /// Returns `true` if the error kind is `GetInventoryErrorKind::InvalidTypeNameException`.
     pub fn is_invalid_type_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8608,7 +8608,7 @@ pub enum GetInventorySchemaErrorKind {
     InvalidNextToken(crate::error::InvalidNextToken),
     /// <p>The parameter type name isn't valid.</p>
     InvalidTypeNameException(crate::error::InvalidTypeNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInventorySchemaError {
@@ -8673,18 +8673,18 @@ impl GetInventorySchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInventorySchemaErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetInventorySchemaErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetInventorySchemaErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetInventorySchemaErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `GetInventorySchemaErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, GetInventorySchemaErrorKind::InvalidNextToken(_))
     }
-    /// Returns true if the error kind is `GetInventorySchemaErrorKind::InvalidTypeNameException`.
+    /// Returns `true` if the error kind is `GetInventorySchemaErrorKind::InvalidTypeNameException`.
     pub fn is_invalid_type_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8723,7 +8723,7 @@ pub enum GetMaintenanceWindowErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMaintenanceWindowError {
@@ -8787,14 +8787,14 @@ impl GetMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMaintenanceWindowErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -8832,7 +8832,7 @@ pub enum GetMaintenanceWindowExecutionErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMaintenanceWindowExecutionError {
@@ -8899,14 +8899,14 @@ impl GetMaintenanceWindowExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowExecutionErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowExecutionErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMaintenanceWindowExecutionErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowExecutionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowExecutionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -8944,7 +8944,7 @@ pub enum GetMaintenanceWindowExecutionTaskErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMaintenanceWindowExecutionTaskError {
@@ -9015,14 +9015,14 @@ impl GetMaintenanceWindowExecutionTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowExecutionTaskErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowExecutionTaskErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMaintenanceWindowExecutionTaskErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowExecutionTaskErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowExecutionTaskErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -9062,7 +9062,7 @@ pub enum GetMaintenanceWindowExecutionTaskInvocationErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMaintenanceWindowExecutionTaskInvocationError {
@@ -9137,14 +9137,14 @@ impl GetMaintenanceWindowExecutionTaskInvocationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowExecutionTaskInvocationErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowExecutionTaskInvocationErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMaintenanceWindowExecutionTaskInvocationErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowExecutionTaskInvocationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowExecutionTaskInvocationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -9188,7 +9188,7 @@ pub enum GetMaintenanceWindowTaskErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMaintenanceWindowTaskError {
@@ -9252,14 +9252,14 @@ impl GetMaintenanceWindowTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowTaskErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowTaskErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMaintenanceWindowTaskErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMaintenanceWindowTaskErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetMaintenanceWindowTaskErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -9294,7 +9294,7 @@ pub enum GetOpsItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOpsItemError {
@@ -9358,11 +9358,11 @@ impl GetOpsItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOpsItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetOpsItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetOpsItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetOpsItemErrorKind::OpsItemNotFoundException`.
+    /// Returns `true` if the error kind is `GetOpsItemErrorKind::OpsItemNotFoundException`.
     pub fn is_ops_item_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetOpsItemErrorKind::OpsItemNotFoundException(_))
     }
@@ -9396,7 +9396,7 @@ pub enum GetOpsMetadataErrorKind {
     OpsMetadataInvalidArgumentException(crate::error::OpsMetadataInvalidArgumentException),
     /// <p>The OpsMetadata object doesn't exist. </p>
     OpsMetadataNotFoundException(crate::error::OpsMetadataNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOpsMetadataError {
@@ -9461,18 +9461,18 @@ impl GetOpsMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOpsMetadataErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetOpsMetadataErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetOpsMetadataErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
     pub fn is_ops_metadata_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpsMetadataErrorKind::OpsMetadataNotFoundException`.
+    /// Returns `true` if the error kind is `GetOpsMetadataErrorKind::OpsMetadataNotFoundException`.
     pub fn is_ops_metadata_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9518,7 +9518,7 @@ pub enum GetOpsSummaryErrorKind {
     InvalidTypeNameException(crate::error::InvalidTypeNameException),
     /// <p>The specified sync name wasn't found.</p>
     ResourceDataSyncNotFoundException(crate::error::ResourceDataSyncNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOpsSummaryError {
@@ -9586,33 +9586,33 @@ impl GetOpsSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOpsSummaryErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetOpsSummaryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetOpsSummaryErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetOpsSummaryErrorKind::InvalidAggregatorException`.
+    /// Returns `true` if the error kind is `GetOpsSummaryErrorKind::InvalidAggregatorException`.
     pub fn is_invalid_aggregator_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpsSummaryErrorKind::InvalidAggregatorException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpsSummaryErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `GetOpsSummaryErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(&self.kind, GetOpsSummaryErrorKind::InvalidFilter(_))
     }
-    /// Returns true if the error kind is `GetOpsSummaryErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `GetOpsSummaryErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, GetOpsSummaryErrorKind::InvalidNextToken(_))
     }
-    /// Returns true if the error kind is `GetOpsSummaryErrorKind::InvalidTypeNameException`.
+    /// Returns `true` if the error kind is `GetOpsSummaryErrorKind::InvalidTypeNameException`.
     pub fn is_invalid_type_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOpsSummaryErrorKind::InvalidTypeNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetOpsSummaryErrorKind::ResourceDataSyncNotFoundException`.
+    /// Returns `true` if the error kind is `GetOpsSummaryErrorKind::ResourceDataSyncNotFoundException`.
     pub fn is_resource_data_sync_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9656,7 +9656,7 @@ pub enum GetParameterErrorKind {
     /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try
     /// again.</p>
     ParameterVersionNotFound(crate::error::ParameterVersionNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetParameterError {
@@ -9722,19 +9722,19 @@ impl GetParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetParameterErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetParameterErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetParameterErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetParameterErrorKind::InvalidKeyId`.
+    /// Returns `true` if the error kind is `GetParameterErrorKind::InvalidKeyId`.
     pub fn is_invalid_key_id(&self) -> bool {
         matches!(&self.kind, GetParameterErrorKind::InvalidKeyId(_))
     }
-    /// Returns true if the error kind is `GetParameterErrorKind::ParameterNotFound`.
+    /// Returns `true` if the error kind is `GetParameterErrorKind::ParameterNotFound`.
     pub fn is_parameter_not_found(&self) -> bool {
         matches!(&self.kind, GetParameterErrorKind::ParameterNotFound(_))
     }
-    /// Returns true if the error kind is `GetParameterErrorKind::ParameterVersionNotFound`.
+    /// Returns `true` if the error kind is `GetParameterErrorKind::ParameterVersionNotFound`.
     pub fn is_parameter_version_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -9775,7 +9775,7 @@ pub enum GetParameterHistoryErrorKind {
     InvalidNextToken(crate::error::InvalidNextToken),
     /// <p>The parameter couldn't be found. Verify the name and try again.</p>
     ParameterNotFound(crate::error::ParameterNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetParameterHistoryError {
@@ -9841,25 +9841,25 @@ impl GetParameterHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetParameterHistoryErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetParameterHistoryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetParameterHistoryErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetParameterHistoryErrorKind::InvalidKeyId`.
+    /// Returns `true` if the error kind is `GetParameterHistoryErrorKind::InvalidKeyId`.
     pub fn is_invalid_key_id(&self) -> bool {
         matches!(&self.kind, GetParameterHistoryErrorKind::InvalidKeyId(_))
     }
-    /// Returns true if the error kind is `GetParameterHistoryErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `GetParameterHistoryErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             GetParameterHistoryErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `GetParameterHistoryErrorKind::ParameterNotFound`.
+    /// Returns `true` if the error kind is `GetParameterHistoryErrorKind::ParameterNotFound`.
     pub fn is_parameter_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -9896,7 +9896,7 @@ pub enum GetParametersErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The query key ID isn't valid.</p>
     InvalidKeyId(crate::error::InvalidKeyId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetParametersError {
@@ -9960,11 +9960,11 @@ impl GetParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetParametersErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetParametersErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetParametersErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetParametersErrorKind::InvalidKeyId`.
+    /// Returns `true` if the error kind is `GetParametersErrorKind::InvalidKeyId`.
     pub fn is_invalid_key_id(&self) -> bool {
         matches!(&self.kind, GetParametersErrorKind::InvalidKeyId(_))
     }
@@ -10005,7 +10005,7 @@ pub enum GetParametersByPathErrorKind {
     InvalidKeyId(crate::error::InvalidKeyId),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetParametersByPathError {
@@ -10073,39 +10073,39 @@ impl GetParametersByPathError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetParametersByPathErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetParametersByPathErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersByPathErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersByPathErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `GetParametersByPathErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersByPathErrorKind::InvalidFilterKey(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersByPathErrorKind::InvalidFilterOption`.
+    /// Returns `true` if the error kind is `GetParametersByPathErrorKind::InvalidFilterOption`.
     pub fn is_invalid_filter_option(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersByPathErrorKind::InvalidFilterOption(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersByPathErrorKind::InvalidFilterValue`.
+    /// Returns `true` if the error kind is `GetParametersByPathErrorKind::InvalidFilterValue`.
     pub fn is_invalid_filter_value(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersByPathErrorKind::InvalidFilterValue(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersByPathErrorKind::InvalidKeyId`.
+    /// Returns `true` if the error kind is `GetParametersByPathErrorKind::InvalidKeyId`.
     pub fn is_invalid_key_id(&self) -> bool {
         matches!(&self.kind, GetParametersByPathErrorKind::InvalidKeyId(_))
     }
-    /// Returns true if the error kind is `GetParametersByPathErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `GetParametersByPathErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -10149,7 +10149,7 @@ pub enum GetPatchBaselineErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPatchBaselineError {
@@ -10214,21 +10214,21 @@ impl GetPatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPatchBaselineErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `GetPatchBaselineErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPatchBaselineErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetPatchBaselineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetPatchBaselineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetPatchBaselineErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetPatchBaselineErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `GetPatchBaselineErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(&self.kind, GetPatchBaselineErrorKind::InvalidResourceId(_))
     }
@@ -10259,7 +10259,7 @@ pub struct GetPatchBaselineForPatchGroupError {
 pub enum GetPatchBaselineForPatchGroupErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPatchBaselineForPatchGroupError {
@@ -10325,7 +10325,7 @@ impl GetPatchBaselineForPatchGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPatchBaselineForPatchGroupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetPatchBaselineForPatchGroupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -10360,7 +10360,7 @@ pub enum GetServiceSettingErrorKind {
     /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't
     /// been provisioned by the Amazon Web Services service team.</p>
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceSettingError {
@@ -10424,14 +10424,14 @@ impl GetServiceSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceSettingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetServiceSettingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceSettingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceSettingErrorKind::ServiceSettingNotFound`.
+    /// Returns `true` if the error kind is `GetServiceSettingErrorKind::ServiceSettingNotFound`.
     pub fn is_service_setting_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -10473,7 +10473,7 @@ pub enum LabelParameterVersionErrorKind {
     ParameterVersionNotFound(crate::error::ParameterVersionNotFound),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for LabelParameterVersionError {
@@ -10542,35 +10542,35 @@ impl LabelParameterVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `LabelParameterVersionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `LabelParameterVersionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             LabelParameterVersionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `LabelParameterVersionErrorKind::ParameterNotFound`.
+    /// Returns `true` if the error kind is `LabelParameterVersionErrorKind::ParameterNotFound`.
     pub fn is_parameter_not_found(&self) -> bool {
         matches!(
             &self.kind,
             LabelParameterVersionErrorKind::ParameterNotFound(_)
         )
     }
-    /// Returns true if the error kind is `LabelParameterVersionErrorKind::ParameterVersionLabelLimitExceeded`.
+    /// Returns `true` if the error kind is `LabelParameterVersionErrorKind::ParameterVersionLabelLimitExceeded`.
     pub fn is_parameter_version_label_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             LabelParameterVersionErrorKind::ParameterVersionLabelLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `LabelParameterVersionErrorKind::ParameterVersionNotFound`.
+    /// Returns `true` if the error kind is `LabelParameterVersionErrorKind::ParameterVersionNotFound`.
     pub fn is_parameter_version_not_found(&self) -> bool {
         matches!(
             &self.kind,
             LabelParameterVersionErrorKind::ParameterVersionNotFound(_)
         )
     }
-    /// Returns true if the error kind is `LabelParameterVersionErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `LabelParameterVersionErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(
             &self.kind,
@@ -10610,7 +10610,7 @@ pub enum ListAssociationsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociationsError {
@@ -10674,14 +10674,14 @@ impl ListAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssociationsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListAssociationsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociationsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociationsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListAssociationsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, ListAssociationsErrorKind::InvalidNextToken(_))
     }
@@ -10715,7 +10715,7 @@ pub enum ListAssociationVersionsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociationVersionsError {
@@ -10780,21 +10780,21 @@ impl ListAssociationVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssociationVersionsErrorKind::AssociationDoesNotExist`.
+    /// Returns `true` if the error kind is `ListAssociationVersionsErrorKind::AssociationDoesNotExist`.
     pub fn is_association_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociationVersionsErrorKind::AssociationDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociationVersionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListAssociationVersionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociationVersionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociationVersionsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListAssociationVersionsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -10853,7 +10853,7 @@ pub enum ListCommandInvocationsErrorKind {
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCommandInvocationsError {
@@ -10920,35 +10920,35 @@ impl ListCommandInvocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCommandInvocationsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListCommandInvocationsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListCommandInvocationsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListCommandInvocationsErrorKind::InvalidCommandId`.
+    /// Returns `true` if the error kind is `ListCommandInvocationsErrorKind::InvalidCommandId`.
     pub fn is_invalid_command_id(&self) -> bool {
         matches!(
             &self.kind,
             ListCommandInvocationsErrorKind::InvalidCommandId(_)
         )
     }
-    /// Returns true if the error kind is `ListCommandInvocationsErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `ListCommandInvocationsErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(
             &self.kind,
             ListCommandInvocationsErrorKind::InvalidFilterKey(_)
         )
     }
-    /// Returns true if the error kind is `ListCommandInvocationsErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `ListCommandInvocationsErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             ListCommandInvocationsErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `ListCommandInvocationsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListCommandInvocationsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -11009,7 +11009,7 @@ pub enum ListCommandsErrorKind {
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCommandsError {
@@ -11076,23 +11076,23 @@ impl ListCommandsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCommandsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListCommandsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListCommandsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListCommandsErrorKind::InvalidCommandId`.
+    /// Returns `true` if the error kind is `ListCommandsErrorKind::InvalidCommandId`.
     pub fn is_invalid_command_id(&self) -> bool {
         matches!(&self.kind, ListCommandsErrorKind::InvalidCommandId(_))
     }
-    /// Returns true if the error kind is `ListCommandsErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `ListCommandsErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(&self.kind, ListCommandsErrorKind::InvalidFilterKey(_))
     }
-    /// Returns true if the error kind is `ListCommandsErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `ListCommandsErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(&self.kind, ListCommandsErrorKind::InvalidInstanceId(_))
     }
-    /// Returns true if the error kind is `ListCommandsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListCommandsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, ListCommandsErrorKind::InvalidNextToken(_))
     }
@@ -11134,7 +11134,7 @@ pub enum ListComplianceItemsErrorKind {
     /// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
     /// instance must be a registered, managed instance.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListComplianceItemsError {
@@ -11201,32 +11201,32 @@ impl ListComplianceItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListComplianceItemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListComplianceItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListComplianceItemsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListComplianceItemsErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `ListComplianceItemsErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(&self.kind, ListComplianceItemsErrorKind::InvalidFilter(_))
     }
-    /// Returns true if the error kind is `ListComplianceItemsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListComplianceItemsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             ListComplianceItemsErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `ListComplianceItemsErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `ListComplianceItemsErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(
             &self.kind,
             ListComplianceItemsErrorKind::InvalidResourceId(_)
         )
     }
-    /// Returns true if the error kind is `ListComplianceItemsErrorKind::InvalidResourceType`.
+    /// Returns `true` if the error kind is `ListComplianceItemsErrorKind::InvalidResourceType`.
     pub fn is_invalid_resource_type(&self) -> bool {
         matches!(
             &self.kind,
@@ -11266,7 +11266,7 @@ pub enum ListComplianceSummariesErrorKind {
     InvalidFilter(crate::error::InvalidFilter),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListComplianceSummariesError {
@@ -11331,21 +11331,21 @@ impl ListComplianceSummariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListComplianceSummariesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListComplianceSummariesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListComplianceSummariesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListComplianceSummariesErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `ListComplianceSummariesErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(
             &self.kind,
             ListComplianceSummariesErrorKind::InvalidFilter(_)
         )
     }
-    /// Returns true if the error kind is `ListComplianceSummariesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListComplianceSummariesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -11385,7 +11385,7 @@ pub enum ListDocumentMetadataHistoryErrorKind {
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDocumentMetadataHistoryError {
@@ -11451,28 +11451,28 @@ impl ListDocumentMetadataHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDocumentMetadataHistoryErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListDocumentMetadataHistoryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListDocumentMetadataHistoryErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListDocumentMetadataHistoryErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `ListDocumentMetadataHistoryErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(
             &self.kind,
             ListDocumentMetadataHistoryErrorKind::InvalidDocument(_)
         )
     }
-    /// Returns true if the error kind is `ListDocumentMetadataHistoryErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `ListDocumentMetadataHistoryErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(
             &self.kind,
             ListDocumentMetadataHistoryErrorKind::InvalidDocumentVersion(_)
         )
     }
-    /// Returns true if the error kind is `ListDocumentMetadataHistoryErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListDocumentMetadataHistoryErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -11511,7 +11511,7 @@ pub enum ListDocumentsErrorKind {
     InvalidFilterKey(crate::error::InvalidFilterKey),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDocumentsError {
@@ -11576,15 +11576,15 @@ impl ListDocumentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDocumentsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListDocumentsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListDocumentsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListDocumentsErrorKind::InvalidFilterKey`.
+    /// Returns `true` if the error kind is `ListDocumentsErrorKind::InvalidFilterKey`.
     pub fn is_invalid_filter_key(&self) -> bool {
         matches!(&self.kind, ListDocumentsErrorKind::InvalidFilterKey(_))
     }
-    /// Returns true if the error kind is `ListDocumentsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListDocumentsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(&self.kind, ListDocumentsErrorKind::InvalidNextToken(_))
     }
@@ -11619,7 +11619,7 @@ pub enum ListDocumentVersionsErrorKind {
     InvalidDocument(crate::error::InvalidDocument),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDocumentVersionsError {
@@ -11684,21 +11684,21 @@ impl ListDocumentVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDocumentVersionsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListDocumentVersionsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListDocumentVersionsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListDocumentVersionsErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `ListDocumentVersionsErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(
             &self.kind,
             ListDocumentVersionsErrorKind::InvalidDocument(_)
         )
     }
-    /// Returns true if the error kind is `ListDocumentVersionsErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListDocumentVersionsErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -11757,7 +11757,7 @@ pub enum ListInventoryEntriesErrorKind {
     InvalidNextToken(crate::error::InvalidNextToken),
     /// <p>The parameter type name isn't valid.</p>
     InvalidTypeNameException(crate::error::InvalidTypeNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInventoryEntriesError {
@@ -11824,32 +11824,32 @@ impl ListInventoryEntriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInventoryEntriesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListInventoryEntriesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListInventoryEntriesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListInventoryEntriesErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `ListInventoryEntriesErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(&self.kind, ListInventoryEntriesErrorKind::InvalidFilter(_))
     }
-    /// Returns true if the error kind is `ListInventoryEntriesErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `ListInventoryEntriesErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             ListInventoryEntriesErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `ListInventoryEntriesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListInventoryEntriesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             ListInventoryEntriesErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `ListInventoryEntriesErrorKind::InvalidTypeNameException`.
+    /// Returns `true` if the error kind is `ListInventoryEntriesErrorKind::InvalidTypeNameException`.
     pub fn is_invalid_type_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11893,7 +11893,7 @@ pub enum ListOpsItemEventsErrorKind {
     OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOpsItemEventsError {
@@ -11959,28 +11959,28 @@ impl ListOpsItemEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOpsItemEventsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListOpsItemEventsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListOpsItemEventsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListOpsItemEventsErrorKind::OpsItemInvalidParameterException`.
+    /// Returns `true` if the error kind is `ListOpsItemEventsErrorKind::OpsItemInvalidParameterException`.
     pub fn is_ops_item_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOpsItemEventsErrorKind::OpsItemInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListOpsItemEventsErrorKind::OpsItemLimitExceededException`.
+    /// Returns `true` if the error kind is `ListOpsItemEventsErrorKind::OpsItemLimitExceededException`.
     pub fn is_ops_item_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOpsItemEventsErrorKind::OpsItemLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListOpsItemEventsErrorKind::OpsItemNotFoundException`.
+    /// Returns `true` if the error kind is `ListOpsItemEventsErrorKind::OpsItemNotFoundException`.
     pub fn is_ops_item_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12018,7 +12018,7 @@ pub enum ListOpsItemRelatedItemsErrorKind {
     /// <p>A specified parameter argument isn't valid. Verify the available arguments and try
     /// again.</p>
     OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOpsItemRelatedItemsError {
@@ -12084,14 +12084,14 @@ impl ListOpsItemRelatedItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOpsItemRelatedItemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListOpsItemRelatedItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListOpsItemRelatedItemsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListOpsItemRelatedItemsErrorKind::OpsItemInvalidParameterException`.
+    /// Returns `true` if the error kind is `ListOpsItemRelatedItemsErrorKind::OpsItemInvalidParameterException`.
     pub fn is_ops_item_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12128,7 +12128,7 @@ pub enum ListOpsMetadataErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>One of the arguments passed is invalid. </p>
     OpsMetadataInvalidArgumentException(crate::error::OpsMetadataInvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOpsMetadataError {
@@ -12192,11 +12192,11 @@ impl ListOpsMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOpsMetadataErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListOpsMetadataErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListOpsMetadataErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `ListOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
     pub fn is_ops_metadata_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12233,7 +12233,7 @@ pub enum ListResourceComplianceSummariesErrorKind {
     InvalidFilter(crate::error::InvalidFilter),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceComplianceSummariesError {
@@ -12301,21 +12301,21 @@ impl ListResourceComplianceSummariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceComplianceSummariesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListResourceComplianceSummariesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceComplianceSummariesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceComplianceSummariesErrorKind::InvalidFilter`.
+    /// Returns `true` if the error kind is `ListResourceComplianceSummariesErrorKind::InvalidFilter`.
     pub fn is_invalid_filter(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceComplianceSummariesErrorKind::InvalidFilter(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceComplianceSummariesErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListResourceComplianceSummariesErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -12355,7 +12355,7 @@ pub enum ListResourceDataSyncErrorKind {
     ResourceDataSyncInvalidConfigurationException(
         crate::error::ResourceDataSyncInvalidConfigurationException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceDataSyncError {
@@ -12422,21 +12422,21 @@ impl ListResourceDataSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceDataSyncErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListResourceDataSyncErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceDataSyncErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceDataSyncErrorKind::InvalidNextToken`.
+    /// Returns `true` if the error kind is `ListResourceDataSyncErrorKind::InvalidNextToken`.
     pub fn is_invalid_next_token(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceDataSyncErrorKind::InvalidNextToken(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException`.
+    /// Returns `true` if the error kind is `ListResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException`.
     pub fn is_resource_data_sync_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12477,7 +12477,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The resource type isn't valid. For example, if you are attempting to tag an instance, the
     /// instance must be a registered, managed instance.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -12542,21 +12542,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidResourceId(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidResourceType`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidResourceType`.
     pub fn is_invalid_resource_type(&self) -> bool {
         matches!(
             &self.kind,
@@ -12601,7 +12601,7 @@ pub enum ModifyDocumentPermissionErrorKind {
     /// <p>The permission type isn't supported. <i>Share</i> is the only supported
     /// permission type.</p>
     InvalidPermissionType(crate::error::InvalidPermissionType),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDocumentPermissionError {
@@ -12668,35 +12668,35 @@ impl ModifyDocumentPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyDocumentPermissionErrorKind::DocumentLimitExceeded`.
+    /// Returns `true` if the error kind is `ModifyDocumentPermissionErrorKind::DocumentLimitExceeded`.
     pub fn is_document_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDocumentPermissionErrorKind::DocumentLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDocumentPermissionErrorKind::DocumentPermissionLimit`.
+    /// Returns `true` if the error kind is `ModifyDocumentPermissionErrorKind::DocumentPermissionLimit`.
     pub fn is_document_permission_limit(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDocumentPermissionErrorKind::DocumentPermissionLimit(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDocumentPermissionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ModifyDocumentPermissionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDocumentPermissionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDocumentPermissionErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `ModifyDocumentPermissionErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(
             &self.kind,
             ModifyDocumentPermissionErrorKind::InvalidDocument(_)
         )
     }
-    /// Returns true if the error kind is `ModifyDocumentPermissionErrorKind::InvalidPermissionType`.
+    /// Returns `true` if the error kind is `ModifyDocumentPermissionErrorKind::InvalidPermissionType`.
     pub fn is_invalid_permission_type(&self) -> bool {
         matches!(
             &self.kind,
@@ -12748,7 +12748,7 @@ pub enum PutComplianceItemsErrorKind {
     ItemSizeLimitExceededException(crate::error::ItemSizeLimitExceededException),
     /// <p>The size of inventory data has exceeded the total size limit for the resource.</p>
     TotalSizeLimitExceededException(crate::error::TotalSizeLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutComplianceItemsError {
@@ -12819,49 +12819,49 @@ impl PutComplianceItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutComplianceItemsErrorKind::ComplianceTypeCountLimitExceededException`.
+    /// Returns `true` if the error kind is `PutComplianceItemsErrorKind::ComplianceTypeCountLimitExceededException`.
     pub fn is_compliance_type_count_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutComplianceItemsErrorKind::ComplianceTypeCountLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutComplianceItemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutComplianceItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             PutComplianceItemsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `PutComplianceItemsErrorKind::InvalidItemContentException`.
+    /// Returns `true` if the error kind is `PutComplianceItemsErrorKind::InvalidItemContentException`.
     pub fn is_invalid_item_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutComplianceItemsErrorKind::InvalidItemContentException(_)
         )
     }
-    /// Returns true if the error kind is `PutComplianceItemsErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `PutComplianceItemsErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(
             &self.kind,
             PutComplianceItemsErrorKind::InvalidResourceId(_)
         )
     }
-    /// Returns true if the error kind is `PutComplianceItemsErrorKind::InvalidResourceType`.
+    /// Returns `true` if the error kind is `PutComplianceItemsErrorKind::InvalidResourceType`.
     pub fn is_invalid_resource_type(&self) -> bool {
         matches!(
             &self.kind,
             PutComplianceItemsErrorKind::InvalidResourceType(_)
         )
     }
-    /// Returns true if the error kind is `PutComplianceItemsErrorKind::ItemSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PutComplianceItemsErrorKind::ItemSizeLimitExceededException`.
     pub fn is_item_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutComplianceItemsErrorKind::ItemSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutComplianceItemsErrorKind::TotalSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PutComplianceItemsErrorKind::TotalSizeLimitExceededException`.
     pub fn is_total_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12949,7 +12949,7 @@ pub enum PutInventoryErrorKind {
     UnsupportedInventorySchemaVersionException(
         crate::error::UnsupportedInventorySchemaVersionException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutInventoryError {
@@ -13027,78 +13027,78 @@ impl PutInventoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::CustomSchemaCountLimitExceededException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::CustomSchemaCountLimitExceededException`.
     pub fn is_custom_schema_count_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::CustomSchemaCountLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, PutInventoryErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(&self.kind, PutInventoryErrorKind::InvalidInstanceId(_))
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::InvalidInventoryItemContextException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::InvalidInventoryItemContextException`.
     pub fn is_invalid_inventory_item_context_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::InvalidInventoryItemContextException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::InvalidItemContentException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::InvalidItemContentException`.
     pub fn is_invalid_item_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::InvalidItemContentException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::InvalidTypeNameException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::InvalidTypeNameException`.
     pub fn is_invalid_type_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::InvalidTypeNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::ItemContentMismatchException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::ItemContentMismatchException`.
     pub fn is_item_content_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::ItemContentMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::ItemSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::ItemSizeLimitExceededException`.
     pub fn is_item_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::ItemSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::SubTypeCountLimitExceededException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::SubTypeCountLimitExceededException`.
     pub fn is_sub_type_count_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::SubTypeCountLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::TotalSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::TotalSizeLimitExceededException`.
     pub fn is_total_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::TotalSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::UnsupportedInventoryItemContextException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::UnsupportedInventoryItemContextException`.
     pub fn is_unsupported_inventory_item_context_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInventoryErrorKind::UnsupportedInventoryItemContextException(_)
         )
     }
-    /// Returns true if the error kind is `PutInventoryErrorKind::UnsupportedInventorySchemaVersionException`.
+    /// Returns `true` if the error kind is `PutInventoryErrorKind::UnsupportedInventorySchemaVersionException`.
     pub fn is_unsupported_inventory_schema_version_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13193,7 +13193,7 @@ pub enum PutParameterErrorKind {
     TooManyUpdates(crate::error::TooManyUpdates),
     /// <p>The parameter type isn't supported.</p>
     UnsupportedParameterType(crate::error::UnsupportedParameterType),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutParameterError {
@@ -13270,90 +13270,90 @@ impl PutParameterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::HierarchyLevelLimitExceededException`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::HierarchyLevelLimitExceededException`.
     pub fn is_hierarchy_level_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::HierarchyLevelLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::HierarchyTypeMismatchException`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::HierarchyTypeMismatchException`.
     pub fn is_hierarchy_type_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::HierarchyTypeMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::IncompatiblePolicyException`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::IncompatiblePolicyException`.
     pub fn is_incompatible_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::IncompatiblePolicyException(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, PutParameterErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::InvalidAllowedPatternException`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::InvalidAllowedPatternException`.
     pub fn is_invalid_allowed_pattern_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::InvalidAllowedPatternException(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::InvalidKeyId`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::InvalidKeyId`.
     pub fn is_invalid_key_id(&self) -> bool {
         matches!(&self.kind, PutParameterErrorKind::InvalidKeyId(_))
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::InvalidPolicyAttributeException`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::InvalidPolicyAttributeException`.
     pub fn is_invalid_policy_attribute_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::InvalidPolicyAttributeException(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::InvalidPolicyTypeException`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::InvalidPolicyTypeException`.
     pub fn is_invalid_policy_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::InvalidPolicyTypeException(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::ParameterAlreadyExists`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::ParameterAlreadyExists`.
     pub fn is_parameter_already_exists(&self) -> bool {
         matches!(&self.kind, PutParameterErrorKind::ParameterAlreadyExists(_))
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::ParameterLimitExceeded`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::ParameterLimitExceeded`.
     pub fn is_parameter_limit_exceeded(&self) -> bool {
         matches!(&self.kind, PutParameterErrorKind::ParameterLimitExceeded(_))
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::ParameterMaxVersionLimitExceeded`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::ParameterMaxVersionLimitExceeded`.
     pub fn is_parameter_max_version_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::ParameterMaxVersionLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::ParameterPatternMismatchException`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::ParameterPatternMismatchException`.
     pub fn is_parameter_pattern_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::ParameterPatternMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::PoliciesLimitExceededException`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::PoliciesLimitExceededException`.
     pub fn is_policies_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutParameterErrorKind::PoliciesLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(&self.kind, PutParameterErrorKind::TooManyUpdates(_))
     }
-    /// Returns true if the error kind is `PutParameterErrorKind::UnsupportedParameterType`.
+    /// Returns `true` if the error kind is `PutParameterErrorKind::UnsupportedParameterType`.
     pub fn is_unsupported_parameter_type(&self) -> bool {
         matches!(
             &self.kind,
@@ -13406,7 +13406,7 @@ pub enum RegisterDefaultPatchBaselineErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterDefaultPatchBaselineError {
@@ -13471,21 +13471,21 @@ impl RegisterDefaultPatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterDefaultPatchBaselineErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `RegisterDefaultPatchBaselineErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDefaultPatchBaselineErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDefaultPatchBaselineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RegisterDefaultPatchBaselineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDefaultPatchBaselineErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDefaultPatchBaselineErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `RegisterDefaultPatchBaselineErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(
             &self.kind,
@@ -13534,7 +13534,7 @@ pub enum RegisterPatchBaselineForPatchGroupErrorKind {
     /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterPatchBaselineForPatchGroupError {
@@ -13612,35 +13612,35 @@ impl RegisterPatchBaselineForPatchGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterPatchBaselineForPatchGroupErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterPatchBaselineForPatchGroupErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RegisterPatchBaselineForPatchGroupErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(
             &self.kind,
             RegisterPatchBaselineForPatchGroupErrorKind::InvalidResourceId(_)
         )
     }
-    /// Returns true if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterPatchBaselineForPatchGroupErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13697,7 +13697,7 @@ pub enum RegisterTargetWithMaintenanceWindowErrorKind {
     /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTargetWithMaintenanceWindowError {
@@ -13774,28 +13774,28 @@ impl RegisterTargetWithMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterTargetWithMaintenanceWindowErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `RegisterTargetWithMaintenanceWindowErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTargetWithMaintenanceWindowErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTargetWithMaintenanceWindowErrorKind::IdempotentParameterMismatch`.
+    /// Returns `true` if the error kind is `RegisterTargetWithMaintenanceWindowErrorKind::IdempotentParameterMismatch`.
     pub fn is_idempotent_parameter_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTargetWithMaintenanceWindowErrorKind::IdempotentParameterMismatch(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTargetWithMaintenanceWindowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RegisterTargetWithMaintenanceWindowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTargetWithMaintenanceWindowErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTargetWithMaintenanceWindowErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterTargetWithMaintenanceWindowErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13856,7 +13856,7 @@ pub enum RegisterTaskWithMaintenanceWindowErrorKind {
     /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTaskWithMaintenanceWindowError {
@@ -13936,35 +13936,35 @@ impl RegisterTaskWithMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTaskWithMaintenanceWindowErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::FeatureNotAvailableException`.
+    /// Returns `true` if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::FeatureNotAvailableException`.
     pub fn is_feature_not_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTaskWithMaintenanceWindowErrorKind::FeatureNotAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::IdempotentParameterMismatch`.
+    /// Returns `true` if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::IdempotentParameterMismatch`.
     pub fn is_idempotent_parameter_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTaskWithMaintenanceWindowErrorKind::IdempotentParameterMismatch(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTaskWithMaintenanceWindowErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterTaskWithMaintenanceWindowErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14015,7 +14015,7 @@ pub enum RemoveTagsFromResourceErrorKind {
     InvalidResourceType(crate::error::InvalidResourceType),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
@@ -14081,28 +14081,28 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::InvalidResourceId`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InvalidResourceId`.
     pub fn is_invalid_resource_id(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::InvalidResourceId(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::InvalidResourceType`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::InvalidResourceType`.
     pub fn is_invalid_resource_type(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsFromResourceErrorKind::InvalidResourceType(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(
             &self.kind,
@@ -14142,7 +14142,7 @@ pub enum ResetServiceSettingErrorKind {
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetServiceSettingError {
@@ -14207,21 +14207,21 @@ impl ResetServiceSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetServiceSettingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ResetServiceSettingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ResetServiceSettingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ResetServiceSettingErrorKind::ServiceSettingNotFound`.
+    /// Returns `true` if the error kind is `ResetServiceSettingErrorKind::ServiceSettingNotFound`.
     pub fn is_service_setting_not_found(&self) -> bool {
         matches!(
             &self.kind,
             ResetServiceSettingErrorKind::ServiceSettingNotFound(_)
         )
     }
-    /// Returns true if the error kind is `ResetServiceSettingErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `ResetServiceSettingErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(&self.kind, ResetServiceSettingErrorKind::TooManyUpdates(_))
     }
@@ -14257,7 +14257,7 @@ pub enum ResumeSessionErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResumeSessionError {
@@ -14321,11 +14321,11 @@ impl ResumeSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResumeSessionErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `ResumeSessionErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, ResumeSessionErrorKind::DoesNotExistException(_))
     }
-    /// Returns true if the error kind is `ResumeSessionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ResumeSessionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ResumeSessionErrorKind::InternalServerError(_))
     }
@@ -14363,7 +14363,7 @@ pub enum SendAutomationSignalErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The signal isn't valid for the current Automation execution.</p>
     InvalidAutomationSignalException(crate::error::InvalidAutomationSignalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendAutomationSignalError {
@@ -14433,28 +14433,28 @@ impl SendAutomationSignalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendAutomationSignalErrorKind::AutomationExecutionNotFoundException`.
+    /// Returns `true` if the error kind is `SendAutomationSignalErrorKind::AutomationExecutionNotFoundException`.
     pub fn is_automation_execution_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendAutomationSignalErrorKind::AutomationExecutionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendAutomationSignalErrorKind::AutomationStepNotFoundException`.
+    /// Returns `true` if the error kind is `SendAutomationSignalErrorKind::AutomationStepNotFoundException`.
     pub fn is_automation_step_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendAutomationSignalErrorKind::AutomationStepNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendAutomationSignalErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `SendAutomationSignalErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             SendAutomationSignalErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `SendAutomationSignalErrorKind::InvalidAutomationSignalException`.
+    /// Returns `true` if the error kind is `SendAutomationSignalErrorKind::InvalidAutomationSignalException`.
     pub fn is_invalid_automation_signal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14533,7 +14533,7 @@ pub enum SendCommandErrorKind {
     /// <p>The document doesn't support the platform type of the given instance ID(s). For example, you
     /// sent an document for a Windows instance to a Linux instance.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendCommandError {
@@ -14606,50 +14606,50 @@ impl SendCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::DuplicateInstanceId`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::DuplicateInstanceId`.
     pub fn is_duplicate_instance_id(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::DuplicateInstanceId(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::InvalidDocumentVersion(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::InvalidInstanceId(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InvalidNotificationConfig`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InvalidNotificationConfig`.
     pub fn is_invalid_notification_config(&self) -> bool {
         matches!(
             &self.kind,
             SendCommandErrorKind::InvalidNotificationConfig(_)
         )
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InvalidOutputFolder`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InvalidOutputFolder`.
     pub fn is_invalid_output_folder(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::InvalidOutputFolder(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InvalidParameters`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InvalidParameters`.
     pub fn is_invalid_parameters(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::InvalidParameters(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::InvalidRole`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::InvalidRole`.
     pub fn is_invalid_role(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::InvalidRole(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::MaxDocumentSizeExceeded`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::MaxDocumentSizeExceeded`.
     pub fn is_max_document_size_exceeded(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::MaxDocumentSizeExceeded(_))
     }
-    /// Returns true if the error kind is `SendCommandErrorKind::UnsupportedPlatformType`.
+    /// Returns `true` if the error kind is `SendCommandErrorKind::UnsupportedPlatformType`.
     pub fn is_unsupported_platform_type(&self) -> bool {
         matches!(&self.kind, SendCommandErrorKind::UnsupportedPlatformType(_))
     }
@@ -14690,7 +14690,7 @@ pub enum StartAssociationsOnceErrorKind {
     AssociationDoesNotExist(crate::error::AssociationDoesNotExist),
     /// <p>The association isn't valid or doesn't exist. </p>
     InvalidAssociation(crate::error::InvalidAssociation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartAssociationsOnceError {
@@ -14754,14 +14754,14 @@ impl StartAssociationsOnceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartAssociationsOnceErrorKind::AssociationDoesNotExist`.
+    /// Returns `true` if the error kind is `StartAssociationsOnceErrorKind::AssociationDoesNotExist`.
     pub fn is_association_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             StartAssociationsOnceErrorKind::AssociationDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `StartAssociationsOnceErrorKind::InvalidAssociation`.
+    /// Returns `true` if the error kind is `StartAssociationsOnceErrorKind::InvalidAssociation`.
     pub fn is_invalid_association(&self) -> bool {
         matches!(
             &self.kind,
@@ -14817,7 +14817,7 @@ pub enum StartAutomationExecutionErrorKind {
     /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
     /// not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartAutomationExecutionError {
@@ -14894,49 +14894,49 @@ impl StartAutomationExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartAutomationExecutionErrorKind::AutomationDefinitionNotFoundException`.
+    /// Returns `true` if the error kind is `StartAutomationExecutionErrorKind::AutomationDefinitionNotFoundException`.
     pub fn is_automation_definition_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAutomationExecutionErrorKind::AutomationDefinitionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartAutomationExecutionErrorKind::AutomationDefinitionVersionNotFoundException`.
+    /// Returns `true` if the error kind is `StartAutomationExecutionErrorKind::AutomationDefinitionVersionNotFoundException`.
     pub fn is_automation_definition_version_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAutomationExecutionErrorKind::AutomationDefinitionVersionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartAutomationExecutionErrorKind::AutomationExecutionLimitExceededException`.
+    /// Returns `true` if the error kind is `StartAutomationExecutionErrorKind::AutomationExecutionLimitExceededException`.
     pub fn is_automation_execution_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAutomationExecutionErrorKind::AutomationExecutionLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartAutomationExecutionErrorKind::IdempotentParameterMismatch`.
+    /// Returns `true` if the error kind is `StartAutomationExecutionErrorKind::IdempotentParameterMismatch`.
     pub fn is_idempotent_parameter_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             StartAutomationExecutionErrorKind::IdempotentParameterMismatch(_)
         )
     }
-    /// Returns true if the error kind is `StartAutomationExecutionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartAutomationExecutionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartAutomationExecutionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartAutomationExecutionErrorKind::InvalidAutomationExecutionParametersException`.
+    /// Returns `true` if the error kind is `StartAutomationExecutionErrorKind::InvalidAutomationExecutionParametersException`.
     pub fn is_invalid_automation_execution_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAutomationExecutionErrorKind::InvalidAutomationExecutionParametersException(_)
         )
     }
-    /// Returns true if the error kind is `StartAutomationExecutionErrorKind::InvalidTarget`.
+    /// Returns `true` if the error kind is `StartAutomationExecutionErrorKind::InvalidTarget`.
     pub fn is_invalid_target(&self) -> bool {
         matches!(
             &self.kind,
@@ -15007,7 +15007,7 @@ pub enum StartChangeRequestExecutionErrorKind {
     InvalidAutomationExecutionParametersException(
         crate::error::InvalidAutomationExecutionParametersException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartChangeRequestExecutionError {
@@ -15088,49 +15088,49 @@ impl StartChangeRequestExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartChangeRequestExecutionErrorKind::AutomationDefinitionNotApprovedException`.
+    /// Returns `true` if the error kind is `StartChangeRequestExecutionErrorKind::AutomationDefinitionNotApprovedException`.
     pub fn is_automation_definition_not_approved_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeRequestExecutionErrorKind::AutomationDefinitionNotApprovedException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeRequestExecutionErrorKind::AutomationDefinitionNotFoundException`.
+    /// Returns `true` if the error kind is `StartChangeRequestExecutionErrorKind::AutomationDefinitionNotFoundException`.
     pub fn is_automation_definition_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeRequestExecutionErrorKind::AutomationDefinitionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeRequestExecutionErrorKind::AutomationDefinitionVersionNotFoundException`.
+    /// Returns `true` if the error kind is `StartChangeRequestExecutionErrorKind::AutomationDefinitionVersionNotFoundException`.
     pub fn is_automation_definition_version_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeRequestExecutionErrorKind::AutomationDefinitionVersionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeRequestExecutionErrorKind::AutomationExecutionLimitExceededException`.
+    /// Returns `true` if the error kind is `StartChangeRequestExecutionErrorKind::AutomationExecutionLimitExceededException`.
     pub fn is_automation_execution_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeRequestExecutionErrorKind::AutomationExecutionLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeRequestExecutionErrorKind::IdempotentParameterMismatch`.
+    /// Returns `true` if the error kind is `StartChangeRequestExecutionErrorKind::IdempotentParameterMismatch`.
     pub fn is_idempotent_parameter_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeRequestExecutionErrorKind::IdempotentParameterMismatch(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeRequestExecutionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartChangeRequestExecutionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeRequestExecutionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeRequestExecutionErrorKind::InvalidAutomationExecutionParametersException`.
+    /// Returns `true` if the error kind is `StartChangeRequestExecutionErrorKind::InvalidAutomationExecutionParametersException`.
     pub fn is_invalid_automation_execution_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15187,7 +15187,7 @@ pub enum StartSessionErrorKind {
     /// Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you
     /// attempt to start a session on an instance that is located in a different account or Region</p>
     TargetNotConnected(crate::error::TargetNotConnected),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSessionError {
@@ -15252,15 +15252,15 @@ impl StartSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSessionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StartSessionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, StartSessionErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `StartSessionErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `StartSessionErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, StartSessionErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `StartSessionErrorKind::TargetNotConnected`.
+    /// Returns `true` if the error kind is `StartSessionErrorKind::TargetNotConnected`.
     pub fn is_target_not_connected(&self) -> bool {
         matches!(&self.kind, StartSessionErrorKind::TargetNotConnected(_))
     }
@@ -15296,7 +15296,7 @@ pub enum StopAutomationExecutionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified update status operation isn't valid.</p>
     InvalidAutomationStatusUpdateException(crate::error::InvalidAutomationStatusUpdateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopAutomationExecutionError {
@@ -15365,21 +15365,21 @@ impl StopAutomationExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopAutomationExecutionErrorKind::AutomationExecutionNotFoundException`.
+    /// Returns `true` if the error kind is `StopAutomationExecutionErrorKind::AutomationExecutionNotFoundException`.
     pub fn is_automation_execution_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAutomationExecutionErrorKind::AutomationExecutionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopAutomationExecutionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `StopAutomationExecutionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             StopAutomationExecutionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `StopAutomationExecutionErrorKind::InvalidAutomationStatusUpdateException`.
+    /// Returns `true` if the error kind is `StopAutomationExecutionErrorKind::InvalidAutomationStatusUpdateException`.
     pub fn is_invalid_automation_status_update_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15422,7 +15422,7 @@ pub enum TerminateSessionErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateSessionError {
@@ -15486,14 +15486,14 @@ impl TerminateSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateSessionErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `TerminateSessionErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             TerminateSessionErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `TerminateSessionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TerminateSessionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -15533,7 +15533,7 @@ pub enum UnlabelParameterVersionErrorKind {
     ParameterVersionNotFound(crate::error::ParameterVersionNotFound),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnlabelParameterVersionError {
@@ -15599,28 +15599,28 @@ impl UnlabelParameterVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnlabelParameterVersionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UnlabelParameterVersionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UnlabelParameterVersionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UnlabelParameterVersionErrorKind::ParameterNotFound`.
+    /// Returns `true` if the error kind is `UnlabelParameterVersionErrorKind::ParameterNotFound`.
     pub fn is_parameter_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UnlabelParameterVersionErrorKind::ParameterNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UnlabelParameterVersionErrorKind::ParameterVersionNotFound`.
+    /// Returns `true` if the error kind is `UnlabelParameterVersionErrorKind::ParameterVersionNotFound`.
     pub fn is_parameter_version_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UnlabelParameterVersionErrorKind::ParameterVersionNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UnlabelParameterVersionErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `UnlabelParameterVersionErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(
             &self.kind,
@@ -15682,7 +15682,7 @@ pub enum UpdateAssociationErrorKind {
     InvalidUpdate(crate::error::InvalidUpdate),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssociationError {
@@ -15756,69 +15756,69 @@ impl UpdateAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::AssociationDoesNotExist`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::AssociationDoesNotExist`.
     pub fn is_association_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationErrorKind::AssociationDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::AssociationVersionLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::AssociationVersionLimitExceeded`.
     pub fn is_association_version_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationErrorKind::AssociationVersionLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InvalidAssociationVersion`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InvalidAssociationVersion`.
     pub fn is_invalid_association_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationErrorKind::InvalidAssociationVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, UpdateAssociationErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationErrorKind::InvalidDocumentVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InvalidOutputLocation`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InvalidOutputLocation`.
     pub fn is_invalid_output_location(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationErrorKind::InvalidOutputLocation(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InvalidParameters`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InvalidParameters`.
     pub fn is_invalid_parameters(&self) -> bool {
         matches!(&self.kind, UpdateAssociationErrorKind::InvalidParameters(_))
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InvalidSchedule`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InvalidSchedule`.
     pub fn is_invalid_schedule(&self) -> bool {
         matches!(&self.kind, UpdateAssociationErrorKind::InvalidSchedule(_))
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InvalidTarget`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InvalidTarget`.
     pub fn is_invalid_target(&self) -> bool {
         matches!(&self.kind, UpdateAssociationErrorKind::InvalidTarget(_))
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::InvalidUpdate`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::InvalidUpdate`.
     pub fn is_invalid_update(&self) -> bool {
         matches!(&self.kind, UpdateAssociationErrorKind::InvalidUpdate(_))
     }
-    /// Returns true if the error kind is `UpdateAssociationErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `UpdateAssociationErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(&self.kind, UpdateAssociationErrorKind::TooManyUpdates(_))
     }
@@ -15885,7 +15885,7 @@ pub enum UpdateAssociationStatusErrorKind {
     StatusUnchanged(crate::error::StatusUnchanged),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssociationStatusError {
@@ -15953,42 +15953,42 @@ impl UpdateAssociationStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssociationStatusErrorKind::AssociationDoesNotExist`.
+    /// Returns `true` if the error kind is `UpdateAssociationStatusErrorKind::AssociationDoesNotExist`.
     pub fn is_association_does_not_exist(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationStatusErrorKind::AssociationDoesNotExist(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationStatusErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateAssociationStatusErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationStatusErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationStatusErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `UpdateAssociationStatusErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationStatusErrorKind::InvalidDocument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationStatusErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `UpdateAssociationStatusErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationStatusErrorKind::InvalidInstanceId(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationStatusErrorKind::StatusUnchanged`.
+    /// Returns `true` if the error kind is `UpdateAssociationStatusErrorKind::StatusUnchanged`.
     pub fn is_status_unchanged(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssociationStatusErrorKind::StatusUnchanged(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssociationStatusErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `UpdateAssociationStatusErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(
             &self.kind,
@@ -16047,7 +16047,7 @@ pub enum UpdateDocumentErrorKind {
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::error::MaxDocumentSizeExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDocumentError {
@@ -16119,64 +16119,64 @@ impl UpdateDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::DocumentVersionLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::DocumentVersionLimitExceeded`.
     pub fn is_document_version_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::DocumentVersionLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::DuplicateDocumentContent`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::DuplicateDocumentContent`.
     pub fn is_duplicate_document_content(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::DuplicateDocumentContent(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::DuplicateDocumentVersionName`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::DuplicateDocumentVersionName`.
     pub fn is_duplicate_document_version_name(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::DuplicateDocumentVersionName(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateDocumentErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(&self.kind, UpdateDocumentErrorKind::InvalidDocument(_))
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::InvalidDocumentContent`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::InvalidDocumentContent`.
     pub fn is_invalid_document_content(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::InvalidDocumentContent(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::InvalidDocumentOperation`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::InvalidDocumentOperation`.
     pub fn is_invalid_document_operation(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::InvalidDocumentOperation(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::InvalidDocumentSchemaVersion`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::InvalidDocumentSchemaVersion`.
     pub fn is_invalid_document_schema_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::InvalidDocumentSchemaVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::InvalidDocumentVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::MaxDocumentSizeExceeded`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::MaxDocumentSizeExceeded`.
     pub fn is_max_document_size_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -16223,7 +16223,7 @@ pub enum UpdateDocumentDefaultVersionErrorKind {
     InvalidDocumentSchemaVersion(crate::error::InvalidDocumentSchemaVersion),
     /// <p>The document version isn't valid or doesn't exist.</p>
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDocumentDefaultVersionError {
@@ -16291,28 +16291,28 @@ impl UpdateDocumentDefaultVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDocumentDefaultVersionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateDocumentDefaultVersionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentDefaultVersionErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentDefaultVersionErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `UpdateDocumentDefaultVersionErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentDefaultVersionErrorKind::InvalidDocument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentDefaultVersionErrorKind::InvalidDocumentSchemaVersion`.
+    /// Returns `true` if the error kind is `UpdateDocumentDefaultVersionErrorKind::InvalidDocumentSchemaVersion`.
     pub fn is_invalid_document_schema_version(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentDefaultVersionErrorKind::InvalidDocumentSchemaVersion(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentDefaultVersionErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `UpdateDocumentDefaultVersionErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(
             &self.kind,
@@ -16356,7 +16356,7 @@ pub enum UpdateDocumentMetadataErrorKind {
     InvalidDocumentOperation(crate::error::InvalidDocumentOperation),
     /// <p>The document version isn't valid or doesn't exist.</p>
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDocumentMetadataError {
@@ -16422,28 +16422,28 @@ impl UpdateDocumentMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDocumentMetadataErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateDocumentMetadataErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentMetadataErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentMetadataErrorKind::InvalidDocument`.
+    /// Returns `true` if the error kind is `UpdateDocumentMetadataErrorKind::InvalidDocument`.
     pub fn is_invalid_document(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentMetadataErrorKind::InvalidDocument(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentMetadataErrorKind::InvalidDocumentOperation`.
+    /// Returns `true` if the error kind is `UpdateDocumentMetadataErrorKind::InvalidDocumentOperation`.
     pub fn is_invalid_document_operation(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentMetadataErrorKind::InvalidDocumentOperation(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentMetadataErrorKind::InvalidDocumentVersion`.
+    /// Returns `true` if the error kind is `UpdateDocumentMetadataErrorKind::InvalidDocumentVersion`.
     pub fn is_invalid_document_version(&self) -> bool {
         matches!(
             &self.kind,
@@ -16483,7 +16483,7 @@ pub enum UpdateMaintenanceWindowErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMaintenanceWindowError {
@@ -16547,14 +16547,14 @@ impl UpdateMaintenanceWindowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMaintenanceWindowErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateMaintenanceWindowErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMaintenanceWindowErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMaintenanceWindowErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateMaintenanceWindowErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -16592,7 +16592,7 @@ pub enum UpdateMaintenanceWindowTargetErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMaintenanceWindowTargetError {
@@ -16659,14 +16659,14 @@ impl UpdateMaintenanceWindowTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMaintenanceWindowTargetErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateMaintenanceWindowTargetErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMaintenanceWindowTargetErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMaintenanceWindowTargetErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateMaintenanceWindowTargetErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -16704,7 +16704,7 @@ pub enum UpdateMaintenanceWindowTaskErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMaintenanceWindowTaskError {
@@ -16768,14 +16768,14 @@ impl UpdateMaintenanceWindowTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMaintenanceWindowTaskErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateMaintenanceWindowTaskErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMaintenanceWindowTaskErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMaintenanceWindowTaskErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateMaintenanceWindowTaskErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -16827,7 +16827,7 @@ pub enum UpdateManagedInstanceRoleErrorKind {
     /// </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateManagedInstanceRoleError {
@@ -16891,14 +16891,14 @@ impl UpdateManagedInstanceRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateManagedInstanceRoleErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateManagedInstanceRoleErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateManagedInstanceRoleErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateManagedInstanceRoleErrorKind::InvalidInstanceId`.
+    /// Returns `true` if the error kind is `UpdateManagedInstanceRoleErrorKind::InvalidInstanceId`.
     pub fn is_invalid_instance_id(&self) -> bool {
         matches!(
             &self.kind,
@@ -16941,7 +16941,7 @@ pub enum UpdateOpsItemErrorKind {
     OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOpsItemError {
@@ -17008,32 +17008,32 @@ impl UpdateOpsItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateOpsItemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateOpsItemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateOpsItemErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `UpdateOpsItemErrorKind::OpsItemAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateOpsItemErrorKind::OpsItemAlreadyExistsException`.
     pub fn is_ops_item_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpsItemErrorKind::OpsItemAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpsItemErrorKind::OpsItemInvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateOpsItemErrorKind::OpsItemInvalidParameterException`.
     pub fn is_ops_item_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpsItemErrorKind::OpsItemInvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpsItemErrorKind::OpsItemLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateOpsItemErrorKind::OpsItemLimitExceededException`.
     pub fn is_ops_item_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpsItemErrorKind::OpsItemLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpsItemErrorKind::OpsItemNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateOpsItemErrorKind::OpsItemNotFoundException`.
     pub fn is_ops_item_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17079,7 +17079,7 @@ pub enum UpdateOpsMetadataErrorKind {
     /// <p>The system is processing too many concurrent updates. Wait a few moments and try
     /// again.</p>
     OpsMetadataTooManyUpdatesException(crate::error::OpsMetadataTooManyUpdatesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOpsMetadataError {
@@ -17150,35 +17150,35 @@ impl UpdateOpsMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateOpsMetadataErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateOpsMetadataErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpsMetadataErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateOpsMetadataErrorKind::OpsMetadataInvalidArgumentException`.
     pub fn is_ops_metadata_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpsMetadataErrorKind::OpsMetadataInvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpsMetadataErrorKind::OpsMetadataKeyLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateOpsMetadataErrorKind::OpsMetadataKeyLimitExceededException`.
     pub fn is_ops_metadata_key_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpsMetadataErrorKind::OpsMetadataKeyLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpsMetadataErrorKind::OpsMetadataNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateOpsMetadataErrorKind::OpsMetadataNotFoundException`.
     pub fn is_ops_metadata_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOpsMetadataErrorKind::OpsMetadataNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesException`.
+    /// Returns `true` if the error kind is `UpdateOpsMetadataErrorKind::OpsMetadataTooManyUpdatesException`.
     pub fn is_ops_metadata_too_many_updates_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17221,7 +17221,7 @@ pub enum UpdatePatchBaselineErrorKind {
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePatchBaselineError {
@@ -17285,14 +17285,14 @@ impl UpdatePatchBaselineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePatchBaselineErrorKind::DoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdatePatchBaselineErrorKind::DoesNotExistException`.
     pub fn is_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePatchBaselineErrorKind::DoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePatchBaselineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdatePatchBaselineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -17334,7 +17334,7 @@ pub enum UpdateResourceDataSyncErrorKind {
     ),
     /// <p>The specified sync name wasn't found.</p>
     ResourceDataSyncNotFoundException(crate::error::ResourceDataSyncNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResourceDataSyncError {
@@ -17406,28 +17406,28 @@ impl UpdateResourceDataSyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResourceDataSyncErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateResourceDataSyncErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceDataSyncErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceDataSyncErrorKind::ResourceDataSyncConflictException`.
+    /// Returns `true` if the error kind is `UpdateResourceDataSyncErrorKind::ResourceDataSyncConflictException`.
     pub fn is_resource_data_sync_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceDataSyncErrorKind::ResourceDataSyncConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException`.
+    /// Returns `true` if the error kind is `UpdateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException`.
     pub fn is_resource_data_sync_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceDataSyncErrorKind::ResourceDataSyncInvalidConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceDataSyncErrorKind::ResourceDataSyncNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResourceDataSyncErrorKind::ResourceDataSyncNotFoundException`.
     pub fn is_resource_data_sync_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17473,7 +17473,7 @@ pub enum UpdateServiceSettingErrorKind {
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceSettingError {
@@ -17538,21 +17538,21 @@ impl UpdateServiceSettingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServiceSettingErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateServiceSettingErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceSettingErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceSettingErrorKind::ServiceSettingNotFound`.
+    /// Returns `true` if the error kind is `UpdateServiceSettingErrorKind::ServiceSettingNotFound`.
     pub fn is_service_setting_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceSettingErrorKind::ServiceSettingNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceSettingErrorKind::TooManyUpdates`.
+    /// Returns `true` if the error kind is `UpdateServiceSettingErrorKind::TooManyUpdates`.
     pub fn is_too_many_updates(&self) -> bool {
         matches!(&self.kind, UpdateServiceSettingErrorKind::TooManyUpdates(_))
     }

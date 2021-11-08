@@ -843,6 +843,36 @@ impl SuspendContactRecordingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopContactStreamingOutput {}
+impl std::fmt::Debug for StopContactStreamingOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopContactStreamingOutput");
+        formatter.finish()
+    }
+}
+/// See [`StopContactStreamingOutput`](crate::output::StopContactStreamingOutput)
+pub mod stop_contact_streaming_output {
+    /// A builder for [`StopContactStreamingOutput`](crate::output::StopContactStreamingOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StopContactStreamingOutput`](crate::output::StopContactStreamingOutput)
+        pub fn build(self) -> crate::output::StopContactStreamingOutput {
+            crate::output::StopContactStreamingOutput {}
+        }
+    }
+}
+impl StopContactStreamingOutput {
+    /// Creates a new builder-style object to manufacture [`StopContactStreamingOutput`](crate::output::StopContactStreamingOutput)
+    pub fn builder() -> crate::output::stop_contact_streaming_output::Builder {
+        crate::output::stop_contact_streaming_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopContactRecordingOutput {}
 impl std::fmt::Debug for StopContactRecordingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -993,6 +1023,54 @@ impl StartOutboundVoiceContactOutput {
     /// Creates a new builder-style object to manufacture [`StartOutboundVoiceContactOutput`](crate::output::StartOutboundVoiceContactOutput)
     pub fn builder() -> crate::output::start_outbound_voice_contact_output::Builder {
         crate::output::start_outbound_voice_contact_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartContactStreamingOutput {
+    /// <p>The identifier of the streaming configuration enabled. </p>
+    pub streaming_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StartContactStreamingOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartContactStreamingOutput");
+        formatter.field("streaming_id", &self.streaming_id);
+        formatter.finish()
+    }
+}
+/// See [`StartContactStreamingOutput`](crate::output::StartContactStreamingOutput)
+pub mod start_contact_streaming_output {
+    /// A builder for [`StartContactStreamingOutput`](crate::output::StartContactStreamingOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) streaming_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the streaming configuration enabled. </p>
+        pub fn streaming_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.streaming_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the streaming configuration enabled. </p>
+        pub fn set_streaming_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.streaming_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartContactStreamingOutput`](crate::output::StartContactStreamingOutput)
+        pub fn build(self) -> crate::output::StartContactStreamingOutput {
+            crate::output::StartContactStreamingOutput {
+                streaming_id: self.streaming_id,
+            }
+        }
+    }
+}
+impl StartContactStreamingOutput {
+    /// Creates a new builder-style object to manufacture [`StartContactStreamingOutput`](crate::output::StartContactStreamingOutput)
+    pub fn builder() -> crate::output::start_contact_streaming_output::Builder {
+        crate::output::start_contact_streaming_output::Builder::default()
     }
 }
 
@@ -4595,8 +4673,7 @@ impl CreateRoutingProfileOutput {
 pub struct CreateQuickConnectOutput {
     /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub quick_connect_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier for the quick connect.
-    /// </p>
+    /// <p>The identifier for the quick connect. </p>
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateQuickConnectOutput {
@@ -4630,14 +4707,12 @@ pub mod create_quick_connect_output {
             self.quick_connect_arn = input;
             self
         }
-        /// <p>The identifier for the quick connect.
-        /// </p>
+        /// <p>The identifier for the quick connect. </p>
         pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.quick_connect_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the quick connect.
-        /// </p>
+        /// <p>The identifier for the quick connect. </p>
         pub fn set_quick_connect_id(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -47,7 +47,7 @@ pub enum GetClipErrorKind {
     /// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
     /// the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetClipError {
@@ -118,48 +118,48 @@ impl GetClipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetClipErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetClipErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetClipErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, GetClipErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `GetClipErrorKind::InvalidCodecPrivateDataException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::InvalidCodecPrivateDataException`.
     pub fn is_invalid_codec_private_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetClipErrorKind::InvalidCodecPrivateDataException(_)
         )
     }
-    /// Returns true if the error kind is `GetClipErrorKind::InvalidMediaFrameException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::InvalidMediaFrameException`.
     pub fn is_invalid_media_frame_exception(&self) -> bool {
         matches!(&self.kind, GetClipErrorKind::InvalidMediaFrameException(_))
     }
-    /// Returns true if the error kind is `GetClipErrorKind::MissingCodecPrivateDataException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::MissingCodecPrivateDataException`.
     pub fn is_missing_codec_private_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetClipErrorKind::MissingCodecPrivateDataException(_)
         )
     }
-    /// Returns true if the error kind is `GetClipErrorKind::NoDataRetentionException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::NoDataRetentionException`.
     pub fn is_no_data_retention_exception(&self) -> bool {
         matches!(&self.kind, GetClipErrorKind::NoDataRetentionException(_))
     }
-    /// Returns true if the error kind is `GetClipErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(&self.kind, GetClipErrorKind::NotAuthorizedException(_))
     }
-    /// Returns true if the error kind is `GetClipErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetClipErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetClipErrorKind::UnsupportedStreamMediaTypeException`.
+    /// Returns `true` if the error kind is `GetClipErrorKind::UnsupportedStreamMediaTypeException`.
     pub fn is_unsupported_stream_media_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -229,7 +229,7 @@ pub enum GetDASHStreamingSessionURLErrorKind {
     /// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
     /// the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDASHStreamingSessionURLError {
@@ -307,56 +307,56 @@ impl GetDASHStreamingSessionURLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDASHStreamingSessionURLErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDASHStreamingSessionURLErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDASHStreamingSessionURLErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException`.
+    /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException`.
     pub fn is_invalid_codec_private_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDASHStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_)
         )
     }
-    /// Returns true if the error kind is `GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException`.
+    /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException`.
     pub fn is_missing_codec_private_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDASHStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_)
         )
     }
-    /// Returns true if the error kind is `GetDASHStreamingSessionURLErrorKind::NoDataRetentionException`.
+    /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::NoDataRetentionException`.
     pub fn is_no_data_retention_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDASHStreamingSessionURLErrorKind::NoDataRetentionException(_)
         )
     }
-    /// Returns true if the error kind is `GetDASHStreamingSessionURLErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDASHStreamingSessionURLErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDASHStreamingSessionURLErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException`.
+    /// Returns `true` if the error kind is `GetDASHStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException`.
     pub fn is_unsupported_stream_media_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -433,7 +433,7 @@ pub enum GetHLSStreamingSessionURLErrorKind {
     /// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
     /// the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHLSStreamingSessionURLError {
@@ -511,56 +511,56 @@ impl GetHLSStreamingSessionURLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHLSStreamingSessionURLErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetHLSStreamingSessionURLErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHLSStreamingSessionURLErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException`.
+    /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException`.
     pub fn is_invalid_codec_private_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHLSStreamingSessionURLErrorKind::InvalidCodecPrivateDataException(_)
         )
     }
-    /// Returns true if the error kind is `GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException`.
+    /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException`.
     pub fn is_missing_codec_private_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHLSStreamingSessionURLErrorKind::MissingCodecPrivateDataException(_)
         )
     }
-    /// Returns true if the error kind is `GetHLSStreamingSessionURLErrorKind::NoDataRetentionException`.
+    /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::NoDataRetentionException`.
     pub fn is_no_data_retention_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHLSStreamingSessionURLErrorKind::NoDataRetentionException(_)
         )
     }
-    /// Returns true if the error kind is `GetHLSStreamingSessionURLErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHLSStreamingSessionURLErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHLSStreamingSessionURLErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException`.
+    /// Returns `true` if the error kind is `GetHLSStreamingSessionURLErrorKind::UnsupportedStreamMediaTypeException`.
     pub fn is_unsupported_stream_media_type_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -624,7 +624,7 @@ pub enum GetMediaForFragmentListErrorKind {
     /// <code>LIVE</code> is requested for a stream that has no fragments within the last 30
     /// seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMediaForFragmentListError {
@@ -690,28 +690,28 @@ impl GetMediaForFragmentListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMediaForFragmentListErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `GetMediaForFragmentListErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaForFragmentListErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaForFragmentListErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetMediaForFragmentListErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaForFragmentListErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaForFragmentListErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetMediaForFragmentListErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMediaForFragmentListErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetMediaForFragmentListErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMediaForFragmentListErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -763,7 +763,7 @@ pub enum ListFragmentsErrorKind {
     /// <code>LIVE</code> is requested for a stream that has no fragments within the last 30
     /// seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFragmentsError {
@@ -829,28 +829,28 @@ impl ListFragmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFragmentsErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `ListFragmentsErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFragmentsErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListFragmentsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListFragmentsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFragmentsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListFragmentsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `ListFragmentsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFragmentsErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFragmentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFragmentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

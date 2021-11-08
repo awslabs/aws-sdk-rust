@@ -20,7 +20,7 @@ pub enum CreateExperimentTemplateErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateExperimentTemplateError {
@@ -88,28 +88,28 @@ impl CreateExperimentTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateExperimentTemplateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateExperimentTemplateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExperimentTemplateErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExperimentTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateExperimentTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExperimentTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExperimentTemplateErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateExperimentTemplateErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExperimentTemplateErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExperimentTemplateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateExperimentTemplateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -148,7 +148,7 @@ pub enum DeleteExperimentTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteExperimentTemplateError {
@@ -212,14 +212,14 @@ impl DeleteExperimentTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteExperimentTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteExperimentTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteExperimentTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteExperimentTemplateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteExperimentTemplateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -254,7 +254,7 @@ pub enum GetActionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetActionError {
@@ -318,11 +318,11 @@ impl GetActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetActionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetActionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetActionErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetActionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetActionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetActionErrorKind::ValidationException(_))
     }
@@ -354,7 +354,7 @@ pub enum GetExperimentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExperimentError {
@@ -418,14 +418,14 @@ impl GetExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetExperimentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetExperimentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExperimentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetExperimentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetExperimentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetExperimentErrorKind::ValidationException(_))
     }
@@ -457,7 +457,7 @@ pub enum GetExperimentTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExperimentTemplateError {
@@ -521,14 +521,14 @@ impl GetExperimentTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetExperimentTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetExperimentTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExperimentTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetExperimentTemplateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetExperimentTemplateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -561,7 +561,7 @@ pub struct ListActionsError {
 pub enum ListActionsErrorKind {
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListActionsError {
@@ -624,7 +624,7 @@ impl ListActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListActionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListActionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListActionsErrorKind::ValidationException(_))
     }
@@ -653,7 +653,7 @@ pub struct ListExperimentsError {
 pub enum ListExperimentsErrorKind {
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExperimentsError {
@@ -716,7 +716,7 @@ impl ListExperimentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListExperimentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListExperimentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListExperimentsErrorKind::ValidationException(_))
     }
@@ -745,7 +745,7 @@ pub struct ListExperimentTemplatesError {
 pub enum ListExperimentTemplatesErrorKind {
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExperimentTemplatesError {
@@ -808,7 +808,7 @@ impl ListExperimentTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListExperimentTemplatesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListExperimentTemplatesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -838,7 +838,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -930,7 +930,7 @@ pub enum StartExperimentErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartExperimentError {
@@ -996,25 +996,25 @@ impl StartExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartExperimentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartExperimentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartExperimentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartExperimentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartExperimentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExperimentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartExperimentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartExperimentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartExperimentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartExperimentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartExperimentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartExperimentErrorKind::ValidationException(_))
     }
@@ -1048,7 +1048,7 @@ pub enum StopExperimentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopExperimentError {
@@ -1112,14 +1112,14 @@ impl StopExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopExperimentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopExperimentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopExperimentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopExperimentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopExperimentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopExperimentErrorKind::ValidationException(_))
     }
@@ -1147,7 +1147,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1231,7 +1231,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1321,7 +1321,7 @@ pub enum UpdateExperimentTemplateErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The specified input is not valid, or fails to satisfy the constraints for the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateExperimentTemplateError {
@@ -1388,21 +1388,21 @@ impl UpdateExperimentTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateExperimentTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateExperimentTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateExperimentTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateExperimentTemplateErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateExperimentTemplateErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateExperimentTemplateErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateExperimentTemplateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateExperimentTemplateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

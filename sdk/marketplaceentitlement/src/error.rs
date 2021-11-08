@@ -19,7 +19,7 @@ pub enum GetEntitlementsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The calls to the GetEntitlements API are throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEntitlementsError {
@@ -84,21 +84,21 @@ impl GetEntitlementsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEntitlementsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetEntitlementsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEntitlementsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetEntitlementsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetEntitlementsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEntitlementsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetEntitlementsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetEntitlementsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetEntitlementsErrorKind::ThrottlingException(_))
     }

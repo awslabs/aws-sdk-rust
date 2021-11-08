@@ -42,7 +42,7 @@ pub enum Error {
     FieldLevelEncryptionProfileInUse(crate::error::FieldLevelEncryptionProfileInUse),
     /// <p>The maximum size of a profile for field-level encryption was exceeded.</p>
     FieldLevelEncryptionProfileSizeExceeded(crate::error::FieldLevelEncryptionProfileSizeExceeded),
-    /// <p>A function with the same name already exists in this account. To create a
+    /// <p>A function with the same name already exists in this Amazon Web Services account. To create a
     /// function, you must provide a unique name. To update an existing function, use
     /// <code>UpdateFunction</code>.</p>
     FunctionAlreadyExists(crate::error::FunctionAlreadyExists),
@@ -146,6 +146,8 @@ pub enum Error {
     NoSuchRealtimeLogConfig(crate::error::NoSuchRealtimeLogConfig),
     /// <p>A resource that was specified is not valid.</p>
     NoSuchResource(crate::error::NoSuchResource),
+    /// <p>The response headers policy does not exist.</p>
+    NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
     /// <p>The specified streaming distribution does not exist.</p>
     NoSuchStreamingDistribution(crate::error::NoSuchStreamingDistribution),
     /// <p>An origin request policy with this name already exists. You must provide a unique
@@ -171,10 +173,17 @@ pub enum Error {
     /// <p>Cannot delete the real-time log configuration because it is attached to one or more cache
     /// behaviors.</p>
     RealtimeLogConfigInUse(crate::error::RealtimeLogConfigInUse),
-    /// <p>The specified real-time log configuration belongs to a different account.</p>
+    /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
     RealtimeLogConfigOwnerMismatch(crate::error::RealtimeLogConfigOwnerMismatch),
     /// <p>Cannot delete this resource because it is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
+    /// <p>A response headers policy with this name already exists. You must provide a unique name. To
+    /// modify an existing response headers policy, use
+    /// <code>UpdateResponseHeadersPolicy</code>.</p>
+    ResponseHeadersPolicyAlreadyExists(crate::error::ResponseHeadersPolicyAlreadyExists),
+    /// <p>Cannot delete the response headers policy because it is attached to one or more cache
+    /// behaviors in a CloudFront distribution. </p>
+    ResponseHeadersPolicyInUse(crate::error::ResponseHeadersPolicyInUse),
     /// <p>The caller reference you attempted to create the streaming distribution with
     /// is associated with another distribution</p>
     StreamingDistributionAlreadyExists(crate::error::StreamingDistributionAlreadyExists),
@@ -185,7 +194,7 @@ pub enum Error {
     TestFunctionFailed(crate::error::TestFunctionFailed),
     /// <p>You cannot create more cache behaviors for the distribution.</p>
     TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
-    /// <p>You have reached the maximum number of cache policies for this account. For more
+    /// <p>You have reached the maximum number of cache policies for this Amazon Web Services account. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyCachePolicies(crate::error::TooManyCachePolicies),
@@ -203,6 +212,12 @@ pub enum Error {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyCookiesInOriginRequestPolicy(crate::error::TooManyCookiesInOriginRequestPolicy),
+    /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyCustomHeadersInResponseHeadersPolicy(
+        crate::error::TooManyCustomHeadersInResponseHeadersPolicy,
+    ),
     /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
     TooManyDistributionCnamEs(crate::error::TooManyDistributionCnamEs),
     /// <p>Processing your request would cause you to exceed the maximum number of distributions allowed.</p>
@@ -228,6 +243,13 @@ pub enum Error {
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToOriginRequestPolicy(
         crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified response headers
+    /// policy.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToResponseHeadersPolicy(
+        crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
     ),
     /// <p>You have reached the maximum number of distributions that are associated with a CloudFront
     /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
@@ -269,7 +291,7 @@ pub enum Error {
     /// distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyFunctionAssociations(crate::error::TooManyFunctionAssociations),
-    /// <p>You have reached the maximum number of CloudFront functions for this account. For more
+    /// <p>You have reached the maximum number of CloudFront functions for this Amazon Web Services account. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyFunctions(crate::error::TooManyFunctions),
@@ -285,7 +307,7 @@ pub enum Error {
     TooManyHeadersInOriginRequestPolicy(crate::error::TooManyHeadersInOriginRequestPolicy),
     /// <p>You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation objects.</p>
     TooManyInvalidationsInProgress(crate::error::TooManyInvalidationsInProgress),
-    /// <p>You have reached the maximum number of key groups for this account. For more
+    /// <p>You have reached the maximum number of key groups for this Amazon Web Services account. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyKeyGroups(crate::error::TooManyKeyGroups),
@@ -301,7 +323,7 @@ pub enum Error {
     TooManyOriginCustomHeaders(crate::error::TooManyOriginCustomHeaders),
     /// <p>Processing your request would cause you to exceed the maximum number of origin groups allowed.</p>
     TooManyOriginGroupsPerDistribution(crate::error::TooManyOriginGroupsPerDistribution),
-    /// <p>You have reached the maximum number of origin request policies for this account.
+    /// <p>You have reached the maximum number of origin request policies for this Amazon Web Services account.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyOriginRequestPolicies(crate::error::TooManyOriginRequestPolicies),
@@ -325,10 +347,15 @@ pub enum Error {
     TooManyQueryStringsInOriginRequestPolicy(
         crate::error::TooManyQueryStringsInOriginRequestPolicy,
     ),
-    /// <p>You have reached the maximum number of real-time log configurations for this account.
+    /// <p>You have reached the maximum number of real-time log configurations for this Amazon Web Services account.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyRealtimeLogConfigs(crate::error::TooManyRealtimeLogConfigs),
+    /// <p>You have reached the maximum number of response headers policies for this
+    /// Amazon Web Services account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
+    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyResponseHeadersPolicies(crate::error::TooManyResponseHeadersPolicies),
     /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
     TooManyStreamingDistributionCnamEs(crate::error::TooManyStreamingDistributionCnamEs),
     /// <p>Processing your request would cause you to exceed the maximum number of streaming distributions allowed.</p>
@@ -409,6 +436,7 @@ impl std::fmt::Display for Error {
             Error::NoSuchPublicKey(inner) => inner.fmt(f),
             Error::NoSuchRealtimeLogConfig(inner) => inner.fmt(f),
             Error::NoSuchResource(inner) => inner.fmt(f),
+            Error::NoSuchResponseHeadersPolicy(inner) => inner.fmt(f),
             Error::NoSuchStreamingDistribution(inner) => inner.fmt(f),
             Error::OriginRequestPolicyAlreadyExists(inner) => inner.fmt(f),
             Error::OriginRequestPolicyInUse(inner) => inner.fmt(f),
@@ -420,6 +448,8 @@ impl std::fmt::Display for Error {
             Error::RealtimeLogConfigInUse(inner) => inner.fmt(f),
             Error::RealtimeLogConfigOwnerMismatch(inner) => inner.fmt(f),
             Error::ResourceInUse(inner) => inner.fmt(f),
+            Error::ResponseHeadersPolicyAlreadyExists(inner) => inner.fmt(f),
+            Error::ResponseHeadersPolicyInUse(inner) => inner.fmt(f),
             Error::StreamingDistributionAlreadyExists(inner) => inner.fmt(f),
             Error::StreamingDistributionNotDisabled(inner) => inner.fmt(f),
             Error::TestFunctionFailed(inner) => inner.fmt(f),
@@ -430,6 +460,7 @@ impl std::fmt::Display for Error {
             Error::TooManyCookieNamesInWhiteList(inner) => inner.fmt(f),
             Error::TooManyCookiesInCachePolicy(inner) => inner.fmt(f),
             Error::TooManyCookiesInOriginRequestPolicy(inner) => inner.fmt(f),
+            Error::TooManyCustomHeadersInResponseHeadersPolicy(inner) => inner.fmt(f),
             Error::TooManyDistributionCnamEs(inner) => inner.fmt(f),
             Error::TooManyDistributions(inner) => inner.fmt(f),
             Error::TooManyDistributionsAssociatedToCachePolicy(inner) => inner.fmt(f),
@@ -438,6 +469,7 @@ impl std::fmt::Display for Error {
             }
             Error::TooManyDistributionsAssociatedToKeyGroup(inner) => inner.fmt(f),
             Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => inner.fmt(f),
+            Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => inner.fmt(f),
             Error::TooManyDistributionsWithFunctionAssociations(inner) => inner.fmt(f),
             Error::TooManyDistributionsWithLambdaAssociations(inner) => inner.fmt(f),
             Error::TooManyDistributionsWithSingleFunctionArn(inner) => inner.fmt(f),
@@ -466,6 +498,7 @@ impl std::fmt::Display for Error {
             Error::TooManyQueryStringsInCachePolicy(inner) => inner.fmt(f),
             Error::TooManyQueryStringsInOriginRequestPolicy(inner) => inner.fmt(f),
             Error::TooManyRealtimeLogConfigs(inner) => inner.fmt(f),
+            Error::TooManyResponseHeadersPolicies(inner) => inner.fmt(f),
             Error::TooManyStreamingDistributionCnamEs(inner) => inner.fmt(f),
             Error::TooManyStreamingDistributions(inner) => inner.fmt(f),
             Error::TooManyTrustedSigners(inner) => inner.fmt(f),
@@ -616,6 +649,7 @@ where
                 crate::error::CreateDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
                 crate::error::CreateDistributionErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
                 crate::error::CreateDistributionErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+                crate::error::CreateDistributionErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
                 crate::error::CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
                 crate::error::CreateDistributionErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
                 crate::error::CreateDistributionErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
@@ -626,6 +660,7 @@ where
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+                crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
                 crate::error::CreateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
@@ -690,6 +725,7 @@ where
                 crate::error::CreateDistributionWithTagsErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+                crate::error::CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
@@ -700,6 +736,7 @@ where
                 crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
                 crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
@@ -966,6 +1003,28 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateResponseHeadersPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+                crate::error::CreateResponseHeadersPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+                crate::error::CreateResponseHeadersPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+                crate::error::CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
+                crate::error::CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
+                crate::error::CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(inner) => Error::TooManyResponseHeadersPolicies(inner),
+                crate::error::CreateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1348,6 +1407,42 @@ where
                     Error::RealtimeLogConfigInUse(inner)
                 }
                 crate::error::DeleteRealtimeLogConfigErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteResponseHeadersPolicyErrorKind::AccessDenied(inner) => {
+                    Error::AccessDenied(inner)
+                }
+                crate::error::DeleteResponseHeadersPolicyErrorKind::IllegalDelete(inner) => {
+                    Error::IllegalDelete(inner)
+                }
+                crate::error::DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(
+                    inner,
+                ) => Error::InvalidIfMatchVersion(inner),
+                crate::error::DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(
+                    inner,
+                ) => Error::NoSuchResponseHeadersPolicy(inner),
+                crate::error::DeleteResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => {
+                    Error::PreconditionFailed(inner)
+                }
+                crate::error::DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse(
+                    inner,
+                ) => Error::ResponseHeadersPolicyInUse(inner),
+                crate::error::DeleteResponseHeadersPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1838,6 +1933,52 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetResponseHeadersPolicyErrorKind::AccessDenied(inner) => {
+                    Error::AccessDenied(inner)
+                }
+                crate::error::GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(
+                    inner,
+                ) => Error::NoSuchResponseHeadersPolicy(inner),
+                crate::error::GetResponseHeadersPolicyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetResponseHeadersPolicyConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetResponseHeadersPolicyConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+                crate::error::GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+                crate::error::GetResponseHeadersPolicyConfigErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionError, R>>
     for Error
 where
@@ -2094,6 +2235,33 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListDistributionsByResponseHeadersPolicyIdError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListDistributionsByResponseHeadersPolicyIdError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+                crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+                crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+                crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDistributionsByWebACLIdError, R>>
     for Error
 where
@@ -2292,6 +2460,33 @@ where
                     Error::NoSuchRealtimeLogConfig(inner)
                 }
                 crate::error::ListRealtimeLogConfigsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListResponseHeadersPoliciesErrorKind::AccessDenied(inner) => {
+                    Error::AccessDenied(inner)
+                }
+                crate::error::ListResponseHeadersPoliciesErrorKind::InvalidArgument(inner) => {
+                    Error::InvalidArgument(inner)
+                }
+                crate::error::ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(
+                    inner,
+                ) => Error::NoSuchResponseHeadersPolicy(inner),
+                crate::error::ListResponseHeadersPoliciesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -2579,6 +2774,7 @@ where
                 crate::error::UpdateDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
                 crate::error::UpdateDistributionErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
                 crate::error::UpdateDistributionErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+                crate::error::UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
                 crate::error::UpdateDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
                 crate::error::UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
                 crate::error::UpdateDistributionErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
@@ -2589,6 +2785,7 @@ where
                 crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
                 crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
                 crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+                crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
                 crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
                 crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
                 crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
@@ -2818,6 +3015,31 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateResponseHeadersPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
+                crate::error::UpdateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

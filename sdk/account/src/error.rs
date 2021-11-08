@@ -25,7 +25,7 @@ pub enum DeleteAlternateContactErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAlternateContactError {
@@ -100,35 +100,35 @@ impl DeleteAlternateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAlternateContactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAlternateContactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlternateContactErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlternateContactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteAlternateContactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlternateContactErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlternateContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAlternateContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlternateContactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlternateContactErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAlternateContactErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlternateContactErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlternateContactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAlternateContactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -175,7 +175,7 @@ pub enum GetAlternateContactErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAlternateContactError {
@@ -250,35 +250,35 @@ impl GetAlternateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAlternateContactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAlternateContactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAlternateContactErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAlternateContactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetAlternateContactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAlternateContactErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetAlternateContactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAlternateContactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAlternateContactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAlternateContactErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAlternateContactErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAlternateContactErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `GetAlternateContactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAlternateContactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -323,7 +323,7 @@ pub enum PutAlternateContactErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAlternateContactError {
@@ -397,28 +397,28 @@ impl PutAlternateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAlternateContactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutAlternateContactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlternateContactErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlternateContactErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutAlternateContactErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlternateContactErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlternateContactErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutAlternateContactErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAlternateContactErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `PutAlternateContactErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutAlternateContactErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

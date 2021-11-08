@@ -32,7 +32,7 @@ pub enum CancelImageCreationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelImageCreationError {
@@ -104,53 +104,53 @@ impl CancelImageCreationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelImageCreationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `CancelImageCreationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelImageCreationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CancelImageCreationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CancelImageCreationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CancelImageCreationErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CancelImageCreationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CancelImageCreationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelImageCreationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CancelImageCreationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CancelImageCreationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelImageCreationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CancelImageCreationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CancelImageCreationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelImageCreationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CancelImageCreationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CancelImageCreationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelImageCreationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CancelImageCreationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CancelImageCreationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelImageCreationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CancelImageCreationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CancelImageCreationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -216,7 +216,7 @@ pub enum CreateComponentErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateComponentError {
@@ -289,68 +289,68 @@ impl CreateComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateComponentErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateComponentErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::InvalidVersionNumberException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::InvalidVersionNumberException`.
     pub fn is_invalid_version_number_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::InvalidVersionNumberException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateComponentErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -416,7 +416,7 @@ pub enum CreateContainerRecipeErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContainerRecipeError {
@@ -491,77 +491,77 @@ impl CreateContainerRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::InvalidVersionNumberException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::InvalidVersionNumberException`.
     pub fn is_invalid_version_number_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::InvalidVersionNumberException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerRecipeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerRecipeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateContainerRecipeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -630,7 +630,7 @@ pub enum CreateDistributionConfigurationErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDistributionConfigurationError {
@@ -722,77 +722,77 @@ impl CreateDistributionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionConfigurationErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -870,7 +870,7 @@ pub enum CreateImageErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImageError {
@@ -941,48 +941,48 @@ impl CreateImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateImageErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateImageErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateImageErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateImageErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateImageErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateImageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1044,7 +1044,7 @@ pub enum CreateImagePipelineErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImagePipelineError {
@@ -1118,67 +1118,67 @@ impl CreateImagePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImagePipelineErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateImagePipelineErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImagePipelineErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImagePipelineErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImagePipelineErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImagePipelineErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImagePipelineErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImagePipelineErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImagePipelineErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImagePipelineErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateImagePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1245,7 +1245,7 @@ pub enum CreateImageRecipeErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImageRecipeError {
@@ -1320,71 +1320,71 @@ impl CreateImageRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageRecipeErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateImageRecipeErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageRecipeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageRecipeErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageRecipeErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::InvalidVersionNumberException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::InvalidVersionNumberException`.
     pub fn is_invalid_version_number_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageRecipeErrorKind::InvalidVersionNumberException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageRecipeErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageRecipeErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateImageRecipeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImageRecipeErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImageRecipeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateImageRecipeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1450,7 +1450,7 @@ pub enum CreateInfrastructureConfigurationErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInfrastructureConfigurationError {
@@ -1539,70 +1539,70 @@ impl CreateInfrastructureConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInfrastructureConfigurationErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInfrastructureConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateInfrastructureConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1672,7 +1672,7 @@ pub enum DeleteComponentErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteComponentError {
@@ -1741,40 +1741,40 @@ impl DeleteComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComponentErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteComponentErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteComponentErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComponentErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ResourceDependencyException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ResourceDependencyException`.
     pub fn is_resource_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComponentErrorKind::ResourceDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteComponentErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1827,7 +1827,7 @@ pub enum DeleteContainerRecipeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContainerRecipeError {
@@ -1896,49 +1896,49 @@ impl DeleteContainerRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContainerRecipeErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteContainerRecipeErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerRecipeErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerRecipeErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteContainerRecipeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerRecipeErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerRecipeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteContainerRecipeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerRecipeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerRecipeErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteContainerRecipeErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerRecipeErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerRecipeErrorKind::ResourceDependencyException`.
+    /// Returns `true` if the error kind is `DeleteContainerRecipeErrorKind::ResourceDependencyException`.
     pub fn is_resource_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerRecipeErrorKind::ResourceDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerRecipeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteContainerRecipeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerRecipeErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerRecipeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteContainerRecipeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1991,7 +1991,7 @@ pub enum DeleteDistributionConfigurationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDistributionConfigurationError {
@@ -2071,49 +2071,49 @@ impl DeleteDistributionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDistributionConfigurationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteDistributionConfigurationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionConfigurationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionConfigurationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteDistributionConfigurationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionConfigurationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteDistributionConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteDistributionConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionConfigurationErrorKind::ResourceDependencyException`.
+    /// Returns `true` if the error kind is `DeleteDistributionConfigurationErrorKind::ResourceDependencyException`.
     pub fn is_resource_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionConfigurationErrorKind::ResourceDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteDistributionConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteDistributionConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2174,7 +2174,7 @@ pub enum DeleteImageErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImageError {
@@ -2243,37 +2243,37 @@ impl DeleteImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteImageErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteImageErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteImageErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ResourceDependencyException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ResourceDependencyException`.
     pub fn is_resource_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageErrorKind::ResourceDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteImageErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteImageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteImageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2326,7 +2326,7 @@ pub enum DeleteImagePipelineErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImagePipelineError {
@@ -2395,46 +2395,46 @@ impl DeleteImagePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImagePipelineErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteImagePipelineErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImagePipelineErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImagePipelineErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteImagePipelineErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteImagePipelineErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteImagePipelineErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteImagePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImagePipelineErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImagePipelineErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteImagePipelineErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImagePipelineErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImagePipelineErrorKind::ResourceDependencyException`.
+    /// Returns `true` if the error kind is `DeleteImagePipelineErrorKind::ResourceDependencyException`.
     pub fn is_resource_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImagePipelineErrorKind::ResourceDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImagePipelineErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteImagePipelineErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImagePipelineErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImagePipelineErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteImagePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2487,7 +2487,7 @@ pub enum DeleteImageRecipeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImageRecipeError {
@@ -2556,43 +2556,43 @@ impl DeleteImageRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImageRecipeErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteImageRecipeErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageRecipeErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageRecipeErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteImageRecipeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteImageRecipeErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteImageRecipeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteImageRecipeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageRecipeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageRecipeErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteImageRecipeErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageRecipeErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageRecipeErrorKind::ResourceDependencyException`.
+    /// Returns `true` if the error kind is `DeleteImageRecipeErrorKind::ResourceDependencyException`.
     pub fn is_resource_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImageRecipeErrorKind::ResourceDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImageRecipeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteImageRecipeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteImageRecipeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteImageRecipeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteImageRecipeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2645,7 +2645,7 @@ pub enum DeleteInfrastructureConfigurationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInfrastructureConfigurationError {
@@ -2725,49 +2725,49 @@ impl DeleteInfrastructureConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInfrastructureConfigurationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteInfrastructureConfigurationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInfrastructureConfigurationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInfrastructureConfigurationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteInfrastructureConfigurationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInfrastructureConfigurationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInfrastructureConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteInfrastructureConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInfrastructureConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInfrastructureConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteInfrastructureConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInfrastructureConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInfrastructureConfigurationErrorKind::ResourceDependencyException`.
+    /// Returns `true` if the error kind is `DeleteInfrastructureConfigurationErrorKind::ResourceDependencyException`.
     pub fn is_resource_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInfrastructureConfigurationErrorKind::ResourceDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInfrastructureConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteInfrastructureConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInfrastructureConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInfrastructureConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteInfrastructureConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2825,7 +2825,7 @@ pub enum GetComponentErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComponentError {
@@ -2893,33 +2893,33 @@ impl GetComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, GetComponentErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetComponentErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetComponentErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetComponentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetComponentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2966,7 +2966,7 @@ pub enum GetComponentPolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetComponentPolicyError {
@@ -3034,39 +3034,39 @@ impl GetComponentPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetComponentPolicyErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetComponentPolicyErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentPolicyErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentPolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetComponentPolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentPolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetComponentPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetComponentPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetComponentPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetComponentPolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetComponentPolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetComponentPolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetComponentPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetComponentPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3115,7 +3115,7 @@ pub enum GetContainerRecipeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerRecipeError {
@@ -3183,36 +3183,36 @@ impl GetContainerRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerRecipeErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetContainerRecipeErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerRecipeErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerRecipeErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetContainerRecipeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, GetContainerRecipeErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `GetContainerRecipeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetContainerRecipeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerRecipeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerRecipeErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetContainerRecipeErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerRecipeErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerRecipeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerRecipeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetContainerRecipeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetContainerRecipeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetContainerRecipeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3259,7 +3259,7 @@ pub enum GetContainerRecipePolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerRecipePolicyError {
@@ -3329,42 +3329,42 @@ impl GetContainerRecipePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerRecipePolicyErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetContainerRecipePolicyErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerRecipePolicyErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerRecipePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetContainerRecipePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerRecipePolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerRecipePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetContainerRecipePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerRecipePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerRecipePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerRecipePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerRecipePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerRecipePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerRecipePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerRecipePolicyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerRecipePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetContainerRecipePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3415,7 +3415,7 @@ pub enum GetDistributionConfigurationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDistributionConfigurationError {
@@ -3487,42 +3487,42 @@ impl GetDistributionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDistributionConfigurationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetDistributionConfigurationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionConfigurationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionConfigurationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetDistributionConfigurationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionConfigurationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetDistributionConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetDistributionConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDistributionConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetDistributionConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3575,7 +3575,7 @@ pub enum GetImageErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImageError {
@@ -3643,30 +3643,30 @@ impl GetImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImageErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetImageErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImageErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetImageErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetImageErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, GetImageErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `GetImageErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetImageErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetImageErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetImageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetImageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, GetImageErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `GetImageErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetImageErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetImageErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetImageErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetImageErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3715,7 +3715,7 @@ pub enum GetImagePipelineErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImagePipelineError {
@@ -3783,33 +3783,33 @@ impl GetImagePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImagePipelineErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetImagePipelineErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImagePipelineErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetImagePipelineErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetImagePipelineErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, GetImagePipelineErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `GetImagePipelineErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetImagePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetImagePipelineErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetImagePipelineErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetImagePipelineErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImagePipelineErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetImagePipelineErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetImagePipelineErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetImagePipelineErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetImagePipelineErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetImagePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3856,7 +3856,7 @@ pub enum GetImagePolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImagePolicyError {
@@ -3924,36 +3924,36 @@ impl GetImagePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImagePolicyErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetImagePolicyErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImagePolicyErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetImagePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetImagePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetImagePolicyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetImagePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetImagePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImagePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetImagePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetImagePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImagePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetImagePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetImagePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetImagePolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetImagePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetImagePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4002,7 +4002,7 @@ pub enum GetImageRecipeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImageRecipeError {
@@ -4070,33 +4070,33 @@ impl GetImageRecipeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImageRecipeErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetImageRecipeErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImageRecipeErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetImageRecipeErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetImageRecipeErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, GetImageRecipeErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `GetImageRecipeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetImageRecipeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetImageRecipeErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetImageRecipeErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetImageRecipeErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImageRecipeErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetImageRecipeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetImageRecipeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetImageRecipeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetImageRecipeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetImageRecipeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4143,7 +4143,7 @@ pub enum GetImageRecipePolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImageRecipePolicyError {
@@ -4211,42 +4211,42 @@ impl GetImageRecipePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImageRecipePolicyErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetImageRecipePolicyErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImageRecipePolicyErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetImageRecipePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetImageRecipePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImageRecipePolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetImageRecipePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetImageRecipePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImageRecipePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetImageRecipePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetImageRecipePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImageRecipePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetImageRecipePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetImageRecipePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImageRecipePolicyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetImageRecipePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetImageRecipePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4295,7 +4295,7 @@ pub enum GetInfrastructureConfigurationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInfrastructureConfigurationError {
@@ -4372,42 +4372,42 @@ impl GetInfrastructureConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInfrastructureConfigurationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetInfrastructureConfigurationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInfrastructureConfigurationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetInfrastructureConfigurationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `GetInfrastructureConfigurationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInfrastructureConfigurationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetInfrastructureConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetInfrastructureConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInfrastructureConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetInfrastructureConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetInfrastructureConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInfrastructureConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetInfrastructureConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInfrastructureConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInfrastructureConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetInfrastructureConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetInfrastructureConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4473,7 +4473,7 @@ pub enum ImportComponentErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportComponentError {
@@ -4545,61 +4545,61 @@ impl ImportComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportComponentErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ImportComponentErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ImportComponentErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportComponentErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportComponentErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportComponentErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::InvalidVersionNumberException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::InvalidVersionNumberException`.
     pub fn is_invalid_version_number_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportComponentErrorKind::InvalidVersionNumberException(_)
         )
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportComponentErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ImportComponentErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ImportComponentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ImportComponentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4654,7 +4654,7 @@ pub enum ListComponentBuildVersionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListComponentBuildVersionsError {
@@ -4729,49 +4729,49 @@ impl ListComponentBuildVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListComponentBuildVersionsErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListComponentBuildVersionsErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentBuildVersionsErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentBuildVersionsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListComponentBuildVersionsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentBuildVersionsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentBuildVersionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListComponentBuildVersionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentBuildVersionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentBuildVersionsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListComponentBuildVersionsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentBuildVersionsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentBuildVersionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListComponentBuildVersionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentBuildVersionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentBuildVersionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListComponentBuildVersionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentBuildVersionsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentBuildVersionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListComponentBuildVersionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4829,7 +4829,7 @@ pub enum ListComponentsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListComponentsError {
@@ -4898,40 +4898,40 @@ impl ListComponentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentsErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListComponentsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListComponentsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListComponentsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4983,7 +4983,7 @@ pub enum ListContainerRecipesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListContainerRecipesError {
@@ -5052,49 +5052,49 @@ impl ListContainerRecipesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListContainerRecipesErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListContainerRecipesErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerRecipesErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerRecipesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListContainerRecipesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerRecipesErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerRecipesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListContainerRecipesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerRecipesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerRecipesErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListContainerRecipesErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerRecipesErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerRecipesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListContainerRecipesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerRecipesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerRecipesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListContainerRecipesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListContainerRecipesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListContainerRecipesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListContainerRecipesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5146,7 +5146,7 @@ pub enum ListDistributionConfigurationsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDistributionConfigurationsError {
@@ -5226,49 +5226,49 @@ impl ListDistributionConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDistributionConfigurationsErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListDistributionConfigurationsErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionConfigurationsErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionConfigurationsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListDistributionConfigurationsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionConfigurationsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListDistributionConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionConfigurationsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListDistributionConfigurationsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionConfigurationsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionConfigurationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDistributionConfigurationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionConfigurationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionConfigurationsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListDistributionConfigurationsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributionConfigurationsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributionConfigurationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListDistributionConfigurationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5328,7 +5328,7 @@ pub enum ListImageBuildVersionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImageBuildVersionsError {
@@ -5401,49 +5401,49 @@ impl ListImageBuildVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImageBuildVersionsErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListImageBuildVersionsErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageBuildVersionsErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageBuildVersionsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListImageBuildVersionsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageBuildVersionsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageBuildVersionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListImageBuildVersionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageBuildVersionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageBuildVersionsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListImageBuildVersionsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageBuildVersionsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageBuildVersionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListImageBuildVersionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageBuildVersionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageBuildVersionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListImageBuildVersionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageBuildVersionsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageBuildVersionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListImageBuildVersionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5499,7 +5499,7 @@ pub enum ListImagePackagesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImagePackagesError {
@@ -5569,50 +5569,50 @@ impl ListImagePackagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImagePackagesErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListImagePackagesErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePackagesErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePackagesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListImagePackagesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListImagePackagesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListImagePackagesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListImagePackagesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePackagesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePackagesErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListImagePackagesErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePackagesErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePackagesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListImagePackagesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePackagesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePackagesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListImagePackagesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePackagesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePackagesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListImagePackagesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListImagePackagesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListImagePackagesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListImagePackagesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5667,7 +5667,7 @@ pub enum ListImagePipelineImagesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImagePipelineImagesError {
@@ -5741,56 +5741,56 @@ impl ListImagePipelineImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImagePipelineImagesErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListImagePipelineImagesErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelineImagesErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelineImagesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListImagePipelineImagesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelineImagesErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelineImagesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListImagePipelineImagesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelineImagesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelineImagesErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListImagePipelineImagesErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelineImagesErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelineImagesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListImagePipelineImagesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelineImagesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelineImagesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListImagePipelineImagesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelineImagesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelineImagesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListImagePipelineImagesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelineImagesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelineImagesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListImagePipelineImagesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5847,7 +5847,7 @@ pub enum ListImagePipelinesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImagePipelinesError {
@@ -5916,43 +5916,43 @@ impl ListImagePipelinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImagePipelinesErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListImagePipelinesErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelinesErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelinesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListImagePipelinesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListImagePipelinesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListImagePipelinesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListImagePipelinesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelinesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelinesErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListImagePipelinesErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelinesErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelinesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListImagePipelinesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagePipelinesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagePipelinesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListImagePipelinesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListImagePipelinesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListImagePipelinesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListImagePipelinesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6004,7 +6004,7 @@ pub enum ListImageRecipesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImageRecipesError {
@@ -6073,40 +6073,40 @@ impl ListImageRecipesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImageRecipesErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListImageRecipesErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageRecipesErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageRecipesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListImageRecipesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListImageRecipesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListImageRecipesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListImageRecipesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListImageRecipesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListImageRecipesErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListImageRecipesErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageRecipesErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageRecipesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListImageRecipesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImageRecipesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListImageRecipesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListImageRecipesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListImageRecipesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListImageRecipesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListImageRecipesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6158,7 +6158,7 @@ pub enum ListImagesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListImagesError {
@@ -6227,37 +6227,37 @@ impl ListImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagesErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListImagesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListImagesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListImagesErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListImagesErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListImagesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListImagesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListImagesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6309,7 +6309,7 @@ pub enum ListInfrastructureConfigurationsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInfrastructureConfigurationsError {
@@ -6389,49 +6389,49 @@ impl ListInfrastructureConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInfrastructureConfigurationsErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListInfrastructureConfigurationsErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInfrastructureConfigurationsErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListInfrastructureConfigurationsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListInfrastructureConfigurationsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInfrastructureConfigurationsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `ListInfrastructureConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListInfrastructureConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInfrastructureConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListInfrastructureConfigurationsErrorKind::InvalidPaginationTokenException`.
+    /// Returns `true` if the error kind is `ListInfrastructureConfigurationsErrorKind::InvalidPaginationTokenException`.
     pub fn is_invalid_pagination_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInfrastructureConfigurationsErrorKind::InvalidPaginationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListInfrastructureConfigurationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListInfrastructureConfigurationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInfrastructureConfigurationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListInfrastructureConfigurationsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListInfrastructureConfigurationsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInfrastructureConfigurationsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListInfrastructureConfigurationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListInfrastructureConfigurationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6482,7 +6482,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6547,21 +6547,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6611,7 +6611,7 @@ pub enum PutComponentPolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutComponentPolicyError {
@@ -6681,50 +6681,50 @@ impl PutComponentPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutComponentPolicyErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `PutComponentPolicyErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutComponentPolicyErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutComponentPolicyErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `PutComponentPolicyErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, PutComponentPolicyErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `PutComponentPolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutComponentPolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutComponentPolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutComponentPolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutComponentPolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutComponentPolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutComponentPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutComponentPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutComponentPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutComponentPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutComponentPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutComponentPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutComponentPolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutComponentPolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, PutComponentPolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `PutComponentPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutComponentPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6779,7 +6779,7 @@ pub enum PutContainerRecipePolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutContainerRecipePolicyError {
@@ -6853,56 +6853,56 @@ impl PutContainerRecipePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutContainerRecipePolicyErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `PutContainerRecipePolicyErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerRecipePolicyErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerRecipePolicyErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `PutContainerRecipePolicyErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerRecipePolicyErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerRecipePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutContainerRecipePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerRecipePolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerRecipePolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutContainerRecipePolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerRecipePolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerRecipePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutContainerRecipePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerRecipePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerRecipePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutContainerRecipePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerRecipePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerRecipePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutContainerRecipePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutContainerRecipePolicyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutContainerRecipePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutContainerRecipePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6961,7 +6961,7 @@ pub enum PutImagePolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutImagePolicyError {
@@ -7031,47 +7031,47 @@ impl PutImagePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutImagePolicyErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `PutImagePolicyErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImagePolicyErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutImagePolicyErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `PutImagePolicyErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, PutImagePolicyErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `PutImagePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutImagePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, PutImagePolicyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `PutImagePolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutImagePolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImagePolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutImagePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutImagePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImagePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutImagePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutImagePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImagePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutImagePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutImagePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, PutImagePolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `PutImagePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutImagePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7126,7 +7126,7 @@ pub enum PutImageRecipePolicyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutImageRecipePolicyError {
@@ -7196,56 +7196,56 @@ impl PutImageRecipePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutImageRecipePolicyErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `PutImageRecipePolicyErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageRecipePolicyErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageRecipePolicyErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `PutImageRecipePolicyErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageRecipePolicyErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageRecipePolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutImageRecipePolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageRecipePolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageRecipePolicyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `PutImageRecipePolicyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageRecipePolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageRecipePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutImageRecipePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageRecipePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageRecipePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutImageRecipePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageRecipePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageRecipePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutImageRecipePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutImageRecipePolicyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutImageRecipePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutImageRecipePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7304,7 +7304,7 @@ pub enum StartImagePipelineExecutionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartImagePipelineExecutionError {
@@ -7383,63 +7383,63 @@ impl StartImagePipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImagePipelineExecutionErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImagePipelineExecutionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImagePipelineExecutionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImagePipelineExecutionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImagePipelineExecutionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImagePipelineExecutionErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImagePipelineExecutionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartImagePipelineExecutionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartImagePipelineExecutionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartImagePipelineExecutionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7490,7 +7490,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -7555,21 +7555,21 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServiceException(_))
     }
@@ -7605,7 +7605,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7670,21 +7670,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ServiceException(_))
     }
@@ -7736,7 +7736,7 @@ pub enum UpdateDistributionConfigurationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDistributionConfigurationError {
@@ -7822,63 +7822,63 @@ impl UpdateDistributionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionConfigurationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionConfigurationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionConfigurationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::InvalidParameterCombinationException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionConfigurationErrorKind::InvalidParameterCombinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionConfigurationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateDistributionConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7948,7 +7948,7 @@ pub enum UpdateImagePipelineErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateImagePipelineError {
@@ -8020,53 +8020,53 @@ impl UpdateImagePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateImagePipelineErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateImagePipelineErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateImagePipelineErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateImagePipelineErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateImagePipelineErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateImagePipelineErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateImagePipelineErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateImagePipelineErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateImagePipelineErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateImagePipelineErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `UpdateImagePipelineErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateImagePipelineErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateImagePipelineErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateImagePipelineErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateImagePipelineErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateImagePipelineErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateImagePipelineErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateImagePipelineErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateImagePipelineErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateImagePipelineErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateImagePipelineErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateImagePipelineErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateImagePipelineErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8125,7 +8125,7 @@ pub enum UpdateInfrastructureConfigurationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInfrastructureConfigurationError {
@@ -8208,56 +8208,56 @@ impl UpdateInfrastructureConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInfrastructureConfigurationErrorKind::CallRateLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateInfrastructureConfigurationErrorKind::CallRateLimitExceededException`.
     pub fn is_call_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInfrastructureConfigurationErrorKind::CallRateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInfrastructureConfigurationErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateInfrastructureConfigurationErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInfrastructureConfigurationErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInfrastructureConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateInfrastructureConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInfrastructureConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInfrastructureConfigurationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `UpdateInfrastructureConfigurationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInfrastructureConfigurationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInfrastructureConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateInfrastructureConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInfrastructureConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInfrastructureConfigurationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateInfrastructureConfigurationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInfrastructureConfigurationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInfrastructureConfigurationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateInfrastructureConfigurationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInfrastructureConfigurationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInfrastructureConfigurationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateInfrastructureConfigurationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,

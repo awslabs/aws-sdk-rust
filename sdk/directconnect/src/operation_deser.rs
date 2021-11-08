@@ -1010,6 +1010,86 @@ pub fn parse_confirm_connection_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_confirm_customer_agreement_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ConfirmCustomerAgreementOutput,
+    crate::error::ConfirmCustomerAgreementError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ConfirmCustomerAgreementError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ConfirmCustomerAgreementError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DirectConnectClientException" => crate::error::ConfirmCustomerAgreementError {
+            meta: generic,
+            kind: crate::error::ConfirmCustomerAgreementErrorKind::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmCustomerAgreementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "DirectConnectServerException" => crate::error::ConfirmCustomerAgreementError {
+            meta: generic,
+            kind: crate::error::ConfirmCustomerAgreementErrorKind::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmCustomerAgreementError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ConfirmCustomerAgreementError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_confirm_customer_agreement_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ConfirmCustomerAgreementOutput,
+    crate::error::ConfirmCustomerAgreementError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::confirm_customer_agreement_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_confirm_customer_agreement(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ConfirmCustomerAgreementError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_confirm_private_virtual_interface_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3053,6 +3133,86 @@ pub fn parse_describe_connections_on_interconnect_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_customer_metadata_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeCustomerMetadataOutput,
+    crate::error::DescribeCustomerMetadataError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeCustomerMetadataError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeCustomerMetadataError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DirectConnectClientException" => crate::error::DescribeCustomerMetadataError {
+            meta: generic,
+            kind: crate::error::DescribeCustomerMetadataErrorKind::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomerMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "DirectConnectServerException" => crate::error::DescribeCustomerMetadataError {
+            meta: generic,
+            kind: crate::error::DescribeCustomerMetadataErrorKind::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomerMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeCustomerMetadataError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_customer_metadata_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeCustomerMetadataOutput,
+    crate::error::DescribeCustomerMetadataError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_customer_metadata_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_customer_metadata(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeCustomerMetadataError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_direct_connect_gateway_association_proposals_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3790,6 +3950,90 @@ pub fn parse_describe_locations_response(
             output,
         )
         .map_err(crate::error::DescribeLocationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_router_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeRouterConfigurationOutput,
+    crate::error::DescribeRouterConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeRouterConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DirectConnectClientException" => crate::error::DescribeRouterConfigurationError {
+            meta: generic,
+            kind: crate::error::DescribeRouterConfigurationErrorKind::DirectConnectClientException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "DirectConnectServerException" => crate::error::DescribeRouterConfigurationError {
+            meta: generic,
+            kind: crate::error::DescribeRouterConfigurationErrorKind::DirectConnectServerException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::DescribeRouterConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_router_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeRouterConfigurationOutput,
+    crate::error::DescribeRouterConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_router_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_router_configuration(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -4655,6 +4899,90 @@ pub fn parse_update_connection_response(
             output,
         )
         .map_err(crate::error::UpdateConnectionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_direct_connect_gateway_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDirectConnectGatewayOutput,
+    crate::error::UpdateDirectConnectGatewayError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateDirectConnectGatewayError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DirectConnectClientException" => crate::error::UpdateDirectConnectGatewayError {
+            meta: generic,
+            kind: crate::error::UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "DirectConnectServerException" => crate::error::UpdateDirectConnectGatewayError {
+            meta: generic,
+            kind: crate::error::UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::UpdateDirectConnectGatewayError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_direct_connect_gateway_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDirectConnectGatewayOutput,
+    crate::error::UpdateDirectConnectGatewayError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_direct_connect_gateway_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_direct_connect_gateway(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
         output.build()
     })
 }

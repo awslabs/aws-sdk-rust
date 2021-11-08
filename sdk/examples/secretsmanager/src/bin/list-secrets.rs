@@ -19,7 +19,7 @@ struct Opt {
     #[structopt(short, long)]
     region: Option<String>,
 
-    /// Whether to display additonal runtime information
+    /// Whether to display additional runtime information
     #[structopt(short, long)]
     verbose: bool,
 }

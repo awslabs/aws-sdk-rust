@@ -285,6 +285,32 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeregisterAppInstanceUserEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeregisterAppInstanceUserEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeregisterAppInstanceUserEndpointErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::DeregisterAppInstanceUserEndpointErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::DeregisterAppInstanceUserEndpointErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::DeregisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::DeregisterAppInstanceUserEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::DeregisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::DeregisterAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -393,6 +419,32 @@ where
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceUserEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeAppInstanceUserEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeAppInstanceUserEndpointErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::DescribeAppInstanceUserEndpointErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::DescribeAppInstanceUserEndpointErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::DescribeAppInstanceUserEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::DescribeAppInstanceUserEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::DescribeAppInstanceUserEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::DescribeAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::GetAppInstanceRetentionSettingsError, R>>
     for Error
 where
@@ -492,6 +544,28 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppInstanceUserEndpointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListAppInstanceUserEndpointsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListAppInstanceUserEndpointsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::ListAppInstanceUserEndpointsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::ListAppInstanceUserEndpointsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::ListAppInstanceUserEndpointsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::ListAppInstanceUserEndpointsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::ListAppInstanceUserEndpointsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::ListAppInstanceUserEndpointsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppInstanceUsersError, R>>
     for Error
 where
@@ -528,6 +602,41 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::PutAppInstanceRetentionSettingsError, R>>
     for Error
@@ -550,6 +659,99 @@ where
                 crate::error::PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
                 crate::error::PutAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::RegisterAppInstanceUserEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::RegisterAppInstanceUserEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::RegisterAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::TagResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::TagResourceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::TagResourceErrorKind::ResourceLimitExceededException(inner) => {
+                    Error::ResourceLimitExceededException(inner)
+                }
+                crate::error::TagResourceErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::TagResourceErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::TagResourceErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::UntagResourceErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -630,6 +832,29 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceUserEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceUserEndpointError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::UpdateAppInstanceUserEndpointErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

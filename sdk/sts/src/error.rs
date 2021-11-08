@@ -34,7 +34,7 @@ pub enum AssumeRoleErrorKind {
     /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
     /// Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssumeRoleError {
@@ -100,25 +100,25 @@ impl AssumeRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssumeRoleErrorKind::ExpiredTokenException`.
+    /// Returns `true` if the error kind is `AssumeRoleErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
         matches!(&self.kind, AssumeRoleErrorKind::ExpiredTokenException(_))
     }
-    /// Returns true if the error kind is `AssumeRoleErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `AssumeRoleErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleErrorKind::PackedPolicyTooLargeException`.
+    /// Returns `true` if the error kind is `AssumeRoleErrorKind::PackedPolicyTooLargeException`.
     pub fn is_packed_policy_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleErrorKind::PackedPolicyTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleErrorKind::RegionDisabledException`.
+    /// Returns `true` if the error kind is `AssumeRoleErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
         matches!(&self.kind, AssumeRoleErrorKind::RegionDisabledException(_))
     }
@@ -178,7 +178,7 @@ pub enum AssumeRoleWithSAMLErrorKind {
     /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
     /// Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssumeRoleWithSAMLError {
@@ -246,42 +246,42 @@ impl AssumeRoleWithSAMLError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssumeRoleWithSAMLErrorKind::ExpiredTokenException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException`.
     pub fn is_idp_rejected_claim_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException`.
     pub fn is_invalid_identity_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException`.
     pub fn is_packed_policy_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithSAMLErrorKind::RegionDisabledException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -352,7 +352,7 @@ pub enum AssumeRoleWithWebIdentityErrorKind {
     /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
     /// Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssumeRoleWithWebIdentityError {
@@ -429,49 +429,49 @@ impl AssumeRoleWithWebIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException`.
     pub fn is_idp_communication_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException`.
     pub fn is_idp_rejected_claim_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException`.
     pub fn is_invalid_identity_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException`.
     pub fn is_packed_policy_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `AssumeRoleWithWebIdentityErrorKind::RegionDisabledException`.
+    /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -519,7 +519,7 @@ pub enum DecodeAuthorizationMessageErrorKind {
     /// was invalid. This can happen if the token contains invalid characters, such as
     /// linebreaks. </p>
     InvalidAuthorizationMessageException(crate::error::InvalidAuthorizationMessageException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DecodeAuthorizationMessageError {
@@ -584,7 +584,7 @@ impl DecodeAuthorizationMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException`.
+    /// Returns `true` if the error kind is `DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException`.
     pub fn is_invalid_authorization_message_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -616,7 +616,7 @@ pub struct GetAccessKeyInfoError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessKeyInfoErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessKeyInfoError {
@@ -700,7 +700,7 @@ pub struct GetCallerIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCallerIdentityErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCallerIdentityError {
@@ -803,7 +803,7 @@ pub enum GetFederationTokenErrorKind {
     /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
     /// Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFederationTokenError {
@@ -868,21 +868,21 @@ impl GetFederationTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFederationTokenErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `GetFederationTokenErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFederationTokenErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetFederationTokenErrorKind::PackedPolicyTooLargeException`.
+    /// Returns `true` if the error kind is `GetFederationTokenErrorKind::PackedPolicyTooLargeException`.
     pub fn is_packed_policy_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFederationTokenErrorKind::PackedPolicyTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetFederationTokenErrorKind::RegionDisabledException`.
+    /// Returns `true` if the error kind is `GetFederationTokenErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -920,7 +920,7 @@ pub enum GetSessionTokenErrorKind {
     /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
     /// Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSessionTokenError {
@@ -983,7 +983,7 @@ impl GetSessionTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSessionTokenErrorKind::RegionDisabledException`.
+    /// Returns `true` if the error kind is `GetSessionTokenErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,

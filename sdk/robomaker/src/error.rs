@@ -19,7 +19,7 @@ pub enum BatchDeleteWorldsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteWorldsError {
@@ -84,21 +84,21 @@ impl BatchDeleteWorldsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteWorldsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchDeleteWorldsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteWorldsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteWorldsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `BatchDeleteWorldsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDeleteWorldsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDeleteWorldsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchDeleteWorldsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -139,7 +139,7 @@ pub enum BatchDescribeSimulationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDescribeSimulationJobError {
@@ -205,28 +205,28 @@ impl BatchDescribeSimulationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDescribeSimulationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchDescribeSimulationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeSimulationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeSimulationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `BatchDescribeSimulationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeSimulationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeSimulationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDescribeSimulationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeSimulationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeSimulationJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchDescribeSimulationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -268,7 +268,7 @@ pub enum CancelDeploymentJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelDeploymentJobError {
@@ -334,28 +334,28 @@ impl CancelDeploymentJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelDeploymentJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CancelDeploymentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelDeploymentJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CancelDeploymentJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelDeploymentJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelDeploymentJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelDeploymentJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelDeploymentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelDeploymentJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelDeploymentJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelDeploymentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -397,7 +397,7 @@ pub enum CancelSimulationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelSimulationJobError {
@@ -463,28 +463,28 @@ impl CancelSimulationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelSimulationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CancelSimulationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSimulationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSimulationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelSimulationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSimulationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSimulationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelSimulationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSimulationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSimulationJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelSimulationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -526,7 +526,7 @@ pub enum CancelSimulationJobBatchErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelSimulationJobBatchError {
@@ -592,28 +592,28 @@ impl CancelSimulationJobBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelSimulationJobBatchErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CancelSimulationJobBatchErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSimulationJobBatchErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSimulationJobBatchErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelSimulationJobBatchErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSimulationJobBatchErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSimulationJobBatchErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelSimulationJobBatchErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSimulationJobBatchErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSimulationJobBatchErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelSimulationJobBatchErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -655,7 +655,7 @@ pub enum CancelWorldExportJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelWorldExportJobError {
@@ -721,28 +721,28 @@ impl CancelWorldExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelWorldExportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CancelWorldExportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelWorldExportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CancelWorldExportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelWorldExportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelWorldExportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelWorldExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelWorldExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelWorldExportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelWorldExportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelWorldExportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -784,7 +784,7 @@ pub enum CancelWorldGenerationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelWorldGenerationJobError {
@@ -850,28 +850,28 @@ impl CancelWorldGenerationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelWorldGenerationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CancelWorldGenerationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelWorldGenerationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CancelWorldGenerationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelWorldGenerationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelWorldGenerationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelWorldGenerationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelWorldGenerationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelWorldGenerationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelWorldGenerationJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelWorldGenerationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -921,7 +921,7 @@ pub enum CreateDeploymentJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentJobError {
@@ -992,49 +992,49 @@ impl CreateDeploymentJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentJobErrorKind::ConcurrentDeploymentException`.
+    /// Returns `true` if the error kind is `CreateDeploymentJobErrorKind::ConcurrentDeploymentException`.
     pub fn is_concurrent_deployment_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentJobErrorKind::ConcurrentDeploymentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentJobErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateDeploymentJobErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentJobErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDeploymentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateDeploymentJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDeploymentJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDeploymentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDeploymentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1082,7 +1082,7 @@ pub enum CreateFleetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFleetError {
@@ -1148,22 +1148,22 @@ impl CreateFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::ThrottlingException(_))
     }
@@ -1205,7 +1205,7 @@ pub enum CreateRobotErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRobotError {
@@ -1272,29 +1272,29 @@ impl CreateRobotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRobotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateRobotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateRobotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateRobotErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateRobotErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRobotErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateRobotErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateRobotErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateRobotErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateRobotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateRobotErrorKind::ThrottlingException(_))
     }
@@ -1340,7 +1340,7 @@ pub enum CreateRobotApplicationErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRobotApplicationError {
@@ -1412,42 +1412,42 @@ impl CreateRobotApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRobotApplicationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1497,7 +1497,7 @@ pub enum CreateRobotApplicationVersionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRobotApplicationVersionError {
@@ -1573,35 +1573,35 @@ impl CreateRobotApplicationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRobotApplicationVersionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationVersionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationVersionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationVersionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationVersionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationVersionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRobotApplicationVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRobotApplicationVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateRobotApplicationVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1654,7 +1654,7 @@ pub enum CreateSimulationApplicationErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSimulationApplicationError {
@@ -1728,42 +1728,42 @@ impl CreateSimulationApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1815,7 +1815,7 @@ pub enum CreateSimulationApplicationVersionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSimulationApplicationVersionError {
@@ -1895,35 +1895,35 @@ impl CreateSimulationApplicationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationVersionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationVersionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationVersionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationVersionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationVersionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationVersionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationVersionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationVersionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationVersionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationApplicationVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationApplicationVersionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateSimulationApplicationVersionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1984,7 +1984,7 @@ pub enum CreateSimulationJobErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSimulationJobError {
@@ -2055,49 +2055,49 @@ impl CreateSimulationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSimulationJobErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateSimulationJobErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationJobErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSimulationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSimulationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSimulationJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateSimulationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateSimulationJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSimulationJobErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSimulationJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateSimulationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2149,7 +2149,7 @@ pub enum CreateWorldExportJobErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorldExportJobError {
@@ -2219,42 +2219,42 @@ impl CreateWorldExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorldExportJobErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateWorldExportJobErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldExportJobErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldExportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWorldExportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldExportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldExportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateWorldExportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldExportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateWorldExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldExportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldExportJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateWorldExportJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldExportJobErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldExportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWorldExportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2308,7 +2308,7 @@ pub enum CreateWorldGenerationJobErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorldGenerationJobError {
@@ -2379,49 +2379,49 @@ impl CreateWorldGenerationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorldGenerationJobErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateWorldGenerationJobErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldGenerationJobErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldGenerationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWorldGenerationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldGenerationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldGenerationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateWorldGenerationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldGenerationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldGenerationJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateWorldGenerationJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldGenerationJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldGenerationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateWorldGenerationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldGenerationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldGenerationJobErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateWorldGenerationJobErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldGenerationJobErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldGenerationJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWorldGenerationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2473,7 +2473,7 @@ pub enum CreateWorldTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorldTemplateError {
@@ -2541,42 +2541,42 @@ impl CreateWorldTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorldTemplateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWorldTemplateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldTemplateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldTemplateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateWorldTemplateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldTemplateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateWorldTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldTemplateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldTemplateErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateWorldTemplateErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldTemplateErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateWorldTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorldTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorldTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWorldTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2618,7 +2618,7 @@ pub enum DeleteFleetErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFleetError {
@@ -2683,18 +2683,18 @@ impl DeleteFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::ThrottlingException(_))
     }
@@ -2730,7 +2730,7 @@ pub enum DeleteRobotErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRobotError {
@@ -2795,18 +2795,18 @@ impl DeleteRobotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRobotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteRobotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteRobotErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteRobotErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteRobotErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRobotErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRobotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteRobotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteRobotErrorKind::ThrottlingException(_))
     }
@@ -2842,7 +2842,7 @@ pub enum DeleteRobotApplicationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRobotApplicationError {
@@ -2907,21 +2907,21 @@ impl DeleteRobotApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRobotApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteRobotApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRobotApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRobotApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteRobotApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRobotApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRobotApplicationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteRobotApplicationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2960,7 +2960,7 @@ pub enum DeleteSimulationApplicationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSimulationApplicationError {
@@ -3027,21 +3027,21 @@ impl DeleteSimulationApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSimulationApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSimulationApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSimulationApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSimulationApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteSimulationApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSimulationApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSimulationApplicationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteSimulationApplicationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3082,7 +3082,7 @@ pub enum DeleteWorldTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorldTemplateError {
@@ -3148,28 +3148,28 @@ impl DeleteWorldTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorldTemplateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteWorldTemplateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorldTemplateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorldTemplateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteWorldTemplateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorldTemplateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorldTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWorldTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorldTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorldTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteWorldTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3211,7 +3211,7 @@ pub enum DeregisterRobotErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterRobotError {
@@ -3277,28 +3277,28 @@ impl DeregisterRobotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterRobotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeregisterRobotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterRobotErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterRobotErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeregisterRobotErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterRobotErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterRobotErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterRobotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterRobotErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterRobotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeregisterRobotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeregisterRobotErrorKind::ThrottlingException(_))
     }
@@ -3337,7 +3337,7 @@ pub enum DescribeDeploymentJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDeploymentJobError {
@@ -3403,28 +3403,28 @@ impl DescribeDeploymentJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDeploymentJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeDeploymentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeploymentJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeploymentJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeDeploymentJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeploymentJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeploymentJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDeploymentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeploymentJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeploymentJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDeploymentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3466,7 +3466,7 @@ pub enum DescribeFleetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetError {
@@ -3532,28 +3532,28 @@ impl DescribeFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeFleetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeFleetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeFleetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeFleetErrorKind::ThrottlingException(_))
     }
@@ -3592,7 +3592,7 @@ pub enum DescribeRobotErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRobotError {
@@ -3658,28 +3658,28 @@ impl DescribeRobotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRobotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeRobotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRobotErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRobotErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeRobotErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRobotErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRobotErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRobotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRobotErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRobotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeRobotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeRobotErrorKind::ThrottlingException(_))
     }
@@ -3718,7 +3718,7 @@ pub enum DescribeRobotApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRobotApplicationError {
@@ -3784,28 +3784,28 @@ impl DescribeRobotApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRobotApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeRobotApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRobotApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRobotApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeRobotApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRobotApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRobotApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRobotApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRobotApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRobotApplicationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeRobotApplicationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3847,7 +3847,7 @@ pub enum DescribeSimulationApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSimulationApplicationError {
@@ -3922,28 +3922,28 @@ impl DescribeSimulationApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSimulationApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeSimulationApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSimulationApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSimulationApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeSimulationApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSimulationApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSimulationApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSimulationApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSimulationApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSimulationApplicationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeSimulationApplicationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3989,7 +3989,7 @@ pub enum DescribeSimulationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSimulationJobError {
@@ -4055,28 +4055,28 @@ impl DescribeSimulationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSimulationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeSimulationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSimulationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSimulationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeSimulationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSimulationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSimulationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSimulationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSimulationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSimulationJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeSimulationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4116,7 +4116,7 @@ pub enum DescribeSimulationJobBatchErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSimulationJobBatchError {
@@ -4181,21 +4181,21 @@ impl DescribeSimulationJobBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSimulationJobBatchErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeSimulationJobBatchErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSimulationJobBatchErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSimulationJobBatchErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeSimulationJobBatchErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSimulationJobBatchErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSimulationJobBatchErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSimulationJobBatchErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4236,7 +4236,7 @@ pub enum DescribeWorldErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorldError {
@@ -4302,28 +4302,28 @@ impl DescribeWorldError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorldErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeWorldErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeWorldErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorldErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeWorldErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeWorldErrorKind::ThrottlingException(_))
     }
@@ -4362,7 +4362,7 @@ pub enum DescribeWorldExportJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorldExportJobError {
@@ -4428,28 +4428,28 @@ impl DescribeWorldExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorldExportJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeWorldExportJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldExportJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldExportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeWorldExportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldExportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldExportJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorldExportJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldExportJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldExportJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeWorldExportJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4491,7 +4491,7 @@ pub enum DescribeWorldGenerationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorldGenerationJobError {
@@ -4557,28 +4557,28 @@ impl DescribeWorldGenerationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorldGenerationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeWorldGenerationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldGenerationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldGenerationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeWorldGenerationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldGenerationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldGenerationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorldGenerationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldGenerationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldGenerationJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeWorldGenerationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4620,7 +4620,7 @@ pub enum DescribeWorldTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorldTemplateError {
@@ -4686,28 +4686,28 @@ impl DescribeWorldTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorldTemplateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeWorldTemplateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldTemplateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldTemplateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeWorldTemplateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldTemplateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorldTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorldTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorldTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeWorldTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4749,7 +4749,7 @@ pub enum GetWorldTemplateBodyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWorldTemplateBodyError {
@@ -4815,28 +4815,28 @@ impl GetWorldTemplateBodyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWorldTemplateBodyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWorldTemplateBodyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorldTemplateBodyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorldTemplateBodyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetWorldTemplateBodyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorldTemplateBodyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorldTemplateBodyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWorldTemplateBodyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorldTemplateBodyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorldTemplateBodyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWorldTemplateBodyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4878,7 +4878,7 @@ pub enum ListDeploymentJobsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeploymentJobsError {
@@ -4944,28 +4944,28 @@ impl ListDeploymentJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeploymentJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDeploymentJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentJobsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListDeploymentJobsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentJobsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentJobsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDeploymentJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeploymentJobsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeploymentJobsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDeploymentJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5007,7 +5007,7 @@ pub enum ListFleetsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFleetsError {
@@ -5073,25 +5073,25 @@ impl ListFleetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFleetsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFleetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::ThrottlingException(_))
     }
@@ -5128,7 +5128,7 @@ pub enum ListRobotApplicationsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRobotApplicationsError {
@@ -5193,21 +5193,21 @@ impl ListRobotApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRobotApplicationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListRobotApplicationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRobotApplicationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListRobotApplicationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListRobotApplicationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRobotApplicationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListRobotApplicationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListRobotApplicationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5248,7 +5248,7 @@ pub enum ListRobotsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRobotsError {
@@ -5314,25 +5314,25 @@ impl ListRobotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRobotsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListRobotsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListRobotsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListRobotsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListRobotsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRobotsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListRobotsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListRobotsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRobotsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRobotsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListRobotsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListRobotsErrorKind::ThrottlingException(_))
     }
@@ -5369,7 +5369,7 @@ pub enum ListSimulationApplicationsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSimulationApplicationsError {
@@ -5434,21 +5434,21 @@ impl ListSimulationApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSimulationApplicationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSimulationApplicationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSimulationApplicationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSimulationApplicationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSimulationApplicationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSimulationApplicationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListSimulationApplicationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListSimulationApplicationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5485,7 +5485,7 @@ pub enum ListSimulationJobBatchesErrorKind {
     /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
     /// returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSimulationJobBatchesError {
@@ -5549,14 +5549,14 @@ impl ListSimulationJobBatchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSimulationJobBatchesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSimulationJobBatchesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSimulationJobBatchesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSimulationJobBatchesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSimulationJobBatchesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5594,7 +5594,7 @@ pub enum ListSimulationJobsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSimulationJobsError {
@@ -5659,21 +5659,21 @@ impl ListSimulationJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSimulationJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSimulationJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSimulationJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSimulationJobsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSimulationJobsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSimulationJobsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListSimulationJobsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListSimulationJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5714,7 +5714,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -5780,28 +5780,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5841,7 +5841,7 @@ pub enum ListWorldExportJobsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorldExportJobsError {
@@ -5906,21 +5906,21 @@ impl ListWorldExportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorldExportJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWorldExportJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorldExportJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorldExportJobsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListWorldExportJobsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorldExportJobsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorldExportJobsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWorldExportJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5959,7 +5959,7 @@ pub enum ListWorldGenerationJobsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorldGenerationJobsError {
@@ -6024,21 +6024,21 @@ impl ListWorldGenerationJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorldGenerationJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWorldGenerationJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorldGenerationJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorldGenerationJobsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListWorldGenerationJobsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorldGenerationJobsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorldGenerationJobsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWorldGenerationJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6077,7 +6077,7 @@ pub enum ListWorldsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorldsError {
@@ -6142,18 +6142,18 @@ impl ListWorldsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorldsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWorldsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListWorldsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListWorldsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListWorldsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorldsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorldsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWorldsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListWorldsErrorKind::ThrottlingException(_))
     }
@@ -6189,7 +6189,7 @@ pub enum ListWorldTemplatesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorldTemplatesError {
@@ -6254,21 +6254,21 @@ impl ListWorldTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorldTemplatesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWorldTemplatesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorldTemplatesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorldTemplatesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListWorldTemplatesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorldTemplatesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorldTemplatesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWorldTemplatesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6312,7 +6312,7 @@ pub enum RegisterRobotErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterRobotError {
@@ -6379,35 +6379,35 @@ impl RegisterRobotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterRobotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RegisterRobotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterRobotErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterRobotErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RegisterRobotErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterRobotErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterRobotErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterRobotErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterRobotErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterRobotErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterRobotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterRobotErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterRobotErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RegisterRobotErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, RegisterRobotErrorKind::ThrottlingException(_))
     }
@@ -6450,7 +6450,7 @@ pub enum RestartSimulationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestartSimulationJobError {
@@ -6517,35 +6517,35 @@ impl RestartSimulationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestartSimulationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `RestartSimulationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestartSimulationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `RestartSimulationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RestartSimulationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestartSimulationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RestartSimulationJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RestartSimulationJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestartSimulationJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RestartSimulationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RestartSimulationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestartSimulationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RestartSimulationJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `RestartSimulationJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6592,7 +6592,7 @@ pub enum StartSimulationJobBatchErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSimulationJobBatchError {
@@ -6661,35 +6661,35 @@ impl StartSimulationJobBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSimulationJobBatchErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `StartSimulationJobBatchErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSimulationJobBatchErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `StartSimulationJobBatchErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartSimulationJobBatchErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSimulationJobBatchErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartSimulationJobBatchErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartSimulationJobBatchErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSimulationJobBatchErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartSimulationJobBatchErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartSimulationJobBatchErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSimulationJobBatchErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartSimulationJobBatchErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartSimulationJobBatchErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6742,7 +6742,7 @@ pub enum SyncDeploymentJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SyncDeploymentJobError {
@@ -6813,49 +6813,49 @@ impl SyncDeploymentJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SyncDeploymentJobErrorKind::ConcurrentDeploymentException`.
+    /// Returns `true` if the error kind is `SyncDeploymentJobErrorKind::ConcurrentDeploymentException`.
     pub fn is_concurrent_deployment_exception(&self) -> bool {
         matches!(
             &self.kind,
             SyncDeploymentJobErrorKind::ConcurrentDeploymentException(_)
         )
     }
-    /// Returns true if the error kind is `SyncDeploymentJobErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `SyncDeploymentJobErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             SyncDeploymentJobErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `SyncDeploymentJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `SyncDeploymentJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             SyncDeploymentJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `SyncDeploymentJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `SyncDeploymentJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             SyncDeploymentJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `SyncDeploymentJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SyncDeploymentJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SyncDeploymentJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SyncDeploymentJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SyncDeploymentJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SyncDeploymentJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SyncDeploymentJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SyncDeploymentJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6902,7 +6902,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6968,25 +6968,25 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
@@ -7025,7 +7025,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7091,28 +7091,28 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
@@ -7154,7 +7154,7 @@ pub enum UpdateRobotApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRobotApplicationError {
@@ -7221,35 +7221,35 @@ impl UpdateRobotApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRobotApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateRobotApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRobotApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRobotApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateRobotApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRobotApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRobotApplicationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateRobotApplicationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRobotApplicationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRobotApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRobotApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRobotApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRobotApplicationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateRobotApplicationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7295,7 +7295,7 @@ pub enum UpdateSimulationApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSimulationApplicationError {
@@ -7366,35 +7366,35 @@ impl UpdateSimulationApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSimulationApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateSimulationApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSimulationApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSimulationApplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateSimulationApplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSimulationApplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSimulationApplicationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSimulationApplicationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSimulationApplicationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSimulationApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSimulationApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSimulationApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSimulationApplicationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateSimulationApplicationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7437,7 +7437,7 @@ pub enum UpdateWorldTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorldTemplateError {
@@ -7503,28 +7503,28 @@ impl UpdateWorldTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorldTemplateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateWorldTemplateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorldTemplateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorldTemplateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateWorldTemplateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorldTemplateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorldTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWorldTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorldTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorldTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateWorldTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,

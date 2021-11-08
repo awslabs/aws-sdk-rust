@@ -22,7 +22,7 @@ pub enum AddProfileKeyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddProfileKeyError {
@@ -89,29 +89,29 @@ impl AddProfileKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddProfileKeyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AddProfileKeyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AddProfileKeyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AddProfileKeyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `AddProfileKeyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, AddProfileKeyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `AddProfileKeyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AddProfileKeyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddProfileKeyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AddProfileKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddProfileKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddProfileKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddProfileKeyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AddProfileKeyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, AddProfileKeyErrorKind::ThrottlingException(_))
     }
@@ -152,7 +152,7 @@ pub enum CreateDomainErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDomainError {
@@ -219,29 +219,29 @@ impl CreateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::ThrottlingException(_))
     }
@@ -282,7 +282,7 @@ pub enum CreateProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProfileError {
@@ -349,29 +349,29 @@ impl CreateProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateProfileErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateProfileErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateProfileErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateProfileErrorKind::ThrottlingException(_))
     }
@@ -412,7 +412,7 @@ pub enum DeleteDomainErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDomainError {
@@ -479,29 +479,29 @@ impl DeleteDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDomainErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDomainErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::ThrottlingException(_))
     }
@@ -542,7 +542,7 @@ pub enum DeleteIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIntegrationError {
@@ -609,35 +609,35 @@ impl DeleteIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntegrationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntegrationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntegrationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntegrationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -681,7 +681,7 @@ pub enum DeleteProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProfileError {
@@ -748,29 +748,29 @@ impl DeleteProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteProfileErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteProfileErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteProfileErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteProfileErrorKind::ThrottlingException(_))
     }
@@ -811,7 +811,7 @@ pub enum DeleteProfileKeyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProfileKeyError {
@@ -878,35 +878,35 @@ impl DeleteProfileKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProfileKeyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteProfileKeyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileKeyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileKeyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteProfileKeyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileKeyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileKeyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteProfileKeyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileKeyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProfileKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileKeyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProfileKeyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -950,7 +950,7 @@ pub enum DeleteProfileObjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProfileObjectError {
@@ -1017,35 +1017,35 @@ impl DeleteProfileObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProfileObjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileObjectErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileObjectErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileObjectErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileObjectErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileObjectErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileObjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileObjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileObjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1089,7 +1089,7 @@ pub enum DeleteProfileObjectTypeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProfileObjectTypeError {
@@ -1156,35 +1156,35 @@ impl DeleteProfileObjectTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProfileObjectTypeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectTypeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileObjectTypeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileObjectTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileObjectTypeErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileObjectTypeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectTypeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileObjectTypeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileObjectTypeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectTypeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProfileObjectTypeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProfileObjectTypeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProfileObjectTypeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1228,7 +1228,7 @@ pub enum GetDomainErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainError {
@@ -1295,23 +1295,23 @@ impl GetDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::ThrottlingException(_))
     }
@@ -1352,7 +1352,7 @@ pub enum GetIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntegrationError {
@@ -1419,32 +1419,32 @@ impl GetIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntegrationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetIntegrationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetIntegrationErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetIntegrationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetIntegrationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntegrationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetIntegrationErrorKind::ThrottlingException(_))
     }
@@ -1485,7 +1485,7 @@ pub enum GetMatchesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMatchesError {
@@ -1552,26 +1552,26 @@ impl GetMatchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMatchesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetMatchesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetMatchesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetMatchesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetMatchesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetMatchesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetMatchesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetMatchesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetMatchesErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetMatchesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMatchesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMatchesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMatchesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetMatchesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetMatchesErrorKind::ThrottlingException(_))
     }
@@ -1612,7 +1612,7 @@ pub enum GetProfileObjectTypeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProfileObjectTypeError {
@@ -1679,35 +1679,35 @@ impl GetProfileObjectTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProfileObjectTypeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProfileObjectTypeErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProfileObjectTypeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProfileObjectTypeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1751,7 +1751,7 @@ pub enum GetProfileObjectTypeTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProfileObjectTypeTemplateError {
@@ -1820,35 +1820,35 @@ impl GetProfileObjectTypeTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProfileObjectTypeTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProfileObjectTypeTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeTemplateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeTemplateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProfileObjectTypeTemplateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeTemplateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeTemplateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetProfileObjectTypeTemplateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetProfileObjectTypeTemplateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetProfileObjectTypeTemplateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1894,7 +1894,7 @@ pub enum ListAccountIntegrationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountIntegrationsError {
@@ -1961,35 +1961,35 @@ impl ListAccountIntegrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccountIntegrationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAccountIntegrationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountIntegrationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountIntegrationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListAccountIntegrationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountIntegrationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountIntegrationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListAccountIntegrationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountIntegrationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountIntegrationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAccountIntegrationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountIntegrationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountIntegrationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAccountIntegrationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2033,7 +2033,7 @@ pub enum ListDomainsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDomainsError {
@@ -2100,26 +2100,26 @@ impl ListDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListDomainsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListDomainsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListDomainsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDomainsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListDomainsErrorKind::ThrottlingException(_))
     }
@@ -2160,7 +2160,7 @@ pub enum ListIntegrationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIntegrationsError {
@@ -2227,35 +2227,35 @@ impl ListIntegrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIntegrationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListIntegrationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIntegrationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIntegrationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListIntegrationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIntegrationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListIntegrationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListIntegrationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIntegrationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListIntegrationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIntegrationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIntegrationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIntegrationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListIntegrationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2299,7 +2299,7 @@ pub enum ListProfileObjectsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProfileObjectsError {
@@ -2366,35 +2366,35 @@ impl ListProfileObjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProfileObjectsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListProfileObjectsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListProfileObjectsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListProfileObjectsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProfileObjectsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListProfileObjectsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2438,7 +2438,7 @@ pub enum ListProfileObjectTypesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProfileObjectTypesError {
@@ -2505,35 +2505,35 @@ impl ListProfileObjectTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProfileObjectTypesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectTypesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectTypesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectTypesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectTypesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectTypesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectTypesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectTypesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectTypesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2577,7 +2577,7 @@ pub enum ListProfileObjectTypeTemplatesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProfileObjectTypeTemplatesError {
@@ -2651,35 +2651,35 @@ impl ListProfileObjectTypeTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProfileObjectTypeTemplatesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypeTemplatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectTypeTemplatesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectTypeTemplatesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypeTemplatesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectTypeTemplatesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectTypeTemplatesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypeTemplatesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectTypeTemplatesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectTypeTemplatesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypeTemplatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfileObjectTypeTemplatesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfileObjectTypeTemplatesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListProfileObjectTypeTemplatesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2723,7 +2723,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2788,21 +2788,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2842,7 +2842,7 @@ pub enum MergeProfilesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergeProfilesError {
@@ -2908,25 +2908,25 @@ impl MergeProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergeProfilesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `MergeProfilesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, MergeProfilesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `MergeProfilesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `MergeProfilesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeProfilesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `MergeProfilesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `MergeProfilesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeProfilesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MergeProfilesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `MergeProfilesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, MergeProfilesErrorKind::ThrottlingException(_))
     }
@@ -2966,7 +2966,7 @@ pub enum PutIntegrationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutIntegrationError {
@@ -3033,32 +3033,32 @@ impl PutIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutIntegrationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutIntegrationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutIntegrationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutIntegrationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutIntegrationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutIntegrationErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutIntegrationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutIntegrationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutIntegrationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutIntegrationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutIntegrationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutIntegrationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutIntegrationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutIntegrationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, PutIntegrationErrorKind::ThrottlingException(_))
     }
@@ -3099,7 +3099,7 @@ pub enum PutProfileObjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutProfileObjectError {
@@ -3166,35 +3166,35 @@ impl PutProfileObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutProfileObjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutProfileObjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProfileObjectErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutProfileObjectErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutProfileObjectErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProfileObjectErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutProfileObjectErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutProfileObjectErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProfileObjectErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutProfileObjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutProfileObjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProfileObjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutProfileObjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutProfileObjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3238,7 +3238,7 @@ pub enum PutProfileObjectTypeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutProfileObjectTypeError {
@@ -3305,35 +3305,35 @@ impl PutProfileObjectTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutProfileObjectTypeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutProfileObjectTypeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProfileObjectTypeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutProfileObjectTypeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutProfileObjectTypeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProfileObjectTypeErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutProfileObjectTypeErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutProfileObjectTypeErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProfileObjectTypeErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutProfileObjectTypeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutProfileObjectTypeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutProfileObjectTypeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutProfileObjectTypeErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutProfileObjectTypeErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3377,7 +3377,7 @@ pub enum SearchProfilesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchProfilesError {
@@ -3444,32 +3444,32 @@ impl SearchProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchProfilesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SearchProfilesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchProfilesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SearchProfilesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SearchProfilesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, SearchProfilesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `SearchProfilesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `SearchProfilesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchProfilesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `SearchProfilesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SearchProfilesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchProfilesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchProfilesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SearchProfilesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, SearchProfilesErrorKind::ThrottlingException(_))
     }
@@ -3506,7 +3506,7 @@ pub enum TagResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3571,15 +3571,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3617,7 +3617,7 @@ pub enum UntagResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The requested resource does not exist, or access was denied.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3682,18 +3682,18 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3735,7 +3735,7 @@ pub enum UpdateDomainErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainError {
@@ -3802,29 +3802,29 @@ impl UpdateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDomainErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateDomainErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateDomainErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateDomainErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateDomainErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDomainErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDomainErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainErrorKind::ThrottlingException(_))
     }
@@ -3865,7 +3865,7 @@ pub enum UpdateProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You exceeded the maximum number of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProfileError {
@@ -3932,29 +3932,29 @@ impl UpdateProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateProfileErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateProfileErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateProfileErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateProfileErrorKind::ThrottlingException(_))
     }

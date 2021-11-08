@@ -18,7 +18,7 @@ pub enum DeleteObjectErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Could not perform an operation on an object that does not exist.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteObjectError {
@@ -83,18 +83,18 @@ impl DeleteObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteObjectErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteObjectErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -132,7 +132,7 @@ pub enum DescribeObjectErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Could not perform an operation on an object that does not exist.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeObjectError {
@@ -197,18 +197,18 @@ impl DescribeObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeObjectErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeObjectErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeObjectErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeObjectErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeObjectErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeObjectErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeObjectErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeObjectErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -248,7 +248,7 @@ pub enum GetObjectErrorKind {
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
     /// <p>The requested content range is not valid.</p>
     RequestedRangeNotSatisfiableException(crate::error::RequestedRangeNotSatisfiableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectError {
@@ -314,22 +314,22 @@ impl GetObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetObjectErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `GetObjectErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetObjectErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetObjectErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetObjectErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `GetObjectErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetObjectErrorKind::ObjectNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetObjectErrorKind::RequestedRangeNotSatisfiableException`.
+    /// Returns `true` if the error kind is `GetObjectErrorKind::RequestedRangeNotSatisfiableException`.
     pub fn is_requested_range_not_satisfiable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -366,7 +366,7 @@ pub enum ListItemsErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListItemsError {
@@ -430,14 +430,14 @@ impl ListItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListItemsErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `ListItemsErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListItemsErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListItemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListItemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListItemsErrorKind::InternalServerError(_))
     }
@@ -469,7 +469,7 @@ pub enum PutObjectErrorKind {
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutObjectError {
@@ -533,14 +533,14 @@ impl PutObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutObjectErrorKind::ContainerNotFoundException`.
+    /// Returns `true` if the error kind is `PutObjectErrorKind::ContainerNotFoundException`.
     pub fn is_container_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutObjectErrorKind::ContainerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutObjectErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutObjectErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, PutObjectErrorKind::InternalServerError(_))
     }

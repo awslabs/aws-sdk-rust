@@ -25,7 +25,7 @@ pub enum CreateConnectorProfileErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectorProfileError {
@@ -94,35 +94,35 @@ impl CreateConnectorProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectorProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateConnectorProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectorProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectorProfileErrorKind::ConnectorAuthenticationException`.
+    /// Returns `true` if the error kind is `CreateConnectorProfileErrorKind::ConnectorAuthenticationException`.
     pub fn is_connector_authentication_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectorProfileErrorKind::ConnectorAuthenticationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectorProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateConnectorProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectorProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectorProfileErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateConnectorProfileErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectorProfileErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectorProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateConnectorProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -176,7 +176,7 @@ pub enum CreateFlowErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFlowError {
@@ -245,40 +245,40 @@ impl CreateFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateFlowErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::ConnectorAuthenticationException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::ConnectorAuthenticationException`.
     pub fn is_connector_authentication_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFlowErrorKind::ConnectorAuthenticationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::ConnectorServerException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::ConnectorServerException`.
     pub fn is_connector_server_exception(&self) -> bool {
         matches!(&self.kind, CreateFlowErrorKind::ConnectorServerException(_))
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateFlowErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFlowErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFlowErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFlowErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateFlowErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateFlowErrorKind::ValidationException(_))
     }
@@ -320,7 +320,7 @@ pub enum DeleteConnectorProfileErrorKind {
     /// <p> The resource specified in the request (such as the source or destination connector
     /// profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectorProfileError {
@@ -385,21 +385,21 @@ impl DeleteConnectorProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectorProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteConnectorProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectorProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectorProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteConnectorProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectorProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectorProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConnectorProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -440,7 +440,7 @@ pub enum DeleteFlowErrorKind {
     /// <p> The resource specified in the request (such as the source or destination connector
     /// profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFlowError {
@@ -505,15 +505,15 @@ impl DeleteFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteFlowErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteFlowErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteFlowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFlowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -557,7 +557,7 @@ pub enum DescribeConnectorEntityErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectorEntityError {
@@ -626,35 +626,35 @@ impl DescribeConnectorEntityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectorEntityErrorKind::ConnectorAuthenticationException`.
+    /// Returns `true` if the error kind is `DescribeConnectorEntityErrorKind::ConnectorAuthenticationException`.
     pub fn is_connector_authentication_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorEntityErrorKind::ConnectorAuthenticationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorEntityErrorKind::ConnectorServerException`.
+    /// Returns `true` if the error kind is `DescribeConnectorEntityErrorKind::ConnectorServerException`.
     pub fn is_connector_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorEntityErrorKind::ConnectorServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorEntityErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeConnectorEntityErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorEntityErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorEntityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeConnectorEntityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorEntityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorEntityErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeConnectorEntityErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -695,7 +695,7 @@ pub enum DescribeConnectorProfilesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectorProfilesError {
@@ -759,14 +759,14 @@ impl DescribeConnectorProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectorProfilesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeConnectorProfilesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorProfilesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorProfilesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeConnectorProfilesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -802,7 +802,7 @@ pub enum DescribeConnectorsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectorsError {
@@ -866,14 +866,14 @@ impl DescribeConnectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectorsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeConnectorsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectorsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectorsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeConnectorsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -910,7 +910,7 @@ pub enum DescribeFlowErrorKind {
     /// <p> The resource specified in the request (such as the source or destination connector
     /// profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFlowError {
@@ -974,14 +974,14 @@ impl DescribeFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFlowErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeFlowErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFlowErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFlowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFlowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1020,7 +1020,7 @@ pub enum DescribeFlowExecutionRecordsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFlowExecutionRecordsError {
@@ -1087,21 +1087,21 @@ impl DescribeFlowExecutionRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFlowExecutionRecordsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeFlowExecutionRecordsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFlowExecutionRecordsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFlowExecutionRecordsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFlowExecutionRecordsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFlowExecutionRecordsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFlowExecutionRecordsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeFlowExecutionRecordsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1147,7 +1147,7 @@ pub enum ListConnectorEntitiesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConnectorEntitiesError {
@@ -1216,35 +1216,35 @@ impl ListConnectorEntitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConnectorEntitiesErrorKind::ConnectorAuthenticationException`.
+    /// Returns `true` if the error kind is `ListConnectorEntitiesErrorKind::ConnectorAuthenticationException`.
     pub fn is_connector_authentication_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConnectorEntitiesErrorKind::ConnectorAuthenticationException(_)
         )
     }
-    /// Returns true if the error kind is `ListConnectorEntitiesErrorKind::ConnectorServerException`.
+    /// Returns `true` if the error kind is `ListConnectorEntitiesErrorKind::ConnectorServerException`.
     pub fn is_connector_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConnectorEntitiesErrorKind::ConnectorServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListConnectorEntitiesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListConnectorEntitiesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConnectorEntitiesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListConnectorEntitiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListConnectorEntitiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConnectorEntitiesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListConnectorEntitiesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListConnectorEntitiesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1285,7 +1285,7 @@ pub enum ListFlowsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFlowsError {
@@ -1349,11 +1349,11 @@ impl ListFlowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFlowsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListFlowsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListFlowsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListFlowsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFlowsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListFlowsErrorKind::ValidationException(_))
     }
@@ -1389,7 +1389,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1454,21 +1454,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1512,7 +1512,7 @@ pub enum StartFlowErrorKind {
     /// <p> The request would cause a service quota (such as the number of flows) to be exceeded.
     /// </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartFlowError {
@@ -1578,19 +1578,19 @@ impl StartFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartFlowErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, StartFlowErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartFlowErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `StartFlowErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartFlowErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1634,7 +1634,7 @@ pub enum StopFlowErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The requested operation is not supported for the current flow. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopFlowError {
@@ -1700,19 +1700,19 @@ impl StopFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StopFlowErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, StopFlowErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopFlowErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `StopFlowErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `StopFlowErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1753,7 +1753,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1818,18 +1818,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1866,7 +1866,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1931,21 +1931,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -1987,7 +1987,7 @@ pub enum UpdateConnectorProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectorProfileError {
@@ -2056,35 +2056,35 @@ impl UpdateConnectorProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectorProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateConnectorProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectorProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectorProfileErrorKind::ConnectorAuthenticationException`.
+    /// Returns `true` if the error kind is `UpdateConnectorProfileErrorKind::ConnectorAuthenticationException`.
     pub fn is_connector_authentication_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectorProfileErrorKind::ConnectorAuthenticationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectorProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateConnectorProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectorProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectorProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConnectorProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectorProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectorProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateConnectorProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2138,7 +2138,7 @@ pub enum UpdateFlowErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFlowError {
@@ -2207,40 +2207,40 @@ impl UpdateFlowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::ConnectorAuthenticationException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::ConnectorAuthenticationException`.
     pub fn is_connector_authentication_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowErrorKind::ConnectorAuthenticationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::ConnectorServerException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::ConnectorServerException`.
     pub fn is_connector_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowErrorKind::ConnectorServerException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFlowErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFlowErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateFlowErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateFlowErrorKind::ValidationException(_))
     }

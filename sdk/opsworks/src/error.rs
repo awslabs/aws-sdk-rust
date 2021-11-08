@@ -16,7 +16,7 @@ pub enum AssignInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssignInstanceError {
@@ -80,14 +80,14 @@ impl AssignInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssignInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssignInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssignInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssignInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssignInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AssignInstanceErrorKind::ValidationException(_))
     }
@@ -119,7 +119,7 @@ pub enum AssignVolumeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssignVolumeError {
@@ -183,14 +183,14 @@ impl AssignVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssignVolumeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssignVolumeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssignVolumeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssignVolumeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssignVolumeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AssignVolumeErrorKind::ValidationException(_))
     }
@@ -222,7 +222,7 @@ pub enum AssociateElasticIpErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateElasticIpError {
@@ -286,14 +286,14 @@ impl AssociateElasticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateElasticIpErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateElasticIpErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateElasticIpErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateElasticIpErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateElasticIpErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -328,7 +328,7 @@ pub enum AttachElasticLoadBalancerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachElasticLoadBalancerError {
@@ -392,14 +392,14 @@ impl AttachElasticLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachElasticLoadBalancerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AttachElasticLoadBalancerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachElasticLoadBalancerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachElasticLoadBalancerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AttachElasticLoadBalancerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -434,7 +434,7 @@ pub enum CloneStackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CloneStackError {
@@ -498,14 +498,14 @@ impl CloneStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CloneStackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CloneStackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloneStackErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CloneStackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CloneStackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CloneStackErrorKind::ValidationException(_))
     }
@@ -537,7 +537,7 @@ pub enum CreateAppErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppError {
@@ -601,11 +601,11 @@ impl CreateAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::ValidationException(_))
     }
@@ -637,7 +637,7 @@ pub enum CreateDeploymentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentError {
@@ -701,14 +701,14 @@ impl CreateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeploymentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeploymentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDeploymentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -743,7 +743,7 @@ pub enum CreateInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstanceError {
@@ -807,14 +807,14 @@ impl CreateInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateInstanceErrorKind::ValidationException(_))
     }
@@ -846,7 +846,7 @@ pub enum CreateLayerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLayerError {
@@ -910,14 +910,14 @@ impl CreateLayerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLayerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLayerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLayerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLayerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateLayerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateLayerErrorKind::ValidationException(_))
     }
@@ -947,7 +947,7 @@ pub struct CreateStackError {
 pub enum CreateStackErrorKind {
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStackError {
@@ -1010,7 +1010,7 @@ impl CreateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateStackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateStackErrorKind::ValidationException(_))
     }
@@ -1039,7 +1039,7 @@ pub struct CreateUserProfileError {
 pub enum CreateUserProfileErrorKind {
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserProfileError {
@@ -1102,7 +1102,7 @@ impl CreateUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateUserProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1136,7 +1136,7 @@ pub enum DeleteAppErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppError {
@@ -1200,11 +1200,11 @@ impl DeleteAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::ValidationException(_))
     }
@@ -1236,7 +1236,7 @@ pub enum DeleteInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInstanceError {
@@ -1300,14 +1300,14 @@ impl DeleteInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteInstanceErrorKind::ValidationException(_))
     }
@@ -1339,7 +1339,7 @@ pub enum DeleteLayerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLayerError {
@@ -1403,14 +1403,14 @@ impl DeleteLayerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLayerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLayerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLayerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLayerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteLayerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteLayerErrorKind::ValidationException(_))
     }
@@ -1442,7 +1442,7 @@ pub enum DeleteStackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStackError {
@@ -1506,14 +1506,14 @@ impl DeleteStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteStackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStackErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteStackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteStackErrorKind::ValidationException(_))
     }
@@ -1545,7 +1545,7 @@ pub enum DeleteUserProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserProfileError {
@@ -1609,14 +1609,14 @@ impl DeleteUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteUserProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1651,7 +1651,7 @@ pub enum DeregisterEcsClusterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterEcsClusterError {
@@ -1715,14 +1715,14 @@ impl DeregisterEcsClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterEcsClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterEcsClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterEcsClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterEcsClusterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterEcsClusterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1757,7 +1757,7 @@ pub enum DeregisterElasticIpErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterElasticIpError {
@@ -1821,14 +1821,14 @@ impl DeregisterElasticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterElasticIpErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterElasticIpErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterElasticIpErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterElasticIpErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterElasticIpErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1863,7 +1863,7 @@ pub enum DeregisterInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterInstanceError {
@@ -1927,14 +1927,14 @@ impl DeregisterInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1969,7 +1969,7 @@ pub enum DeregisterRdsDbInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterRdsDbInstanceError {
@@ -2033,14 +2033,14 @@ impl DeregisterRdsDbInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterRdsDbInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterRdsDbInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterRdsDbInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterRdsDbInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterRdsDbInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2075,7 +2075,7 @@ pub enum DeregisterVolumeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterVolumeError {
@@ -2139,14 +2139,14 @@ impl DeregisterVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterVolumeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterVolumeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterVolumeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterVolumeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterVolumeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2181,7 +2181,7 @@ pub enum DescribeAgentVersionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAgentVersionsError {
@@ -2245,14 +2245,14 @@ impl DescribeAgentVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAgentVersionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAgentVersionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAgentVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAgentVersionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeAgentVersionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2287,7 +2287,7 @@ pub enum DescribeAppsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAppsError {
@@ -2351,14 +2351,14 @@ impl DescribeAppsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAppsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAppsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAppsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAppsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeAppsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeAppsErrorKind::ValidationException(_))
     }
@@ -2390,7 +2390,7 @@ pub enum DescribeCommandsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCommandsError {
@@ -2454,14 +2454,14 @@ impl DescribeCommandsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCommandsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCommandsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCommandsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCommandsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeCommandsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2496,7 +2496,7 @@ pub enum DescribeDeploymentsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDeploymentsError {
@@ -2560,14 +2560,14 @@ impl DescribeDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDeploymentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDeploymentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeploymentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeploymentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeDeploymentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2602,7 +2602,7 @@ pub enum DescribeEcsClustersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEcsClustersError {
@@ -2666,14 +2666,14 @@ impl DescribeEcsClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEcsClustersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEcsClustersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEcsClustersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEcsClustersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeEcsClustersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2708,7 +2708,7 @@ pub enum DescribeElasticIpsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeElasticIpsError {
@@ -2772,14 +2772,14 @@ impl DescribeElasticIpsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeElasticIpsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeElasticIpsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeElasticIpsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeElasticIpsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeElasticIpsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2814,7 +2814,7 @@ pub enum DescribeElasticLoadBalancersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeElasticLoadBalancersError {
@@ -2880,14 +2880,14 @@ impl DescribeElasticLoadBalancersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeElasticLoadBalancersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeElasticLoadBalancersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeElasticLoadBalancersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeElasticLoadBalancersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeElasticLoadBalancersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2924,7 +2924,7 @@ pub enum DescribeInstancesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstancesError {
@@ -2988,14 +2988,14 @@ impl DescribeInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstancesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInstancesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeInstancesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3030,7 +3030,7 @@ pub enum DescribeLayersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLayersError {
@@ -3094,14 +3094,14 @@ impl DescribeLayersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLayersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLayersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLayersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLayersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeLayersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeLayersErrorKind::ValidationException(_))
     }
@@ -3133,7 +3133,7 @@ pub enum DescribeLoadBasedAutoScalingErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBasedAutoScalingError {
@@ -3199,14 +3199,14 @@ impl DescribeLoadBasedAutoScalingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBasedAutoScalingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBasedAutoScalingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoadBasedAutoScalingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoadBasedAutoScalingErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeLoadBasedAutoScalingErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3239,7 +3239,7 @@ pub struct DescribeMyUserProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMyUserProfileErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMyUserProfileError {
@@ -3323,7 +3323,7 @@ pub struct DescribeOperatingSystemsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOperatingSystemsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOperatingSystemsError {
@@ -3411,7 +3411,7 @@ pub enum DescribePermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePermissionsError {
@@ -3475,14 +3475,14 @@ impl DescribePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePermissionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribePermissionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3517,7 +3517,7 @@ pub enum DescribeRaidArraysErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRaidArraysError {
@@ -3581,14 +3581,14 @@ impl DescribeRaidArraysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRaidArraysErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRaidArraysErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRaidArraysErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRaidArraysErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeRaidArraysErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3623,7 +3623,7 @@ pub enum DescribeRdsDbInstancesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRdsDbInstancesError {
@@ -3687,14 +3687,14 @@ impl DescribeRdsDbInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRdsDbInstancesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRdsDbInstancesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRdsDbInstancesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRdsDbInstancesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeRdsDbInstancesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3729,7 +3729,7 @@ pub enum DescribeServiceErrorsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServiceErrorsError {
@@ -3793,14 +3793,14 @@ impl DescribeServiceErrorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServiceErrorsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServiceErrorsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServiceErrorsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServiceErrorsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeServiceErrorsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3835,7 +3835,7 @@ pub enum DescribeStackProvisioningParametersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackProvisioningParametersError {
@@ -3906,14 +3906,14 @@ impl DescribeStackProvisioningParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStackProvisioningParametersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStackProvisioningParametersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStackProvisioningParametersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStackProvisioningParametersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeStackProvisioningParametersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3954,7 +3954,7 @@ pub enum DescribeStacksErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStacksError {
@@ -4018,14 +4018,14 @@ impl DescribeStacksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStacksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStacksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStacksErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStacksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeStacksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeStacksErrorKind::ValidationException(_))
     }
@@ -4057,7 +4057,7 @@ pub enum DescribeStackSummaryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackSummaryError {
@@ -4121,14 +4121,14 @@ impl DescribeStackSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStackSummaryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStackSummaryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStackSummaryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStackSummaryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeStackSummaryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4163,7 +4163,7 @@ pub enum DescribeTimeBasedAutoScalingErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTimeBasedAutoScalingError {
@@ -4229,14 +4229,14 @@ impl DescribeTimeBasedAutoScalingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTimeBasedAutoScalingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTimeBasedAutoScalingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTimeBasedAutoScalingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTimeBasedAutoScalingErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeTimeBasedAutoScalingErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4273,7 +4273,7 @@ pub enum DescribeUserProfilesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserProfilesError {
@@ -4337,14 +4337,14 @@ impl DescribeUserProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserProfilesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserProfilesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserProfilesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserProfilesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeUserProfilesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4379,7 +4379,7 @@ pub enum DescribeVolumesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVolumesError {
@@ -4443,14 +4443,14 @@ impl DescribeVolumesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVolumesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeVolumesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVolumesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVolumesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeVolumesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeVolumesErrorKind::ValidationException(_))
     }
@@ -4480,7 +4480,7 @@ pub struct DetachElasticLoadBalancerError {
 pub enum DetachElasticLoadBalancerErrorKind {
     /// <p>Indicates that a resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachElasticLoadBalancerError {
@@ -4543,7 +4543,7 @@ impl DetachElasticLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachElasticLoadBalancerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DetachElasticLoadBalancerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4577,7 +4577,7 @@ pub enum DisassociateElasticIpErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateElasticIpError {
@@ -4641,14 +4641,14 @@ impl DisassociateElasticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateElasticIpErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateElasticIpErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateElasticIpErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateElasticIpErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateElasticIpErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4683,7 +4683,7 @@ pub enum GetHostnameSuggestionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHostnameSuggestionError {
@@ -4747,14 +4747,14 @@ impl GetHostnameSuggestionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHostnameSuggestionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetHostnameSuggestionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHostnameSuggestionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetHostnameSuggestionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetHostnameSuggestionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4789,7 +4789,7 @@ pub enum GrantAccessErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GrantAccessError {
@@ -4853,14 +4853,14 @@ impl GrantAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GrantAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GrantAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GrantAccessErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GrantAccessErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GrantAccessErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GrantAccessErrorKind::ValidationException(_))
     }
@@ -4892,7 +4892,7 @@ pub enum ListTagsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
@@ -4956,11 +4956,11 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListTagsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListTagsErrorKind::ValidationException(_))
     }
@@ -4992,7 +4992,7 @@ pub enum RebootInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootInstanceError {
@@ -5056,14 +5056,14 @@ impl RebootInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, RebootInstanceErrorKind::ValidationException(_))
     }
@@ -5095,7 +5095,7 @@ pub enum RegisterEcsClusterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterEcsClusterError {
@@ -5159,14 +5159,14 @@ impl RegisterEcsClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterEcsClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterEcsClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterEcsClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterEcsClusterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterEcsClusterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5201,7 +5201,7 @@ pub enum RegisterElasticIpErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterElasticIpError {
@@ -5265,14 +5265,14 @@ impl RegisterElasticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterElasticIpErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterElasticIpErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterElasticIpErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterElasticIpErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterElasticIpErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5307,7 +5307,7 @@ pub enum RegisterInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterInstanceError {
@@ -5371,14 +5371,14 @@ impl RegisterInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5413,7 +5413,7 @@ pub enum RegisterRdsDbInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterRdsDbInstanceError {
@@ -5477,14 +5477,14 @@ impl RegisterRdsDbInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterRdsDbInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterRdsDbInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterRdsDbInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterRdsDbInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterRdsDbInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5519,7 +5519,7 @@ pub enum RegisterVolumeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterVolumeError {
@@ -5583,14 +5583,14 @@ impl RegisterVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterVolumeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterVolumeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterVolumeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterVolumeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterVolumeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, RegisterVolumeErrorKind::ValidationException(_))
     }
@@ -5622,7 +5622,7 @@ pub enum SetLoadBasedAutoScalingErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetLoadBasedAutoScalingError {
@@ -5686,14 +5686,14 @@ impl SetLoadBasedAutoScalingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetLoadBasedAutoScalingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBasedAutoScalingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBasedAutoScalingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBasedAutoScalingErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SetLoadBasedAutoScalingErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5728,7 +5728,7 @@ pub enum SetPermissionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetPermissionError {
@@ -5792,14 +5792,14 @@ impl SetPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetPermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetPermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetPermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetPermissionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SetPermissionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, SetPermissionErrorKind::ValidationException(_))
     }
@@ -5831,7 +5831,7 @@ pub enum SetTimeBasedAutoScalingErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTimeBasedAutoScalingError {
@@ -5895,14 +5895,14 @@ impl SetTimeBasedAutoScalingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetTimeBasedAutoScalingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SetTimeBasedAutoScalingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTimeBasedAutoScalingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetTimeBasedAutoScalingErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SetTimeBasedAutoScalingErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5937,7 +5937,7 @@ pub enum StartInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartInstanceError {
@@ -6001,14 +6001,14 @@ impl StartInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartInstanceErrorKind::ValidationException(_))
     }
@@ -6040,7 +6040,7 @@ pub enum StartStackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartStackError {
@@ -6104,14 +6104,14 @@ impl StartStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartStackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartStackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartStackErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartStackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartStackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartStackErrorKind::ValidationException(_))
     }
@@ -6143,7 +6143,7 @@ pub enum StopInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopInstanceError {
@@ -6207,14 +6207,14 @@ impl StopInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopInstanceErrorKind::ValidationException(_))
     }
@@ -6246,7 +6246,7 @@ pub enum StopStackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopStackError {
@@ -6310,11 +6310,11 @@ impl StopStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopStackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopStackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopStackErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `StopStackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopStackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopStackErrorKind::ValidationException(_))
     }
@@ -6346,7 +6346,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6410,14 +6410,14 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -6449,7 +6449,7 @@ pub enum UnassignInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnassignInstanceError {
@@ -6513,14 +6513,14 @@ impl UnassignInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnassignInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UnassignInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnassignInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UnassignInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UnassignInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6555,7 +6555,7 @@ pub enum UnassignVolumeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnassignVolumeError {
@@ -6619,14 +6619,14 @@ impl UnassignVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnassignVolumeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UnassignVolumeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnassignVolumeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UnassignVolumeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UnassignVolumeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UnassignVolumeErrorKind::ValidationException(_))
     }
@@ -6658,7 +6658,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -6722,14 +6722,14 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -6761,7 +6761,7 @@ pub enum UpdateAppErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAppError {
@@ -6825,11 +6825,11 @@ impl UpdateAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAppErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAppErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateAppErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateAppErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateAppErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateAppErrorKind::ValidationException(_))
     }
@@ -6861,7 +6861,7 @@ pub enum UpdateElasticIpErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateElasticIpError {
@@ -6925,14 +6925,14 @@ impl UpdateElasticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateElasticIpErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateElasticIpErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateElasticIpErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateElasticIpErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateElasticIpErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateElasticIpErrorKind::ValidationException(_))
     }
@@ -6964,7 +6964,7 @@ pub enum UpdateInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInstanceError {
@@ -7028,14 +7028,14 @@ impl UpdateInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateInstanceErrorKind::ValidationException(_))
     }
@@ -7067,7 +7067,7 @@ pub enum UpdateLayerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLayerError {
@@ -7131,14 +7131,14 @@ impl UpdateLayerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLayerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLayerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLayerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLayerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLayerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateLayerErrorKind::ValidationException(_))
     }
@@ -7168,7 +7168,7 @@ pub struct UpdateMyUserProfileError {
 pub enum UpdateMyUserProfileErrorKind {
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMyUserProfileError {
@@ -7231,7 +7231,7 @@ impl UpdateMyUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMyUserProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateMyUserProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7265,7 +7265,7 @@ pub enum UpdateRdsDbInstanceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRdsDbInstanceError {
@@ -7329,14 +7329,14 @@ impl UpdateRdsDbInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRdsDbInstanceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRdsDbInstanceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRdsDbInstanceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRdsDbInstanceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateRdsDbInstanceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7371,7 +7371,7 @@ pub enum UpdateStackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStackError {
@@ -7435,14 +7435,14 @@ impl UpdateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStackErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStackErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateStackErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateStackErrorKind::ValidationException(_))
     }
@@ -7474,7 +7474,7 @@ pub enum UpdateUserProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserProfileError {
@@ -7538,14 +7538,14 @@ impl UpdateUserProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateUserProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7580,7 +7580,7 @@ pub enum UpdateVolumeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that a request was not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVolumeError {
@@ -7644,14 +7644,14 @@ impl UpdateVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVolumeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVolumeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVolumeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVolumeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateVolumeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateVolumeErrorKind::ValidationException(_))
     }

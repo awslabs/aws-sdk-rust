@@ -4,7 +4,11 @@ pub fn ser_payload_create_app_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_app_input_create_application_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -16,7 +20,11 @@ pub fn ser_payload_create_campaign_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_campaign_input_write_campaign_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -28,7 +36,11 @@ pub fn ser_payload_create_email_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_email_template_input_email_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -40,7 +52,11 @@ pub fn ser_payload_create_export_job_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_export_job_input_export_job_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -52,7 +68,11 @@ pub fn ser_payload_create_import_job_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_import_job_input_import_job_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -64,7 +84,11 @@ pub fn ser_payload_create_in_app_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_in_app_template_input_in_app_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -76,7 +100,11 @@ pub fn ser_payload_create_journey_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_journey_input_write_journey_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -88,7 +116,11 @@ pub fn ser_payload_create_push_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_push_template_input_push_notification_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -100,7 +132,11 @@ pub fn ser_payload_create_recommender_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_recommender_configuration_input_create_recommender_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -112,7 +148,11 @@ pub fn ser_payload_create_segment_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_segment_input_write_segment_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -124,7 +164,11 @@ pub fn ser_payload_create_sms_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_sms_template_input_sms_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -136,7 +180,11 @@ pub fn ser_payload_create_voice_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_voice_template_input_voice_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -148,7 +196,11 @@ pub fn ser_payload_phone_number_validate_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_phone_number_validate_input_number_validate_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -160,7 +212,11 @@ pub fn ser_payload_put_events_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_put_events_input_events_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -172,7 +228,11 @@ pub fn ser_payload_put_event_stream_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_put_event_stream_input_write_event_stream(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -184,7 +244,11 @@ pub fn ser_payload_remove_attributes_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_remove_attributes_input_update_attributes_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -196,7 +260,11 @@ pub fn ser_payload_send_messages_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_send_messages_input_message_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -208,7 +276,11 @@ pub fn ser_payload_send_users_messages_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_send_users_messages_input_send_users_message_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -220,7 +292,11 @@ pub fn ser_payload_tag_resource_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_tag_resource_input_tags_model(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -232,7 +308,11 @@ pub fn ser_payload_update_adm_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_adm_channel_input_adm_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -244,7 +324,11 @@ pub fn ser_payload_update_apns_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_channel_input_apns_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -256,7 +340,11 @@ pub fn ser_payload_update_apns_sandbox_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_sandbox_channel_input_apns_sandbox_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -268,7 +356,11 @@ pub fn ser_payload_update_apns_voip_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_voip_channel_input_apns_voip_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -280,7 +372,11 @@ pub fn ser_payload_update_apns_voip_sandbox_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_apns_voip_sandbox_channel_input_apns_voip_sandbox_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -292,7 +388,11 @@ pub fn ser_payload_update_application_settings_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_application_settings_input_write_application_settings_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -304,7 +404,11 @@ pub fn ser_payload_update_baidu_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_baidu_channel_input_baidu_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -316,7 +420,11 @@ pub fn ser_payload_update_campaign_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_campaign_input_write_campaign_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -328,7 +436,11 @@ pub fn ser_payload_update_email_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_email_channel_input_email_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -340,7 +452,11 @@ pub fn ser_payload_update_email_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_email_template_input_email_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -352,7 +468,11 @@ pub fn ser_payload_update_endpoint_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_endpoint_input_endpoint_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -364,7 +484,11 @@ pub fn ser_payload_update_endpoints_batch_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_endpoints_batch_input_endpoint_batch_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -376,7 +500,11 @@ pub fn ser_payload_update_gcm_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_gcm_channel_input_gcm_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -388,7 +516,11 @@ pub fn ser_payload_update_in_app_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_in_app_template_input_in_app_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -400,7 +532,11 @@ pub fn ser_payload_update_journey_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_journey_input_write_journey_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -412,7 +548,11 @@ pub fn ser_payload_update_journey_state_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_journey_state_input_journey_state_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -424,7 +564,11 @@ pub fn ser_payload_update_push_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_push_template_input_push_notification_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -436,7 +580,11 @@ pub fn ser_payload_update_recommender_configuration_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_recommender_configuration_input_update_recommender_configuration(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -448,7 +596,11 @@ pub fn ser_payload_update_segment_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_segment_input_write_segment_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -460,7 +612,11 @@ pub fn ser_payload_update_sms_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_sms_channel_input_sms_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -472,7 +628,11 @@ pub fn ser_payload_update_sms_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_sms_template_input_sms_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -484,7 +644,11 @@ pub fn ser_payload_update_template_active_version_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_template_active_version_input_template_active_version_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -496,7 +660,11 @@ pub fn ser_payload_update_voice_channel_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_voice_channel_input_voice_channel_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
@@ -508,11 +676,19 @@ pub fn ser_payload_update_voice_template_input(
 ) -> std::result::Result<aws_smithy_http::body::SdkBody, aws_smithy_http::operation::BuildError> {
     let payload = match payload.as_ref() {
         Some(t) => t,
-        None => return Ok(aws_smithy_http::body::SdkBody::from("")),
+        None => {
+            return Ok(aws_smithy_http::body::SdkBody::from(
+                crate::operation_ser::rest_json_unsetpayload(),
+            ))
+        }
     };
     #[allow(clippy::useless_conversion)]Ok(aws_smithy_http::body::SdkBody::from(
         crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_voice_template_input_voice_template_request(&payload).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
     ))
+}
+
+pub fn rest_json_unsetpayload() -> std::vec::Vec<u8> {
+    b"{}"[..].into()
 }
 
 pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_app_input_create_application_request(

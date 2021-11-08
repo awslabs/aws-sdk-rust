@@ -1793,6 +1793,48 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_start_streaming_session(
+    value: &[u8],
+    mut builder: crate::output::start_streaming_session_output::Builder,
+) -> Result<
+    crate::output::start_streaming_session_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "session" => {
+                        builder = builder.set_session(
+                            crate::json_deser::deser_structure_crate_model_streaming_session(
+                                tokens,
+                            )?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(aws_smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_start_studio_sso_configuration_repair(
     value: &[u8],
     mut builder: crate::output::start_studio_sso_configuration_repair_output::Builder,
@@ -1813,6 +1855,48 @@ pub fn deser_operation_crate_operation_start_studio_sso_configuration_repair(
                     "studio" => {
                         builder = builder.set_studio(
                             crate::json_deser::deser_structure_crate_model_studio(tokens)?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(aws_smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_stop_streaming_session(
+    value: &[u8],
+    mut builder: crate::output::stop_streaming_session_output::Builder,
+) -> Result<
+    crate::output::stop_streaming_session_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "session" => {
+                        builder = builder.set_session(
+                            crate::json_deser::deser_structure_crate_model_streaming_session(
+                                tokens,
+                            )?,
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2590,6 +2674,48 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "stoppedAt" => {
+                                builder = builder.set_stopped_at(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::instant::Format::DateTime,
+                                    )?,
+                                );
+                            }
+                            "stoppedBy" => {
+                                builder = builder.set_stopped_by(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "startedAt" => {
+                                builder = builder.set_started_at(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::instant::Format::DateTime,
+                                    )?,
+                                );
+                            }
+                            "startedBy" => {
+                                builder = builder.set_started_by(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "stopAt" => {
+                                builder = builder.set_stop_at(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::instant::Format::DateTime,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -2932,7 +3058,7 @@ where
                             }
                             "configuration" => {
                                 builder = builder.set_configuration(
-                                    crate::json_deser::deser_structure_crate_model_studio_component_configuration(tokens)?
+                                    crate::json_deser::deser_union_crate_model_studio_component_configuration(tokens)?
                                 );
                             }
                             "createdAt" => {
@@ -3406,6 +3532,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "sid" => {
+                                builder = builder.set_sid(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3465,6 +3600,15 @@ where
                             }
                             "principalId" => {
                                 builder = builder.set_principal_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "sid" => {
+                                builder = builder.set_sid(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -4008,6 +4152,14 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_nimble_streaming_image_id_list(tokens)?
                                 );
                             }
+                            "maxStoppedSessionLengthInMinutes" => {
+                                builder = builder.set_max_stopped_session_length_in_minutes(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4215,7 +4367,7 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_studio_component_configuration<'a, I>(
+pub fn deser_union_crate_model_studio_component_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::StudioComponentConfiguration>, aws_smithy_json::deserialize::Error>
 where
@@ -4223,52 +4375,60 @@ where
         Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
     >,
 {
+    let mut variant = None;
     match tokens.next().transpose()? {
-        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
-        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            #[allow(unused_mut)]
-            let mut builder = crate::model::StudioComponentConfiguration::builder();
-            loop {
-                match tokens.next().transpose()? {
-                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => loop {
+            match tokens.next().transpose()? {
+                Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    if variant.is_some() {
+                        return Err(aws_smithy_json::deserialize::Error::custom(
+                            "encountered mixed variants in union",
+                        ));
+                    }
+                    variant = match key.to_unescaped()?.as_ref() {
                             "activeDirectoryConfiguration" => {
-                                builder = builder.set_active_directory_configuration(
+                                Some(crate::model::StudioComponentConfiguration::ActiveDirectoryConfiguration(
                                     crate::json_deser::deser_structure_crate_model_active_directory_configuration(tokens)?
-                                );
+                                    .ok_or_else(|| aws_smithy_json::deserialize::Error::custom("value for 'activeDirectoryConfiguration' cannot be null"))?
+                                ))
                             }
                             "computeFarmConfiguration" => {
-                                builder = builder.set_compute_farm_configuration(
+                                Some(crate::model::StudioComponentConfiguration::ComputeFarmConfiguration(
                                     crate::json_deser::deser_structure_crate_model_compute_farm_configuration(tokens)?
-                                );
+                                    .ok_or_else(|| aws_smithy_json::deserialize::Error::custom("value for 'computeFarmConfiguration' cannot be null"))?
+                                ))
                             }
                             "licenseServiceConfiguration" => {
-                                builder = builder.set_license_service_configuration(
+                                Some(crate::model::StudioComponentConfiguration::LicenseServiceConfiguration(
                                     crate::json_deser::deser_structure_crate_model_license_service_configuration(tokens)?
-                                );
+                                    .ok_or_else(|| aws_smithy_json::deserialize::Error::custom("value for 'licenseServiceConfiguration' cannot be null"))?
+                                ))
                             }
                             "sharedFileSystemConfiguration" => {
-                                builder = builder.set_shared_file_system_configuration(
+                                Some(crate::model::StudioComponentConfiguration::SharedFileSystemConfiguration(
                                     crate::json_deser::deser_structure_crate_model_shared_file_system_configuration(tokens)?
-                                );
+                                    .ok_or_else(|| aws_smithy_json::deserialize::Error::custom("value for 'sharedFileSystemConfiguration' cannot be null"))?
+                                ))
                             }
-                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                        }
-                    }
-                    _ => {
-                        return Err(aws_smithy_json::deserialize::Error::custom(
-                            "expected object key or end object",
-                        ))
-                    }
+                            _ => None
+                        };
+                }
+                _ => {
+                    return Err(aws_smithy_json::deserialize::Error::custom(
+                        "expected object key or end object",
+                    ))
                 }
             }
-            Ok(Some(builder.build()))
+        },
+        _ => {
+            return Err(aws_smithy_json::deserialize::Error::custom(
+                "expected start object or null",
+            ))
         }
-        _ => Err(aws_smithy_json::deserialize::Error::custom(
-            "expected start object or null",
-        )),
     }
+    Ok(variant)
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]

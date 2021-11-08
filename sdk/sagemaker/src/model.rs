@@ -1227,6 +1227,11 @@ pub struct UserSettings {
     pub kernel_gateway_app_settings: std::option::Option<crate::model::KernelGatewayAppSettings>,
     /// <p>The TensorBoard app settings.</p>
     pub tensor_board_app_settings: std::option::Option<crate::model::TensorBoardAppSettings>,
+    /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
+    pub r_studio_server_pro_app_settings:
+        std::option::Option<crate::model::RStudioServerProAppSettings>,
+    /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
+    pub r_session_app_settings: std::option::Option<crate::model::RSessionAppSettings>,
 }
 impl std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1243,6 +1248,11 @@ impl std::fmt::Debug for UserSettings {
             &self.kernel_gateway_app_settings,
         );
         formatter.field("tensor_board_app_settings", &self.tensor_board_app_settings);
+        formatter.field(
+            "r_studio_server_pro_app_settings",
+            &self.r_studio_server_pro_app_settings,
+        );
+        formatter.field("r_session_app_settings", &self.r_session_app_settings);
         formatter.finish()
     }
 }
@@ -1261,6 +1271,9 @@ pub mod user_settings {
             std::option::Option<crate::model::KernelGatewayAppSettings>,
         pub(crate) tensor_board_app_settings:
             std::option::Option<crate::model::TensorBoardAppSettings>,
+        pub(crate) r_studio_server_pro_app_settings:
+            std::option::Option<crate::model::RStudioServerProAppSettings>,
+        pub(crate) r_session_app_settings: std::option::Option<crate::model::RSessionAppSettings>,
     }
     impl Builder {
         /// <p>The execution role for the user.</p>
@@ -1368,6 +1381,35 @@ pub mod user_settings {
             self.tensor_board_app_settings = input;
             self
         }
+        /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
+        pub fn r_studio_server_pro_app_settings(
+            mut self,
+            input: crate::model::RStudioServerProAppSettings,
+        ) -> Self {
+            self.r_studio_server_pro_app_settings = Some(input);
+            self
+        }
+        /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
+        pub fn set_r_studio_server_pro_app_settings(
+            mut self,
+            input: std::option::Option<crate::model::RStudioServerProAppSettings>,
+        ) -> Self {
+            self.r_studio_server_pro_app_settings = input;
+            self
+        }
+        /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
+        pub fn r_session_app_settings(mut self, input: crate::model::RSessionAppSettings) -> Self {
+            self.r_session_app_settings = Some(input);
+            self
+        }
+        /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
+        pub fn set_r_session_app_settings(
+            mut self,
+            input: std::option::Option<crate::model::RSessionAppSettings>,
+        ) -> Self {
+            self.r_session_app_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserSettings`](crate::model::UserSettings)
         pub fn build(self) -> crate::model::UserSettings {
             crate::model::UserSettings {
@@ -1377,6 +1419,8 @@ pub mod user_settings {
                 jupyter_server_app_settings: self.jupyter_server_app_settings,
                 kernel_gateway_app_settings: self.kernel_gateway_app_settings,
                 tensor_board_app_settings: self.tensor_board_app_settings,
+                r_studio_server_pro_app_settings: self.r_studio_server_pro_app_settings,
+                r_session_app_settings: self.r_session_app_settings,
             }
         }
     }
@@ -1385,6 +1429,215 @@ impl UserSettings {
     /// Creates a new builder-style object to manufacture [`UserSettings`](crate::model::UserSettings)
     pub fn builder() -> crate::model::user_settings::Builder {
         crate::model::user_settings::Builder::default()
+    }
+}
+
+/// <p>A collection of settings that apply to an <code>RSessionGateway</code> app.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RSessionAppSettings {}
+impl std::fmt::Debug for RSessionAppSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RSessionAppSettings");
+        formatter.finish()
+    }
+}
+/// See [`RSessionAppSettings`](crate::model::RSessionAppSettings)
+pub mod r_session_app_settings {
+    /// A builder for [`RSessionAppSettings`](crate::model::RSessionAppSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RSessionAppSettings`](crate::model::RSessionAppSettings)
+        pub fn build(self) -> crate::model::RSessionAppSettings {
+            crate::model::RSessionAppSettings {}
+        }
+    }
+}
+impl RSessionAppSettings {
+    /// Creates a new builder-style object to manufacture [`RSessionAppSettings`](crate::model::RSessionAppSettings)
+    pub fn builder() -> crate::model::r_session_app_settings::Builder {
+        crate::model::r_session_app_settings::Builder::default()
+    }
+}
+
+/// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app. <code>RStudioServerProAppSettings</code> cannot be updated. The <code>RStudioServerPro</code> app must be deleted and a new one created to make any changes.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RStudioServerProAppSettings {
+    /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
+    pub access_status: std::option::Option<crate::model::RStudioServerProAccessStatus>,
+    /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
+    pub user_group: std::option::Option<crate::model::RStudioServerProUserGroup>,
+}
+impl std::fmt::Debug for RStudioServerProAppSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RStudioServerProAppSettings");
+        formatter.field("access_status", &self.access_status);
+        formatter.field("user_group", &self.user_group);
+        formatter.finish()
+    }
+}
+/// See [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+pub mod r_studio_server_pro_app_settings {
+    /// A builder for [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_status: std::option::Option<crate::model::RStudioServerProAccessStatus>,
+        pub(crate) user_group: std::option::Option<crate::model::RStudioServerProUserGroup>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
+        pub fn access_status(mut self, input: crate::model::RStudioServerProAccessStatus) -> Self {
+            self.access_status = Some(input);
+            self
+        }
+        /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
+        pub fn set_access_status(
+            mut self,
+            input: std::option::Option<crate::model::RStudioServerProAccessStatus>,
+        ) -> Self {
+            self.access_status = input;
+            self
+        }
+        /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
+        pub fn user_group(mut self, input: crate::model::RStudioServerProUserGroup) -> Self {
+            self.user_group = Some(input);
+            self
+        }
+        /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
+        pub fn set_user_group(
+            mut self,
+            input: std::option::Option<crate::model::RStudioServerProUserGroup>,
+        ) -> Self {
+            self.user_group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+        pub fn build(self) -> crate::model::RStudioServerProAppSettings {
+            crate::model::RStudioServerProAppSettings {
+                access_status: self.access_status,
+                user_group: self.user_group,
+            }
+        }
+    }
+}
+impl RStudioServerProAppSettings {
+    /// Creates a new builder-style object to manufacture [`RStudioServerProAppSettings`](crate::model::RStudioServerProAppSettings)
+    pub fn builder() -> crate::model::r_studio_server_pro_app_settings::Builder {
+        crate::model::r_studio_server_pro_app_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RStudioServerProUserGroup {
+    #[allow(missing_docs)] // documentation missing in model
+    Admin,
+    #[allow(missing_docs)] // documentation missing in model
+    User,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RStudioServerProUserGroup {
+    fn from(s: &str) -> Self {
+        match s {
+            "R_STUDIO_ADMIN" => RStudioServerProUserGroup::Admin,
+            "R_STUDIO_USER" => RStudioServerProUserGroup::User,
+            other => RStudioServerProUserGroup::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RStudioServerProUserGroup {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RStudioServerProUserGroup::from(s))
+    }
+}
+impl RStudioServerProUserGroup {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RStudioServerProUserGroup::Admin => "R_STUDIO_ADMIN",
+            RStudioServerProUserGroup::User => "R_STUDIO_USER",
+            RStudioServerProUserGroup::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["R_STUDIO_ADMIN", "R_STUDIO_USER"]
+    }
+}
+impl AsRef<str> for RStudioServerProUserGroup {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RStudioServerProAccessStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RStudioServerProAccessStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => RStudioServerProAccessStatus::Disabled,
+            "ENABLED" => RStudioServerProAccessStatus::Enabled,
+            other => RStudioServerProAccessStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RStudioServerProAccessStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RStudioServerProAccessStatus::from(s))
+    }
+}
+impl RStudioServerProAccessStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RStudioServerProAccessStatus::Disabled => "DISABLED",
+            RStudioServerProAccessStatus::Enabled => "ENABLED",
+            RStudioServerProAccessStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for RStudioServerProAccessStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2346,8 +2599,8 @@ pub enum TrialComponentParameterValue {
     StringValue(std::string::String),
 }
 impl TrialComponentParameterValue {
-    /// Tries to convert the enum instance into its [`TrialComponentParameterValue`](crate::model::TrialComponentParameterValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`NumberValue`](crate::model::TrialComponentParameterValue::NumberValue), extracting the inner [`f64`](f64).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> std::result::Result<&f64, &Self> {
         if let TrialComponentParameterValue::NumberValue(val) = &self {
             Ok(&val)
@@ -2355,12 +2608,12 @@ impl TrialComponentParameterValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TrialComponentParameterValue` variant.
+    /// Returns true if this is a [`NumberValue`](crate::model::TrialComponentParameterValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
         self.as_number_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`TrialComponentParameterValue`](crate::model::TrialComponentParameterValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValue`](crate::model::TrialComponentParameterValue::StringValue), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let TrialComponentParameterValue::StringValue(val) = &self {
             Ok(&val)
@@ -2368,7 +2621,7 @@ impl TrialComponentParameterValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TrialComponentParameterValue` variant.
+    /// Returns true if this is a [`StringValue`](crate::model::TrialComponentParameterValue::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
@@ -3079,6 +3332,225 @@ impl ProfilerConfigForUpdate {
     /// Creates a new builder-style object to manufacture [`ProfilerConfigForUpdate`](crate::model::ProfilerConfigForUpdate)
     pub fn builder() -> crate::model::profiler_config_for_update::Builder {
         crate::model::profiler_config_for_update::Builder::default()
+    }
+}
+
+/// <p>A tag object that consists of a key and an optional value, used to manage metadata
+/// for SageMaker Amazon Web Services resources.</p>
+/// <p>You can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
+/// batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and
+/// endpoints. For more information on adding tags to SageMaker resources, see <a>AddTags</a>.</p>
+/// <p>For more information on adding metadata to your Amazon Web Services resources with tagging, see
+/// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+/// resources</a>. For advice on best practices for managing Amazon Web Services resources with
+/// tagging, see <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+/// Best Practices: Implement an Effective Amazon Web Services Resource Tagging Strategy</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Tag {
+    /// <p>The tag key. Tag keys must be unique per resource.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The tag value.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Tag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Tag");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`Tag`](crate::model::Tag)
+pub mod tag {
+    /// A builder for [`Tag`](crate::model::Tag)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The tag key. Tag keys must be unique per resource.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The tag key. Tag keys must be unique per resource.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The tag value.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The tag value.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        pub fn build(self) -> crate::model::Tag {
+            crate::model::Tag {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>Details that you specify to provision a service catalog product.
+/// For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceCatalogProvisioningUpdateDetails {
+    /// <p>The ID of the provisioning artifact.</p>
+    pub provisioning_artifact_id: std::option::Option<std::string::String>,
+    /// <p>A list of key value pairs that you specify when you provision a product.</p>
+    pub provisioning_parameters:
+        std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
+}
+impl std::fmt::Debug for ServiceCatalogProvisioningUpdateDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceCatalogProvisioningUpdateDetails");
+        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
+        formatter.field("provisioning_parameters", &self.provisioning_parameters);
+        formatter.finish()
+    }
+}
+/// See [`ServiceCatalogProvisioningUpdateDetails`](crate::model::ServiceCatalogProvisioningUpdateDetails)
+pub mod service_catalog_provisioning_update_details {
+    /// A builder for [`ServiceCatalogProvisioningUpdateDetails`](crate::model::ServiceCatalogProvisioningUpdateDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
+        pub(crate) provisioning_parameters:
+            std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
+    }
+    impl Builder {
+        /// <p>The ID of the provisioning artifact.</p>
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.provisioning_artifact_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the provisioning artifact.</p>
+        pub fn set_provisioning_artifact_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.provisioning_artifact_id = input;
+            self
+        }
+        /// Appends an item to `provisioning_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
+        ///
+        /// <p>A list of key value pairs that you specify when you provision a product.</p>
+        pub fn provisioning_parameters(
+            mut self,
+            input: impl Into<crate::model::ProvisioningParameter>,
+        ) -> Self {
+            let mut v = self.provisioning_parameters.unwrap_or_default();
+            v.push(input.into());
+            self.provisioning_parameters = Some(v);
+            self
+        }
+        /// <p>A list of key value pairs that you specify when you provision a product.</p>
+        pub fn set_provisioning_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
+        ) -> Self {
+            self.provisioning_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceCatalogProvisioningUpdateDetails`](crate::model::ServiceCatalogProvisioningUpdateDetails)
+        pub fn build(self) -> crate::model::ServiceCatalogProvisioningUpdateDetails {
+            crate::model::ServiceCatalogProvisioningUpdateDetails {
+                provisioning_artifact_id: self.provisioning_artifact_id,
+                provisioning_parameters: self.provisioning_parameters,
+            }
+        }
+    }
+}
+impl ServiceCatalogProvisioningUpdateDetails {
+    /// Creates a new builder-style object to manufacture [`ServiceCatalogProvisioningUpdateDetails`](crate::model::ServiceCatalogProvisioningUpdateDetails)
+    pub fn builder() -> crate::model::service_catalog_provisioning_update_details::Builder {
+        crate::model::service_catalog_provisioning_update_details::Builder::default()
+    }
+}
+
+/// <p>A key value pair used when you provision a project as a service catalog product. For
+/// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+/// Catalog</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProvisioningParameter {
+    /// <p>The key that identifies a provisioning parameter.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The value of the provisioning parameter.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ProvisioningParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProvisioningParameter");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`ProvisioningParameter`](crate::model::ProvisioningParameter)
+pub mod provisioning_parameter {
+    /// A builder for [`ProvisioningParameter`](crate::model::ProvisioningParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The key that identifies a provisioning parameter.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The key that identifies a provisioning parameter.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The value of the provisioning parameter.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The value of the provisioning parameter.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProvisioningParameter`](crate::model::ProvisioningParameter)
+        pub fn build(self) -> crate::model::ProvisioningParameter {
+            crate::model::ProvisioningParameter {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl ProvisioningParameter {
+    /// Creates a new builder-style object to manufacture [`ProvisioningParameter`](crate::model::ProvisioningParameter)
+    pub fn builder() -> crate::model::provisioning_parameter::Builder {
+        crate::model::provisioning_parameter::Builder::default()
     }
 }
 
@@ -6601,6 +7073,138 @@ impl AsRef<str> for VariantPropertyType {
     }
 }
 
+/// <p>A collection of <code>Domain</code> configuration settings to update.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DomainSettingsForUpdate {
+    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
+    pub r_studio_server_pro_domain_settings_for_update:
+        std::option::Option<crate::model::RStudioServerProDomainSettingsForUpdate>,
+}
+impl std::fmt::Debug for DomainSettingsForUpdate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DomainSettingsForUpdate");
+        formatter.field(
+            "r_studio_server_pro_domain_settings_for_update",
+            &self.r_studio_server_pro_domain_settings_for_update,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DomainSettingsForUpdate`](crate::model::DomainSettingsForUpdate)
+pub mod domain_settings_for_update {
+    /// A builder for [`DomainSettingsForUpdate`](crate::model::DomainSettingsForUpdate)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r_studio_server_pro_domain_settings_for_update:
+            std::option::Option<crate::model::RStudioServerProDomainSettingsForUpdate>,
+    }
+    impl Builder {
+        /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
+        pub fn r_studio_server_pro_domain_settings_for_update(
+            mut self,
+            input: crate::model::RStudioServerProDomainSettingsForUpdate,
+        ) -> Self {
+            self.r_studio_server_pro_domain_settings_for_update = Some(input);
+            self
+        }
+        /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
+        pub fn set_r_studio_server_pro_domain_settings_for_update(
+            mut self,
+            input: std::option::Option<crate::model::RStudioServerProDomainSettingsForUpdate>,
+        ) -> Self {
+            self.r_studio_server_pro_domain_settings_for_update = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DomainSettingsForUpdate`](crate::model::DomainSettingsForUpdate)
+        pub fn build(self) -> crate::model::DomainSettingsForUpdate {
+            crate::model::DomainSettingsForUpdate {
+                r_studio_server_pro_domain_settings_for_update: self
+                    .r_studio_server_pro_domain_settings_for_update,
+            }
+        }
+    }
+}
+impl DomainSettingsForUpdate {
+    /// Creates a new builder-style object to manufacture [`DomainSettingsForUpdate`](crate::model::DomainSettingsForUpdate)
+    pub fn builder() -> crate::model::domain_settings_for_update::Builder {
+        crate::model::domain_settings_for_update::Builder::default()
+    }
+}
+
+/// <p>A collection of settings that update the current configuration for the <code>RStudioServerPro</code> Domain-level app.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RStudioServerProDomainSettingsForUpdate {
+    /// <p>The execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
+    pub domain_execution_role_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that
+    /// the version runs on.</p>
+    pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+}
+impl std::fmt::Debug for RStudioServerProDomainSettingsForUpdate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RStudioServerProDomainSettingsForUpdate");
+        formatter.field("domain_execution_role_arn", &self.domain_execution_role_arn);
+        formatter.field("default_resource_spec", &self.default_resource_spec);
+        formatter.finish()
+    }
+}
+/// See [`RStudioServerProDomainSettingsForUpdate`](crate::model::RStudioServerProDomainSettingsForUpdate)
+pub mod r_studio_server_pro_domain_settings_for_update {
+    /// A builder for [`RStudioServerProDomainSettingsForUpdate`](crate::model::RStudioServerProDomainSettingsForUpdate)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_execution_role_arn: std::option::Option<std::string::String>,
+        pub(crate) default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+    }
+    impl Builder {
+        /// <p>The execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
+        pub fn domain_execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_execution_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
+        pub fn set_domain_execution_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.domain_execution_role_arn = input;
+            self
+        }
+        /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that
+        /// the version runs on.</p>
+        pub fn default_resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
+            self.default_resource_spec = Some(input);
+            self
+        }
+        /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that
+        /// the version runs on.</p>
+        pub fn set_default_resource_spec(
+            mut self,
+            input: std::option::Option<crate::model::ResourceSpec>,
+        ) -> Self {
+            self.default_resource_spec = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RStudioServerProDomainSettingsForUpdate`](crate::model::RStudioServerProDomainSettingsForUpdate)
+        pub fn build(self) -> crate::model::RStudioServerProDomainSettingsForUpdate {
+            crate::model::RStudioServerProDomainSettingsForUpdate {
+                domain_execution_role_arn: self.domain_execution_role_arn,
+                default_resource_spec: self.default_resource_spec,
+            }
+        }
+    }
+}
+impl RStudioServerProDomainSettingsForUpdate {
+    /// Creates a new builder-style object to manufacture [`RStudioServerProDomainSettingsForUpdate`](crate::model::RStudioServerProDomainSettingsForUpdate)
+    pub fn builder() -> crate::model::r_studio_server_pro_domain_settings_for_update::Builder {
+        crate::model::r_studio_server_pro_domain_settings_for_update::Builder::default()
+    }
+}
+
 /// <p>Information of a particular device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7696,6 +8300,11 @@ pub struct Project {
     /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>A timestamp container for when the project was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl std::fmt::Debug for Project {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7716,6 +8325,8 @@ impl std::fmt::Debug for Project {
         formatter.field("created_by", &self.created_by);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("tags", &self.tags);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_by", &self.last_modified_by);
         formatter.finish()
     }
 }
@@ -7737,6 +8348,8 @@ pub mod project {
         pub(crate) created_by: std::option::Option<crate::model::UserContext>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -7886,6 +8499,34 @@ pub mod project {
             self.tags = input;
             self
         }
+        /// <p>A timestamp container for when the project was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>A timestamp container for when the project was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
+        pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
+            self.last_modified_by = Some(input);
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
+        pub fn set_last_modified_by(
+            mut self,
+            input: std::option::Option<crate::model::UserContext>,
+        ) -> Self {
+            self.last_modified_by = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Project`](crate::model::Project)
         pub fn build(self) -> crate::model::Project {
             crate::model::Project {
@@ -7900,6 +8541,8 @@ pub mod project {
                 created_by: self.created_by,
                 creation_time: self.creation_time,
                 tags: self.tags,
+                last_modified_time: self.last_modified_time,
+                last_modified_by: self.last_modified_by,
             }
         }
     }
@@ -7908,78 +8551,6 @@ impl Project {
     /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project)
     pub fn builder() -> crate::model::project::Builder {
         crate::model::project::Builder::default()
-    }
-}
-
-/// <p>A tag object that consists of a key and an optional value, used to manage metadata
-/// for SageMaker Amazon Web Services resources.</p>
-/// <p>You can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
-/// batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and
-/// endpoints. For more information on adding tags to SageMaker resources, see <a>AddTags</a>.</p>
-/// <p>For more information on adding metadata to your Amazon Web Services resources with tagging, see
-/// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-/// resources</a>. For advice on best practices for managing Amazon Web Services resources with
-/// tagging, see <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-/// Best Practices: Implement an Effective Amazon Web Services Resource Tagging Strategy</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Tag {
-    /// <p>The tag key. Tag keys must be unique per resource.</p>
-    pub key: std::option::Option<std::string::String>,
-    /// <p>The tag value.</p>
-    pub value: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
-/// See [`Tag`](crate::model::Tag)
-pub mod tag {
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) value: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The tag key. Tag keys must be unique per resource.</p>
-        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key = Some(input.into());
-            self
-        }
-        /// <p>The tag key. Tag keys must be unique per resource.</p>
-        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
-        }
-        /// <p>The tag value.</p>
-        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value = Some(input.into());
-            self
-        }
-        /// <p>The tag value.</p>
-        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
-        pub fn build(self) -> crate::model::Tag {
-            crate::model::Tag {
-                key: self.key,
-                value: self.value,
-            }
-        }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -8094,6 +8665,12 @@ pub enum ProjectStatus {
     DeleteInProgress,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -8107,6 +8684,9 @@ impl std::convert::From<&str> for ProjectStatus {
             "DeleteFailed" => ProjectStatus::DeleteFailed,
             "DeleteInProgress" => ProjectStatus::DeleteInProgress,
             "Pending" => ProjectStatus::Pending,
+            "UpdateCompleted" => ProjectStatus::UpdateCompleted,
+            "UpdateFailed" => ProjectStatus::UpdateFailed,
+            "UpdateInProgress" => ProjectStatus::UpdateInProgress,
             other => ProjectStatus::Unknown(other.to_owned()),
         }
     }
@@ -8129,6 +8709,9 @@ impl ProjectStatus {
             ProjectStatus::DeleteFailed => "DeleteFailed",
             ProjectStatus::DeleteInProgress => "DeleteInProgress",
             ProjectStatus::Pending => "Pending",
+            ProjectStatus::UpdateCompleted => "UpdateCompleted",
+            ProjectStatus::UpdateFailed => "UpdateFailed",
+            ProjectStatus::UpdateInProgress => "UpdateInProgress",
             ProjectStatus::Unknown(s) => s.as_ref(),
         }
     }
@@ -8142,6 +8725,9 @@ impl ProjectStatus {
             "DeleteFailed",
             "DeleteInProgress",
             "Pending",
+            "UpdateCompleted",
+            "UpdateFailed",
+            "UpdateInProgress",
         ]
     }
 }
@@ -8403,71 +8989,6 @@ impl ServiceCatalogProvisioningDetails {
     /// Creates a new builder-style object to manufacture [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
     pub fn builder() -> crate::model::service_catalog_provisioning_details::Builder {
         crate::model::service_catalog_provisioning_details::Builder::default()
-    }
-}
-
-/// <p>A key value pair used when you provision a project as a service catalog product. For
-/// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
-/// Catalog</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProvisioningParameter {
-    /// <p>The key that identifies a provisioning parameter.</p>
-    pub key: std::option::Option<std::string::String>,
-    /// <p>The value of the provisioning parameter.</p>
-    pub value: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ProvisioningParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisioningParameter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
-/// See [`ProvisioningParameter`](crate::model::ProvisioningParameter)
-pub mod provisioning_parameter {
-    /// A builder for [`ProvisioningParameter`](crate::model::ProvisioningParameter)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) value: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The key that identifies a provisioning parameter.</p>
-        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key = Some(input.into());
-            self
-        }
-        /// <p>The key that identifies a provisioning parameter.</p>
-        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
-        }
-        /// <p>The value of the provisioning parameter.</p>
-        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value = Some(input.into());
-            self
-        }
-        /// <p>The value of the provisioning parameter.</p>
-        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ProvisioningParameter`](crate::model::ProvisioningParameter)
-        pub fn build(self) -> crate::model::ProvisioningParameter {
-            crate::model::ProvisioningParameter {
-                key: self.key,
-                value: self.value,
-            }
-        }
-    }
-}
-impl ProvisioningParameter {
-    /// Creates a new builder-style object to manufacture [`ProvisioningParameter`](crate::model::ProvisioningParameter)
-    pub fn builder() -> crate::model::provisioning_parameter::Builder {
-        crate::model::provisioning_parameter::Builder::default()
     }
 }
 
@@ -10981,6 +11502,9 @@ pub struct ModelPackage {
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The metadata properties for the model package. </p>
+    pub customer_metadata_properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for ModelPackage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11011,6 +11535,10 @@ impl std::fmt::Debug for ModelPackage {
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("approval_description", &self.approval_description);
         formatter.field("tags", &self.tags);
+        formatter.field(
+            "customer_metadata_properties",
+            &self.customer_metadata_properties,
+        );
         formatter.finish()
     }
 }
@@ -11044,6 +11572,9 @@ pub mod model_package {
         pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
         pub(crate) approval_description: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) customer_metadata_properties: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The name of the model.</p>
@@ -11404,6 +11935,31 @@ pub mod model_package {
             self.tags = input;
             self
         }
+        /// Adds a key-value pair to `customer_metadata_properties`.
+        ///
+        /// To override the contents of this collection use [`set_customer_metadata_properties`](Self::set_customer_metadata_properties).
+        ///
+        /// <p>The metadata properties for the model package. </p>
+        pub fn customer_metadata_properties(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.customer_metadata_properties.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.customer_metadata_properties = Some(hash_map);
+            self
+        }
+        /// <p>The metadata properties for the model package. </p>
+        pub fn set_customer_metadata_properties(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.customer_metadata_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModelPackage`](crate::model::ModelPackage)
         pub fn build(self) -> crate::model::ModelPackage {
             crate::model::ModelPackage {
@@ -11427,6 +11983,7 @@ pub mod model_package {
                 last_modified_by: self.last_modified_by,
                 approval_description: self.approval_description,
                 tags: self.tags,
+                customer_metadata_properties: self.customer_metadata_properties,
             }
         }
     }
@@ -43560,6 +44117,10 @@ pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
     KernelGateway,
     #[allow(missing_docs)] // documentation missing in model
+    RSessionGateway,
+    #[allow(missing_docs)] // documentation missing in model
+    RStudioServerPro,
+    #[allow(missing_docs)] // documentation missing in model
     TensorBoard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -43569,6 +44130,8 @@ impl std::convert::From<&str> for AppType {
         match s {
             "JupyterServer" => AppType::JupyterServer,
             "KernelGateway" => AppType::KernelGateway,
+            "RSessionGateway" => AppType::RSessionGateway,
+            "RStudioServerPro" => AppType::RStudioServerPro,
             "TensorBoard" => AppType::TensorBoard,
             other => AppType::Unknown(other.to_owned()),
         }
@@ -43587,13 +44150,21 @@ impl AppType {
         match self {
             AppType::JupyterServer => "JupyterServer",
             AppType::KernelGateway => "KernelGateway",
+            AppType::RSessionGateway => "RSessionGateway",
+            AppType::RStudioServerPro => "RStudioServerPro",
             AppType::TensorBoard => "TensorBoard",
             AppType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["JupyterServer", "KernelGateway", "TensorBoard"]
+        &[
+            "JupyterServer",
+            "KernelGateway",
+            "RSessionGateway",
+            "RStudioServerPro",
+            "TensorBoard",
+        ]
     }
 }
 impl AsRef<str> for AppType {
@@ -62893,6 +63464,258 @@ impl AsRef<str> for EdgePresetDeploymentStatus {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum AppSecurityGroupManagement {
+    #[allow(missing_docs)] // documentation missing in model
+    Customer,
+    #[allow(missing_docs)] // documentation missing in model
+    Service,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AppSecurityGroupManagement {
+    fn from(s: &str) -> Self {
+        match s {
+            "Customer" => AppSecurityGroupManagement::Customer,
+            "Service" => AppSecurityGroupManagement::Service,
+            other => AppSecurityGroupManagement::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AppSecurityGroupManagement {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AppSecurityGroupManagement::from(s))
+    }
+}
+impl AppSecurityGroupManagement {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AppSecurityGroupManagement::Customer => "Customer",
+            AppSecurityGroupManagement::Service => "Service",
+            AppSecurityGroupManagement::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Customer", "Service"]
+    }
+}
+impl AsRef<str> for AppSecurityGroupManagement {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A collection of settings that apply to the <code>SageMaker Domain</code>. These settings are specified through the <code>CreateDomain</code> API call.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DomainSettings {
+    /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
+    pub r_studio_server_pro_domain_settings:
+        std::option::Option<crate::model::RStudioServerProDomainSettings>,
+}
+impl std::fmt::Debug for DomainSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DomainSettings");
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field(
+            "r_studio_server_pro_domain_settings",
+            &self.r_studio_server_pro_domain_settings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DomainSettings`](crate::model::DomainSettings)
+pub mod domain_settings {
+    /// A builder for [`DomainSettings`](crate::model::DomainSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) r_studio_server_pro_domain_settings:
+            std::option::Option<crate::model::RStudioServerProDomainSettings>,
+    }
+    impl Builder {
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
+        pub fn r_studio_server_pro_domain_settings(
+            mut self,
+            input: crate::model::RStudioServerProDomainSettings,
+        ) -> Self {
+            self.r_studio_server_pro_domain_settings = Some(input);
+            self
+        }
+        /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
+        pub fn set_r_studio_server_pro_domain_settings(
+            mut self,
+            input: std::option::Option<crate::model::RStudioServerProDomainSettings>,
+        ) -> Self {
+            self.r_studio_server_pro_domain_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DomainSettings`](crate::model::DomainSettings)
+        pub fn build(self) -> crate::model::DomainSettings {
+            crate::model::DomainSettings {
+                security_group_ids: self.security_group_ids,
+                r_studio_server_pro_domain_settings: self.r_studio_server_pro_domain_settings,
+            }
+        }
+    }
+}
+impl DomainSettings {
+    /// Creates a new builder-style object to manufacture [`DomainSettings`](crate::model::DomainSettings)
+    pub fn builder() -> crate::model::domain_settings::Builder {
+        crate::model::domain_settings::Builder::default()
+    }
+}
+
+/// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RStudioServerProDomainSettings {
+    /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
+    pub domain_execution_role_arn: std::option::Option<std::string::String>,
+    /// <p>A URL pointing to an RStudio Connect server.</p>
+    pub r_studio_connect_url: std::option::Option<std::string::String>,
+    /// <p>A URL pointing to an RStudio Package Manager server.</p>
+    pub r_studio_package_manager_url: std::option::Option<std::string::String>,
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that
+    /// the version runs on.</p>
+    pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+}
+impl std::fmt::Debug for RStudioServerProDomainSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RStudioServerProDomainSettings");
+        formatter.field("domain_execution_role_arn", &self.domain_execution_role_arn);
+        formatter.field("r_studio_connect_url", &self.r_studio_connect_url);
+        formatter.field(
+            "r_studio_package_manager_url",
+            &self.r_studio_package_manager_url,
+        );
+        formatter.field("default_resource_spec", &self.default_resource_spec);
+        formatter.finish()
+    }
+}
+/// See [`RStudioServerProDomainSettings`](crate::model::RStudioServerProDomainSettings)
+pub mod r_studio_server_pro_domain_settings {
+    /// A builder for [`RStudioServerProDomainSettings`](crate::model::RStudioServerProDomainSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_execution_role_arn: std::option::Option<std::string::String>,
+        pub(crate) r_studio_connect_url: std::option::Option<std::string::String>,
+        pub(crate) r_studio_package_manager_url: std::option::Option<std::string::String>,
+        pub(crate) default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
+    }
+    impl Builder {
+        /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
+        pub fn domain_execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_execution_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
+        pub fn set_domain_execution_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.domain_execution_role_arn = input;
+            self
+        }
+        /// <p>A URL pointing to an RStudio Connect server.</p>
+        pub fn r_studio_connect_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r_studio_connect_url = Some(input.into());
+            self
+        }
+        /// <p>A URL pointing to an RStudio Connect server.</p>
+        pub fn set_r_studio_connect_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.r_studio_connect_url = input;
+            self
+        }
+        /// <p>A URL pointing to an RStudio Package Manager server.</p>
+        pub fn r_studio_package_manager_url(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.r_studio_package_manager_url = Some(input.into());
+            self
+        }
+        /// <p>A URL pointing to an RStudio Package Manager server.</p>
+        pub fn set_r_studio_package_manager_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.r_studio_package_manager_url = input;
+            self
+        }
+        /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that
+        /// the version runs on.</p>
+        pub fn default_resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
+            self.default_resource_spec = Some(input);
+            self
+        }
+        /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that
+        /// the version runs on.</p>
+        pub fn set_default_resource_spec(
+            mut self,
+            input: std::option::Option<crate::model::ResourceSpec>,
+        ) -> Self {
+            self.default_resource_spec = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RStudioServerProDomainSettings`](crate::model::RStudioServerProDomainSettings)
+        pub fn build(self) -> crate::model::RStudioServerProDomainSettings {
+            crate::model::RStudioServerProDomainSettings {
+                domain_execution_role_arn: self.domain_execution_role_arn,
+                r_studio_connect_url: self.r_studio_connect_url,
+                r_studio_package_manager_url: self.r_studio_package_manager_url,
+                default_resource_spec: self.default_resource_spec,
+            }
+        }
+    }
+}
+impl RStudioServerProDomainSettings {
+    /// Creates a new builder-style object to manufacture [`RStudioServerProDomainSettings`](crate::model::RStudioServerProDomainSettings)
+    pub fn builder() -> crate::model::r_studio_server_pro_domain_settings::Builder {
+        crate::model::r_studio_server_pro_domain_settings::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AppNetworkAccessType {
     #[allow(missing_docs)] // documentation missing in model
     PublicInternetOnly,
@@ -68972,5 +69795,249 @@ impl RetentionType {
 impl AsRef<str> for RetentionType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The error code and error description associated with the resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDescribeModelPackageError {
+    /// <p></p>
+    pub error_code: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub error_response: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BatchDescribeModelPackageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDescribeModelPackageError");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_response", &self.error_response);
+        formatter.finish()
+    }
+}
+/// See [`BatchDescribeModelPackageError`](crate::model::BatchDescribeModelPackageError)
+pub mod batch_describe_model_package_error {
+    /// A builder for [`BatchDescribeModelPackageError`](crate::model::BatchDescribeModelPackageError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) error_response: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p></p>
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p></p>
+        pub fn error_response(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_response = Some(input.into());
+            self
+        }
+        /// <p></p>
+        pub fn set_error_response(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDescribeModelPackageError`](crate::model::BatchDescribeModelPackageError)
+        pub fn build(self) -> crate::model::BatchDescribeModelPackageError {
+            crate::model::BatchDescribeModelPackageError {
+                error_code: self.error_code,
+                error_response: self.error_response,
+            }
+        }
+    }
+}
+impl BatchDescribeModelPackageError {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeModelPackageError`](crate::model::BatchDescribeModelPackageError)
+    pub fn builder() -> crate::model::batch_describe_model_package_error::Builder {
+        crate::model::batch_describe_model_package_error::Builder::default()
+    }
+}
+
+/// <p>Provides summary information about the model package.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDescribeModelPackageSummary {
+    /// <p>The group name for the model package</p>
+    pub model_package_group_name: std::option::Option<std::string::String>,
+    /// <p>The version number of a versioned model.</p>
+    pub model_package_version: std::option::Option<i32>,
+    /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    pub model_package_arn: std::option::Option<std::string::String>,
+    /// <p>The description of the model package.</p>
+    pub model_package_description: std::option::Option<std::string::String>,
+    /// <p>The creation time of the mortgage package summary.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>Defines how to perform inference generation after a training job is run.</p>
+    pub inference_specification: std::option::Option<crate::model::InferenceSpecification>,
+    /// <p>The status of the mortgage package.</p>
+    pub model_package_status: std::option::Option<crate::model::ModelPackageStatus>,
+    /// <p>The approval status of the model.</p>
+    pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
+}
+impl std::fmt::Debug for BatchDescribeModelPackageSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDescribeModelPackageSummary");
+        formatter.field("model_package_group_name", &self.model_package_group_name);
+        formatter.field("model_package_version", &self.model_package_version);
+        formatter.field("model_package_arn", &self.model_package_arn);
+        formatter.field("model_package_description", &self.model_package_description);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("inference_specification", &self.inference_specification);
+        formatter.field("model_package_status", &self.model_package_status);
+        formatter.field("model_approval_status", &self.model_approval_status);
+        formatter.finish()
+    }
+}
+/// See [`BatchDescribeModelPackageSummary`](crate::model::BatchDescribeModelPackageSummary)
+pub mod batch_describe_model_package_summary {
+    /// A builder for [`BatchDescribeModelPackageSummary`](crate::model::BatchDescribeModelPackageSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_package_group_name: std::option::Option<std::string::String>,
+        pub(crate) model_package_version: std::option::Option<i32>,
+        pub(crate) model_package_arn: std::option::Option<std::string::String>,
+        pub(crate) model_package_description: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) inference_specification:
+            std::option::Option<crate::model::InferenceSpecification>,
+        pub(crate) model_package_status: std::option::Option<crate::model::ModelPackageStatus>,
+        pub(crate) model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
+    }
+    impl Builder {
+        /// <p>The group name for the model package</p>
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_package_group_name = Some(input.into());
+            self
+        }
+        /// <p>The group name for the model package</p>
+        pub fn set_model_package_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_package_group_name = input;
+            self
+        }
+        /// <p>The version number of a versioned model.</p>
+        pub fn model_package_version(mut self, input: i32) -> Self {
+            self.model_package_version = Some(input);
+            self
+        }
+        /// <p>The version number of a versioned model.</p>
+        pub fn set_model_package_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.model_package_version = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+        pub fn model_package_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_package_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+        pub fn set_model_package_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_package_arn = input;
+            self
+        }
+        /// <p>The description of the model package.</p>
+        pub fn model_package_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_package_description = Some(input.into());
+            self
+        }
+        /// <p>The description of the model package.</p>
+        pub fn set_model_package_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_package_description = input;
+            self
+        }
+        /// <p>The creation time of the mortgage package summary.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>The creation time of the mortgage package summary.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>Defines how to perform inference generation after a training job is run.</p>
+        pub fn inference_specification(
+            mut self,
+            input: crate::model::InferenceSpecification,
+        ) -> Self {
+            self.inference_specification = Some(input);
+            self
+        }
+        /// <p>Defines how to perform inference generation after a training job is run.</p>
+        pub fn set_inference_specification(
+            mut self,
+            input: std::option::Option<crate::model::InferenceSpecification>,
+        ) -> Self {
+            self.inference_specification = input;
+            self
+        }
+        /// <p>The status of the mortgage package.</p>
+        pub fn model_package_status(mut self, input: crate::model::ModelPackageStatus) -> Self {
+            self.model_package_status = Some(input);
+            self
+        }
+        /// <p>The status of the mortgage package.</p>
+        pub fn set_model_package_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelPackageStatus>,
+        ) -> Self {
+            self.model_package_status = input;
+            self
+        }
+        /// <p>The approval status of the model.</p>
+        pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
+            self.model_approval_status = Some(input);
+            self
+        }
+        /// <p>The approval status of the model.</p>
+        pub fn set_model_approval_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelApprovalStatus>,
+        ) -> Self {
+            self.model_approval_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDescribeModelPackageSummary`](crate::model::BatchDescribeModelPackageSummary)
+        pub fn build(self) -> crate::model::BatchDescribeModelPackageSummary {
+            crate::model::BatchDescribeModelPackageSummary {
+                model_package_group_name: self.model_package_group_name,
+                model_package_version: self.model_package_version,
+                model_package_arn: self.model_package_arn,
+                model_package_description: self.model_package_description,
+                creation_time: self.creation_time,
+                inference_specification: self.inference_specification,
+                model_package_status: self.model_package_status,
+                model_approval_status: self.model_approval_status,
+            }
+        }
+    }
+}
+impl BatchDescribeModelPackageSummary {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeModelPackageSummary`](crate::model::BatchDescribeModelPackageSummary)
+    pub fn builder() -> crate::model::batch_describe_model_package_summary::Builder {
+        crate::model::batch_describe_model_package_summary::Builder::default()
     }
 }

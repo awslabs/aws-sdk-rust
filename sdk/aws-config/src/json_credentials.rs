@@ -14,7 +14,7 @@ pub(crate) enum InvalidJsonCredentials {
     /// The response was missing a required field
     MissingField(&'static str),
 
-    /// Another unhandled error occured
+    /// Another unhandled error occurred
     Other(Cow<'static, str>),
 }
 

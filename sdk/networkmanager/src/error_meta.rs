@@ -783,6 +783,189 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceCountsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceCountsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetNetworkResourceCountsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetNetworkResourceCountsErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetNetworkResourceCountsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetNetworkResourceCountsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetNetworkResourceCountsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceRelationshipsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetNetworkResourceRelationshipsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetNetworkResourceRelationshipsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetNetworkResourceRelationshipsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetNetworkResourceRelationshipsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetNetworkResourceRelationshipsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetNetworkResourceRelationshipsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::GetNetworkResourceRelationshipsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetNetworkResourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetNetworkResourcesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetNetworkResourcesErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetNetworkResourcesErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetNetworkResourcesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetNetworkResourcesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetNetworkResourcesErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetNetworkResourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetNetworkRoutesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetNetworkRoutesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetNetworkRoutesErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetNetworkRoutesErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetNetworkRoutesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetNetworkRoutesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetNetworkRoutesErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetNetworkRoutesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetNetworkTelemetryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetNetworkTelemetryError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetNetworkTelemetryErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetNetworkTelemetryErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetNetworkTelemetryErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetNetworkTelemetryErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetNetworkTelemetryErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetNetworkTelemetryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRouteAnalysisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetRouteAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetRouteAnalysisErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetRouteAnalysisErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetRouteAnalysisErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetRouteAnalysisErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetRouteAnalysisErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetRouteAnalysisErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSitesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -927,6 +1110,41 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::RegisterTransitGatewayErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartRouteAnalysisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StartRouteAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StartRouteAnalysisErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::StartRouteAnalysisErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::StartRouteAnalysisErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::StartRouteAnalysisErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::StartRouteAnalysisErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::StartRouteAnalysisErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::StartRouteAnalysisErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1129,6 +1347,42 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UpdateLinkErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateNetworkResourceMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateNetworkResourceMetadataError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateNetworkResourceMetadataErrorKind::AccessDeniedException(
+                    inner,
+                ) => Error::AccessDeniedException(inner),
+                crate::error::UpdateNetworkResourceMetadataErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::UpdateNetworkResourceMetadataErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::UpdateNetworkResourceMetadataErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateNetworkResourceMetadataErrorKind::ThrottlingException(
+                    inner,
+                ) => Error::ThrottlingException(inner),
+                crate::error::UpdateNetworkResourceMetadataErrorKind::ValidationException(
+                    inner,
+                ) => Error::ValidationException(inner),
+                crate::error::UpdateNetworkResourceMetadataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

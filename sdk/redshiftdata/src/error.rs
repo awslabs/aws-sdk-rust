@@ -18,7 +18,7 @@ pub enum BatchExecuteStatementErrorKind {
     BatchExecuteStatementException(crate::error::BatchExecuteStatementException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchExecuteStatementError {
@@ -85,21 +85,21 @@ impl BatchExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::ActiveStatementsExceededException`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::ActiveStatementsExceededException`.
     pub fn is_active_statements_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchExecuteStatementErrorKind::ActiveStatementsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::BatchExecuteStatementException`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::BatchExecuteStatementException`.
     pub fn is_batch_execute_statement_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchExecuteStatementErrorKind::BatchExecuteStatementException(_)
         )
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -139,7 +139,7 @@ pub enum CancelStatementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelStatementError {
@@ -204,21 +204,21 @@ impl CancelStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelStatementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelStatementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CancelStatementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelStatementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelStatementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CancelStatementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CancelStatementErrorKind::ValidationException(_))
     }
@@ -253,7 +253,7 @@ pub enum DescribeStatementErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStatementError {
@@ -318,21 +318,21 @@ impl DescribeStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStatementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStatementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStatementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStatementErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStatementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeStatementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -368,7 +368,7 @@ pub enum DescribeTableErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTableError {
@@ -432,14 +432,14 @@ impl DescribeTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTableErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeTableErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeTableErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeTableErrorKind::ValidationException(_))
     }
@@ -473,7 +473,7 @@ pub enum ExecuteStatementErrorKind {
     ExecuteStatementException(crate::error::ExecuteStatementException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteStatementError {
@@ -538,21 +538,21 @@ impl ExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ActiveStatementsExceededException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ActiveStatementsExceededException`.
     pub fn is_active_statements_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::ActiveStatementsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ExecuteStatementException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ExecuteStatementException`.
     pub fn is_execute_statement_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::ExecuteStatementException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -590,7 +590,7 @@ pub enum GetStatementResultErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStatementResultError {
@@ -655,21 +655,21 @@ impl GetStatementResultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStatementResultErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetStatementResultErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStatementResultErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetStatementResultErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetStatementResultErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStatementResultErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetStatementResultErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetStatementResultErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -705,7 +705,7 @@ pub enum ListDatabasesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDatabasesError {
@@ -769,14 +769,14 @@ impl ListDatabasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDatabasesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDatabasesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatabasesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatabasesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDatabasesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListDatabasesErrorKind::ValidationException(_))
     }
@@ -808,7 +808,7 @@ pub enum ListSchemasErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSchemasError {
@@ -872,11 +872,11 @@ impl ListSchemasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListSchemasErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSchemasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListSchemasErrorKind::ValidationException(_))
     }
@@ -908,7 +908,7 @@ pub enum ListStatementsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStatementsError {
@@ -972,14 +972,14 @@ impl ListStatementsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListStatementsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListStatementsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListStatementsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListStatementsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListStatementsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListStatementsErrorKind::ValidationException(_))
     }
@@ -1011,7 +1011,7 @@ pub enum ListTablesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTablesError {
@@ -1075,11 +1075,11 @@ impl ListTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListTablesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTablesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::ValidationException(_))
     }

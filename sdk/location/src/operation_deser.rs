@@ -3747,7 +3747,7 @@ pub fn parse_get_map_style_descriptor_response(
         );
         output = output.set_content_type(
             crate::http_serde::deser_header_get_map_style_descriptor_get_map_style_descriptor_output_content_type(response.headers())
-                                        .map_err(|_|crate::error::GetMapStyleDescriptorError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+                                    .map_err(|_|crate::error::GetMapStyleDescriptorError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output.build()
     })

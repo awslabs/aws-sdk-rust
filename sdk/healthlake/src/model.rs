@@ -160,8 +160,8 @@ pub enum OutputDataConfig {
 }
 impl OutputDataConfig {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`OutputDataConfig`](crate::model::OutputDataConfig) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S3Configuration`](crate::model::OutputDataConfig::S3Configuration), extracting the inner [`S3Configuration`](crate::model::S3Configuration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_configuration(
         &self,
     ) -> std::result::Result<&crate::model::S3Configuration, &Self> {
@@ -171,7 +171,7 @@ impl OutputDataConfig {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `OutputDataConfig` variant.
+    /// Returns true if this is a [`S3Configuration`](crate::model::OutputDataConfig::S3Configuration).
     pub fn is_s3_configuration(&self) -> bool {
         self.as_s3_configuration().is_ok()
     }
@@ -263,8 +263,8 @@ pub enum InputDataConfig {
 }
 impl InputDataConfig {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`InputDataConfig`](crate::model::InputDataConfig) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S3Uri`](crate::model::InputDataConfig::S3Uri), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_uri(&self) -> std::result::Result<&std::string::String, &Self> {
         if let InputDataConfig::S3Uri(val) = &self {
             Ok(&val)
@@ -272,7 +272,7 @@ impl InputDataConfig {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `InputDataConfig` variant.
+    /// Returns true if this is a [`S3Uri`](crate::model::InputDataConfig::S3Uri).
     pub fn is_s3_uri(&self) -> bool {
         self.as_s3_uri().is_ok()
     }

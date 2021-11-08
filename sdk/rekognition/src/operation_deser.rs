@@ -330,6 +330,195 @@ pub fn parse_create_collection_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_dataset_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateDatasetOutput, crate::error::CreateDatasetError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateDatasetError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateDatasetError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidS3ObjectException" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::InvalidS3ObjectException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_s3_object_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceAlreadyExistsException" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::ResourceAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::CreateDatasetError {
+            meta: generic,
+            kind: crate::error::CreateDatasetErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateDatasetError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_dataset_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateDatasetOutput, crate::error::CreateDatasetError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_dataset_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_dataset(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateDatasetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError> {
@@ -993,6 +1182,172 @@ pub fn parse_delete_collection_response(
             output,
         )
         .map_err(crate::error::DeleteCollectionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_dataset_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteDatasetError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteDatasetError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DeleteDatasetError {
+            meta: generic,
+            kind: crate::error::DeleteDatasetErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::DeleteDatasetError {
+            meta: generic,
+            kind: crate::error::DeleteDatasetErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::DeleteDatasetError {
+            meta: generic,
+            kind: crate::error::DeleteDatasetErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::DeleteDatasetError {
+            meta: generic,
+            kind: crate::error::DeleteDatasetErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::DeleteDatasetError {
+            meta: generic,
+            kind: crate::error::DeleteDatasetErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUseException" => crate::error::DeleteDatasetError {
+            meta: generic,
+            kind: crate::error::DeleteDatasetErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteDatasetError {
+            meta: generic,
+            kind: crate::error::DeleteDatasetErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DeleteDatasetError {
+            meta: generic,
+            kind: crate::error::DeleteDatasetErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteDatasetError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_dataset_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_dataset_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }
@@ -1744,6 +2099,143 @@ pub fn parse_describe_collection_response(
             output,
         )
         .map_err(crate::error::DescribeCollectionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_dataset_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeDatasetOutput, crate::error::DescribeDatasetError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeDatasetError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeDatasetError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeDatasetError {
+            meta: generic,
+            kind: crate::error::DescribeDatasetErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::DescribeDatasetError {
+            meta: generic,
+            kind: crate::error::DescribeDatasetErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::DescribeDatasetError {
+            meta: generic,
+            kind: crate::error::DescribeDatasetErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::DescribeDatasetError {
+            meta: generic,
+            kind: crate::error::DescribeDatasetErrorKind::ProvisionedThroughputExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeDatasetError {
+            meta: generic,
+            kind: crate::error::DescribeDatasetErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DescribeDatasetError {
+            meta: generic,
+            kind: crate::error::DescribeDatasetErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDatasetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeDatasetError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_dataset_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeDatasetOutput, crate::error::DescribeDatasetError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_dataset_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_dataset(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeDatasetError::unhandled)?;
         output.build()
     })
 }
@@ -3225,6 +3717,143 @@ pub fn parse_detect_text_response(
             output,
         )
         .map_err(crate::error::DetectTextError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_distribute_dataset_entries_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DistributeDatasetEntriesOutput,
+    crate::error::DistributeDatasetEntriesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DistributeDatasetEntriesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerError" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::InternalServerError({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ProvisionedThroughputExceededException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::ProvisionedThroughputExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotReadyException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::ResourceNotReadyException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::DistributeDatasetEntriesError { meta: generic, kind: crate::error::DistributeDatasetEntriesErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DistributeDatasetEntriesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DistributeDatasetEntriesError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_distribute_dataset_entries_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DistributeDatasetEntriesOutput,
+    crate::error::DistributeDatasetEntriesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::distribute_dataset_entries_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }
@@ -4975,6 +5604,392 @@ pub fn parse_list_collections_response(
             output,
         )
         .map_err(crate::error::ListCollectionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_dataset_entries_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListDatasetEntriesOutput,
+    crate::error::ListDatasetEntriesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListDatasetEntriesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidPaginationTokenException" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::InvalidPaginationTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_pagination_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::ProvisionedThroughputExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceInUseException" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotReadyException" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::ListDatasetEntriesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListDatasetEntriesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_dataset_entries_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListDatasetEntriesOutput,
+    crate::error::ListDatasetEntriesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_dataset_entries_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_dataset_entries(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListDatasetEntriesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_dataset_labels_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListDatasetLabelsOutput, crate::error::ListDatasetLabelsError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListDatasetLabelsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidPaginationTokenException" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::InvalidPaginationTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_pagination_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::ProvisionedThroughputExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceInUseException" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotReadyException" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::ResourceNotReadyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListDatasetLabelsError {
+            meta: generic,
+            kind: crate::error::ListDatasetLabelsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasetLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListDatasetLabelsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_dataset_labels_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListDatasetLabelsOutput, crate::error::ListDatasetLabelsError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_dataset_labels_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_dataset_labels(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListDatasetLabelsError::unhandled)?;
         output.build()
     })
 }
@@ -8398,6 +9413,179 @@ pub fn parse_untag_resource_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_dataset_entries_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDatasetEntriesOutput,
+    crate::error::UpdateDatasetEntriesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateDatasetEntriesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasetEntriesErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerError" => crate::error::UpdateDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasetEntriesErrorKind::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::UpdateDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasetEntriesErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::UpdateDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasetEntriesErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ProvisionedThroughputExceededException" => crate::error::UpdateDatasetEntriesError {
+            meta: generic,
+            kind:
+                crate::error::UpdateDatasetEntriesErrorKind::ProvisionedThroughputExceededException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ResourceInUseException" => crate::error::UpdateDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasetEntriesErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasetEntriesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::UpdateDatasetEntriesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasetEntriesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasetEntriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateDatasetEntriesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_dataset_entries_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDatasetEntriesOutput,
+    crate::error::UpdateDatasetEntriesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_dataset_entries_output::Builder::default();
         let _ = response;
         output.build()
     })

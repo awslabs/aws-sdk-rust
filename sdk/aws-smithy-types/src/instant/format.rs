@@ -45,7 +45,7 @@ pub(crate) mod http_date {
     ///
     /// Some notes:
     /// - HTTP date does not support years before `0000`—this will cause a panic.
-    /// - If you _don't_ want subsecond precision (eg. if you want strict adherence to the spec),
+    /// - If you _don't_ want subsecond precision (e.g. if you want strict adherence to the spec),
     ///   you need to zero-out the instant before formatting
     /// - If subsecond nanos are 0, no fractional seconds are added
     /// - If subsecond nanos are nonzero, 3 digits of fractional seconds are added

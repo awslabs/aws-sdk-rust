@@ -19,8 +19,8 @@ pub enum Field {
     StringValue(std::string::String),
 }
 impl Field {
-    /// Tries to convert the enum instance into its [`Field`](crate::model::Field) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ArrayValue`](crate::model::Field::ArrayValue), extracting the inner [`ArrayValue`](crate::model::ArrayValue).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_array_value(&self) -> std::result::Result<&crate::model::ArrayValue, &Self> {
         if let Field::ArrayValue(val) = &self {
             Ok(&val)
@@ -28,12 +28,12 @@ impl Field {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Field` variant.
+    /// Returns true if this is a [`ArrayValue`](crate::model::Field::ArrayValue).
     pub fn is_array_value(&self) -> bool {
         self.as_array_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Field`](crate::model::Field) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BlobValue`](crate::model::Field::BlobValue), extracting the inner [`Blob`](aws_smithy_types::Blob).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_blob_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let Field::BlobValue(val) = &self {
             Ok(&val)
@@ -41,12 +41,12 @@ impl Field {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Field` variant.
+    /// Returns true if this is a [`BlobValue`](crate::model::Field::BlobValue).
     pub fn is_blob_value(&self) -> bool {
         self.as_blob_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Field`](crate::model::Field) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BooleanValue`](crate::model::Field::BooleanValue), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let Field::BooleanValue(val) = &self {
             Ok(&val)
@@ -54,12 +54,12 @@ impl Field {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Field` variant.
+    /// Returns true if this is a [`BooleanValue`](crate::model::Field::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Field`](crate::model::Field) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`DoubleValue`](crate::model::Field::DoubleValue), extracting the inner [`f64`](f64).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let Field::DoubleValue(val) = &self {
             Ok(&val)
@@ -67,12 +67,12 @@ impl Field {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Field` variant.
+    /// Returns true if this is a [`DoubleValue`](crate::model::Field::DoubleValue).
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Field`](crate::model::Field) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`IsNull`](crate::model::Field::IsNull), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
         if let Field::IsNull(val) = &self {
             Ok(&val)
@@ -80,12 +80,12 @@ impl Field {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Field` variant.
+    /// Returns true if this is a [`IsNull`](crate::model::Field::IsNull).
     pub fn is_is_null(&self) -> bool {
         self.as_is_null().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Field`](crate::model::Field) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`LongValue`](crate::model::Field::LongValue), extracting the inner [`i64`](i64).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
         if let Field::LongValue(val) = &self {
             Ok(&val)
@@ -93,12 +93,12 @@ impl Field {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Field` variant.
+    /// Returns true if this is a [`LongValue`](crate::model::Field::LongValue).
     pub fn is_long_value(&self) -> bool {
         self.as_long_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Field`](crate::model::Field) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValue`](crate::model::Field::StringValue), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let Field::StringValue(val) = &self {
             Ok(&val)
@@ -106,7 +106,7 @@ impl Field {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Field` variant.
+    /// Returns true if this is a [`StringValue`](crate::model::Field::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
@@ -128,8 +128,8 @@ pub enum ArrayValue {
     StringValues(std::vec::Vec<std::string::String>),
 }
 impl ArrayValue {
-    /// Tries to convert the enum instance into its [`ArrayValue`](crate::model::ArrayValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ArrayValues`](crate::model::ArrayValue::ArrayValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_array_values(
         &self,
     ) -> std::result::Result<&std::vec::Vec<crate::model::ArrayValue>, &Self> {
@@ -139,12 +139,12 @@ impl ArrayValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ArrayValue` variant.
+    /// Returns true if this is a [`ArrayValues`](crate::model::ArrayValue::ArrayValues).
     pub fn is_array_values(&self) -> bool {
         self.as_array_values().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ArrayValue`](crate::model::ArrayValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BooleanValues`](crate::model::ArrayValue::BooleanValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_values(&self) -> std::result::Result<&std::vec::Vec<bool>, &Self> {
         if let ArrayValue::BooleanValues(val) = &self {
             Ok(&val)
@@ -152,12 +152,12 @@ impl ArrayValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ArrayValue` variant.
+    /// Returns true if this is a [`BooleanValues`](crate::model::ArrayValue::BooleanValues).
     pub fn is_boolean_values(&self) -> bool {
         self.as_boolean_values().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ArrayValue`](crate::model::ArrayValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`DoubleValues`](crate::model::ArrayValue::DoubleValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_values(&self) -> std::result::Result<&std::vec::Vec<f64>, &Self> {
         if let ArrayValue::DoubleValues(val) = &self {
             Ok(&val)
@@ -165,12 +165,12 @@ impl ArrayValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ArrayValue` variant.
+    /// Returns true if this is a [`DoubleValues`](crate::model::ArrayValue::DoubleValues).
     pub fn is_double_values(&self) -> bool {
         self.as_double_values().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ArrayValue`](crate::model::ArrayValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`LongValues`](crate::model::ArrayValue::LongValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_values(&self) -> std::result::Result<&std::vec::Vec<i64>, &Self> {
         if let ArrayValue::LongValues(val) = &self {
             Ok(&val)
@@ -178,12 +178,12 @@ impl ArrayValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ArrayValue` variant.
+    /// Returns true if this is a [`LongValues`](crate::model::ArrayValue::LongValues).
     pub fn is_long_values(&self) -> bool {
         self.as_long_values().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ArrayValue`](crate::model::ArrayValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValues`](crate::model::ArrayValue::StringValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_values(
         &self,
     ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
@@ -193,7 +193,7 @@ impl ArrayValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ArrayValue` variant.
+    /// Returns true if this is a [`StringValues`](crate::model::ArrayValue::StringValues).
     pub fn is_string_values(&self) -> bool {
         self.as_string_values().is_ok()
     }
@@ -1055,8 +1055,8 @@ pub enum Value {
     StructValue(crate::model::StructValue),
 }
 impl Value {
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`ArrayValues`](crate::model::Value::ArrayValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_array_values(
         &self,
     ) -> std::result::Result<&std::vec::Vec<crate::model::Value>, &Self> {
@@ -1066,12 +1066,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`ArrayValues`](crate::model::Value::ArrayValues).
     pub fn is_array_values(&self) -> bool {
         self.as_array_values().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BigIntValue`](crate::model::Value::BigIntValue), extracting the inner [`i64`](i64).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_big_int_value(&self) -> std::result::Result<&i64, &Self> {
         if let Value::BigIntValue(val) = &self {
             Ok(&val)
@@ -1079,12 +1079,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`BigIntValue`](crate::model::Value::BigIntValue).
     pub fn is_big_int_value(&self) -> bool {
         self.as_big_int_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BitValue`](crate::model::Value::BitValue), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bit_value(&self) -> std::result::Result<&bool, &Self> {
         if let Value::BitValue(val) = &self {
             Ok(&val)
@@ -1092,12 +1092,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`BitValue`](crate::model::Value::BitValue).
     pub fn is_bit_value(&self) -> bool {
         self.as_bit_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BlobValue`](crate::model::Value::BlobValue), extracting the inner [`Blob`](aws_smithy_types::Blob).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_blob_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
         if let Value::BlobValue(val) = &self {
             Ok(&val)
@@ -1105,12 +1105,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`BlobValue`](crate::model::Value::BlobValue).
     pub fn is_blob_value(&self) -> bool {
         self.as_blob_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`DoubleValue`](crate::model::Value::DoubleValue), extracting the inner [`f64`](f64).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let Value::DoubleValue(val) = &self {
             Ok(&val)
@@ -1118,12 +1118,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`DoubleValue`](crate::model::Value::DoubleValue).
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`IntValue`](crate::model::Value::IntValue), extracting the inner [`i32`](i32).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_int_value(&self) -> std::result::Result<&i32, &Self> {
         if let Value::IntValue(val) = &self {
             Ok(&val)
@@ -1131,12 +1131,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`IntValue`](crate::model::Value::IntValue).
     pub fn is_int_value(&self) -> bool {
         self.as_int_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`IsNull`](crate::model::Value::IsNull), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
         if let Value::IsNull(val) = &self {
             Ok(&val)
@@ -1144,12 +1144,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`IsNull`](crate::model::Value::IsNull).
     pub fn is_is_null(&self) -> bool {
         self.as_is_null().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`RealValue`](crate::model::Value::RealValue), extracting the inner [`f32`](f32).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_real_value(&self) -> std::result::Result<&f32, &Self> {
         if let Value::RealValue(val) = &self {
             Ok(&val)
@@ -1157,12 +1157,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`RealValue`](crate::model::Value::RealValue).
     pub fn is_real_value(&self) -> bool {
         self.as_real_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValue`](crate::model::Value::StringValue), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let Value::StringValue(val) = &self {
             Ok(&val)
@@ -1170,12 +1170,12 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`StringValue`](crate::model::Value::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Value`](crate::model::Value) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StructValue`](crate::model::Value::StructValue), extracting the inner [`StructValue`](crate::model::StructValue).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_struct_value(&self) -> std::result::Result<&crate::model::StructValue, &Self> {
         if let Value::StructValue(val) = &self {
             Ok(&val)
@@ -1183,7 +1183,7 @@ impl Value {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Value` variant.
+    /// Returns true if this is a [`StructValue`](crate::model::Value::StructValue).
     pub fn is_struct_value(&self) -> bool {
         self.as_struct_value().is_ok()
     }

@@ -16,7 +16,7 @@ pub enum CancelTaskExecutionErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelTaskExecutionError {
@@ -80,14 +80,14 @@ impl CancelTaskExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelTaskExecutionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CancelTaskExecutionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelTaskExecutionErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CancelTaskExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CancelTaskExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -122,7 +122,7 @@ pub enum CreateAgentErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAgentError {
@@ -186,11 +186,11 @@ impl CreateAgentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAgentErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateAgentErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateAgentErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateAgentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAgentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateAgentErrorKind::InvalidRequestException(_))
     }
@@ -222,7 +222,7 @@ pub enum CreateLocationEfsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLocationEfsError {
@@ -286,11 +286,11 @@ impl CreateLocationEfsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLocationEfsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateLocationEfsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateLocationEfsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateLocationEfsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateLocationEfsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -325,7 +325,7 @@ pub enum CreateLocationFsxWindowsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLocationFsxWindowsError {
@@ -389,14 +389,14 @@ impl CreateLocationFsxWindowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLocationFsxWindowsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateLocationFsxWindowsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLocationFsxWindowsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLocationFsxWindowsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateLocationFsxWindowsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -431,7 +431,7 @@ pub enum CreateLocationNfsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLocationNfsError {
@@ -495,11 +495,11 @@ impl CreateLocationNfsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLocationNfsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateLocationNfsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateLocationNfsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateLocationNfsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateLocationNfsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -534,7 +534,7 @@ pub enum CreateLocationObjectStorageErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLocationObjectStorageError {
@@ -598,14 +598,14 @@ impl CreateLocationObjectStorageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLocationObjectStorageErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateLocationObjectStorageErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLocationObjectStorageErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLocationObjectStorageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateLocationObjectStorageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -640,7 +640,7 @@ pub enum CreateLocationS3ErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLocationS3Error {
@@ -704,11 +704,11 @@ impl CreateLocationS3Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLocationS3ErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateLocationS3ErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateLocationS3ErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateLocationS3ErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateLocationS3ErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -743,7 +743,7 @@ pub enum CreateLocationSmbErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLocationSmbError {
@@ -807,11 +807,11 @@ impl CreateLocationSmbError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLocationSmbErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateLocationSmbErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateLocationSmbErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateLocationSmbErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateLocationSmbErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -846,7 +846,7 @@ pub enum CreateTaskErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTaskError {
@@ -910,11 +910,11 @@ impl CreateTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTaskErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateTaskErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateTaskErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateTaskErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateTaskErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateTaskErrorKind::InvalidRequestException(_))
     }
@@ -946,7 +946,7 @@ pub enum DeleteAgentErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAgentError {
@@ -1010,11 +1010,11 @@ impl DeleteAgentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAgentErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteAgentErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteAgentErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteAgentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAgentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteAgentErrorKind::InvalidRequestException(_))
     }
@@ -1046,7 +1046,7 @@ pub enum DeleteLocationErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLocationError {
@@ -1110,11 +1110,11 @@ impl DeleteLocationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLocationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteLocationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteLocationErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteLocationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteLocationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1149,7 +1149,7 @@ pub enum DeleteTaskErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTaskError {
@@ -1213,11 +1213,11 @@ impl DeleteTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTaskErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteTaskErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteTaskErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteTaskErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteTaskErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteTaskErrorKind::InvalidRequestException(_))
     }
@@ -1249,7 +1249,7 @@ pub enum DescribeAgentErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAgentError {
@@ -1313,11 +1313,11 @@ impl DescribeAgentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAgentErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeAgentErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeAgentErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeAgentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAgentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1352,7 +1352,7 @@ pub enum DescribeLocationEfsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocationEfsError {
@@ -1416,14 +1416,14 @@ impl DescribeLocationEfsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLocationEfsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeLocationEfsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLocationEfsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLocationEfsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLocationEfsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1458,7 +1458,7 @@ pub enum DescribeLocationFsxWindowsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocationFsxWindowsError {
@@ -1522,14 +1522,14 @@ impl DescribeLocationFsxWindowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLocationFsxWindowsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeLocationFsxWindowsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLocationFsxWindowsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLocationFsxWindowsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLocationFsxWindowsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1564,7 +1564,7 @@ pub enum DescribeLocationNfsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocationNfsError {
@@ -1628,14 +1628,14 @@ impl DescribeLocationNfsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLocationNfsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeLocationNfsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLocationNfsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLocationNfsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLocationNfsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1670,7 +1670,7 @@ pub enum DescribeLocationObjectStorageErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocationObjectStorageError {
@@ -1739,14 +1739,14 @@ impl DescribeLocationObjectStorageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLocationObjectStorageErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeLocationObjectStorageErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLocationObjectStorageErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLocationObjectStorageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLocationObjectStorageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1781,7 +1781,7 @@ pub enum DescribeLocationS3ErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocationS3Error {
@@ -1845,14 +1845,14 @@ impl DescribeLocationS3Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLocationS3ErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeLocationS3ErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLocationS3ErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLocationS3ErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLocationS3ErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1887,7 +1887,7 @@ pub enum DescribeLocationSmbErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLocationSmbError {
@@ -1951,14 +1951,14 @@ impl DescribeLocationSmbError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLocationSmbErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeLocationSmbErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLocationSmbErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLocationSmbErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLocationSmbErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1993,7 +1993,7 @@ pub enum DescribeTaskErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTaskError {
@@ -2057,11 +2057,11 @@ impl DescribeTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTaskErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeTaskErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeTaskErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeTaskErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeTaskErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2096,7 +2096,7 @@ pub enum DescribeTaskExecutionErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTaskExecutionError {
@@ -2160,14 +2160,14 @@ impl DescribeTaskExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTaskExecutionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeTaskExecutionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTaskExecutionErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTaskExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeTaskExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2202,7 +2202,7 @@ pub enum ListAgentsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAgentsError {
@@ -2266,11 +2266,11 @@ impl ListAgentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAgentsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListAgentsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListAgentsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListAgentsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAgentsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListAgentsErrorKind::InvalidRequestException(_))
     }
@@ -2302,7 +2302,7 @@ pub enum ListLocationsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLocationsError {
@@ -2366,11 +2366,11 @@ impl ListLocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLocationsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListLocationsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListLocationsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListLocationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListLocationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2405,7 +2405,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2469,14 +2469,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2511,7 +2511,7 @@ pub enum ListTaskExecutionsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTaskExecutionsError {
@@ -2575,14 +2575,14 @@ impl ListTaskExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTaskExecutionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListTaskExecutionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTaskExecutionsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListTaskExecutionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTaskExecutionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2617,7 +2617,7 @@ pub enum ListTasksErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTasksError {
@@ -2681,11 +2681,11 @@ impl ListTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTasksErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListTasksErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListTasksErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListTasksErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTasksErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListTasksErrorKind::InvalidRequestException(_))
     }
@@ -2717,7 +2717,7 @@ pub enum StartTaskExecutionErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTaskExecutionError {
@@ -2781,14 +2781,14 @@ impl StartTaskExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartTaskExecutionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `StartTaskExecutionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTaskExecutionErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `StartTaskExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartTaskExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2823,7 +2823,7 @@ pub enum TagResourceErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2887,11 +2887,11 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
@@ -2923,7 +2923,7 @@ pub enum UntagResourceErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2987,11 +2987,11 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3026,7 +3026,7 @@ pub enum UpdateAgentErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAgentError {
@@ -3090,11 +3090,11 @@ impl UpdateAgentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAgentErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateAgentErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateAgentErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateAgentErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAgentErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateAgentErrorKind::InvalidRequestException(_))
     }
@@ -3126,7 +3126,7 @@ pub enum UpdateLocationNfsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLocationNfsError {
@@ -3190,11 +3190,11 @@ impl UpdateLocationNfsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLocationNfsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateLocationNfsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateLocationNfsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateLocationNfsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateLocationNfsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3229,7 +3229,7 @@ pub enum UpdateLocationObjectStorageErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLocationObjectStorageError {
@@ -3293,14 +3293,14 @@ impl UpdateLocationObjectStorageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLocationObjectStorageErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateLocationObjectStorageErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLocationObjectStorageErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLocationObjectStorageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateLocationObjectStorageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3335,7 +3335,7 @@ pub enum UpdateLocationSmbErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLocationSmbError {
@@ -3399,11 +3399,11 @@ impl UpdateLocationSmbError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLocationSmbErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateLocationSmbErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateLocationSmbErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateLocationSmbErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateLocationSmbErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3438,7 +3438,7 @@ pub enum UpdateTaskErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTaskError {
@@ -3502,11 +3502,11 @@ impl UpdateTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTaskErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateTaskErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateTaskErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateTaskErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateTaskErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateTaskErrorKind::InvalidRequestException(_))
     }
@@ -3538,7 +3538,7 @@ pub enum UpdateTaskExecutionErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTaskExecutionError {
@@ -3602,14 +3602,14 @@ impl UpdateTaskExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTaskExecutionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateTaskExecutionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTaskExecutionErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTaskExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateTaskExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,

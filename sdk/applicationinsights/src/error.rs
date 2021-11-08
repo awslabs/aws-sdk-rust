@@ -26,7 +26,7 @@ pub enum CreateApplicationErrorKind {
     TagsAlreadyExistException(crate::error::TagsAlreadyExistException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationError {
@@ -94,42 +94,42 @@ impl CreateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::TagsAlreadyExistException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::TagsAlreadyExistException`.
     pub fn is_tags_already_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::TagsAlreadyExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -172,7 +172,7 @@ pub enum CreateComponentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateComponentError {
@@ -238,28 +238,28 @@ impl CreateComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateComponentErrorKind::ValidationException(_))
     }
@@ -297,7 +297,7 @@ pub enum CreateLogPatternErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLogPatternError {
@@ -363,28 +363,28 @@ impl CreateLogPatternError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLogPatternErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateLogPatternErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogPatternErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogPatternErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateLogPatternErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogPatternErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogPatternErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLogPatternErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogPatternErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogPatternErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateLogPatternErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -425,7 +425,7 @@ pub enum DeleteApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationError {
@@ -491,28 +491,28 @@ impl DeleteApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -551,7 +551,7 @@ pub enum DeleteComponentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteComponentError {
@@ -616,21 +616,21 @@ impl DeleteComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComponentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteComponentErrorKind::ValidationException(_))
     }
@@ -667,7 +667,7 @@ pub enum DeleteLogPatternErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLogPatternError {
@@ -733,28 +733,28 @@ impl DeleteLogPatternError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLogPatternErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteLogPatternErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogPatternErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogPatternErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteLogPatternErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogPatternErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogPatternErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLogPatternErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogPatternErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogPatternErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteLogPatternErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -793,7 +793,7 @@ pub enum DescribeApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeApplicationError {
@@ -858,21 +858,21 @@ impl DescribeApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeApplicationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -910,7 +910,7 @@ pub enum DescribeComponentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeComponentError {
@@ -975,21 +975,21 @@ impl DescribeComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeComponentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeComponentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1027,7 +1027,7 @@ pub enum DescribeComponentConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeComponentConfigurationError {
@@ -1099,21 +1099,21 @@ impl DescribeComponentConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeComponentConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeComponentConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeComponentConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentConfigurationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeComponentConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1155,7 +1155,7 @@ pub enum DescribeComponentConfigurationRecommendationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeComponentConfigurationRecommendationError {
@@ -1233,21 +1233,21 @@ impl DescribeComponentConfigurationRecommendationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeComponentConfigurationRecommendationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeComponentConfigurationRecommendationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentConfigurationRecommendationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentConfigurationRecommendationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeComponentConfigurationRecommendationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComponentConfigurationRecommendationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComponentConfigurationRecommendationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeComponentConfigurationRecommendationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1293,7 +1293,7 @@ pub enum DescribeLogPatternErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLogPatternError {
@@ -1358,21 +1358,21 @@ impl DescribeLogPatternError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLogPatternErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeLogPatternErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLogPatternErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLogPatternErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLogPatternErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLogPatternErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLogPatternErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeLogPatternErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1410,7 +1410,7 @@ pub enum DescribeObservationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeObservationError {
@@ -1475,21 +1475,21 @@ impl DescribeObservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeObservationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeObservationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeObservationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeObservationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeObservationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeObservationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeObservationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeObservationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1527,7 +1527,7 @@ pub enum DescribeProblemErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProblemError {
@@ -1592,21 +1592,21 @@ impl DescribeProblemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProblemErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeProblemErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProblemErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProblemErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProblemErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProblemErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProblemErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeProblemErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeProblemErrorKind::ValidationException(_))
     }
@@ -1641,7 +1641,7 @@ pub enum DescribeProblemObservationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProblemObservationsError {
@@ -1708,21 +1708,21 @@ impl DescribeProblemObservationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProblemObservationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeProblemObservationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProblemObservationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProblemObservationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProblemObservationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProblemObservationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProblemObservationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeProblemObservationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1758,7 +1758,7 @@ pub enum ListApplicationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationsError {
@@ -1822,14 +1822,14 @@ impl ListApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1866,7 +1866,7 @@ pub enum ListComponentsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListComponentsError {
@@ -1931,21 +1931,21 @@ impl ListComponentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListComponentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListComponentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListComponentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListComponentsErrorKind::ValidationException(_))
     }
@@ -1980,7 +1980,7 @@ pub enum ListConfigurationHistoryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationHistoryError {
@@ -2045,21 +2045,21 @@ impl ListConfigurationHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConfigurationHistoryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListConfigurationHistoryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationHistoryErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationHistoryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListConfigurationHistoryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationHistoryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationHistoryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListConfigurationHistoryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2097,7 +2097,7 @@ pub enum ListLogPatternsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLogPatternsError {
@@ -2162,21 +2162,21 @@ impl ListLogPatternsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLogPatternsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListLogPatternsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLogPatternsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListLogPatternsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListLogPatternsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLogPatternsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListLogPatternsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListLogPatternsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListLogPatternsErrorKind::ValidationException(_))
     }
@@ -2211,7 +2211,7 @@ pub enum ListLogPatternSetsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLogPatternSetsError {
@@ -2276,21 +2276,21 @@ impl ListLogPatternSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLogPatternSetsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListLogPatternSetsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLogPatternSetsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListLogPatternSetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListLogPatternSetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLogPatternSetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListLogPatternSetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListLogPatternSetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2328,7 +2328,7 @@ pub enum ListProblemsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProblemsError {
@@ -2393,21 +2393,21 @@ impl ListProblemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProblemsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListProblemsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProblemsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListProblemsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProblemsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProblemsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListProblemsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListProblemsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListProblemsErrorKind::ValidationException(_))
     }
@@ -2440,7 +2440,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2504,14 +2504,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2549,7 +2549,7 @@ pub enum TagResourceErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2614,18 +2614,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -2658,7 +2658,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2722,14 +2722,14 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -2763,7 +2763,7 @@ pub enum UpdateApplicationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationError {
@@ -2828,21 +2828,21 @@ impl UpdateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2882,7 +2882,7 @@ pub enum UpdateComponentErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateComponentError {
@@ -2948,28 +2948,28 @@ impl UpdateComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateComponentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateComponentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateComponentErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateComponentErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateComponentErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateComponentErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateComponentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateComponentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateComponentErrorKind::ValidationException(_))
     }
@@ -3005,7 +3005,7 @@ pub enum UpdateComponentConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateComponentConfigurationError {
@@ -3072,21 +3072,21 @@ impl UpdateComponentConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateComponentConfigurationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateComponentConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateComponentConfigurationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateComponentConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateComponentConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateComponentConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateComponentConfigurationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateComponentConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3128,7 +3128,7 @@ pub enum UpdateLogPatternErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLogPatternError {
@@ -3194,28 +3194,28 @@ impl UpdateLogPatternError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLogPatternErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateLogPatternErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLogPatternErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLogPatternErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdateLogPatternErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLogPatternErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLogPatternErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLogPatternErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLogPatternErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLogPatternErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLogPatternErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

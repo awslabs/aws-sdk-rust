@@ -23,7 +23,7 @@ pub enum CreateAccessErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccessError {
@@ -90,32 +90,32 @@ impl CreateAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAccessErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CreateAccessErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, CreateAccessErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `CreateAccessErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAccessErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateAccessErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAccessErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -166,7 +166,7 @@ pub enum CreateServerErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServerError {
@@ -235,43 +235,43 @@ impl CreateServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateServerErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, CreateServerErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServerErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServerErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateServerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateServerErrorKind::ThrottlingException(_))
     }
@@ -315,7 +315,7 @@ pub enum CreateUserErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -382,26 +382,26 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ResourceExistsException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -449,7 +449,7 @@ pub enum CreateWorkflowErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkflowError {
@@ -517,39 +517,39 @@ impl CreateWorkflowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, CreateWorkflowErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkflowErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkflowErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWorkflowErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateWorkflowErrorKind::ThrottlingException(_))
     }
@@ -590,7 +590,7 @@ pub enum DeleteAccessErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessError {
@@ -656,25 +656,25 @@ impl DeleteAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccessErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteAccessErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DeleteAccessErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DeleteAccessErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAccessErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAccessErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -718,7 +718,7 @@ pub enum DeleteServerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServerError {
@@ -785,29 +785,29 @@ impl DeleteServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteServerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteServerErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteServerErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteServerErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DeleteServerErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DeleteServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteServerErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -854,7 +854,7 @@ pub enum DeleteSshPublicKeyErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSshPublicKeyError {
@@ -921,35 +921,35 @@ impl DeleteSshPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSshPublicKeyErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteSshPublicKeyErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSshPublicKeyErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSshPublicKeyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteSshPublicKeyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSshPublicKeyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSshPublicKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSshPublicKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSshPublicKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSshPublicKeyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteSshPublicKeyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSshPublicKeyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSshPublicKeyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteSshPublicKeyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -992,7 +992,7 @@ pub enum DeleteUserErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -1058,22 +1058,22 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1117,7 +1117,7 @@ pub enum DeleteWorkflowErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkflowError {
@@ -1184,32 +1184,32 @@ impl DeleteWorkflowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkflowErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DeleteWorkflowErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkflowErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkflowErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkflowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteWorkflowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1252,7 +1252,7 @@ pub enum DescribeAccessErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccessError {
@@ -1318,25 +1318,25 @@ impl DescribeAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccessErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeAccessErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DescribeAccessErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DescribeAccessErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAccessErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccessErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccessErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccessErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeAccessErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1378,7 +1378,7 @@ pub enum DescribeExecutionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExecutionError {
@@ -1444,28 +1444,28 @@ impl DescribeExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExecutionErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeExecutionErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExecutionErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExecutionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExecutionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeExecutionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExecutionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExecutionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeExecutionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1507,7 +1507,7 @@ pub enum DescribeSecurityPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSecurityPolicyError {
@@ -1573,28 +1573,28 @@ impl DescribeSecurityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSecurityPolicyErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeSecurityPolicyErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSecurityPolicyErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSecurityPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeSecurityPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSecurityPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSecurityPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSecurityPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSecurityPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSecurityPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeSecurityPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1636,7 +1636,7 @@ pub enum DescribeServerErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServerError {
@@ -1702,25 +1702,25 @@ impl DescribeServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServerErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeServerErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DescribeServerErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DescribeServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServerErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeServerErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1762,7 +1762,7 @@ pub enum DescribeUserErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserError {
@@ -1828,25 +1828,25 @@ impl DescribeUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DescribeUserErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1888,7 +1888,7 @@ pub enum DescribeWorkflowErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkflowError {
@@ -1954,28 +1954,28 @@ impl DescribeWorkflowError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkflowErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeWorkflowErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkflowErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkflowErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeWorkflowErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkflowErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkflowErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorkflowErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkflowErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkflowErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeWorkflowErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2023,7 +2023,7 @@ pub enum ImportSshPublicKeyErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportSshPublicKeyError {
@@ -2091,42 +2091,42 @@ impl ImportSshPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportSshPublicKeyErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ImportSshPublicKeyErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ImportSshPublicKeyErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ImportSshPublicKeyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ImportSshPublicKeyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportSshPublicKeyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ImportSshPublicKeyErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `ImportSshPublicKeyErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportSshPublicKeyErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ImportSshPublicKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ImportSshPublicKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportSshPublicKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ImportSshPublicKeyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ImportSshPublicKeyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportSshPublicKeyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ImportSshPublicKeyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ImportSshPublicKeyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2172,7 +2172,7 @@ pub enum ListAccessesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccessesError {
@@ -2239,32 +2239,32 @@ impl ListAccessesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccessesErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListAccessesErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, ListAccessesErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `ListAccessesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListAccessesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccessesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccessesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAccessesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccessesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccessesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAccessesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccessesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccessesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListAccessesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2309,7 +2309,7 @@ pub enum ListExecutionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExecutionsError {
@@ -2376,32 +2376,32 @@ impl ListExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, ListExecutionsErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListExecutionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListExecutionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListExecutionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListExecutionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListExecutionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2443,7 +2443,7 @@ pub enum ListSecurityPoliciesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSecurityPoliciesError {
@@ -2509,28 +2509,28 @@ impl ListSecurityPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSecurityPoliciesErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListSecurityPoliciesErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ListSecurityPoliciesErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ListSecurityPoliciesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListSecurityPoliciesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSecurityPoliciesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSecurityPoliciesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListSecurityPoliciesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSecurityPoliciesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListSecurityPoliciesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListSecurityPoliciesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2571,7 +2571,7 @@ pub enum ListServersErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServersError {
@@ -2637,22 +2637,22 @@ impl ListServersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServersErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListServersErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, ListServersErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `ListServersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListServersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServersErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListServersErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListServersErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListServersErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListServersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListServersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2693,7 +2693,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2759,28 +2759,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2824,7 +2824,7 @@ pub enum ListUsersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
@@ -2891,23 +2891,23 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InvalidNextTokenException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2949,7 +2949,7 @@ pub enum ListWorkflowsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkflowsError {
@@ -3015,25 +3015,25 @@ impl ListWorkflowsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkflowsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, ListWorkflowsErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `ListWorkflowsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkflowsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkflowsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkflowsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkflowsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListWorkflowsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3081,7 +3081,7 @@ pub enum SendWorkflowStepStateErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendWorkflowStepStateError {
@@ -3149,42 +3149,42 @@ impl SendWorkflowStepStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendWorkflowStepStateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SendWorkflowStepStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendWorkflowStepStateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SendWorkflowStepStateErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `SendWorkflowStepStateErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             SendWorkflowStepStateErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `SendWorkflowStepStateErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `SendWorkflowStepStateErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendWorkflowStepStateErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SendWorkflowStepStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SendWorkflowStepStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendWorkflowStepStateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendWorkflowStepStateErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `SendWorkflowStepStateErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendWorkflowStepStateErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `SendWorkflowStepStateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SendWorkflowStepStateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3232,7 +3232,7 @@ pub enum StartServerErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartServerError {
@@ -3299,29 +3299,29 @@ impl StartServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartServerErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `StartServerErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, StartServerErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `StartServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, StartServerErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `StartServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartServerErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartServerErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartServerErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StartServerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartServerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartServerErrorKind::ThrottlingException(_))
     }
@@ -3365,7 +3365,7 @@ pub enum StopServerErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopServerError {
@@ -3432,29 +3432,29 @@ impl StopServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopServerErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `StopServerErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, StopServerErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `StopServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, StopServerErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `StopServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopServerErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StopServerErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopServerErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `StopServerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StopServerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StopServerErrorKind::ThrottlingException(_))
     }
@@ -3494,7 +3494,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3560,22 +3560,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3617,7 +3617,7 @@ pub enum TestIdentityProviderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestIdentityProviderError {
@@ -3683,28 +3683,28 @@ impl TestIdentityProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestIdentityProviderErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `TestIdentityProviderErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             TestIdentityProviderErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `TestIdentityProviderErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TestIdentityProviderErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestIdentityProviderErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `TestIdentityProviderErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TestIdentityProviderErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestIdentityProviderErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TestIdentityProviderErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TestIdentityProviderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3746,7 +3746,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3812,25 +3812,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3874,7 +3874,7 @@ pub enum UpdateAccessErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccessError {
@@ -3941,32 +3941,32 @@ impl UpdateAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAccessErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UpdateAccessErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, UpdateAccessErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `UpdateAccessErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAccessErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccessErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccessErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateAccessErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccessErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccessErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAccessErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccessErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccessErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAccessErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4021,7 +4021,7 @@ pub enum UpdateServerErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServerError {
@@ -4091,47 +4091,47 @@ impl UpdateServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateServerErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateServerErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, UpdateServerErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServerErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateServerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateServerErrorKind::ThrottlingException(_))
     }
@@ -4178,7 +4178,7 @@ pub enum UpdateUserErrorKind {
     ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserError {
@@ -4245,29 +4245,29 @@ impl UpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::ThrottlingException(_))
     }

@@ -105,7 +105,7 @@ pub mod retry_config {
     ///
     /// # Example
     ///
-    /// ```rust
+    /// ```no_run
     /// # use std::error::Error;
     /// # #[tokio::main]
     /// # async fn main() -> Result<(), Box<dyn Error>> {

@@ -18,7 +18,7 @@ struct Opt {
     #[structopt(short, long)]
     key: String,
 
-    /// Whether to display additonal informmation.
+    /// Whether to display additional information.
     #[structopt(short, long)]
     verbose: bool,
 }

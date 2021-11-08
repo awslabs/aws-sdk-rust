@@ -14,7 +14,7 @@ pub struct AddTagsToResourceError {
 pub enum AddTagsToResourceErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToResourceError {
@@ -77,7 +77,7 @@ impl AddTagsToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsToResourceErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `AddTagsToResourceErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -109,7 +109,7 @@ pub struct ApplyPendingMaintenanceActionError {
 pub enum ApplyPendingMaintenanceActionErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ApplyPendingMaintenanceActionError {
@@ -175,7 +175,7 @@ impl ApplyPendingMaintenanceActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -212,7 +212,7 @@ pub enum CancelReplicationTaskAssessmentRunErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelReplicationTaskAssessmentRunError {
@@ -284,21 +284,21 @@ impl CancelReplicationTaskAssessmentRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelReplicationTaskAssessmentRunErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `CancelReplicationTaskAssessmentRunErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             CancelReplicationTaskAssessmentRunErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `CancelReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `CancelReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CancelReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CancelReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CancelReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -349,7 +349,7 @@ pub enum CreateEndpointErrorKind {
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
     /// <p>Insufficient privileges are preventing access to an Amazon S3 object.</p>
     S3AccessDeniedFault(crate::error::S3AccessDeniedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEndpointError {
@@ -418,46 +418,46 @@ impl CreateEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(&self.kind, CreateEndpointErrorKind::AccessDeniedFault(_))
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointErrorKind::ResourceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointErrorKind::S3AccessDeniedFault`.
+    /// Returns `true` if the error kind is `CreateEndpointErrorKind::S3AccessDeniedFault`.
     pub fn is_s3_access_denied_fault(&self) -> bool {
         matches!(&self.kind, CreateEndpointErrorKind::S3AccessDeniedFault(_))
     }
@@ -510,7 +510,7 @@ pub enum CreateEventSubscriptionErrorKind {
     SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
     /// <p>You are not authorized for the SNS subscription.</p>
     SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEventSubscriptionError {
@@ -582,70 +582,70 @@ impl CreateEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::KmsAccessDeniedFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::KmsAccessDeniedFault`.
     pub fn is_kms_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::KmsAccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::KmsDisabledFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::KmsDisabledFault`.
     pub fn is_kms_disabled_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::KmsDisabledFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::KmsInvalidStateFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::KmsInvalidStateFault`.
     pub fn is_kms_invalid_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::KmsInvalidStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::KmsNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::KmsNotFoundFault`.
     pub fn is_kms_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::KmsNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::KmsThrottlingFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::KmsThrottlingFault`.
     pub fn is_kms_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::KmsThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::ResourceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SnsInvalidTopicFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SnsInvalidTopicFault`.
     pub fn is_sns_invalid_topic_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SnsInvalidTopicFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
     pub fn is_sns_no_authorization_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -707,7 +707,7 @@ pub enum CreateReplicationInstanceErrorKind {
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
     /// <p>The storage quota has been exceeded.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReplicationInstanceError {
@@ -783,70 +783,70 @@ impl CreateReplicationInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::InsufficientResourceCapacityFault`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::InsufficientResourceCapacityFault`.
     pub fn is_insufficient_resource_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::InsufficientResourceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_replication_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationInstanceErrorKind::ResourceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationInstanceErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateReplicationInstanceErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -904,7 +904,7 @@ pub enum CreateReplicationSubnetGroupErrorKind {
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// <p>The quota for this resource quota has been exceeded.</p>
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReplicationSubnetGroupError {
@@ -978,42 +978,42 @@ impl CreateReplicationSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReplicationSubnetGroupErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `CreateReplicationSubnetGroupErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSubnetGroupErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSubnetGroupErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateReplicationSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSubnetGroupErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSubnetGroupErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `CreateReplicationSubnetGroupErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_replication_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSubnetGroupErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSubnetGroupErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateReplicationSubnetGroupErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSubnetGroupErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSubnetGroupErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateReplicationSubnetGroupErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationSubnetGroupErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1067,7 +1067,7 @@ pub enum CreateReplicationTaskErrorKind {
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// <p>The quota for this resource quota has been exceeded.</p>
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReplicationTaskError {
@@ -1135,42 +1135,42 @@ impl CreateReplicationTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReplicationTaskErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `CreateReplicationTaskErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationTaskErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationTaskErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `CreateReplicationTaskErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationTaskErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationTaskErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `CreateReplicationTaskErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationTaskErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationTaskErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateReplicationTaskErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationTaskErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationTaskErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateReplicationTaskErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationTaskErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationTaskErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateReplicationTaskErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1209,7 +1209,7 @@ pub enum DeleteCertificateErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCertificateError {
@@ -1273,14 +1273,14 @@ impl DeleteCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCertificateErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCertificateErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCertificateErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1318,7 +1318,7 @@ pub enum DeleteConnectionErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionError {
@@ -1383,18 +1383,18 @@ impl DeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(&self.kind, DeleteConnectionErrorKind::AccessDeniedFault(_))
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1430,7 +1430,7 @@ pub enum DeleteEndpointErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointError {
@@ -1494,14 +1494,14 @@ impl DeleteEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1536,7 +1536,7 @@ pub enum DeleteEventSubscriptionErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventSubscriptionError {
@@ -1600,14 +1600,14 @@ impl DeleteEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEventSubscriptionErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DeleteEventSubscriptionErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventSubscriptionErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventSubscriptionErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteEventSubscriptionErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1642,7 +1642,7 @@ pub enum DeleteReplicationInstanceErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReplicationInstanceError {
@@ -1706,14 +1706,14 @@ impl DeleteReplicationInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReplicationInstanceErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationInstanceErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationInstanceErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationInstanceErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationInstanceErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1748,7 +1748,7 @@ pub enum DeleteReplicationSubnetGroupErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReplicationSubnetGroupError {
@@ -1814,14 +1814,14 @@ impl DeleteReplicationSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReplicationSubnetGroupErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationSubnetGroupErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationSubnetGroupErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationSubnetGroupErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationSubnetGroupErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1858,7 +1858,7 @@ pub enum DeleteReplicationTaskErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReplicationTaskError {
@@ -1922,14 +1922,14 @@ impl DeleteReplicationTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReplicationTaskErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationTaskErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationTaskErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationTaskErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationTaskErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1967,7 +1967,7 @@ pub enum DeleteReplicationTaskAssessmentRunErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReplicationTaskAssessmentRunError {
@@ -2039,21 +2039,21 @@ impl DeleteReplicationTaskAssessmentRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReplicationTaskAssessmentRunErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationTaskAssessmentRunErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationTaskAssessmentRunErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2089,7 +2089,7 @@ pub struct DescribeAccountAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountAttributesError {
@@ -2180,7 +2180,7 @@ pub enum DescribeApplicableIndividualAssessmentsErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeApplicableIndividualAssessmentsError {
@@ -2254,21 +2254,21 @@ impl DescribeApplicableIndividualAssessmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeApplicableIndividualAssessmentsErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `DescribeApplicableIndividualAssessmentsErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicableIndividualAssessmentsErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicableIndividualAssessmentsErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DescribeApplicableIndividualAssessmentsErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicableIndividualAssessmentsErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicableIndividualAssessmentsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeApplicableIndividualAssessmentsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2310,7 +2310,7 @@ pub struct DescribeCertificatesError {
 pub enum DescribeCertificatesErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCertificatesError {
@@ -2373,7 +2373,7 @@ impl DescribeCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCertificatesErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeCertificatesErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2405,7 +2405,7 @@ pub struct DescribeConnectionsError {
 pub enum DescribeConnectionsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectionsError {
@@ -2468,7 +2468,7 @@ impl DescribeConnectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectionsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeConnectionsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2500,7 +2500,7 @@ pub struct DescribeEndpointsError {
 pub enum DescribeEndpointsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointsError {
@@ -2563,7 +2563,7 @@ impl DescribeEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEndpointsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEndpointsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2593,7 +2593,7 @@ pub struct DescribeEndpointSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointSettingsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointSettingsError {
@@ -2677,7 +2677,7 @@ pub struct DescribeEndpointTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointTypesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointTypesError {
@@ -2761,7 +2761,7 @@ pub struct DescribeEventCategoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventCategoriesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventCategoriesError {
@@ -2845,7 +2845,7 @@ pub struct DescribeEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventsError {
@@ -2931,7 +2931,7 @@ pub struct DescribeEventSubscriptionsError {
 pub enum DescribeEventSubscriptionsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventSubscriptionsError {
@@ -2994,7 +2994,7 @@ impl DescribeEventSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventSubscriptionsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEventSubscriptionsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3024,7 +3024,7 @@ pub struct DescribeOrderableReplicationInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOrderableReplicationInstancesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrderableReplicationInstancesError {
@@ -3115,7 +3115,7 @@ pub struct DescribePendingMaintenanceActionsError {
 pub enum DescribePendingMaintenanceActionsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePendingMaintenanceActionsError {
@@ -3183,7 +3183,7 @@ impl DescribePendingMaintenanceActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePendingMaintenanceActionsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribePendingMaintenanceActionsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3219,7 +3219,7 @@ pub enum DescribeRefreshSchemasStatusErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRefreshSchemasStatusError {
@@ -3285,14 +3285,14 @@ impl DescribeRefreshSchemasStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRefreshSchemasStatusErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DescribeRefreshSchemasStatusErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRefreshSchemasStatusErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRefreshSchemasStatusErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeRefreshSchemasStatusErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3327,7 +3327,7 @@ pub struct DescribeReplicationInstancesError {
 pub enum DescribeReplicationInstancesErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplicationInstancesError {
@@ -3390,7 +3390,7 @@ impl DescribeReplicationInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplicationInstancesErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReplicationInstancesErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3424,7 +3424,7 @@ pub enum DescribeReplicationInstanceTaskLogsErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplicationInstanceTaskLogsError {
@@ -3495,14 +3495,14 @@ impl DescribeReplicationInstanceTaskLogsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplicationInstanceTaskLogsErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DescribeReplicationInstanceTaskLogsErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReplicationInstanceTaskLogsErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReplicationInstanceTaskLogsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReplicationInstanceTaskLogsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3541,7 +3541,7 @@ pub struct DescribeReplicationSubnetGroupsError {
 pub enum DescribeReplicationSubnetGroupsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplicationSubnetGroupsError {
@@ -3609,7 +3609,7 @@ impl DescribeReplicationSubnetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplicationSubnetGroupsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReplicationSubnetGroupsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3641,7 +3641,7 @@ pub struct DescribeReplicationTaskAssessmentResultsError {
 pub enum DescribeReplicationTaskAssessmentResultsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplicationTaskAssessmentResultsError {
@@ -3709,7 +3709,7 @@ impl DescribeReplicationTaskAssessmentResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplicationTaskAssessmentResultsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReplicationTaskAssessmentResultsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3745,7 +3745,7 @@ pub struct DescribeReplicationTaskAssessmentRunsError {
 pub enum DescribeReplicationTaskAssessmentRunsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplicationTaskAssessmentRunsError {
@@ -3813,7 +3813,7 @@ impl DescribeReplicationTaskAssessmentRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplicationTaskAssessmentRunsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReplicationTaskAssessmentRunsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3849,7 +3849,7 @@ pub struct DescribeReplicationTaskIndividualAssessmentsError {
 pub enum DescribeReplicationTaskIndividualAssessmentsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplicationTaskIndividualAssessmentsError {
@@ -3921,7 +3921,7 @@ impl DescribeReplicationTaskIndividualAssessmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplicationTaskIndividualAssessmentsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReplicationTaskIndividualAssessmentsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3957,7 +3957,7 @@ pub struct DescribeReplicationTasksError {
 pub enum DescribeReplicationTasksErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReplicationTasksError {
@@ -4020,7 +4020,7 @@ impl DescribeReplicationTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReplicationTasksErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReplicationTasksErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4054,7 +4054,7 @@ pub enum DescribeSchemasErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSchemasError {
@@ -4118,14 +4118,14 @@ impl DescribeSchemasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSchemasErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DescribeSchemasErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSchemasErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSchemasErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeSchemasErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4160,7 +4160,7 @@ pub enum DescribeTableStatisticsErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTableStatisticsError {
@@ -4224,14 +4224,14 @@ impl DescribeTableStatisticsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTableStatisticsErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `DescribeTableStatisticsErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableStatisticsErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableStatisticsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeTableStatisticsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4268,7 +4268,7 @@ pub enum ImportCertificateErrorKind {
     ResourceAlreadyExistsFault(crate::error::ResourceAlreadyExistsFault),
     /// <p>The quota for this resource quota has been exceeded.</p>
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportCertificateError {
@@ -4333,21 +4333,21 @@ impl ImportCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportCertificateErrorKind::InvalidCertificateFault`.
+    /// Returns `true` if the error kind is `ImportCertificateErrorKind::InvalidCertificateFault`.
     pub fn is_invalid_certificate_fault(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateErrorKind::InvalidCertificateFault(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ImportCertificateErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ImportCertificateErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ImportCertificateErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ImportCertificateErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4381,7 +4381,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -4444,7 +4444,7 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4485,7 +4485,7 @@ pub enum ModifyEndpointErrorKind {
     ResourceAlreadyExistsFault(crate::error::ResourceAlreadyExistsFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyEndpointError {
@@ -4552,32 +4552,32 @@ impl ModifyEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyEndpointErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(&self.kind, ModifyEndpointErrorKind::AccessDeniedFault(_))
     }
-    /// Returns true if the error kind is `ModifyEndpointErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEndpointErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEndpointErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEndpointErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEndpointErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEndpointErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEndpointErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4629,7 +4629,7 @@ pub enum ModifyEventSubscriptionErrorKind {
     SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
     /// <p>You are not authorized for the SNS subscription.</p>
     SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyEventSubscriptionError {
@@ -4700,63 +4700,63 @@ impl ModifyEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::KmsAccessDeniedFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::KmsAccessDeniedFault`.
     pub fn is_kms_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::KmsAccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::KmsDisabledFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::KmsDisabledFault`.
     pub fn is_kms_disabled_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::KmsDisabledFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::KmsInvalidStateFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::KmsInvalidStateFault`.
     pub fn is_kms_invalid_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::KmsInvalidStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::KmsNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::KmsNotFoundFault`.
     pub fn is_kms_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::KmsNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::KmsThrottlingFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::KmsThrottlingFault`.
     pub fn is_kms_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::KmsThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::ResourceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault`.
     pub fn is_sns_invalid_topic_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
     pub fn is_sns_no_authorization_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4809,7 +4809,7 @@ pub enum ModifyReplicationInstanceErrorKind {
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// <p>An upgrade dependency is preventing the database migration.</p>
     UpgradeDependencyFailureFault(crate::error::UpgradeDependencyFailureFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyReplicationInstanceError {
@@ -4882,49 +4882,49 @@ impl ModifyReplicationInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyReplicationInstanceErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationInstanceErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationInstanceErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationInstanceErrorKind::InsufficientResourceCapacityFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationInstanceErrorKind::InsufficientResourceCapacityFault`.
     pub fn is_insufficient_resource_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationInstanceErrorKind::InsufficientResourceCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationInstanceErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationInstanceErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationInstanceErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationInstanceErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationInstanceErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationInstanceErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationInstanceErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationInstanceErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationInstanceErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationInstanceErrorKind::StorageQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationInstanceErrorKind::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationInstanceErrorKind::StorageQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationInstanceErrorKind::UpgradeDependencyFailureFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationInstanceErrorKind::UpgradeDependencyFailureFault`.
     pub fn is_upgrade_dependency_failure_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4979,7 +4979,7 @@ pub enum ModifyReplicationSubnetGroupErrorKind {
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
     /// <p>The specified subnet is already in use.</p>
     SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyReplicationSubnetGroupError {
@@ -5051,42 +5051,42 @@ impl ModifyReplicationSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyReplicationSubnetGroupErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationSubnetGroupErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationSubnetGroupErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationSubnetGroupErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `ModifyReplicationSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationSubnetGroupErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationSubnetGroupErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs`.
+    /// Returns `true` if the error kind is `ModifyReplicationSubnetGroupErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs`.
     pub fn is_replication_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationSubnetGroupErrorKind::ReplicationSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationSubnetGroupErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationSubnetGroupErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationSubnetGroupErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationSubnetGroupErrorKind::ResourceQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationSubnetGroupErrorKind::SubnetAlreadyInUse`.
+    /// Returns `true` if the error kind is `ModifyReplicationSubnetGroupErrorKind::SubnetAlreadyInUse`.
     pub fn is_subnet_already_in_use(&self) -> bool {
         matches!(
             &self.kind,
@@ -5133,7 +5133,7 @@ pub enum ModifyReplicationTaskErrorKind {
     ResourceAlreadyExistsFault(crate::error::ResourceAlreadyExistsFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyReplicationTaskError {
@@ -5199,28 +5199,28 @@ impl ModifyReplicationTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyReplicationTaskErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationTaskErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationTaskErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationTaskErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationTaskErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationTaskErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationTaskErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationTaskErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReplicationTaskErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReplicationTaskErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyReplicationTaskErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5264,7 +5264,7 @@ pub enum MoveReplicationTaskErrorKind {
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// <p>The quota for this resource quota has been exceeded.</p>
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MoveReplicationTaskError {
@@ -5331,35 +5331,35 @@ impl MoveReplicationTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MoveReplicationTaskErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `MoveReplicationTaskErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             MoveReplicationTaskErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `MoveReplicationTaskErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `MoveReplicationTaskErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             MoveReplicationTaskErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `MoveReplicationTaskErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `MoveReplicationTaskErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             MoveReplicationTaskErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `MoveReplicationTaskErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `MoveReplicationTaskErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             MoveReplicationTaskErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `MoveReplicationTaskErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `MoveReplicationTaskErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5397,7 +5397,7 @@ pub enum RebootReplicationInstanceErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootReplicationInstanceError {
@@ -5461,14 +5461,14 @@ impl RebootReplicationInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RebootReplicationInstanceErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `RebootReplicationInstanceErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RebootReplicationInstanceErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RebootReplicationInstanceErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `RebootReplicationInstanceErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5507,7 +5507,7 @@ pub enum RefreshSchemasErrorKind {
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// <p>The quota for this resource quota has been exceeded.</p>
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RefreshSchemasError {
@@ -5573,28 +5573,28 @@ impl RefreshSchemasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RefreshSchemasErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `RefreshSchemasErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RefreshSchemasErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RefreshSchemasErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `RefreshSchemasErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             RefreshSchemasErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `RefreshSchemasErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `RefreshSchemasErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RefreshSchemasErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RefreshSchemasErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RefreshSchemasErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5631,7 +5631,7 @@ pub enum ReloadTablesErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReloadTablesError {
@@ -5695,14 +5695,14 @@ impl ReloadTablesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReloadTablesErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `ReloadTablesErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ReloadTablesErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ReloadTablesErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ReloadTablesErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(&self.kind, ReloadTablesErrorKind::ResourceNotFoundFault(_))
     }
@@ -5732,7 +5732,7 @@ pub struct RemoveTagsFromResourceError {
 pub enum RemoveTagsFromResourceErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
@@ -5795,7 +5795,7 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsFromResourceErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5832,7 +5832,7 @@ pub enum StartReplicationTaskErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartReplicationTaskError {
@@ -5897,21 +5897,21 @@ impl StartReplicationTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartReplicationTaskErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5947,7 +5947,7 @@ pub enum StartReplicationTaskAssessmentErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartReplicationTaskAssessmentError {
@@ -6016,14 +6016,14 @@ impl StartReplicationTaskAssessmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6082,7 +6082,7 @@ pub enum StartReplicationTaskAssessmentRunErrorKind {
     /// <p>A specified Amazon S3 bucket, bucket folder, or other object can't be
     /// found.</p>
     S3ResourceNotFoundFault(crate::error::S3ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartReplicationTaskAssessmentRunError {
@@ -6175,84 +6175,84 @@ impl StartReplicationTaskAssessmentRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsAccessDeniedFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsAccessDeniedFault`.
     pub fn is_kms_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::KmsAccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsDisabledFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsDisabledFault`.
     pub fn is_kms_disabled_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::KmsDisabledFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsFault`.
     pub fn is_kms_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::KmsFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsInvalidStateFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsInvalidStateFault`.
     pub fn is_kms_invalid_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::KmsInvalidStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsNotFoundFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::KmsNotFoundFault`.
     pub fn is_kms_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::KmsNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::ResourceAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::ResourceAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::S3AccessDeniedFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::S3AccessDeniedFault`.
     pub fn is_s3_access_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartReplicationTaskAssessmentRunErrorKind::S3AccessDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `StartReplicationTaskAssessmentRunErrorKind::S3ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `StartReplicationTaskAssessmentRunErrorKind::S3ResourceNotFoundFault`.
     pub fn is_s3_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6311,7 +6311,7 @@ pub enum StopReplicationTaskErrorKind {
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopReplicationTaskError {
@@ -6375,14 +6375,14 @@ impl StopReplicationTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopReplicationTaskErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `StopReplicationTaskErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             StopReplicationTaskErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `StopReplicationTaskErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `StopReplicationTaskErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6424,7 +6424,7 @@ pub enum TestConnectionErrorKind {
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// <p>The quota for this resource quota has been exceeded.</p>
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestConnectionError {
@@ -6491,32 +6491,32 @@ impl TestConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestConnectionErrorKind::AccessDeniedFault`.
+    /// Returns `true` if the error kind is `TestConnectionErrorKind::AccessDeniedFault`.
     pub fn is_access_denied_fault(&self) -> bool {
         matches!(&self.kind, TestConnectionErrorKind::AccessDeniedFault(_))
     }
-    /// Returns true if the error kind is `TestConnectionErrorKind::InvalidResourceStateFault`.
+    /// Returns `true` if the error kind is `TestConnectionErrorKind::InvalidResourceStateFault`.
     pub fn is_invalid_resource_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             TestConnectionErrorKind::InvalidResourceStateFault(_)
         )
     }
-    /// Returns true if the error kind is `TestConnectionErrorKind::KmsKeyNotAccessibleFault`.
+    /// Returns `true` if the error kind is `TestConnectionErrorKind::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
             TestConnectionErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
-    /// Returns true if the error kind is `TestConnectionErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `TestConnectionErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             TestConnectionErrorKind::ResourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `TestConnectionErrorKind::ResourceQuotaExceededFault`.
+    /// Returns `true` if the error kind is `TestConnectionErrorKind::ResourceQuotaExceededFault`.
     pub fn is_resource_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
