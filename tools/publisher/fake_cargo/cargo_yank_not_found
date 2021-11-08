@@ -1,8 +1,10 @@
 #!/bin/bash
->&2 echo "     Updating crates.io index"
->&2 echo "        Yank aws-sigv4:0.0.0"
->&2 echo "error: failed to yank from the registry at https://crates.io"
->&2 echo
->&2 echo "Caused by:"
->&2 echo '  the remote server responded with an error: crate `aws-sigv4` does not have a version `0.0.0`'
+{
+    echo "     Updating crates.io index"
+    echo "        Yank aws-sigv4:0.0.0"
+    echo "error: failed to yank from the registry at https://crates.io"
+    echo
+    echo "Caused by:"
+    echo '  the remote server responded with an error: crate `aws-sigv4` does not have a version `0.0.0`'
+} >&2
 exit 101

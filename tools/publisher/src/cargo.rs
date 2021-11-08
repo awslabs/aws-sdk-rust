@@ -60,15 +60,15 @@ fn handle_failure(operation_name: &str, output: &Output) -> Result<(), anyhow::E
 
 fn capture_error(operation_name: &str, output: &Output) -> anyhow::Error {
     let message = format!(
-        "Failed to {}:\nStatus: {}\nStdout: {}\nStderr: {}\n",
-        operation_name,
-        if let Some(code) = output.status.code() {
+        "Failed to {name}:\nStatus: {status}\nStdout: {stdout}\nStderr: {stderr}\n",
+        name = operation_name,
+        status = if let Some(code) = output.status.code() {
             format!("{}", code)
         } else {
             "Killed by signal".to_string()
         },
-        String::from_utf8_lossy(&output.stdout),
-        String::from_utf8_lossy(&output.stderr)
+        stdout = String::from_utf8_lossy(&output.stdout),
+        stderr = String::from_utf8_lossy(&output.stderr)
     );
     anyhow::Error::msg(message)
 }
