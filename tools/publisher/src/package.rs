@@ -211,7 +211,7 @@ pub async fn discover_package_manifests(path: impl AsRef<Path>) -> Result<Vec<Pa
 
 /// Parses a semver version number and adds additional error context when parsing fails.
 pub fn parse_version(manifest_path: &Path, version: &str) -> Result<Version, Error> {
-    Version::parse(&version)
+    Version::parse(version)
         .map_err(|err| Error::InvalidCrateVersion(manifest_path.into(), version.into(), err.into()))
 }
 
@@ -225,7 +225,7 @@ fn read_dependencies(path: &Path, dependencies: &DepsSet) -> Result<Vec<PackageH
                     let version = detailed
                         .version
                         .as_ref()
-                        .map(|version| parse_version(path, &version))
+                        .map(|version| parse_version(path, version))
                         .ok_or_else(|| Error::MissingVersion(path.into(), name.into()))??;
                     result.push(PackageHandle::new(name, version));
                 }
@@ -287,7 +287,7 @@ async fn read_packages(fs: Fs, manifest_paths: Vec<PathBuf>) -> Result<Vec<Packa
     let mut result = Vec::new();
     for path in &manifest_paths {
         let contents: Vec<u8> = fs.read_file(path).await?;
-        result.push(read_package(&path, &contents)?);
+        result.push(read_package(path, &contents)?);
     }
     Ok(result)
 }

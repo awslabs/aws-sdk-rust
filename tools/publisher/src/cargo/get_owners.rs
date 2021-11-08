@@ -38,7 +38,7 @@ impl<'a> CargoOperation for GetOwners<'a> {
         let (stdout, _) = output_text(&output);
         let line_re = Regex::new(r#"^([\w\d\-_:]+)\s+\([\w\d\s\-_]+\)$"#).unwrap();
         for line in stdout.lines() {
-            if let Some(captures) = line_re.captures(&line) {
+            if let Some(captures) = line_re.captures(line) {
                 let user_id = captures.get(1).unwrap().as_str();
                 result.push(user_id.to_string());
             } else {
