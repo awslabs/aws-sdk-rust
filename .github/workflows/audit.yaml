@@ -18,7 +18,6 @@ jobs:
       - name: install cargo audit
         run: cargo install cargo-audit
       - name: Run audit
-        working-directory: sdk
         # chrono, a Rust date-time crate we use for timestamp parsing was added
         # to the RustSec vulnerability database because of a call to localtime_r.
         # We use chrono for an extremely narrow use case of converting epoch timestamps to UTC dates

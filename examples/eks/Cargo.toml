@@ -1,0 +1,12 @@
+[package]
+name = "eks"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+
+[dependencies]
+aws-config = { path = "../../sdk/aws-config" }
+structopt = { version = "0.3", default-features = false }
+tokio = { version = "1", features = ["full"]}
+aws-types = { path = "../../sdk/aws-types" }
+aws-sdk-eks = { path = "../../sdk/eks" }

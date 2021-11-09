@@ -153,6 +153,7 @@ pub fn sign<'a>(
     request: SignableRequest<'a>,
     params: &'a SigningParams<'a>,
 ) -> Result<SigningOutput<SigningInstructions>, Error> {
+    tracing::trace!(request = ?request, params = ?params, "signing request");
     match params.settings.signature_location {
         SignatureLocation::Headers => {
             let (signing_headers, signature) =

@@ -1,0 +1,15 @@
+[package]
+name = "medialive-code-examples"
+version = "0.1.0"
+authors = ["Alistair McLean <mclean@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+aws-config = { path = "../../sdk/aws-config" }
+medialive = { package = "aws-sdk-medialive", path = "../../sdk/medialive" }
+aws-types = { path = "../../sdk/aws-types" }
+tokio = { version = "1", features = ["full"] }
+structopt = { version = "0.3", default-features = false }
+tracing-subscriber = { version = "0.2.16", features = ["fmt"] }

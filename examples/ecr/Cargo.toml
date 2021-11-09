@@ -1,0 +1,13 @@
+[package]
+name = "ecr-examples"
+version = "0.1.0"
+authors = ["Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+
+[dependencies]
+aws-config = { path = "../../sdk/aws-config" }
+aws-sdk-ecr = { path = "../../sdk/ecr" }
+tokio = { version = "1", features = ["full"]}
+structopt = { version = "0.3", default-features = false }
+tracing-subscriber = { version = "0.2.16", features = ["fmt"] }
+aws-types = { path = "../../sdk/aws-types" }

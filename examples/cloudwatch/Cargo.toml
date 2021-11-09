@@ -1,0 +1,13 @@
+[package]
+name = "cloudwatch-code-examples"
+version = "0.1.0"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+aws-config = { path = "../../sdk/aws-config" }
+cloudwatch = { package = "aws-sdk-cloudwatch", path = "../../sdk/cloudwatch" }
+tokio = { version = "1", features = ["full"] }
+tracing-subscriber = { version = "0.2", features = ["fmt"] }

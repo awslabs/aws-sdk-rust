@@ -1,20 +1,29 @@
-vNext (Month Day, Year)
-=======================
+v0.0.24-alpha (November 9th, 2021)
+==================================
+**Breaking Changes**
+- Members named `builder` on model structs were renamed to `builder_value` so that their accessors don't conflict with the existing `builder()` methods (smithy-rs#842)
+
+**New this week**
+- Fix epoch seconds date-time parsing bug in `aws-smithy-types` (smithy-rs#834)
+- Omit trailing zeros from fraction when formatting HTTP dates in `aws-smithy-types` (smithy-rs#834)
+- Moved examples into repository root (aws-sdk-rust#181, smithy-rs#843)
+- Model structs now have accessor methods for their members. We recommend updating code to use accessors instead of public fields. A future release will deprecate the public fields before they are made private. (smithy-rs#842)
+- :bug: Fix bug that caused signing to fail for requests where the body length was <=9. (smithy-rs#845)
 
 v0.0.23-alpha (November 3rd, 2021)
 ==================================
 **New this week**
-- The SDK is available on crates.io!
 - :tada: Add support for AWS Glacier (smithy-rs#801)
 - :tada: Add support for AWS Panorama
 - :bug: Fix `native-tls` feature in `aws-config` (aws-sdk-rust#265, smithy-rs#803)
 - Add example to aws-sig-auth for generating an IAM Token for RDS (smithy-rs#811, aws-sdk-rust#147)
 - :bug: `hyper::Error(IncompleteMessage)` will now be retried (smithy-rs#815)
+- :bug: S3 request metadata signing now correctly trims headers fixing [problems like this](https://github.com/awslabs/aws-sdk-rust/issues/248) (smithy-rs#761)
+- All unions (eg. `dynamodb::model::AttributeValue`) now include an additional `Unknown` variant. These support cases where a new union variant has been added on the server but the client has not been updated.
 - :bug: Fix generated docs on unions like `dynamodb::AttributeValue`. (smithy-rs#826)
 
 **Breaking Changes**
 - `<operation>.make_operation(&config)` is now an `async` function for all operations. Code should be updated to call `.await`. This will only impact users using the low-level API. (smithy-rs#797)
-- :bug: S3 request metadata signing now correctly trims headers fixing [problems like this](https://github.com/awslabs/aws-sdk-rust/issues/248) (smithy-rs#761)
 
 v0.0.22-alpha (October 20th, 2021)
 ==================================
@@ -366,7 +375,7 @@ This week also sees the addition of a robust async caching credentials provider.
 To upgrade to the new release, update `tag` to `v0.0.14-alpha`:
 ```
 [dependencies]
-# eg. S3:
+# e.g. S3:
 aws-sdk-s3 = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.14-alpha" }
 ```
 
@@ -459,7 +468,7 @@ To update to the new release, change your tag to `v0.0.10-alpha`.
 - :tada: Add support for EKS (smithy-rs#553)
 - :warning: **Breaking Change:** httpLabel no longer causes fields to be non-optional. You may need to adapt code that uses models. (#537)
 - :warning: **Breaking Change:** `Exception` is **not** renamed to `Error`. Code may need to be updated to replace `Error` with `Exception` when naming error shapes.
-- :warning: **Breaking Change:** Models are now in strict pascal case including acronyms (eg. `dynamodb::model::{SSESpecification => SseSpecification}`)
+- :warning: **Breaking Change:** Models are now in strict pascal case including acronyms (e.g. `dynamodb::model::{SSESpecification => SseSpecification}`)
 - Add more SES examples, and improve examples for Batch.
 - Improved error handling ergonomics: Errors now provide `is_<variantname>()` methods to simplify error handling
 - :bug: Bugfix: Fix bug in `create_multipart_upload`: #127 (smithy-rs#531, @eagletmt)
@@ -481,7 +490,7 @@ To upgrade to the new release, update `tag` to `v0.0.9-alpha`:
 
 ```toml
 [dependencies]
-# eg. Cloudwatch Logs:
+# e.g. Cloudwatch Logs:
 aws-sdk-cloudwatchlogs = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.9-alpha" }
 ```
 
@@ -514,7 +523,7 @@ To upgrade to the new release, update `tag` to `v0.0.8-alpha`:
 
 ```toml
 [dependencies]
-# eg. EC2:
+# e.g. EC2:
 aws-sdk-ec2 = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.8-alpha" }
 ```
 
@@ -545,7 +554,7 @@ This week we’ve added MediaLive, MediaPackage, SNS, Batch, STS, RDS, RDSData, 
 To upgrade to the new release, update `tag` to `v0.0.7-alpha`:
 ```toml
 [dependencies]
-# eg. SNS:
+# e.g. SNS:
 aws-sdk-sns = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.7-alpha" }
 ```
 
@@ -598,7 +607,7 @@ Thanks!
 v0.0.5-alpha (May 25th, 2021)
 =============================
 
-You can install the new release by updating your dependencies to `tag = "v0.0.5-alpha"`, eg.
+You can install the new release by updating your dependencies to `tag = "v0.0.5-alpha"`, e.g.
 ```toml
 [dependencies]
 aws-sdk-s3 = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.5-alpha" }
@@ -626,7 +635,7 @@ Thanks!
 v0.0.4-alpha (May 18th, 2021)
 =============================
 
-You can install the new release by updating your dependencies to `tag = "v0.0.4-alpha"`, eg.
+You can install the new release by updating your dependencies to `tag = "v0.0.4-alpha"`, e.g.
 ```toml
 [dependencies]
 aws-sdk-lambda = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.4-alpha" }
@@ -640,7 +649,7 @@ aws-sdk-lambda = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.0.
 - Types represented by the Smithy `Set` type now generate `Vec<T>` in all cases. This is also technically breaking but not currently exposed. (smithy-rs#270)
 - Bugfix: The `.message()`field of errors will now look for both `message` and `Message` in the model (smithy-rs#374)
 - Add support for the `AWS_REGION` environment variable. (smithy-rs#362)
-- The request type generated by the fluent builders, eg. `dynamodb.list_tables()` is now `Debug` (smithy-rs#377, @declanvk)
+- The request type generated by the fluent builders, e.g. `dynamodb.list_tables()` is now `Debug` (smithy-rs#377, @declanvk)
 
 And more: See the corresponding [smithy-rs release](https://github.com/awslabs/smithy-rs/releases/tag/v0.9).
 
@@ -664,3 +673,4 @@ v0.0.3-alpha (May 6th, 2021)
 - Added code examples for Kinesis
 
 More details in smithy-rs: https://github.com/awslabs/smithy-rs/releases/tag/v0.8
+
