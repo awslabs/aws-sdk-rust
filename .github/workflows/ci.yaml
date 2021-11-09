@@ -19,9 +19,7 @@ jobs:
       - uses: Swatinem/rust-cache@842ef286fff290e445b90b4002cc9807c3669641
         with:
           sharedKey: test
-          working-directory: sdk
       - name: Cargo Test
         run: cargo test
         env:
           CARGO_INCREMENTAL: 'false'
-        working-directory: sdk
